@@ -1,0 +1,10 @@
+sudo apt-get update
+
+echo "\n\nInstall Python packages required for testing on guest OS..."
+sudo DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends python3-pip
+sudo -H pip3 install setuptools
+sudo -H pip3 install behave jsonschema tinydb invoke
+
+echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
+curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+sudo dpkg -i gitlab-runner_amd64.deb
