@@ -1,11 +1,38 @@
-# traction
-Vagrant config for creating a staging/production VM using VirtualBox
+# Getting Started
 
-For production there are only two dependencies which need to be installed on the host computer:
+## Production Environment
+Please install the following two pieces of software on the host computer:
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/downloads.html)
 
-For tests in staging, please additionally install:
+Then, check out this repository and within the checked out folder run:
+
+`vagrant up`
+
+## Test / Staging Environment
+
+Please follow the steps for setting up the production environment. Then, please additionally install
 
 - [Gitlab Runner](https://docs.gitlab.com/runner/install/)
+
+and execute the following commands in order to register the runner:
+
+```
+gitlab-runner start
+gitlab-runner unregister --all-runners
+gitlab-runner register \
+    --non-interactive \
+    --url="https://gitlab.com/" \
+    --registration-token="JW6YYWLG4mTsr_-mSaz8" \
+    --executor="virtualbox" \
+    --description="staging-vm" \
+    --tag-list="virtualbox" \
+    --virtualbox-base-name="bionic_lubuntu_vbox" \
+    --virtualbox-disable-snapshots="false" \
+    --ssh-user="vagrant" \
+    --ssh-password="vagrant" \
+    --ssh-identity-file="$PWD/.vagrant/machines/default/virtualbox/private_key"
+gitlab-runner restart
+gitlab-runner status
+```
