@@ -1,4 +1,4 @@
-# deploy-vm
+# traction
 Vagrant config for creating a staging/production VM using VirtualBox
 
 For production there are only two dependencies which need to be installed on the host computer:
