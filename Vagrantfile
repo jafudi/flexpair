@@ -63,11 +63,13 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you are using for more
   # information on available options.
 
+  config.vm.synced_folder ".", "/vagrant", automount: true
+
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
 
-  config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh", name: "staging"
-  config.vm.provision "docker", type: "shell", path: "provision_docker.sh", name: "docker"
-  config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh", name: "docker"
+  config.vm.provision "staging", type: "shell", path: "provision_testenv.sh", name: "staging"
+  config.vm.provision "prod", type: "shell", path: "provision_docker.sh", name: "prod"
+  config.vm.provision "demo", type: "shell", path: "provision_webserver.sh", name: "demo"
 end
