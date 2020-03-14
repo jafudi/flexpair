@@ -8,17 +8,20 @@ Please install the following two pieces of software on the host computer:
 
 Then, check out this repository and within the checked out folder run:
 
-`vagrant up`
+`vagrant up --provision-with prod`
 
 ## Test / Staging Environment
 
-Please follow the steps for setting up the production environment. Then, please additionally install
+Please install the following two pieces of software on the host computer:
 
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Vagrant](https://www.vagrantup.com/downloads.html)
 - [Gitlab Runner](https://docs.gitlab.com/runner/install/)
 
-and execute the following commands in order to register the runner:
+Then, check out this repository and within the checked out folder run:
 
 ```
+vagrant up
 gitlab-runner start
 gitlab-runner unregister --all-runners
 gitlab-runner register \
