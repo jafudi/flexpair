@@ -22,5 +22,14 @@
         "https://www.googleapis.com/auth/devstorage.full_control"
       ]
     }
+  ],
+  "post-processors": [
+    {
+      "type": "googlecompute-export",
+      "paths": [
+        "gs://jafudi-prod/jafudi-vm.tar.gz"
+      ],
+      "keep_input_artifact": true
+    }
   ]
 }
