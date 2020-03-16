@@ -1,9 +1,9 @@
 {
   "variables": {
-    "image_name": "",
-    "image_family": "",
-    "image_zone": "",
-    "project_id": ""
+    "image_name": "hello-v1",
+    "image_family": "hello-world",
+    "image_zone": "us-east1-b",
+    "project_id": "jafudi-1558282200187"
   },
 
   "builders": [
