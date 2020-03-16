@@ -15,7 +15,7 @@
       "image_family": "{{ user `image_family` }}",
       "ssh_username": "packer",
       "zone": "{{ user `image_zone` }}",
-      "startup_script_file": "install-website.sh",
+      "startup_script_file": "startup-script.sh",
       "scopes": [
         "https://www.googleapis.com/auth/userinfo.email",
         "https://www.googleapis.com/auth/compute",
@@ -27,7 +27,7 @@
     {
       "type": "googlecompute-export",
       "paths": [
-        "gs://jafudi-prod/jafudi-vm.tar.gz"
+        "gs://jafudi-prod/jafudi-{{ user `image_name` }}.tar.gz"
       ],
       "keep_input_artifact": true
     }
