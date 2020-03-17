@@ -11,7 +11,7 @@
       "image_name": "{{ user `image_name` }}",
       "type": "googlecompute",
       "project_id": "{{ user `project_id`}}",
-      "source_image": "ubuntu-1804-lts",
+      "source_image_family": "ubuntu-1804-lts",
       "image_family": "{{ user `image_family` }}",
       "ssh_username": "packer",
       "zone": "{{ user `image_zone` }}",
