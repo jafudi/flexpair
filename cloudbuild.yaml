@@ -7,5 +7,5 @@ steps:
       - -var
       - image_family=hello-world
       - -var
-      - image_zone=europe-west3
+      - image_zone=europe-west3-b
       - packer.json
