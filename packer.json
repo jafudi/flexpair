@@ -29,14 +29,5 @@
       "type":  "shell",
       "script": "provision_docker.sh"
     }
-  ],
-  "post-processors": [
-    {
-      "type": "googlecompute-export",
-      "paths": [
-        "gs://jafudi-prod/jafudi-prod-vm.tar.gz"
-      ],
-      "keep_input_artifact": true
-    }
   ]
 }

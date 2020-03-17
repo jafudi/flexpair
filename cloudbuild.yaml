@@ -5,7 +5,15 @@ steps:
       - -var
       - project_id=jafudi-1558282200187
       - -var
-      - image_family=hello-world
+      - image_family=jafudi
       - -var
       - image_zone=europe-west3-b
       - packer.json
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - compute images export
+      - --destination-uri gs://jafudi-prod/jafudi-prod-vm.vmdk
+      - --image-family jafudi
+      - --project jafudi-1558282200187
+      - --export-format vmdk
