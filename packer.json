@@ -11,7 +11,7 @@
       "image_name": "{{ user `image_name` }}",
       "type": "googlecompute",
       "project_id": "{{ user `project_id`}}",
-      "source_image_family": "centos-7",
+      "source_image": "ubuntu-1804-lts",
       "image_family": "{{ user `image_family` }}",
       "ssh_username": "packer",
       "zone": "{{ user `image_zone` }}",
@@ -27,7 +27,7 @@
     {
       "type": "googlecompute-export",
       "paths": [
-        "gs://jafudi-prod/jafudi-{{ user `image_name` }}.tar.gz"
+        "gs://jafudi-prod/jafudi-vm.tar.gz"
       ],
       "keep_input_artifact": true
     }
