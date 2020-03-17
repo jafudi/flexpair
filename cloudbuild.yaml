@@ -15,6 +15,7 @@ steps:
       - compute
       - images
       - export
+      - --quiet
       - --destination-uri
       - gs://jafudi-prod/jafudi-prod-vm.vmdk
       - --image-family
