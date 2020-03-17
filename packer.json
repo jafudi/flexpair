@@ -33,7 +33,7 @@
     {
       "type": "googlecompute-export",
       "paths": [
-        "gs://jafudi-prod/jafudi-vm.tar.gz"
+        "gs://jafudi-prod/jafudi-prod-vm.tar.gz"
       ],
       "keep_input_artifact": true
     }
