@@ -23,6 +23,12 @@
       ]
     }
   ],
+  "provisioners": [
+    {
+      "type":  "shell",
+      "script": "provision_docker.sh"
+    }
+  ],
   "post-processors": [
     {
       "type": "googlecompute-export",

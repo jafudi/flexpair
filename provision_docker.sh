@@ -9,4 +9,4 @@ sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends docker-ce docker-ce-cli containerd.io
 
 echo "\n\nPull Python Docker image which all releases share..."
-docker pull jafudi/habitat:latest
+docker pull jafudi/idea-extractor:latest
