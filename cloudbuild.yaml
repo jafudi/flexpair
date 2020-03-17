@@ -12,8 +12,14 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
-      - compute images export
-      - --destination-uri gs://jafudi-prod/jafudi-prod-vm.vmdk
-      - --image-family jafudi
-      - --project jafudi-1558282200187
-      - --export-format vmdk
+      - compute
+      - images
+      - export
+      - --destination-uri
+      - gs://jafudi-prod/jafudi-prod-vm.vmdk
+      - --image-family
+      - jafudi
+      - --project
+      - jafudi-1558282200187
+      - --export-format
+      - vmdk
