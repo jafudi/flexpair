@@ -31,7 +31,7 @@ gitlab-runner register \
     --executor="virtualbox" \
     --description="staging-vm" \
     --tag-list="virtualbox" \
-    --virtualbox-base-name="bionic_lubuntu_vbox" \
+    --virtualbox-base-name="ubuntu_bionic_vbox" \
     --virtualbox-disable-snapshots="false" \
     --ssh-user="vagrant" \
     --ssh-password="vagrant" \
