@@ -18,7 +18,7 @@ steps:
       - export
       - --quiet
       - --destination-uri
-      - gs://jafudi-prod/jafudi-prod-vm.vmdk
+      - gs://jafudi-prod/jafudi-ubuntu-64.vmdk
       - --image-family
       - jafudi
       - --image-project
