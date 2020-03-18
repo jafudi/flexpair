@@ -4,7 +4,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends u
 
 setxkbmap -layout 'ch(de)'
 
-sudo grub-install /dev/sda
+sudo echo "GRUB_DISABLE_LINUX_UUID=true" >> /etc/default/grub
 sudo update-grub
 
 sudo reboot
