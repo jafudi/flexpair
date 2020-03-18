@@ -1,3 +1,3 @@
 sudo apt-get update
 
-sudo apt-get install ubuntu-desktop
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ubuntu-desktop
