@@ -10,6 +10,7 @@ steps:
       - image_zone=europe-west3-b
       - packer.json
 
+  # https://cloud.google.com/sdk/gcloud/reference/compute/images/export
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - compute

@@ -15,7 +15,7 @@
       "image_family": "{{ user `image_family` }}",
       "ssh_username": "packer",
       "zone": "{{ user `image_zone` }}",
-      "startup_script_file": "startup-script.sh",
+      "startup_script_file": "provision_release.sh",
       "state_timeout": "1h5m2s",
       "scopes": [
         "https://www.googleapis.com/auth/userinfo.email",
