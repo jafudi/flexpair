@@ -31,7 +31,8 @@
         "provision_docker.sh",
         "provision_desktop.sh"
       ],
-      "expect_disconnect": true
+      "expect_disconnect": true,
+      "valid_exit_codes": [0, 2300218, 100]
     }
   ]
 }
