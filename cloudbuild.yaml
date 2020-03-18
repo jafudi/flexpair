@@ -24,3 +24,4 @@ steps:
       - jafudi-1558282200187
       - --export-format
       - vmdk
+timeout: 2400s
