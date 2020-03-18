@@ -16,7 +16,7 @@ Please install the following two pieces of software on the host computer:
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Vagrant](https://www.vagrantup.com/downloads.html)
-- [Gitlab Runner](https://docs.gitlab.com/runner/install)
+- [Gitlab Runner](https://docs.gitlab.com/runner/install/)
 
 Then, check out this repository and within the checked out folder run:
 
