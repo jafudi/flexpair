@@ -72,4 +72,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "staging", type: "shell", path: "provision_testenv.sh", name: "staging"
   config.vm.provision "prod", type: "shell", path: "provision_docker.sh", name: "prod"
   config.vm.provision "demo", type: "shell", path: "provision_webserver.sh", name: "demo"
+  config.vm.provision "desktop", type: "shell", path: "provision_desktop.sh", name: "demo"
 end

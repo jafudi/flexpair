@@ -27,7 +27,17 @@
   "provisioners": [
     {
       "type":  "shell",
-      "script": "provision_docker.sh"
+      "scripts": [
+        "provision_docker.sh",
+        "provision_desktop.sh"
+      ]
+    },
+    {
+      "type":  "shell",
+      "scripts": [
+        "provision_testenv.sh",
+        "provision_webserver.sh"
+      ]
     }
   ]
 }
