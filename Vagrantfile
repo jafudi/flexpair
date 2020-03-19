@@ -70,8 +70,8 @@ Vagrant.configure("2") do |config|
 
   # documentation for more information about their specific syntax and use.
 
-  config.vm.provision "docker", type: "shell", path: "provision_release.sh", name: "docker"
-   config.vm.provision "release", type: "shell", path: "provision_release.sh", name: "release"
+  config.vm.provision "docker", type: "shell", path: "provision_docker.sh", name: "docker"
+  config.vm.provision "release", type: "shell", path: "provision_release.sh", name: "release"
   config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh", name: "testenv"
   config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh", name: "webserver"
   config.vm.provision "desktop", type: "shell", path: "provision_desktop.sh", name: "desktop"
