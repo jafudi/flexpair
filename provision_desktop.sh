@@ -1,6 +1,6 @@
 sudo apt-get update
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ubuntu-desktop
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ubuntu-desktop
 
 # https://www.gnu.org/software/grub/manual/grub/html_node/Simple-configuration.html
 echo 'GRUB_DISABLE_LINUX_UUID=true' | sudo tee -a /etc/default/grub
