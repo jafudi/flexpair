@@ -13,10 +13,10 @@
       "project_id": "{{ user `project_id`}}",
       "source_image_family": "ubuntu-minimal-1804-lts",
       "image_family": "{{ user `image_family` }}",
+      "communicator": "ssh",
       "ssh_username": "jafudi",
       "ssh_password": "jafudi",
       "zone": "{{ user `image_zone` }}",
-      "state_timeout": "1h5m2s",
       "scopes": [
         "https://www.googleapis.com/auth/userinfo.email",
         "https://www.googleapis.com/auth/compute",

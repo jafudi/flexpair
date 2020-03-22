@@ -18,7 +18,7 @@ steps:
       - export
       - --quiet
       - --destination-uri
-      - gs://jafudi/ideops-on-ubuntu-64-micro.vmdk
+      - gs://jafudi/ideops-on-ubuntu-64-micro2.vmdk
       - --image-family
       - jafudi
       - --image-project
