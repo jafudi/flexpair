@@ -15,4 +15,6 @@ sudo rm -f /etc/default/grub.d/40-force-partuuid.cfg
 sudo rm -f /etc/default/grub.d/50-cloudimg-settings.cfg
 sudo rm -f /var/run/google.startup.script
 
+sudo usermod -a -G  nopasswdlogin jafudi
+
 sudo update-grub

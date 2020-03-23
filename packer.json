@@ -13,9 +13,7 @@
       "project_id": "{{ user `project_id`}}",
       "source_image_family": "ubuntu-minimal-1804-lts",
       "image_family": "{{ user `image_family` }}",
-      "communicator": "ssh",
       "ssh_username": "jafudi",
-      "ssh_password": "jafudi",
       "zone": "{{ user `image_zone` }}",
       "startup_script_file": "provision_release.sh",
       "scopes": [
