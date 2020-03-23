@@ -15,7 +15,7 @@
       "image_family": "{{ user `image_family` }}",
       "ssh_username": "jafudi",
       "zone": "{{ user `image_zone` }}",
-      "startup_script_file": "provision_release.sh",
+      "startup_script_file": "startup_script.sh",
       "scopes": [
         "https://www.googleapis.com/auth/userinfo.email",
         "https://www.googleapis.com/auth/compute",
@@ -27,6 +27,7 @@
     {
       "type":  "shell",
       "scripts": [
+        "provision_docker.sh",
         "provision_desktop.sh"
       ]
     }
