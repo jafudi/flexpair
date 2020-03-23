@@ -17,6 +17,7 @@
       "ssh_username": "jafudi",
       "ssh_password": "jafudi",
       "zone": "{{ user `image_zone` }}",
+      "startup_script_file": "provision_release.sh",
       "scopes": [
         "https://www.googleapis.com/auth/userinfo.email",
         "https://www.googleapis.com/auth/compute",
