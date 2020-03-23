@@ -2,6 +2,7 @@ steps:
   - name: 'gcr.io/$PROJECT_ID/packer'
     args:
       - build
+      - -debug
       - -var
       - project_id=jafudi-1558282200187
       - -var
