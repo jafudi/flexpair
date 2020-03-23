@@ -1,6 +1,5 @@
-export DEBIAN_FRONTEND=noninteractive
-sudo apt-get update
-sudo apt-get install -y lubuntu-core
+sudo DEBIAN_FRONTEND=noninteractive apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y lubuntu-core
 
 echo 'GRUB_DISABLE_LINUX_UUID=true' | sudo tee -a /etc/default/grub
 echo 'GRUB_CMDLINE_LINUX_DEFAULT=""' | sudo tee -a /etc/default/grub
