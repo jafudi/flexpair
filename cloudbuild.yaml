@@ -1,8 +1,13 @@
 steps:
   - name: 'gcr.io/$PROJECT_ID/packer'
+    env:
+      - PACKER_LOG=1
     args:
       - build
+      # https://packer.io/docs/other/debugging.html
       - -debug
+      - -var
+      - image_name=$SHORT_SHA
       - -var
       - project_id=jafudi-1558282200187
       - -var
@@ -20,8 +25,8 @@ steps:
       - --quiet
       - --destination-uri
       - gs://jafudi/ideops-on-lubuntu-64.vmdk
-      - --image-family
-      - jafudi
+      - --image
+      - $SHORT_SHA
       - --image-project
       - jafudi-1558282200187
       - --export-format
