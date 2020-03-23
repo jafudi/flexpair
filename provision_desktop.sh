@@ -13,5 +13,6 @@ sudo rm -f /etc/default/grub.d/40-force-partuuid.cfg
 
 # Remove other overwrites by Google Cloud Platform
 sudo rm -f /etc/default/grub.d/50-cloudimg-settings.cfg
+sudo rm -f /var/run/google.startup.script
 
 sudo update-grub
