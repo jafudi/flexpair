@@ -1,6 +1,5 @@
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
-sudo apt-get upgrade
 sudo apt-get install -y lubuntu-core
 
 echo 'GRUB_DISABLE_LINUX_UUID=true' | sudo tee -a /etc/default/grub
