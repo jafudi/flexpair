@@ -1,10 +1,12 @@
 # Install a lightweight desktop
 sudo apt-get clean
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ubuntu-desktop-minimal
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y lubuntu-core
 
 # Disable cloud-init as described in its documentation
-echo 'GRUB_CMDLINE_LINUX_DEFAULT="text cloud-init=disabled network-config=disabled"' | sudo tee -a /etc/default/grub
+echo 'GRUB_HIDDEN_TIMEOUT=10' | sudo tee -a /etc/default/grub
+echo 'GRUB_HIDDEN_TIMEOUT_QUIET=false' | sudo tee -a /etc/default/grub
+echo 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash cloud-init=disabled network-config=disabled"' | sudo tee -a /etc/default/grub
 sudo touch /etc/cloud/cloud-init.disabled
 
 # Disable reference to partitions via UUID
