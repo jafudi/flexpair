@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started Guide
 
 ## Production Environment
 Please install the following two pieces of software on the host computer:
