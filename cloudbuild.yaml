@@ -25,4 +25,6 @@ steps:
       - jafudi-1558282200187
       - --export-format
       - vmdk
+      - --zone
+      - europe-west3-b
 timeout: 2400s
