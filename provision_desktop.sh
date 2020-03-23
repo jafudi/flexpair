@@ -1,7 +1,7 @@
 # Install a lightweight desktop
 sudo apt-get clean
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y lubuntu-core
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ubuntu-desktop
 
 # Disable cloud-init as described in its documentation
 echo 'GRUB_CMDLINE_LINUX_DEFAULT="text cloud-init=disabled network-config=disabled"' | sudo tee -a /etc/default/grub
