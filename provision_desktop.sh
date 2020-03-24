@@ -15,11 +15,12 @@ sudo update-grub
 # Disable cloud-init and startup scripts
 echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg
 sudo touch /etc/cloud/cloud-init.disabled
-sudo apt-get purge cloud-init
+sudo apt-get purge -y cloud-init
+sudo apt-get autoremove
 sudo rm -rf /etc/cloud/; sudo rm -rf /var/lib/cloud/
 sudo rm -f /var/run/google.startup.script
 
 # Remove password requirement
-sudo usermod -a -G nopasswdlogin jafudi
+sudo passwd -d jafudi
 
 sudo reboot
