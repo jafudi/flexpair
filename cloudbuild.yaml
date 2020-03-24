@@ -24,7 +24,7 @@ steps:
       - export
       - --quiet
       - --destination-uri
-      - gs://jafudi/ideops-on-ubuntu-64.vmdk
+      - gs://jafudi/ideops-on-lubuntu-19.10-64.vmdk
       - --image
       - traction-$SHORT_SHA
       - --image-project
