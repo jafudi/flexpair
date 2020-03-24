@@ -1,7 +1,7 @@
 # Install a lightweight desktop
 sudo apt-get clean
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y lubuntu-desktop=19.04
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends lubuntu-desktop
 
 # Disable cloud-init as described in its documentation
 echo 'GRUB_HIDDEN_TIMEOUT=10' | sudo tee -a /etc/default/grub
