@@ -3,16 +3,13 @@ sudo apt-get clean
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends lubuntu-desktop
 
-# Remove password requirement
-sudo passwd -d jafudi
-
 # Purge Google cloud-init configuration and reinstall
 sudo apt-get purge -y cloud-init
 sudo rm -rf /etc/cloud/; sudo rm -rf /var/lib/cloud/
 sudo apt-get install -y cloud-init
 
 # Configure GRUB boot manager for desktop use
-echo 'GRUB_CMDLINE_LINUX="ds=nocloud"' | sudo tee -a /etc/default/grub
+echo 'GRUB_CMDLINE_LINUX="ds=nocloud;seedfrom=https://raw.githubusercontent.com/jafudi/traction/master/cloud-init/"' | sudo tee -a /etc/default/grub
 echo 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"' | sudo tee -a /etc/default/grub
 echo 'GRUB_HIDDEN_TIMEOUT=10' | sudo tee -a /etc/default/grub
 echo 'GRUB_HIDDEN_TIMEOUT_QUIET=true' | sudo tee -a /etc/default/grub

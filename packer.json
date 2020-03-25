@@ -13,7 +13,6 @@
       "project_id": "{{ user `project_id`}}",
       "source_image_family": "ubuntu-minimal-1910",
       "image_family": "{{ user `image_family` }}",
-      "ssh_username": "jafudi",
       "instance_name": "{{ user `image_name` }}",
       "zone": "{{ user `image_zone` }}",
       "startup_script_file": "startup_script.sh",
