@@ -5,7 +5,6 @@
     "image_zone": "",
     "project_id": ""
   },
-
   "builders": [
     {
       "image_name": "{{ user `image_name` }}",
@@ -24,17 +23,18 @@
       ]
     }
   ],
-  "post-processors":[
-    {
-      "type": "vagrant"
-    }
-  ],
   "provisioners": [
     {
       "type":  "shell",
       "scripts": [
         "provision_docker.sh"
       ]
+    }
+  ],
+  "post-processors":[
+    {
+      "type": "vagrant",
+      "output": "gs://jafudi/ideops-on-lubuntu-qt-64.box"
     }
   ]
 }
