@@ -7,6 +7,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends l
 sudo apt-get purge -y cloud-init
 sudo rm -rf /etc/cloud/; sudo rm -rf /var/lib/cloud/
 sudo apt-get install -y cloud-init
+echo 'startx' | sudo tee -a /var/lib/cloud/scripts/per-boot/startx.sh
 echo 'datasource_list: [ NoCloud, None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg
 sudo dpkg-reconfigure -f noninteractive cloud-init
 

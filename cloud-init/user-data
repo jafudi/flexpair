@@ -7,7 +7,12 @@
 #   - cloud-users
 
 # Add users to the system. Users are added after groups are added.
+
+disable_ec2_metadata: true
+
 users:
+  - default
+    lock_passwd: false
   - name: jafudi
     gecos: Just another form of diversity
     lock_passwd: false
