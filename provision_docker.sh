@@ -8,4 +8,4 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends docker-ce docker-ce-cli containerd.io
 
-sudo docker pull jafudi/idea-extractor:latest
+sudo docker pull python:3.7
