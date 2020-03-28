@@ -12,8 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/bionic64"
-  config.vm.box_version = "20200311.0.0"
+  config.vm.box = "lubuntu19.10"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -54,7 +53,7 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
 
-    vb.name = "ubuntu_bionic_vbox"
+    vb.name = "lubuntu-19.10"
 
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
@@ -70,5 +69,5 @@ Vagrant.configure("2") do |config|
 
   # documentation for more information about their specific syntax and use.
 
-  config.vm.provision "desktop", type: "shell", path: "provision_desktop.sh", name: "desktop"
+  config.vm.provision "docker", type: "shell", path: "provision_docker.sh", name: "desktop"
 end
