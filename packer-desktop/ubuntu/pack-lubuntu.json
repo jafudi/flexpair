@@ -4,7 +4,7 @@
     "image_family": "",
     "image_zone": "",
     "project_id": "",
-    "cloud_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
+    "cloud_token": "Nogx0zcrLyqz8w.atlasv1.eRV3NyIlDcw6psnPpVP2xwOPi4oRw9o8H3UNAf4aR7EyRitnMdgXatS7ts3DzcDD2Wc",
     "version": "1.0.{{timestamp}}",
     "box_basename": "lubuntu-docker-python",
     "build_timestamp": "{{isotime \"20200328171600\"}}",
