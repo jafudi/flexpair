@@ -1,4 +1,23 @@
 {
+  "variables": {
+    "cloud_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
+    "version": "1.0.{{timestamp}}",
+    "box_basename": "lubuntu-docker-python",
+    "build_timestamp": "{{isotime \"20200328171600\"}}",
+    "cpus": "2",
+    "disk_size": "65536",
+    "headless": "",
+    "http_proxy": "{{env `http_proxy`}}",
+    "https_proxy": "{{env `https_proxy`}}",
+    "iso_checksum": "921fd8b271c04aa86a321cc35b40e677f9b85f7903bf2204efb2389b0f0a64c1",
+    "iso_checksum_type": "sha256",
+    "iso_name": "ubuntu-19.10-server-amd64.iso",
+    "memory": "1024",
+    "mirror": "http://cdimage.ubuntu.com",
+    "mirror_directory": "ubuntu/releases/19.10/release",
+    "no_proxy": "{{env `no_proxy`}}",
+    "preseed_path": "preseed.cfg"
+  },
   "builders": [
     {
       "boot_command": [
@@ -36,7 +55,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `mirror`}}/{{user `mirror_directory`}}/{{user `iso_name`}}",
-      "output_directory": "../../builds/packer-{{user `template`}}-virtualbox",
+      "output_directory": "../../builds/packer-{{user `box_basename`}}-virtualbox",
       "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -58,14 +77,7 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "{{ user `template` }}"
-    }
-  ],
-  "post-processors": [
-    {
-      "output": "../../builds/{{user `box_basename`}}.{{.Provider}}.box",
-      "type": "vagrant",
-      "vagrantfile_template": "vagrantfile_templates/ubuntu-desktop.rb"
+      "vm_name": "{{ user `box_basename` }}"
     }
   ],
   "provisioners": [
@@ -93,24 +105,23 @@
       "type": "shell"
     }
   ],
-  "variables": {
-    "box_basename": "lubuntu-desktop-19.10",
-    "build_timestamp": "{{isotime \"20060102150405\"}}",
-    "cpus": "2",
-    "disk_size": "65536",
-    "headless": "",
-    "http_proxy": "{{env `http_proxy`}}",
-    "https_proxy": "{{env `https_proxy`}}",
-    "iso_checksum": "921fd8b271c04aa86a321cc35b40e677f9b85f7903bf2204efb2389b0f0a64c1",
-    "iso_checksum_type": "sha256",
-    "iso_name": "ubuntu-19.10-server-amd64.iso",
-    "memory": "1024",
-    "mirror": "http://cdimage.ubuntu.com",
-    "mirror_directory": "ubuntu/releases/19.10/release",
-    "name": "lubuntu-desktop-19.10",
-    "no_proxy": "{{env `no_proxy`}}",
-    "preseed_path": "preseed.cfg",
-    "template": "lubuntu-desktop-19.10-amd64",
-    "version": "TIMESTAMP"
-  }
+  "post-processors": [
+    {
+      "type": "shell-local",
+      "inline": ["echo Preparing and uploading Vagrant box..."]
+    },
+    [
+      {
+        "type": "vagrant",
+        "vagrantfile_template": "vagrantfile_templates/Vagrantfile.tpl",
+        "output": "../../builds/{{user `box_basename`}}.{{.Provider}}.box"
+      },
+      {
+        "type": "vagrant-cloud",
+        "box_tag": "Jafudi/ludopy",
+        "access_token": "{{user `cloud_token`}}",
+        "version": "{{user `version`}}"
+      }
+    ]
+  ]
 }
