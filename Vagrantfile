@@ -69,5 +69,6 @@ Vagrant.configure("2") do |config|
 
   # documentation for more information about their specific syntax and use.
 
-  config.vm.provision "docker", type: "shell", path: "provision_docker.sh", name: "desktop"
+  config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh", name: "testenv"
+  config.vm.provision "webshare", type: "shell", path: "provision_webserver.sh", name: "webshare"
 end

@@ -84,6 +84,7 @@
         "../_common/sshd.sh",
         "scripts/networking.sh",
         "scripts/sudoers.sh",
+        "scripts/provision_docker.sh",
         "scripts/lubuntu-desktop.sh",
         "scripts/vagrant.sh",
         "../_common/virtualbox.sh",
