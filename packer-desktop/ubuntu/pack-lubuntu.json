@@ -59,7 +59,7 @@
       "iso_checksum": "{{user `iso_checksum`}}",
       "iso_checksum_type": "{{user `iso_checksum_type`}}",
       "iso_url": "{{user `mirror`}}/{{user `mirror_directory`}}/{{user `iso_name`}}",
-      "output_directory": "../../builds/packer-{{user `box_basename`}}-virtualbox",
+      "output_directory": "packer-desktop/builds/packer-{{user `box_basename`}}-virtualbox",
       "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -110,16 +110,16 @@
       "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": true,
       "scripts": [
-        "scripts/update.sh",
-        "../_common/motd.sh",
-        "../_common/sshd.sh",
-        "scripts/networking.sh",
-        "scripts/sudoers.sh",
-        "scripts/provision_docker.sh",
-        "scripts/lubuntu-desktop.sh",
-        "scripts/vagrant.sh",
-        "../_common/virtualbox.sh",
-        "../_common/minimize.sh"
+        "packer-desktop/ubuntu/scripts/update.sh",
+        "packer-desktop/_common/motd.sh",
+        "packer-desktop/_common/sshd.sh",
+        "packer-desktop/ubuntu/scripts/networking.sh",
+        "packer-desktop/ubuntu/scripts/sudoers.sh",
+        "packer-desktop/ubuntu/scripts/provision_docker.sh",
+        "packer-desktop/ubuntu/scripts/lubuntu-desktop.sh",
+        "packer-desktop/ubuntu/scripts/vagrant.sh",
+        "packer-desktop/_common/virtualbox.sh",
+        "packer-desktop/_common/minimize.sh"
       ],
       "type": "shell"
     }
@@ -133,7 +133,7 @@
       {
         "type": "vagrant",
         "vagrantfile_template": "vagrantfile_templates/Vagrantfile.tpl",
-        "output": "../../builds/{{user `box_basename`}}.{{.Provider}}.box"
+        "output": "packer-desktop/builds/{{user `box_basename`}}.{{.Provider}}.box"
       },
       {
         "type": "vagrant-cloud",
