@@ -17,3 +17,4 @@ steps:
       - -var
       - headless=true
       - packer-desktop/ubuntu/pack-lubuntu.json
+timeout: 2400s
