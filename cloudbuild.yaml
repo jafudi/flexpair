@@ -4,7 +4,6 @@ steps:
       - PACKER_LOG=1
     args:
       - build
-      # https://packer.io/docs/other/debugging.html
       - -debug
       - -var
       - image_name=traction-$SHORT_SHA
@@ -14,6 +13,6 @@ steps:
       - image_family=jafudi-traction
       - -var
       - image_zone=europe-west3-b
-      - var
+      - -var
       - headless=true
       - packer-desktop/ubuntu/pack-lubuntu.json
