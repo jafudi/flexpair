@@ -2,4 +2,4 @@
 /**/*.box
 /**/*.ovf
 /**/*.vmdk
-/packer-desktop/ubuntu/packer_cache/*
+/packer_cache/*
