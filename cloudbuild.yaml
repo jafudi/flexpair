@@ -4,6 +4,7 @@ steps:
       - PACKER_LOG=1
     args:
       - build
+      - -only=googlecompute
       - -debug
       - -var
       - image_name=traction-$SHORT_SHA
