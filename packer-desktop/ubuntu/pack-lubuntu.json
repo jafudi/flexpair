@@ -5,7 +5,7 @@
     "image_zone": "",
     "project_id": "",
     "cloud_token": "Nogx0zcrLyqz8w.atlasv1.eRV3NyIlDcw6psnPpVP2xwOPi4oRw9o8H3UNAf4aR7EyRitnMdgXatS7ts3DzcDD2Wc",
-    "version": "1.0.{{isotime \"2006-01-02\"}}",
+    "version": "1.0.0}",
     "box_basename": "lubuntu-docker-python",
     "cpus": "2",
     "disk_size": "65536",
