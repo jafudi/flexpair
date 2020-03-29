@@ -89,7 +89,7 @@
       "project_id": "{{ user `project_id`}}",
       "source_image_family": "ubuntu-minimal-1910",
       "image_family": "{{ user `image_family` }}",
-      "ssh_username": "packer",
+      "ssh_username": "vagrant",
       "instance_name": "{{ user `image_name` }}",
       "zone": "{{ user `image_zone` }}",
       "scopes": [
