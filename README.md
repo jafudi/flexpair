@@ -29,9 +29,9 @@ gitlab-runner register \
     --url="https://gitlab.com/" \
     --registration-token="JW6YYWLG4mTsr_-mSaz8" \
     --executor="virtualbox" \
-    --description="staging-vm" \
+    --description="lubuntu-docker-python" \
     --tag-list="virtualbox" \
-    --virtualbox-base-name="ubuntu_bionic_vbox" \
+    --virtualbox-base-name="lubuntu-docker-python" \
     --virtualbox-disable-snapshots="false" \
     --ssh-user="vagrant" \
     --ssh-password="vagrant" \
