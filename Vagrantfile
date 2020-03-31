@@ -12,7 +12,18 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "Jafudi/ludopy"
+  config.vm.box = "chenhan/lubuntu-desktop-19.04"
+  config.vm.box_version = "20190211.0.0"
+
+   config.vm.provider "virtualbox" do |vb, override|
+      # Display the VirtualBox GUI when booting the machine
+      vb.gui = true
+
+      vb.name = "lubuntu-docker-python"
+
+      # Customize the amount of memory on the VM:
+      vb.memory = "1024"
+   end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -55,6 +66,7 @@ Vagrant.configure("2") do |config|
 
   # documentation for more information about their specific syntax and use.
 
+  config.vm.provision "docker", type: "shell", path: "packer-desktop/ubuntu/scripts/provision_docker.sh", name: "docker"
   config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh", name: "testenv"
-  config.vm.provision "webshare", type: "shell", path: "provision_webserver.sh", name: "webshare"
+  # config.vm.provision "webshare", type: "shell", path: "provision_webserver.sh", name: "webshare"
 end
