@@ -8,6 +8,6 @@ pip3 install behave jsonschema tinydb invoke
 mkdir builds
 chmod --recursive 777 builds
 
- echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
- curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
- sudo dpkg -i gitlab-runner_amd64.deb
+# echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
+# curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb
+# sudo dpkg -i gitlab-runner_amd64.deb
