@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apache2
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apache2
 if ! [ -L /var/www ]; then
     rm -rf /var/www
     ln -fs /vagrant /var/www
