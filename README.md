@@ -1,5 +1,7 @@
 # Getting Started Guide
 
+Based on https://jafudi.net/packer-desktop-ubuntu
+
 ## Production Environment
 Please install the following two pieces of software on the host computer:
 
