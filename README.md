@@ -1,6 +1,6 @@
 # Getting Started Guide
 
-Uses HashiCorp's open source [Packer](https://github.com/hashicorp/packer) tool and Chen-Han Hsiao's excellent [template library](https://github.com/chenhan1218/packer-desktop/tree/desktop/packer_templates/ubuntu) in order to install the [Lubuntu LXQt Desktop](https://lubuntu.me) on top of the official [`ubuntu-19.10-server-amd64.iso`](http://cdimage.ubuntu.com/releases/19.10/release/). Finally, the created Virtualbox VM is exported and uploaded to Vagrant Cloud as https://jafudi.net/vagrant-box.
+Uses HashiCorp's open source [Packer](https://github.com/hashicorp/packer) tool and Chen-Han Hsiao's excellent [template library](https://github.com/chenhan1218/packer-desktop/tree/desktop/packer_templates/ubuntu) in order to install the [Lubuntu LXQt Desktop](https://lubuntu.me) on top of the official [`ubuntu-19.10-server-amd64.iso`](http://cdimage.ubuntu.com/releases/19.10/release/). Finally, the created [VirtualBox](https://www.virtualbox.org) VM is exported and uploaded to Vagrant Cloud as https://jafudi.net/vagrant-box.
 
 ## Production Environment
 Please install the following two pieces of software on the host computer:
