@@ -67,5 +67,7 @@ Vagrant.configure("2") do |config|
 
   # config.vm.provision "docker", type: "shell", path: "packer-desktop/ubuntu/scripts/provision_docker.sh", name: "docker"
   config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh", name: "testenv"
-  # config.vm.provision "webshare", type: "shell", path: "provision_webserver.sh", name: "webshare"
+  config.vm.provision "webshare", type: "shell", path: "provision_webserver.sh", name: "webshare"
+  config.vm.provision "convenience", type: "shell", path: "provision_ux.sh", name: "convenience"
+  provision_ux.sh
 end
