@@ -1,6 +1,6 @@
 # Getting Started Guide
 
-Based on https://jafudi.net/packer-desktop-ubuntu
+Uses HashiCorp's Packer tool and the template library https://jafudi.net/packer-desktop-ubuntu in order to install the Lubuntu LXQt Desktop on top of the official ubuntu-19.10-server-amd64.iso. Finally, the created Virtualbox VM is exported and uploaded to Vagrant Cloud as Jafudi/ludopy.
 
 ## Production Environment
 Please install the following two pieces of software on the host computer:
