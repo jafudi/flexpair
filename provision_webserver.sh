@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apache2
 if ! [ -L /var/www ]; then
@@ -12,4 +10,3 @@ fi
 # https://www.vagrantup.com/docs/synced-folders/virtualbox.html#caveats
 echo -e "EnableSendfile Off" >> /etc/apache2/apache2.conf
 
-apt-get install -y --no-install-recommends firefox
