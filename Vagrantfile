@@ -14,16 +14,6 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "Jafudi/ludopy"
 
-   config.vm.provider "virtualbox" do |vb, override|
-      # Display the VirtualBox GUI when booting the machine
-      vb.gui = true
-
-      vb.name = "lubuntu-docker-python"
-
-      # Customize the amount of memory on the VM:
-      vb.memory = "1024"
-   end
-
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -49,24 +39,10 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.provision "ideops", type: "shell", run: "always" do |s|
+    s.inline = "docker pull jafudi/idea-extractor:latest"
+  end
 
-  # View the documentation for the provider you are using for more
-  # information on available options.
-
-  config.vm.synced_folder ".", "/home/vagrant/host", automount: true
-
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
-
-  # documentation for more information about their specific syntax and use.
-
-  # config.vm.provision "docker", type: "shell", path: "packer-desktop/ubuntu/scripts/provision_docker.sh", name: "docker"
-  config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh", name: "testenv"
-  config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh", name: "webserver"
-  config.vm.provision "browser", type: "shell", path: "provision_browser.sh", name: "browser"
+  config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh"
+  config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh"
 end
