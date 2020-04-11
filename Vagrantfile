@@ -45,10 +45,10 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "app", type: "shell", run: "always" do |s|
+  config.vm.provision "install-latest-release", type: "shell", run: "always" do |s|
     s.path = "provision_app.sh"
   end
 
-  config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh"
-  config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh"
+  config.vm.provision "automated-test-environment", type: "shell", path: "provision_testenv.sh"
+  # config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh"
 end

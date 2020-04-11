@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
 
-DOCKER_IMAGE=$1
-INPUT_FOLDER=$2
-OUTPUT_BASE=$3
-
+if [ $# -lt 3 ]
+then
+    echo "Interactive mode"
+    DOCKER_IMAGE="jafudi/idea-extractor:latest"
+    INPUT_FOLDER=$(kdialog --getexistingdirectory)
+    OUTPUT_BASE=$(kdialog --getexistingdirectory)
+else
+    echo "Unattended mode"
+    DOCKER_IMAGE=$1
+    INPUT_FOLDER=$2
+    OUTPUT_BASE=$3
+fi
 
 sudo docker pull ${DOCKER_IMAGE}
 
 INTERNAL_NETWORK=strictly_internal
 docker network inspect $INTERNAL_NETWORK >/dev/null 2>&1\
     || sudo docker network create --internal $INTERNAL_NETWORK
+
 sudo docker info
 
 sudo docker run\
