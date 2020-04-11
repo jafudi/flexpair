@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 apt-get update
 
 echo "\n\nInstall Python packages required for testing on guest OS..."

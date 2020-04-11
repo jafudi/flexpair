@@ -1,5 +1,7 @@
+#!/usr/bin/env bash
+
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apache2
+DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends apache2
 if ! [ -L /var/www ]; then
     rm -rf /var/www
     ln -fs /home/vagrant/host /var/www

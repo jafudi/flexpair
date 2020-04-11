@@ -39,8 +39,8 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "ideops", type: "shell", run: "always" do |s|
-    s.inline = "docker pull jafudi/idea-extractor:latest"
+  config.vm.provision "app", type: "shell", run: "always" do |s|
+    s.path = "provision_app.sh"
   end
 
   config.vm.provision "testenv", type: "shell", path: "provision_testenv.sh"
