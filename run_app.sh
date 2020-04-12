@@ -4,8 +4,8 @@ if [ $# -lt 3 ]
 then
     echo "Interactive mode"
     DOCKER_IMAGE="jafudi/idea-extractor:latest"
-    INPUT_FOLDER=$(kdialog --getexistingdirectory)
-    OUTPUT_BASE=$(kdialog --getexistingdirectory)
+    INPUT_FOLDER=$(kdialog --getexistingdirectory --title "Bitte Ordner mit Dokumenten auswählen")
+    OUTPUT_BASE=$(kdialog --getexistingdirectory --title "Bitte Ordner für Ausgabe auswählen")
 else
     echo "Unattended mode"
     DOCKER_IMAGE=$1
