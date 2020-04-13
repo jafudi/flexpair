@@ -23,6 +23,8 @@ sudo docker info
 
 sudo docker run\
     --network=strictly_internal\
-    --mount type=bind,source=${INPUT_FOLDER},target=/input\
-    --mount type=bind,source=${OUTPUT_BASE},target=/output\
+    --mount "type=bind,source=${INPUT_FOLDER},target=/input"\
+    --mount "type=bind,source=${OUTPUT_BASE},target=/output"\
     ${DOCKER_IMAGE}
+
+sudo chown -R vagrant ${OUTPUT_BASE}
