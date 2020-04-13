@@ -17,3 +17,5 @@ mkdir -p builds
 chmod --recursive 777 builds
 
 rm -f .bash_logout
+
+DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends featherpad
