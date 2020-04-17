@@ -10,7 +10,7 @@ steps:
       - -var
       - image_name=traction
       - -var
-      - version=$SHORT_SHA
+      - commit_hash=$SHORT_SHA
       - -var
       - project_id=jafudi-1558282200187
       - -var
