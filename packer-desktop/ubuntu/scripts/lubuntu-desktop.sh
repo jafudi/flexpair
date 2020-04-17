@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
 DEBIAN_FRONTEND="noninteractive" apt-get autoremove -y --purge ubuntu-desktop kubuntu-desktop xubuntu-desktop
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends lubuntu-desktop virtualbox-guest-x11 gdm3-
+DEBIAN_FRONTEND="noninteractive" apt-get install --upgrade -y --no-install-recommends lubuntu-desktop virtualbox-guest-x11 gdm3-
 DEBIAN_FRONTEND="noninteractive" apt-get autoremove -y --purge xscreensaver bluedevil
 
 cat << EOF > /etc/sddm.conf
