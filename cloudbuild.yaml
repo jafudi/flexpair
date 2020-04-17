@@ -16,7 +16,7 @@ steps:
       - -var
       - image_name=ideops
       - -var
-      - image_zone=europe-west3-b
+      - image_zone=us-east1-b
       - -var
       - headless=true
       - packer-desktop/ubuntu/pack-lubuntu.json
