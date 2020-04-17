@@ -1,0 +1,78 @@
+{
+    "id": 53531,
+    "name": "Workspace 53531",
+    "description": "An empty workspace.",
+    "revision": 2,
+    "lastModifiedDate": "2020-04-17T22:06:19Z",
+    "lastModifiedUser": "socialnets@jafudi.com",
+    "lastModifiedAgent": "structurizr-web/1848",
+    "model": {
+        "people": [
+            {
+                "id": "7",
+                "tags": "Element,Person",
+                "name": "Human User",
+                "relationships": [
+                    {
+                        "id": "13",
+                        "tags": "Relationship",
+                        "sourceId": "7",
+                        "destinationId": "9",
+                        "description": "starts up",
+                        "technology": "VirtualBox",
+                        "interactionStyle": "Synchronous"
+                    }
+                ],
+                "location": "Unspecified"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "id": "11",
+                "tags": "Element,Software System",
+                "name": "File Storage",
+                "location": "Unspecified"
+            },
+            {
+                "id": "9",
+                "tags": "Element,Software System",
+                "name": "Lubuntu VM",
+                "relationships": [
+                    {
+                        "id": "12",
+                        "tags": "Relationship",
+                        "sourceId": "9",
+                        "destinationId": "11",
+                        "description": "monitor for new files",
+                        "technology": "Folder URL",
+                        "interactionStyle": "Synchronous"
+                    }
+                ],
+                "location": "Unspecified"
+            }
+        ],
+        "deploymentNodes": []
+    },
+    "documentation": {
+        "sections": [],
+        "decisions": [],
+        "images": []
+    },
+    "views": {
+        "configuration": {
+            "branding": {},
+            "styles": {
+                "elements": [],
+                "relationships": []
+            },
+            "terminology": {}
+        },
+        "systemLandscapeViews": [],
+        "systemContextViews": [],
+        "containerViews": [],
+        "componentViews": [],
+        "dynamicViews": [],
+        "deploymentViews": [],
+        "filteredViews": []
+    }
+}
