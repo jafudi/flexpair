@@ -8,7 +8,7 @@ steps:
       - -only=googlecompute
       - -debug
       - -var
-      - image_name=traction
+      - image_name=traction-image
       - -var
       - commit_hash=$SHORT_SHA
       - -var
