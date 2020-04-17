@@ -4,7 +4,7 @@ steps:
       - PACKER_LOG=1
     args:
       - build
-      - force
+      - -force
       - -only=googlecompute
       - -debug
       - -var
