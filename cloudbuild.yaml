@@ -8,13 +8,13 @@ steps:
       - -only=googlecompute
       - -debug
       - -var
-      - image_name=traction-$SHORT_SHA
+      - image_name=traction
+      - -var
+      - version=$SHORT_SHA
       - -var
       - project_id=jafudi-1558282200187
       - -var
       - image_family=jafudi-traction
-      - -var
-      - image_name=ideops
       - -var
       - image_zone=us-east1-b
       - -var
