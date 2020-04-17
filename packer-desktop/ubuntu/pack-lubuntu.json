@@ -140,7 +140,7 @@
         "type": "vagrant-cloud",
         "box_tag": "Jafudi/ludopy",
         "access_token": "{{user `cloud_token`}}",
-        "version": "{{user `version`}}{{env `version_suffix`}}",
+        "version": "{{user `version`}}{{user `version_suffix`}}",
         "no_release": "true"
       }
     ]
