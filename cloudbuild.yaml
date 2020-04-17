@@ -4,6 +4,7 @@ steps:
       - PACKER_LOG=1
     args:
       - build
+      - force
       - -only=googlecompute
       - -debug
       - -var
@@ -12,6 +13,8 @@ steps:
       - project_id=jafudi-1558282200187
       - -var
       - image_family=jafudi-traction
+      - -var
+      - image_name=ideops
       - -var
       - image_zone=europe-west3-b
       - -var

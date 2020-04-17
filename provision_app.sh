@@ -18,4 +18,6 @@ Icon=QMPlay2
 Name=Hier klicken
 EOF
 sudo chmod +x ./Desktop/ideops.desktop
-# does not work that way: dbus-launch gio set ./Desktop/ideops.desktop "metadata::trusted" yes
+
+VBoxClient --clipboard # does not seem to work
+VBoxClient --draganddrop # does not seem to work

@@ -26,6 +26,8 @@ Then, check out this repository and within the checked out folder run:
 vagrant up
 gitlab-runner start
 gitlab-runner unregister --all-runners
+rm -f ~/.gitlab-runner/config.toml
+launchctl setenv PATH $PATH
 gitlab-runner register \
     --non-interactive \
     --url="https://gitlab.com/" \
