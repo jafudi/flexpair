@@ -2,12 +2,18 @@
     "id": 53531,
     "name": "Workspace 53531",
     "description": "An empty workspace.",
-    "revision": 2,
-    "lastModifiedDate": "2020-04-17T22:06:19Z",
+    "revision": 3,
+    "lastModifiedDate": "2020-04-17T23:33:26Z",
     "lastModifiedUser": "socialnets@jafudi.com",
     "lastModifiedAgent": "structurizr-web/1848",
     "model": {
         "people": [
+            {
+                "id": "14",
+                "tags": "Element,Person",
+                "name": "Developer (Me)",
+                "location": "Unspecified"
+            },
             {
                 "id": "7",
                 "tags": "Element,Person",
@@ -28,15 +34,230 @@
         ],
         "softwareSystems": [
             {
+                "id": "20",
+                "tags": "Element,Software System",
+                "name": "automate.io",
+                "location": "Unspecified"
+            },
+            {
+                "id": "64",
+                "tags": "Element,Software System",
+                "name": "Docker Desktop",
+                "location": "Unspecified"
+            },
+            {
+                "id": "17",
+                "tags": "Element,Software System",
+                "name": "Docker Hub [account]",
+                "location": "External",
+                "containers": [
+                    {
+                        "id": "33",
+                        "tags": "Element,Container",
+                        "name": "jafudi/habitat",
+                        "technology": "Docker repository"
+                    },
+                    {
+                        "id": "34",
+                        "tags": "Element,Container",
+                        "name": "jafudi/ideops",
+                        "technology": "Docker repository"
+                    }
+                ]
+            },
+            {
+                "id": "25",
+                "tags": "Element,Software System",
+                "name": "Docker Hub [external]",
+                "location": "External",
+                "containers": [
+                    {
+                        "id": "60",
+                        "tags": "Element,Container",
+                        "name": "arangodb:3.6",
+                        "technology": "Docker image"
+                    },
+                    {
+                        "id": "59",
+                        "tags": "Element,Container",
+                        "name": "python:3.7",
+                        "technology": "Docker image"
+                    }
+                ]
+            },
+            {
+                "id": "18",
+                "tags": "Element,Software System",
+                "name": "GitHub",
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "53",
+                        "tags": "Element,Container",
+                        "name": "habitat repo",
+                        "components": [
+                            {
+                                "id": "55",
+                                "tags": "Element,Component",
+                                "name": "Actions",
+                                "size": 0
+                            },
+                            {
+                                "id": "56",
+                                "tags": "Element,Component",
+                                "name": "Source code",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "52",
+                        "tags": "Element,Container",
+                        "name": "traction repo",
+                        "components": [
+                            {
+                                "id": "57",
+                                "tags": "Element,Component",
+                                "name": "Actions",
+                                "size": 0
+                            },
+                            {
+                                "id": "58",
+                                "tags": "Element,Component",
+                                "name": "Source code",
+                                "size": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "19",
+                "tags": "Element,Software System",
+                "name": "GitLab",
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "32",
+                        "tags": "Element,Container",
+                        "name": "CI pipeline"
+                    },
+                    {
+                        "id": "30",
+                        "tags": "Element,Container",
+                        "name": "Container Registry",
+                        "technology": "Docker registry"
+                    },
+                    {
+                        "id": "31",
+                        "tags": "Element,Container",
+                        "name": "Git repository",
+                        "technology": "Git"
+                    }
+                ]
+            },
+            {
+                "id": "16",
+                "tags": "Element,Software System",
+                "name": "Google Cloud",
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "28",
+                        "tags": "Element,Container",
+                        "name": "Cloud Build"
+                    },
+                    {
+                        "id": "29",
+                        "tags": "Element,Container",
+                        "name": "Compute Images"
+                    }
+                ]
+            },
+            {
+                "id": "24",
+                "tags": "Element,Software System",
+                "name": "InternetWerk Webspace",
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "49",
+                        "tags": "Element,Container",
+                        "name": "Mail server"
+                    },
+                    {
+                        "id": "50",
+                        "tags": "Element,Container",
+                        "name": "NextCloud"
+                    },
+                    {
+                        "id": "48",
+                        "tags": "Element,Container",
+                        "name": "WordPress blog"
+                    }
+                ]
+            },
+            {
+                "id": "65",
+                "tags": "Element,Software System",
+                "name": "Packer CLI",
+                "location": "Internal"
+            },
+            {
+                "id": "22",
+                "tags": "Element,Software System",
+                "name": "Python Package Index",
+                "location": "External"
+            },
+            {
+                "id": "23",
+                "tags": "Element,Software System",
+                "name": "Ubuntu Repositories",
+                "location": "External"
+            },
+            {
                 "id": "11",
                 "tags": "Element,Software System",
-                "name": "File Storage",
+                "name": "User's Machine",
+                "location": "External"
+            },
+            {
+                "id": "66",
+                "tags": "Element,Software System",
+                "name": "Vagrant CLI",
                 "location": "Unspecified"
+            },
+            {
+                "id": "21",
+                "tags": "Element,Software System",
+                "name": "Vagrant Cloud",
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "35",
+                        "tags": "Element,Container",
+                        "name": "Jafudi/ludopy box",
+                        "components": [
+                            {
+                                "id": "37",
+                                "tags": "Element,Component",
+                                "name": "Google Cloud specs",
+                                "size": 0
+                            },
+                            {
+                                "id": "36",
+                                "tags": "Element,Component",
+                                "name": "VirtualBox appliance",
+                                "size": 0
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": "9",
                 "tags": "Element,Software System",
-                "name": "Lubuntu VM",
+                "name": "VirtualBox",
                 "relationships": [
                     {
                         "id": "12",
@@ -48,10 +269,92 @@
                         "interactionStyle": "Synchronous"
                     }
                 ],
-                "location": "Unspecified"
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "39",
+                        "tags": "Element,Container",
+                        "name": "Docker stack",
+                        "technology": "Docker stack",
+                        "components": [
+                            {
+                                "id": "42",
+                                "tags": "Element,Component",
+                                "name": "Apache Tika Server",
+                                "technology": "Docker container",
+                                "size": 0
+                            },
+                            {
+                                "id": "41",
+                                "tags": "Element,Component",
+                                "name": "ArangoDB NoSQL",
+                                "technology": "Docker container",
+                                "size": 0
+                            },
+                            {
+                                "id": "40",
+                                "tags": "Element,Component",
+                                "name": "ideops Orchestrator",
+                                "technology": "Docker container",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "46",
+                        "tags": "Element,Container",
+                        "name": "run_app.sh",
+                        "technology": "kdialogs"
+                    }
+                ]
             }
         ],
-        "deploymentNodes": []
+        "deploymentNodes": [
+            {
+                "id": "72",
+                "tags": "Element,Deployment Node",
+                "name": "Documents",
+                "environment": "End user's machine",
+                "instances": 1,
+                "children": [],
+                "containerInstances": []
+            },
+            {
+                "id": "70",
+                "tags": "Element,Deployment Node",
+                "name": "Downloads",
+                "environment": "End user's machine",
+                "instances": 1,
+                "children": [],
+                "containerInstances": []
+            },
+            {
+                "id": "61",
+                "tags": "Element,Deployment Node",
+                "name": "VirtualBox VM",
+                "environment": "End user's machine",
+                "instances": 1,
+                "containerInstances": [
+                    {
+                        "id": "67",
+                        "tags": "Container Instance",
+                        "environment": "End user's machine",
+                        "containerId": "39",
+                        "instanceId": 1,
+                        "properties": {}
+                    },
+                    {
+                        "id": "68",
+                        "tags": "Container Instance",
+                        "environment": "End user's machine",
+                        "containerId": "46",
+                        "instanceId": 1,
+                        "properties": {}
+                    }
+                ],
+                "children": []
+            }
+        ]
     },
     "documentation": {
         "sections": [],
