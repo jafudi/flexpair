@@ -2,8 +2,8 @@
     "id": 53531,
     "name": "Workspace 53531",
     "description": "An empty workspace.",
-    "revision": 3,
-    "lastModifiedDate": "2020-04-17T23:33:26Z",
+    "revision": 4,
+    "lastModifiedDate": "2020-04-18T08:48:23Z",
     "lastModifiedUser": "socialnets@jafudi.com",
     "lastModifiedAgent": "structurizr-web/1848",
     "model": {
@@ -12,7 +12,7 @@
                 "id": "14",
                 "tags": "Element,Person",
                 "name": "Developer (Me)",
-                "location": "Unspecified"
+                "location": "Internal"
             },
             {
                 "id": "7",
@@ -29,7 +29,7 @@
                         "interactionStyle": "Synchronous"
                     }
                 ],
-                "location": "Unspecified"
+                "location": "External"
             }
         ],
         "softwareSystems": [
@@ -37,13 +37,55 @@
                 "id": "20",
                 "tags": "Element,Software System",
                 "name": "automate.io",
-                "location": "Unspecified"
+                "location": "External",
+                "containers": [
+                    {
+                        "id": "77",
+                        "tags": "Element,Container",
+                        "name": "Webhook from webhook",
+                        "components": [
+                            {
+                                "id": "80",
+                                "tags": "Element,Component",
+                                "name": "Notify traction repo about new release",
+                                "size": 0
+                            },
+                            {
+                                "id": "81",
+                                "tags": "Element,Component",
+                                "name": "Post new product release on WordPress",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "78",
+                        "tags": "Element,Container",
+                        "name": "Webhook to email",
+                        "components": [
+                            {
+                                "id": "79",
+                                "tags": "Element,Component",
+                                "name": "GitLab issue for testing new base image",
+                                "size": 0
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "id": "64",
                 "tags": "Element,Software System",
                 "name": "Docker Desktop",
-                "location": "Unspecified"
+                "location": "Internal",
+                "containers": [
+                    {
+                        "id": "85",
+                        "tags": "Element,Container",
+                        "name": "jafudi/habitat",
+                        "technology": "Docker container"
+                    }
+                ]
             },
             {
                 "id": "17",
@@ -55,7 +97,21 @@
                         "id": "33",
                         "tags": "Element,Container",
                         "name": "jafudi/habitat",
-                        "technology": "Docker repository"
+                        "technology": "Docker repository",
+                        "components": [
+                            {
+                                "id": "82",
+                                "tags": "Element,Component",
+                                "name": "latest",
+                                "size": 0
+                            },
+                            {
+                                "id": "83",
+                                "tags": "Element,Component",
+                                "name": "semantic tags",
+                                "size": 0
+                            }
+                        ]
                     },
                     {
                         "id": "34",
@@ -89,7 +145,7 @@
                 "id": "18",
                 "tags": "Element,Software System",
                 "name": "GitHub",
-                "location": "Unspecified",
+                "location": "External",
                 "containers": [
                     {
                         "id": "53",
@@ -135,7 +191,7 @@
                 "id": "19",
                 "tags": "Element,Software System",
                 "name": "GitLab",
-                "location": "Unspecified",
+                "location": "External",
                 "containers": [
                     {
                         "id": "32",
@@ -146,13 +202,42 @@
                         "id": "30",
                         "tags": "Element,Container",
                         "name": "Container Registry",
-                        "technology": "Docker registry"
+                        "technology": "Docker registry",
+                        "components": [
+                            {
+                                "id": "73",
+                                "tags": "Element,Component",
+                                "name": "Release candidate",
+                                "technology": "Docker image",
+                                "size": 0
+                            }
+                        ]
                     },
                     {
                         "id": "31",
                         "tags": "Element,Container",
                         "name": "Git repository",
-                        "technology": "Git"
+                        "technology": "Git",
+                        "components": [
+                            {
+                                "id": "76",
+                                "tags": "Element,Component",
+                                "name": "branches",
+                                "size": 0
+                            },
+                            {
+                                "id": "74",
+                                "tags": "Element,Component",
+                                "name": "master",
+                                "size": 0
+                            },
+                            {
+                                "id": "75",
+                                "tags": "Element,Component",
+                                "name": "tags",
+                                "size": 0
+                            }
+                        ]
                     }
                 ]
             },
@@ -160,7 +245,7 @@
                 "id": "16",
                 "tags": "Element,Software System",
                 "name": "Google Cloud",
-                "location": "Unspecified",
+                "location": "External",
                 "containers": [
                     {
                         "id": "28",
@@ -178,7 +263,7 @@
                 "id": "24",
                 "tags": "Element,Software System",
                 "name": "InternetWerk Webspace",
-                "location": "Unspecified",
+                "location": "External",
                 "containers": [
                     {
                         "id": "49",
@@ -201,7 +286,116 @@
                 "id": "65",
                 "tags": "Element,Software System",
                 "name": "Packer CLI",
-                "location": "Internal"
+                "location": "Internal",
+                "containers": [
+                    {
+                        "id": "99",
+                        "tags": "Element,Container",
+                        "name": "Builders config",
+                        "components": [
+                            {
+                                "id": "104",
+                                "tags": "Element,Component",
+                                "name": "googlecompute",
+                                "size": 0
+                            },
+                            {
+                                "id": "103",
+                                "tags": "Element,Component",
+                                "name": "virtualbox-iso",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "102",
+                        "tags": "Element,Container",
+                        "name": "cloudbuild.yaml"
+                    },
+                    {
+                        "id": "94",
+                        "tags": "Element,Container",
+                        "name": "pack_box.sh"
+                    },
+                    {
+                        "id": "100",
+                        "tags": "Element,Container",
+                        "name": "Post-processors config",
+                        "components": [
+                            {
+                                "id": "105",
+                                "tags": "Element,Component",
+                                "name": "vagrant",
+                                "size": 0
+                            },
+                            {
+                                "id": "106",
+                                "tags": "Element,Component",
+                                "name": "vagrant-cloud",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "101",
+                        "tags": "Element,Container",
+                        "name": "Provisioners config",
+                        "components": [
+                            {
+                                "id": "107",
+                                "tags": "Element,Component",
+                                "name": "docker-python.sh",
+                                "size": 0
+                            },
+                            {
+                                "id": "109",
+                                "tags": "Element,Component",
+                                "name": "firefox-homepage.sh",
+                                "size": 0
+                            },
+                            {
+                                "id": "108",
+                                "tags": "Element,Component",
+                                "name": "lubuntu-desktop.sh",
+                                "size": 0
+                            },
+                            {
+                                "id": "110",
+                                "tags": "Element,Component",
+                                "name": "other shell scripts",
+                                "size": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "84",
+                "tags": "Element,Software System",
+                "name": "PyCharm",
+                "location": "Internal",
+                "containers": [
+                    {
+                        "id": "91",
+                        "tags": "Element,Container",
+                        "name": "BDD integration"
+                    },
+                    {
+                        "id": "89",
+                        "tags": "Element,Container",
+                        "name": "Git plugin"
+                    },
+                    {
+                        "id": "88",
+                        "tags": "Element,Container",
+                        "name": "Python interpreter"
+                    },
+                    {
+                        "id": "90",
+                        "tags": "Element,Container",
+                        "name": "Vagrant integration"
+                    }
+                ]
             },
             {
                 "id": "22",
@@ -213,7 +407,19 @@
                 "id": "23",
                 "tags": "Element,Software System",
                 "name": "Ubuntu Repositories",
-                "location": "External"
+                "location": "External",
+                "containers": [
+                    {
+                        "id": "93",
+                        "tags": "Element,Container",
+                        "name": "Packages"
+                    },
+                    {
+                        "id": "92",
+                        "tags": "Element,Container",
+                        "name": "Ubuntu server ISO"
+                    }
+                ]
             },
             {
                 "id": "11",
@@ -225,13 +431,25 @@
                 "id": "66",
                 "tags": "Element,Software System",
                 "name": "Vagrant CLI",
-                "location": "Unspecified"
+                "location": "Internal",
+                "containers": [
+                    {
+                        "id": "86",
+                        "tags": "Element,Container",
+                        "name": "Jafudi/ludopy basebox"
+                    },
+                    {
+                        "id": "87",
+                        "tags": "Element,Container",
+                        "name": "Vagrantfile"
+                    }
+                ]
             },
             {
                 "id": "21",
                 "tags": "Element,Software System",
                 "name": "Vagrant Cloud",
-                "location": "Unspecified",
+                "location": "External",
                 "containers": [
                     {
                         "id": "35",
@@ -269,7 +487,7 @@
                         "interactionStyle": "Synchronous"
                     }
                 ],
-                "location": "Unspecified",
+                "location": "Internal",
                 "containers": [
                     {
                         "id": "39",
