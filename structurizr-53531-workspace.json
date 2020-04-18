@@ -2,8 +2,8 @@
     "id": 53531,
     "name": "Workspace 53531",
     "description": "An empty workspace.",
-    "revision": 4,
-    "lastModifiedDate": "2020-04-18T08:48:23Z",
+    "revision": 5,
+    "lastModifiedDate": "2020-04-18T10:07:14Z",
     "lastModifiedUser": "socialnets@jafudi.com",
     "lastModifiedAgent": "structurizr-web/1848",
     "model": {
@@ -43,17 +43,20 @@
                         "id": "77",
                         "tags": "Element,Container",
                         "name": "Webhook from webhook",
+                        "technology": "automate.io",
                         "components": [
                             {
                                 "id": "80",
                                 "tags": "Element,Component",
-                                "name": "Notify traction repo about new release",
+                                "name": "Bot: Notify traction repo about new release",
+                                "technology": "automate.io",
                                 "size": 0
                             },
                             {
                                 "id": "81",
                                 "tags": "Element,Component",
-                                "name": "Post new product release on WordPress",
+                                "name": "Bot: Post new product release on WordPress",
+                                "technology": "automate.io",
                                 "size": 0
                             }
                         ]
@@ -62,11 +65,13 @@
                         "id": "78",
                         "tags": "Element,Container",
                         "name": "Webhook to email",
+                        "technology": "automate.io",
                         "components": [
                             {
                                 "id": "79",
                                 "tags": "Element,Component",
-                                "name": "GitLab issue for testing new base image",
+                                "name": "Bot: GitLab issue for testing new base image",
+                                "technology": "automate.io",
                                 "size": 0
                             }
                         ]
@@ -82,8 +87,8 @@
                     {
                         "id": "85",
                         "tags": "Element,Container",
-                        "name": "jafudi/habitat",
-                        "technology": "Docker container"
+                        "name": "Container: jafudi/habitat",
+                        "technology": "Docker"
                     }
                 ]
             },
@@ -96,19 +101,21 @@
                     {
                         "id": "33",
                         "tags": "Element,Container",
-                        "name": "jafudi/habitat",
-                        "technology": "Docker repository",
+                        "name": "Repo: jafudi/habitat",
+                        "technology": "Docker",
                         "components": [
                             {
                                 "id": "82",
                                 "tags": "Element,Component",
-                                "name": "latest",
+                                "name": "Tag: latest",
+                                "technology": "Docker",
                                 "size": 0
                             },
                             {
                                 "id": "83",
                                 "tags": "Element,Component",
-                                "name": "semantic tags",
+                                "name": "Tag: semantic versions",
+                                "technology": "Docker",
                                 "size": 0
                             }
                         ]
@@ -116,8 +123,17 @@
                     {
                         "id": "34",
                         "tags": "Element,Container",
-                        "name": "jafudi/ideops",
-                        "technology": "Docker repository"
+                        "name": "Repo: jafudi/ideops",
+                        "technology": "Docker",
+                        "components": [
+                            {
+                                "id": "111",
+                                "tags": "Element,Component",
+                                "name": "Tag: latest",
+                                "technology": "Docker",
+                                "size": 0
+                            }
+                        ]
                     }
                 ]
             },
@@ -130,14 +146,14 @@
                     {
                         "id": "60",
                         "tags": "Element,Container",
-                        "name": "arangodb:3.6",
-                        "technology": "Docker image"
+                        "name": "Repo: arangodb:3.6",
+                        "technology": "Docker"
                     },
                     {
                         "id": "59",
                         "tags": "Element,Container",
-                        "name": "python:3.7",
-                        "technology": "Docker image"
+                        "name": "Repo: python:3.7",
+                        "technology": "Docker"
                     }
                 ]
             },
@@ -150,7 +166,8 @@
                     {
                         "id": "53",
                         "tags": "Element,Container",
-                        "name": "habitat repo",
+                        "name": "Repo jafudi/habitat",
+                        "technology": "Git",
                         "components": [
                             {
                                 "id": "55",
@@ -162,6 +179,7 @@
                                 "id": "56",
                                 "tags": "Element,Component",
                                 "name": "Source code",
+                                "technology": "Git",
                                 "size": 0
                             }
                         ]
@@ -169,7 +187,8 @@
                     {
                         "id": "52",
                         "tags": "Element,Container",
-                        "name": "traction repo",
+                        "name": "Repo: jafudi/traction",
+                        "technology": "Git",
                         "components": [
                             {
                                 "id": "57",
@@ -181,6 +200,7 @@
                                 "id": "58",
                                 "tags": "Element,Component",
                                 "name": "Source code",
+                                "technology": "Git",
                                 "size": 0
                             }
                         ]
@@ -196,19 +216,64 @@
                     {
                         "id": "32",
                         "tags": "Element,Container",
-                        "name": "CI pipeline"
+                        "name": "CI pipeline",
+                        "technology": "Docker",
+                        "components": [
+                            {
+                                "id": "116",
+                                "tags": "Element,Component",
+                                "name": "Job build_package",
+                                "technology": "Docker",
+                                "size": 0
+                            },
+                            {
+                                "id": "118",
+                                "tags": "Element,Component",
+                                "name": "Job containerize",
+                                "technology": "Docker",
+                                "size": 0
+                            },
+                            {
+                                "id": "120",
+                                "tags": "Element,Component",
+                                "name": "Job docker_release",
+                                "technology": "Docker",
+                                "size": 0
+                            },
+                            {
+                                "id": "119",
+                                "tags": "Element,Component",
+                                "name": "Job stage_virtualbox",
+                                "technology": "VirtualBox",
+                                "size": 0
+                            },
+                            {
+                                "id": "115",
+                                "tags": "Element,Component",
+                                "name": "Job test_coverage",
+                                "technology": "Docker",
+                                "size": 0
+                            },
+                            {
+                                "id": "117",
+                                "tags": "Element,Component",
+                                "name": "Job test_package",
+                                "technology": "Docker",
+                                "size": 0
+                            }
+                        ]
                     },
                     {
                         "id": "30",
                         "tags": "Element,Container",
                         "name": "Container Registry",
-                        "technology": "Docker registry",
+                        "technology": "Docker",
                         "components": [
                             {
                                 "id": "73",
                                 "tags": "Element,Component",
                                 "name": "Release candidate",
-                                "technology": "Docker image",
+                                "technology": "Docker",
                                 "size": 0
                             }
                         ]
@@ -223,18 +288,21 @@
                                 "id": "76",
                                 "tags": "Element,Component",
                                 "name": "branches",
+                                "technology": "Git",
                                 "size": 0
                             },
                             {
                                 "id": "74",
                                 "tags": "Element,Component",
                                 "name": "master",
+                                "technology": "Git",
                                 "size": 0
                             },
                             {
                                 "id": "75",
                                 "tags": "Element,Component",
                                 "name": "tags",
+                                "technology": "Git",
                                 "size": 0
                             }
                         ]
@@ -250,12 +318,23 @@
                     {
                         "id": "28",
                         "tags": "Element,Container",
-                        "name": "Cloud Build"
+                        "name": "Cloud Build",
+                        "technology": "Google Cloud Platform"
                     },
                     {
                         "id": "29",
                         "tags": "Element,Container",
-                        "name": "Compute Images"
+                        "name": "Compute Images",
+                        "technology": "Google Cloud Platform",
+                        "components": [
+                            {
+                                "id": "121",
+                                "tags": "Element,Component",
+                                "name": "traction-image",
+                                "technology": "Google Cloud Platform",
+                                "size": 0
+                            }
+                        ]
                     }
                 ]
             },
@@ -278,7 +357,8 @@
                     {
                         "id": "48",
                         "tags": "Element,Container",
-                        "name": "WordPress blog"
+                        "name": "WordPress blog",
+                        "technology": "WordPress"
                     }
                 ]
             },
@@ -292,17 +372,20 @@
                         "id": "99",
                         "tags": "Element,Container",
                         "name": "Builders config",
+                        "technology": "HashiCorp",
                         "components": [
                             {
                                 "id": "104",
                                 "tags": "Element,Component",
                                 "name": "googlecompute",
+                                "technology": "HashiCorp",
                                 "size": 0
                             },
                             {
                                 "id": "103",
                                 "tags": "Element,Component",
                                 "name": "virtualbox-iso",
+                                "technology": "HashiCorp",
                                 "size": 0
                             }
                         ]
@@ -310,28 +393,33 @@
                     {
                         "id": "102",
                         "tags": "Element,Container",
-                        "name": "cloudbuild.yaml"
+                        "name": "cloudbuild.yaml",
+                        "technology": "Google Cloud Platform"
                     },
                     {
                         "id": "94",
                         "tags": "Element,Container",
-                        "name": "pack_box.sh"
+                        "name": "pack_box.sh",
+                        "technology": "Bash"
                     },
                     {
                         "id": "100",
                         "tags": "Element,Container",
                         "name": "Post-processors config",
+                        "technology": "HashiCorp",
                         "components": [
                             {
                                 "id": "105",
                                 "tags": "Element,Component",
                                 "name": "vagrant",
+                                "technology": "HashiCorp",
                                 "size": 0
                             },
                             {
                                 "id": "106",
                                 "tags": "Element,Component",
                                 "name": "vagrant-cloud",
+                                "technology": "HashiCorp",
                                 "size": 0
                             }
                         ]
@@ -340,29 +428,34 @@
                         "id": "101",
                         "tags": "Element,Container",
                         "name": "Provisioners config",
+                        "technology": "HashiCorp",
                         "components": [
                             {
                                 "id": "107",
                                 "tags": "Element,Component",
                                 "name": "docker-python.sh",
+                                "technology": "Bash",
                                 "size": 0
                             },
                             {
                                 "id": "109",
                                 "tags": "Element,Component",
                                 "name": "firefox-homepage.sh",
+                                "technology": "Bash",
                                 "size": 0
                             },
                             {
                                 "id": "108",
                                 "tags": "Element,Component",
                                 "name": "lubuntu-desktop.sh",
+                                "technology": "Bash",
                                 "size": 0
                             },
                             {
                                 "id": "110",
                                 "tags": "Element,Component",
                                 "name": "other shell scripts",
+                                "technology": "Bash",
                                 "size": 0
                             }
                         ]
@@ -378,22 +471,26 @@
                     {
                         "id": "91",
                         "tags": "Element,Container",
-                        "name": "BDD integration"
+                        "name": "BDD integration",
+                        "technology": "Python"
                     },
                     {
                         "id": "89",
                         "tags": "Element,Container",
-                        "name": "Git plugin"
+                        "name": "Git plugin",
+                        "technology": "Git"
                     },
                     {
                         "id": "88",
                         "tags": "Element,Container",
-                        "name": "Python interpreter"
+                        "name": "Python interpreter",
+                        "technology": "Python"
                     },
                     {
                         "id": "90",
                         "tags": "Element,Container",
-                        "name": "Vagrant integration"
+                        "name": "Vagrant integration",
+                        "technology": "HashiCorp"
                     }
                 ]
             },
@@ -412,20 +509,16 @@
                     {
                         "id": "93",
                         "tags": "Element,Container",
-                        "name": "Packages"
+                        "name": "Packages",
+                        "technology": "Ubuntu Linux"
                     },
                     {
                         "id": "92",
                         "tags": "Element,Container",
-                        "name": "Ubuntu server ISO"
+                        "name": "Ubuntu server ISO",
+                        "technology": "Ubuntu Linux"
                     }
                 ]
-            },
-            {
-                "id": "11",
-                "tags": "Element,Software System",
-                "name": "User's Machine",
-                "location": "External"
             },
             {
                 "id": "66",
@@ -436,12 +529,14 @@
                     {
                         "id": "86",
                         "tags": "Element,Container",
-                        "name": "Jafudi/ludopy basebox"
+                        "name": "Jafudi/ludopy basebox",
+                        "technology": "HashiCorp"
                     },
                     {
                         "id": "87",
                         "tags": "Element,Container",
-                        "name": "Vagrantfile"
+                        "name": "Vagrantfile",
+                        "technology": "HashiCorp"
                     }
                 ]
             },
@@ -455,17 +550,20 @@
                         "id": "35",
                         "tags": "Element,Container",
                         "name": "Jafudi/ludopy box",
+                        "technology": "HashiCorp",
                         "components": [
                             {
                                 "id": "37",
                                 "tags": "Element,Component",
                                 "name": "Google Cloud specs",
+                                "technology": "Google Cloud Platform",
                                 "size": 0
                             },
                             {
                                 "id": "36",
                                 "tags": "Element,Component",
                                 "name": "VirtualBox appliance",
+                                "technology": "VirtualBox",
                                 "size": 0
                             }
                         ]
@@ -476,44 +574,33 @@
                 "id": "9",
                 "tags": "Element,Software System",
                 "name": "VirtualBox",
-                "relationships": [
-                    {
-                        "id": "12",
-                        "tags": "Relationship",
-                        "sourceId": "9",
-                        "destinationId": "11",
-                        "description": "monitor for new files",
-                        "technology": "Folder URL",
-                        "interactionStyle": "Synchronous"
-                    }
-                ],
                 "location": "Internal",
                 "containers": [
                     {
                         "id": "39",
                         "tags": "Element,Container",
                         "name": "Docker stack",
-                        "technology": "Docker stack",
+                        "technology": "Docker",
                         "components": [
                             {
                                 "id": "42",
                                 "tags": "Element,Component",
                                 "name": "Apache Tika Server",
-                                "technology": "Docker container",
+                                "technology": "Java",
                                 "size": 0
                             },
                             {
                                 "id": "41",
                                 "tags": "Element,Component",
                                 "name": "ArangoDB NoSQL",
-                                "technology": "Docker container",
+                                "technology": "ArangoDB",
                                 "size": 0
                             },
                             {
                                 "id": "40",
                                 "tags": "Element,Component",
                                 "name": "ideops Orchestrator",
-                                "technology": "Docker container",
+                                "technology": "Python",
                                 "size": 0
                             }
                         ]
