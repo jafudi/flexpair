@@ -14,12 +14,13 @@
     "http_proxy": "{{env `http_proxy`}}",
     "https_proxy": "{{env `https_proxy`}}",
     "iso_checksum_type": "sha256",
-    "iso_name": "ubuntu-19.10-server-amd64.iso",
+    "iso_name": "ubuntu-20.04-legacy-server-amd64.iso",
     "memory": "1024",
     "mirror": "http://cdimage.ubuntu.com",
-    "mirror_directory": "ubuntu/releases/19.10/release",
+    "mirror_directory": "ubuntu-legacy-server/releases/20.04/release",
     "no_proxy": "{{env `no_proxy`}}",
-    "preseed_path": "preseed.cfg"
+    "preseed_path": "preseed.cfg",
+    "template": "lubuntu-desktop-20.04-amd64"
   },
   "builders": [
     {
@@ -64,24 +65,12 @@
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "10000s",
+      "ssh_timeout": "10000s",
       "type": "virtualbox-iso",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "{{ user `memory` }}"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "{{ user `cpus` }}"
-        ]
-      ],
+      "memory": "{{ user `memory` }}",
+      "cpus": "{{ user `cpus` }}",
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "{{ user `template` }}"
+      "vm_name": "packer-{{ user `box_basename` }}"
     },
     {
       "image_name": "{{ user `image_name` }}",
