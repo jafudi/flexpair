@@ -8,14 +8,15 @@ pip3 install setuptools
 pip3 install behave jsonschema tinydb invoke
 
 echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
-DEB_FILE="gitlab-runner_amd64.deb"
-curl -LJO https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/${DEB_FILE}
-dpkg -i ${DEB_FILE}
-rm -f ${DEB_FILE}
+curl --silent -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y gitlab-runner
+
+echo 'gitlab-runner ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+usermod -aG docker gitlab-runner
 
 mkdir -p builds
 chmod --recursive 777 builds
-
 rm -f .bash_logout
 
-DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends featherpad
+
+

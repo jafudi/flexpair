@@ -13,18 +13,20 @@ else
     OUTPUT_BASE=$3
 fi
 
-sudo docker pull ${DOCKER_IMAGE}
+docker pull ${DOCKER_IMAGE}
 
 INTERNAL_NETWORK=strictly_internal
 docker network inspect $INTERNAL_NETWORK >/dev/null 2>&1\
-    || sudo docker network create --internal $INTERNAL_NETWORK
+    || docker network create --internal $INTERNAL_NETWORK
 
-sudo docker info
+docker info
 
-sudo docker run\
+# sudo docker stack deploy --compose-file docker-stack.yaml test
+
+docker run\
     --network=strictly_internal\
     --mount "type=bind,source=${INPUT_FOLDER},target=/input"\
     --mount "type=bind,source=${OUTPUT_BASE},target=/output"\
     ${DOCKER_IMAGE}
 
-sudo chown -R vagrant ${OUTPUT_BASE}
+sudo chmod 777 -R ${OUTPUT_BASE}
