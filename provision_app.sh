@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-docker pull jafudi/idea-extractor:latest
-
 DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends kdialog elementary-icon-theme
 # https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/issues/418#issuecomment-295385819
 
 cd /home/vagrant/
 cp ./host/run_app.sh .
 sudo chmod +x run_app.sh
+
+docker pull jafudi/idea-extractor:latest
 
 cat << EOF | sudo tee ./Desktop/ideops.desktop
 [Desktop Entry]
@@ -19,5 +19,3 @@ Name=Hier klicken
 EOF
 sudo chmod +x ./Desktop/ideops.desktop
 
-VBoxClient --clipboard # does not seem to work
-VBoxClient --draganddrop # does not seem to work

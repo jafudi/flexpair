@@ -45,9 +45,9 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "oracle-cloud-config", type: "shell", path: "provision_oci.sh"
+  config.vm.provision "oracle-cloud-config", type: "shell", path: "provision_oci_config.sh"
 
-  config.vm.provision "automated-test-environment", type: "shell", path: "provision_testenv.sh"
+  config.vm.provision "automated-test-environment", type: "shell", path: "provision_gitlab_runner.sh"
 
   config.vm.provision "install-latest-release", type: "shell", run: "always" do |s|
     s.path = "provision_app.sh"
