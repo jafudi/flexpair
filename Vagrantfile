@@ -55,7 +55,7 @@ Vagrant.configure("2") do |config|
 
   # config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh"
 
-  config.trigger.after [:provision] do |t|
+  config.trigger.after [:up, :provision] do |t|
     t.name = "Reboot after provisioning"
     t.run = { :inline => "vagrant reload" }
   end

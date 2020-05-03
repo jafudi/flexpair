@@ -20,7 +20,12 @@ runcmd:
         --url="https://gitlab.com/"
         --registration-token="JW6YYWLG4mTsr_-mSaz8"
         --executor="shell"
-        --description="ludopy-local-shell"
-        --tag-list="localhost,bash"
+        --description="ludopy-shell-executor"
+        --tag-list="ubuntu,bash"
     - sudo gitlab-runner restart
     - sudo gitlab-runner status
+
+# add each entry to ~/.ssh/authorized_keys for the configured user or the
+# first user defined in the user definition directive.
+ssh_authorized_keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEV7dg3elkqbE0XCwWWpBeiNYyLt0JZCnQSBTt6MDJ7VTZJAMa2wY0Rqog6F5FBvWu+RFIq1e4tbzQK16iQn9rs/TU1bG5TrNIoqtvekrofPEoghc+L0zEgvC3KQxD/SUl6iZtwf9zBDB0eEcvl0NOPFLMgfazDDak49w8mdYgh4oCVfAvlBqsYi+YJ+fnQhhLYSmnSBu8VxaZg/Ztid5QYlKhVeF6SNIZ9BSM9BG1N7iF6zRwm7qoha0Aes+pwiXEMiavCpUXHg0FL043PsbqRz0HpjJ+fGXfFbHdKdZPwCSXYneqBbAyfNgeMdEPKZVtfcsyLKGpbDMPIfCJporrhrbOo/3mcutMwj35bDxOLYaE410owe2AYo7o5fvBfe3dk5TYBOEWlOELJQF435HsB1Yt8OYHJH1RlN4tc4thH8i1znGUSTBfLdYNRKENGlMExr7mSGxAVBgsAicv8G/6u/uGDw2J0ZJz5l9pIjTP6YCmmkut6Dd7ffafD6Pbp6E= jens@Jenss-MBP.fritz.box
