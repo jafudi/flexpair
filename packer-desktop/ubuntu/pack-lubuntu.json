@@ -116,22 +116,9 @@
   ],
   "post-processors": [
     {
-      "type": "shell-local",
-      "inline": ["echo Preparing and uploading Vagrant box..."]
-    },
-    [
-      {
-        "type": "vagrant",
-        "vagrantfile_template": "packer-desktop/ubuntu/vagrantfile_templates/Vagrantfile.tpl",
-        "output": "packer-desktop/builds/{{user `box_basename`}}.{{.Provider}}.box"
-      },
-      {
-        "type": "vagrant-cloud",
-        "box_tag": "Jafudi/ludopy",
-        "access_token": "{{user `cloud_token`}}",
-        "version": "{{user `version`}}{{user `version_suffix`}}",
-        "no_release": "true"
-      }
-    ]
+      "type": "vagrant",
+      "vagrantfile_template": "packer-desktop/ubuntu/vagrantfile_templates/Vagrantfile.tpl",
+      "output": "packer-desktop/builds/{{user `box_basename`}}.{{.Provider}}.box"
+    }
   ]
 }
