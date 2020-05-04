@@ -7,8 +7,6 @@ cd /home/vagrant/
 cp ./host/run_app.sh .
 sudo chmod +x run_app.sh
 
-docker pull jafudi/idea-extractor:latest
-
 cat << EOF | sudo tee ./Desktop/ideops.desktop
 [Desktop Entry]
 Type=Application

@@ -45,18 +45,18 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "oracle-cloud-config", type: "shell", path: "provision_oci_config.sh"
+  config.vm.provision "cloud-config", type: "shell", path: "provision_reboot_tasks.sh"
 
-  config.vm.provision "automated-test-environment", type: "shell", path: "provision_gitlab_runner.sh"
+  config.vm.provision "test-environment", type: "shell", path: "provision_gitlab_runner.sh"
 
-  config.vm.provision "install-latest-release", type: "shell", run: "always" do |s|
-    s.path = "provision_app.sh"
+  config.vm.provision "app-launcher", type: "shell", run: "always" do |s|
+    s.path = "provision_app_launcher.sh"
   end
 
   # config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh"
 
-  config.trigger.after [:up, :provision] do |t|
-    t.name = "Reboot after provisioning"
-    t.run = { :inline => "vagrant reload" }
-  end
+  # config.trigger.after [:up, :provision] do |t|
+  #   t.name = "Reboot after provisioning"
+  #   t.run = { :inline => "vagrant reload" }
+  # end
 end
