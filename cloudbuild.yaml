@@ -6,7 +6,6 @@ steps:
       - build
       - -force
       - -only=googlecompute
-      - -debug
       - -var
       - image_name=traction-image
       - -var
@@ -20,4 +19,22 @@ steps:
       - -var
       - headless=true
       - packer-desktop/ubuntu/pack-lubuntu.json
+
+  # https://cloud.google.com/sdk/gcloud/reference/compute/images/export
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - compute
+      - images
+      - export
+      - --quiet
+      - --destination-uri
+      - gs://jafudi/ideops-on-ubuntu-64.vmdk
+      - --image
+      - jafudi-$SHORT_SHA
+      - --image-project
+      - jafudi-1558282200187
+      - --export-format
+      - vmdk
+      - --zone
+      - europe-west3-b
 timeout: 2400s
