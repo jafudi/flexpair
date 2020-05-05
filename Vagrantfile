@@ -52,11 +52,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision "app-launcher", type: "shell", run: "always" do |s|
     s.path = "provision_app_launcher.sh"
   end
-
-  # config.vm.provision "webserver", type: "shell", path: "provision_webserver.sh"
-
-  # config.trigger.after [:up, :provision] do |t|
-  #   t.name = "Reboot after provisioning"
-  #   t.run = { :inline => "vagrant reload" }
-  # end
 end
