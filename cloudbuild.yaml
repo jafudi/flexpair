@@ -30,7 +30,7 @@ steps:
       - --destination-uri
       - gs://jafudi/ludopy.vmdk
       - --image
-      - jafudi-$SHORT_SHA
+      - traction-image
       - --image-project
       - jafudi-1558282200187
       - --export-format
