@@ -21,7 +21,7 @@ VBoxManage export lubuntu-docker-python \
 --cloudprofile JafudiOnOCI \
 --cloudbucket bucket-20200425-0937 \
 --cloudshape VM.Standard2.1 \
---clouddomain AD3 \
+--clouddomain iEUO:EU-FRANKFURT-1-AD-3 \
 --clouddisksize 64 \
 --cloudocivcn ocid1.vcn.oc1.eu-frankfurt-1.amaaaaaasxbb7uqahhczda6xm5rwgph4lj2ojvz3wzxu2lzdpstkd2bogrda \
 --cloudocisubnet ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaaym5b7erow7ygf5msauzxgqwrs3vn6hjdwg2ebgght7azfjb7tjtq \
