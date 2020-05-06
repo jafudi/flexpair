@@ -28,7 +28,7 @@ steps:
       - export
       - --quiet
       - --destination-uri
-      - gs://jafudi/ideops-on-ubuntu-64.vmdk
+      - gs://jafudi/ludopy.vmdk
       - --image
       - jafudi-$SHORT_SHA
       - --image-project
