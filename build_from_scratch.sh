@@ -16,10 +16,12 @@ if [ -z "$(git status --porcelain)" ]; then
     # Working directory clean
     cp oci_config ~/Library/VirtualBox/oci_config # on Mac
 
+    vname="commit-$(git rev-parse --verify HEAD)"
+
     VBoxManage export lubuntu-docker-python \
     --output OCI:// \
     --cloud 0 \
-    --vmname "commit-$(git rev-parse --verify HEAD)" \
+    --vmname ${vname} \
     --cloudprofile JafudiOnOCI \
     --cloudbucket bucket-20200425-0937 \
     --cloudshape VM.Standard2.1 \
