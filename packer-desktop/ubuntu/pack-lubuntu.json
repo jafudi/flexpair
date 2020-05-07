@@ -104,7 +104,7 @@
         "packer-desktop/_common/sshd.sh",
         "packer-desktop/ubuntu/scripts/networking.sh",
         "packer-desktop/ubuntu/scripts/sudoers.sh",
-        "packer-desktop/ubuntu/scripts/docker-python.sh",
+        "packer-desktop/ubuntu/scripts/docker.sh",
         "packer-desktop/ubuntu/scripts/lubuntu-desktop.sh",
         "packer-desktop/ubuntu/scripts/firefox-homepage.sh",
         "packer-desktop/ubuntu/scripts/vagrant.sh",

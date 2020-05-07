@@ -5,4 +5,3 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends docker
 systemctl enable --now docker
 usermod -aG docker vagrant
 
-docker pull python:3.7

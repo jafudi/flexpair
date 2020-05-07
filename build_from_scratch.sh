@@ -17,7 +17,7 @@ cp oci_config ~/Library/VirtualBox/oci_config # on Mac
 VBoxManage export lubuntu-docker-python \
 --output OCI:// \
 --cloud 0 \
---vmname my-staging-vm \
+--vmname staging-vm-2020-05-07 \
 --cloudprofile JafudiOnOCI \
 --cloudbucket bucket-20200425-0937 \
 --cloudshape VM.Standard2.1 \

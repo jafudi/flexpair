@@ -12,5 +12,5 @@ apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends cloud-init
 
 mkdir -p /var/lib/cloud/seed/nocloud-net/
-cp ./host/cloud-init/nocloud-net/meta-data.yaml /var/lib/cloud/seed/nocloud-net/meta-data
-cp ./host/cloud-init/nocloud-net/user-data.yaml /var/lib/cloud/seed/nocloud-net/user-data
+cp ./host/cloud-init/seed/nocloud-net/meta-data.yaml /var/lib/cloud/seed/nocloud-net/meta-data
+cp ./host/cloud-init/seed/nocloud-net/user-data.yaml /var/lib/cloud/seed/nocloud-net/user-data
