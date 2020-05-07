@@ -14,7 +14,6 @@
 # Note, that the list has to be proper yaml, so you have to quote
 # any characters yaml would eat (':' can be problematic)
 runcmd:
-    - docker pull jafudi/idea-extractor:latest
     - >
         sudo gitlab-runner register
         --non-interactive
@@ -25,6 +24,7 @@ runcmd:
         --tag-list="ubuntu,bash"
     - sudo gitlab-runner restart
     - sudo gitlab-runner status
+    - docker pull jafudi/idea-extractor:latest
 
 # add each entry to ~/.ssh/authorized_keys for the configured user or the
 # first user defined in the user definition directive.
