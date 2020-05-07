@@ -19,7 +19,7 @@ if [ -z "$(git status --porcelain)" ]; then
     VBoxManage export lubuntu-docker-python \
     --output OCI:// \
     --cloud 0 \
-    --vmname "commit-$(git rev-parse --verify HEAD)"\
+    --vmname "commit-$(git rev-parse --verify HEAD)" \
     --cloudprofile JafudiOnOCI \
     --cloudbucket bucket-20200425-0937 \
     --cloudshape VM.Standard2.1 \
