@@ -8,6 +8,8 @@ echo 'GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0 console=tty0 console=ttyS0
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
+rm -rf /var/lib/cloud/*
+
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends cloud-init
 
