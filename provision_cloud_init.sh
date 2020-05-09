@@ -13,14 +13,8 @@ rm -rf /var/lib/cloud/*
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends cloud-init
 
-YAML="/var/lib/cloud/seed/nocloud-net"
-mkdir -p ${YAML}
-cp ./host/cloud-init/seed/nocloud-net/meta-data.yaml "$YAML/meta-data"
-cp ./host/cloud-init/seed/nocloud-net/user-data.yaml "$YAML/user-data"
+cd /var/tmp
+git clone --depth 1 https://github.com/jafudi/traction.git --branch master
 
-SCRIPTS="/var/lib/cloud/scripts"
-mkdir -p "$SCRIPTS/per-instance/"
-mkdir -p "$SCRIPTS/per-boot/"
-cp ./host/cloud-init/scripts/per-instance/*.sh "$SCRIPTS/per-instance/"
-cp ./host/cloud-init/scripts/per-boot/*.sh "$SCRIPTS/per-boot/"
-find ${SCRIPTS} -type f -iname "*.sh" -exec chmod +x {} \;
+cp -fRv /var/tmp/traction/cloud-init/ /var/lib/cloud/
+find /var/lib/cloud/scripts -type f -iname "*.sh" -exec chmod +x {} \;
