@@ -45,11 +45,7 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "cloud-config", type: "shell", path: "provision_reboot_tasks.sh"
+  config.vm.provision "startup-tasks", type: "shell", path: "provision_cloud_init.sh"
 
   config.vm.provision "test-environment", type: "shell", path: "provision_gitlab_runner.sh"
-
-  config.vm.provision "app-launcher", type: "shell", run: "always" do |s|
-    s.path = "provision_app_launcher.sh"
-  end
 end

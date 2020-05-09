@@ -1,43 +1,5 @@
 #cloud-config
 
-# run commands
-# default: none
-# runcmd contains a list of either lists or a string
-# each item will be executed in order at rc.local like level with
-# output to the console
-# - runcmd only runs during the first boot
-# - if the item is a list, the items will be properly executed as if
-#   passed to execve(3) (with the first arg as the command).
-# - if the item is a string, it will be simply written to the file and
-#   will be interpreted by 'sh'
-#
-# Note, that the list has to be proper yaml, so you have to quote
-# any characters yaml would eat (':' can be problematic)
-runcmd:
-    - >
-        HOST_TAGS=$(
-        hostnamectl
-        | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;'
-        | tr '\n' ','
-        )
-    - >
-        ROUTE_TAGS=$(
-        traceroute --max-hops=3 8.8.8.8
-        | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/'
-        | tr '\n' ','
-        )
-    - >
-        sudo gitlab-runner register
-        --non-interactive
-        --url="https://gitlab.com/"
-        --registration-token="JW6YYWLG4mTsr_-mSaz8"
-        --executor="shell"
-        --description="ludopy-shell-executor"
-        --tag-list="${HOST_TAGS},${ROUTE_TAGS}"
-    - sudo gitlab-runner restart
-    - sudo gitlab-runner status
-    - docker pull jafudi/idea-extractor:latest
-
 # add each entry to ~/.ssh/authorized_keys for the configured user or the
 # first user defined in the user definition directive.
 ssh_authorized_keys:
