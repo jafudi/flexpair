@@ -45,5 +45,5 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "Config scripts for next boot", type: "shell", path: "provision_cloud_init.sh"
+  config.vm.provision "config scripts to run at boot time", type: "shell", path: "provision_cloud_init.sh"
 end
