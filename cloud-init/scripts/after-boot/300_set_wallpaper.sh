@@ -2,4 +2,4 @@
 
 # https://manpages.ubuntu.com/manpages/focal/en/man1/pcmanfm-qt.1.html
 pcmanfm-qt --desktop-off
-pcmanfm-qt --desktop --daemon-mode --set-wallpaper=/usr/share/lubuntu/wallpapers/2004-lubuntu-logo.png --wallpaper-mode=stretch
+pcmanfm-qt --desktop --set-wallpaper=/usr/share/lubuntu/wallpapers/2004-lubuntu-logo.png --wallpaper-mode=stretch
