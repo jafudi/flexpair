@@ -19,10 +19,12 @@ git clone --depth 1 https://github.com/jafudi/traction.git --branch master
 cp -fRv /var/tmp/traction/cloud-init/ /var/lib/cloud/
 find /var/lib/cloud/scripts -type f -iname "*.sh" -exec chmod +x {} \;
 
+mkdir -p /home/vagrant/.config/autostart
 cat << EOF | sudo tee /home/vagrant/.config/autostart/wallpaper.desktop
 [Desktop Entry]
-Exec=/var/lib/cloud/scripts/after-boot/set_wallpaper.sh
+Exec=/var/lib/cloud/scripts/after-boot/300_set_wallpaper.sh
 Name=Set wallpaper
 Type=Application
 Version=1.0
 EOF
+chmod +x /home/vagrant/.config/autostart/wallpaper.desktop
