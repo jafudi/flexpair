@@ -29,12 +29,14 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 8443, host: 8080, host_ip: "127.0.0.1"
+
+  config.vm.network "forwarded_port", guest: 5900, host: 5900, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -45,5 +47,12 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
-  config.vm.provision "config scripts to run at boot time", type: "shell", path: "provision_cloud_init.sh"
+  config.vm.provision "checkout HEAD of Git repo", type: "shell", path: "provision_git_repo.sh"
+
+  config.vm.provision "boot triggered config scripts", type: "shell", path: "provision_cloud_init.sh"
+
+  config.vm.provision "autostart tasks", type: "shell", path: "provision_autostart.sh"
+
+  config.vm.provision "desktop sharing server (VNC)", type: "shell", path: "provision_x11vnc.sh"
+
 end
