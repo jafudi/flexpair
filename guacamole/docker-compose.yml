@@ -82,7 +82,11 @@
 
 version: '2.0'
 
-network_mode: "host"
+# networks
+# create a network 'guacnetwork_compose' in mode 'bridged'
+networks:
+  guacnetwork_compose:
+    driver: bridge
 
 # services
 services:
@@ -92,6 +96,8 @@ services:
     image: guacamole/guacd
     networks:
       guacnetwork_compose:
+    extra_hosts:
+      - "vnc-host:127.0.0.1"
     restart: always
     volumes:
     - ./drive:/drive:rw
