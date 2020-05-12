@@ -2,7 +2,7 @@
 
 # when guacamole works add -localhost flag to x1vnc again for more security
 
-git clone "https://github.com/boschkundendienst/guacamole-docker-compose.git"
-cd guacamole-docker-compose
+cd /var/tmp/traction/guacamole
+./reset.sh
 ./prepare.sh
 docker-compose up -d
