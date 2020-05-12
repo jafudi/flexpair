@@ -51,8 +51,5 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "boot triggered config scripts", type: "shell", path: "provision_cloud_init.sh"
 
-  config.vm.provision "autostart tasks", type: "shell", path: "provision_autostart.sh"
-
-  config.vm.provision "desktop sharing server (VNC)", type: "shell", path: "provision_x11vnc.sh"
-
+  config.vm.provision "autostart tasks involving GUI", type: "shell", path: "provision_autostart.sh"
 end

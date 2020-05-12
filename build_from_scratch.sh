@@ -12,7 +12,9 @@ vagrant box add --clean --force Jafudi/ludopy packer-desktop/builds/lubuntu-dock
 
 vagrant up
 
-#vagrant halt
+vagrant halt
+
+vagrant up # comment out when intending to export to OCI
 #
 #if [ -z "$(git status --porcelain)" ]; then
 #    # Working directory clean
