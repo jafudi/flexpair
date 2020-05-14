@@ -97,7 +97,7 @@ services:
     networks:
       guacnetwork_compose:
     extra_hosts:
-      - "vnc-host:127.0.0.1"
+      - "vnc-host:10.0.2.15"
     restart: always
     volumes:
     - ./drive:/drive:rw
