@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 cd /var/tmp/traction
-git fetch
-git reset --hard origin/master
+sudo git fetch
+sudo git reset --hard origin/master
 sudo chmod +x run_app.sh
 
 cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
