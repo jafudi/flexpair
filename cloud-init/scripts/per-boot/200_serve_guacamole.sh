@@ -2,7 +2,7 @@
 
 # when guacamole works add -localhost flag to x1vnc again for more security
 
-GUACAMOLE_HOME=/var/tmp/traction/guacamole
+export GUACAMOLE_HOME=/var/tmp/traction/guacamole
 cd ${GUACAMOLE_HOME}
 ./reset.sh
 ./prepare.sh
