@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/$PROJECT_ID/packer'
+  - name: 'hashicorp/packer'
     env:
       - PACKER_LOG=1
     args:
