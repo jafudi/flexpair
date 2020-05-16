@@ -71,21 +71,6 @@
       "cpus": "{{ user `cpus` }}",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-{{ user `box_basename` }}"
-    },
-    {
-      "image_name": "{{ user `image_name` }}",
-      "type": "googlecompute",
-      "project_id": "{{ user `project_id`}}",
-      "source_image_family": "ubuntu-minimal-2004-lts",
-      "image_family": "{{ user `image_family` }}",
-      "ssh_username": "vagrant",
-      "instance_name": "{{ user `image_name` }}",
-      "zone": "{{ user `image_zone` }}",
-      "scopes": [
-        "https://www.googleapis.com/auth/userinfo.email",
-        "https://www.googleapis.com/auth/compute",
-        "https://www.googleapis.com/auth/devstorage.full_control"
-      ]
     }
   ],
   "provisioners": [
