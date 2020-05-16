@@ -38,9 +38,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "forwarded_port", guest: 5900, host: 5900
 
-  config.vm.provision "checkout HEAD of Git repo", type: "shell", path: "provision_git_repo.sh"
+  config.vm.provision "Checkout HEAD of Git repo", type: "shell", path: "provision_git_repo.sh"
 
-  config.vm.provision "boot triggered config scripts", type: "shell", path: "provision_cloud_init.sh"
+  config.vm.provision "Boot triggered config scripts", type: "shell", path: "provision_cloud_init.sh"
 
-  config.vm.provision "autostart tasks involving GUI", type: "shell", path: "provision_autostart.sh"
+  config.vm.provision "Autostart tasks involving GUI", type: "shell", path: "provision_autostart.sh"
+
+  config.vm.provision "Standard Lubuntu accessories", type: "shell", path: "provision_accessories.sh"
+
 end
