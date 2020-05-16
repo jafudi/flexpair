@@ -43,7 +43,4 @@ Vagrant.configure("2") do |config|
   config.vm.provision "Boot triggered config scripts", type: "shell", path: "provision_cloud_init.sh"
 
   config.vm.provision "Autostart tasks involving GUI", type: "shell", path: "provision_autostart.sh"
-
-  config.vm.provision "Standard Lubuntu accessories", type: "shell", path: "provision_accessories.sh"
-
 end
