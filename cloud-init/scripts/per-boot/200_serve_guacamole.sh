@@ -4,7 +4,6 @@
 
 export GUACAMOLE_HOME=/var/tmp/traction/guacamole
 cd ${GUACAMOLE_HOME}
-./reset.sh
 ./prepare.sh
 export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 docker-compose up -d
