@@ -1,48 +1,45 @@
-Content-Type: multipart/mixed; boundary="===============2243599609766758358=="
+Content-Type: multipart/mixed; boundary="===============2099675323463889681=="
 MIME-Version: 1.0
 
---===============2243599609766758358==
-Content-Type: text/cloud-config; charset="utf-8"
+--===============2099675323463889681==
+Content-Type: text/cloud-config; charset="us-ascii"
 MIME-Version: 1.0
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="user-data-parts/cloud-config.yaml"
 
-I2Nsb3VkLWNvbmZpZwoKIyBTZXQgdGhlIGxvY2FsZQpsb2NhbGU6IGRlX0RFCgojIFNldCB0aGUg
-c3lzdGVtIHRpbWV6b25lCiMgdGltZXpvbmU6IEV1cm9wZS9CZXJsaW4KCiMgcGFja2FnZXM6CiMg
-ICAgIC0gbGlicmVvZmZpY2UKI3BhY2thZ2VfdXBkYXRlOiB0cnVlCiNwYWNrYWdlX3VwZ3JhZGU6
-IHRydWUKCiMgQWRkIGVhY2ggZW50cnkgdG8gfi8uc3NoL2F1dGhvcml6ZWRfa2V5cyBmb3IgdGhl
-IGNvbmZpZ3VyZWQgdXNlciBvciB0aGUKIyBmaXJzdCB1c2VyIGRlZmluZWQgaW4gdGhlIHVzZXIg
-ZGVmaW5pdGlvbiBkaXJlY3RpdmUuCnNzaF9hdXRob3JpemVkX2tleXM6CiAgICAtIHNzaC1yc2Eg
-QUFBQUIzTnphQzF5YzJFQUFBQURBUUFCQUFBQmdRREtyMDAvWDV3ZzZCVHYxZUpncGs5QXlEVHhW
-QzRPekd1SnJQU2FIZWs4ZmlDUWEySDc5Wklwb2UvaG5NVElrR1hCdWtTbnBIM1Z6MWhOVjZWNWI1
-ODhpQVA5RUlIVGE0TmpiQmJtSG9mZEhYS3h2MmJKWldQbVZvbzZybWVqTmlFNHlGSnBpL2FXelZw
-Z2pKdTZXQlUwRkFjZjMvWlVUNWE5elZYemwvVjlZdzVXSnJHTVBGZkQvdjl4cmVFNEtlak5VY2ZS
-amZIaWZ6bVRlZGQzYXJEOWVvb1F0eWQ2RjE4aEY1ZnF0bS9CYWZZV2NjNmljbzlCV0h6eDNQMzlk
-eUp4YUhlUTkrTkNFQm0vbUplSUQ4TVBUVU93VFFUMEt1MVovRkhpNlcxN2liMmpqcFlvL2ZTRGo1
-aTQwQmF5anZpSDJBSDFHdW1CeXdVL1dOUFZ0b2NsdUNid2JSdXlBT0RIaEFSQ0VYbDF4TzdGTkcy
-VHhhRzlFTE04MDU2amNNS2pydXVobGxZaGxWRDRIY0xnZFdKdG5WcExlc3Y2OTRYMlo3bi9CRml6
-WWx1dTlxMDcvUnVoMmpmaVh1UUdDbzcxakRiRVAxRUpiaW5neTRsWHI2aFk2LzU4MlBjS2JtaXZy
-K2lMRTZIQURFVWo3ZWhMcy9meU5BTHlHY2g0SmRzPSBqZW5zQEplbnNzLU1CUC5mcml0ei5ib3gK
-Cm5vX3NzaF9maW5nZXJwcmludHM6IHRydWU=
+#cloud-config
 
---===============2243599609766758358==
-Content-Type: text/x-include-once-url; charset="utf-8"
+# Set the locale
+locale: de_DE
+
+# Set the system timezone
+# timezone: Europe/Berlin
+
+# packages:
+#     - libreoffice
+#package_update: true
+#package_upgrade: true
+
+# Add each entry to ~/.ssh/authorized_keys for the configured user or the
+# first user defined in the user definition directive.
+ssh_authorized_keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKr00/X5wg6BTv1eJgpk9AyDTxVC4OzGuJrPSaHek8fiCQa2H79ZIpoe/hnMTIkGXBukSnpH3Vz1hNV6V5b588iAP9EIHTa4NjbBbmHofdHXKxv2bJZWPmVoo6rmejNiE4yFJpi/aWzVpgjJu6WBU0FAcf3/ZUT5a9zVXzl/V9Yw5WJrGMPFfD/v9xreE4KejNUcfRjfHifzmTedd3arD9eooQtyd6F18hF5fqtm/BafYWcc6ico9BWHzx3P39dyJxaHeQ9+NCEBm/mJeID8MPTUOwTQT0Ku1Z/FHi6W17ib2jjpYo/fSDj5i40BayjviH2AH1GumBywU/WNPVtocluCbwbRuyAODHhARCEXl1xO7FNG2TxaG9ELM8056jcMKjruuhllYhlVD4HcLgdWJtnVpLesv694X2Z7n/BFizYluu9q07/Ruh2jfiXuQGCo71jDbEP1EJbingy4lXr6hY6/582PcKbmivr+iLE6HADEUj7ehLs/fyNALyGch4Jds= jens@Jenss-MBP.fritz.box
+
+no_ssh_fingerprints: true
+--===============2099675323463889681==
+Content-Type: text/x-include-once-url; charset="us-ascii"
 MIME-Version: 1.0
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="user-data-parts/include-once"
 
-aHR0cHM6Ly9naXRodWIuY29tL2phZnVkaS90cmFjdGlvbi90cmVlL21hc3Rlci9yZWdpc3Rlcl9y
-dW5uZXIuc2g=
-
---===============2243599609766758358==
-Content-Type: text/x-include-url; charset="utf-8"
+https://github.com/jafudi/traction/tree/master/register_runner.sh
+--===============2099675323463889681==
+Content-Type: text/x-include-url; charset="us-ascii"
 MIME-Version: 1.0
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="user-data-parts/always-include"
 
-aHR0cHM6Ly9naXRodWIuY29tL2phZnVkaS90cmFjdGlvbi90cmVlL21hc3Rlci91cGRhdGVfcmVs
-ZWFzZS5zaApodHRwczovL2dpdGh1Yi5jb20vamFmdWRpL3RyYWN0aW9uL3RyZWUvbWFzdGVyL2d1
-YWNhbW9sZS9zZXJ2ZV9ndWFjYW1vbGUuc2g=
-
---===============2243599609766758358==--
+https://github.com/jafudi/traction/tree/master/update_release.sh
+https://github.com/jafudi/traction/tree/master/guacamole/serve_guacamole.sh
+--===============2099675323463889681==--
 

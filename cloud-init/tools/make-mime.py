@@ -41,7 +41,7 @@ def main():
     sub_messages = []
     for i, (fh, filename, format_type) in enumerate(args.files):
         contents = fh.read()
-        sub_message = MIMEText(contents, format_type, sys.getdefaultencoding())
+        sub_message = MIMEText(contents, format_type)
         sub_message.add_header('Content-Disposition',
                                'attachment; filename="%s"' % (filename))
         content_type = sub_message.get_content_type().lower()
