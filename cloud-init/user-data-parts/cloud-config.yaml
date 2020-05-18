@@ -6,8 +6,8 @@ locale: de_DE
 # Set the system timezone
 # timezone: Europe/Berlin
 
-packages:
-    - libreoffice
+# packages:
+#     - libreoffice
 #package_update: true
 #package_upgrade: true
 
