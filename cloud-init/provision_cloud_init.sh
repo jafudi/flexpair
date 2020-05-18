@@ -3,8 +3,9 @@
 DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install --upgrade -y --no-install-recommends cloud-init
+cp /var/tmp/traction/cloud-init/cloud.cfg /etc/cloud/cloud.cfg
 
 cp /var/tmp/traction/grub.cfg /etc/default/grub
-update-grub
+grub-mkconfig -o /boot/grub/grub.cfg
 
 

@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "Checkout HEAD of Git repo", type: "shell", path: "provision_git_repo.sh"
 
-  config.vm.provision "Boot triggered config scripts", type: "shell", path: "provision_cloud_init.sh"
+  config.vm.provision "Boot triggered config scripts", type: "shell", path: "./cloud-init/provision_cloud_init.sh"
 
-  config.vm.provision "Autostart tasks involving GUI", type: "shell", path: "provision_autostart.sh"
+  config.vm.provision "Autostart tasks involving GUI", type: "shell", path: "./autostart/provision_autostart.sh"
 end
