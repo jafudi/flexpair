@@ -21,14 +21,5 @@ ssh_authorized_keys:
     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKr00/X5wg6BTv1eJgpk9AyDTxVC4OzGuJrPSaHek8fiCQa2H79ZIpoe/hnMTIkGXBukSnpH3Vz1hNV6V5b588iAP9EIHTa4NjbBbmHofdHXKxv2bJZWPmVoo6rmejNiE4yFJpi/aWzVpgjJu6WBU0FAcf3/ZUT5a9zVXzl/V9Yw5WJrGMPFfD/v9xreE4KejNUcfRjfHifzmTedd3arD9eooQtyd6F18hF5fqtm/BafYWcc6ico9BWHzx3P39dyJxaHeQ9+NCEBm/mJeID8MPTUOwTQT0Ku1Z/FHi6W17ib2jjpYo/fSDj5i40BayjviH2AH1GumBywU/WNPVtocluCbwbRuyAODHhARCEXl1xO7FNG2TxaG9ELM8056jcMKjruuhllYhlVD4HcLgdWJtnVpLesv694X2Z7n/BFizYluu9q07/Ruh2jfiXuQGCo71jDbEP1EJbingy4lXr6hY6/582PcKbmivr+iLE6HADEUj7ehLs/fyNALyGch4Jds= jens@Jenss-MBP.fritz.box
 
 no_ssh_fingerprints: true
---===============2099675323463889681==
-Content-Type: text/x-include-once-url
-
-https://github.com/jafudi/traction/tree/master/register_runner.sh
---===============2099675323463889681==
-Content-Type: text/x-include-url
-
-https://github.com/jafudi/traction/tree/master/update_release.sh
-https://github.com/jafudi/traction/tree/master/guacamole/serve_guacamole.sh
 --===============2099675323463889681==--
 
