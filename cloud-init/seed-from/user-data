@@ -27,7 +27,31 @@ no_ssh_fingerprints: true
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="register-gitlab-runner.sh"
+Content-Disposition: attachment; filename="100-pull-latest-release.sh"
+
+#!/usr/bin/env bash
+
+cd /var/tmp/traction
+sudo git fetch
+sudo git reset --hard origin/master
+sudo chmod +x run_app.sh
+
+cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
+[Desktop Entry]
+Type=Application
+Terminal=true
+Exec=/var/tmp/traction/run_app.sh
+Icon=QMPlay2
+Name=Hier klicken
+EOF
+sudo chmod +x /home/vagrant/Desktop/ideops.desktop
+
+docker pull --quiet jafudi/idea-extractor:latest &
+
+--====Part=Boundary=================================================
+Content-Type: text/x-shellscript; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="200-register-gitlab-runner.sh"
 
 #!/usr/bin/env bash
 
@@ -59,31 +83,7 @@ sudo gitlab-runner status
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="pull-latest-release.sh"
-
-#!/usr/bin/env bash
-
-cd /var/tmp/traction
-sudo git fetch
-sudo git reset --hard origin/master
-sudo chmod +x run_app.sh
-
-cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
-[Desktop Entry]
-Type=Application
-Terminal=true
-Exec=/var/tmp/traction/run_app.sh
-Icon=QMPlay2
-Name=Hier klicken
-EOF
-sudo chmod +x /home/vagrant/Desktop/ideops.desktop
-
-docker pull jafudi/idea-extractor:latest
-
---====Part=Boundary=================================================
-Content-Type: text/x-shellscript; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="serve-guacamole.sh"
+Content-Disposition: attachment; filename="300-serve-guacamole.sh"
 
 #!/usr/bin/env bash
 
@@ -91,6 +91,6 @@ export GUACAMOLE_HOME=/var/tmp/traction/guacamole
 cd ${GUACAMOLE_HOME}
 ./prepare.sh
 export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
-docker-compose up -d
+docker-compose up --detach --quiet-pull &
 
 --====Part=Boundary=================================================--
