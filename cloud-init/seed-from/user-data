@@ -13,9 +13,9 @@ locale: de_DE
 timezone: Europe/Berlin
 
 packages:
-     - libreoffice
-package_update: true
-package_upgrade: true
+     - libreoffice-calc
+     - libreoffice-writer
+     - libreoffice-impress
 
 # Add each entry to ~/.ssh/authorized_keys for the configured user or the
 # first user defined in the user definition directive.
