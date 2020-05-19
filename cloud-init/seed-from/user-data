@@ -4,8 +4,6 @@ MIME-Version: 1.0
 --===============2099675323463889681==
 Content-Type: text/cloud-config
 
-#cloud-config
-
 # Set the locale
 locale: de_DE
 
