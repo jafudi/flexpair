@@ -2,7 +2,9 @@ Content-Type: multipart/mixed; boundary="====Part=Boundary======================
 MIME-Version: 1.0
 
 --====Part=Boundary=================================================
-Content-Type: text/cloud-config
+Content-Type: text/cloud-config; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="Use built-in config routines"
 
 # Set the locale
 locale: de_DE
@@ -22,5 +24,26 @@ ssh_authorized_keys:
 
 no_ssh_fingerprints: true
 
---====Part=Boundary=================================================--
+--====Part=Boundary=================================================
+Content-Type: text/x-shellscript; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="Pull latest ideops release"
 
+cd /var/tmp/traction
+sudo git fetch
+sudo git reset --hard origin/master
+sudo chmod +x run_app.sh
+
+cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
+[Desktop Entry]
+Type=Application
+Terminal=true
+Exec=/var/tmp/traction/run_app.sh
+Icon=QMPlay2
+Name=Hier klicken
+EOF
+sudo chmod +x /home/vagrant/Desktop/ideops.desktop
+
+docker pull jafudi/idea-extractor:latest
+
+--====Part=Boundary=================================================--
