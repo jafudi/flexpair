@@ -27,6 +27,38 @@ no_ssh_fingerprints: true
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="register-gitlab-runner.sh"
+
+#!/usr/bin/env bash
+
+DESCRIPTION="Shell executor on $(uname -s)"
+
+HOST_TAGS="$( \
+    hostnamectl \
+    | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;' \
+    | tr '\n' ',' \
+)"
+
+ROUTE_TAGS="$( \
+    traceroute --max-hops=3 8.8.8.8 \
+    | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/' \
+    | tr '\n' ',' \
+)"
+
+sudo gitlab-runner register \
+--non-interactive \
+--url="https://gitlab.com/" \
+--registration-token="JW6YYWLG4mTsr_-mSaz8" \
+--executor="shell" \
+--description="${DESCRIPTION}" \
+--tag-list="${HOST_TAGS},${ROUTE_TAGS}"
+
+sudo gitlab-runner restart
+sudo gitlab-runner status
+
+--====Part=Boundary=================================================
+Content-Type: text/x-shellscript; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="pull-latest-release.sh"
 
 #!/usr/bin/env bash
@@ -47,5 +79,18 @@ EOF
 sudo chmod +x /home/vagrant/Desktop/ideops.desktop
 
 docker pull jafudi/idea-extractor:latest
+
+--====Part=Boundary=================================================
+Content-Type: text/x-shellscript; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="serve-guacamole.sh"
+
+#!/usr/bin/env bash
+
+export GUACAMOLE_HOME=/var/tmp/traction/guacamole
+cd ${GUACAMOLE_HOME}
+./prepare.sh
+export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+docker-compose up -d
 
 --====Part=Boundary=================================================--
