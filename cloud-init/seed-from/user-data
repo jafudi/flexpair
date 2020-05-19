@@ -10,10 +10,10 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 locale: de_DE
 
 # Set the system timezone
-# timezone: Europe/Berlin
+timezone: Europe/Berlin
 
 # packages:
-#     - libreoffice
+     - libreoffice
 #package_update: true
 #package_upgrade: true
 
