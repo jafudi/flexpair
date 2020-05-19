@@ -2,10 +2,7 @@ Content-Type: multipart/mixed; boundary="===============2099675323463889681=="
 MIME-Version: 1.0
 
 --===============2099675323463889681==
-Content-Type: text/cloud-config; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="user-data-parts/cloud-config.yaml"
+Content-Type: text/cloud-config
 
 #cloud-config
 
@@ -27,17 +24,11 @@ ssh_authorized_keys:
 
 no_ssh_fingerprints: true
 --===============2099675323463889681==
-Content-Type: text/x-include-once-url; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="user-data-parts/include-once"
+Content-Type: text/x-include-once-url
 
 https://github.com/jafudi/traction/tree/master/register_runner.sh
 --===============2099675323463889681==
-Content-Type: text/x-include-url; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="user-data-parts/always-include"
+Content-Type: text/x-include-url
 
 https://github.com/jafudi/traction/tree/master/update_release.sh
 https://github.com/jafudi/traction/tree/master/guacamole/serve_guacamole.sh
