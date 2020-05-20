@@ -93,8 +93,8 @@ Content-Disposition: attachment; filename="300-serve-guacamole.sh"
 export GUACAMOLE_HOME=/var/tmp/traction/guacamole
 export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 cd ${GUACAMOLE_HOME}
-./init-letsencrypt.sh
 ./prepare.sh
+./init-letsencrypt.sh
 # docker-compose up --detach --quiet-pull &
 
 --====Part=Boundary=================================================--
