@@ -80,7 +80,7 @@
 #                                      simplified nginx startup commands
 ####################################################################################
 
-version: '2.0'
+version: '3'
 
 # networks
 # create a network 'guacnetwork_compose' in mode 'bridged'
@@ -146,13 +146,17 @@ services:
   # nginx
   nginx:
    container_name: nginx_guacamole_compose
-   restart: always
+   restart: unless-stopped
    image: nginx
    volumes:
    - ./nginx/ssl/self.cert:/etc/nginx/ssl/self.cert:ro
    - ./nginx/ssl/self-ssl.key:/etc/nginx/ssl/self-ssl.key:ro
    - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
    - ./nginx/mysite.template:/etc/nginx/conf.d/default.conf:ro
+   # for certbot
+   - ./nginx:/etc/nginx/conf.d
+   - ./certbot/conf:/etc/letsencrypt
+   - ./certbot/www:/var/www/certbot
    ports:
    - 443:443
    links:
@@ -164,3 +168,24 @@ services:
 # nginx-debug-mode
 #   command: /bin/bash -c "nginx-debug -g 'daemon off;'"
 ####################################################################################
+
+
+
+
+services:
+  nginx:
+    image: nginx:1.15-alpine
+
+    volumes:
+
+    ports:
+      - "80:80"
+      - "443:443"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  certbot:
+    image: certbot/certbot
+    restart: unless-stopped
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
