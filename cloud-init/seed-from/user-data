@@ -94,6 +94,7 @@ export GUACAMOLE_HOME=/var/tmp/traction/guacamole
 export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 cd ${GUACAMOLE_HOME}
 ./prepare.sh
-docker-compose up --detach --quiet-pull &
+./lets-encrypt.sh
+# docker-compose up --detach --quiet-pull &
 
 --====Part=Boundary=================================================--
