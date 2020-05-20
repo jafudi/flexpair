@@ -34,7 +34,7 @@ Content-Disposition: attachment; filename="100-pull-latest-release.sh"
 cd /var/tmp/traction
 sudo git fetch
 sudo git reset --hard origin/master
-sudo chmod +x run_app.sh
+# sudo chmod +x run_app.sh
 
 cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
 [Desktop Entry]
@@ -91,10 +91,9 @@ Content-Disposition: attachment; filename="300-serve-guacamole.sh"
 #!/usr/bin/env bash
 
 export GUACAMOLE_HOME=/var/tmp/traction/guacamole
-export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 cd ${GUACAMOLE_HOME}
-./init-auth-db.sh
-./init-letsencrypt.sh
+sudo ./init-auth-db.sh
+sudo ./init-letsencrypt.sh
 # docker-compose up --detach --quiet-pull &
 
 --====Part=Boundary=================================================--

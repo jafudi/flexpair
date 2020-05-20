@@ -1,5 +1,5 @@
-#!/bin/sh
-#
+#!/usr/bin/env bash
+
 echo "Preparing folder init and creating ./init/initdb.sql"
 mkdir ./init >/dev/null 2>&1
 mkdir -p ./nginx/ssl >/dev/null 2>&1
