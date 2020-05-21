@@ -154,7 +154,6 @@ services:
       - ./letsencrypt/nginx:/etc/nginx/conf.d
       - ./letsencrypt/certbot/conf:/etc/letsencrypt
       - ./letsencrypt/certbot/www:/var/www/certbot
-      - ./letsencrypt/debug.log:/var/log/letsencrypt/letsencrypt.log
     ports:
       - 443:443
       - 80:80
@@ -176,4 +175,5 @@ services:
     volumes:
       - ./letsencrypt/certbot/conf:/etc/letsencrypt:rw
       - ./letsencrypt/certbot/www:/var/www/certbot:rw
+      - ./letsencrypt/certbot/logs:/var/log/letsencrypt/
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
