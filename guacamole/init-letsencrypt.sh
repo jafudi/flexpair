@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
-if ! [ -x "$(command -v docker-compose)" ]; then
-  echo 'Error: docker-compose is not installed.' >&2
-  exit 1
-fi
-
 domains=(desktop.jafudi.net)
 rsa_key_size=4096
 data_path="./certbot"
 email="socialnets@jafudi.com" # Adding a valid address is strongly recommended
-staging=1 # Set to 1 if you're testing your setup to avoid hitting request limits
+staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
 
 #if [ -d "$data_path" ]; then
@@ -68,7 +63,7 @@ esac
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
 docker-compose run --rm --entrypoint "\
-  certbot certonly --webroot -w /var/www/certbot \
+  certbot certonly --webroot --webroot-path /var/www/certbot \
     $staging_arg \
     $email_arg \
     $domain_args \
