@@ -19,6 +19,7 @@ echo "### Creating dummy certificate for $domain ..."
 container_path="/etc/letsencrypt/live/$domain"
 host_path="$data_path/conf/live/$domain"
 sudo mkdir -p ${host_path}
+chmod 777 ${host_path}
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:1024 -days 1\
     -keyout '${container_path}/privkey.pem' \
