@@ -150,7 +150,6 @@ services:
     image: nginx
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./nginx/mysite.template:/etc/nginx/conf.d/default.conf:ro
       - ./letsencrypt/nginx:/etc/nginx/conf.d
       - ./letsencrypt/certbot/conf:/etc/letsencrypt
       - ./letsencrypt/certbot/www:/var/www/certbot
