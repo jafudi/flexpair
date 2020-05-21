@@ -3,6 +3,7 @@
 domain="desktop.jafudi.net"
 rsa_key_size=4096
 data_path="./letsencrypt/certbot"
+mkdir -p ${data_path}
 email="socialnets@jafudi.com" # Adding a valid address is strongly recommended
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
