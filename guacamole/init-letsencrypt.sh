@@ -38,7 +38,7 @@ echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
 
-bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:80)" != "200" ]]; echo "nginx not yet up"; do sleep 2; done'
+# bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:80)" != "200" ]]; echo "nginx not yet up"; do sleep 2; done'
 
 echo "### Deleting dummy certificate for $domain ..."
 docker-compose run --rm --entrypoint "\
