@@ -16,15 +16,21 @@ if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/
 fi
 
 echo "### Creating dummy certificate for $domain ..."
-path="/etc/letsencrypt/live/$domain"
-mkdir -p "$data_path/conf/live/$domain"
+container_path="/etc/letsencrypt/live/$domain"
+host_path="$data_path/conf/live/$domain"
+sudo mkdir -p ${host_path}
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:1024 -days 1\
     -keyout '$path/privkey.pem' \
     -out '$path/fullchain.pem' \
     -subj '/CN=localhost'" certbot
-echo
 
+if find "host_path" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
+    echo "Host path seems to contain certificates, continue..."
+else
+    echo "Host path 'host_path' is empty or not a directory"
+    exit 1
+fi
 
 echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
