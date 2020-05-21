@@ -21,8 +21,8 @@ host_path="$data_path/conf/live/$domain"
 sudo mkdir -p ${host_path}
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:1024 -days 1\
-    -keyout '$path/privkey.pem' \
-    -out '$path/fullchain.pem' \
+    -keyout '${container_path}/privkey.pem' \
+    -out '${container_path}/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 
 if find "host_path" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
