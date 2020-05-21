@@ -26,10 +26,10 @@ docker-compose run --rm --entrypoint "\
     -out '${container_path}/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 
-if find "host_path" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
+if find "${host_path}" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
     echo "Host path seems to contain certificates, continue..."
 else
-    echo "Host path 'host_path' is empty or not a directory"
+    echo "Host path '${host_path}' is empty or not a directory"
     exit 1
 fi
 
