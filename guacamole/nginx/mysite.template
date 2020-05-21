@@ -32,7 +32,7 @@ server {
     # allow large uploads (default=1m)
     # 4096m = 4GByte
     client_max_body_size 4096m;
-}
+    }
 
     #error_page  404              /404.html;
 
