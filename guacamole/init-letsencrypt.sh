@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-domain="test.jafudi.net"
+domain="desktop.jafudi.net"
 rsa_key_size=4096
 data_path="./letsencrypt/certbot"
 email="socialnets@jafudi.com" # Adding a valid address is strongly recommended
