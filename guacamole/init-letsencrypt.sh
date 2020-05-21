@@ -27,7 +27,8 @@ docker-compose run --rm --entrypoint "\
     -subj '/CN=localhost'" certbot
 
 if find "${host_path}" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
-    echo "Host path seems to contain certificates, continue..."
+    echo "Host path contains the following:"
+    ls ${host_path}
 else
     echo "Host path '${host_path}' is empty or not a directory"
     exit 1
