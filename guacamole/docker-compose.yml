@@ -154,6 +154,7 @@ services:
       - ./letsencrypt/nginx:/etc/nginx/conf.d
       - ./letsencrypt/certbot/conf:/etc/letsencrypt
       - ./letsencrypt/certbot/www:/var/www/certbot
+      - ./letsencrypt/debug.log:/var/log/letsencrypt/letsencrypt.log
     ports:
       - 443:443
       - 80:80
