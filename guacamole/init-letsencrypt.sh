@@ -53,7 +53,7 @@ if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
 mkdir -p "$data_path/logs"
 
-exitcode=$(docker-compose run --rm --exit-code-from certbot --entrypoint "\
+docker-compose run --rm --entrypoint "\
   certbot certonly --webroot --webroot-path /var/www/certbot \
     $staging_arg \
     $email_arg \
@@ -62,10 +62,10 @@ exitcode=$(docker-compose run --rm --exit-code-from certbot --entrypoint "\
     --agree-tos \
     --non-interactive \
     --force-renewal" \
-    certbot)
+    certbot
 echo
 
-if [[ $exitcode != 0 ]]; then
+if [[ $? != 0 ]]; then
     echo "### Re-creating dummy certificate because Let's Encrypt order failed..."
     docker-compose run --rm --entrypoint "\
       openssl req -x509 -nodes -newkey rsa:1024 -days 1\
