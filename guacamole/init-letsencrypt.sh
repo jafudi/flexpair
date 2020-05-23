@@ -31,10 +31,10 @@ echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
 
-echo "### Deleting dummy certificate for $domain ..."
+echo "### Archiving dummy certificate for $domain ..."
 docker-compose run --rm --entrypoint "\
-  rm -Rf /etc/letsencrypt/live/$domain && \
   rm -Rf /etc/letsencrypt/archive/$domain && \
+  mv /etc/letsencrypt/live/$domain /etc/letsencrypt/archive/ && \
   rm -Rf /etc/letsencrypt/renewal/$domain.conf" certbot
 echo
 
@@ -64,17 +64,17 @@ docker-compose run --rm --entrypoint "\
     --force-renewal" \
     certbot
 
-echo "Certbot returned value '$?'."
+exitcode=$?
+echo "Certbot returned value '$exitcode'."
 
-if [[ $? != 0 ]]; then
-    echo "### Re-creating dummy certificate because Let's Encrypt order failed..."
+if [ $exitcode -eq 0 ]; then
+    echo "### Reloading nginx with new certificate..."
+    docker-compose exec nginx nginx -s reload
+else
+    echo "### Restoring dummy certificate for $domain ..."
     docker-compose run --rm --entrypoint "\
-      openssl req -x509 -nodes -newkey rsa:1024 -days 1\
-        -keyout '${container_path}/privkey.pem' \
-        -out '${container_path}/fullchain.pem' \
-        -subj '/CN=localhost'" certbot
+      rm -Rf /etc/letsencrypt/live/$domain && \
+      mv /etc/letsencrypt/archive/$domain /etc/letsencrypt/live/ && \
+      rm -Rf /etc/letsencrypt/renewal/$domain.conf" certbot
 fi
 
-
-echo "### Reloading nginx ..."
-docker-compose exec nginx nginx -s reload
