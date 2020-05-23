@@ -13,14 +13,18 @@ locale: de_DE
 timezone: Europe/Berlin
 
 packages:
-     - libreoffice-calc
-     - libreoffice-writer
-     - libreoffice-impress
+  - gnumeric
+  - gnumeric-plugins-extra
+  - gnumeric-doc
+  - trojita
+  - cutemaze
+  - focuswriter
+  - vlc
 
 # Add each entry to ~/.ssh/authorized_keys for the configured user or the
 # first user defined in the user definition directive.
 ssh_authorized_keys:
-    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKr00/X5wg6BTv1eJgpk9AyDTxVC4OzGuJrPSaHek8fiCQa2H79ZIpoe/hnMTIkGXBukSnpH3Vz1hNV6V5b588iAP9EIHTa4NjbBbmHofdHXKxv2bJZWPmVoo6rmejNiE4yFJpi/aWzVpgjJu6WBU0FAcf3/ZUT5a9zVXzl/V9Yw5WJrGMPFfD/v9xreE4KejNUcfRjfHifzmTedd3arD9eooQtyd6F18hF5fqtm/BafYWcc6ico9BWHzx3P39dyJxaHeQ9+NCEBm/mJeID8MPTUOwTQT0Ku1Z/FHi6W17ib2jjpYo/fSDj5i40BayjviH2AH1GumBywU/WNPVtocluCbwbRuyAODHhARCEXl1xO7FNG2TxaG9ELM8056jcMKjruuhllYhlVD4HcLgdWJtnVpLesv694X2Z7n/BFizYluu9q07/Ruh2jfiXuQGCo71jDbEP1EJbingy4lXr6hY6/582PcKbmivr+iLE6HADEUj7ehLs/fyNALyGch4Jds= jens@Jenss-MBP.fritz.box
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKr00/X5wg6BTv1eJgpk9AyDTxVC4OzGuJrPSaHek8fiCQa2H79ZIpoe/hnMTIkGXBukSnpH3Vz1hNV6V5b588iAP9EIHTa4NjbBbmHofdHXKxv2bJZWPmVoo6rmejNiE4yFJpi/aWzVpgjJu6WBU0FAcf3/ZUT5a9zVXzl/V9Yw5WJrGMPFfD/v9xreE4KejNUcfRjfHifzmTedd3arD9eooQtyd6F18hF5fqtm/BafYWcc6ico9BWHzx3P39dyJxaHeQ9+NCEBm/mJeID8MPTUOwTQT0Ku1Z/FHi6W17ib2jjpYo/fSDj5i40BayjviH2AH1GumBywU/WNPVtocluCbwbRuyAODHhARCEXl1xO7FNG2TxaG9ELM8056jcMKjruuhllYhlVD4HcLgdWJtnVpLesv694X2Z7n/BFizYluu9q07/Ruh2jfiXuQGCo71jDbEP1EJbingy4lXr6hY6/582PcKbmivr+iLE6HADEUj7ehLs/fyNALyGch4Jds= jens@Jenss-MBP.fritz.box
 
 no_ssh_fingerprints: true
 
@@ -31,10 +35,11 @@ Content-Disposition: attachment; filename="100-pull-latest-release.sh"
 
 #!/usr/bin/env bash
 
-cd /var/tmp/traction
-sudo git reset --hard
-sudo git pull
-# sudo chmod +x run_app.sh
+cd /var/tmp
+sudo rm -rf traction
+git clone --depth 1 https://github.com/jafudi/traction.git --branch master
+sudo chmod +x run_app.sh
+sudo chmod 777 -R traction
 
 cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
 [Desktop Entry]
