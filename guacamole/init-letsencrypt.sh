@@ -63,7 +63,8 @@ docker-compose run --rm --entrypoint "\
     --non-interactive \
     --force-renewal" \
     certbot
-echo
+
+echo "Certbot returned value '$?'."
 
 if [[ $? != 0 ]]; then
     echo "### Re-creating dummy certificate because Let's Encrypt order failed..."

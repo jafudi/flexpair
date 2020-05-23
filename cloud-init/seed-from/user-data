@@ -12,6 +12,8 @@ locale: de_DE
 # Set the system timezone
 timezone: Europe/Berlin
 
+package_upgrade: true
+
 packages:
   - gnumeric
   - gnumeric-plugins-extra
