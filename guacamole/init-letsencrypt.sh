@@ -27,19 +27,9 @@ docker-compose run --rm --entrypoint "\
     -out '${container_path}/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 
-if find "${host_path}" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
-    echo "Host path contains the following:"
-    ls ${host_path}
-else
-    echo "Host path '${host_path}' is empty or not a directory"
-    exit 1
-fi
-
 echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
-
-# bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:80)" != "200" ]]; echo "nginx not yet up"; do sleep 2; done'
 
 echo "### Deleting dummy certificate for $domain ..."
 docker-compose run --rm --entrypoint "\
@@ -63,7 +53,7 @@ if [ $staging != "0" ]; then staging_arg="--staging"; fi
 
 mkdir -p "$data_path/logs"
 
-docker-compose run --rm --entrypoint "\
+exitcode=$(docker-compose run --rm --exit-code-from certbot --entrypoint "\
   certbot certonly --webroot --webroot-path /var/www/certbot \
     $staging_arg \
     $email_arg \
@@ -71,8 +61,19 @@ docker-compose run --rm --entrypoint "\
     --rsa-key-size $rsa_key_size \
     --agree-tos \
     --non-interactive \
-    --force-renewal" certbot
+    --force-renewal" \
+    certbot)
 echo
+
+if [[ $exitcode != 0 ]]; then
+    echo "### Re-creating dummy certificate because Let's Encrypt order failed..."
+    docker-compose run --rm --entrypoint "\
+      openssl req -x509 -nodes -newkey rsa:1024 -days 1\
+        -keyout '${container_path}/privkey.pem' \
+        -out '${container_path}/fullchain.pem' \
+        -subj '/CN=localhost'" certbot
+fi
+
 
 echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload
