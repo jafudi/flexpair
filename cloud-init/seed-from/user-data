@@ -34,7 +34,7 @@ ssh_authorized_keys:
 no_ssh_fingerprints: true
 
 runcmd:
-    - echo 'Cloud-config says: {{ds.meta_data.test-variable }}'
+    - echo 'Cloud-config says {{ds.meta_data.test-variable }}'
 
 
 --====Part=Boundary=================================================
@@ -45,7 +45,7 @@ Content-Disposition: attachment; filename="100-pull-latest-release.sh"
 ## template: jinja
 #!/usr/bin/env bash
 
-echo 'User-script says also: {{ds.meta_data.test-variable }}'
+echo 'User-script says also {{ds.meta_data.test-variable }}'
 
 cd /var/tmp
 sudo rm -rf traction
