@@ -33,10 +33,6 @@ ssh_authorized_keys:
 
 no_ssh_fingerprints: true
 
-runcmd:
-    - echo 'Cloud-config says {{ds.meta_data.test-variable }}'
-
-
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
