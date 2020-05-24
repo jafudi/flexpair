@@ -1,2 +1,3 @@
 instance-id: 0001
 local-hostname: localhost
+test-variable: Variabele content rendered using jinja2, yay!

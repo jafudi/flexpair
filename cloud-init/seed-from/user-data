@@ -6,6 +6,9 @@ Content-Type: text/cloud-config; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="cloud-config.yaml"
 
+## template: jinja
+#cloud-config
+
 # Set the locale
 locale: de_DE
 
@@ -30,12 +33,19 @@ ssh_authorized_keys:
 
 no_ssh_fingerprints: true
 
+runcmd:
+    - echo Cloud-config says: {{ds.meta_data.test-variable }}
+
+
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="100-pull-latest-release.sh"
 
+## template: jinja
 #!/usr/bin/env bash
+
+echo User-script says also: {{ds.meta_data.test-variable }}
 
 cd /var/tmp
 sudo rm -rf traction
