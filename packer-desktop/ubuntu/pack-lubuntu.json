@@ -101,8 +101,8 @@
       "expect_disconnect": true,
       "scripts": [
         "packer-desktop/ubuntu/scripts/update.sh",
-        "packer-desktop/_common/motd.sh",
-        "packer-desktop/_common/sshd.sh",
+        "packer-desktop/ubuntu/scripts/motd.sh",
+        "packer-desktop/ubuntu/scripts/sshd.sh",
         "packer-desktop/ubuntu/scripts/networking.sh",
         "packer-desktop/ubuntu/scripts/sudoers.sh",
         "packer-desktop/ubuntu/scripts/docker-compose.sh",
@@ -112,8 +112,8 @@
         "packer-desktop/ubuntu/scripts/update.sh",
         "packer-desktop/ubuntu/scripts/vagrant.sh",
         "packer-desktop/ubuntu/scripts/desktop-sharing.sh",
-        "packer-desktop/_common/virtualbox.sh",
-        "packer-desktop/_common/minimize.sh"
+        "packer-desktop/ubuntu/scripts/virtualbox.sh",
+        "packer-desktop/ubuntu/scripts/minimize.sh"
       ],
       "type": "shell"
     }
