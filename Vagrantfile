@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder ".", "/home/vagrant/host", automount: true
+  # config.vm.synced_folder ".", "/home/ubuntu/host", automount: true
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -43,4 +43,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "Boot triggered config scripts", type: "shell", path: "./cloud-init/provision_cloud_init.sh"
 
   config.vm.provision "Autostart tasks involving GUI", type: "shell", path: "./autostart/provision_autostart.sh"
+
+  config.ssh.username = "ubuntu"
 end

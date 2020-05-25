@@ -20,7 +20,7 @@ Relogin=false
 Session=Lubuntu.desktop
 
 # Username for autologin session
-User=vagrant
+User=ubuntu
 EOF
 
 reboot

@@ -49,7 +49,7 @@ git clone --depth 1 https://github.com/jafudi/traction.git --branch master
 sudo chmod +x run_app.sh
 sudo chmod 777 -R traction
 
-cat << EOF | sudo tee /home/vagrant/Desktop/ideops.desktop
+cat << EOF | sudo tee /home/ubuntu/Desktop/ideops.desktop
 [Desktop Entry]
 Type=Application
 Terminal=true
@@ -57,7 +57,7 @@ Exec=/var/tmp/traction/run_app.sh
 Icon=QMPlay2
 Name=Hier klicken
 EOF
-sudo chmod +x /home/vagrant/Desktop/ideops.desktop
+sudo chmod +x /home/ubuntu/Desktop/ideops.desktop
 
 docker pull --quiet jafudi/idea-extractor:latest &
 
