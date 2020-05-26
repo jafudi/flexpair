@@ -1,11 +1,9 @@
 #!/bin/bash -eux
 
-DEBIAN_FRONTEND="noninteractive"
-
 apt-get autoremove -y \
 --purge ubuntu-desktop kubuntu-desktop xubuntu-desktop
 
-apt-get install -y --no-install-recommends \
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
 --upgrade lubuntu-desktop virtualbox-guest-x11 kdialog qpdfview lximage-qt screengrab ark featherpad kcalc qlipper elementary-icon-theme gdm3-
 
 apt-get autoremove -y \
