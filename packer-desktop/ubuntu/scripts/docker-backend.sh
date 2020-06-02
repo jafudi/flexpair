@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends docker.io
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends docker.io git
 systemctl enable --now docker
 usermod -aG docker ubuntu
 

@@ -1,9 +1,0 @@
-[JafudiOnOCI]
-cloud_domain=oraclecloud.com
-compartment=ocid1.compartment.oc1..aaaaaaaav67tty2zgsxea55juuni7q5uocaavgsrnimz3br3i2nhtyutltja
-fingerprint=15:b0:eb:db:8c:3d:e3:f0:36:97:fa:ee:23:89:7e:c0
-key_file=~/.oci/oci_api_key.pem
-pass_phrase=jafudi
-region=eu-frankfurt-1
-tenancy=ocid1.tenancy.oc1..aaaaaaaaakxiynnr4tmlxjrwkvqyy7iadh7rvmvhrzxhvtufxsbcfbwks6ja
-user=ocid1.user.oc1..aaaaaaaaltvig4z3n5ycfbsjbqe2ugsjenazybowblc7m6ih3uv2mt5opexa

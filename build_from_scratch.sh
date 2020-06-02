@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
 
-vagrant destroy --force
+#vagrant destroy --force
+#
+#PACKER_LOG=1
+#PACKER_LOG_PATH="packer-desktop/builds"
+## https://packer.io/docs/builders/virtualbox-iso.html
 
-PACKER_LOG=1
-PACKER_LOG_PATH="packer-desktop/builds"
-# https://packer.io/docs/builders/virtualbox-iso.html
-packer build -force -only=virtualbox-iso packer-desktop/ubuntu/pack-lubuntu.json
+# ssh-keygen -t rsa -N "" -b 2048 -C "my_vm_key" -f ~/.oci/oci_vm_key
 
-vagrant box remove --all Jafudi/ludopy
-vagrant box add --clean --force Jafudi/ludopy packer-desktop/builds/lubuntu-docker-python.virtualbox.box
+packer build -color=false -on-error=abort -only=oracle-oci packer-desktop/ubuntu/pack-lubuntu.json
 
-vagrant up
-
-vagrant halt
-
-vagrant up # comment out when intending to export to OCI
+#vagrant box remove --all Jafudi/ludopy
+#vagrant box add --clean --force Jafudi/ludopy packer-desktop/builds/lubuntu-docker-python.virtualbox.box
+#
+#vagrant up
+#
+#vagrant halt
+#
+#vagrant up # comment out when intending to export to OCI
 #
 #if [ -z "$(git status --porcelain)" ]; then
 #    # Working directory clean

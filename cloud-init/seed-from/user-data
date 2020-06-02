@@ -6,48 +6,44 @@ Content-Type: text/cloud-config; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="cloud-config.yaml"
 
-## template: jinja
 #cloud-config
 
-# Set the locale
-locale: de_DE
+users:
+  - default
 
 # Set the system timezone
 timezone: Europe/Berlin
-
-package_upgrade: true
-
-packages:
-  - gnumeric
-  - gnumeric-plugins-extra
-  - gnumeric-doc
-  - trojita
-  - cutemaze
-  - focuswriter
-  - vlc
-
-# Add each entry to ~/.ssh/authorized_keys for the configured user or the
-# first user defined in the user definition directive.
-ssh_authorized_keys:
-  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKr00/X5wg6BTv1eJgpk9AyDTxVC4OzGuJrPSaHek8fiCQa2H79ZIpoe/hnMTIkGXBukSnpH3Vz1hNV6V5b588iAP9EIHTa4NjbBbmHofdHXKxv2bJZWPmVoo6rmejNiE4yFJpi/aWzVpgjJu6WBU0FAcf3/ZUT5a9zVXzl/V9Yw5WJrGMPFfD/v9xreE4KejNUcfRjfHifzmTedd3arD9eooQtyd6F18hF5fqtm/BafYWcc6ico9BWHzx3P39dyJxaHeQ9+NCEBm/mJeID8MPTUOwTQT0Ku1Z/FHi6W17ib2jjpYo/fSDj5i40BayjviH2AH1GumBywU/WNPVtocluCbwbRuyAODHhARCEXl1xO7FNG2TxaG9ELM8056jcMKjruuhllYhlVD4HcLgdWJtnVpLesv694X2Z7n/BFizYluu9q07/Ruh2jfiXuQGCo71jDbEP1EJbingy4lXr6hY6/582PcKbmivr+iLE6HADEUj7ehLs/fyNALyGch4Jds= jens@Jenss-MBP.fritz.box
-
-no_ssh_fingerprints: true
 
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="100-pull-latest-release.sh"
 
-## template: jinja
 #!/usr/bin/env bash
 
-echo 'User-script says also {{ds.meta_data.test-variable }}'
+# Check whether required packages are installed ####################
+
+packages=("git" "docker.io" "lubuntu-desktop" "kdialog" "x11vnc")
+
+for pkg in ${packages[@]}; do
+    is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
+
+    if [ "${is_pkg_installed}" == "install ok installed" ]; then
+        echo ${pkg} is installed.
+    else
+        echo Missing package ${pkg}! Skip further execution.
+        exit 0
+    fi
+done
+
+# Checkout Git repository HEAD revision ############################
 
 cd /var/tmp
-sudo rm -rf traction
+rm -rf traction
 git clone --depth 1 https://github.com/jafudi/traction.git --branch master
-sudo chmod +x run_app.sh
 sudo chmod 777 -R traction
+
+# Deploy actual application ########################################
 
 cat << EOF | sudo tee /home/ubuntu/Desktop/ideops.desktop
 [Desktop Entry]
@@ -61,12 +57,32 @@ sudo chmod +x /home/ubuntu/Desktop/ideops.desktop
 
 docker pull --quiet jafudi/idea-extractor:latest &
 
---====Part=Boundary=================================================
-Content-Type: text/x-shellscript; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="200-register-gitlab-runner.sh"
+# Provision Guacamole stack ########################################
 
-#!/usr/bin/env bash
+export GUACAMOLE_HOME=/var/tmp/traction/guacamole
+cd ${GUACAMOLE_HOME}
+sudo ./init-auth-db.sh
+sudo ./init-letsencrypt.sh
+
+# Install GitLab runner ############################################
+
+echo "\n\nInstall Python packages required for testing on guest OS..."
+DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends python3-pip
+pip3 install setuptools
+pip3 install behave invoke jsonschema
+
+echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
+curl --silent -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+apt-get install --upgrade -y gitlab-runner traceroute
+
+echo 'gitlab-runner ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+usermod -aG docker gitlab-runner
+
+mkdir -p builds
+chmod --recursive 777 builds
+rm -f .bash_logout
+
+# Register GitLab runner ###########################################
 
 sudo gitlab-runner unregister --all-runners
 sudo rm -f /etc/gitlab-runner/config.toml
@@ -95,18 +111,5 @@ sudo gitlab-runner register \
 
 sudo gitlab-runner restart
 sudo gitlab-runner status
-
---====Part=Boundary=================================================
-Content-Type: text/x-shellscript; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="300-serve-guacamole.sh"
-
-#!/usr/bin/env bash
-
-export GUACAMOLE_HOME=/var/tmp/traction/guacamole
-cd ${GUACAMOLE_HOME}
-sudo ./init-auth-db.sh
-sudo ./init-letsencrypt.sh
-# docker-compose up --detach --quiet-pull &
 
 --====Part=Boundary=================================================--
