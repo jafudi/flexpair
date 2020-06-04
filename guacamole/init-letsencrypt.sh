@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-domain="desktop.jafudi.net"
+domain=`get_info metadata/ssl-sub-domain`
 rsa_key_size=4096
 data_path="./letsencrypt/certbot"
 mkdir -p ${data_path}
@@ -17,14 +17,14 @@ if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/
 fi
 
 echo "### Creating dummy certificate for $domain ..."
-container_path="/etc/letsencrypt/live/$domain"
-host_path="$data_path/conf/live/$domain"
-sudo mkdir -p ${host_path}
-chmod 777 ${host_path}
+container_path="/etc/letsencrypt"
+host_path="$data_path/conf"
+sudo mkdir -p "${host_path}/live/$domain"
+sudo chmod 777 "${host_path}/live/$domain"
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:1024 -days 1\
-    -keyout '${container_path}/privkey.pem' \
-    -out '${container_path}/fullchain.pem' \
+    -keyout '${container_path}/live/${domain}/privkey.pem' \
+    -out '${container_path}/live/${domain}/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 
 echo "### Starting nginx ..."
@@ -32,12 +32,10 @@ docker-compose up --force-recreate -d nginx
 echo
 
 echo "### Archiving dummy certificate for $domain ..."
-docker-compose run --rm --entrypoint "\
-  rm -Rf /etc/letsencrypt/archive/$domain && \
-  mv /etc/letsencrypt/live/$domain /etc/letsencrypt/archive/ && \
-  rm -Rf /etc/letsencrypt/renewal/$domain.conf" certbot
-echo
-
+sudo rm -Rf ${host_path}/archive/$domain/
+sudo mkdir -p ${host_path}/archive/
+sudo mv "${host_path}/live/$domain" "${host_path}/archive/"
+sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
 domain_args="-d $domain"
@@ -72,9 +70,7 @@ if [ $exitcode -eq 0 ]; then
     docker-compose exec nginx nginx -s reload
 else
     echo "### Restoring dummy certificate for $domain ..."
-    docker-compose run --rm --entrypoint "\
-      rm -Rf /etc/letsencrypt/live/$domain && \
-      mv /etc/letsencrypt/archive/$domain /etc/letsencrypt/live/ && \
-      rm -Rf /etc/letsencrypt/renewal/$domain.conf" certbot
+    sudo rm -Rf "${host_path}/live/$domain"
+    sudo mv "${host_path}/archive/$domain" "${host_path}/live/"
+    sudo rm -Rf "${host_path}/renewal/$domain.conf"
 fi
-
