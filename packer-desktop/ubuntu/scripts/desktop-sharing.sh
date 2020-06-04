@@ -17,5 +17,3 @@ sudo chmod 777 -R traction
 cp /var/tmp/traction/autostart/* /home/ubuntu/.config/autostart/
 
 find /home/ubuntu/.config/autostart -type f -exec chmod +x {} \;
-
-reboot

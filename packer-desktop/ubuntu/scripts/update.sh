@@ -1,4 +1,11 @@
 #!/bin/sh -eux
+
+echo "Block until cloud-init finished..."
+set +e
+cloud-init status --long --wait
+cat /var/log/cloud-init-output.log
+set -e
+
 export DEBIAN_FRONTEND=noninteractive
 
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
@@ -36,3 +43,8 @@ apt-get -y update;
 apt-get -y dist-upgrade -o Dpkg::Options::="--force-confnew";
 
 reboot
+
+echo "Block until cloud-init finished..."
+set +e
+cloud-init status --long --wait
+set -e

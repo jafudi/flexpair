@@ -88,10 +88,8 @@
       "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaaym5b7erow7ygf5msauzxgqwrs3vn6hjdwg2ebgght7azfjb7tjtq",
       "user_data_file": "cloud-init/seed-from/user-data",
       "metadata": {
-        "instance-id": "0001",
-        "local-hostname": "localhost",
         "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsq10vZzfg/EtcWW4Pawt1yVZ+y8TUQaXqERSvIT2UDsT7LqctHb9GzXgoSqYXKZyLI4Q7bMkG85QtEa9XGIonFUca23axKNgvnJCqTiUaX6TgEjKdLRk7AB+/HYuc1QemFEF/CjB829D69hdDkve3pJJvrQmhfynDbypqCOLHccCeFKFsIEnG3+LdwDLHsPs5CKaOUeGXcIUYIWb2j6zmL5hb/0zh2DKrVKt+hoS3+/POJnPfgUUfpnezaghF4K3qAo2x82HgB6fVf1mCpw39mQu6cn9YMdRLglSktdefkTHGXTKY3sJqMRd7q33GwwbpgBgHlvnso51qLleZj/wx my_vm_key",
-        "test-variable": "Variable content rendered using jinja2, yay!"
+        "ssl-sub-domain": "desktop.jafudi.net"
       },
       "ssh_username": "ubuntu",
       "ssh_private_key_file": "~/.oci/oci_vm_key",
@@ -109,7 +107,6 @@
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": true,
       "scripts": [
-        "./cloud-init/provision_cloud_init.sh",
         "packer-desktop/ubuntu/scripts/update.sh",
         "packer-desktop/ubuntu/scripts/motd.sh",
         "packer-desktop/ubuntu/scripts/sshd.sh",
@@ -117,7 +114,8 @@
         "packer-desktop/ubuntu/scripts/sudoers.sh",
         "packer-desktop/ubuntu/scripts/docker-backend.sh",
         "packer-desktop/ubuntu/scripts/lubuntu-frontend.sh",
-        "packer-desktop/ubuntu/scripts/desktop-sharing.sh"
+        "packer-desktop/ubuntu/scripts/desktop-sharing.sh",
+        "./cloud-init/provision_cloud_init.sh"
       ],
       "type": "shell"
     },
@@ -130,9 +128,9 @@
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": true,
       "scripts": [
+        "packer-desktop/ubuntu/scripts/minimize.sh",
         "packer-desktop/ubuntu/scripts/vagrant.sh",
-        "packer-desktop/ubuntu/scripts/virtualbox.sh",
-        "packer-desktop/ubuntu/scripts/minimize.sh"
+        "packer-desktop/ubuntu/scripts/virtualbox.sh"
       ]
     }
   ],

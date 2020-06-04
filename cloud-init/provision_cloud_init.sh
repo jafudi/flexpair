@@ -16,16 +16,19 @@ if [ "" = "$PKG_OK" ]; then
     # Prepare for Oracle Cloud Infrastructure
     cp /var/tmp/traction/cloud-init/grub.cfg /etc/default/grub
     grub-mkconfig -o /boot/grub/grub.cfg
-else
-    echo "Wait for cloud-init to finish..."
-    set +e
-    cloud-init status --long --wait
-    set -e
-    cloud-init collect-logs
-    tar -xzf cloud-init.tar.gz
-    rm -f cloud-init.tar.gz
-    cd cloud-init-logs*
-    cat /var/log/cloud-init-output.log
-    cd ..
 fi
+
+echo "Clean reboot..."
+cloud-init clean --logs
+
+reboot
+
+echo "Wait for cloud-init to finish..."
+cloud-init status --long --wait
+cloud-init collect-logs
+tar -xzf cloud-init.tar.gz
+rm -f cloud-init.tar.gz
+cd cloud-init-logs*
+cat /var/log/cloud-init-output.log
+cd ..
 
