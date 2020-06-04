@@ -86,8 +86,8 @@ export ETH0_IP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ 
 if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/ssl-dhparams.pem" ]; then
   echo "### Downloading recommended TLS parameters ..."
   mkdir -p "$data_path/conf"
-  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf > "$data_path/conf/options-ssl-nginx.conf"
-  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem > "$data_path/conf/ssl-dhparams.pem"
+  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | sudo tee "$data_path/conf/options-ssl-nginx.conf" > /dev/null
+  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem | sudo tee "$data_path/conf/ssl-dhparams.pem" > /dev/null
   echo
 fi
 
@@ -97,7 +97,7 @@ host_path="$data_path/conf"
 sudo mkdir -p "${host_path}/live/$domain"
 sudo chmod 777 "${host_path}/live/$domain"
 docker-compose run --rm --entrypoint "\
-  openssl req -x509 -nodes -newkey rsa:1024 -days 1\
+  openssl req -x509 -nodes -newkey 'rsa:${rsa_key_size}' -days 90\
     -keyout '${container_path}/live/${domain}/privkey.pem' \
     -out '${container_path}/live/${domain}/fullchain.pem' \
     -subj '/CN=localhost'" certbot
@@ -113,7 +113,6 @@ sudo mv "${host_path}/live/$domain" "${host_path}/archive/"
 sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
-domain_args="-d $domain"
 
 # Select appropriate email arg
 case "$email" in
@@ -130,7 +129,7 @@ docker-compose run --rm --entrypoint "\
   certbot certonly --webroot --webroot-path /var/www/certbot \
     $staging_arg \
     $email_arg \
-    $domain_args \
+    -d $domain \
     --rsa-key-size $rsa_key_size \
     --agree-tos \
     --non-interactive \

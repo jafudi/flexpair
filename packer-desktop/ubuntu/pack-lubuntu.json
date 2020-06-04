@@ -132,6 +132,16 @@
         "packer-desktop/ubuntu/scripts/vagrant.sh",
         "packer-desktop/ubuntu/scripts/virtualbox.sh"
       ]
+    },
+    {
+      "type": "shell",
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "expect_disconnect": false,
+      "script": "./cloud-init/run_cloud_init.sh",
+      "pause_before": "10s"
     }
   ],
   "post-processors": [

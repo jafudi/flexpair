@@ -21,14 +21,9 @@ fi
 echo "Clean reboot..."
 cloud-init clean --logs
 
-reboot
+echo "Please create a DNS A record from your sub domain to the public IP address of the VM."
+echo "Then press any key to continue..."
+read -r reply
 
-echo "Wait for cloud-init to finish..."
-cloud-init status --long --wait
-cloud-init collect-logs
-tar -xzf cloud-init.tar.gz
-rm -f cloud-init.tar.gz
-cd cloud-init-logs*
-cat /var/log/cloud-init-output.log
-cd ..
+reboot
 
