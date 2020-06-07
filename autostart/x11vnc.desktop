@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=sudo /usr/bin/x11vnc -create -auth guess -forever -loop -noxdamage -o /var/log/x11vnc.log -rfbauth /home/ubuntu/.vnc/passwd -rfbport 5900 -shared
+Exec=/home/ubuntu/.config/autostart/start_x11vnc.sh
 Name=Start VNC server
 Type=Application
 Version=1.0
