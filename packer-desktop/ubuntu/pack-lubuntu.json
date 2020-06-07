@@ -85,7 +85,7 @@
       "base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q",
       "image_name": "TestOracleBuilder",
       "shape": "VM.Standard.E2.1.Micro",
-      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaaym5b7erow7ygf5msauzxgqwrs3vn6hjdwg2ebgght7azfjb7tjtq",
+      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaacd5onkr7nfjgpg44rrg3avmlz2bo4aq4dxzr5fuen6clqqx6tl3a",
       "user_data_file": "cloud-init/seed-from/user-data",
       "metadata": {
         "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsq10vZzfg/EtcWW4Pawt1yVZ+y8TUQaXqERSvIT2UDsT7LqctHb9GzXgoSqYXKZyLI4Q7bMkG85QtEa9XGIonFUca23axKNgvnJCqTiUaX6TgEjKdLRk7AB+/HYuc1QemFEF/CjB829D69hdDkve3pJJvrQmhfynDbypqCOLHccCeFKFsIEnG3+LdwDLHsPs5CKaOUeGXcIUYIWb2j6zmL5hb/0zh2DKrVKt+hoS3+/POJnPfgUUfpnezaghF4K3qAo2x82HgB6fVf1mCpw39mQu6cn9YMdRLglSktdefkTHGXTKY3sJqMRd7q33GwwbpgBgHlvnso51qLleZj/wx my_vm_key",

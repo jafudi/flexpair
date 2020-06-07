@@ -82,22 +82,13 @@
 
 version: '3'
 
-# networks
-# create a network 'guacnetwork_compose' in mode 'bridged'
-networks:
-  guacnetwork_compose:
-    driver: bridge
-
 # services
 services:
   # guacd
   guacd:
     container_name: guacd_compose
     image: guacamole/guacd
-    networks:
-      guacnetwork_compose:
-    extra_hosts:
-      - "vnc-host:${ETH0_IP}"
+    network_mode: host
     restart: always
     volumes:
       - ./drive:/drive:rw
@@ -111,8 +102,7 @@ services:
       POSTGRES_PASSWORD: ChooseYourOwnPasswordHere1234
       POSTGRES_USER: guacamole_user
     image: postgres
-    networks:
-      guacnetwork_compose:
+    network_mode: host
     restart: always
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
@@ -125,21 +115,13 @@ services:
       - guacd
       - postgres
     environment:
-      GUACD_HOSTNAME: guacd
+      GUACD_HOSTNAME: localhost
       POSTGRES_DATABASE: guacamole_db
       POSTGRES_HOSTNAME: postgres
       POSTGRES_PASSWORD: ChooseYourOwnPasswordHere1234
       POSTGRES_USER: guacamole_user
     image: guacamole/guacamole
-    links:
-      - guacd
-    networks:
-      guacnetwork_compose:
-    ports:
-      ## enable next line if not using nginx
-      ##    - 8080:8080/tcp
-      ## enable next line when using nginx
-      - 8080/tcp
+    network_mode: host
     restart: always
 
   ########### optional ##############
@@ -153,13 +135,7 @@ services:
       - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./letsencrypt/certbot/conf:/etc/letsencrypt:ro
       - ./letsencrypt/certbot/www:/var/www/certbot:ro
-    ports:
-      - 443:443
-      - 80:80
-    links:
-      - guacamole
-    networks:
-      guacnetwork_compose:
+    network_mode: host
     # run nginx
     # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     # nginx-debug-mode
@@ -169,8 +145,7 @@ services:
   certbot:
     image: certbot/certbot
     restart: unless-stopped
-    networks:
-      guacnetwork_compose:
+    network_mode: host
     volumes:
       - ./letsencrypt/certbot/conf:/etc/letsencrypt:rw
       - ./letsencrypt/certbot/www:/var/www/certbot:rw
