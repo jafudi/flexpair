@@ -83,7 +83,7 @@
 version: '3'
 
 # networks
-# create a network 'guacnetwork_compose' in mode 'bridged'
+# create a network 'guacamole_net' in mode 'bridged'
 networks:
   guacamole_net:
     driver: bridge
