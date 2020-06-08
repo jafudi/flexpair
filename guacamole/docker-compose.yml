@@ -111,6 +111,8 @@ services:
     image: postgres
     networks:
       guacamole_net:
+    extra_hosts:
+      - "vnc-host:${ETH0_IP}"
     restart: always
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
@@ -122,8 +124,6 @@ services:
     depends_on:
       - guacd
       - postgres
-    extra_hosts:
-      - "guacd-host:${ETH0_IP}"
     environment:
       GUACD_HOSTNAME: guacd
       POSTGRES_DATABASE: guacamole_db
