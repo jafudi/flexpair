@@ -13,7 +13,11 @@ xserver-xorg-video-dummy \
 xserver-xorg-legacy \
 xfonts-base \
 xterm \
-net-tools
+net-tools \
+iptables-persistent
+
+iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+netfilter-persistent save
 
 usermod -aG tty ubuntu
 
