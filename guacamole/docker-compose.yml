@@ -96,6 +96,8 @@ services:
     image: guacamole/guacd
     networks:
       guacamole_net:
+    extra_hosts:
+      - "vnc-host:${ETH0_IP}"
     restart: always
     volumes:
       - ./drive:/drive:rw
@@ -111,8 +113,6 @@ services:
     image: postgres
     networks:
       guacamole_net:
-    extra_hosts:
-      - "vnc-host:${ETH0_IP}"
     restart: always
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
