@@ -14,7 +14,25 @@ xserver-xorg-legacy \
 xfonts-base \
 xterm \
 net-tools \
-iptables-persistent
+iptables-persistent \
+xinetd
+
+mkdir -p /etc/xinetd.d
+cat <<EOF > /etc/xinetd.d/x11vnc;
+service x11vncservice
+{
+       port            = 5900
+       type            = UNLISTED
+       socket_type     = stream
+       protocol        = tcp
+       wait            = no
+       user            = root
+       server          = /usr/bin/x11vnc
+       server_args     = -inetd -o /var/log/x11vnc.log -create -auth guess -passwd jafudi -rfbport 5900 -shared
+       disable         = no
+}
+EOF
+sudo /etc/init.d/xinetd reload
 
 iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 netfilter-persistent save

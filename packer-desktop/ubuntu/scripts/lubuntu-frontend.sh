@@ -4,7 +4,7 @@ apt-get clean
 apt-get update --fix-missing
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
---upgrade lubuntu-desktop virtualbox-guest-x11 elementary-icon-theme locales nano kdialog
+--upgrade lubuntu-desktop sddm virtualbox-guest-x11 elementary-icon-theme locales nano less kdialog
 
 apt-get autoremove -y \
 --purge xscreensaver bluedevil
