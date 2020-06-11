@@ -13,27 +13,45 @@ xserver-xorg-video-dummy \
 xserver-xorg-legacy \
 xfonts-base \
 xterm \
-net-tools \
-iptables-persistent \
-xinetd
+net-tools
 
-mkdir -p /etc/xinetd.d
-cat <<EOF > /etc/xinetd.d/x11vnc;
-service x11vncservice
-{
-       port            = 5900
-       type            = UNLISTED
-       socket_type     = stream
-       protocol        = tcp
-       wait            = no
-       user            = root
-       server          = /usr/bin/x11vnc
-       server_args     = -inetd -o /var/log/x11vnc.log -create -auth guess -passwd jafudi -rfbport 5900 -shared
-       disable         = no
-}
+cat <<EOF > /etc/systemd/system/x11vnc.service
+[Unit]
+Description=VNC server for X11
+Requires=multi-user.target
+After=lightdm.service
+
+[Service]
+ExecStart=/usr/bin/x11vnc -create -xkb -noxrecord -noxfixes -noxdamage -display :0 -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
+Restart=always
+
+[Install]
+WantedBy=graphical.target
 EOF
-sudo /etc/init.d/xinetd reload
+systemctl enable x11vnc.service
+systemctl set-default graphical.target
 
+#xinetd
+#
+#mkdir -p /etc/xinetd.d
+#cat <<EOF > /etc/xinetd.d/x11vnc;
+#service x11vncservice
+#{
+#       port            = 5900
+#       type            = UNLISTED
+#       socket_type     = stream
+#       protocol        = tcp
+#       wait            = no
+#       user            = root
+#       server          = /usr/bin/x11vnc
+#       server_args     = -inetd -o /var/log/x11vnc.log -create -auth guess -passwd jafudi -rfbport 5900 -shared
+#       disable         = no
+#}
+#EOF
+#sudo /etc/init.d/xinetd reload
+
+# The following three lines circumvent a hardly documented reject rule on Oracle Cloud provided images
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends iptables-persistent
 iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 netfilter-persistent save
 
@@ -41,27 +59,31 @@ usermod -aG tty ubuntu
 
 echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
 
-mkdir -p /etc/X11/xorg.conf.d
-cat <<EOF > /etc/X11/xorg.conf.d/10-headless.conf;
-Section "Monitor"
-        Identifier "dummy_monitor"
-        HorizSync 28.0-80.0
-        VertRefresh 48.0-75.0
-        Modeline "1920x1080" 172.80 1920 2040 2248 2576 1080 1081 1084 1118
+mkdir -p /etc/X11
+cat <<EOF > /etc/X11/xorg.conf;
+Section "Device"
+    Identifier  "Dummy"
+    Driver      "dummy"
+    VideoRam    256000
+    Option      "IgnoreEDID"    "true"
+    Option      "NoDDC" "true"
 EndSection
 
-Section "Device"
-        Identifier "dummy_card"
-        VideoRam 256000
-        Driver "dummy"
+Section "Monitor"
+    Identifier  "Monitor"
+    HorizSync   15.0-100.0
+    VertRefresh 15.0-200.0
 EndSection
 
 Section "Screen"
-        Identifier "dummy_screen"
-        Device "dummy_card"
-        Monitor "dummy_monitor"
-        SubSection "Display"
-        EndSubSection
+    Identifier  "Screen"
+    Monitor     "Monitor"
+    Device      "Dummy"
+    DefaultDepth    24
+    SubSection  "Display"
+        Depth   24
+        Modes   "1920x1080" "1280x1024"
+    EndSubSection
 EndSection
 EOF
 

@@ -4,22 +4,22 @@ apt-get clean
 apt-get update --fix-missing
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends \
---upgrade lubuntu-desktop sddm virtualbox-guest-x11 elementary-icon-theme locales nano less kdialog
+--upgrade lubuntu-desktop lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings accountsservice policykit-1 virtualbox-guest-x11 elementary-icon-theme locales nano less kdialog
+
+cat << EOF > /etc/lightdm/lightdm.conf
+[SeatDefaults]
+user-session=lxqt
+greeter-session=lightdm-gtk-greeter
+autologin-user=ubuntu
+autologin-user-timeout=5
+EOF
+systemctl enable lightdm.service
+usermod -aG nopasswdlogin ubuntu
+
+
 
 apt-get autoremove -y \
 --purge xscreensaver bluedevil
-
-cat << EOF > /etc/sddm.conf
-[Autologin]
-# Whether sddm should automatically log back into sessions when they exit
-Relogin=false
-
-# Name of session file for autologin session (if empty try last logged in)
-Session=Lubuntu.desktop
-
-# Username for autologin session
-User=ubuntu
-EOF
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 qpdfview \

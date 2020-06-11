@@ -115,23 +115,10 @@
         "packer-desktop/ubuntu/scripts/docker-backend.sh",
         "packer-desktop/ubuntu/scripts/lubuntu-frontend.sh",
         "packer-desktop/ubuntu/scripts/desktop-sharing.sh",
+        "packer-desktop/ubuntu/scripts/virtualbox.sh",
         "./cloud-init/provision_cloud_init.sh"
       ],
       "type": "shell"
-    },
-    {
-      "type": "shell",
-      "only": ["virtualbox-iso"],
-      "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
-      ],
-      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-      "expect_disconnect": true,
-      "scripts": [
-        "packer-desktop/ubuntu/scripts/minimize.sh",
-        "packer-desktop/ubuntu/scripts/vagrant.sh",
-        "packer-desktop/ubuntu/scripts/virtualbox.sh"
-      ]
     },
     {
       "type": "shell",
