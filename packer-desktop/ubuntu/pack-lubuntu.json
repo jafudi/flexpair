@@ -116,6 +116,7 @@
         "packer-desktop/ubuntu/scripts/lubuntu-frontend.sh",
         "packer-desktop/ubuntu/scripts/desktop-sharing.sh",
         "packer-desktop/ubuntu/scripts/virtualbox.sh",
+        "packer-desktop/ubuntu/scripts/cleanup.sh",
         "./cloud-init/provision_cloud_init.sh"
       ],
       "type": "shell"
