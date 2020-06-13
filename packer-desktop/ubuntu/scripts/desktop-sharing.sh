@@ -12,18 +12,17 @@ xserver-xorg-video-vesa \
 xserver-xorg-video-dummy \
 xserver-xorg-legacy \
 xfonts-base \
-xterm \
 net-tools
 
 cat <<EOF > /etc/systemd/system/x11vnc.service
 [Unit]
 Description=VNC server for X11
-Requires=multi-user.target
+Wants=lightdm.service
 After=lightdm.service
 
 [Service]
-ExecStart=/usr/bin/x11vnc -create -xkb -noxrecord -noxfixes -noxdamage -display :0 -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
-Restart=always
+ExecStart=/usr/bin/x11vnc -display :0 -xkb -noxrecord -noxfixes -noxdamage -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
+ExecStop=/usr/bin/x11vnc -R stop
 
 [Install]
 WantedBy=graphical.target

@@ -1,5 +1,0 @@
-[Desktop Entry]
-Exec=/home/ubuntu/.config/autostart/start_x11vnc.sh
-Name=Start VNC server
-Type=Application
-Version=1.0

@@ -10,7 +10,6 @@ lxqt-core \
 lxqt-notificationd \
 lxqt-openssh-askpass \
 lxqt-policykit \
-lxqt-powermanagement \
 lxqt-sudo \
 lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
 accountsservice \
@@ -18,6 +17,7 @@ policykit-1 \
 virtualbox-guest-x11 \
 elementary-icon-theme \
 locales \
+cron \
 nano \
 less \
 kdialog \
@@ -36,8 +36,6 @@ fonts-dejavu-core \
 fonts-freefont-ttf \
 foomatic-db-compressed-ppds \
 ghostscript-x \
-gvfs-backends \
-gvfs-fuse \
 inputattach \
 kde-style-breeze \
 libfm-modules \
@@ -61,8 +59,6 @@ pcmanfm-qt \
 pinentry-qt \
 plymouth-theme-lubuntu-logo \
 plymouth-theme-lubuntu-text \
-printer-driver-gutenprint \
-printer-driver-pnm2ppa \
 pulseaudio \
 python3-launchpadlib \
 qterminal \
@@ -89,24 +85,16 @@ trojita \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
-cutemaze
-# 2048-qt \
-# acpi-support \
+cutemaze \
+2048-qt \
+screengrab \
+qtpass
 # avahi-daemon \
-# bluez \
-# bluez-cups \
-# compton-conf \
-# cups \
-# cups-bsd \
-# cups-client \
-# cups-filters \
 # fwupd \
 # fwupd-signed \
 # hplip \
-# htop \
 # k3b \
 # kerneloops \
-# laptop-detect \
 # libnss-mdns \
 # libreoffice-calc \
 # libreoffice-gtk3 \
@@ -117,7 +105,6 @@ cutemaze
 # memtest86+ \
 # muon \
 # neofetch \
-# noblenote \
 # packagekit \
 # partitionmanager \
 # pastebinit \
@@ -126,9 +113,7 @@ cutemaze
 # qapt-deb-installer \
 # qlipper \
 # qps \
-# qtpass \
 # quassel \
-# screengrab \
 # snapd \
 # transmission-qt \
 # zsync
@@ -137,8 +122,6 @@ cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]
 user-session=lxqt
 greeter-session=lightdm-gtk-greeter
-autologin-user=ubuntu
-autologin-user-timeout=5
 EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
