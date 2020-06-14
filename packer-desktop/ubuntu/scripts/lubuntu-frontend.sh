@@ -86,37 +86,7 @@ qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 cutemaze \
-2048-qt \
-screengrab \
-qtpass
-# avahi-daemon \
-# fwupd \
-# fwupd-signed \
-# hplip \
-# k3b \
-# kerneloops \
-# libnss-mdns \
-# libreoffice-calc \
-# libreoffice-gtk3 \
-# libreoffice-impress \
-# libreoffice-qt5 \
-# libreoffice-style-breeze \
-# libreoffice-writer \
-# memtest86+ \
-# muon \
-# neofetch \
-# packagekit \
-# partitionmanager \
-# pastebinit \
-# plasma-discover \
-# policykit-desktop-privileges \
-# qapt-deb-installer \
-# qlipper \
-# qps \
-# quassel \
-# snapd \
-# transmission-qt \
-# zsync
+2048-qt
 
 cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]
@@ -126,6 +96,18 @@ EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
 
+LXQT_CONFIG_DIR=/home/ubuntu/.config/lxqt
+mkdir -p ${LXQT_CONFIG_DIR}
+cat << EOF > "${LXQT_CONFIG_DIR}/lxqt.config"
+[General]
+icon_follow_color_scheme=true
+icon_theme=ePapirus
+single_click_activate=true
+theme=Lubuntu Arc
+
+[Qt]
+style=Breeze
+EOF
 
 cat << EOF > /usr/lib/firefox/browser/defaults/preferences/sysprefs.js
 pref("browser.startup.homepage","jafudi.com");
