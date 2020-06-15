@@ -97,20 +97,6 @@ EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
 
-#LXQT_CONFIG_DIR=/home/ubuntu/.config/lxqt
-#mkdir -p ${LXQT_CONFIG_DIR}
-#cat << EOF > "${LXQT_CONFIG_DIR}/lxqt.config"
-#[General]
-#__userfile__=true
-#icon_follow_color_scheme=true
-#icon_theme=ePapirus
-#single_click_activate=true
-#theme=Lubuntu Arc
-#
-#[Qt]
-#style=Breeze
-#EOF
-
 cat << EOF > /usr/lib/firefox/browser/defaults/preferences/sysprefs.js
 pref("browser.startup.homepage","jafudi.com");
 EOF

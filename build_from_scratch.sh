@@ -8,6 +8,7 @@
 
 # ssh-keygen -t rsa -N "" -b 2048 -C "my_vm_key" -f ~/.oci/oci_vm_key
 
+export DATE_WITH_TIME=`date "+%Y%m%d-%H%M%S"`
 packer build -color=true -on-error=abort packer-desktop/ubuntu/pack-lubuntu.json
 
 #vagrant box remove --all Jafudi/ludopy
