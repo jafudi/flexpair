@@ -9,7 +9,7 @@
 # ssh-keygen -t rsa -N "" -b 2048 -C "my_vm_key" -f ~/.oci/oci_vm_key
 
 export DATE_WITH_TIME=`date "+%Y%m%d-%H%M%S"`
-packer build -color=true -on-error=abort packer-desktop/ubuntu/pack-lubuntu.json
+packer build -color=true -on-error=abort packer-desktop/oracle-cloud-free-setup.json
 
 #vagrant box remove --all Jafudi/ludopy
 #vagrant box add --clean --force Jafudi/ludopy packer-desktop/builds/lubuntu-docker-python.virtualbox.box

@@ -1,7 +1,7 @@
 {
   "variables": {
     "instance_suffix": "{{env `DATE_WITH_TIME`}}",
-    "script_dir": "packer-desktop/ubuntu/scripts"
+    "script_dir": "packer-desktop/scripts"
   },
   "builders": [
     {
