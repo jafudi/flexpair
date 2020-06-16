@@ -20,7 +20,7 @@
       "image_name": "TestOracleBuilder",
       "shape": "VM.Standard.E2.1.Micro",
       "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaacd5onkr7nfjgpg44rrg3avmlz2bo4aq4dxzr5fuen6clqqx6tl3a",
-      "user_data_file": "cloud-init/seed-from/user-data",
+      "user_data_file": "cloud-init/seed-from/guacamole-user-data.yaml",
       "metadata": {
         "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsq10vZzfg/EtcWW4Pawt1yVZ+y8TUQaXqERSvIT2UDsT7LqctHb9GzXgoSqYXKZyLI4Q7bMkG85QtEa9XGIonFUca23axKNgvnJCqTiUaX6TgEjKdLRk7AB+/HYuc1QemFEF/CjB829D69hdDkve3pJJvrQmhfynDbypqCOLHccCeFKFsIEnG3+LdwDLHsPs5CKaOUeGXcIUYIWb2j6zmL5hb/0zh2DKrVKt+hoS3+/POJnPfgUUfpnezaghF4K3qAo2x82HgB6fVf1mCpw39mQu6cn9YMdRLglSktdefkTHGXTKY3sJqMRd7q33GwwbpgBgHlvnso51qLleZj/wx my_vm_key",
         "ssl-sub-domain": "desktop.jafudi.net"
@@ -45,7 +45,7 @@
       "image_name": "TestOracleBuilder",
       "shape": "VM.Standard.E2.1.Micro",
       "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaacd5onkr7nfjgpg44rrg3avmlz2bo4aq4dxzr5fuen6clqqx6tl3a",
-      "user_data_file": "cloud-init/seed-from/user-data",
+      "user_data_file": "cloud-init/seed-from/lubuntu-user-data.yaml",
       "metadata": {
         "ssh_authorized_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsq10vZzfg/EtcWW4Pawt1yVZ+y8TUQaXqERSvIT2UDsT7LqctHb9GzXgoSqYXKZyLI4Q7bMkG85QtEa9XGIonFUca23axKNgvnJCqTiUaX6TgEjKdLRk7AB+/HYuc1QemFEF/CjB829D69hdDkve3pJJvrQmhfynDbypqCOLHccCeFKFsIEnG3+LdwDLHsPs5CKaOUeGXcIUYIWb2j6zmL5hb/0zh2DKrVKt+hoS3+/POJnPfgUUfpnezaghF4K3qAo2x82HgB6fVf1mCpw39mQu6cn9YMdRLglSktdefkTHGXTKY3sJqMRd7q33GwwbpgBgHlvnso51qLleZj/wx my_vm_key",
         "ssl-sub-domain": "desktop.jafudi.net"
@@ -76,7 +76,7 @@
       "environment_vars": [
         "HOME_DIR=/home/ubuntu"
       ],
-      "only": "lubuntu-desktop",
+      "only": ["lubuntu-desktop"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": true,
       "scripts": [
