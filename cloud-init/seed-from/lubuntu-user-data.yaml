@@ -53,7 +53,9 @@ sudo chmod 777 -R traction
 
 # Deploy actual application ########################################
 
-cat << EOF | sudo tee /home/ubuntu/Desktop/ideops.desktop
+DESKTOP=/home/ubuntu/Desktop
+mkdir -p $DESKTOP
+cat << EOF | sudo tee $DESKTOP/ideops.desktop
 [Desktop Entry]
 Type=Application
 Terminal=true
@@ -61,7 +63,7 @@ Exec=/var/tmp/traction/run_app.sh
 Icon=QMPlay2
 Name=Hier klicken
 EOF
-sudo chmod +x /home/ubuntu/Desktop/ideops.desktop
+sudo chmod +x $DESKTOP/ideops.desktop
 
 docker pull --quiet jafudi/idea-extractor:latest &
 
