@@ -1,6 +1,5 @@
 {
   "variables": {
-    "instance_suffix": "{{env `DATE_WITH_TIME`}}",
     "script_dir": "packer-desktop/scripts"
   },
   "builders": [
@@ -95,7 +94,7 @@
       "expect_disconnect": true,
       "scripts": [
         "{{user `script_dir`}}/cleanup.sh",
-        "./cloud-init/provision_cloud_init.sh"
+        "{{user `script_dir`}}/provision_cloud_init.sh"
       ],
       "type": "shell"
     },
@@ -103,7 +102,7 @@
       "type": "shell",
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": false,
-      "script": "./cloud-init/run_cloud_init.sh",
+      "script": "{{user `script_dir`}}/run_cloud_init.sh",
       "pause_before": "10s"
     }
   ]

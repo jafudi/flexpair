@@ -1,6 +1,6 @@
 #!/bin/sh -eux
 
-snap remove oracle-cloud-agent
+# snap remove oracle-cloud-agent
 
 apt-get remove -y whoopsie apport
 
