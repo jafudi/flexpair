@@ -7,7 +7,7 @@
   },
   "builders": [
     {
-      "name": "oci-guacamole-gateway",
+      "name": "guacamole-gateway",
       "instance_name": "gateway-{{timestamp}}",
       "type": "oracle-oci",
       "user_ocid": "ocid1.user.oc1..aaaaaaaaltvig4z3n5ycfbsjbqe2ugsjenazybowblc7m6ih3uv2mt5opexa",
@@ -32,7 +32,7 @@
       "ssh_keypair_name": "{{user `ssh_keypair_name`}}"
     },
     {
-      "name": "oci-lubuntu-desktop",
+      "name": "lubuntu-desktop",
       "instance_name": "desktop-{{timestamp}}",
       "type": "oracle-oci",
       "user_ocid": "ocid1.user.oc1..aaaaaaaaltvig4z3n5ycfbsjbqe2ugsjenazybowblc7m6ih3uv2mt5opexa",
