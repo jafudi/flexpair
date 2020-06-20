@@ -88,7 +88,8 @@ qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 cutemaze \
-2048-qt
+2048-qt \
+blockout2
 
 cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]

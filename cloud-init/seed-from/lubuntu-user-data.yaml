@@ -14,13 +14,12 @@ users:
 # Set the system timezone
 timezone: Europe/Berlin
 
-
-
+locale: de_DE
 
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="100-pull-latest-release.sh"
+Content-Disposition: attachment; filename="lubuntu-user-script.sh"
 
 #!/usr/bin/env bash
 
@@ -31,7 +30,7 @@ export -f get_info
 
 # Check whether required packages are installed ####################
 
-packages=("git" "docker.io" "kdialog" "x11vnc")
+packages=("docker.io" "kdialog" "x11vnc")
 
 for pkg in ${packages[@]}; do
     is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
@@ -44,13 +43,6 @@ for pkg in ${packages[@]}; do
     fi
 done
 
-# Checkout Git repository HEAD revision ############################
-
-cd /var/tmp
-rm -rf traction
-git clone --depth 1 https://github.com/jafudi/traction.git --branch master
-sudo chmod 777 -R traction
-
 # Deploy actual application ########################################
 
 DESKTOP=/home/ubuntu/Desktop
@@ -59,7 +51,7 @@ cat << EOF | sudo tee $DESKTOP/ideops.desktop
 [Desktop Entry]
 Type=Application
 Terminal=true
-Exec=/var/tmp/traction/run_app.sh
+Exec=/var/tmp/run_app.sh
 Icon=QMPlay2
 Name=Hier klicken
 EOF
