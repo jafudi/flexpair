@@ -82,6 +82,7 @@ ark \
 featherpad \
 kcalc \
 firefox \
+falkon \
 trojita \
 qpdfview \
 lximage-qt \
@@ -96,6 +97,16 @@ greeter-session=lightdm-gtk-greeter
 EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
+
+cd /etc/xdg/autostart/
+rm -f lxqt-globalkeyshortcuts.desktop
+rm -f lxqt-powermanagement.desktop
+rm -f lxqt-xscreensaver-autostart.desktop
+rm -f nm-applet.desktop
+rm -f nm-tray-autostart.desktop
+rm -f snap-userd-autostart.desktop
+rm -f upg-notifier-autostart.desktop
+
 
 cat << EOF > /usr/lib/firefox/browser/defaults/preferences/sysprefs.js
 pref("browser.startup.homepage","jafudi.com");
