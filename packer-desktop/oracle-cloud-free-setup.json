@@ -1,0 +1,119 @@
+{
+  "variables": {
+    "script_dir": "packer-desktop/scripts",
+    "private_key_file": "~/.oci/oci_vm_key",
+    "ssh_keypair_name": "my_vm_key",
+    "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsq10vZzfg/EtcWW4Pawt1yVZ+y8TUQaXqERSvIT2UDsT7LqctHb9GzXgoSqYXKZyLI4Q7bMkG85QtEa9XGIonFUca23axKNgvnJCqTiUaX6TgEjKdLRk7AB+/HYuc1QemFEF/CjB829D69hdDkve3pJJvrQmhfynDbypqCOLHccCeFKFsIEnG3+LdwDLHsPs5CKaOUeGXcIUYIWb2j6zmL5hb/0zh2DKrVKt+hoS3+/POJnPfgUUfpnezaghF4K3qAo2x82HgB6fVf1mCpw39mQu6cn9YMdRLglSktdefkTHGXTKY3sJqMRd7q33GwwbpgBgHlvnso51qLleZj/wx my_vm_key"
+  },
+  "builders": [
+    {
+      "name": "guacamole-gateway",
+      "instance_name": "gateway-{{timestamp}}",
+      "type": "oracle-oci",
+      "user_ocid": "ocid1.user.oc1..aaaaaaaaltvig4z3n5ycfbsjbqe2ugsjenazybowblc7m6ih3uv2mt5opexa",
+      "tenancy_ocid": "ocid1.tenancy.oc1..aaaaaaaaakxiynnr4tmlxjrwkvqyy7iadh7rvmvhrzxhvtufxsbcfbwks6ja",
+      "fingerprint": "15:b0:eb:db:8c:3d:e3:f0:36:97:fa:ee:23:89:7e:c0",
+      "key_file": "~/.oci/oci_api_key.pem",
+      "pass_phrase": "jafudi",
+      "compartment_ocid": "ocid1.compartment.oc1..aaaaaaaav67tty2zgsxea55juuni7q5uocaavgsrnimz3br3i2nhtyutltja",
+      "region": "eu-frankfurt-1",
+      "availability_domain": "iEUO:EU-FRANKFURT-1-AD-3",
+      "base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q",
+      "image_name": "UpgradeNecessaryForCustomImages",
+      "shape": "VM.Standard.E2.1.Micro",
+      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaacd5onkr7nfjgpg44rrg3avmlz2bo4aq4dxzr5fuen6clqqx6tl3a",
+      "user_data_file": "cloud-init/seed-from/guacamole-user-data.yaml",
+      "metadata": {
+        "ssh_authorized_keys": "{{user `ssh_public_key`}}",
+        "ssl-sub-domain": "{{user `ssl_sub_domain`}}"
+      },
+      "ssh_username": "ubuntu",
+      "ssh_private_key_file": "{{user `private_key_file`}}",
+      "ssh_keypair_name": "{{user `ssh_keypair_name`}}"
+    },
+    {
+      "name": "lubuntu-desktop",
+      "instance_name": "desktop-{{timestamp}}",
+      "type": "oracle-oci",
+      "user_ocid": "ocid1.user.oc1..aaaaaaaaltvig4z3n5ycfbsjbqe2ugsjenazybowblc7m6ih3uv2mt5opexa",
+      "tenancy_ocid": "ocid1.tenancy.oc1..aaaaaaaaakxiynnr4tmlxjrwkvqyy7iadh7rvmvhrzxhvtufxsbcfbwks6ja",
+      "fingerprint": "15:b0:eb:db:8c:3d:e3:f0:36:97:fa:ee:23:89:7e:c0",
+      "key_file": "~/.oci/oci_api_key.pem",
+      "pass_phrase": "jafudi",
+      "compartment_ocid": "ocid1.compartment.oc1..aaaaaaaav67tty2zgsxea55juuni7q5uocaavgsrnimz3br3i2nhtyutltja",
+      "region": "eu-frankfurt-1",
+      "availability_domain": "iEUO:EU-FRANKFURT-1-AD-3",
+      "base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q",
+      "image_name": "UpgradeNecessaryForCustomImages",
+      "shape": "VM.Standard.E2.1.Micro",
+      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaacd5onkr7nfjgpg44rrg3avmlz2bo4aq4dxzr5fuen6clqqx6tl3a",
+      "user_data_file": "cloud-init/seed-from/lubuntu-user-data.yaml",
+      "metadata": {
+        "ssh_authorized_keys": "{{user `ssh_public_key`}}"
+      },
+      "ssh_username": "ubuntu",
+      "ssh_private_key_file": "{{user `private_key_file`}}",
+      "ssh_keypair_name": "{{user `ssh_keypair_name`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "expect_disconnect": true,
+      "scripts": [
+        "{{user `script_dir`}}/update.sh",
+        "{{user `script_dir`}}/motd.sh",
+        "{{user `script_dir`}}/sshd.sh",
+        "{{user `script_dir`}}/networking.sh",
+        "{{user `script_dir`}}/sudoers.sh",
+        "{{user `script_dir`}}/docker-backend.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "type": "file",
+      "source": "packer-desktop/uploads/",
+      "destination": "/var/tmp"
+    },
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
+      "only": ["lubuntu-desktop"],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "{{user `script_dir`}}/lubuntu-frontend.sh",
+        "{{user `script_dir`}}/lxqt-look-and-feel.sh",
+        "{{user `script_dir`}}/hide-menu-entries.sh",
+        "{{user `script_dir`}}/desktop-sharing.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "{{user `script_dir`}}/cleanup.sh",
+        "{{user `script_dir`}}/provision_cloud_init.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "inline": ["reboot"],
+      "expect_disconnect": true
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "script": "{{user `script_dir`}}/run_cloud_init.sh",
+      "pause_before": "10s"
+    }
+  ]
+}

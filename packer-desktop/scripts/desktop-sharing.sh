@@ -21,7 +21,7 @@ Wants=lightdm.service
 After=lightdm.service
 
 [Service]
-ExecStart=/usr/bin/x11vnc -display :0 -xkb -noxrecord -noxfixes -noxdamage -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
+ExecStart=/usr/bin/x11vnc -display :0 -o /var/log/x11vnc.log -xkb -noxrecord -noxfixes -noxdamage -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
 ExecStop=/usr/bin/x11vnc -R stop
 
 [Install]
@@ -86,16 +86,3 @@ Section "Screen"
 EndSection
 EOF
 
-
-#mkdir -p /home/ubuntu/.vnc
-#x11vnc -storepasswd "ubuntu" /home/ubuntu/.vnc/passwd
-#
-#mkdir -p /home/ubuntu/.config/autostart
-#
-#cd /var/tmp
-#rm -rf traction
-#git clone --depth 1 https://github.com/jafudi/traction.git --branch master
-#sudo chmod 777 -R traction
-#cp /var/tmp/traction/autostart/* /home/ubuntu/.config/autostart/
-#
-#find /home/ubuntu/.config/autostart -type f -exec chmod +x {} \;

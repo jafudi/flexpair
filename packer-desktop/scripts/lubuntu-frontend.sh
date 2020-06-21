@@ -77,46 +77,19 @@ xkb-data \
 xorg \
 xz-utils \
 zip \
+htop \
 ark \
 featherpad \
 kcalc \
 firefox \
+falkon \
 trojita \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 cutemaze \
 2048-qt \
-screengrab \
-qtpass
-# avahi-daemon \
-# fwupd \
-# fwupd-signed \
-# hplip \
-# k3b \
-# kerneloops \
-# libnss-mdns \
-# libreoffice-calc \
-# libreoffice-gtk3 \
-# libreoffice-impress \
-# libreoffice-qt5 \
-# libreoffice-style-breeze \
-# libreoffice-writer \
-# memtest86+ \
-# muon \
-# neofetch \
-# packagekit \
-# partitionmanager \
-# pastebinit \
-# plasma-discover \
-# policykit-desktop-privileges \
-# qapt-deb-installer \
-# qlipper \
-# qps \
-# quassel \
-# snapd \
-# transmission-qt \
-# zsync
+blockout2
 
 cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]
@@ -125,6 +98,15 @@ greeter-session=lightdm-gtk-greeter
 EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
+
+cd /etc/xdg/autostart/
+rm -f lxqt-globalkeyshortcuts.desktop
+rm -f lxqt-powermanagement.desktop
+rm -f lxqt-xscreensaver-autostart.desktop
+rm -f nm-applet.desktop
+rm -f nm-tray-autostart.desktop
+rm -f snap-userd-autostart.desktop
+rm -f upg-notifier-autostart.desktop
 
 
 cat << EOF > /usr/lib/firefox/browser/defaults/preferences/sysprefs.js
