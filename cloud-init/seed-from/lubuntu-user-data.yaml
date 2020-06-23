@@ -73,6 +73,7 @@ apt-get install --upgrade -y gitlab-runner traceroute
 echo 'gitlab-runner ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 usermod -aG docker gitlab-runner
 
+cd /home/gitlab-runner
 mkdir -p builds
 chmod --recursive 777 builds
 rm -f .bash_logout
