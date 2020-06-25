@@ -50,12 +50,12 @@ mkdir -p $DESKTOP
 cat << EOF | sudo tee $DESKTOP/ideops.desktop
 [Desktop Entry]
 Type=Application
-Terminal=true
-Exec=/var/tmp/run_app.sh
+Exec=qterminal --execute /var/tmp/run_app.sh
 Icon=QMPlay2
 Name=Hier klicken
 EOF
 sudo chmod +x $DESKTOP/ideops.desktop
+sudo chmod +x /var/tmp/run_app.sh
 
 docker pull --quiet jafudi/idea-extractor:latest &
 
