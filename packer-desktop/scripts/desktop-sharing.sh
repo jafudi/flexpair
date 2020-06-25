@@ -22,6 +22,7 @@ After=lightdm.service
 
 [Service]
 ExecStart=/usr/bin/x11vnc -display :0 -o /var/log/x11vnc.log -xkb -noxrecord -noxfixes -noxdamage -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
+Restart=always
 ExecStop=/usr/bin/x11vnc -R stop
 
 [Install]
