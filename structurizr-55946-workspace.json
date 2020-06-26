@@ -1,0 +1,282 @@
+{
+    "id": 55946,
+    "name": "Project \"traction\"",
+    "description": "An empty workspace.",
+    "revision": 2,
+    "lastModifiedDate": "2020-06-26T22:30:51Z",
+    "lastModifiedUser": "socialnets@jafudi.com",
+    "lastModifiedAgent": "structurizr-web/1965",
+    "model": {
+        "people": [
+            {
+                "id": "4",
+                "tags": "Element,Person",
+                "name": "Developer",
+                "location": "Unspecified"
+            },
+            {
+                "id": "5",
+                "tags": "Element,Person",
+                "name": "User",
+                "location": "Unspecified"
+            }
+        ],
+        "softwareSystems": [
+            {
+                "id": "2",
+                "tags": "Element,Software System",
+                "name": "GitLab CI",
+                "location": "Unspecified"
+            },
+            {
+                "id": "1",
+                "tags": "Element,Software System",
+                "name": "Jafudi Traction",
+                "location": "Unspecified",
+                "containers": [
+                    {
+                        "id": "9",
+                        "tags": "Element,Container",
+                        "name": "Docker stack",
+                        "components": [
+                            {
+                                "id": "24",
+                                "tags": "Element,Component",
+                                "name": "docker daemon",
+                                "size": 0
+                            },
+                            {
+                                "id": "26",
+                                "tags": "Element,Component",
+                                "name": "docker images",
+                                "size": 0
+                            },
+                            {
+                                "id": "25",
+                                "tags": "Element,Component",
+                                "name": "docker-compose",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "10",
+                        "tags": "Element,Container",
+                        "name": "GitLab runner",
+                        "components": [
+                            {
+                                "id": "27",
+                                "tags": "Element,Component",
+                                "name": "Git client",
+                                "size": 0
+                            },
+                            {
+                                "id": "23",
+                                "tags": "Element,Component",
+                                "name": "Shell executor",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "8",
+                        "tags": "Element,Container",
+                        "name": "Guacamole stack",
+                        "components": [
+                            {
+                                "id": "20",
+                                "tags": "Element,Component",
+                                "name": "guacd",
+                                "size": 0
+                            },
+                            {
+                                "id": "22",
+                                "tags": "Element,Component",
+                                "name": "postgreSQL",
+                                "size": 0
+                            },
+                            {
+                                "id": "21",
+                                "tags": "Element,Component",
+                                "name": "web app",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "11",
+                        "tags": "Element,Container",
+                        "name": "LXQt desktop",
+                        "components": [
+                            {
+                                "id": "14",
+                                "tags": "Element,Component",
+                                "name": "LightDM",
+                                "size": 0
+                            },
+                            {
+                                "id": "28",
+                                "tags": "Element,Component",
+                                "name": "Office apps",
+                                "size": 0
+                            },
+                            {
+                                "id": "15",
+                                "tags": "Element,Component",
+                                "name": "OpenBox",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "13",
+                        "tags": "Element,Container",
+                        "name": "SSL web server",
+                        "components": [
+                            {
+                                "id": "19",
+                                "tags": "Element,Component",
+                                "name": "LetsEncrypt certbot",
+                                "size": 0
+                            },
+                            {
+                                "id": "18",
+                                "tags": "Element,Component",
+                                "name": "nginx",
+                                "size": 0
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12",
+                        "tags": "Element,Container",
+                        "name": "VNC server",
+                        "components": [
+                            {
+                                "id": "16",
+                                "tags": "Element,Component",
+                                "name": "Virtual framebuffer",
+                                "size": 0
+                            },
+                            {
+                                "id": "17",
+                                "tags": "Element,Component",
+                                "name": "x11vnc service",
+                                "size": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "tags": "Element,Software System",
+                "name": "Terraform Cloud",
+                "location": "Unspecified"
+            }
+        ],
+        "deploymentNodes": [
+            {
+                "id": "30",
+                "tags": "Element,Deployment Node",
+                "name": "Free Ubuntu VM 1",
+                "environment": "Oracle Cloud",
+                "instances": 1,
+                "containerInstances": [
+                    {
+                        "id": "32",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "8",
+                        "instanceId": 1,
+                        "properties": {}
+                    },
+                    {
+                        "id": "33",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "9",
+                        "instanceId": 1,
+                        "properties": {}
+                    },
+                    {
+                        "id": "34",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "13",
+                        "instanceId": 1,
+                        "properties": {}
+                    }
+                ],
+                "children": [],
+                "infrastructureNodes": []
+            },
+            {
+                "id": "31",
+                "tags": "Element,Deployment Node",
+                "name": "Free Ubuntu VM 2",
+                "environment": "Oracle Cloud",
+                "instances": 1,
+                "containerInstances": [
+                    {
+                        "id": "35",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "9",
+                        "instanceId": 1,
+                        "properties": {}
+                    },
+                    {
+                        "id": "37",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "11",
+                        "instanceId": 1,
+                        "properties": {}
+                    },
+                    {
+                        "id": "38",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "12",
+                        "instanceId": 1,
+                        "properties": {}
+                    },
+                    {
+                        "id": "36",
+                        "tags": "Container Instance",
+                        "environment": "Oracle Cloud",
+                        "containerId": "10",
+                        "instanceId": 1,
+                        "properties": {}
+                    }
+                ],
+                "children": [],
+                "infrastructureNodes": []
+            }
+        ]
+    },
+    "documentation": {
+        "sections": [],
+        "decisions": [],
+        "images": []
+    },
+    "views": {
+        "configuration": {
+            "branding": {},
+            "styles": {
+                "elements": [],
+                "relationships": []
+            },
+            "terminology": {},
+            "themes": []
+        },
+        "systemLandscapeViews": [],
+        "systemContextViews": [],
+        "containerViews": [],
+        "componentViews": [],
+        "dynamicViews": [],
+        "deploymentViews": [],
+        "filteredViews": []
+    }
+}
