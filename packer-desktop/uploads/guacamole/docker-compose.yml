@@ -96,8 +96,6 @@ services:
     image: guacamole/guacd
     networks:
       guacamole_net:
-    extra_hosts:
-      - "vnc-host:${ETH0_IP}"
     restart: always
     volumes:
       - ./drive:/drive:rw
@@ -141,6 +139,21 @@ services:
       ## enable next line when using nginx
       - 8080/tcp
     restart: always
+
+  murmur:
+    image: goofball222/murmur
+    container_name: murmur
+    ports:
+      - 64738:64738
+      - 64738:64738/udp
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./letsencrypt/certbot/conf/live/desktop.jafudi.com:/opt/murmur/cert
+      - ./murmur_config:/opt/murmur/config
+      - ./murmur_data:/opt/murmur/data
+      - ./murmur_log:/opt/murmur/log
+    environment:
+      - TZ=UTC
 
   ########### optional ##############
   # nginx
