@@ -147,7 +147,6 @@ services:
       - 64738:64738
       - 64738:64738/udp
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - ./letsencrypt/certbot/conf/live/desktop.jafudi.com:/opt/murmur/cert
       - ./murmur_config:/opt/murmur/config
       - ./murmur_data:/opt/murmur/data
