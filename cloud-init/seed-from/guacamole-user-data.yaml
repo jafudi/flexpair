@@ -44,14 +44,13 @@ done
 # Provision Guacamole stack ########################################
 
 export GUACAMOLE_HOME=/var/tmp/guacamole
-find /var/tmp
 cd ${GUACAMOLE_HOME}
 
 echo "Preparing folder init and creating ./init/initdb.sql"
 mkdir ./init >/dev/null 2>&1
 mkdir -p ./nginx/ssl >/dev/null 2>&1
-sudo chmod -R +x ./init
 docker run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --postgres > ./init/initdb.sql
+sudo chmod -R +x ./init
 echo "done"
 
 domain=`get_info metadata/ssl-sub-domain`
@@ -126,5 +125,7 @@ else
     sudo mv "${host_path}/archive/$domain" "${host_path}/live/"
     sudo rm -Rf "${host_path}/renewal/$domain.conf"
 fi
+
+docker-compose up --force-recreate -d murmur
 
 --====Part=Boundary=================================================--
