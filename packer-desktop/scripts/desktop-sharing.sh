@@ -50,12 +50,6 @@ systemctl set-default graphical.target
 #EOF
 #sudo /etc/init.d/xinetd reload
 
-# The following three lines circumvent a hardly documented reject rule on Oracle Cloud provided images
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends iptables-persistent
-iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-iptables -I INPUT 2 -p all --dport 64738 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
-netfilter-persistent save
-
 usermod -aG tty ubuntu
 
 echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
