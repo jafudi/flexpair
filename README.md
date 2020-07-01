@@ -1,5 +1,6 @@
 # Getting Started Guide
 
-- resource-friendly conferencing even at low bandwidth
+- stable, yet resource-friendly conferencing even at low bandwidth
 - low latency, high quality
 - now video, at least no upload
+- idea exchange reduced to the max
