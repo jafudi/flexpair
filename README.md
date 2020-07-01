@@ -5,6 +5,7 @@
 - now video, at least no upload
 - idea exchange reduced to the max
 - exactly what we need during Corona
+- and did we mention: it's free
 
 # Use cases
 
