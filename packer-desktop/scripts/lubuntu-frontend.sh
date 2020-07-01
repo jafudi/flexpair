@@ -81,7 +81,6 @@ htop \
 ark \
 featherpad \
 kcalc \
-firefox \
 falkon \
 trojita \
 qpdfview \
@@ -90,6 +89,13 @@ gnumeric gnumeric-plugins-extra gnumeric-doc \
 cutemaze \
 2048-qt \
 blockout2
+
+# quite RAM hungry
+# firefox \
+# libreoffice
+
+mkdir -p $HOME/Desktop
+chown ubuntu -R $HOME
 
 cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]
