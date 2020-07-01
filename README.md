@@ -1,4 +1,4 @@
-# Key Features
+# Key features
 
 - stable, yet resource-friendly conferencing even at low bandwidth
 - low latency, high quality
@@ -17,3 +17,11 @@
 - Project management files and conferencing in one place
 - ...
 
+# Todos and planned features
+
+- Migrate from Packer to Terraform Cloud
+- Webcam as wallpaper
+- Stablilize and fully automate LetsEncypt certbot
+- Crowdfunding campaign
+- Enable audio and video recording via Guacamole (avoid echo)
+- Enable email client
