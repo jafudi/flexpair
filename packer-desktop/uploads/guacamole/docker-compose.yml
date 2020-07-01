@@ -134,28 +134,25 @@ services:
     links:
       - guacd
     ports:
-      ## enable next line if not using nginx
-      ##    - 8080:8080/tcp
-      ## enable next line when using nginx
       - 8080/tcp
     restart: always
 
   murmur:
     image: goofball222/murmur
+    networks:
+      guacamole_net:
     container_name: murmur
     ports:
       - 64738:64738
       - 64738:64738/udp
     volumes:
-      - ./letsencrypt/certbot/conf/live/desktop.jafudi.com:/opt/murmur/cert
       - ./murmur_config:/opt/murmur/config
       - ./murmur_data:/opt/murmur/data
       - ./murmur_log:/opt/murmur/log
+      #  - ./letsencrypt/certbot/conf/live/desktop.jafudi.com:/opt/murmur/cert
     environment:
       - TZ=UTC
 
-  ########### optional ##############
-  # nginx
   nginx:
     container_name: nginx_container
     restart: always
