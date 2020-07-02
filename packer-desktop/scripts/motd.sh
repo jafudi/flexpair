@@ -1,8 +1,10 @@
 #!/bin/sh -eux
 
-bento='
+msg='
 This system is built by Jafudi Software
-More information can be found at https://jafudi.com'
+More information can be found at https://jafudi.com
+Run "htop" for RAM usage information'
+
 
 if [ -d /etc/update-motd.d ]; then
     MOTD_CONFIG='/etc/update-motd.d/99-bento'
@@ -11,11 +13,11 @@ if [ -d /etc/update-motd.d ]; then
 #!/bin/sh
 
 cat <<'EOF'
-$bento
+$msg
 EOF
 BENTO
 
     chmod 0755 "$MOTD_CONFIG"
 else
-    echo "$bento" >> /etc/motd
+    echo "$msg" >> /etc/motd
 fi

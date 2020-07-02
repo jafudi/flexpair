@@ -14,3 +14,12 @@ theme=Lubuntu Arc
 style=Breeze
 EOF
 chown ubuntu -R ${CONFIG_DIR}
+
+cd /etc/xdg/autostart/
+rm -f lxqt-globalkeyshortcuts.desktop
+rm -f lxqt-powermanagement.desktop
+rm -f lxqt-xscreensaver-autostart.desktop
+rm -f nm-applet.desktop
+rm -f nm-tray-autostart.desktop
+rm -f snap-userd-autostart.desktop
+rm -f upg-notifier-autostart.desktop

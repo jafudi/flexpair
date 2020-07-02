@@ -18,13 +18,10 @@ virtualbox-guest-x11 \
 elementary-icon-theme \
 locales \
 cron \
-nano \
-less \
 kdialog \
 alsa-base \
 alsa-utils \
 arc-theme \
-bc \
 breeze-cursor-theme \
 ca-certificates \
 dbus-x11 \
@@ -93,6 +90,9 @@ blockout2
 # quite RAM hungry
 # firefox \
 # libreoffice
+# cat << EOF > /usr/lib/firefox/browser/defaults/preferences/sysprefs.js
+# pref("browser.startup.homepage","jafudi.com");
+# EOF
 
 mkdir -p $HOME/Desktop
 chown ubuntu -R $HOME
@@ -105,17 +105,5 @@ EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
 
-cd /etc/xdg/autostart/
-rm -f lxqt-globalkeyshortcuts.desktop
-rm -f lxqt-powermanagement.desktop
-rm -f lxqt-xscreensaver-autostart.desktop
-rm -f nm-applet.desktop
-rm -f nm-tray-autostart.desktop
-rm -f snap-userd-autostart.desktop
-rm -f upg-notifier-autostart.desktop
 
-
-cat << EOF > /usr/lib/firefox/browser/defaults/preferences/sysprefs.js
-pref("browser.startup.homepage","jafudi.com");
-EOF
 
