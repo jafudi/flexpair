@@ -2,7 +2,7 @@
 <opml version="2.0">
     <head>
         <title>gPodder subscriptions</title>
-        <dateCreated>Thu, 02 Jul 2020 00:57:00 +0200</dateCreated>
+        <dateCreated>Thu, 02 Jul 2020 08:52:47 +0200</dateCreated>
     </head>
     <body>
         <outline title="TEDTalks (video)" text="TED is a nonprofit devoted to ideas worth spreading. On this video feed, you'll find TED Talks to inspire, intrigue and stir the imagination from some of the world's leading thinkers and doers, speaking from the stage at TED conferences, TEDx events and partner events around the world. This podcast is also available in high-def video and audio-only formats." xmlUrl="http://feeds.feedburner.com/tedtalks_video" type="rss"/>
@@ -24,5 +24,14 @@
         <outline title="Wirtschaft in Zeiten von Corona - alles ist anders" text="Das Corona-Virus bringt unseren Alltag durcheinander - alles ist jetzt anders. Das hat auch Folgen für die Wirtschaft - welche, erklärt die NDR Info Wirtschaftsredaktion" xmlUrl="https://www.ndr.de/nachrichten/info/podcast4696.xml" type="rss"/>
         <outline title="Besser als Sex" text="Seit 2016 plaudern Leila Lowfire und Ines Anioli nun schon erfolgreich über die schönste Nebensache der Welt. Früher noch unter dem Namen „Sexvergnügen“, seit 2018 als „Besser als Sex“, unterhalten die beiden einmal die Woche über 250.000 Hörer und Hörerinnen mit Anekdoten, Fragen und Diskussionen über Sex, Liebe und Beziehungen." xmlUrl="http://feeds.soundcloud.com/users/soundcloud%3Ausers%3A368209919/sounds.rss" type="rss"/>
         <outline title="Nachrichten - Deutschlandfunk" text="Bestens informiert mit den wichtigsten Nachrichten aus Deutschland und der Welt. Rund um die Uhr aus der Deutschlandfunk-Nachrichtenredaktion." xmlUrl="http://www.dradio.de/rss/podcast/nachrichten/" type="rss"/>
+        <outline title="Baywatch Berlin" text="Das Beautiful Mind Klaas Heufer-Umlauf probiert in diesem Podcast nach über 10 Jahren weltfremden Jet Set Spaß Kontakt zur echten Welt aufzunehmen. Wie einst in der Weihnachtsgeschichte wird er dabei von seinen Freunden Thomas Schmitt und Jakob Lundt an die Hand genommen und langsam wieder mit den Themen des wahren Lebens in Kontakt gebracht. Tauchen Sie ein und seien Sie die Kugel im Flipperautomaten „Baywatch Berlin“!" xmlUrl="https://baywatch-berlin.podigee.io/feed/mp3" type="rss"/>
+        <outline title="Mobilsicher" text="Welche Apps kann ich ohne Bedenken installieren? Wie schütze ich mein Smartphone vor den neugierigen Augen von Apple und Google? Und ist es sinnvoll, Ortungs..." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC5WMjHCdvP2pFyOwBMwekrQ" type="rss"/>
+        <outline title="International OCD Foundation" text="The mission of the International OCD Foundation is to help those affected by obsessive compulsive disorder (OCD) and related disorders to live full and produ..." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCDX6nEP1WY23RtIFaQ8MH3g" type="rss"/>
+        <outline title="Deutsche Gesellschaft Zwangserkrankungen e.V." text="Auf YouTube findest du großartige Videos und erstklassige Musik. Außerdem kannst du eigene Inhalte hochladen und mit Freunden oder mit der ganzen Welt teilen." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCSDIcUXlNrNkAgy3VlPZhFw" type="rss"/>
+        <outline title="Tilo Jung" text="Impressum Angaben gemäß § 5 TMG: Tilo Jung Schwedenstraße 16 13357 Berlin E-Mail: tilo (at) jungundnaiv.de Verantwortlicher gemäß § 55 Abs. 2 RStV (V.i.S.d.P..." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCv1WDP5EiipMQ__C4Cg6aow" type="rss"/>
+        <outline title="Rezo ja lol ey" text="ja lol ey. Werbung: ► MEIN SHOP: http://www.rezo.de ► Geschäftliche Anfragen: rezo@all-in.social Impressum: Rezo c/o ALLIN-Artistmanagement GmbH Lindenstr. 1..." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvU1c8D5n1Rue3NFRu0pJSw" type="rss"/>
+        <outline title="phoenix" text="PHOENIX ist der Ereignis- und Dokumentationskanal von ARD und ZDF. PHOENIX dient der politischen Meinungs- und Willensbildung der Bürgerinnen und Bürger, es ..." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCwyiPnNlT8UABRmGmU0T9jg" type="rss"/>
+        <outline title="HEIDELBERG4you" text="No description available" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCxTlcy24MIlTaaYdHiO4Xxw" type="rss"/>
+        <outline title="maiLab" text="Holt euch einen Tee, Freunde der Sonne, macht es euch gemütlich - Zeit für Science! Während viele Medien vereinfachen und zuspitzen, kämmen wir wissenschaftl..." xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCyHDQ5C6z1NDmJ4g6SerW8g" type="rss"/>
     </body>
 </opml>
