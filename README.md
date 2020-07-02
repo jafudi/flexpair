@@ -1,15 +1,28 @@
-# Getting Started Guide
+# Key features
 
-Uses HashiCorp's open source [Packer](https://github.com/hashicorp/packer) tool and Chen-Han Hsiao's excellent [template library](https://github.com/chenhan1218/packer-desktop/tree/desktop/packer_templates/ubuntu) in order to install the [Lubuntu LXQt Desktop](https://lubuntu.me) on top of the official Ubuntu 20.04 Server ISO. Finally, the created [VirtualBox](https://www.virtualbox.org) VM is exported and uploaded to Vagrant Cloud as https://jafudi.net/vagrant-box.
+- stable, yet resource-friendly conferencing even at low bandwidth
+- low latency, high quality
+- now video, at least no upload
+- idea exchange reduced to the max
+- exactly what we need during Corona
+- and did we mention: it's free
 
-Please install:
+# Use cases
 
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://www.vagrantup.com/downloads.html)
-- [Gitlab Runner](https://docs.gitlab.com/runner/install)
+- Listening to and discussing podcasts together
+- Collaborative planning of e.g. travel over distance
+- Presenting and discussing slides
+- Software demos and user testing
+- Doing e-learning together
+- Virtual conference table with positional audio
+- Project management files and conferencing in one place
+- ...
 
-Then, check out this repository and within the checked out folder run:
+# Todos and planned features
 
-```
-update_local_vm.sh
-```
+- Migrate from Packer to Terraform Cloud
+- Webcam as wallpaper
+- Stablilize and fully automate LetsEncypt certbot
+- Crowdfunding campaign
+- Enable audio and video recording via Guacamole (avoid echo)
+- Enable email client
