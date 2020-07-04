@@ -4,7 +4,6 @@ DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --up
 
 MAILCONF=$HOME/.config/flaska.net
 mkdir -p $MAILCONF
-chown ubuntu -R $MAILCONF
 cat << EOF > $MAILCONF/trojita.conf
 [General]
 app.updates.checkEnabled=true
@@ -14,20 +13,20 @@ imap.capabilities.blacklist=
 imap.host=s44.internetwerk.de
 imap.method=TCP
 imap.needsNetwork=true
-imap.numberRefreshInterval=60
+imap.numberRefreshInterval=300
 imap.port=143
 imap.proxy.system=true
 imap.startmode=ONLINE
 imap.starttls=true
 imapIdleRenewal=29
 msa.method=SMTP
-msa.smtp.auth=false
-msa.smtp.auth.reuseImapCredentials=false
+msa.smtp.auth=true
+msa.smtp.auth.reuseImapCredentials=true
 msa.smtp.auth.user=
 msa.smtp.burl=false
 msa.smtp.host=s44.internetwerk.de
 msa.smtp.port=587
-msa.smtp.starttls=false
+msa.smtp.starttls=true
 offline.cache=days
 offline.cache.numDays=30
 
@@ -61,3 +60,4 @@ revealVersions=true
 addressbook=abookaddressbook
 password=cleartextpassword
 EOF
+chown ubuntu -R $MAILCONF
