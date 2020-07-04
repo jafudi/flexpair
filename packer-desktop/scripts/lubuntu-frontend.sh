@@ -79,7 +79,6 @@ ark \
 featherpad \
 kcalc \
 falkon \
-trojita \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
