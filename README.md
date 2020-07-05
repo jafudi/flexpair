@@ -16,7 +16,7 @@
 - Doing e-learning together
 - Virtual conference table with positional audio
 - Project management files and conferencing in one place
-- ...
+- Secretary work, virtual personal assistant
 
 # Todos and planned features
 
