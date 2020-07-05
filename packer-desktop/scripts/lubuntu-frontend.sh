@@ -104,5 +104,3 @@ EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
 
-
-

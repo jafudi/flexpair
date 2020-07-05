@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# https://wiki.ubuntuusers.de/gPodder/
+# https://gpodder.github.io/docs/user-manual.html
+
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 gpodder \
 youtube-dl \
@@ -12,8 +15,8 @@ cat << EOF > $HOME/gPodder/Settings.json
 {
   "auto": {
     "cleanup": {
-      "days": 7,
-      "played": false,
+      "days": 1,
+      "played": true,
       "unfinished": true,
       "unplayed": false
     },
@@ -48,7 +51,29 @@ cat << EOF > $HOME/gPodder/Settings.json
     "chronological_order": true
   },
   "extensions": {
-    "enabled": []
+    "enabled": [
+      "enqueue_in_mediaplayer",
+      "gtk_statusicon",
+      "episode_website_context_menu",
+      "update_feeds_on_startup",
+      "youtube-dl",
+      "rename_download"
+    ],
+    "enqueue_in_mediaplayer": {
+      "default_player": "",
+      "enqueue_after_download": false
+    },
+    "gtk_statusicon": {
+      "download_progress_bar": false
+    },
+    "rename_download": {
+      "add_podcast_title": false,
+      "add_sortdate": false
+    },
+    "youtube-dl": {
+      "manage_channel": true,
+      "manage_downloads": true
+    }
   },
   "limit": {
     "bandwidth": {
@@ -165,4 +190,4 @@ cat << EOF > $HOME/gPodder/Settings.json
   }
 }
 EOF
-chmod ubuntu -R $HOME/gPodder
+chown ubuntu -R $HOME/gPodder

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://wiki.ubuntuusers.de/Trojita/
+
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade trojita
 
 MAILCONF=$HOME/.config/flaska.net
