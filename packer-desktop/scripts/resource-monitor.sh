@@ -53,6 +53,7 @@ $hr
 ${color grey}Networking:
 Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
 ${color grey}Audio Gateway:$color ${tcp_portmon 5900 5900 rip 0}
+]]
 EOF
 chown ubuntu $HOME/.conkyrc
 
