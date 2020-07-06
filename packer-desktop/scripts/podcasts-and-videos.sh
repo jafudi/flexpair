@@ -103,9 +103,7 @@ cat << EOF > $HOME/gPodder/Settings.json
     "video": "/usr/bin/vlc --started-from-file %U"
   },
   "software_update": {
-    "check_on_startup": false,
-    "interval": 5,
-    "last_check": 0
+    "check_on_startup": false
   },
   "ui": {
     "cli": {
@@ -178,7 +176,7 @@ cat << EOF > $HOME/gPodder/Settings.json
           "y": 427
         }
       },
-      "toolbar": false
+      "toolbar": true
     }
   },
   "vimeo": {
