@@ -19,6 +19,9 @@ vadmax=@Variant(\0\0\0\x87?z\xe1\xf6)
 vadmin=@Variant(\0\0\0\x87?L\xcd\x9a)
 volume=@Variant(\0\0\0\x87\0\0\0\0)
 
+[net]
+framesperpacket=6
+
 [pulseaudio]
 input=auto_null.monitor
 output=auto_null
