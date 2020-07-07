@@ -82,11 +82,12 @@ falkon \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
-cutemaze \
 2048-qt \
 blockout2 \
 meteo-qt \
-variety
+variety \
+gcompris \
+
 
 mkdir -p $HOME/.config/meteo-qt
 cat << EOF > $HOME/.config/meteo-qt/meteo-qt.conf
