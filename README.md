@@ -9,6 +9,7 @@
 
 # Use cases
 
+- Karaoke in times of Corona
 - Listening to and discussing podcasts together
 - Collaborative planning of e.g. travel over distance
 - Presenting and discussing slides
