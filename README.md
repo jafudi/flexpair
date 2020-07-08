@@ -10,7 +10,7 @@
 # Use cases
 
 ## gPodder + VLC + Mumble use cases
-- Karaoke in times of Corona
+- Corona Karaoke with 3D audio
 - Listening to and discussing podcasts together
 
 ## Web browser use cases
