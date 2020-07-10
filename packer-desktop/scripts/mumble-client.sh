@@ -19,12 +19,21 @@ vadmax=@Variant(\0\0\0\x87?z\xe1\xf6)
 vadmin=@Variant(\0\0\0\x87?L\xcd\x9a)
 volume=@Variant(\0\0\0\x87\0\0\0\0)
 
+[codec]
+opus/encoder/music=true
+
 [net]
+autoconnect=true
 framesperpacket=6
 
 [pulseaudio]
 input=auto_null.monitor
 output=auto_null
+
+[ui]
+developermenu=true
+showcontextmenuinmenubar=true
+themestyle=Dark
 EOF
 chown ubuntu -R $HOME/.config/Mumble
 
