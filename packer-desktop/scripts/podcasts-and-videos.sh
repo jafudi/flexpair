@@ -3,12 +3,16 @@
 # https://wiki.ubuntuusers.de/gPodder/
 # https://gpodder.github.io/docs/user-manual.html
 
+export PATH="$HOME/.local/bin:$PATH"
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+pip3 install html5lib gpod eyeD3 youtube_dl
+
+sudo add-apt-repository ppa:mixxx/mixxxbetas
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 gpodder \
-youtube-dl \
-ffmpeg \
-rtmpdump \
-vlc
+vlc \
+mixxx
 
 mkdir -p $HOME/gPodder
 cat << EOF > $HOME/gPodder/Settings.json
@@ -52,10 +56,8 @@ cat << EOF > $HOME/gPodder/Settings.json
   },
   "extensions": {
     "enabled": [
-      "enqueue_in_mediaplayer",
       "gtk_statusicon",
-      "episode_website_context_menu",
-      "update_feeds_on_startup",
+      "enqueue_in_mediaplayer",
       "youtube-dl",
       "rename_download"
     ],
@@ -85,13 +87,13 @@ cat << EOF > $HOME/gPodder/Settings.json
       "concurrent_max": 16,
       "enabled": true
     },
-    "episodes": 200
+    "episodes": 1000
   },
   "mygpo": {
     "device": {
-      "caption": "gPodder on desktop-1593894250",
+      "caption": "gPodder on desktop-1594200344",
       "type": "desktop",
-      "uid": "desktop-1593894250"
+      "uid": "desktop-1594200344"
     },
     "enabled": false,
     "password": "",
@@ -103,7 +105,9 @@ cat << EOF > $HOME/gPodder/Settings.json
     "video": "/usr/bin/vlc --started-from-file %U"
   },
   "software_update": {
-    "check_on_startup": false
+    "check_on_startup": false,
+    "interval": 5,
+    "last_check": 0
   },
   "ui": {
     "cli": {
@@ -139,8 +143,8 @@ cat << EOF > $HOME/gPodder/Settings.json
           "height": 400,
           "maximized": false,
           "width": 600,
-          "x": -1,
-          "y": -1
+          "x": 508,
+          "y": 326
         },
         "episode_window": {
           "height": 400,
@@ -165,18 +169,18 @@ cat << EOF > $HOME/gPodder/Settings.json
           "maximized": false,
           "paned_position": 200,
           "width": 700,
-          "x": 360,
-          "y": 335
+          "x": 452,
+          "y": 207
         },
         "preferences": {
-          "height": 361,
+          "height": -1,
           "maximized": false,
-          "width": 721,
-          "x": 352,
-          "y": 427
+          "width": -1,
+          "x": -1,
+          "y": -1
         }
       },
-      "toolbar": true
+      "toolbar": false
     }
   },
   "vimeo": {
