@@ -5,19 +5,34 @@ DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --up
 # https://www.mumble.info
 # https://wiki.ubuntuusers.de/Mumble/
 
+mkdir -p $HOME/.config/pulse
+cat << EOF > $HOME/.config/pulse/default.pa
+.include /etc/pulse/default.pa
+
+load-module module-null-sink sink_name=AllExceptMumble
+update-sink-proplist AllExceptMumble device.description=AllExceptMumble
+
+set-default-sink AllExceptMumble
+set-default-source AllExceptMumble.monitor
+
+load-module module-null-sink sink_name=MumbleNullSink
+update-sink-proplist MumbleNullSink device.description=MumbleNullSink
+EOF
+chown ubuntu -R $HOME/.config/pulse
+
 mkdir -p $HOME/.config/Mumble
 cat << EOF > $HOME/.config/Mumble/Mumble.conf
 [audio]
-attenuateusersonpriorityspeak=true
 echomulti=false
+headphone=true
 input=PulseAudio
 noisesupress=0
 output=PulseAudio
+outputdelay=10
 quality=96000
-transmit=0
-vadmax=@Variant(\0\0\0\x87?z\xe1\xf6)
-vadmin=@Variant(\0\0\0\x87?L\xcd\x9a)
-volume=@Variant(\0\0\0\x87\0\0\0\0)
+vadmax=@Variant(\0\0\0\x87\x38\0\x1\0)
+vadmin=@Variant(\0\0\0\x87\x38\0\x1\0)
+voicehold=250
 
 [codec]
 opus/encoder/music=true
@@ -25,13 +40,14 @@ opus/encoder/music=true
 [net]
 autoconnect=true
 framesperpacket=6
+jitterbuffer=5
 
 [pulseaudio]
-input=auto_null.monitor
-output=auto_null
+output=MumbleNullSink
 
 [ui]
 developermenu=true
+server=158.101.175.18
 showcontextmenuinmenubar=true
 themestyle=Dark
 EOF
