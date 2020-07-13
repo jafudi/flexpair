@@ -47,9 +47,11 @@ output=MumbleNullSink
 
 [ui]
 developermenu=true
+WindowLayout=2
 server=158.101.175.18
 showcontextmenuinmenubar=true
 themestyle=Dark
+stateintray=false
 EOF
 chown ubuntu -R $HOME/.config/Mumble
 
