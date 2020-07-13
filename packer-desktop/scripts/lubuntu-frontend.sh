@@ -53,7 +53,6 @@ oxygen-icon-theme \
 papirus-icon-theme \
 pavucontrol-qt \
 paprefs \
-pavumeter \
 pcmanfm-qt \
 pinentry-qt \
 plymouth-theme-lubuntu-logo \
