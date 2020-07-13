@@ -52,6 +52,8 @@ openbox \
 oxygen-icon-theme \
 papirus-icon-theme \
 pavucontrol-qt \
+paprefs \
+pavumeter \
 pcmanfm-qt \
 pinentry-qt \
 plymouth-theme-lubuntu-logo \
@@ -86,7 +88,7 @@ gnumeric gnumeric-plugins-extra gnumeric-doc \
 blockout2 \
 meteo-qt \
 variety \
-gcompris \
+gcompris
 
 
 mkdir -p $HOME/.config/meteo-qt
@@ -127,6 +129,7 @@ chown ubuntu -R $HOME/.config/meteo-qt
 mkdir -p $HOME/Desktop
 chown ubuntu -R $HOME
 
+mkdir -p /etc/lightdm
 cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]
 user-session=lxqt
@@ -135,3 +138,73 @@ EOF
 systemctl enable lightdm.service
 usermod -aG nopasswdlogin ubuntu
 
+mkdir -p $HOME/.config/lxqt
+cat << EOF > $HOME/.config/lxqt/panel.conf
+[General]
+__userfile__=true
+
+[desktopswitch]
+alignment=Left
+type=desktopswitch
+
+[mainmenu]
+alignment=Left
+type=mainmenu
+
+[mount]
+alignment=Right
+type=mount
+
+[panel1]
+alignment=-1
+animation-duration=0
+background-color=@Variant(\0\0\0\x43\0\xff\xff\0\0\0\0\0\0\0\0)
+background-image=
+desktop=0
+font-color=@Variant(\0\0\0\x43\0\xff\xff\0\0\0\0\0\0\0\0)
+hidable=false
+iconSize=22
+lineCount=1
+lockPanel=false
+opacity=100
+panelSize=32
+position=Bottom
+reserve-space=true
+show-delay=0
+visible-margin=true
+width=100
+width-percent=true
+
+[quicklaunch]
+alignment=Left
+apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
+apps\2\desktop=/usr/share/applications/qterminal.desktop
+apps\3\desktop=/usr/share/applications/pavucontrol-qt.desktop
+apps\4\desktop=/usr/share/applications/mumble.desktop
+apps\size=4
+type=quicklaunch
+
+[showdesktop]
+alignment=Right
+type=showdesktop
+
+[statusnotifier]
+alignment=Right
+type=statusnotifier
+
+[taskbar]
+alignment=Left
+type=taskbar
+
+[tray]
+alignment=Right
+type=tray
+
+[volume]
+alignment=Right
+type=volume
+
+[worldclock]
+alignment=Right
+type=worldclock
+EOF
