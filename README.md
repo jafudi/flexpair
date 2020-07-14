@@ -12,6 +12,7 @@
 ## gPodder + VLC + Mumble use cases
 - Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
 - Listening to and discussing podcasts together
+- Listening to Audio porn together
 
 ## Web browser use cases
 - Collaborative planning of e.g. travel over distance
