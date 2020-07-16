@@ -82,6 +82,16 @@
       "environment_vars": [
         "HOME_DIR=/home/ubuntu"
       ],
+      "only": ["guacamole-gateway"],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "script": "{{user `script_dir`}}/dynu-dns-resolution.sh",
+      "type": "shell",
+      "pause_after": "120s"
+    },
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
       "only": ["lubuntu-desktop"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
