@@ -83,12 +83,9 @@ falkon \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
-2048-qt \
-blockout2 \
 meteo-qt \
 variety \
-gcompris
-
+inkscape
 
 mkdir -p $HOME/.config/meteo-qt
 cat << EOF > $HOME/.config/meteo-qt/meteo-qt.conf
@@ -112,11 +109,6 @@ Unit=metric
 Wind_unit=km
 EOF
 chown ubuntu -R $HOME/.config/meteo-qt
-
-
-
-
-# OpenWeatherMap Key: 3e36578d41db7d1c3f085b272842a243
 
 # quite RAM hungry
 # firefox \

@@ -92,7 +92,8 @@
         "{{user `script_dir`}}/resource-monitor.sh",
         "{{user `script_dir`}}/mumble-client.sh",
         "{{user `script_dir`}}/email-client-account.sh",
-        "{{user `script_dir`}}/desktop-sharing.sh"
+        "{{user `script_dir`}}/desktop-sharing.sh",
+        "{{user `script_dir`}}/kids-edutainment.sh"
       ],
       "type": "shell"
     },

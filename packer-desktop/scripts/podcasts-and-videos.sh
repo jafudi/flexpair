@@ -8,11 +8,12 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 pip3 install html5lib gpod eyeD3 youtube_dl
 
+add-apt-repository ppa:quiterss/quiterss
 sudo add-apt-repository ppa:mixxx/mixxxbetas
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 gpodder \
 vlc \
-mixxx
+quiterss mixxx
 
 mkdir -p $HOME/gPodder
 cat << EOF > $HOME/gPodder/Settings.json
