@@ -9,11 +9,20 @@
 
 # Use cases
 
+## gPodder + VLC + Mumble use cases
+- Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
 - Listening to and discussing podcasts together
+- Listening to Audio porn together
+
+## Web browser use cases
 - Collaborative planning of e.g. travel over distance
-- Presenting and discussing slides
-- Software demos and user testing
 - Doing e-learning together
+
+## Docker + GitLab Runner use cases
+- Software demos and user testing
+
+## Other use cases
+- Presenting and discussing slides
 - Virtual conference table with positional audio
 - Project management files and conferencing in one place
 - Secretary work, virtual personal assistant
