@@ -117,6 +117,11 @@ docker-compose run --rm --entrypoint "\
 exitcode=$?
 echo "Certbot returned value '$exitcode'."
 
+if [ -d "${host_path}/live/$domain-0001" ]; then
+   echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
+   mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
+fi
+
 if [ $exitcode -eq 0 ]; then
     echo "### Reloading nginx with new certificate..."
     docker-compose exec nginx nginx -s reload
