@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-ksnakeduel \
+bumprace \
+cutemaze \
+excellent-bifurcation \
+icebreaker \
+moon-lander \
+snake4 \
+tenmado \
 blockout2 \
 kstars \
 gcompris \
