@@ -88,7 +88,7 @@ cat << EOF > $HOME/gPodder/Settings.json
       "concurrent_max": 16,
       "enabled": true
     },
-    "episodes": 1000
+    "episodes": 10
   },
   "mygpo": {
     "device": {
