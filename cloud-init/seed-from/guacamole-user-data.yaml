@@ -84,10 +84,9 @@ echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
 
-echo "### Archiving dummy certificate for $domain ..."
-sudo rm -Rf ${host_path}/archive/$domain/
-sudo mkdir -p ${host_path}/archive/
-sudo mv "${host_path}/live/$domain" "${host_path}/archive/"
+echo "### Saving away dummy certificate for $domain ..."
+sudo mkdir -p ${host_path}/dummy/
+sudo mv "${host_path}/live/$domain" "${host_path}/dummy/"
 sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
@@ -128,7 +127,7 @@ if [ $exitcode -eq 0 ]; then
 else
     echo "### Restoring dummy certificate for $domain ..."
     sudo rm -Rf "${host_path}/live/$domain"
-    sudo mv "${host_path}/archive/$domain" "${host_path}/live/"
+    sudo mv "${host_path}/dummy/$domain" "${host_path}/live/"
     sudo rm -Rf "${host_path}/renewal/$domain.conf"
 fi
 
