@@ -85,7 +85,9 @@ lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 meteo-qt \
 variety \
-inkscape
+inkscape \
+nextcloud-desktop \
+linphone
 
 mkdir -p $HOME/.config/meteo-qt
 cat << EOF > $HOME/.config/meteo-qt/meteo-qt.conf
@@ -169,10 +171,13 @@ width-percent=true
 [quicklaunch]
 alignment=Left
 apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
-apps\2\desktop=/usr/share/applications/qterminal.desktop
-apps\3\desktop=/usr/share/applications/pavucontrol-qt.desktop
-apps\4\desktop=/usr/share/applications/mumble.desktop
-apps\size=4
+apps\2\desktop=/usr/share/applications/org.kde.kcalc.desktop
+apps\3\desktop=/usr/share/applications/featherpad.desktop
+apps\4\desktop=/usr/share/applications/qterminal.desktop
+apps\5\desktop=/usr/share/applications/mumble.desktop
+apps\6\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
+apps\7\desktop=/usr/share/applications/oneko.desktop
+apps\size=7
 type=quicklaunch
 
 [showdesktop]

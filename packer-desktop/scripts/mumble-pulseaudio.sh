@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mumble
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mumble avahi-discover
 
 # https://www.mumble.info
 # https://wiki.ubuntuusers.de/Mumble/
@@ -17,6 +17,8 @@ set-default-source AllExceptMumble.monitor
 
 load-module module-null-sink sink_name=MumbleNullSink
 update-sink-proplist MumbleNullSink device.description=MumbleNullSink
+
+load-module module-native-protocol-tcp auth-anonymous=1
 EOF
 chown ubuntu -R $HOME/.config/pulse
 

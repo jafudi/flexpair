@@ -58,6 +58,8 @@ download Mumble client from:
 www.mumble.info/downloads
 and connect to
 ${color grey}Mumble server:$color ${tcp_portmon 5900 5900 rip 0}
+$hr
+For menu press Ctrl+Alt+Shift
 ]]
 EOF
 chown ubuntu $HOME/.conkyrc

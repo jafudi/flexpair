@@ -100,7 +100,7 @@
         "{{user `script_dir`}}/hide-menu-entries.sh",
         "{{user `script_dir`}}/podcasts-and-videos.sh",
         "{{user `script_dir`}}/resource-monitor.sh",
-        "{{user `script_dir`}}/mumble-client.sh",
+        "{{user `script_dir`}}/mumble-pulseaudio.sh",
         "{{user `script_dir`}}/email-client-account.sh",
         "{{user `script_dir`}}/desktop-sharing.sh",
         "{{user `script_dir`}}/kids-edutainment.sh"

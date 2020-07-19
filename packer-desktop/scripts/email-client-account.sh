@@ -8,7 +8,7 @@ MAILCONF=$HOME/.config/flaska.net
 mkdir -p $MAILCONF
 cat << EOF > $MAILCONF/trojita.conf
 [General]
-app.updates.checkEnabled=true
+app.updates.checkEnabled=false
 imap.auth.pass=JeedsEyruwiwez^
 imap.auth.user=socialnets@jafudi.com
 imap.capabilities.blacklist=
