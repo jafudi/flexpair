@@ -149,7 +149,7 @@ services:
       - ./murmur_config:/opt/murmur/config
       - ./murmur_data:/opt/murmur/data
       - ./murmur_log:/opt/murmur/log
-      #  - ./letsencrypt/certbot/conf/live/desktop.jafudi.com:/opt/murmur/cert
+      - ./letsencrypt/certbot/conf/live/fielenbach.theworkpc.com:/opt/murmur/cert
     environment:
       - TZ=UTC
 
@@ -167,12 +167,10 @@ services:
       - 80:80
     links:
       - guacamole
+      - murmur
     networks:
       guacamole_net:
-    # run nginx
-    # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    # nginx-debug-mode
-    command: /bin/bash -c "nginx -g 'daemon off;'"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   certbot:
     container_name: certbot_container

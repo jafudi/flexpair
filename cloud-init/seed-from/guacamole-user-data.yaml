@@ -84,9 +84,8 @@ echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
 
-echo "### Saving away dummy certificate for $domain ..."
-sudo mkdir -p ${host_path}/dummy/
-sudo mv "${host_path}/live/$domain" "${host_path}/dummy/"
+# Discarding dummy certificate
+sudo rm -rf "${host_path}/live/$domain"
 sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
@@ -114,23 +113,23 @@ docker-compose run --rm --entrypoint "\
     certbot
 
 exitcode=$?
-echo "Certbot returned value '$exitcode'."
-
-if [ -d "${host_path}/live/$domain-0001" ]; then
-   echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
-   mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
-fi
 
 if [ $exitcode -eq 0 ]; then
-    echo "### Reloading nginx with new certificate..."
-    docker-compose exec nginx nginx -s reload
+  if [ -d "${host_path}/live/$domain-0001" ]; then
+  echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
+  mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
+  fi
+
+  echo "### Loading nginx and murmur with new certificate..."
+  docker-compose up --force-recreate -d murmur
+  docker-compose exec -d nginx nginx -s reload
 else
-    echo "### Restoring dummy certificate for $domain ..."
-    sudo rm -Rf "${host_path}/live/$domain"
-    sudo mv "${host_path}/dummy/$domain" "${host_path}/live/"
-    sudo rm -Rf "${host_path}/renewal/$domain.conf"
+  echo "Certbot returned error code '$exitcode'."
+  echo "Shutting Guacamole stack."
+  docker-compose down
+  exit 1
 fi
 
-docker-compose up --force-recreate -d murmur
-
 --====Part=Boundary=================================================--
+
+
