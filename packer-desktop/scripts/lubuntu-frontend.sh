@@ -175,9 +175,10 @@ apps\2\desktop=/usr/share/applications/org.kde.kcalc.desktop
 apps\3\desktop=/usr/share/applications/featherpad.desktop
 apps\4\desktop=/usr/share/applications/qterminal.desktop
 apps\5\desktop=/usr/share/applications/mumble.desktop
-apps\6\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
-apps\7\desktop=/usr/share/applications/oneko.desktop
-apps\size=7
+apps\6\desktop=/usr/share/applications/pavucontrol-qt.desktop
+apps\7\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
+apps\8\desktop=/usr/share/applications/oneko.desktop
+apps\size=8
 type=quicklaunch
 
 [showdesktop]

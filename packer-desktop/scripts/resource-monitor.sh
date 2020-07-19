@@ -52,8 +52,10 @@ ${color grey}File systems:
 $hr
 ${color grey}Networking:
 Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+${color grey}Latency:$color 8.8.8.8 (10 pings)
+${exec ping -l 3 -c 10 -w 2 -i 0,2 8.8.8.8 | tail -1 | cut -c 5-49}
 $hr
-For audio
+For high-quality AUDIO INPUT
 download Mumble client from:
 www.mumble.info/downloads
 and connect to
