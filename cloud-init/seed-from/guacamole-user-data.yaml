@@ -84,8 +84,9 @@ echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
 
-# Discarding dummy certificate
-sudo rm -rf "${host_path}/live/$domain"
+echo "### Saving away dummy certificate for $domain ..."
+sudo mkdir -p ${host_path}/archive/dummy
+sudo mv "${host_path}/live/$domain" "${host_path}/archive/dummy/"
 sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
@@ -116,12 +117,15 @@ exitcode=$?
 
 if [ $exitcode -eq 0 ]; then
   if [ -d "${host_path}/live/$domain-0001" ]; then
-  echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
-  mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
+    echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
+    mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
   fi
 
   echo "### Loading nginx and murmur with new certificate..."
-  docker-compose up --force-recreate -d murmur
+  sudo rm -rf ${GUACAMOLE_HOME}/murmur_cert
+  sudo mkdir -p ${GUACAMOLE_HOME}/murmur_cert
+  sudo cp -L ${host_path}/live/$domain/* ${GUACAMOLE_HOME}/murmur_cert/
+  docker-compose up -d murmur
   docker-compose exec -d nginx nginx -s reload
 else
   echo "Certbot returned error code '$exitcode'."
@@ -131,5 +135,3 @@ else
 fi
 
 --====Part=Boundary=================================================--
-
-

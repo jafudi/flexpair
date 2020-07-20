@@ -15,6 +15,10 @@ gpodder \
 vlc \
 quiterss mixxx
 
+mkdir -p $HOME/.config/vlc
+cat << EOF >> $HOME/.config/vlc/vlcrc
+EOF
+
 mkdir -p $HOME/gPodder
 cat << EOF > $HOME/gPodder/Settings.json
 {

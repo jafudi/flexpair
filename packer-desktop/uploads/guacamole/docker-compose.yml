@@ -149,7 +149,7 @@ services:
       - ./murmur_config:/opt/murmur/config
       - ./murmur_data:/opt/murmur/data
       - ./murmur_log:/opt/murmur/log
-      - ./letsencrypt/certbot/conf/live/fielenbach.theworkpc.com:/opt/murmur/cert
+      - ./murmur_cert:/opt/murmur/cert
     environment:
       - TZ=UTC
 
@@ -167,10 +167,10 @@ services:
       - 80:80
     links:
       - guacamole
-      - murmur
     networks:
       guacamole_net:
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: /bin/bash -c "nginx -g 'daemon off;'"
+    # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   certbot:
     container_name: certbot_container
@@ -182,4 +182,5 @@ services:
       - ./letsencrypt/certbot/conf:/etc/letsencrypt:rw
       - ./letsencrypt/certbot/www:/var/www/certbot:rw
       - ./letsencrypt/certbot/logs:/var/log/letsencrypt/:rw
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    entrypoint: "/bin/sh -c 'echo Doing nothing until told to.'"
+    # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
