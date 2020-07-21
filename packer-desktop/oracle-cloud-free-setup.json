@@ -1,7 +1,7 @@
 {
   "variables": {
     "script_dir": "packer-desktop/scripts",
-    "private_key_file": "~/.oci/oci_vm_key",
+    "private_key_file": "/Users/jens/PycharmProjects/traction/packer-desktop/uploads/ssh/vm_key",
     "ssh_keypair_name": "my_vm_key",
     "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsq10vZzfg/EtcWW4Pawt1yVZ+y8TUQaXqERSvIT2UDsT7LqctHb9GzXgoSqYXKZyLI4Q7bMkG85QtEa9XGIonFUca23axKNgvnJCqTiUaX6TgEjKdLRk7AB+/HYuc1QemFEF/CjB829D69hdDkve3pJJvrQmhfynDbypqCOLHccCeFKFsIEnG3+LdwDLHsPs5CKaOUeGXcIUYIWb2j6zmL5hb/0zh2DKrVKt+hoS3+/POJnPfgUUfpnezaghF4K3qAo2x82HgB6fVf1mCpw39mQu6cn9YMdRLglSktdefkTHGXTKY3sJqMRd7q33GwwbpgBgHlvnso51qLleZj/wx my_vm_key"
   },
