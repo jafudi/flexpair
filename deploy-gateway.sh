@@ -2,7 +2,7 @@
 
 packer build \
         -only=guacamole-gateway \
-        -var "ssl_sub_domain=jfiely.theworkpc.com" \
+        -var "ssl_sub_domain=tryno2.theworkpc.com" \
         -on-error=abort \
         packer-desktop/oracle-cloud-free-setup.json
 

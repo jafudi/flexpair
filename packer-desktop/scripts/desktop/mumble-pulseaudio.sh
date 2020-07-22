@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mumble iputils-ping
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mumble
 
 # https://www.mumble.info
 # https://wiki.ubuntuusers.de/Mumble/

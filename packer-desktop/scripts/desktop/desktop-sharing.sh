@@ -14,8 +14,7 @@ xserver-xorg-video-fbdev \
 xserver-xorg-video-vesa \
 xserver-xorg-video-dummy \
 xserver-xorg-legacy \
-xfonts-base \
-net-tools
+xfonts-base
 
 cat <<EOF > /etc/systemd/system/x11vnc.service
 [Unit]
@@ -24,7 +23,7 @@ Wants=lightdm.service
 After=lightdm.service
 
 [Service]
-ExecStart=/usr/bin/x11vnc -display :0 -o /var/log/x11vnc.log -xkb -noxrecord -noxfixes -noxdamage -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -shared
+ExecStart=/usr/bin/x11vnc -display :0 -o /var/log/x11vnc.log -xkb -noxrecord -noxfixes -noxdamage -auth /var/run/lightdm/root/:0 -many -rfbport 5900 -passwd jafudi -localhost -shared
 Restart=always
 ExecStop=/usr/bin/x11vnc -R stop
 
@@ -33,25 +32,6 @@ WantedBy=graphical.target
 EOF
 systemctl enable x11vnc.service
 systemctl set-default graphical.target
-
-#xinetd
-#
-#mkdir -p /etc/xinetd.d
-#cat <<EOF > /etc/xinetd.d/x11vnc;
-#service x11vncservice
-#{
-#       port            = 5900
-#       type            = UNLISTED
-#       socket_type     = stream
-#       protocol        = tcp
-#       wait            = no
-#       user            = root
-#       server          = /usr/bin/x11vnc
-#       server_args     = -inetd -o /var/log/x11vnc.log -create -auth guess -passwd jafudi -rfbport 5900 -shared
-#       disable         = no
-#}
-#EOF
-#sudo /etc/init.d/xinetd reload
 
 usermod -aG tty ubuntu
 

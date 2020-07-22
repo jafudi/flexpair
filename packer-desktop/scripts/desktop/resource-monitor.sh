@@ -58,8 +58,8 @@ $hr
 For high-quality AUDIO INPUT
 download Mumble client from:
 www.mumble.info/downloads
-and connect to
-${color grey}Mumble server:$color ${tcp_portmon 5900 5900 rip 0}
+and connect on port 64738 to
+tryno2.theworkpc.com
 $hr
 For menu press Ctrl+Alt+Shift
 ]]
