@@ -87,6 +87,13 @@ version: '3'
 networks:
   guacamole_net:
     driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: guac_bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/24
+        # gateway is then 172.18.0.1 by convention
 
 # services
 services:
@@ -100,6 +107,8 @@ services:
     volumes:
       - ./drive:/drive:rw
       - ./record:/record:rw
+    extra_hosts:
+      - "gateway:172.18.0.1" # Make connection to 'gateway' from Guacamole
   # postgres
   postgres:
     container_name: postgres_container
