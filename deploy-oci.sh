@@ -2,8 +2,8 @@
 
 SSH_KEY_FOLDER="/Users/jens/PycharmProjects/traction/packer-desktop/uploads/ssh"
 mkdir -p ${SSH_KEY_FOLDER}
-ssh-keygen -b 2048 -t rsa -f ${PRIVKEY_FILE} -q -N "" # <<< y
 PRIVKEY_FILE="${SSH_KEY_FOLDER}/vm_key"
+ssh-keygen -b 2048 -t rsa -f ${PRIVKEY_FILE} -q -N "" # <<< y
 PUBKEY_FILE="${PRIVKEY_FILE}.pub"
 
 packer build \
