@@ -144,10 +144,6 @@ type=desktopswitch
 alignment=Left
 type=mainmenu
 
-[mount]
-alignment=Right
-type=mount
-
 [panel1]
 alignment=-1
 animation-duration=0
@@ -181,10 +177,6 @@ apps\8\desktop=/usr/share/applications/oneko.desktop
 apps\size=8
 type=quicklaunch
 
-[showdesktop]
-alignment=Right
-type=showdesktop
-
 [statusnotifier]
 alignment=Right
 type=statusnotifier
@@ -196,10 +188,6 @@ type=taskbar
 [tray]
 alignment=Right
 type=tray
-
-[volume]
-alignment=Right
-type=volume
 
 [worldclock]
 alignment=Right
