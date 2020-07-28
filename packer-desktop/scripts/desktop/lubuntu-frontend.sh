@@ -62,6 +62,8 @@ python3-launchpadlib \
 qterminal \
 qttranslations5-l10n \
 rfkill \
+gvfs-fuse \
+gvfs-backends \
 software-properties-qt \
 spice-vdagent \
 ubuntu-drivers-common \
@@ -157,6 +159,7 @@ lineCount=1
 lockPanel=false
 opacity=100
 panelSize=32
+plugins=mainmenu, desktopswitch, quicklaunch, taskbar, tray, statusnotifier, worldclock
 position=Bottom
 reserve-space=true
 show-delay=0
