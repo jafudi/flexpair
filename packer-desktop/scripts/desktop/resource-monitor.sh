@@ -50,10 +50,8 @@ $hr
 ${color grey}File systems:
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
 $hr
-${color grey}Networking:
+${color grey}Current network traffic:
 Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
-${color grey}Latency:$color 8.8.8.8 (10 pings)
-${exec ping -l 3 -c 10 -w 2 -i 0,2 8.8.8.8 | tail -1 | cut -c 5-49}
 $hr
 For high-quality AUDIO INPUT
 download Mumble client from:

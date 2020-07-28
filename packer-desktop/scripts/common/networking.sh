@@ -1,6 +1,6 @@
 #!/bin/sh -eux
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade net-tools iputils-ping
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mtr net-tools iputils-ping
 
 echo "Create netplan config for eth0"
 cat <<EOF >/etc/netplan/01-netcfg.yaml;
