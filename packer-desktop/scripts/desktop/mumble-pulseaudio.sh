@@ -51,10 +51,14 @@ output=MumbleNullSink
 [ui]
 developermenu=true
 WindowLayout=2
-server=158.101.175.18
+server=tryno3.theworkpc.com
+username=Jafudi
 showcontextmenuinmenubar=true
 themestyle=Dark
 stateintray=false
+disablepubliclist=true
+disableconnectdialogediting=false
 EOF
+# https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
 chown ubuntu -R $HOME/.config/Mumble
 
