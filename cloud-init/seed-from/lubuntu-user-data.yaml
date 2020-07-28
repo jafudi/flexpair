@@ -14,7 +14,7 @@ users:
 # Set the system timezone
 timezone: Europe/Berlin
 
-locale: de_DE
+locale: de_DE.UTF-8
 
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"

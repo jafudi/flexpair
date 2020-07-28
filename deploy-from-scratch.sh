@@ -7,7 +7,7 @@ ssh-keygen -b 2048 -t rsa -f ${PRIVKEY_FILE} -q -N "" # <<< y
 PUBKEY_FILE="${PRIVKEY_FILE}.pub"
 
 packer build \
--var "ssl_sub_domain=tryno2.theworkpc.com" \
+-var "ssl_sub_domain=tryno3.theworkpc.com" \
 -var "ssh_public_key=$(cat ${PUBKEY_FILE})" \
 -var "private_key_file=$PRIVKEY_FILE" \
 -var "ssh_keypair_name=$USER@$HOSTNAME" \
