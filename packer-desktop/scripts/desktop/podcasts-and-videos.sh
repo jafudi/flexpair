@@ -91,7 +91,7 @@ cat << EOF > $HOME/gPodder/Settings.json
       "kbps": 500.0
     },
     "downloads": {
-      "concurrent": 1,
+      "concurrent": 2,
       "concurrent_max": 16,
       "enabled": true
     },
