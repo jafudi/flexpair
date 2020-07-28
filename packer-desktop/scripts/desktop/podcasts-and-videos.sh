@@ -10,14 +10,17 @@ pip3 install html5lib gpod eyeD3 youtube_dl
 
 add-apt-repository ppa:quiterss/quiterss
 sudo add-apt-repository ppa:mixxx/mixxxbetas
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --upgrade \
 gpodder \
-vlc \
-quiterss mixxx
+vlc
+
+# Install the following VLC addons
+# https://addons.videolan.org/p/1154095/
 
 mkdir -p $HOME/.config/vlc
 cat << EOF >> $HOME/.config/vlc/vlcrc
 EOF
+
 
 mkdir -p $HOME/gPodder
 cat << EOF > $HOME/gPodder/Settings.json
