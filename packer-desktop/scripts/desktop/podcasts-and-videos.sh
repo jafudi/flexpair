@@ -91,7 +91,7 @@ cat << EOF > $HOME/gPodder/Settings.json
       "kbps": 500.0
     },
     "downloads": {
-      "concurrent": 2,
+      "concurrent": 5,
       "concurrent_max": 16,
       "enabled": true
     },
@@ -103,10 +103,10 @@ cat << EOF > $HOME/gPodder/Settings.json
       "type": "desktop",
       "uid": "desktop-1594200344"
     },
-    "enabled": false,
-    "password": "",
+    "enabled": true,
+    "password": "vopqem-sabwuj-Qosga8",
     "server": "gpodder.net",
-    "username": ""
+    "username": "Jafudi"
   },
   "player": {
     "audio": "/usr/bin/vlc --started-from-file %U",
