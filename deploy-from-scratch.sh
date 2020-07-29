@@ -9,7 +9,7 @@ ssh-keygen -t ed25519 -f ${PRIVKEY_FILE} -q -N ${PASSPHRASE} -C ${COMMENT}# <<< 
 PUBKEY_FILE="${PRIVKEY_FILE}.pub"
 
 packer build \
--var "ssl_sub_domain=tryno3.theworkpc.com" \
+-var "ssl_sub_domain=tryno4.theworkpc.com" \
 -var "ssh_public_key=$(cat ${PUBKEY_FILE})" \
 -var "private_key_file=$PRIVKEY_FILE" \
 -var "ssh_keypair_name=${COMMENT}" \
