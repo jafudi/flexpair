@@ -128,6 +128,11 @@ Match address 172.18.0.2
     PasswordAuthentication yes
     PermitEmptyPasswords yes
     PermitRootLogin yes
+
+Match address 127.0.0.1
+    PasswordAuthentication yes
+    PermitEmptyPasswords yes
+    PermitRootLogin yes
 EOF
 
 

@@ -33,11 +33,10 @@ START_DARKSTAT=yes
 INTERFACE="-i eth0"
 
 DIR="/var/lib/darkstat"
-PORT="-p 5080"
-BINDIP="-b 127.0.0.1"
+PORT="-p 667"
+#BINDIP="-b 127.0.0.1"
 #LOCAL="-l 192.168.0.0/255.255.255.0"
 
-# File will be relative to $DIR:
 #DAYLOG="--daylog darkstat.log"
 
 # Don't reverse resolve IPs to host names
@@ -48,6 +47,6 @@ BINDIP="-b 127.0.0.1"
 # Additional command line Arguments:
 # OPTIONS="--syslog --no-macs"
 EOF
-service darkstat enable
-service darkstat start
+systemctl enable darkstat.service
+systemctl start darkstat.service
 

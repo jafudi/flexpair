@@ -62,7 +62,6 @@
       "expect_disconnect": true,
       "scripts": [
         "{{user `script_dir`}}/common/update.sh",
-        "{{user `script_dir`}}/common/motd.sh",
         "{{user `script_dir`}}/common/sshd.sh",
         "{{user `script_dir`}}/common/networking.sh",
         "{{user `script_dir`}}/common/sudoers.sh",
@@ -82,6 +81,7 @@
       "only": ["guacamole-gateway"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
+        "{{user `script_dir`}}/gateway/motd.sh",
         "{{user `script_dir`}}/gateway/dynu-dns-resolution.sh",
         "{{user `script_dir`}}/gateway/minimize-gateway.sh"
       ],

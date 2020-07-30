@@ -43,6 +43,10 @@ for pkg in ${packages[@]}; do
     fi
 done
 
+# Deliberately remove user password ################################
+
+sudo passwd -d ubuntu # for direct SSH access from guacd_container
+
 # Deploy actual application ########################################
 
 DESKTOP=/home/ubuntu/Desktop
@@ -164,5 +168,7 @@ wesnoth
 # needs more RAM, otherwise good application
 # wget -O ~/google-earth.deb https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb
 # sudo dpkg -i ~/google-earth.deb
+
+
 
 --====Part=Boundary=================================================--
