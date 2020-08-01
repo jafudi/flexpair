@@ -109,7 +109,7 @@ services:
       - ./drive:/drive:rw
       - ./record:/record:rw
     extra_hosts:
-      - "gateway:172.18.0.1" # Make connection to 'gateway' from Guacamole
+      - "gateway:172.18.0.1" # Enable connection to gateway host
   # postgres
   postgres:
     container_name: postgres_container
@@ -179,6 +179,8 @@ services:
       - guacamole
     networks:
       guacamole_net:
+    extra_hosts:
+      - "gateway:172.18.0.1" # Enable connection to gateway host
     command: /bin/bash -c "nginx -g 'daemon off;'"
     # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
