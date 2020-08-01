@@ -21,6 +21,7 @@
 ## Docker + GitLab Runner use cases
 - Software demos and user testing
 - Mob programming
+- Digitale Vereinssitzung, Konkurrenzsoftware OpenSlides
 
 ## Other use cases
 - Presenting and discussing slides
