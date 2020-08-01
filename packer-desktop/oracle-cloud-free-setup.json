@@ -90,7 +90,8 @@
     },
     {
       "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
+        "HOME_DIR=/home/ubuntu",
+        "SSL_SUB_DOMAIN={{user `ssl_sub_domain`}}"
       ],
       "only": ["lubuntu-desktop"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",

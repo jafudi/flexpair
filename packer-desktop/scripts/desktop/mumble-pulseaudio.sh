@@ -51,7 +51,7 @@ output=MumbleNullSink
 [ui]
 developermenu=true
 WindowLayout=2
-server=tryno4.theworkpc.com
+server=${SSL_SUB_DOMAIN}
 username=Jafudi
 showcontextmenuinmenubar=true
 themestyle=Dark
