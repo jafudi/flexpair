@@ -2,6 +2,8 @@
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade glances
 
+img=$(cat /var/tmp/ascii-art)
+
 msg='
 Welcome to your gateway :-)
 
@@ -20,6 +22,7 @@ if [ -d /etc/update-motd.d ]; then
 #!/bin/sh
 
 cat <<'EOF'
+$img
 $msg
 EOF
 BENTO
