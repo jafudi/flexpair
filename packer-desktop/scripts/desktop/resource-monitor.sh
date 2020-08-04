@@ -59,7 +59,7 @@ For high-quality AUDIO INPUT
 download Mumble client from:
 www.mumble.info/downloads
 and connect on port 64738 to
-mambo5.theworkpc.com
+mambo6.theworkpc.com
 $hr
 For menu press Ctrl+Alt+Shift
 ]]

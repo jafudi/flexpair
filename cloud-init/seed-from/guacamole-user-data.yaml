@@ -129,12 +129,9 @@ if [ $exitcode -eq 0 ]; then
   sudo rm -rf ${GUACAMOLE_HOME}/murmur_cert
   sudo mkdir -p ${GUACAMOLE_HOME}/murmur_cert
   sudo cp -L ${host_path}/live/$domain/* ${GUACAMOLE_HOME}/murmur_cert/
-  docker-compose up -d murmur
-  docker-compose exec -d nginx nginx -s reload
+  docker-compose up --force-recreate -d nginx
 else
   echo "Certbot returned error code '$exitcode'."
-  echo "Shutting Guacamole stack."
-  docker-compose down
   exit 1
 fi
 

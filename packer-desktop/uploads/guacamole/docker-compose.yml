@@ -121,6 +121,7 @@ services:
     image: postgres
     networks:
       guacamole_net:
+        ipv4_address: 172.18.0.3
     restart: always
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
@@ -141,20 +142,20 @@ services:
     image: guacamole/guacamole
     networks:
       guacamole_net:
-    links:
-      - guacd
+        ipv4_address: 172.18.0.4
     ports:
-      - 8080/tcp
+      - "8080/tcp"
     restart: always
 
   murmur:
     image: goofball222/murmur
     networks:
       guacamole_net:
+        ipv4_address: 172.18.0.5
     container_name: murmur
     ports:
-      - 64738:64738
-      - 64738:64738/udp
+      - "64738:64738"
+      - "64738:64738/udp"
     volumes:
       - ./murmur_config:/opt/murmur/config
       - ./murmur_data:/opt/murmur/data
@@ -162,6 +163,19 @@ services:
       - ./murmur_cert:/opt/murmur/cert
     environment:
       - TZ=UTC
+
+  mumble:
+    image: jafudi/mumble-web
+    networks:
+      guacamole_net:
+        ipv4_address: 172.18.0.6
+    container_name: mumble_web_container
+    ports:
+      - "8081:8081"
+    depends_on:
+      - murmur
+    environment:
+      - MUMBLE_SERVER=murmur:64738
 
   nginx:
     container_name: nginx_container
@@ -173,12 +187,14 @@ services:
       - ./letsencrypt/certbot/conf:/etc/letsencrypt:ro
       - ./letsencrypt/certbot/www:/var/www/certbot:ro
     ports:
-      - 443:443
-      - 80:80
-    links:
+      - "443:443"
+      - "80:80"
+    depends_on:
       - guacamole
+      - mumble
     networks:
       guacamole_net:
+        ipv4_address: 172.18.0.7
     extra_hosts:
       - "gateway:172.18.0.1" # Enable connection to gateway host
     command: /bin/bash -c "nginx -g 'daemon off;'"
@@ -190,6 +206,7 @@ services:
     restart: unless-stopped
     networks:
       guacamole_net:
+        ipv4_address: 172.18.0.8
     volumes:
       - ./letsencrypt/certbot/conf:/etc/letsencrypt:rw
       - ./letsencrypt/certbot/www:/var/www/certbot:rw

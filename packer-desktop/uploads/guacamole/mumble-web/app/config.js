@@ -28,9 +28,9 @@ window.mumbleWebConfig = {
   'defaults': {
     // Connect Dialog
     'address': window.location.hostname,
-    'port': '443',
+    'port': '443/murmur',
     'token': '',
-    'username': '',
+    'username': 'ViaBrowser',
     'password': '',
     'joinDialog': false, // replace whole dialog with single "Join Conference" button
     'matrix': false, // enable Matrix Widget support (mostly auto-detected; implies 'joinDialog')
