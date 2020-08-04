@@ -100,6 +100,7 @@
         "{{user `script_dir`}}/desktop/lxqt-look-and-feel.sh",
         "{{user `script_dir`}}/desktop/hide-menu-entries.sh",
         "{{user `script_dir`}}/desktop/podcasts-and-videos.sh",
+        "{{user `script_dir`}}/desktop/open-slides.sh",
         "{{user `script_dir`}}/desktop/resource-monitor.sh",
         "{{user `script_dir`}}/desktop/mumble-pulseaudio.sh",
         "{{user `script_dir`}}/desktop/email-client-account.sh",

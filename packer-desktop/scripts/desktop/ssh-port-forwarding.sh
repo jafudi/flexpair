@@ -7,7 +7,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ssh -vvv -g -N -T -o "ServerAliveInterval 10" -o "ExitOnForwardFailure yes" -o "StrictHostKeyChecking no" -i /var/tmp/ssh/vm_key -R 5900:localhost:5900 -R 6667:localhost:667 -R 2222:localhost:22 -R 4713:localhost:4713 ubuntu@${SSL_SUB_DOMAIN}
+ExecStart=/usr/bin/ssh -vvv -g -N -T -o "ServerAliveInterval 10" -o "ExitOnForwardFailure yes" -o "StrictHostKeyChecking no" -i /var/tmp/ssh/vm_key -R 5900:localhost:5900 -R 6667:localhost:667 -R 2222:localhost:22 -R 4713:localhost:4713 -R 8000:localhost:8000 ubuntu@${SSL_SUB_DOMAIN}
 Restart=always
 RestartSec=5s
 
