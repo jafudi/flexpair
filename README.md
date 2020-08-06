@@ -1,3 +1,9 @@
+# Minimal Requirements
+
+- 2 VMs with 1 GB of RAM each (available for free)
+- not necessarily with the same cloud provider
+- a free user account at `www.dynu.com`
+
 # Key features
 
 - stable, yet resource-friendly conferencing even at low bandwidth
@@ -32,8 +38,5 @@
 # Todos and planned features
 
 - Migrate from Packer to Terraform Cloud
-- Webcam as wallpaper
-- Stablilize and fully automate LetsEncypt certbot
 - Crowdfunding campaign
-- Enable audio and video recording via Guacamole (avoid echo)
-- Enable email client
+
