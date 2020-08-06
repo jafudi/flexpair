@@ -94,6 +94,10 @@ sudo mv "${host_path}/live/$domain" "${host_path}/archive/dummy/"
 sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
+# https://letsencrypt.org/docs/rate-limits/
+# 50 certificates per registered domain per week i.e. theworkpc.com
+# including other people's certificates!
+# + 5 renewals per subdomain per week
 
 # Select appropriate email arg
 case "$email" in

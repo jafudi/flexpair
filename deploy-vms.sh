@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-cat packer-desktop/uploads/ascii-art
+clear && printf '\e[3J'
+PACKFOLDER=$PWD/packer-desktop
+cat ${PACKFOLDER}/vartmp-uploads/gateway/ascii-art
 
-TARGET="oracle-cloud-free-setup"
+TARGET="${PACKFOLDER}/oracle-cloud-free-setup.json"
+packer validate ${TARGET}  || exit 1
+
 FROM_SCRATCH=true
 EXCLUDE=""
 
@@ -44,7 +48,7 @@ case ${PING_STATUS} in
     ;;
 esac
 
-SSH_KEY_FOLDER="$PWD/packer-desktop/uploads/ssh"
+SSH_KEY_FOLDER="${PACKFOLDER}/vartmp-uploads/common/ssh"
 PRIVKEY_FILE="${SSH_KEY_FOLDER}/vm_key"
 PUBKEY_FILE="${PRIVKEY_FILE}.pub"
 COMMENT="$USER@$HOSTNAME"
@@ -94,4 +98,4 @@ ${EXCLUDE} \
 -var "private_key_file=${PRIVKEY_FILE}" \
 -var "ssh_keypair_name=${COMMENT}" \
 -on-error=abort \
-packer-desktop/${TARGET}.json
+${TARGET}

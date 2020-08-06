@@ -21,7 +21,7 @@ window.mumbleWebConfig = {
     'toolbarVertical': false,
     'showAvatars': 'always', // one of 'always', 'own_channel', 'linked_channel', 'minimal_only', 'never'
     'userCountInChannelName': false,
-    'audioBitrate': 40000, // bits per second
+    'audioBitrate': 96000, // bits per second
     'samplesPerPacket': 960
   },
   // Default values (can be changed by passing a query parameter of the same name)

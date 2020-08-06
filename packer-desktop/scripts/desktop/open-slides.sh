@@ -11,7 +11,7 @@ mkdir -p $DESKTOP
 cat << EOF | sudo tee $DESKTOP/openslides.desktop
 [Desktop Entry]
 Type=Application
-Exec=qterminal --execute /home/ubuntu/.local/bin/openslides
+Exec=/home/ubuntu/.local/bin/openslides
 Icon=QMPlay2
 Name=OpenSlides
 EOF

@@ -71,14 +71,26 @@
     },
     {
       "type": "file",
-      "source": "packer-desktop/uploads/",
-      "destination": "/var/tmp"
+      "source": "packer-desktop/vartmp-uploads/common/",
+      "destination": "/var/tmp/"
+    },
+    {
+      "type": "file",
+      "only": ["guacamole-gateway"],
+      "source": "packer-desktop/vartmp-uploads/gateway/",
+      "destination": "/var/tmp/"
+    },
+    {
+      "type": "file",
+      "only": ["lubuntu-desktop"],
+      "source": "packer-desktop/vartmp-uploads/desktop/",
+      "destination": "/var/tmp/"
     },
     {
       "type": "file",
       "only": ["guacamole-gateway"],
       "source": "packer-desktop/gateway-userhome/",
-      "destination": "/home/ubuntu"
+      "destination": "/home/ubuntu/"
     },
     {
       "environment_vars": [
