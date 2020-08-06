@@ -2,7 +2,7 @@
 
 - 2 VMs with 1 GB of RAM each (available for free)
 - not necessarily with the same cloud provider
-- a free user account at `www.dynu.com`
+- a free user account at [Dynu Dynamic DNS](www.dynu.com)
 
 # Key features
 
