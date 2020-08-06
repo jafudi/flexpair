@@ -23,14 +23,9 @@ Content-Disposition: attachment; filename="lubuntu-user-script.sh"
 
 #!/usr/bin/env bash
 
-function get_info() {
-  curl --silent -H "Authorization: Bearer Oracle" "http://169.254.169.254/opc/v2/instance/$1"
-}
-export -f get_info
+# Check whether required packages are installed to proceed #########
 
-# Check whether required packages are installed ####################
-
-packages=("docker.io" "kdialog" "x11vnc")
+packages=("docker.io" "kdialog" "mumble")
 
 for pkg in ${packages[@]}; do
     is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
@@ -43,9 +38,105 @@ for pkg in ${packages[@]}; do
     fi
 done
 
-# Deliberately remove user password ################################
+# Is there an alternative to removing the user password ? ###########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
+
+# Obtain instance parameters / degrees of freedom ###################
+
+function get_info() {
+  curl --silent \
+       -H "Authorization: Bearer Oracle" \
+       "http://169.254.169.254/opc/v2/instance/$1"
+}
+export -f get_info
+GATEWAY_DOMAIN=`get_info metadata/ssl-sub-domain`
+GITLAB_RUNNER_TOKEN=`get_info metadata/gitlab-runner-token`
+
+# Configure connection between desktop and gateway #################
+
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade sshfs
+
+mkdir -p $HOME/Desktop/Uploads
+chown ubuntu -R $HOME/Desktop/Uploads
+
+cat << EOF >> /etc/fstab
+ubuntu@${GATEWAY_DOMAIN}:/home/ubuntu /home/ubuntu/Desktop/Uploads \
+fuse.sshfs \
+noauto,x-systemd.automount,_netdev,users,idmap=user,\
+IdentityFile=/var/tmp/ssh/vm_key,\
+allow_other,reconnect 0 0
+EOF
+
+cat << EOF > /etc/systemd/system/ssh-tunnel.service
+[Unit]
+Description=Reverse SSH connection
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ssh -vvv -g -N -T \
+-o "ServerAliveInterval 10" \
+-o "ExitOnForwardFailure yes" \
+-o "StrictHostKeyChecking no" \
+-i /var/tmp/ssh/vm_key \
+-R 5900:localhost:5900 \
+-R 6667:localhost:667 \
+-R 2222:localhost:22 \
+-R 4713:localhost:4713 \
+-R 8000:localhost:8000 \
+ubuntu@${GATEWAY_DOMAIN}
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target
+EOF
+systemctl enable ssh-tunnel.service
+systemctl start ssh-tunnel.service
+
+# Configure Mumble #################################################
+
+# https://wiki.ubuntuusers.de/Mumble/
+# https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
+
+mkdir -p $HOME/.config/Mumble
+cat << EOF > $HOME/.config/Mumble/Mumble.conf
+[audio]
+echomulti=false
+headphone=true
+input=PulseAudio
+noisesupress=0
+output=PulseAudio
+outputdelay=10
+quality=96000
+vadmax=@Variant(\0\0\0\x87\x38\0\x1\0)
+vadmin=@Variant(\0\0\0\x87\x38\0\x1\0)
+voicehold=250
+
+[codec]
+opus/encoder/music=true
+
+[net]
+autoconnect=true
+framesperpacket=6
+jitterbuffer=5
+
+[pulseaudio]
+output=MumbleNullSink
+
+[ui]
+developermenu=true
+WindowLayout=2
+server=${GATEWAY_DOMAIN}
+username=Jafudi
+showcontextmenuinmenubar=true
+themestyle=Dark
+stateintray=false
+disablepubliclist=true
+disableconnectdialogediting=false
+EOF
+chown ubuntu -R $HOME/.config/Mumble
 
 # Deploy actual application ########################################
 
@@ -104,7 +195,7 @@ ROUTE_TAGS="$( \
 sudo gitlab-runner register \
 --non-interactive \
 --url="https://gitlab.com/" \
---registration-token="JW6YYWLG4mTsr_-mSaz8" \
+--registration-token="${GITLAB_RUNNER_TOKEN}" \
 --executor="shell" \
 --description="${DESCRIPTION}" \
 --tag-list="${HOST_TAGS},${ROUTE_TAGS}"
@@ -112,7 +203,7 @@ sudo gitlab-runner register \
 sudo gitlab-runner restart
 sudo gitlab-runner status
 
-### Install games and edutainment apps 1st choice
+# Install edutainment ##############################################
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 tuxmath tuxtype tuxpaint \
@@ -131,8 +222,6 @@ native=yes
 noprint=yes
 lang=japanese
 EOF
-
-### Install games and edutainment apps 2nd choice
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 bumprace \
@@ -164,11 +253,5 @@ tecnoballz \
 cgoban \
 lmemory \
 wesnoth
-
-# needs more RAM, otherwise good application
-# wget -O ~/google-earth.deb https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb
-# sudo dpkg -i ~/google-earth.deb
-
-
 
 --====Part=Boundary=================================================--

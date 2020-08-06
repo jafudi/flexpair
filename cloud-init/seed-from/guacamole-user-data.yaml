@@ -21,12 +21,7 @@ Content-Disposition: attachment; filename="guacamole-user-script.sh"
 
 #!/usr/bin/env bash
 
-function get_info() {
-  curl --silent -H "Authorization: Bearer Oracle" "http://169.254.169.254/opc/v2/instance/$1"
-}
-export -f get_info
-
-# Check whether required packages are installed ####################
+# Check whether required packages are installed to proceed #########
 
 packages=("docker.io")
 
@@ -41,9 +36,19 @@ for pkg in ${packages[@]}; do
     fi
 done
 
-# Deliberately remove user password ################################
+# Is there an alternative to removing the user password ? ##########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
+
+# Obtain instance parameters / degrees of freedom ###################
+
+function get_info() {
+  curl --silent \
+       -H "Authorization: Bearer Oracle" \
+       "http://169.254.169.254/opc/v2/instance/$1"
+}
+export -f get_info
+domain=`get_info metadata/ssl-sub-domain`
 
 # Provision Guacamole stack ########################################
 
@@ -58,7 +63,6 @@ docker run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --postgres > ./
 sudo chmod -R +x ./init
 echo "done"
 
-domain=`get_info metadata/ssl-sub-domain`
 rsa_key_size=4096
 data_path="./letsencrypt/certbot"
 mkdir -p ${data_path}
@@ -76,12 +80,12 @@ fi
 echo "### Creating dummy certificate for $domain ..."
 container_path="/etc/letsencrypt"
 host_path="$data_path/conf"
-sudo mkdir -p "${host_path}/live/$domain"
-sudo chmod 777 "${host_path}/live/$domain"
+sudo mkdir -p "${host_path}/live"
+sudo chmod 777 "${host_path}/live"
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey 'rsa:${rsa_key_size}' -days 90\
-    -keyout '${container_path}/live/${domain}/privkey.pem' \
-    -out '${container_path}/live/${domain}/fullchain.pem' \
+    -keyout '${container_path}/live/privkey.pem' \
+    -out '${container_path}/live/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 
 echo "### Starting nginx ..."
@@ -90,7 +94,7 @@ echo
 
 echo "### Saving away dummy certificate for $domain ..."
 sudo mkdir -p ${host_path}/archive/dummy
-sudo mv "${host_path}/live/$domain" "${host_path}/archive/dummy/"
+sudo mv "${host_path}/live/*" "${host_path}/archive/dummy/"
 sudo rm -Rf ${host_path}/renewal/$domain.conf
 
 echo "### Requesting Let's Encrypt certificate for $domain ..."
@@ -128,6 +132,7 @@ if [ $exitcode -eq 0 ]; then
     echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
     mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
   fi
+  sudo cp -L ${host_path}/live/$domain/* ${host_path}/live/
 
   echo "### Loading nginx and murmur with new certificate..."
   sudo rm -rf ${GUACAMOLE_HOME}/murmur_cert
