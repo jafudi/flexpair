@@ -13,13 +13,14 @@
 - idea exchange reduced to the max
 - exactly what we need during Corona
 - and did we mention: it's free
-- Mumble and VNS both over HTTPS
+- mumble.com charges 7.50$ a month for up to 15 users (without desktop!!)
+- [Mumble](https://www.mumble.info) and [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) both over HTTPS
 - Automatically register DDNS records
 - Mount home folder on gateway as folder on desktop
 - Mumble web works with Chrome, not with Firefox or Safari so far
-- Add support for openslides
+- Add support for [OpenSlides](https://openslides.com/en)
 - gateway and desktop traffic stats available directly in the browser
-- SSH tunnel secured with ed25519 encryption
+- SSH tunnel secured with [ed25519 encryption](http://ed25519.cr.yp.to)
 - fast network connection in the cloud
 - usable with standard set of open ports (22 SSH, 80 HTTP, 443 HTTPS)
 - access (multiple) desktops via one central gateway, no need to remember IPs
