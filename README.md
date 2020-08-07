@@ -24,27 +24,27 @@
 - fast network connection in the cloud
 - usable with standard set of open ports (22 SSH, 80 HTTP, 443 HTTPS)
 - access (multiple) desktops via one central gateway, no need to remember IPs
-- nginx and murmur share SSL certificate form LetsEncrypt
+- [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/) and murmur share SSL certificate form [LetsEncrypt](https://letsencrypt.org)
 - Prevention of full RAM and swapping
 - some more cool arcade games and selection of games for kids
-- lightweight LXQt desktop with beautiful ePapirus icons and breeze theme
-- gPodder podcatcher connected with VLC media player
+- lightweight [LXQt desktop](https://lxqt.github.io) with beautiful [ePapirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and breeze theme
+- [gPodder](https://gpodder.github.io) podcatcher connected with [VLC](https://www.videolan.org/vlc/index.html) media player
 - list of my favorite podcasts in OPML format
 - desktop takes part in Mumble conference, ability to record
-- OPUS audio codec
+- [Opus](https://opus-codec.org) audio codec
 - meteo-qt weather app
-- Automatic email client configuration
+- Automatic [Trojita](http://trojita.flaska.net) email client configuration
 - separate VMs for desktop and gateway, both deployed in parallel
-- basic C4 architecture diagram in structurizr
+- basic architecture diagram in structurizr according to the [C4 model](https://c4model.com)
 - lightdm login manager
-- openbox window manager
-- rock-solid x11vnc server
-- Combine letsencrypt ssl settings with guacamole proxy_pass
+- [Openbox](https://en.wikipedia.org/wiki/Openbox) window manager
+- rock-solid [x11vnc](http://www.karlrunge.com/x11vnc/) server
+- Combine letsencrypt ssl settings with [Apache Guacamole](https://guacamole.apache.org) proxy_pass
 - chose Oracle Cloud mainly because two free VMs
-- using docker-compose
+- using [Docker Compose](https://docs.docker.com/compose/)
 - VM will register itself as Gitlab
 - Automatically add tags describing the host when registering gitlab runner
-- Based on ubuntu-minimal-2004-lts Focal Fossa
+- Based on [Ubuntu Focal Fossa](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes) which has long term support until April 2025
 
 # Use cases
 
