@@ -20,7 +20,7 @@
 - Mumble web works with Chrome, not with Firefox or Safari so far
 - Add support for [OpenSlides](https://openslides.com/en)
 - gateway and desktop traffic stats available directly in the browser
-- SSH tunnel secured with [ed25519 encryption](http://ed25519.cr.yp.to)
+- [SSH tunnel](https://www.ssh.com/ssh/tunneling/) secured with [ed25519 encryption](http://ed25519.cr.yp.to)
 - fast network connection in the cloud
 - usable with standard set of open ports (22 SSH, 80 HTTP, 443 HTTPS)
 - access (multiple) desktops via one central gateway, no need to remember IPs
