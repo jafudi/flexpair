@@ -6,7 +6,10 @@
 - what is the minimum bandwidth 1. between nodes 2. at the user's location ?
 
 # Key features
-
+- SSH tunnnel between desktop and gateway across clouds and borders
+- For example: Gateway on Azure within the US, while desktop on Alibaba in China
+- one-click install on free tier cloud infrastructure
+- communication between servers and clients always encrypted
 - stable, yet resource-friendly conferencing even at low bandwidth
 - low latency, high quality
 - now video, at least no upload
