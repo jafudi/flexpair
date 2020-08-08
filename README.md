@@ -1,7 +1,7 @@
 # Minimal Requirements
 
 - 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
-- not necessarily with the same cloud provider
+- not necessarily with the same cloud provider (cloud-agnostic)
 - a free user account at [Dynu Dynamic DNS](https://www.dynu.com)
 - what is the minimum bandwidth 1. between nodes 2. at the user's location ?
 
