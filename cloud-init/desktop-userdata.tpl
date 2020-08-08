@@ -17,7 +17,7 @@ timezone: Europe/Berlin
 locale: de_DE.UTF-8
 
 mounts:
-  - ["ubuntu@mambo7.theworkpc.com:/home/ubuntu", "/home/ubuntu/Desktop/Uploads"]
+  - ["ubuntu@${SSL_DOMAIN}:/home/ubuntu", "/home/ubuntu/Desktop/Uploads"]
 
 mount_default_fields:
   - "none"
@@ -27,6 +27,7 @@ mount_default_fields:
   - "0"
   - "0"
 
+# https://blog.luukhendriks.eu/2019/01/25/sshfs-too-many-levels-of-symbolic-links.html
 runcmd:
     - "touch /home/ubuntu/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
 
@@ -60,7 +61,7 @@ function get_info() {
        "http://169.254.169.254/opc/v2/instance/$1"
 }
 export -f get_info
-GATEWAY_DOMAIN=`get_info metadata/ssl-sub-domain`
+GATEWAY_DOMAIN=${SSL_DOMAIN}
 GITLAB_RUNNER_TOKEN=`get_info metadata/gitlab-runner-token`
 
 # Configure connection between desktop and gateway #################
