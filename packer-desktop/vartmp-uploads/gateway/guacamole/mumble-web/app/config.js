@@ -21,16 +21,16 @@ window.mumbleWebConfig = {
     'toolbarVertical': false,
     'showAvatars': 'always', // one of 'always', 'own_channel', 'linked_channel', 'minimal_only', 'never'
     'userCountInChannelName': false,
-    'audioBitrate': 96000, // bits per second
+    'audioBitrate': 40000, // bits per second
     'samplesPerPacket': 960
   },
   // Default values (can be changed by passing a query parameter of the same name)
   'defaults': {
     // Connect Dialog
     'address': window.location.hostname,
-    'port': '443/murmur',
+    'port': '443',
     'token': '',
-    'username': 'ViaBrowser',
+    'username': '',
     'password': '',
     'joinDialog': false, // replace whole dialog with single "Join Conference" button
     'matrix': false, // enable Matrix Widget support (mostly auto-detected; implies 'joinDialog')
