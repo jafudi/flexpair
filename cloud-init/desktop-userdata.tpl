@@ -137,19 +137,19 @@ EOF
 
 # Deploy actual application ########################################
 
-DESKTOP=/home/ubuntu/Desktop
-mkdir -p $DESKTOP
-cat << EOF | sudo tee $DESKTOP/ideops.desktop
-[Desktop Entry]
-Type=Application
-Exec=qterminal --execute /var/tmp/run_app.sh
-Icon=QMPlay2
-Name=Hier klicken
-EOF
-sudo chmod +x $DESKTOP/ideops.desktop
-sudo chmod +x /var/tmp/run_app.sh
-
-docker pull --quiet jafudi/idea-extractor:latest &
+#DESKTOP=/home/ubuntu/Desktop
+#mkdir -p $DESKTOP
+#cat << EOF | sudo tee $DESKTOP/ideops.desktop
+#[Desktop Entry]
+#Type=Application
+#Exec=qterminal --execute /var/tmp/run_app.sh
+#Icon=QMPlay2
+#Name=Hier klicken
+#EOF
+#sudo chmod +x $DESKTOP/ideops.desktop
+#sudo chmod +x /var/tmp/run_app.sh
+#
+#docker pull --quiet jafudi/idea-extractor:latest &
 
 # Is there an alternative to removing the user password ? ###########
 
@@ -158,52 +158,52 @@ chown ubuntu -R /home/ubuntu # handing over home folder to user
 
 # Install GitLab runner ############################################
 
-echo "\n\nInstall Python packages required for testing on guest OS..."
-DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends python3-pip
-pip3 install setuptools
-pip3 install behave invoke jsonschema
-
-echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
-curl --silent -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
-apt-get install --upgrade -y gitlab-runner traceroute
-
-echo 'gitlab-runner ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-usermod -aG docker gitlab-runner
-
-cd /home/gitlab-runner
-mkdir -p builds
-chmod --recursive 777 builds
-rm -f .bash_logout
-
-# Register GitLab runner ###########################################
-
-sudo gitlab-runner unregister --all-runners
-sudo rm -f /etc/gitlab-runner/config.toml
-
-DESCRIPTION="Shell executor on $(uname -s)"
-
-HOST_TAGS="$( \
-    hostnamectl \
-    | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;' \
-    | tr '\n' ',' \
-)"
-
-ROUTE_TAGS="$( \
-    traceroute --max-hops=3 8.8.8.8 \
-    | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/' \
-    | tr '\n' ',' \
-)"
-
-sudo gitlab-runner register \
---non-interactive \
---url="https://gitlab.com/" \
---registration-token="${GITLAB_RUNNER_TOKEN}" \
---executor="shell" \
---description="${DESCRIPTION}" \
---tag-list="${HOST_TAGS},${ROUTE_TAGS}"
-
-sudo gitlab-runner restart
-sudo gitlab-runner status
+#echo "\n\nInstall Python packages required for testing on guest OS..."
+#DEBIAN_FRONTEND=noninteractive apt-get install --upgrade -y --no-install-recommends python3-pip
+#pip3 install setuptools
+#pip3 install behave invoke jsonschema
+#
+#echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
+#curl --silent -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
+#apt-get install --upgrade -y gitlab-runner traceroute
+#
+#echo 'gitlab-runner ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+#usermod -aG docker gitlab-runner
+#
+#cd /home/gitlab-runner
+#mkdir -p builds
+#chmod --recursive 777 builds
+#rm -f .bash_logout
+#
+## Register GitLab runner ###########################################
+#
+#sudo gitlab-runner unregister --all-runners
+#sudo rm -f /etc/gitlab-runner/config.toml
+#
+#DESCRIPTION="Shell executor on $(uname -s)"
+#
+#HOST_TAGS="$( \
+#    hostnamectl \
+#    | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;' \
+#    | tr '\n' ',' \
+#)"
+#
+#ROUTE_TAGS="$( \
+#    traceroute --max-hops=3 8.8.8.8 \
+#    | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/' \
+#    | tr '\n' ',' \
+#)"
+#
+#sudo gitlab-runner register \
+#--non-interactive \
+#--url="https://gitlab.com/" \
+#--registration-token="${GITLAB_RUNNER_TOKEN}" \
+#--executor="shell" \
+#--description="${DESCRIPTION}" \
+#--tag-list="${HOST_TAGS},${ROUTE_TAGS}"
+#
+#sudo gitlab-runner restart
+#sudo gitlab-runner status
 
 # Install edutainment ##############################################
 
