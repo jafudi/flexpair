@@ -17,7 +17,7 @@ timezone: Europe/Berlin
 write_files:
 - owner: ubuntu:ubuntu
   path: /home/ubuntu/podcasts.xml
-- content: |
+  content: |
     <?xml version="1.0" encoding="utf-8"?>
     <opml version="2.0">
         <head>
