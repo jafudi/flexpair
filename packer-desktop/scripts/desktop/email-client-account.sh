@@ -62,4 +62,3 @@ revealVersions=true
 addressbook=abookaddressbook
 password=cleartextpassword
 EOF
-chown ubuntu -R $MAILCONF

@@ -16,6 +16,20 @@ timezone: Europe/Berlin
 
 locale: de_DE.UTF-8
 
+mounts:
+  - ["ubuntu@mambo7.theworkpc.com:/home/ubuntu", "/home/ubuntu/Desktop/Uploads"]
+
+mount_default_fields:
+  - "none"
+  - "none"
+  - "fuse.sshfs"
+  - "nofail,noauto,_netdev,IdentityFile=/var/tmp/ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
+  - "0"
+  - "0"
+
+runcmd:
+    - "touch /home/ubuntu/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
+
 --====Part=Boundary=================================================
 Content-Type: text/x-shellscript; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -38,10 +52,6 @@ for pkg in ${packages[@]}; do
     fi
 done
 
-# Is there an alternative to removing the user password ? ###########
-
-sudo passwd -d ubuntu # for direct SSH access from guacd_container
-
 # Obtain instance parameters / degrees of freedom ###################
 
 function get_info() {
@@ -54,19 +64,6 @@ GATEWAY_DOMAIN=`get_info metadata/ssl-sub-domain`
 GITLAB_RUNNER_TOKEN=`get_info metadata/gitlab-runner-token`
 
 # Configure connection between desktop and gateway #################
-
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade sshfs
-
-mkdir -p $HOME/Desktop/Uploads
-chown ubuntu -R $HOME/Desktop/Uploads
-
-cat << EOF >> /etc/fstab
-ubuntu@${GATEWAY_DOMAIN}:/home/ubuntu /home/ubuntu/Desktop/Uploads \
-fuse.sshfs \
-noauto,x-systemd.automount,_netdev,users,idmap=user,\
-IdentityFile=/var/tmp/ssh/vm_key,\
-allow_other,reconnect 0 0
-EOF
 
 cat << EOF > /etc/systemd/system/ssh-tunnel.service
 [Unit]
@@ -100,8 +97,8 @@ systemctl start ssh-tunnel.service
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
 
-mkdir -p $HOME/.config/Mumble
-cat << EOF > $HOME/.config/Mumble/Mumble.conf
+mkdir -p /home/ubuntu/.config/Mumble
+cat << EOF > /home/ubuntu/.config/Mumble/Mumble.conf
 [audio]
 echomulti=false
 headphone=true
@@ -133,10 +130,9 @@ username=Jafudi
 showcontextmenuinmenubar=true
 themestyle=Dark
 stateintray=false
-disablepubliclist=true
+disablepubliclist=false
 disableconnectdialogediting=false
 EOF
-chown ubuntu -R $HOME/.config/Mumble
 
 # Deploy actual application ########################################
 
@@ -153,6 +149,11 @@ sudo chmod +x $DESKTOP/ideops.desktop
 sudo chmod +x /var/tmp/run_app.sh
 
 docker pull --quiet jafudi/idea-extractor:latest &
+
+# Is there an alternative to removing the user password ? ###########
+
+sudo passwd -d ubuntu # for direct SSH access from guacd_container
+chown ubuntu -R /home/ubuntu # handing over home folder to user
 
 # Install GitLab runner ############################################
 
@@ -216,7 +217,7 @@ funnyboat \
 
 # http://www.tuxpaint.org/
 # TODO: Switch to Japanese
-cat << EOF > $HOME/.tuxpaintrc
+cat << EOF > /home/ubuntu/.tuxpaintrc
 fullscreen=yes
 native=yes
 noprint=yes

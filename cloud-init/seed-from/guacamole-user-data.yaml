@@ -36,9 +36,10 @@ for pkg in ${packages[@]}; do
     fi
 done
 
-# Is there an alternative to removing the user password ? ##########
+# Is there an alternative to removing the user password ? ###########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
+chown ubuntu -R /home/ubuntu # handing over home folder to user
 
 # Obtain instance parameters / degrees of freedom ###################
 

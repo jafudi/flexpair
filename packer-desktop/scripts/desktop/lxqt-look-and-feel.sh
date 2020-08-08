@@ -13,7 +13,6 @@ theme=Lubuntu Arc
 [Qt]
 style=Breeze
 EOF
-chown ubuntu -R ${CONFIG_DIR}
 
 cd /etc/xdg/autostart/
 rm -f lxqt-globalkeyshortcuts.desktop

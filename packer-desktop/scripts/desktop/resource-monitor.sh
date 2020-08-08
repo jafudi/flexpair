@@ -58,13 +58,11 @@ $hr
 For high-quality AUDIO INPUT
 download Mumble client from:
 www.mumble.info/downloads
-and connect on port 64738 to
-mambo7.theworkpc.com
+and connect to port 64738
 $hr
 For menu press Ctrl+Alt+Shift
 ]]
 EOF
-chown ubuntu $HOME/.conkyrc
 
 mkdir -p  $HOME/.config/autostart
 cat << EOF > $HOME/.config/autostart/conky.desktop
@@ -75,4 +73,3 @@ Exec=conky --daemonize --pause=5
 StartupNotify=false
 Terminal=false
 EOF
-chown ubuntu -R  $HOME/.config/autostart

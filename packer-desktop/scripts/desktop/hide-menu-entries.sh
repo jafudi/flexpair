@@ -16,4 +16,3 @@ do
  sed '/OnlyShowIn/aNoDisplay=true' < "/usr/share/applications/$f.desktop" >\
   "${LOCAL_DIR}/share/applications/$f.desktop"
 done
-chown ubuntu -R ${LOCAL_DIR}

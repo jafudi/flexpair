@@ -112,7 +112,6 @@ TrayType=temp
 Unit=metric
 Wind_unit=km
 EOF
-chown ubuntu -R $HOME/.config/meteo-qt
 
 # quite RAM hungry
 # firefox \
@@ -122,7 +121,6 @@ chown ubuntu -R $HOME/.config/meteo-qt
 # EOF
 
 mkdir -p $HOME/Desktop
-chown ubuntu -R $HOME
 
 mkdir -p /etc/lightdm
 cat << EOF > /etc/lightdm/lightdm.conf
