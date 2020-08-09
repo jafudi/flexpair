@@ -1,3 +1,45 @@
+# Competitor Analysis
+
+## Providers
+
+- [AnyDesk](https://anydesk.com/de/features)
+- [BigBlueButton](https://bigbluebutton.org/teachers/)
+- [Jitsi](https://jitsi.org/user-faq/)
+- [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen)
+- [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
+- [nomachine](https://www.nomachine.com/de/fernzugriff-f%C3%BCr-alle)
+- [TeamViewer](https://www.teamviewer.com/en/products/teamviewer/)
+- [WebEx](https://www.webex.com/de/pricing/index.html)
+- [X2Go](https://wiki.x2go.org/doku.php/doc:newtox2go)
+- [Zoom](https://zoom.us/de-de/meetings.html)
+
+## Applicable Criteria
+
+- Encryption
+- File transfer
+- Video
+- Chat tool
+- Audio
+- Remote assistance
+- NAT passthrough
+- Session recording
+- Whiteboard
+- Browser-based access
+- Session persistence
+
+# Potential Testers / Early Adopters
+
+- Papa für seine Partei mit OpenSlides
+- Papa um uns Unterlagen für Wipperfliess zu zeigen
+- Mama für Sippentreffen
+- Lea für Stationsversammlung mit OpenSlides
+- Yayoi für Hoshuko
+- Ying zum Demonstrieren Ihrer eigenen App
+- Werner zum Qt-Programmieren
+- Selbsthilfebüro für Karaoke-Abend
+- Achim bei der Bahn für Mob Programming
+- Björn für CdE-Orga
+
 # Minimal Requirements
 
 - 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
@@ -6,7 +48,10 @@
 - what is the minimum bandwidth 1. between nodes 2. at the user's location ?
 
 # Key features
-
+- SSH tunnnel between desktop and gateway across clouds and borders
+- For example: Gateway on Azure within the US, while desktop on Alibaba in China
+- one-click install on free tier cloud infrastructure
+- communication between servers and clients always encrypted
 - stable, yet resource-friendly conferencing even at low bandwidth
 - low latency, high quality
 - now video, at least no upload
