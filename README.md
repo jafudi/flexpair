@@ -7,7 +7,7 @@
 - [Jitsi](https://jitsi.org/user-faq/)
 - [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen)
 - [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
-- [NX technology](https://www.nomachine.com/de/fernzugriff-f%C3%BCr-alle)
+- [nomachine](https://www.nomachine.com/de/fernzugriff-f%C3%BCr-alle)
 - [TeamViewer](https://www.teamviewer.com/en/products/teamviewer/)
 - [WebEx](https://www.webex.com/de/pricing/index.html)
 - [X2Go](https://wiki.x2go.org/doku.php/doc:newtox2go)
