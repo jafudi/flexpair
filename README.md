@@ -47,7 +47,17 @@
 - a free user account at [Dynu Dynamic DNS](https://www.dynu.com)
 - what is the minimum bandwidth 1. between nodes 2. at the user's location ?
 
-# Key features
+# Unique Selling Point(s)
+
+- desktop sharing done right
+- persistent storage of your docs
+- everyone is able to edit without need for switching controls
+- hear each other crystal clear, listen to podcasts and more
+- until all is said: no time limitations whatsoever
+- no additional software: use your favorite web browser
+- keep your private space private: no webcams involved
+
+# Technical details
 - SSH tunnnel between desktop and gateway across clouds and borders
 - For example: Gateway on Azure within the US, while desktop on Alibaba in China
 - one-click install on free tier cloud infrastructure
