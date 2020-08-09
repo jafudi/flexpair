@@ -7,6 +7,9 @@ cat /var/log/cloud-init-output.log
 set -e
 
 export DEBIAN_FRONTEND=noninteractive
+apt-get -y update;
+
+apt-get install -y nano less sshfs locales
 
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
@@ -41,8 +44,6 @@ apt-get -y update;
 
 # Upgrade all installed packages incl. kernel and kernel headers
 apt-get -y dist-upgrade -o Dpkg::Options::="--force-confnew";
-
-apt-get install -y nano less sshfs
 
 reboot
 

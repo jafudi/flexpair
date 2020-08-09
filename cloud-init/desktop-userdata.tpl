@@ -83,6 +83,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -R 2222:localhost:22 \
 -R 4713:localhost:4713 \
 -R 8000:localhost:8000 \
+-L 64738:${GATEWAY_DOMAIN}:64738 \
 ubuntu@${GATEWAY_DOMAIN}
 Restart=always
 RestartSec=5s
@@ -127,11 +128,11 @@ output=MumbleNullSink
 developermenu=true
 WindowLayout=2
 server=${GATEWAY_DOMAIN}
-username=Jafudi
+username=Desktop
 showcontextmenuinmenubar=true
 themestyle=Dark
 stateintray=false
-disablepubliclist=false
+disablepubliclist=true
 disableconnectdialogediting=false
 EOF
 

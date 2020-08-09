@@ -97,6 +97,7 @@ if ${FROM_SCRATCH} ; then
         ;;
     esac
     mkdir -p ${SSH_KEY_FOLDER}
+    echo
     echo "Generate a new SSH key..."
     ssh-keygen -t ed25519 -f ${PRIVKEY_FILE} -q -N "" -C ${COMMENT} || exit 1
 else
