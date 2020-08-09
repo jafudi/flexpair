@@ -1,3 +1,35 @@
+# Competitor Analysis
+
+## Providers
+
+- AnyDesk
+- BigBlueButton
+- Citrix XenApp
+- Jitsi
+- LogMeIn GotoMeeting
+- MS Teams
+- Netop Remote Control
+- NX technology
+- Skype
+- TeamViewer
+- WebEx
+- X2Go
+- Zoom
+
+## Applicable Criteria
+
+- Encryption
+- File transfer
+- Video
+- Chat tool
+- Audio
+- Remote assistance
+- NAT passthrough
+- Session recording
+- Whiteboard
+- Browser-based access
+- Session persistence
+
 # Minimal Requirements
 
 - 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
