@@ -30,6 +30,18 @@
 - Browser-based access
 - Session persistence
 
+# Potential Testers / Early Adopters
+
+- Papa für seine Partei oder um uns Unterlagen für Wipperfliess zu zeigen
+- Mama für Sippentreffen
+- Lea im Krankenhaus
+- Yayoi für Hoshuko
+- Ying für Ihre App
+- Werner zum Qt-Programmieren
+- Selbsthilfebüro
+- Achim bei der Bahn
+- Björn für CdE-Orga oder auf seiner neuen Arbeit
+
 # Minimal Requirements
 
 - 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
