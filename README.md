@@ -32,15 +32,16 @@
 
 # Potential Testers / Early Adopters
 
-- Papa für seine Partei oder um uns Unterlagen für Wipperfliess zu zeigen
+- Papa für seine Partei mit OpenSlides
+- Papa um uns Unterlagen für Wipperfliess zu zeigen
 - Mama für Sippentreffen
-- Lea im Krankenhaus
+- Lea für Stationsversammlung mit OpenSlides
 - Yayoi für Hoshuko
-- Ying für Ihre App
+- Ying zum Demonstrieren Ihrer eigenen App
 - Werner zum Qt-Programmieren
-- Selbsthilfebüro
-- Achim bei der Bahn
-- Björn für CdE-Orga oder auf seiner neuen Arbeit
+- Selbsthilfebüro für Karaoke-Abend
+- Achim bei der Bahn für Mob Programming
+- Björn für CdE-Orga
 
 # Minimal Requirements
 
