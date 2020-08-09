@@ -2,14 +2,12 @@
 
 ## Providers
 
-- AnyDesk
-- BigBlueButton
-- Citrix XenApp
-- Jitsi
-- LogMeIn GotoMeeting
-- MS Teams
-- Netop Remote Control
-- NX technology
+- [AnyDesk](https://anydesk.com/de/features)
+- [BigBlueButton](https://bigbluebutton.org/teachers/)
+- [Jitsi](https://jitsi.org/user-faq/)
+- [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen)
+- [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
+- [NX technology](https://www.nomachine.com/de/fernzugriff-f%C3%BCr-alle)
 - Skype
 - TeamViewer
 - WebEx
