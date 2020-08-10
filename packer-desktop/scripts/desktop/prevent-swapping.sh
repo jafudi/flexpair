@@ -4,10 +4,12 @@ cat << 'EOF' >> /etc/sysctl.conf
 vm.swappiness = 1
 EOF
 
-git clone https://github.com/hakavlad/nohang.git && cd nohang
-make install
+apt install make fakeroot
 
-# Config files will be located in /usr/local/etc/nohang/
+git clone https://github.com/hakavlad/nohang.git && cd nohang
+deb/build.sh
+
+apt install --reinstall ./deb/package.deb
 
 systemctl enable nohang-desktop
 systemctl start nohang-desktop

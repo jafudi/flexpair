@@ -89,7 +89,8 @@ meteo-qt \
 variety \
 inkscape \
 nextcloud-desktop \
-linphone
+linphone \
+gnome-clocks
 
 mkdir -p $HOME/.config/meteo-qt
 cat << EOF > $HOME/.config/meteo-qt/meteo-qt.conf
@@ -168,15 +169,27 @@ width-percent=true
 [quicklaunch]
 alignment=Left
 apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
-apps\2\desktop=/usr/share/applications/org.kde.kcalc.desktop
-apps\3\desktop=/usr/share/applications/featherpad.desktop
-apps\4\desktop=/usr/share/applications/qterminal.desktop
-apps\5\desktop=/usr/share/applications/mumble.desktop
-apps\6\desktop=/usr/share/applications/pavucontrol-qt.desktop
-apps\7\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
-apps\8\desktop=/usr/share/applications/oneko.desktop
-apps\size=8
+apps\10\desktop=/usr/share/applications/tuxpaint.desktop
+apps\11\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
+apps\12\desktop=/usr/share/applications/org.gnome.clocks.desktop
+apps\13\desktop=/usr/share/applications/linphone.desktop
+apps\14\desktop=/usr/share/applications/gpodder.desktop
+apps\15\desktop=/usr/share/applications/trojita.desktop
+apps\16\desktop=/usr/share/applications/frozen-bubble.desktop
+apps\17\desktop=/usr/share/applications/vlc.desktop
+apps\18\desktop=/usr/share/applications/variety.desktop
+apps\19\desktop=/usr/share/applications/nextcloud.desktop
+apps\2\desktop=/usr/share/applications/lxqt-config.desktop
+apps\3\desktop=/usr/share/applications/qterminal.desktop
+apps\4\desktop=/usr/share/applications/org.kde.kcalc.desktop
+apps\5\desktop=/usr/share/applications/gnumeric.desktop
+apps\6\desktop=/usr/share/applications/featherpad.desktop
+apps\7\desktop=/usr/share/applications/mumble.desktop
+apps\8\desktop=/usr/share/applications/pavucontrol-qt.desktop
+apps\9\desktop=/usr/share/applications/oneko.desktop
+apps\size=19
 type=quicklaunch
+
 
 [statusnotifier]
 alignment=Right

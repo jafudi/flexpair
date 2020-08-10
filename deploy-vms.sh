@@ -21,9 +21,13 @@ do
         FROM_SCRATCH=false
         shift # Remove --desktop-only from processing
         ;;
-        -domain=*|--subdomain=*)
-        export SSL_DOMAIN="${arg#*=}"
-        shift # Remove --subdomain= from processing
+        -domain=*|--registered-domain=*)
+        export REGISTERED_DOMAIN="${arg#*=}"
+        shift # Remove --registered-domain= from processing
+        ;;
+        -subdomain=*|--subdomain-prefix=*)
+        export SUB_DOMAIN_PREFIX="${arg#*=}"
+        shift # Remove --subdomain-prefix= from processing
         ;;
         -target=*|--cloud-target=*)
         TARGET="${arg#*=}"
@@ -45,11 +49,15 @@ function check_size() {
     fi
 }
 
+export SSL_DOMAIN=${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}
 EXPAND_FOLDER="${PACKFOLDER}/builds"
 envsubst '${SSL_DOMAIN}' < cloud-init/gateway-userdata.tpl > "${EXPAND_FOLDER}/gateway-userdata"
 check_size "${EXPAND_FOLDER}/gateway-userdata"
 envsubst '${SSL_DOMAIN}' < cloud-init/desktop-userdata.tpl > packer-desktop/builds/desktop-userdata
 check_size "${EXPAND_FOLDER}/desktop-userdata"
+
+MURMUR_CONF="packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config"
+envsubst '${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}' < "${MURMUR_CONF}/murmur.tpl" > "${MURMUR_CONF}/murmur.ini"
 
 TARGET="${PACKFOLDER}/oracle-cloud-free-setup.json"
 packer validate ${TARGET}  || exit 1
@@ -120,6 +128,7 @@ echo "Provisioning VM(s) $EXCLUDE"
 echo "This will take some minutes..."
 
 packer build \
+-timestamp-ui \
 ${EXCLUDE} \
 -var "ssh_public_key=$(cat ${PUBKEY_FILE})" \
 -var "private_key_file=${PRIVKEY_FILE}" \

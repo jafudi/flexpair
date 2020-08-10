@@ -108,7 +108,7 @@ logfile=/opt/murmur/log/murmur.log
 ; Welcome message sent to clients when they connect.
 ; If the welcome message is set to an empty string,
 ; no welcome message will be sent to clients.
-welcometext='<br />Welcome to the audio conference.<br /><a href="https://usertest1.theworkpc.com" target="_blank">Click here to join remote desktop session!</a><br />'
+welcometext="Enjoy crystal clear audio!<br />Optionally, connect the Mumble app to port 64738.<br /><a href=\"https://${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}/guacamole/\" target=\"_blank\">Click here to join the remote desktop session!</a><br />"
 
 ; Port to bind TCP and UDP sockets to.
 port=64738
@@ -239,7 +239,7 @@ allowhtml=false
 ; See http://developer.apple.com/networking/bonjour/index.html for more information
 ; about bonjour.
 bonjour=False
-registerName=Mumbling Mole
+registerName="All participants of ${SUB_DOMAIN_PREFIX}"
 
 ; If you have a proper SSL certificate, you can provide the filenames here.
 ; Otherwise, Murmur will create its own certificate automatically.
