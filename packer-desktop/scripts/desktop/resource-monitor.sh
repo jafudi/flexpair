@@ -55,12 +55,12 @@ $hr
 ${color grey}Current network traffic:
 Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
 $hr
-For high-quality AUDIO INPUT
-download Mumble client from:
-www.mumble.info/downloads
-and connect to port 64738
-$hr
-For menu press Ctrl+Alt+Shift
+Press Alt+Ctrl+Shift for
+- main menu and settings
+- file upload and download
+- editing clipboard content
+- using a screen keyboard
+- zooming in and out
 ]]
 EOF
 
