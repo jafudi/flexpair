@@ -2,7 +2,7 @@
 
 ## Providers
 
-- [AnyDesk](https://anydesk.com/de/features)
+- [AnyDesk](https://anydesk.com/de/features) The software is based on our unique proprietary codec, DeskRT, that allows for virtually latency-free collaboration, whether you’re down the hall, or on the other side of the world.
 - [BigBlueButton](https://bigbluebutton.org/teachers/)
 - [Jitsi](https://jitsi.org/user-faq/)
 - [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen)
