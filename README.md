@@ -2,9 +2,9 @@
 
 ## Providers
 
-- [AnyDesk](https://anydesk.com/de/features) The software is based on our unique proprietary codec, DeskRT, that allows for virtually latency-free collaboration, whether you’re down the hall, or on the other side of the world.
-- [BigBlueButton](https://bigbluebutton.org/teachers/)
-- [Jitsi](https://jitsi.org/user-faq/)
+- [AnyDesk](https://anydesk.com/de/features): The software is based on our unique proprietary codec, DeskRT, that allows for virtually latency-free collaboration, whether you’re down the hall, or on the other side of the world.
+- [BigBlueButton](https://bigbluebutton.org/teachers/): BigBlueButton is completely open source and made by a community of dedicated developers passionate about helping improve online learning.
+- [Jitsi](https://jitsi.org/user-faq/): Jitsi is a set of open-source projects that allows you to easily build and deploy secure videoconferencing solutions. We are best known for our Jitsi Meet video conferencing platform, meet.jit.si where we host a Jitsi Meet instance that the community can use for totally free video conferences , and the Jitsi Videobridge that powers all of our multi-party video capabilities.
 - [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen)
 - [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
 - [nomachine](https://www.nomachine.com/de/fernzugriff-f%C3%BCr-alle)
