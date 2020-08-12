@@ -181,7 +181,7 @@ hide_corrective_action_type = False
     Valid values: True | False
     Default value: True
 
-low_memory_warnings_enabled = True
+low_memory_warnings_enabled = False
 
     Key: warning_exe
     Description:
@@ -648,7 +648,6 @@ separate_log = False
     https://github.com/hakavlad/nohang/issues
 
 EOF
-chown ubuntu ${CONFIG}
 
 systemctl enable nohang-desktop
 systemctl start nohang-desktop
