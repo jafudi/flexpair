@@ -8,7 +8,9 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get -y update;
-
+apt-get install -y software-properties-common
+add-apt-repository universe
+apt-get -y update;
 apt-get install -y nano less sshfs locales
 
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
