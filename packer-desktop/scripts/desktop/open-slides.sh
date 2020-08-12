@@ -11,8 +11,9 @@ mkdir -p $DESKTOP
 cat << EOF | sudo tee $DESKTOP/openslides.desktop
 [Desktop Entry]
 Type=Application
-Exec=/home/ubuntu/.local/bin/openslides
+Exec=openslides
 Icon=QMPlay2
 Name=OpenSlides
 EOF
 sudo chmod +x $DESKTOP/openslides.desktop
+chown ubuntu $DESKTOP/openslides.desktop
