@@ -22,3 +22,21 @@ rm -f nm-applet.desktop
 rm -f nm-tray-autostart.desktop
 rm -f snap-userd-autostart.desktop
 rm -f upg-notifier-autostart.desktop
+
+FILES="lxqt-hibernate
+lxqt-leave
+lxqt-lockscreen
+lxqt-logout
+lxqt-reboot
+lxqt-shutdown
+lxqt-suspend"
+
+LOCAL_DIR=/home/ubuntu/.local
+mkdir -p "${LOCAL_DIR}/share/applications"
+for f in $FILES
+do
+ echo "Processing $f"
+ sed '/OnlyShowIn/aNoDisplay=true' < "/usr/share/applications/$f.desktop" >\
+  "${LOCAL_DIR}/share/applications/$f.desktop"
+done
+

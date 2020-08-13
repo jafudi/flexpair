@@ -75,8 +75,8 @@ services:
         ipv4_address: 172.18.0.5
     container_name: murmur
     ports:
-      - "64738:64738"
-      - "64738:64738/udp"
+      - "${MURMUR_PORT}:${MURMUR_PORT}"
+      - "${MURMUR_PORT}:${MURMUR_PORT}/udp"
     volumes:
       - ./murmur_config:/opt/murmur/config
       - ./murmur_data:/opt/murmur/data
@@ -96,7 +96,9 @@ services:
     depends_on:
       - murmur
     environment:
-      - MUMBLE_SERVER=murmur:64738
+      - MUMBLE_SERVER=murmur:${MURMUR_PORT}
+    volumes:
+      - ./mumble-web/app/config.local.js:/home/node/app/config.local.js:ro
 
 #  To debug nginx replace '&& nginx -g 'daemon off' with '&& nginx-debug -g 'daemon off'
   nginx:

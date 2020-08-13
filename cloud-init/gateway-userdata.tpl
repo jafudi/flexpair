@@ -8,6 +8,10 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 
 #cloud-config
 
+bootcmd:
+  - mkdir -p /home/ubuntu/uploads
+  - chown ubuntu -R /home/ubuntu
+
 users:
     - default
 
@@ -66,7 +70,7 @@ fi
 rsa_key_size=4096
 data_path="./letsencrypt/certbot"
 mkdir -p ${data_path}
-email="socialnets@jafudi.com" # Adding a valid address is strongly recommended
+email="${EMAIL_ADDRESS}" # Adding a valid address is strongly recommended
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
 if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/ssl-dhparams.pem" ]; then

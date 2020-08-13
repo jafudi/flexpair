@@ -113,6 +113,7 @@ TrayType=temp
 Unit=metric
 Wind_unit=km
 EOF
+chown ubuntu -R /home/ubuntu/.config
 
 # quite RAM hungry
 # firefox \

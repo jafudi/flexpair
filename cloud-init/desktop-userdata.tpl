@@ -8,6 +8,11 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 
 #cloud-config
 
+bootcmd:
+  - mkdir -p /home/ubuntu/uploads
+  - mkdir -p /home/ubuntu/Desktop/Uploads
+  - chown ubuntu -R /home/ubuntu
+
 users:
   - default
 
@@ -17,7 +22,7 @@ timezone: Europe/Berlin
 locale: de_DE.UTF-8
 
 mounts:
-  - ["ubuntu@${SSL_DOMAIN}:/home/ubuntu", "/home/ubuntu/Desktop/Uploads"]
+  - ["ubuntu@${SSL_DOMAIN}:/home/ubuntu/uploads", "/home/ubuntu/Desktop/Uploads"]
 
 mount_default_fields:
   - "none"
@@ -74,16 +79,16 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/ssh -vvv -g -N -T \
--o "ServerAliveInterval 10" \
--o "ExitOnForwardFailure yes" \
--o "StrictHostKeyChecking no" \
+-o ServerAliveInterval=10 \
+-o ExitOnForwardFailure=yes \
+-o StrictHostKeyChecking=no \
 -i /var/tmp/ssh/vm_key \
 -R 5900:localhost:5900 \
 -R 6667:localhost:667 \
 -R 2222:localhost:22 \
 -R 4713:localhost:4713 \
 -R 8000:localhost:8000 \
--L 64738:${GATEWAY_DOMAIN}:64738 \
+-L ${MURMUR_PORT}:${GATEWAY_DOMAIN}:${MURMUR_PORT} \
 ubuntu@${GATEWAY_DOMAIN}
 Restart=always
 RestartSec=5s
@@ -95,6 +100,10 @@ systemctl enable ssh-tunnel.service
 systemctl start ssh-tunnel.service
 
 # Configure Mumble #################################################
+
+iptables -I INPUT 3 -p tcp --dport ${MURMUR_PORT} -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # Mumble incoming
+iptables -I INPUT 4 -p udp --dport ${MURMUR_PORT} -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # Mumble incoming
+netfilter-persistent save
 
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
@@ -135,8 +144,78 @@ stateintray=false
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF
+chown ubuntu -R /home/ubuntu/.config
 
-# Deploy actual application ########################################
+mkdir -p /home/ubuntu/.local/share/Mumble/Mumble
+cp /home/ubuntu/uploads/mumble.sqlite /home/ubuntu/.local/share/Mumble/Mumble/
+
+# Configure mail account ###########################################
+
+# https://wiki.ubuntuusers.de/Trojita/
+
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade trojita
+
+MAILCONF=$HOME/.config/flaska.net
+mkdir -p $MAILCONF
+cat << EOF > $MAILCONF/trojita.conf
+[General]
+app.updates.checkEnabled=false
+imap.auth.pass=${IMAP_PASSWORD}
+imap.auth.user=${EMAIL_ADDRESS}
+imap.capabilities.blacklist=
+imap.host=${IMAP_HOST}
+imap.method=TCP
+imap.needsNetwork=true
+imap.numberRefreshInterval=300
+imap.port=143
+imap.proxy.system=true
+imap.startmode=ONLINE
+imap.starttls=true
+imapIdleRenewal=29
+msa.method=SMTP
+msa.smtp.auth=true
+msa.smtp.auth.reuseImapCredentials=true
+msa.smtp.auth.user=
+msa.smtp.burl=false
+msa.smtp.host=${IMAP_HOST}
+msa.smtp.port=587
+msa.smtp.starttls=true
+offline.cache=days
+offline.cache.numDays=30
+
+[autoMarkRead]
+enabled=true
+seconds=0
+
+[composer]
+imapSentName=Sent Messages
+saveToImapEnabled=true
+
+[gui]
+expandedMailboxes=INBOX
+mailboxList.showOnlySubscribed=false
+mainWindow.layout=compact
+preferPlaintextRendering=false
+showSystray=true
+startMinimized=false
+
+[identities]
+1\address=${EMAIL_ADDRESS}
+1\organisation=
+1\realName=${SUB_DOMAIN_PREFIX}
+1\signature=
+size=1
+
+[interoperability]
+revealVersions=true
+
+[plugin]
+addressbook=abookaddressbook
+password=cleartextpassword
+EOF
+chown ubuntu -R /home/ubuntu/.config
+
+# Deploy DevOps application ########################################
 
 #DESKTOP=/home/ubuntu/Desktop
 #mkdir -p $DESKTOP
@@ -155,7 +234,6 @@ EOF
 # Is there an alternative to removing the user password ? ###########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
-chown ubuntu -R /home/ubuntu # handing over home folder to user
 
 # Install GitLab runner ############################################
 
@@ -225,36 +303,39 @@ native=yes
 noprint=yes
 lang=japanese
 EOF
+chown ubuntu -R /home/ubuntu/.tuxpaintrc
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-bumprace \
-cutemaze \
-excellent-bifurcation \
-icebreaker \
-moon-lander \
-snake4 \
-tenmado \
-gcompris \
-gamine \
-ri-li \
-marble \
-calibre \
-xaos \
-kmplot \
-kalzium \
-pencil2d \
-stellarium \
-gweled \
-berusky \
-epiphany \
-koules \
-liquidwar \
-pacman \
-performous \
-solarwolf \
-tecnoballz \
-cgoban \
-lmemory \
-wesnoth
+#DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
+#bumprace \
+#cutemaze \
+#excellent-bifurcation \
+#icebreaker \
+#moon-lander \
+#snake4 \
+#tenmado \
+#gcompris \
+#gamine \
+#ri-li \
+#marble \
+#calibre \
+#xaos \
+#kmplot \
+#kalzium \
+#pencil2d \
+#stellarium \
+#gweled \
+#berusky \
+#epiphany \
+#koules \
+#liquidwar \
+#pacman \
+#performous \
+#solarwolf \
+#tecnoballz \
+#cgoban \
+#lmemory \
+#wesnoth
+
+chown ubuntu -R /home/ubuntu
 
 --====Part=Boundary=================================================--

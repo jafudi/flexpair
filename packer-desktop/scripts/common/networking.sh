@@ -21,8 +21,6 @@ update-grub;
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends iptables-persistent
 iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # VNC incoming
 iptables -I INPUT 2 -p tcp --dport 4713 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # PulseAudio incoming
-iptables -I INPUT 3 -p tcp --dport 64738 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # Mumble incoming
-iptables -I INPUT 4 -p udp --dport 64738 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # Mumble incoming
 iptables -I INPUT 5 -p tcp --dport 667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # DarkStat for gateway
 iptables -I INPUT 6 -p tcp --dport 6667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # DarkStat for desktop
 netfilter-persistent save

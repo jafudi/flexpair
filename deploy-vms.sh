@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
+source "./assert_helpers.sh"
+source "./dns_helpers.sh"
+
 clear && printf '\e[3J'
 PACKFOLDER=$PWD/packer-desktop
 cat ${PACKFOLDER}/vartmp-uploads/gateway/ascii-art
 
 FROM_SCRATCH=true
 EXCLUDE=""
-DYNU_API_KEY="56ge3636efbe35323352VX6d6c4dY4f5"
+export REGISTERED_DOMAIN=$(random_free_registered_domain)
 
 # Loop through arguments and process them
 for arg in "$@"
@@ -43,21 +46,25 @@ done
 function check_size() {
     size_bytes=$(stat -f "%z" $1)
     MAX_USERDATA_BYTES=32000
-    if [[ "${size_bytes}" -gt "${MAX_USERDATA_BYTES}" ]]; then
-        echo "Metadata size is ${size_bytes} bytes and cannot be larger than ${MAX_USERDATA_BYTES} bytes."
-        exit 1
-    fi
+    assert_le "${size_bytes}" "${MAX_USERDATA_BYTES}" "Metadata too large." || exit 1
 }
 
 export SSL_DOMAIN=${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}
+export EMAIL_ADDRESS="socialnets@jafudi.com"
+export IMAP_HOST="s44.internetwerk.de"
+export IMAP_PASSWORD="JeedsEyruwiwez^"
+export MURMUR_PORT="64738"
 EXPAND_FOLDER="${PACKFOLDER}/builds"
-envsubst '${SSL_DOMAIN}' < cloud-init/gateway-userdata.tpl > "${EXPAND_FOLDER}/gateway-userdata"
+envsubst '${SSL_DOMAIN},${EMAIL_ADDRESS},${MURMUR_PORT}' < cloud-init/gateway-userdata.tpl > "${EXPAND_FOLDER}/gateway-userdata"
 check_size "${EXPAND_FOLDER}/gateway-userdata"
-envsubst '${SSL_DOMAIN}' < cloud-init/desktop-userdata.tpl > packer-desktop/builds/desktop-userdata
+envsubst '${SSL_DOMAIN},${SUB_DOMAIN_PREFIX},${EMAIL_ADDRESS},${IMAP_HOST},${IMAP_PASSWORD},${MURMUR_PORT}' < cloud-init/desktop-userdata.tpl > packer-desktop/builds/desktop-userdata
 check_size "${EXPAND_FOLDER}/desktop-userdata"
 
 MURMUR_CONF="packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config"
-envsubst '${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}' < "${MURMUR_CONF}/murmur.tpl" > "${MURMUR_CONF}/murmur.ini"
+envsubst '${SUB_DOMAIN_PREFIX},${REGISTERED_DOMAIN},${MURMUR_PORT}' < "${MURMUR_CONF}/murmur.tpl.ini" > "${MURMUR_CONF}/murmur.ini"
+
+DOCKER_COMPOSE="packer-desktop/vartmp-uploads/gateway/guacamole"
+envsubst '${MURMUR_PORT}' < "${DOCKER_COMPOSE}/docker-compose.tpl.yml" > "${DOCKER_COMPOSE}/docker-compose.yml"
 
 TARGET="${PACKFOLDER}/oracle-cloud-free-setup.json"
 packer validate ${TARGET}  || exit 1
@@ -92,17 +99,7 @@ if ${FROM_SCRATCH} ; then
         echo "The VM was probably already terminated."
         ;;
         *)
-        echo "Creating dynamic DNS record $EXCLUDE for domain ${SSL_DOMAIN}..."
-        DYNU_API_URL="https://api.dynu.com/v2"
-        curl -X POST "${DYNU_API_URL}/dns" \
-             -H "accept: application/json" \
-             -H "API-Key: ${DYNU_API_KEY}" \
-             -H "Content-Type: application/json" \
-             -d "{\"name\":\"${SSL_DOMAIN}\",\"ipv4Address\":\"1.2.3.4\",\"ttl\":120,\"ipv4\":true,\"ipv6\":false,\"ipv4WildcardAlias\":true,\"ipv6WildcardAlias\":false,\"allowZoneTransfer\":false,\"dnssec\":false}"
-        DYNU_STATUS=$(curl --silent -X GET "${DYNU_API_URL}/dns" \
-             -H "accept: application/json" \
-             -H "API-Key: ${DYNU_API_KEY}")
-        ;;
+        create_ddns_record ${SSL_DOMAIN}
     esac
     mkdir -p ${SSH_KEY_FOLDER}
     echo
@@ -124,6 +121,8 @@ else
     esac
 fi
 
+wait_for_dns_propagation ${SSL_DOMAIN}
+
 echo "Provisioning VM(s) $EXCLUDE"
 echo "This will take some minutes..."
 
@@ -135,3 +134,5 @@ ${EXCLUDE} \
 -var "ssh_keypair_name=${COMMENT}" \
 -on-error=abort \
 ${TARGET}
+
+open -a "Google Chrome" "https://${SSL_DOMAIN}"
