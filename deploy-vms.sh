@@ -43,12 +43,6 @@ do
     esac
 done
 
-function check_size() {
-    size_bytes=$(stat -f "%z" $1)
-    MAX_USERDATA_BYTES=32000
-    assert_le "${size_bytes}" "${MAX_USERDATA_BYTES}" "Metadata too large." || exit 1
-}
-
 export SSL_DOMAIN=${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}
 export EMAIL_ADDRESS="socialnets@jafudi.com"
 export IMAP_HOST="s44.internetwerk.de"

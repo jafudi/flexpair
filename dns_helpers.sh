@@ -41,3 +41,9 @@ function wait_for_dns_propagation() {
     done
     echo "Success in checking that subdomain is publicly listed."
 }
+
+function check_size() {
+    size_bytes=$(stat -f "%z" $1)
+    MAX_USERDATA_BYTES=32000
+    assert_le "${size_bytes}" "${MAX_USERDATA_BYTES}" "Metadata too large." || exit 1
+}
