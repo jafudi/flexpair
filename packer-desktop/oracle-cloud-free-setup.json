@@ -122,6 +122,8 @@
       "scripts": [
         "{{user `script_dir`}}/desktop/lubuntu-frontend.sh",
         "{{user `script_dir`}}/desktop/lxqt-look-and-feel.sh",
+        "{{user `script_dir`}}/desktop/multiple-languages.sh",
+        "{{user `script_dir`}}/desktop/meteo-qt.sh",
         "{{user `script_dir`}}/desktop/podcasts-and-videos.sh",
         "{{user `script_dir`}}/desktop/open-slides.sh",
         "{{user `script_dir`}}/desktop/resource-monitor.sh",

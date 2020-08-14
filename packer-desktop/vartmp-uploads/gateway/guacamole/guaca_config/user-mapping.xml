@@ -4,7 +4,7 @@
     <authorize username="guacadmin" password="guacadmin">
 
         <!-- First authorized connection -->
-        <connection name="Desktop">
+        <connection name="Desktop (from default config)">
             <protocol>vnc</protocol>
             <param name="hostname">gateway</param>
             <param name="port">5900</param>
@@ -19,7 +19,7 @@
         </connection>
 
         <!-- Second authorized connection -->
-        <connection name="Gateway">
+        <connection name="Gateway (from default config)">
             <protocol>ssh</protocol>
             <param name="hostname">gateway</param>
             <param name="username">ubuntu</param>

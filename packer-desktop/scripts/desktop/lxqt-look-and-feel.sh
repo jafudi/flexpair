@@ -1,5 +1,92 @@
 #!/usr/bin/env bash
 
+mkdir -p $HOME/Desktop
+
+mkdir -p /etc/lightdm
+cat << EOF > /etc/lightdm/lightdm.conf
+[SeatDefaults]
+user-session=lxqt
+greeter-session=lightdm-gtk-greeter
+EOF
+systemctl enable lightdm.service
+usermod -aG nopasswdlogin ubuntu
+
+mkdir -p $HOME/.config/lxqt
+cat << EOF > $HOME/.config/lxqt/panel.conf
+[General]
+__userfile__=true
+
+[desktopswitch]
+alignment=Left
+type=desktopswitch
+
+[mainmenu]
+alignment=Left
+type=mainmenu
+
+[panel1]
+alignment=-1
+animation-duration=0
+background-color=@Variant(\0\0\0\x43\0\xff\xff\0\0\0\0\0\0\0\0)
+background-image=
+desktop=0
+font-color=@Variant(\0\0\0\x43\0\xff\xff\0\0\0\0\0\0\0\0)
+hidable=false
+iconSize=22
+lineCount=1
+lockPanel=false
+opacity=100
+panelSize=32
+plugins=mainmenu, desktopswitch, quicklaunch, taskbar, tray, statusnotifier, worldclock
+position=Bottom
+reserve-space=true
+show-delay=0
+visible-margin=true
+width=100
+width-percent=true
+
+[quicklaunch]
+alignment=Left
+apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
+apps\10\desktop=/usr/share/applications/tuxpaint.desktop
+apps\11\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
+apps\12\desktop=/usr/share/applications/org.gnome.clocks.desktop
+apps\13\desktop=/usr/share/applications/linphone.desktop
+apps\14\desktop=/usr/share/applications/gpodder.desktop
+apps\15\desktop=/usr/share/applications/trojita.desktop
+apps\16\desktop=/usr/share/applications/frozen-bubble.desktop
+apps\17\desktop=/usr/share/applications/vlc.desktop
+apps\18\desktop=/usr/share/applications/variety.desktop
+apps\19\desktop=/usr/share/applications/nextcloud.desktop
+apps\2\desktop=/usr/share/applications/lxqt-config.desktop
+apps\3\desktop=/usr/share/applications/qterminal.desktop
+apps\4\desktop=/usr/share/applications/org.kde.kcalc.desktop
+apps\5\desktop=/usr/share/applications/gnumeric.desktop
+apps\6\desktop=/usr/share/applications/featherpad.desktop
+apps\7\desktop=/usr/share/applications/mumble.desktop
+apps\8\desktop=/usr/share/applications/pavucontrol-qt.desktop
+apps\9\desktop=/usr/share/applications/oneko.desktop
+apps\size=19
+type=quicklaunch
+
+
+[statusnotifier]
+alignment=Right
+type=statusnotifier
+
+[taskbar]
+alignment=Left
+type=taskbar
+
+[tray]
+alignment=Right
+type=tray
+
+[worldclock]
+alignment=Right
+type=worldclock
+EOF
+
 CONFIG_DIR=/home/ubuntu/.config
 mkdir -p "${CONFIG_DIR}/lxqt"
 cat << EOF > "${CONFIG_DIR}/lxqt/lxqt.conf"

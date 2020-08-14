@@ -6,13 +6,6 @@ cloud-init status --long --wait
 cat /var/log/cloud-init-output.log
 set -e
 
-export DEBIAN_FRONTEND=noninteractive
-apt-get -y update;
-apt-get install -y software-properties-common
-add-apt-repository universe
-apt-get -y update;
-apt-get install -y nano less sshfs locales
-
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
 
@@ -37,6 +30,8 @@ APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Unattended-Upgrade "0";
 EOF
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Clean and nuke the package from orbit
 rm -rf /var/log/unattended-upgrades;
 apt-get -y purge unattended-upgrades;
@@ -46,6 +41,13 @@ apt-get -y update;
 
 # Upgrade all installed packages incl. kernel and kernel headers
 apt-get -y dist-upgrade -o Dpkg::Options::="--force-confnew";
+
+apt-get -y update;
+apt-get -y install software-properties-common
+apt-get -y update;
+add-apt-repository universe
+apt-get -y update
+apt-get -y install sshfs less nano locales
 
 reboot
 
