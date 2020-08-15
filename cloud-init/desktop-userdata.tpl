@@ -133,6 +133,10 @@ jitterbuffer=5
 [pulseaudio]
 output=MumbleNullSink
 
+[jack]
+autoconnect=false
+startserver=false
+
 [ui]
 developermenu=true
 WindowLayout=2
@@ -146,8 +150,35 @@ disableconnectdialogediting=false
 EOF
 chown ubuntu -R /home/ubuntu/.config
 
-mkdir -p /home/ubuntu/.local/share/Mumble/Mumble
-cp /home/ubuntu/uploads/mumble.sqlite /home/ubuntu/.local/share/Mumble/Mumble/
+cat << EOF > /usr/share/applications/mumble.desktop
+[Desktop Entry]
+Name=Mumble
+GenericName=Voice Chat
+GenericName[de]=Sprachkonferenz
+GenericName[fr]=Chat vocal
+Comment=A low-latency, high quality voice chat program for gaming
+Comment[de]=Ein Sprachkonferenzprogramm mit niedriger Latenz und hoher Qualitaet fuer Spiele
+Comment[fr]=Un logiciel de chat vocal de haute qualite et de faible latence pour les jeux
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${GATEWAY_DOMAIN}:${MURMUR_PORT}
+Icon=mumble
+Terminal=false
+Type=Application
+StartupNotify=false
+MimeType=x-scheme-handler/mumble;
+Categories=Network;Chat;Qt;
+Keywords=VoIP;Messaging;Voice Chat;Secure Communication;
+Version=1.0
+EOF
+
+cat << EOF > /home/ubuntu/.config/autostart/mumble.desktop
+[Desktop Entry]
+Name=Mumble
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${GATEWAY_DOMAIN}:${MURMUR_PORT}
+Terminal=false
+Type=Application
+StartupNotify=false
+EOF
+chown ubuntu /home/ubuntu/.config/autostart/mumble.desktop
 
 # Configure mail account ###########################################
 
@@ -155,9 +186,9 @@ cp /home/ubuntu/uploads/mumble.sqlite /home/ubuntu/.local/share/Mumble/Mumble/
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade trojita
 
-MAILCONF=$HOME/.config/flaska.net
+MAILCONF=/home/ubuntu/.config/flaska.net
 mkdir -p $MAILCONF
-cat << EOF > $MAILCONF/trojita.conf
+cat << EOF > ${MAILCONF}/trojita.conf
 [General]
 app.updates.checkEnabled=false
 imap.auth.pass=${IMAP_PASSWORD}
@@ -213,7 +244,7 @@ revealVersions=true
 addressbook=abookaddressbook
 password=cleartextpassword
 EOF
-chown ubuntu -R /home/ubuntu/.config
+chown ubuntu ${MAILCONF}/trojita.conf
 
 # Deploy DevOps application ########################################
 

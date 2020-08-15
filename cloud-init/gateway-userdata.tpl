@@ -2,7 +2,7 @@ Content-Type: multipart/mixed; boundary="====Part=Boundary======================
 MIME-Version: 1.0
 
 --====Part=Boundary=================================================
-Content-Type: text/cloud-config; charset="utf-8"
+Content-Type: text/cloud-config; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="cloud-config.yaml"
 
