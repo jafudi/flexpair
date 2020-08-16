@@ -45,4 +45,5 @@ gnumeric gnumeric-plugins-extra gnumeric-doc \
 variety \
 nextcloud-desktop \
 linphone \
-gnome-clocks
+gnome-clocks \
+persepolis aria2
