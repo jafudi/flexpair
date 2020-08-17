@@ -324,7 +324,9 @@ kstars \
 oneko \
 frozen-bubble \
 biniax2 \
-funnyboat \
+gweled \
+xaos
+
 
 # http://www.tuxpaint.org/
 # TODO: Switch to Japanese
@@ -337,32 +339,20 @@ EOF
 chown ubuntu -R /home/ubuntu/.tuxpaintrc
 
 #DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-#bumprace \
 #cutemaze \
 #excellent-bifurcation \
-#icebreaker \
-#moon-lander \
 #snake4 \
 #tenmado \
-#gcompris \
 #gamine \
 #ri-li \
-#marble \
-#calibre \
-#xaos \
 #kmplot \
 #kalzium \
 #pencil2d \
 #stellarium \
-#gweled \
 #berusky \
-#epiphany \
-#koules \
 #liquidwar \
 #pacman \
-#performous \
 #solarwolf \
-#tecnoballz \
 #cgoban \
 #lmemory \
 #wesnoth
