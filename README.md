@@ -1,5 +1,7 @@
 # Competitor Analysis
 
+https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364
+
 ## Proprietary Software
 
 - [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen): Starting from **12,50 Euro/month**, GoToMeeting is designed to **broadcast the desktop view of a host computer** to a group of computers connected to the host through the Internet. Transmissions are protected with high-security encryption and optional passwords. By combining a web-hosted subscription service with software installed on the host computer, transmissions can be passed through highly restrictive firewalls.
