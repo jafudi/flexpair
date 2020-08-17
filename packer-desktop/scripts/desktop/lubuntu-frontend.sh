@@ -8,6 +8,7 @@ apt-get update --fix-missing
 apt-get install -y --no-install-recommends --upgrade lubuntu-desktop
 
 apt-get purge -y \
+snapd- \
 anacron- \
 bluedevil- \
 genisoimage- \
@@ -21,16 +22,13 @@ rfkill- \
 sddm- sddm-theme-lubuntu- \
 ubuntu-release-upgrader-qt- \
 usb-creator-kde- usb-modeswitch- \
-whoopsie- \
+whoopsie- apport- \
 wireless-tools- wpasupplicant- \
 xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra-
 
 apt-get autoremove -y
 
 apt-get install -y --no-install-recommends --upgrade \
-lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
-accountsservice \
-policykit-1 \
 elementary-icon-theme \
 locales \
 kdialog \

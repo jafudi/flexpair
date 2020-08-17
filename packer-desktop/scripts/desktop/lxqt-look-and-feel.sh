@@ -2,14 +2,37 @@
 
 mkdir -p $HOME/Desktop
 
-mkdir -p /etc/lightdm
-cat << EOF > /etc/lightdm/lightdm.conf
-[SeatDefaults]
-user-session=lxqt
-greeter-session=lightdm-gtk-greeter
+cat << EOF > $HOME/Desktop/trash.desktop
+[Desktop Entry]
+Type=Application
+Icon=user-trash
+Name=Trash
+Name[de]=Papierkorb
+Comment=open trash
+Categories=FileManager;Utility;Core;GTK;
+Exec=pcmanfm-qt trash:///
+StartupNotify=true
+Terminal=false
+MimeType=x-directory/normal;inode/directory;
 EOF
-systemctl enable lightdm.service
-usermod -aG nopasswdlogin ubuntu
+chmod +x $HOME/Desktop/trash.desktop
+chown ubuntu $HOME/Desktop/trash.desktop
+
+cat << EOF > $HOME/Desktop/home.desktop
+[Desktop Entry]
+Type=Application
+Icon=go-home
+Name=Home Folder
+Name[de]=Eigene Dateien
+Comment=open home folder
+Categories=FileManager;Utility;Core;GTK;
+Exec=pcmanfm-qt /home/ubuntu
+StartupNotify=true
+Terminal=false
+MimeType=x-directory/normal;inode/directory;
+EOF
+chmod +x $HOME/Desktop/home.desktop
+chown ubuntu $HOME/Desktop/home.desktop
 
 mkdir -p $HOME/.config/lxqt
 cat << EOF > $HOME/.config/lxqt/panel.conf
@@ -126,4 +149,5 @@ do
  sed '/OnlyShowIn/aNoDisplay=true' < "/usr/share/applications/$f.desktop" >\
   "${LOCAL_DIR}/share/applications/$f.desktop"
 done
+
 
