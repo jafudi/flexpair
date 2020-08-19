@@ -30,6 +30,8 @@ Instead we focus on:
 - automated and reproducable provisioning of the environment
 - include tools for DevOps users and software testing
 
+**Hint from Ying: What about Visual Studio Code Live Share?**
+
 
 # Potential Testers / Early Adopters
 
