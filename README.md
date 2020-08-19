@@ -4,12 +4,12 @@
 
 Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
 
-- [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
-- [itopia, Citrix, VMware and Nutanix Frame on Google Cloud](https://cloud.google.com/solutions/virtual-desktops)
-- [OVH Virtual Cloud Desktop](https://www.ovh.com/asia/cloud/cloud-desktop/)
-- [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
+- [Nutanix](https://www.nutanix.com/de/products/frame) testen!
+- [Itopia](https://itopia.com/) testen!
 - [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
 - [V2 Cloud](https://v2cloud.com) testen!
+- [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
+- [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
 
 Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
 
