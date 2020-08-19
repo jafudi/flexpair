@@ -9,8 +9,7 @@ Existing virtual desktop solutions are all closed-source offers to the business 
 - [OVH Virtual Cloud Desktop](https://www.ovh.com/asia/cloud/cloud-desktop/)
 - [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
 - [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
-- [V2 Cloud](https://v2cloud.com)
-- [Cloud Geeni](https://cloudgeeni.co.uk/features/)
+- [V2 Cloud](https://v2cloud.com) testen!
 
 Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
 
