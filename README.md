@@ -30,7 +30,10 @@ Instead we focus on:
 - automated and reproducable provisioning of the environment
 - include tools for DevOps users and software testing
 
-**Hint from Ying: What about Visual Studio Code Live Share?**
+Still look at:
+- Studio Code Live Share
+- Heroku
+- https://jamm.app/en/
 
 
 # Potential Testers / Early Adopters
