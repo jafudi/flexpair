@@ -34,6 +34,10 @@ Still look at:
 - Heroku
 - https://jamm.app/en/
 
+https://gerrymcgovern.com/the-hidden-pollution-cost-of-online-meetings/
+
+Data privacy, intellectual property and saving the climate all at the same time :-)
+
 
 # Potential Testers / Early Adopters
 
