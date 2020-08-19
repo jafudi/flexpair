@@ -1,8 +1,8 @@
 # Competitor Analysis
 
-https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364
+[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but it there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
 
-# Virtual Cloud Desktop as a Service
+Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
 
 - [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
 - [itopia, Citrix, VMware and Nutanix Frame on Google Cloud](https://cloud.google.com/solutions/virtual-desktops)
@@ -12,12 +12,24 @@ https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/763
 - [V2 Cloud](https://v2cloud.com)
 - [Cloud Geeni](https://cloudgeeni.co.uk/features/)
 
-- [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) is a **competitor to services such as Slack** and is the evolution **and upgrade path from Microsoft Skype** for Business.
-- [TeamViewer](https://www.teamviewer.com/en/products/teamviewer/): **Free for private use**, TeamViewer is a **proprietary software application for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers**. It is also possible to access a machine running TeamViewer with a web browser. **While the main focus of the application is remote control of computers, collaboration and presentation features are included**.
-- [Zoom](https://zoom.us/de-de/meetings.html): It provides a video chatting service that allows up to 100 devices at once **for free, with a 40-minute time restriction** for free accounts having meetings of three or more participants. During the COVID-19 pandemic, Zoom has seen a major increase in usage for remote work, distance education, and online social relations. It is noted for its **simple interface** and usability, specifically for non-tech people. Features include one-on-one meetings, **group video conferences, screen sharing, plugins, browser extensions, and the ability to record meetings and have them automatically transcribed**. On some computers and operating systems, users are able to select a **virtual background**, which can be downloaded from different sites, to use as a backdrop behind themselves.
-- [BigBlueButton](https://bigbluebutton.org/teachers/) is like Jitsi but **tailored specifically to education**
-- [Jitsi](https://jitsi.org/user-faq/) is **open-source video conferencing** where you can also share your local desktop
-- [X2Go](https://wiki.x2go.org/doku.php/doc:newtox2go) is **comparable to Apache Guacamole** and is also open source
+Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
+
+We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd work arounds like background substitution requiring the application of energy consuming deep learning models.
+
+Instead we focus on:
+- unsurpassed audio quality and low bandwidth usage
+- zero-install on client side
+- simpler to setup than other more video focussed open source servers like Jitsi or BigBlueButton
+- works from free tier virtual machines upwards
+- affordable for small clubs, schools and NGOs
+- data privacy through separate VM and strong encryption
+- no metadata collection of communications
+- choice of server location and agnostic of cloud provider
+- so you can combine free VM from e.g Amazon and Google Cloud
+- custom domain and customization of provisioned software
+- automated and reproducable provisioning of the environment
+- include tools for DevOps users and software testing
+
 
 # Potential Testers / Early Adopters
 
