@@ -21,7 +21,7 @@ chown ubuntu $HOME/Desktop/trash.desktop
 cat << EOF > $HOME/Desktop/home.desktop
 [Desktop Entry]
 Type=Application
-Icon=go-home
+Icon=folder_home2
 Name=Home Folder
 Name[de]=Eigene Dateien
 Comment=open home folder
