@@ -64,6 +64,7 @@ Data privacy, intellectual property and saving the climate all at the same time 
 
 # Unique Selling Point(s)
 
+- PaaS between Saas and IaaS
 - desktop sharing done right
 - persistent storage of your docs
 - everyone is able to edit without need for switching controls
