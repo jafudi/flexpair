@@ -318,15 +318,32 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 # Install edutainment ##############################################
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-tuxmath tuxtype tuxpaint \
+tuxmath tuxpaint \
 blockout2 \
 kstars \
 oneko \
 frozen-bubble \
 biniax2 \
 gweled \
-xaos
+xaos fraqtive \
+gnome-mahjongg \
+dossizola \
+ksudoku \
+blinken \
+amoebax \
+kmplot kalzium \
+cgoban \
+xbomb \
+cutemaze
 
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
+lmemory \
+excellent-bifurcation \
+tenmado \
+ri-li \
+pencil2d \
+monsterz monsterz-data \
+kdegames
 
 # http://www.tuxpaint.org/
 # TODO: Switch to Japanese
@@ -337,25 +354,6 @@ noprint=yes
 lang=japanese
 EOF
 chown ubuntu -R /home/ubuntu/.tuxpaintrc
-
-#DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-#cutemaze \
-#excellent-bifurcation \
-#snake4 \
-#tenmado \
-#gamine \
-#ri-li \
-#kmplot \
-#kalzium \
-#pencil2d \
-#stellarium \
-#berusky \
-#liquidwar \
-#pacman \
-#solarwolf \
-#cgoban \
-#lmemory \
-#wesnoth
 
 chown ubuntu -R /home/ubuntu
 
