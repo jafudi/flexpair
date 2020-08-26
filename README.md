@@ -1,18 +1,46 @@
-# Competitor Analysis
+# Market Analysis and Unique Selling Point
 
-## Proprietary Software
+[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but it there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
 
-- [GoTo Meeting](https://www.gotomeeting.com/de-de/funktionen): Starting from **12,50 Euro/month**, GoToMeeting is designed to **broadcast the desktop view of a host computer** to a group of computers connected to the host through the Internet. Transmissions are protected with high-security encryption and optional passwords. By combining a web-hosted subscription service with software installed on the host computer, transmissions can be passed through highly restrictive firewalls.
-- [MS Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/): **Free Plan**, Microsoft Teams is a unified communication and collaboration platform that combines persistent workplace **chat, video meetings, file storage (including collaboration on files), and application integration**. The service integrates with the Office 365 subscription office productivity suite and features extensions that can integrate with non-Microsoft products. Microsoft Teams is a competitor to services such as Slack and is the evolution and upgrade path from Microsoft Skype for Business.
-- [TeamViewer](https://www.teamviewer.com/en/products/teamviewer/): **Free for private use**, TeamViewer is a **proprietary software application for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers**. It is also possible to access a machine running TeamViewer with a web browser. **While the main focus of the application is remote control of computers, collaboration and presentation features are included**.
-- [WebEx](https://www.webex.com/de/pricing/index.html): Cisco Webex is an American company that develops and sells web conferencing and videoconferencing applications. Cisco Webex has a **time limit of 50 minutos (free service)** and 24 hours (registered clients).
-- [Zoom](https://zoom.us/de-de/meetings.html): It provides a video chatting service that allows up to 100 devices at once **for free, with a 40-minute time restriction** for free accounts having meetings of three or more participants. During the COVID-19 pandemic, Zoom has seen a major increase in usage for remote work, distance education, and online social relations. It is noted for its **simple interface** and usability, specifically for non-tech people. Features include one-on-one meetings, **group video conferences, screen sharing, plugins, browser extensions, and the ability to record meetings and have them automatically transcribed**. On some computers and operating systems, users are able to select a **virtual background**, which can be downloaded from different sites, to use as a backdrop behind themselves.
+Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
 
-## Open Source Software
+- [Nutanix](https://www.nutanix.com/de/products/frame) testen!
+- [Itopia](https://itopia.com/) testen!
+- [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
+- [V2 Cloud](https://v2cloud.com) testen!
+- [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
+- [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
 
-- [BigBlueButton](https://bigbluebutton.org/teachers/): BigBlueButton implements the core web conferencing features you would expect in a commercial system, but under an **open source** license. These core feature include **audio/video** sharing, presentations with extended **whiteboard** capabilities - such as a pointer, zooming and drawing - public and private **chat**, **breakout rooms**, **screen sharing**, **integrated VoIP using FreeSWITCH**, and support for presentation of PDF documents and Microsoft Office documents. BigBlueButton is a **pure HTML5 client**. It uses the browser's support for web real-time communications WebRTC to send/receive audio, video, and screen.
-- [Jitsi](https://jitsi.org/user-faq/): It is an **open source JavaScript WebRTC application** and can be used for **videoconferencing**. One can **share desktop** and presentations and with just a link can invite new members for videoconference. It can be used by downloading the app or directly in a browser and it is compatible with any recent browser. Every user can use Jitsi.org servers or can download and install the server software on a Linux-based machine.
-- [X2Go](https://wiki.x2go.org/doku.php/doc:newtox2go): X2Go is an **open source** remote desktop software for Linux that uses a modified NX 3 protocol. **X2Go gives remote access to a Linux system's graphical user interface**. It can also be used to access Windows systems through a proxy.
+Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
+
+We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd work arounds like background substitution requiring the application of energy consuming deep learning models.
+
+Instead we focus on:
+- unsurpassed audio quality and low bandwidth usage
+- zero-install on client side
+- simpler to setup than other more video focussed open source servers like Jitsi or BigBlueButton
+- works from free tier virtual machines upwards
+- affordable for small clubs, schools and NGOs
+- data privacy through separate VM and strong encryption
+- no metadata collection of communications
+- choice of server location and agnostic of cloud provider
+- so you can combine free VM from e.g Amazon and Google Cloud
+- custom domain and customization of provisioned software
+- automated and reproducable provisioning of the environment
+- include tools for DevOps users and software testing
+
+Still look at:
+- Studio Code Live Share
+- Heroku
+- https://jamm.app/en/
+
+https://gerrymcgovern.com/the-hidden-pollution-cost-of-online-meetings/
+
+https://ourworldindata.org/internet
+https://ourworldindata.org/mental-health
+
+Data privacy, intellectual property and saving the climate all at the same time :-)
+
 
 # Potential Testers / Early Adopters
 
@@ -36,6 +64,7 @@
 
 # Unique Selling Point(s)
 
+- PaaS between Saas and IaaS
 - desktop sharing done right
 - persistent storage of your docs
 - everyone is able to edit without need for switching controls
