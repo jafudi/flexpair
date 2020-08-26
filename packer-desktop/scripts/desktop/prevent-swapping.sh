@@ -250,7 +250,7 @@ env_cache_time = 300
     Valid values: from the range [0; 50] %
     Default value: 5 %
 
-soft_threshold_min_mem = 5 %
+soft_threshold_min_mem = 10 %
 
     Key: soft_threshold_min_swap
     Description:
@@ -286,7 +286,7 @@ soft_threshold_max_psi  = 40
     Valid values: from the range [0; 50] %
     Default value: 2 %
 
-hard_threshold_min_mem = 2 %
+hard_threshold_min_mem = 4 %
 
     Key: hard_threshold_min_swap
     Description:

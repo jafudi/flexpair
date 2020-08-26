@@ -1,5 +1,6 @@
 #!/bin/sh -eux
 
+apt-get -y update;
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade glances
 
 img=$(cat /var/tmp/ascii-art)

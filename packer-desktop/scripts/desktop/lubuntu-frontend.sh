@@ -8,7 +8,6 @@ apt-get update --fix-missing
 apt-get install -y --no-install-recommends --upgrade lubuntu-desktop
 
 apt-get purge -y \
-snapd- \
 anacron- \
 bluedevil- \
 genisoimage- \
@@ -22,7 +21,7 @@ rfkill- \
 sddm- sddm-theme-lubuntu- \
 ubuntu-release-upgrader-qt- \
 usb-creator-kde- usb-modeswitch- \
-whoopsie- apport- \
+whoopsie- apport- snapd- \
 wireless-tools- wpasupplicant- \
 xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra-
 
@@ -30,6 +29,9 @@ apt-get autoremove -y
 
 apt-get install -y --no-install-recommends --upgrade \
 elementary-icon-theme \
+boomaga \
+kdeaccessibility \
+qtqr \
 locales \
 kdialog \
 htop \
@@ -40,8 +42,13 @@ falkon \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
+gnuplot gnuplot-qt gnuplot-doc \
+solfege \
+aspell \
 variety \
 nextcloud-desktop \
 linphone \
 gnome-clocks \
-persepolis aria2
+persepolis aria2 \
+backintime-qt \
+vym

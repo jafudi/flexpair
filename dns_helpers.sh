@@ -31,17 +31,6 @@ function create_ddns_record() {
     assert_eq "{\"statusCode\":200}" "${return_status}" "Could not create DNS record." || exit 1
 }
 
-function wait_for_dns_propagation() {
-    dns_propagated=1
-    until [ ${dns_propagated} ]; do
-        echo "Waiting for DNS records to propagate Google Public DNS..."
-        sleep 3s
-        google_dns_records=$(curl --silent -X POST "https://dns.google.com/resolve?name=$1&type=A")
-        dns_propagated=$(echo ${google_dns_records} | jq -r '.Status')
-    done
-    echo "Success in checking that subdomain is publicly listed."
-}
-
 function check_size() {
     size_bytes=$(stat -f "%z" $1)
     MAX_USERDATA_BYTES=32000

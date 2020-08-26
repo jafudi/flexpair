@@ -34,7 +34,8 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Clean and nuke the package from orbit
 rm -rf /var/log/unattended-upgrades;
-apt-get -y purge unattended-upgrades;
+apt-get -y purge unattended-upgrades snapd apport;
+apt-get -y autoremove
 
 # Update the package list
 apt-get -y update;

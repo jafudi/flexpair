@@ -59,6 +59,17 @@
       "environment_vars": [
         "HOME_DIR=/home/ubuntu"
       ],
+      "only": ["guacamole-gateway"],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "{{user `script_dir`}}/gateway/dynu-dns-resolution.sh"
+      ],
+      "type": "shell"
+    },
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": true,
       "scripts": [
@@ -71,6 +82,26 @@
       "type": "shell"
     },
     {
+      "environment_vars": [
+        "HOME_DIR=/home/ubuntu"
+      ],
+      "only": ["lubuntu-desktop"],
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "{{user `script_dir`}}/desktop/lubuntu-frontend.sh",
+        "{{user `script_dir`}}/desktop/lightdm-login.sh",
+        "{{user `script_dir`}}/desktop/lxqt-look-and-feel.sh",
+        "{{user `script_dir`}}/desktop/multiple-languages.sh",
+        "{{user `script_dir`}}/desktop/meteo-qt.sh",
+        "{{user `script_dir`}}/desktop/podcasts-and-videos.sh",
+        "{{user `script_dir`}}/desktop/open-slides.sh",
+        "{{user `script_dir`}}/desktop/resource-monitor.sh",
+        "{{user `script_dir`}}/desktop/mumble-pulseaudio.sh",
+        "{{user `script_dir`}}/desktop/desktop-sharing.sh"
+      ],
+      "type": "shell"
+    },
+        {
       "type": "file",
       "source": "packer-desktop/vartmp-uploads/common/",
       "destination": "/var/tmp/"
@@ -106,40 +137,18 @@
       "only": ["guacamole-gateway"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
-        "{{user `script_dir`}}/gateway/motd.sh",
-        "{{user `script_dir`}}/gateway/dynu-dns-resolution.sh",
-        "{{user `script_dir`}}/gateway/minimize-gateway.sh"
-      ],
-      "type": "shell",
-      "pause_after": "120s"
-    },
-    {
-      "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
-      ],
-      "only": ["lubuntu-desktop"],
-      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-      "scripts": [
-        "{{user `script_dir`}}/desktop/lubuntu-frontend.sh",
-        "{{user `script_dir`}}/desktop/lightdm-login.sh",
-        "{{user `script_dir`}}/desktop/lxqt-look-and-feel.sh",
-        "{{user `script_dir`}}/desktop/multiple-languages.sh",
-        "{{user `script_dir`}}/desktop/meteo-qt.sh",
-        "{{user `script_dir`}}/desktop/podcasts-and-videos.sh",
-        "{{user `script_dir`}}/desktop/open-slides.sh",
-        "{{user `script_dir`}}/desktop/resource-monitor.sh",
-        "{{user `script_dir`}}/desktop/mumble-pulseaudio.sh",
-        "{{user `script_dir`}}/desktop/desktop-sharing.sh"
+        "{{user `script_dir`}}/gateway/motd.sh"
       ],
       "type": "shell"
     },
     {
       "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
+        "HOME_DIR=/home/ubuntu",
+        "DYNU_DOMAIN={{user `dynu_domain`}}"
       ],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
-        "{{user `script_dir`}}/common/provision_cloud_init.sh"
+        "{{user `script_dir`}}/common/before_final_reboot.sh"
       ],
       "type": "shell"
     },
@@ -152,7 +161,7 @@
     {
       "type": "shell",
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-      "script": "{{user `script_dir`}}/common/run_cloud_init.sh",
+      "script": "{{user `script_dir`}}/common/after_final_reboot.sh",
       "pause_before": "10s"
     }
   ]

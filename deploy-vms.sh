@@ -120,17 +120,15 @@ else
     esac
 fi
 
-wait_for_dns_propagation ${SSL_DOMAIN}
-
 echo "Provisioning VM(s) $EXCLUDE"
 echo "This will take some minutes..."
 
 packer build \
--timestamp-ui \
 ${EXCLUDE} \
 -var "ssh_public_key=$(cat ${PUBKEY_FILE})" \
 -var "private_key_file=${PRIVKEY_FILE}" \
 -var "ssh_keypair_name=${COMMENT}" \
+-var "dynu_domain=${SSL_DOMAIN}" \
 -on-error=abort \
 ${TARGET}
 
