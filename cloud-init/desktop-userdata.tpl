@@ -324,16 +324,13 @@ kstars \
 oneko \
 frozen-bubble \
 biniax2 \
-gweled \
-xaos fraqtive \
-gnome-mahjongg \
+fraqtive \
 dossizola \
 ksudoku \
 blinken \
 amoebax \
 kmplot kalzium \
 cgoban \
-xbomb \
 cutemaze
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \

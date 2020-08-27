@@ -43,7 +43,6 @@ qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 gnuplot gnuplot-qt gnuplot-doc \
-solfege \
 aspell \
 variety \
 nextcloud-desktop \
