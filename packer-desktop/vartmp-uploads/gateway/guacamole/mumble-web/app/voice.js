@@ -1,6 +1,7 @@
 import { Writable } from 'stream'
 import MicrophoneStream from 'microphone-stream'
 import audioContext from 'audio-context'
+import getUserMedia from 'getusermedia'
 import keyboardjs from 'keyboardjs'
 import vad from 'voice-activity-detection'
 import DropStream from 'drop-stream'
@@ -32,7 +33,8 @@ class VoiceHandler extends Writable {
         return this._outbound
       }
 
-      this._outbound = this._client.createVoiceStream()
+      // Note: the samplesPerPacket argument is handled in worker.js and not passed on
+      this._outbound = this._client.createVoiceStream(this._settings.samplesPerPacket)
 
       this.emit('started_talking')
     }
@@ -158,13 +160,16 @@ export class VADVoiceHandler extends VoiceHandler {
 
 var theUserMedia = null
 
-export function initVoice (onData) {
-  return window.navigator.mediaDevices.getUserMedia({ audio: true }).then((userMedia) => {
-    theUserMedia = userMedia
-    var micStream = new MicrophoneStream(userMedia, { objectMode: true, bufferSize: 1024 })
-    micStream.on('data', data => {
-      onData(Buffer.from(data.getChannelData(0).buffer))
-    })
-    return userMedia
+export function initVoice (onData, onUserMediaError) {
+  getUserMedia({ audio: true }, (err, userMedia) => {
+    if (err) {
+      onUserMediaError(err)
+    } else {
+      theUserMedia = userMedia
+      var micStream = new MicrophoneStream(userMedia, { objectMode: true, bufferSize: 1024 })
+      micStream.on('data', data => {
+        onData(Buffer.from(data.getChannelData(0).buffer))
+      })
+    }
   })
 }
