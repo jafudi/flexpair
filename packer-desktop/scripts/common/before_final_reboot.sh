@@ -16,28 +16,28 @@ fi
 
 cloud-init clean --logs
 
-# Wait for Google DNS to return non-trivial IP address
+# https://github.com/letsdebug/letsdebug#problems-detected
 apt-get install --upgrade -y --no-install-recommends jq
-propagation_status=1
-echo "Waiting for DNS records to propagate to Google Public DNS..."
-until [ ${propagation_status} -eq 0 ]; do
-    sleep 3s
-    google_dns_records=$(curl --silent -X POST "https://dns.google.com/resolve?name=${DYNU_DOMAIN}&type=A")
-    answer_status=$(echo ${google_dns_records} | jq '.Status')
-    if [ ${answer_status} -eq 0 ]; then
-        echo ${google_dns_records} | jq '.Answer[]'
-        answer_data=$(echo ${google_dns_records} \
-            | jq --arg reqdomain "${DYNU_DOMAIN}." '.Answer[] | select(.name==$reqdomain) | .data')
-        if [ "${answer_data}" != "1.2.3.4" ]; then
-            propagation_status=0
-        else
-            echo "Only initial default record found."
-        fi
-    else
-        echo "No records exist yet."
-    fi
+while true; do
+    curl --silent --data "{\"method\":\"http-01\",\"domain\":\"${DYNU_DOMAIN}\"}" -H 'content-type: application/json' https://letsdebug.net
+    sleep 30s
+    results=$(curl --silent -H 'accept: application/json' https://letsdebug.net/${DYNU_DOMAIN} |sed 's/\\n/ /g' |sed 's/\\t/ /g' | jq -r '.[0].result')
+    severity=$(echo "${results}" | jq -r '.problems[0].severity')
+    case "$severity" in
+    Fatal)
+        echo "${results}" | jq -r '.problems[0]'
+        ;;
+    Error|Warning|Debug)
+        break
+        ;;
+    *)
+        echo "Unknown severity level."
+        exit 1
+        ;;
+    esac
 done
-echo "Success."
+echo "${results}" | jq -r '.problems'
+echo "Let's Encrypt should succeed assuming nginx starts up correctly."
 echo "Initiating final reboot now..."
 
 
