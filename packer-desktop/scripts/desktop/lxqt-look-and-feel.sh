@@ -124,6 +124,18 @@ theme=Lubuntu Arc
 style=Breeze
 EOF
 
+cat << EOF > "${CONFIG_DIR}/lxqt/session.conf"
+[General]
+__userfile__=true
+window_manager=openbox
+
+[Environment]
+BROWSER=falkon
+GTK_CSD=0
+GTK_OVERLAY_SCROLLING=0
+TERM=qterminal
+EOF
+
 cd /etc/xdg/autostart/
 rm -f lxqt-globalkeyshortcuts.desktop
 rm -f lxqt-powermanagement.desktop
