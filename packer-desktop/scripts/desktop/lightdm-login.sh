@@ -5,7 +5,7 @@ lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
 accountsservice \
-policykit-1
+policykit-1 policykit-desktop-privileges
 
 mkdir -p /etc/lightdm
 cat << EOF > /etc/lightdm/lightdm.conf

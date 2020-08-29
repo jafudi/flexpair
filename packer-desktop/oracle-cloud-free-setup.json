@@ -97,7 +97,8 @@
         "{{user `script_dir`}}/desktop/open-slides.sh",
         "{{user `script_dir`}}/desktop/resource-monitor.sh",
         "{{user `script_dir`}}/desktop/mumble-pulseaudio.sh",
-        "{{user `script_dir`}}/desktop/desktop-sharing.sh"
+        "{{user `script_dir`}}/desktop/desktop-sharing.sh",
+        "{{user `script_dir`}}/desktop/edu-games.sh"
       ],
       "type": "shell"
     },

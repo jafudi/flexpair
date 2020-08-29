@@ -315,43 +315,6 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #sudo gitlab-runner restart
 #sudo gitlab-runner status
 
-# Install edutainment ##############################################
-
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-tuxmath tuxpaint \
-blockout2 \
-kstars \
-oneko \
-frozen-bubble \
-biniax2 \
-fraqtive \
-dossizola \
-ksudoku \
-blinken \
-amoebax \
-kmplot kalzium \
-cgoban \
-cutemaze
-
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
-lmemory \
-excellent-bifurcation \
-tenmado \
-ri-li \
-pencil2d \
-monsterz monsterz-data \
-kdegames
-
-# http://www.tuxpaint.org/
-# TODO: Switch to Japanese
-cat << EOF > /home/ubuntu/.tuxpaintrc
-fullscreen=yes
-native=yes
-noprint=yes
-lang=japanese
-EOF
-chown ubuntu -R /home/ubuntu/.tuxpaintrc
-
 chown ubuntu -R /home/ubuntu
 
 --====Part=Boundary=================================================--

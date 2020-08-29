@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # https://www.mumble.info
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mumble paprefs sqlite3
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade mumble paprefs
 
 mkdir -p $HOME/.config/pulse
 cat << EOF > $HOME/.config/pulse/default.pa

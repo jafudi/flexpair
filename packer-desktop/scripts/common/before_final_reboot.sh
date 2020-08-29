@@ -19,9 +19,9 @@ cloud-init clean --logs
 # https://github.com/letsdebug/letsdebug#problems-detected
 apt-get install --upgrade -y --no-install-recommends jq
 while true; do
-    curl --silent --data "{\"method\":\"http-01\",\"domain\":\"${DYNU_DOMAIN}\"}" -H 'content-type: application/json' https://letsdebug.net
+    req_id=$(curl --silent --data "{\"method\":\"http-01\",\"domain\":\"${DYNU_DOMAIN}\"}" -H 'content-type: application/json' https://letsdebug.net | jq -r '.ID')
     sleep 30s
-    results=$(curl --silent -H 'accept: application/json' https://letsdebug.net/${DYNU_DOMAIN} |sed 's/\\n/ /g' |sed 's/\\t/ /g' | jq -r '.[0].result')
+    results=$(curl --silent -H 'accept: application/json' "https://letsdebug.net/${DYNU_DOMAIN}/${req_id}?debug=y" |sed 's/\\./ /g' | jq -r '.result')
     severity=$(echo "${results}" | jq -r '.problems[0].severity')
     case "$severity" in
     Fatal)

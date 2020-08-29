@@ -28,12 +28,10 @@ xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra-
 apt-get autoremove -y
 
 apt-get install -y --no-install-recommends --upgrade \
-elementary-icon-theme \
-boomaga \
-kdeaccessibility \
+kmag \
 qtqr \
 locales \
-kdialog \
+kdialog elementary-icon-theme \
 htop \
 ark \
 featherpad \
@@ -42,7 +40,6 @@ falkon \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
-gnuplot gnuplot-qt gnuplot-doc \
 aspell \
 variety \
 nextcloud-desktop \
@@ -50,4 +47,5 @@ linphone \
 gnome-clocks \
 persepolis aria2 \
 backintime-qt \
-vym
+vym \
+muon
