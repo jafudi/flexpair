@@ -35,7 +35,6 @@ kdialog elementary-icon-theme \
 htop \
 ark \
 featherpad \
-kcalc \
 falkon \
 qpdfview \
 lximage-qt \

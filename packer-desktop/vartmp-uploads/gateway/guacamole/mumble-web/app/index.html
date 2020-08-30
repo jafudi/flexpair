@@ -461,43 +461,6 @@
       <script type="text/html" id="channel-tag">
         <span class="channel-tag" data-bind="text: name"></span>
       </script>
-      <div class="toolbar" data-bind="css: { 'toolbar-horizontal': toolbarHorizontal(),
-                                             'toolbar-vertical': !toolbarHorizontal() }">
-        <img class="handle-horizontal" src="/svg/handle_horizontal.svg"
-             data-bind="click: toggleToolbarOrientation">
-        <img class="handle-vertical" src="/svg/handle_vertical.svg"
-             data-bind="click: toggleToolbarOrientation">
-        <img class="tb-connect" data-bind="visible: !connectDialog.joinOnly(),
-                                           click: connectDialog.show"
-                      rel="connect" src="/svg/applications-internet.svg">
-        <img class="tb-information" rel="information" src="/svg/information_icon.svg"
-             data-bind="click: connectionInfo.show,
-                        css: { disabled: !thisUser() }">
-        <div class="divider"></div>
-        <img class="tb-mute" data-bind="visible: !selfMute(),
-                              click: function () { requestMute(thisUser()) }"
-                      rel="mute" src="/svg/audio-input-microphone.svg">
-        <img class="tb-unmute tb-active" data-bind="visible: selfMute,
-                              click: function () { requestUnmute(thisUser()) }"
-                      rel="unmute" src="/svg/audio-input-microphone-muted.svg">
-        <img class="tb-deaf" data-bind="visible: !selfDeaf(),
-                              click: function () { requestDeaf(thisUser()) }"
-                      rel="deaf" src="/svg/audio-output.svg">
-        <img class="tb-undeaf tb-active" data-bind="visible: selfDeaf,
-                              click: function () { requestUndeaf(thisUser()) }"
-                      rel="undeaf" src="/svg/audio-output-deafened.svg">
-        <img class="tb-record" data-bind="click: function(){}"
-                      rel="record" src="/svg/media-record.svg">
-        <div class="divider"></div>
-        <img class="tb-comment" data-bind="click: commentDialog.show"
-                      rel="comment" src="/svg/toolbar-comment.svg">
-        <div class="divider"></div>
-        <img class="tb-settings" data-bind="click: openSettings"
-                      rel="settings" src="/svg/config_basic.svg">
-        <div class="divider"></div>
-        <img class="tb-sourcecode" data-bind="click: openSourceCode"
-                      rel="Source Code" src="/svg/source-code.svg">
-      </div>
       <div class="chat">
         <script type="text/html" id="log-generic">
           <span data-bind="text: value"></span>
@@ -533,112 +496,39 @@
             <!-- /ko -->
           </div>
         </div>
+      </div>
+      <div class="toolbar" data-bind="css: { 'toolbar-horizontal': toolbarHorizontal(),
+                                             'toolbar-vertical': !toolbarHorizontal() }">
+        <img class="tb-connect" data-bind="visible: !connectDialog.joinOnly(),
+                                           click: connectDialog.show"
+                      rel="connect" src="/svg/applications-internet.svg">
+        <img class="tb-information" rel="information" src="/svg/information_icon.svg"
+             data-bind="click: connectionInfo.show,
+                        css: { disabled: !thisUser() }">
+        <img class="tb-settings" data-bind="click: openSettings"
+                      rel="settings" src="/svg/config_basic.svg">
+        <div class="divider"></div>
+        <img class="tb-sourcecode" data-bind="click: openSourceCode"
+                      rel="Source Code" src="/svg/source-code.svg">
+        <div class="divider"></div>
+        <img class="tb-mute" data-bind="visible: !selfMute(),
+                              click: function () { requestMute(thisUser()) }"
+                      rel="mute" src="/svg/audio-input-microphone.svg">
+        <img class="tb-unmute tb-active" data-bind="visible: selfMute,
+                              click: function () { requestUnmute(thisUser()) }"
+                      rel="unmute" src="/svg/audio-input-microphone-muted.svg">
+        <img class="tb-deaf" data-bind="visible: !selfDeaf(),
+                              click: function () { requestDeaf(thisUser()) }"
+                      rel="deaf" src="/svg/audio-output.svg">
+        <img class="tb-undeaf tb-active" data-bind="visible: selfDeaf,
+                              click: function () { requestUndeaf(thisUser()) }"
+                      rel="undeaf" src="/svg/audio-output-deafened.svg">
+        <div class="divider"></div>
         <form data-bind="submit: submitMessageBox">
           <input id="message-box" type="text" data-bind="
               attr: { placeholder: messageBoxHint }, textInput: messageBox">
         </form>
       </div>
-      <script type="text/html" id="channel">
-        <div class="channel" data-bind="
-            click: $root.select, 
-            event: {
-              contextmenu: openContextMenu,
-              dblclick: $root.requestMove.bind($root, $root.thisUser())
-            },
-            css: {
-              selected: $root.selected() === $data,
-              currentChannel: users.indexOf($root.thisUser()) !== -1
-            }">
-          <div class="channel-status">
-            <img class="channel-description" data-bind="visible: description"
-                alt="description" src="/svg/comment.svg">
-          </div>
-          <div data-bind="if: description">
-            <div class="channel-description tooltip" data-bind="html: description"></div>
-          </div>
-          <img class="channel-icon" src="/svg/channel.svg"
-            data-bind="visible: !linked() && $root.thisUser().channel() !== $data">
-          <img class="channel-icon-active" src="/svg/channel_active.svg"
-            data-bind="visible: $root.thisUser().channel() === $data">
-          <img class="channel-icon-linked" src="/svg/channel_linked.svg"
-            data-bind="visible: linked() && $root.thisUser().channel() !== $data">
-          <div class="channel-name">
-            <span data-bind="text: name"></span>
-            <!-- ko if: $root.settings.userCountInChannelName() && userCount() !== 0 -->
-            &nbsp;(<span data-bind="text: userCount()"></span>)
-            <!-- /ko -->
-          </div>
-        </div>
-        <!-- ko if: expanded -->
-        <!-- ko foreach: users -->
-        <div class="user-wrapper">
-          <div class="user-tree"></div>
-          <div class="user" data-bind="
-                click: $root.select,
-                event: {
-                  contextmenu: openContextMenu
-                },
-                css: {
-                  thisClient: $root.thisUser() === $data,
-                  selected: $root.selected() === $data
-                }">
-            <div class="user-status" data-bind="attr: { title: state }">
-              <img class="user-comment" data-bind="visible: comment"
-                  alt="comment" src="/svg/comment.svg">
-              <img class="user-server-mute" data-bind="visible: mute"
-                  alt="server mute" src="/svg/muted_server.svg">
-              <img class="user-suppress-mute" data-bind="visible: suppress"
-                  alt="suppressed" src="/svg/muted_suppressed.svg">
-              <img class="user-self-mute" data-bind="visible: selfMute" 
-                  alt="self mute" src="/svg/muted_self.svg">
-              <img class="user-server-deaf" data-bind="visible: deaf"
-                  alt="server deaf" src="/svg/deafened_server.svg">
-              <img class="user-self-deaf" data-bind="visible: selfDeaf"
-                  alt="self deaf" src="/svg/deafened_self.svg">
-              <img class="user-authenticated" data-bind="visible: uid"
-                  alt="authenticated" src="/svg/authenticated.svg">
-            </div>
-            <div data-bind="if: comment">
-              <div class="user-comment tooltip" data-bind="html: comment"></div>
-            </div>
-            <!-- ko if: show_avatar() -->
-            <img class="user-avatar" alt="avatar"
-                 data-bind="attr: { src: texture },
-                            css: { 'user-avatar-talk-off': talking() == 'off',
-                                   'user-avatar-talk-on': talking() == 'on',
-                                   'user-avatar-talk-whisper': talking() == 'whisper',
-                                   'user-avatar-talk-shout': talking() == 'shout' }">
-            <!-- /ko -->
-            <!-- ko ifnot: show_avatar() -->
-            <img class="user-talk user-talk-off" data-bind="visible: talking() == 'off'"
-                alt="talk off" src="/svg/talking_off.svg">
-            <img class="user-talk user-talk-on" data-bind="visible: talking() == 'on'"
-                alt="talk on" src="/svg/talking_on.svg">
-            <img class="user-talk user-talk-whisper" data-bind="visible: talking() == 'whisper'"
-                alt="whisper" src="/svg/talking_whisper.svg">
-            <img class="user-talk user-talk-shout" data-bind="visible: talking() == 'shout'"
-                alt="shout" src="/svg/talking_alt.svg">
-            <!-- /ko -->
-            <div class="user-name" data-bind="text: name"></div>
-          </div>
-        </div>
-        <!-- /ko -->
-        <!-- ko foreach: channels -->
-        <div class="channel-wrapper">
-          <!-- ko ifnot: users().length || channels().length -->
-          <div class="channel-tree"></div>
-          <!-- /ko -->
-          <div class="branch" data-bind="if: users().length || channels().length">
-            <img class="branch-open" src="/svg/branch_open.svg"
-                data-bind="click: expanded.bind($data, false), visible: expanded()">
-            <img class="branch-closed" src="/svg/branch_closed.svg"
-                data-bind="click: expanded.bind($data, true), visible: !expanded()">
-          </div>
-          <div class="channel-sub" data-bind="template: {name: 'channel', data: $data}"></div>
-        </div>
-        <!-- /ko -->
-        <!-- /ko -->
-      </script>
     </div>
   </body>
   <script src="index.js"></script>

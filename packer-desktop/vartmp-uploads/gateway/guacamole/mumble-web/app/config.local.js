@@ -8,7 +8,7 @@ config.connectDialog.address = false
 config.connectDialog.port = false
 config.connectDialog.token = false
 
-config.settings.toolbarVertical = true
+config.settings.toolbarVertical = false
 config.settings.audioBitrate = 96000
 
 config.defaults.port = '443/murmur'

@@ -82,8 +82,8 @@ html, body {
   height: calc(98% - 6px);
 }
 .chat {
-  margin-right: 2px;
   float: left;
+  width: 95%;
 }
 .toolbar-horizontal ~ .chat {
   margin-top: 2px;
@@ -100,6 +100,7 @@ html, body {
 .log {
   background-color: $chat-bg-color;
   height: calc(100% - 42px);
+  width: 100%;
   padding: 5px;
   border: 1px $chat-border-color solid;
   border-radius: 3px;
@@ -289,6 +290,7 @@ html, body {
 .toolbar-horizontal {
   flex-direction: row;
   height: 36px;
+  width: 95%;
   margin-top: 4px;
   margin-left: 1%;
   padding-left: 5px;
@@ -355,6 +357,7 @@ html, body {
   height: 20px;
 }
 form {
+  width: 100%;
   margin: 0;
   padding: 0;
 }
