@@ -227,7 +227,7 @@ expandedMailboxes=INBOX
 mailboxList.showOnlySubscribed=false
 mainWindow.layout=compact
 preferPlaintextRendering=false
-showSystray=true
+showSystray=false
 startMinimized=false
 
 [identities]
