@@ -639,12 +639,6 @@
         <!-- /ko -->
         <!-- /ko -->
       </script>
-      <div class="channel-root-container" data-bind="if: root, visible: !minimalView()">
-        <div class="channel-root" data-bind="template: {name: 'channel', data: root}"></div>
-      </div>
-      <div class="channel-root-container" data-bind="if: thisUser, visible: minimalView()">
-        <div class="channel-root" data-bind="template: {name: 'channel', data: thisUser().channel}"></div>
-      </div>
     </div>
   </body>
   <script src="index.js"></script>

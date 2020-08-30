@@ -73,12 +73,12 @@ html, body {
 }
 .toolbar-horizontal ~ .channel-root-container {
   margin-top: 2px;
-  width: calc(59% - 6px);
+  width: calc(3% - 6px);
   height: calc(98% - 38px);
 }
 .toolbar-vertical ~ .channel-root-container {
   margin-top: 1%;
-  width: calc(59% - 6px);
+  width: calc(3% - 6px);
   height: calc(98% - 6px);
 }
 .chat {
@@ -88,13 +88,13 @@ html, body {
 .toolbar-horizontal ~ .chat {
   margin-top: 2px;
   margin-left: 1%;
-  width: 39%;
+  width: 95%;
   height: calc(98% - 38px);
 }
 .toolbar-vertical ~ .chat {
   margin-top: 1%;
   margin-left: 2px;
-  width: calc(39% - 36px);
+  width: calc(95% - 36px);
   height: calc(98% - 4px);
 }
 .log {
