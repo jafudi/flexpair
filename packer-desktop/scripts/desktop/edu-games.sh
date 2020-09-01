@@ -2,7 +2,6 @@
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
 2048-qt \
-tuxmath tuxpaint \
 blockout2 \
 kstars \
 oneko \
@@ -20,3 +19,15 @@ lmemory \
 ri-li \
 monsterz monsterz-data \
 kdegames
+
+DEBIAN_FRONTEND="noninteractive" apt-get install -y --upgrade tuxmath tuxpaint
+# https://wiki.ubuntuusers.de/Tux_Paint/
+mkdir -p /etc/tuxpaint/
+cat << EOF > /etc/tuxpaint/tuxpaint.conf
+fullscreen=native
+noshortcuts=yes
+alllocalefonts=yes
+noprint=yes
+savedir=/home/ubuntu/Desktop/Uploads/
+EOF
+chown ubuntu -R /etc/tuxpaint/

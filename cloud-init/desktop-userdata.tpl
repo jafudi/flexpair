@@ -144,7 +144,7 @@ server=${GATEWAY_DOMAIN}
 username=YourDesktopInTheCloud
 showcontextmenuinmenubar=true
 themestyle=Dark
-stateintray=false
+stateintray=true
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF

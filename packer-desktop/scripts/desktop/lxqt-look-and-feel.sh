@@ -76,11 +76,11 @@ width-percent=true
 [quicklaunch]
 alignment=Left
 apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
-apps\10\desktop=/usr/share/applications/linphone.desktop
-apps\11\desktop=/usr/share/applications/gpodder.desktop
-apps\12\desktop=/usr/share/applications/vlc.desktop
-apps\13\desktop=/usr/share/applications/trojita.desktop
-apps\14\desktop=/usr/share/applications/variety.desktop
+apps\10\desktop=/usr/share/applications/gpodder.desktop
+apps\11\desktop=/usr/share/applications/vlc.desktop
+apps\12\desktop=/usr/share/applications/trojita.desktop
+apps\13\desktop=/usr/share/applications/variety.desktop
+apps\14\desktop=/usr/share/applications/qtqr.desktop
 apps\15\desktop=/usr/share/applications/org.gnome.clocks.desktop
 apps\2\desktop=/usr/share/applications/lxqt-config.desktop
 apps\3\desktop=/usr/share/applications/qterminal.desktop
@@ -88,8 +88,8 @@ apps\4\desktop=/usr/share/applications/gnumeric.desktop
 apps\5\desktop=/usr/share/applications/featherpad.desktop
 apps\6\desktop=/usr/share/applications/mumble.desktop
 apps\7\desktop=/usr/share/applications/pavucontrol-qt.desktop
-apps\8\desktop=/usr/share/applications/tuxpaint.desktop
-apps\9\desktop=/usr/share/applications/lximage-qt-screenshot.desktop
+apps\8\desktop=/usr/share/applications/simplescreenrecorder.desktop
+apps\9\desktop=/usr/share/applications/tuxpaint.desktop
 apps\size=15
 type=quicklaunch
 
@@ -152,6 +152,12 @@ BROWSER=falkon
 GTK_CSD=0
 GTK_OVERLAY_SCROLLING=0
 TERM=qterminal
+EOF
+
+cat << EOF > "${CONFIG_DIR}/lxqt/notifications.conf"
+[General]
+__userfile__=true
+placement=bottom-left
 EOF
 
 cd /etc/xdg/autostart/

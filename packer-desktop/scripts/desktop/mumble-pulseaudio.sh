@@ -11,12 +11,14 @@ cat << EOF > $HOME/.config/pulse/default.pa
 
 load-module module-null-sink sink_name=AllExceptMumble
 update-sink-proplist AllExceptMumble device.description=AllExceptMumble
-
-set-default-sink AllExceptMumble
-set-default-source AllExceptMumble.monitor
+update-source-proplist AllExceptMumble.monitor device.description=AllExceptMumbleMonitor
 
 load-module module-null-sink sink_name=MumbleNullSink
 update-sink-proplist MumbleNullSink device.description=MumbleNullSink
+update-source-proplist MumbleNullSink.monitor device.description=MumbleNullSinkMonitor
+
+set-default-sink AllExceptMumble
+set-default-source AllExceptMumble.monitor
 
 load-module module-native-protocol-tcp auth-anonymous=1
 load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
@@ -143,7 +145,7 @@ DefaultVolume 100
 #    either relative (to etc/speech-dispatcher/modules/) or absolute
 
 #AddModule "espeak"                   "sd_espeak"    "espeak.conf"
-#AddModule "espeak-ng"                "sd_espeak-ng" "espeak-ng.conf"
+AddModule "espeak-ng"                "sd_espeak-ng" "espeak-ng.conf"
 #AddModule "festival"                 "sd_festival"  "festival.conf"
 #AddModule "flite"                    "sd_flite"     "flite.conf"
 #AddModule "ivona"                    "sd_ivona"     "ivona.conf"

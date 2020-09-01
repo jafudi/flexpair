@@ -28,7 +28,7 @@ xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra-
 apt-get autoremove -y
 
 apt-get install -y --no-install-recommends --upgrade \
-kmag \
+kmag simplescreenrecorder \
 qtqr \
 locales \
 kdialog elementary-icon-theme \
