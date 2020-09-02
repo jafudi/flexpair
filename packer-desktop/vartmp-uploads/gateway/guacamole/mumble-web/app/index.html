@@ -326,22 +326,6 @@
       </div>
       <br />
       <div class="toolbar" data-bind="css: { 'toolbar-horizontal': toolbarHorizontal() }">
-          <form data-bind="submit: submitMessageBox">
-              <input id="message-box" type="text" data-bind="
-              attr: { placeholder: messageBoxHint }, textInput: messageBox">
-          </form>
-        <img class="tb-connect" data-bind="visible: !connectDialog.joinOnly(),
-                                           click: connectDialog.show"
-                      rel="connect" src="/svg/applications-internet.svg">
-        <img class="tb-information" rel="information" src="/svg/information_icon.svg"
-             data-bind="click: connectionInfo.show,
-                        css: { disabled: !thisUser() }">
-        <img class="tb-settings" data-bind="click: openSettings"
-                      rel="settings" src="/svg/config_basic.svg">
-        <div class="divider"></div>
-        <img class="tb-sourcecode" data-bind="click: openSourceCode"
-                      rel="Source Code" src="/svg/source-code.svg">
-        <div class="divider"></div>
         <img class="tb-mute" data-bind="visible: !selfMute(),
                               click: function () { requestMute(thisUser()) }"
                       rel="mute" src="/svg/audio-input-microphone.svg">
@@ -354,7 +338,17 @@
         <img class="tb-undeaf tb-active" data-bind="visible: selfDeaf,
                               click: function () { requestUndeaf(thisUser()) }"
                       rel="undeaf" src="/svg/audio-output-deafened.svg">
-        <div class="divider"></div>
+          <form data-bind="submit: submitMessageBox">
+              <input id="message-box" type="text" data-bind="
+              attr: { placeholder: messageBoxHint }, textInput: messageBox">
+          </form>
+        <img class="tb-information" rel="information" src="/svg/applications-internet.svg"
+             data-bind="click: connectionInfo.show,
+                        css: { disabled: !thisUser() }">
+        <img class="tb-settings" data-bind="click: openSettings"
+                      rel="settings" src="/svg/config_basic.svg">
+        <img class="tb-sourcecode" data-bind="click: openSourceCode"
+                      rel="Source Code" src="/svg/source-code.svg">
       </div>
     </div>
   </body>

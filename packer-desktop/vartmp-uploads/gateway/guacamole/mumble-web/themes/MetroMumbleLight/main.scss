@@ -19,7 +19,6 @@ $toolbar-hover-bg-color: $lightgray !default
 $toolbar-hover-border-color: $gray !default
 $toolbar-active-bg-color: $white !default
 $toolbar-active-border-color: $toolbar-hover-bg-color !default
-$toolbar-divider-color: $lightgray !default
 $dialog-header-color: $white !default
 $dialog-header-bg-color: $darkgray !default
 $dialog-header-border-bottom-color: $gray !default
@@ -112,13 +111,6 @@ html, body {
 .toolbar-horizontal > * {
   margin-right: 5px;
 }
-.divider {
-  display: inline-block;
-}
-.toolbar-horizontal .divider {
-  height: 32px;
-  border-left: 1px $toolbar-divider-color solid;
-}
 .channel-icon .channel-icon-active {
   display: none;
 }
@@ -140,7 +132,6 @@ html, body {
   height: 20px;
 }
 form {
-  display: block;
   width: 100%;
   margin: 0;
   padding: 0;
