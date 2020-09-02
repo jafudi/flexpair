@@ -10,18 +10,10 @@ $font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helveti
 $font-disabled-color: $gray !default
 $panel-bg-color: $white !default
 $panel-border-color: $lightgray !default
-$channel-tree-color: $lightgray !default
-$channel-hover-bg-color: $lightgray !default
-$channel-selected-bg-color: lightblue !default
-$channel-selected-border-color: $darkgray !default
-$tooltip-border-color: $darkgray !default
 $chat-channel-color: orange !default
 $chat-user-color: green !default
 $chat-input-color: $font-color !default
 $mic-volume-border-color: $black !default
-$talk-outline-color: green !default
-$whisper-outline-color: purple !default
-$shout-outline-color: cyan !default
 
 $toolbar-hover-bg-color: $lightgray !default
 $toolbar-hover-border-color: $gray !default
@@ -40,13 +32,7 @@ $dialog-button-color: $dialog-color !default
 $dialog-input-border-color: $darkgray !default
 $dialog-input-bg-color: $white !default
 $dialog-input-color: $dialog-color !default
-$context-menu-bg-color: $bg-color !default
-$context-menu-border-color: $panel-border-color !default
-$context-menu-hover-bg-color: $toolbar-hover-bg-color !default
 
-$tooltip-bg-color: $panel-bg-color !default
-$channels-bg-color: $panel-bg-color !default
-$channels-border-color: $panel-border-color !default
 $chat-bg-color: $panel-bg-color !default
 $chat-border-color: $panel-border-color !default
 
@@ -61,27 +47,8 @@ html, body {
 #container {
   height: 100%;
 }
-.channel-root-container {
-  text-size: 16px;
-  margin-left: 2px;
-  background-color: $channels-bg-color;
-  border: 1px solid $channels-border-color;
-  float: left;
-  border-radius: 3px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.toolbar-horizontal ~ .channel-root-container {
-  margin-top: 2px;
-  width: calc(3% - 6px);
-  height: calc(98% - 38px);
-}
-.toolbar-vertical ~ .channel-root-container {
-  margin-top: 1%;
-  width: calc(3% - 6px);
-  height: calc(98% - 6px);
-}
 .chat {
+  display: block;
   float: left;
   width: 95%;
 }
@@ -90,12 +57,6 @@ html, body {
   margin-left: 1%;
   width: 95%;
   height: calc(98% - 38px);
-}
-.toolbar-vertical ~ .chat {
-  margin-top: 1%;
-  margin-left: 2px;
-  width: calc(95% - 36px);
-  height: calc(98% - 4px);
 }
 .log {
   background-color: $chat-bg-color;
@@ -107,76 +68,8 @@ html, body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.branch img {
-  height: 19px;
-}
-.branch {
-  position: absolute;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  background-color: $channels-bg-color;
-}
-.channel-sub {
-  margin-left: 9px;
-  border-left: 1px transparent solid;
-  padding-left: 9px;
-}
-.channel-wrapper:nth-last-child(n + 2) > .branch:not(:empty) + .channel-sub {
-  border-left: 1px $channel-tree-color solid;
-}
-.channel-tree,
-.user-wrapper {
-  margin-left: 9px;
-}
-.channel-tree,
-.user-tree {
-  position: absolute;
-}
-.channel-tree::before,
-.user-tree::before {
-  content: "";
-  display: block;
-  position: relative;
-  width: 9px;
-  border-left: 1px $channel-tree-color solid;
-  border-bottom: 1px $channel-tree-color solid;
-  height: 14px;
-}
-.channel-wrapper:nth-last-child(n + 2) > .channel-tree:after,
-.user-wrapper:nth-last-child(n + 2) .user-tree:after {
-  content: "";
-  display: block;
-  position: relative;
-  width: 0px;
-  border-left: 1px $channel-tree-color solid;
-  height: 14px;
-}
 .user {
   margin-left: 9px;
-}
-.user-avatar, .user-talk {
-  vertical-align: middle;
-}
-@mixin drop-shadow-4x($size, $blur, $color) {
-  filter: drop-shadow(#{+$size} #{+$size} $blur $color)
-          drop-shadow(#{+$size} #{-$size} $blur $color)
-          drop-shadow(#{-$size} #{+$size} $blur $color)
-          drop-shadow(#{-$size} #{-$size} $blur $color);
-}
-@mixin user-avatar-drop-shadow($color) {
-  @include drop-shadow-4x(1px, 1px, $color);
-}
-.user-avatar-talk-on {
-  @include user-avatar-drop-shadow($talk-outline-color);
-}
-.user-avatar-talk-whisper {
-  @include user-avatar-drop-shadow($whisper-outline-color);
-}
-.user-avatar-talk-shout {
-  @include user-avatar-drop-shadow($shout-outline-color);
-}
-.user-status, .channel-status {
-  float: right;
 }
 .user,.channel{
   height: 23px;
@@ -184,91 +77,13 @@ html, body {
   padding: 2px;
   border: 1px solid transparent;
 }
-.selected {
-  background-color: $channel-selected-bg-color !important;
-  border: 1px solid $channel-selected-border-color;
-  border-radius: 3px;
-}
-.user:hover,.channel:hover {
-  background-color: $channel-hover-bg-color;
-}
-.thisClient {
-  font-weight: bold
-}
-.currentChannel {
-  font-weight: bold
-}
-.user-status img, .channel-status img {
-  margin-top: 2px;
-  width: 19px;
-  height: 19px
-}
 .channel img, .user img {
   width: auto;
   height: 19px;
 }
-.channel-name, .user-name {
-  display: inline;
-}
-.channel:hover .tooltip, .user:hover .tooltip {
-  visibility: visible;
-  height: auto;
-  transition-delay: 1s;
-}
-.tooltip {
-  visibility: hidden;
-  height: 0px;
-  background: $tooltip-bg-color;
-  border: 1px solid $tooltip-border-color;
-  margin-top: 16px;
-  margin-left: 30px;
-  padding: 10px;
-  position: absolute;
-  z-index: 100;
-}
-.context-menu {
-  position: absolute;
-  z-index: 50;
-  background: $context-menu-bg-color;
-  border: 1px solid $context-menu-border-color;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 
-  & > li {
-    padding: 5px 20px;
-    padding-left: 10px;
-    &::before {
-      display: inline-block;
-      width: 10px;
-      padding-right: 5px;
-      content: '';
-    }
-    &.checked::before {
-      content: '✓';
-    }
-    &:hover {
-      background: $context-menu-hover-bg-color;
-    }
-    &.disabled {
-      background: $context-menu-bg-color;
-      color: $font-disabled-color;
-    }
-  }
-}
-.avatar-view {
-  position: absolute;
-  z-index: 200;
-  max-width: 90%;
-  max-height: 90%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
 .toolbar {
-  display: flex;
+  display: block;
   align-items: center;
 }
 .toolbar img {
@@ -288,26 +103,14 @@ html, body {
   background-color: $toolbar-active-border-color;
 }
 .toolbar-horizontal {
-  flex-direction: row;
   height: 36px;
   width: 95%;
   margin-top: 4px;
   margin-left: 1%;
   padding-left: 5px;
 }
-.toolbar-vertical {
-  flex-direction: column;
-  width: 36px;
-  margin-top: 1%;
-  margin-left: 4px;
-  padding-top: 5px;
-  float: left;
-}
 .toolbar-horizontal > * {
   margin-right: 5px;
-}
-.toolbar-vertical > * {
-  margin-bottom: 5px;
 }
 .divider {
   display: inline-block;
@@ -315,26 +118,6 @@ html, body {
 .toolbar-horizontal .divider {
   height: 32px;
   border-left: 1px $toolbar-divider-color solid;
-}
-.toolbar-vertical .divider {
-  width: 32px;
-  border-top: 1px $toolbar-divider-color solid;
-}
-.toolbar-horizontal .handle-horizontal {
-  width: auto !important;
-  border: none !important;
-  background-color: $bg-color !important;
-}
-.toolbar-horizontal .handle-vertical {
-  display: none;
-}
-.toolbar-vertical .handle-vertical {
-  height: auto !important;
-  border: none !important;
-  background-color: $bg-color !important;
-}
-.toolbar-vertical .handle-horizontal {
-  display: none;
 }
 .channel-icon .channel-icon-active {
   display: none;
@@ -357,6 +140,7 @@ html, body {
   height: 20px;
 }
 form {
+  display: block;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -477,81 +261,11 @@ form {
 }
 
 
-/****************/
-/* Minimal view */
-/****************/
-
-.minimal .toolbar-horizontal ~ .channel-root-container {
-  width: calc(98% - 6px);
-}
-.minimal .toolbar-vertical ~ .channel-root-container {
-  width: calc(98% - 42px);
-}
-.minimal .handle-horizontal {
-  display: none;
-}
-.minimal .handle-vertical {
-  display: none;
-}
-.minimal .divider {
-  display: none;
-}
-.minimal .tb-connect {
-  display: none;
-}
-.minimal .tb-information {
-  display: none;
-}
-.minimal .tb-record {
-  display: none;
-}
-.minimal .tb-comment {
-  display: none;
-}
-.minimal .tb-settings {
-  display: none;
-}
-.minimal .tb-sourcecode {
-  display: none;
-}
-.minimal .chat {
-  display: none;
-}
-.minimal .channel-wrapper {
-  display: none;
-}
-.minimal .channel {
-  display: none;
-}
-.minimal .user-tree {
-  display: none;
-}
-.minimal .user-wrapper {
-  margin-left: 0px;
-}
-.minimal .user {
-  margin-left: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border: none;
-  height: 19px;
-  line-height: 19px;
-}
-.minimal .user-status {
-  height: 19px;
-}
-
 /* Mobile view */
 
 @media only screen and (max-width: 600px) and (min-width: 320px) and (min-height: 600px)  {
 
-  .toolbar-horizontal ~ .channel-root-container, .toolbar-vertical ~ .channel-root-container {
-    height:calc(100% - 440px);
-    position:static;
-    width:100%;
-  }
-
-  .toolbar-horizontal ~ .chat, .toolbar-vertical ~ .chat {
+  .toolbar-horizontal ~ .chat {
     position:fixed;
     bottom: 60px;
     left:0;
@@ -562,24 +276,12 @@ form {
     z-index:10;
   }
 
-  .toolbar-vertical {
-    flex-direction: row;
-    height: 36px;
-    margin-top: 4px;
-    margin-left: 1%;
-    padding-left: 5px;
-  }
-
   #message-box {
     margin: 10px 5px 10px 5px;
     padding: 10px;
     height: 2em;
     font-size: 1.2em;
     font-weight: bold;
-  }
-
-  .handle-vertical, .handle-horizontal {
-    display: none;
   }
 
   .dialog {
