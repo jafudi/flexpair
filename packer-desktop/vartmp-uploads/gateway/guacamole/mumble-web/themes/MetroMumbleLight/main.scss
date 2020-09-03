@@ -50,13 +50,13 @@ html, body {
   display: block;
   float: left;
   margin-top: 2px;
-  margin-left: 1%;
+  margin-bottom: 2px;
   width: 100%;
-  height: calc(98% - 38px);
+  height: calc(98% - 40px);
 }
 .log {
   background-color: $chat-bg-color;
-  height: calc(100% - 42px);
+  height: calc(100% - 4px);
   width: 100%;
   padding: 5px;
   border: 1px $chat-border-color solid;
@@ -74,11 +74,15 @@ html, body {
   border: 1px solid transparent;
 }
 
-.toolbar {
-  display: block;
-  align-items: center;
+.toolbar-horizontal {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  height: 36px;
+  width: 100%;
+  padding: 5px;
 }
-.toolbar img {
+.toolbar-horizontal img {
   height: 28px;
   width: 28px;
   padding: 2px;
@@ -86,23 +90,13 @@ html, body {
   border-radius: 3px;
   cursor: pointer;
 }
-.toolbar img:hover {
+.toolbar-horizontal img:hover {
   border: 1px solid $toolbar-hover-bg-color;
   background-color: $toolbar-hover-border-color;
 }
-.toolbar .tb-active {
+.toolbar-horizontal .tb-active {
   border: 1px solid $toolbar-active-bg-color;
   background-color: $toolbar-active-border-color;
-}
-.toolbar-horizontal {
-  height: 36px;
-  width: 100%;
-  margin-top: 4px;
-  margin-left: 1%;
-  padding-left: 5px;
-}
-.toolbar-horizontal > * {
-  margin-right: 5px;
 }
 .channel-tag {
   font-weight: bold;
@@ -119,18 +113,11 @@ html, body {
   margin: 5px 0 5px 0;
   padding: 2px;
   height: 20px;
-  width: 75%;
+  width: 100%;
 }
 form {
   margin: 0;
   padding: 0;
-}
-/* Style the form - display items horizontally */
-.form-inline {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  width: 100%;
 }
 .message-content p {
   margin: 0;
