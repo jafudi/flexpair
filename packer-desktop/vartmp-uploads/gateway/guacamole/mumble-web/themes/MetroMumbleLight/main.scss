@@ -49,9 +49,6 @@ html, body {
 .chat {
   display: block;
   float: left;
-  width: 100%;
-}
-.toolbar-horizontal ~ .chat {
   margin-top: 2px;
   margin-left: 1%;
   width: 100%;
@@ -107,9 +104,6 @@ html, body {
 .toolbar-horizontal > * {
   margin-right: 5px;
 }
-.channel-icon .channel-icon-active {
-  display: none;
-}
 .channel-tag {
   font-weight: bold;
   color: $chat-channel-color;
@@ -123,9 +117,9 @@ html, body {
   background: none;
   color: $chat-input-color;
   margin: 5px 0 5px 0;
-  padding: 0;
+  padding: 2px;
   height: 20px;
-  width: 50%;
+  width: 75%;
 }
 form {
   margin: 0;
@@ -134,7 +128,7 @@ form {
 /* Style the form - display items horizontally */
 .form-inline {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   width: 100%;
 }
@@ -258,7 +252,7 @@ form {
 
 @media only screen and (max-width: 600px) and (min-width: 320px) and (min-height: 600px)  {
 
-  .toolbar-horizontal ~ .chat {
+  .chat {
     position:fixed;
     bottom: 60px;
     left:0;
