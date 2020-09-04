@@ -28,7 +28,8 @@ xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra-
 apt-get autoremove -y
 
 apt-get install -y --no-install-recommends --upgrade \
-kmag simplescreenrecorder \
+kmag \
+simplescreenrecorder \
 qtqr \
 locales \
 kdialog elementary-icon-theme \
@@ -39,12 +40,13 @@ falkon \
 qpdfview \
 lximage-qt \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
-aspell \
 variety \
-nextcloud-desktop \
 linphone \
 gnome-clocks \
 persepolis aria2 \
 backintime-qt \
-vym \
-muon
+muon \
+inkscape \
+gimp
+
+
