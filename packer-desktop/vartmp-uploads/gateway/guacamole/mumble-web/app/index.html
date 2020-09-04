@@ -25,6 +25,9 @@
       <div class="loading-circle" data-bind="css: { loaded: true }"></div>
     </div>
     <div id="container" style="display: none" data-bind="visible: true">
+        <div class="guacamole">
+            <iframe src="/guacamole/"></iframe>
+        </div>
       <!-- ko with: connectDialog --> 
       <div class="connect-dialog dialog" data-bind="visible: visible() && !joinOnly()">
           <div id="connect-dialog_title" class="dialog-header">
