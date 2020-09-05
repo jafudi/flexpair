@@ -285,49 +285,6 @@
           </form>
         </div>
       <!-- /ko -->
-      <script type="text/html" id="user-tag">
-        <span class="user-tag" data-bind="text: name"></span>
-      </script>
-      <script type="text/html" id="channel-tag">
-        <span class="channel-tag" data-bind="text: name"></span>
-      </script>
-      <div class="chat">
-        <script type="text/html" id="log-generic">
-          <span data-bind="text: value"></span>
-        </script>
-        <script type="text/html" id="log-welcome-message">
-          Welcome message: <span data-bind="html: message"></span>
-        </script>
-        <script type="text/html" id="log-chat-message">
-          <span data-bind="visible: channel">
-            (Channel)
-          </span>
-          <span data-bind="template: { name: 'user-tag', data: user }"></span>:
-          <span class="message-content" data-bind="html: message"></span>
-        </script>
-        <script type="text/html" id="log-chat-message-self">
-          To
-          <span data-bind="template: { if: $data.channel, name: 'channel-tag', data: $data.channel }">
-          </span><span data-bind="template: { if: $data.user, name: 'user-tag', data: $data.user }">
-          </span>:
-          <span class="message-content" data-bind="html: message"></span>
-        </script>
-        <script type="text/html" id="log-disconnect">
-        </script>
-        <div class="log" data-bind="foreach: {
-          data: log,
-          afterRender: function (e) {
-            [].forEach.call(e[1].getElementsByTagName('a'), function(e){e.target = '_blank'})
-          }
-        }">
-          <div class="log-entry">
-            <span class="log-timestamp" data-bind="text: $root.getTimeString()"></span>
-            <!-- ko template: { data: $data, name: function(l) { return 'log-' + l.type; } } -->
-            <!-- /ko -->
-          </div>
-        </div>
-      </div>
-      <br />
       <form class="toolbar-horizontal" data-bind="submit: submitMessageBox">
         <img class="tb-mute" data-bind="visible: !selfMute(),
             click: function () { requestMute(thisUser()) }"
