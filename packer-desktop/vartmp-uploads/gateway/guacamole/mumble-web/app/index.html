@@ -167,11 +167,11 @@
       <!-- /ko -->
       <!-- ko with: connectionInfo -->
       <div class="connection-info-dialog dialog" data-bind="visible: visible">
-        <div id="connection-info-dialog_title" class="dialog-header">
+        <div id="connection-info_title" class="dialog-header">
           Audio transmission info
         </div>
         <div class="dialog-content">
-            <h3>Audio server details</h3>
+            <h3 id="connection-info_server">Audio server details</h3>
           <!-- ko with: serverVersion -->
           Murmur version <span data-bind="text: release"></span>
           <br>on
@@ -185,14 +185,14 @@
             Bandwidth limited to
           <span data-bind="text: (maxBandwidth()/1000).toFixed(1)"></span> kbits/s
 
-          <h3>Statistics for this web app</h3>
+          <h3 id="connection-info_webapp">Statistics for this web app</h3>
           Sending <span data-bind="text: (currentBandwidth()/1000).toFixed(1)"></span> kbits/s
           (<span data-bind="text: (currentBitrate()/1000).toFixed(1)"></span> kbits/s payload)
           <br>
           <span data-bind="text: latencyMs().toFixed(2)"></span> ms average latency
           (<span data-bind="text: latencyDeviation().toFixed(2)"></span> deviation)
 
-          <h3>Desktop client / mobile app</h3>
+          <h3 id="connection-info_native">Desktop client / mobile app</h3>
           <a href="https://www.mumble.info/downloads/" target="_blank">Offical download page</a>
         </div>
         <div class="dialog-footer">
@@ -202,17 +202,17 @@
       <!-- /ko -->
       <!-- ko with: settingsDialog -->
       <div class="settings-dialog dialog" data-bind="visible: $data">
-          <div class="dialog-header">
+          <div id="settings-dialog_title" class="dialog-header">
             Audio settings
           </div>
           <form data-bind="submit: $root.applySettings">
             <table>
                 <tr>
-                  <td>Transmission</td>
+                  <td id="settings-dialog_transmission">Transmission</td>
                   <td>
                     <select data-bind='value: voiceMode'>
-                      <option value="cont">Continuous</option>
-                      <option value="ptt">Push To Talk</option>
+                      <option id="settings-dialog_cont" value="cont">Continuous</option>
+                      <option id="settings-dialog_ptt" value="ptt">Push To Talk</option>
                   </td>
                 </tr>
                 <tr data-bind="visible: voiceMode() == 'vad'">
@@ -228,13 +228,13 @@
                   </td>
                 </tr>
                 <tr data-bind="visible: voiceMode() == 'ptt'">
-                  <td>PTT Key</td>
+                  <td id="settings-dialog_ptt_key">PTT Key</td>
                   <td>
                     <input type="button" data-bind="value: pttKeyDisplay, click: recordPttKey">
                   </td>
                 </tr>
                 <tr>
-                  <td>Audio Quality</td>
+                  <td id="settings-dialog_audio_quality">Audio Quality</td>
                   <td><span data-bind="text: (audioBitrate()/1000).toFixed(1)"></span> kbit/s</td>
                 </tr>
                 <tr>
@@ -244,7 +244,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Audio per packet</td>
+                  <td id="settings-dialog_packet">Audio per packet</td>
                   <td><span data-bind="text: msPerPacket"></span> ms</td>
                 </tr>
                 <tr>
@@ -267,8 +267,8 @@
                 </tr>
             </table>
             <div class="dialog-footer">
-              <input class="dialog-close" type="button" data-bind="click: $root.closeSettings" value="Cancel">
-              <input class="dialog-submit" type="submit" value="Apply">
+              <input id="settings-dialog_close" class="dialog-close" type="button" data-bind="click: $root.closeSettings" value="Cancel">
+              <input id="settings-dialog_submit" class="dialog-submit" type="submit" value="Apply">
             </div>
           </form>
         </div>

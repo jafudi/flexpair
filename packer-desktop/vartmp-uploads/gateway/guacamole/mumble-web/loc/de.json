@@ -5,9 +5,6 @@
     "port": "Port",
     "username": "Nutzername",
     "password": "Passwort",
-    "tokens": "Tokens",
-    "remove": "Entfernen",
-    "add": "Hinzufügen",
     "cancel": "Abbrechen",
     "connect": "Verbinden",
     "error": {
@@ -32,7 +29,21 @@
     "connect": "An der Konferenz teilnehmen"
   },
   "connectinfo": {
-    "title": "Infos zur Audio-Übertragung"
+    "title": "Infos zur Audio-Übertragung",
+    "server": "Details zum Audio-Server",
+    "webapp": "Statistiken zur Web-Anwendung",
+    "native": "Desktop-Anwendung / App"
+  },
+  "settingsdialog": {
+    "title": "Audio-Einstellungen",
+    "transmission": "Übertragung",
+    "cont": "Durchgehend",
+    "ptt": "Drücken-zum-Sprechen",
+    "ptt_key": "Sprech-Taste",
+    "audio_quality": "Audio-Qualität",
+    "packet": "Audio pro Paket",
+    "close": "Abbrechen",
+    "submit": "Anwenden"
   },
   "chat": {
     "channel_message_placeholder": "Hier eine Nachricht an alle eintippen...",

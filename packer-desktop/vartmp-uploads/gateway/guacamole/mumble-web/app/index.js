@@ -1069,9 +1069,6 @@ function translateEverything() {
   translatePiece('#connect-dialog_input_port', 'textcontent', {}, 'connectdialog.port');
   translatePiece('#connect-dialog_input_username', 'textcontent', {}, 'connectdialog.username');
   translatePiece('#connect-dialog_input_password', 'textcontent', {}, 'connectdialog.password');
-  translatePiece('#connect-dialog_input_tokens', 'textcontent', {}, 'connectdialog.tokens');
-  translatePiece('#connect-dialog_controls_remove', 'textcontent', {}, 'connectdialog.remove');
-  translatePiece('#connect-dialog_controls_add', 'textcontent', {}, 'connectdialog.add');
   translatePiece('#connect-dialog_controls_cancel', 'attribute', {'name': 'value'}, 'connectdialog.cancel');
   translatePiece('#connect-dialog_controls_connect', 'attribute', {'name': 'value'}, 'connectdialog.connect');
   translatePiece('.connect-dialog.error-dialog .dialog-header', 'textcontent', {}, 'connectdialog.error.title');
@@ -1092,7 +1089,20 @@ function translateEverything() {
   translatePiece('.join-dialog .dialog-header', 'textcontent', {}, 'joindialog.title');
   translatePiece('.join-dialog .dialog-submit', 'attribute', {'name': 'value'}, 'joindialog.connect');
 
-  translatePiece('#connection-info-dialog_title', 'textcontent', {}, 'connectinfo.title');
+  translatePiece('#connection-info_title', 'textcontent', {}, 'connectinfo.title');
+  translatePiece('#connection-info_server', 'textcontent', {}, 'connectinfo.server');
+  translatePiece('#connection-info_webapp', 'textcontent', {}, 'connectinfo.webapp');
+  translatePiece('#connection-info_native', 'textcontent', {}, 'connectinfo.native');
+
+  translatePiece('#settings-dialog_title', 'textcontent', {}, 'settingsdialog.title');
+  translatePiece('#settings-dialog_transmission', 'textcontent', {}, 'settingsdialog.transmission');
+  translatePiece('#settings-dialog_cont', 'textcontent', {}, 'settingsdialog.cont');
+  translatePiece('#settings-dialog_ptt', 'textcontent', {}, 'settingsdialog.ptt');
+  translatePiece('#settings-dialog_ptt_key', 'textcontent', {}, 'settingsdialog.ptt_key');
+  translatePiece('#settings-dialog_audio_quality', 'textcontent', {}, 'settingsdialog.audio_quality');
+  translatePiece('#settings-dialog_packet', 'textcontent', {}, 'settingsdialog.packet');
+  translatePiece('#settings-dialog_close', 'attribute', {'name': 'value'}, 'settingsdialog.close');
+  translatePiece('#settings-dialog_submit', 'attribute', {'name': 'value'}, 'settingsdialog.submit');
 }
 
 async function main() {

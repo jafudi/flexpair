@@ -5,9 +5,6 @@
     "port": "Port",
     "username": "Username",
     "password": "Password",
-    "tokens": "Tokens",
-    "remove": "Remove",
-    "add": "Add",
     "cancel": "Cancel",
     "connect": "Connect",
     "error": {
@@ -32,7 +29,21 @@
     "connect": "Join Conference"
   },
   "connectinfo": {
-    "title": "Audio transmission info"
+    "title": "Audio transmission info",
+    "server": "Audio server details",
+    "webapp": "Statistics for this web app",
+    "native": "Desktop client / mobile app"
+  },
+  "settingsdialog": {
+    "title": "Audio settings",
+    "transmission": "Transmission",
+    "cont": "Continuous",
+    "ptt": "Push To Talk",
+    "ptt_key": "PTT Key",
+    "audio_quality": "Audio Quality",
+    "packet": "Audio per packet",
+    "close": "Cancel",
+    "submit": "Apply"
   },
   "chat": {
     "channel_message_placeholder": "Type message to everyone here...",
