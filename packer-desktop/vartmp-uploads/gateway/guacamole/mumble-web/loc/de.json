@@ -47,7 +47,7 @@
   },
   "chat": {
     "channel_message_placeholder": "Hier eine Nachricht an alle eintippen...",
-    "user_message_placeholder": "Hier eine Nachricht an Teilnehmer '% 1' eintippen..."
+    "user_message_placeholder": "Hier eine Nachricht an Teilnehmer '%1' eintippen..."
   }
 }
 
