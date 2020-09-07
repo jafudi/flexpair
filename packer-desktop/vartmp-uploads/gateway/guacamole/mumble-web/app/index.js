@@ -113,7 +113,6 @@ class ConnectionInfo {
     this.codec = ko.observable()
 
     this.show = () => {
-      if (!ui.thisUser()) return
       this.update()
       this.visible(true)
     }
@@ -377,7 +376,7 @@ class GlobalBindings {
         // Make sure we stay open if we're running as Matrix widget
         window.matrixWidget.setAlwaysOnScreen(true)
 
-        // Register all channels, recursively 
+        // Register all channels, recursively
         if(channelName.indexOf("/") != 0) {
           channelName = "/"+channelName;
         }
@@ -1097,33 +1096,6 @@ function translateEverything() {
   translatePiece('.connect-dialog.error-dialog .dialog-close', 'attribute', {'name': 'value'}, 'connectdialog.error.cancel');
   translatePiece('.join-dialog .dialog-header', 'textcontent', {}, 'joindialog.title');
   translatePiece('.join-dialog .dialog-submit', 'attribute', {'name': 'value'}, 'joindialog.connect');
-  translatePiece('.user-context-menu .mute', 'textcontent', {}, 'usercontextmenu.mute');
-  translatePiece('.user-context-menu .deafen', 'textcontent', {}, 'usercontextmenu.deafen');
-  translatePiece('.user-context-menu .priority-speaker', 'textcontent', {}, 'usercontextmenu.priority_speaker');
-  translatePiece('.user-context-menu .local-mute', 'textcontent', {}, 'usercontextmenu.local_mute');
-  translatePiece('.user-context-menu .ignore-messages', 'textcontent', {}, 'usercontextmenu.ignore_messages');
-  translatePiece('.user-context-menu .view-comment', 'textcontent', {}, 'usercontextmenu.view_comment');
-  translatePiece('.user-context-menu .change-comment', 'textcontent', {}, 'usercontextmenu.change_comment');
-  translatePiece('.user-context-menu .reset-comment', 'textcontent', {}, 'usercontextmenu.reset_comment');
-  translatePiece('.user-context-menu .view-avatar', 'textcontent', {}, 'usercontextmenu.view_avatar');
-  translatePiece('.user-context-menu .change-avatar', 'textcontent', {}, 'usercontextmenu.change_avatar');
-  translatePiece('.user-context-menu .reset-avatar', 'textcontent', {}, 'usercontextmenu.reset_avatar');
-  translatePiece('.user-context-menu .send-message', 'textcontent', {}, 'usercontextmenu.send_message');
-  translatePiece('.user-context-menu .information', 'textcontent', {}, 'usercontextmenu.information');
-  translatePiece('.user-context-menu .self-mute', 'textcontent', {}, 'usercontextmenu.self_mute');
-  translatePiece('.user-context-menu .self-deafen', 'textcontent', {}, 'usercontextmenu.self_deafen');
-  translatePiece('.user-context-menu .add-friend', 'textcontent', {}, 'usercontextmenu.add_friend');
-  translatePiece('.user-context-menu .remove-friend', 'textcontent', {}, 'usercontextmenu.remove_friend');
-  translatePiece('.channel-context-menu .join', 'textcontent', {}, 'channelcontextmenu.join');
-  translatePiece('.channel-context-menu .add', 'textcontent', {}, 'channelcontextmenu.add');
-  translatePiece('.channel-context-menu .edit', 'textcontent', {}, 'channelcontextmenu.edit');
-  translatePiece('.channel-context-menu .remove', 'textcontent', {}, 'channelcontextmenu.remove');
-  translatePiece('.channel-context-menu .link', 'textcontent', {}, 'channelcontextmenu.link');
-  translatePiece('.channel-context-menu .unlink', 'textcontent', {}, 'channelcontextmenu.unlink');
-  translatePiece('.channel-context-menu .unlink-all', 'textcontent', {}, 'channelcontextmenu.unlink_all');
-  translatePiece('.channel-context-menu .copy-mumble-url', 'textcontent', {}, 'channelcontextmenu.copy_mumble_url');
-  translatePiece('.channel-context-menu .copy-mumble-web-url', 'textcontent', {}, 'channelcontextmenu.copy_mumble_web_url');
-  translatePiece('.channel-context-menu .send-message', 'textcontent', {}, 'channelcontextmenu.send_message');
 }
 
 async function main() {

@@ -70,8 +70,8 @@
     "mic_init_error": "Cannot initialize user media. Microphone will not work:"
   },
   "chat": {
-    "channel_message_placeholder": "Type message to channel '%1' here",
-    "user_message_placeholder": "Type message to user '%1' here"
+    "channel_message_placeholder": "Type message to channel '%1' here...",
+    "user_message_placeholder": "Type message to user '%1' here..."
   }
 }
 

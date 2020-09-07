@@ -9,7 +9,71 @@
     "remove": "Entfernen",
     "add": "Hinzufügen",
     "cancel": "Abbrechen",
-    "connect": "Verbinden"
+    "connect": "Verbinden",
+    "error": {
+      "title": "Verbindung nicht möglich",
+      "reason": {
+        "refused": "Die Verbindung wurde abgelehnt.",
+        "version": "Der Server verwendet eine inkompatible Version.",
+        "username": "Ihr Benutzername wurde abgelehnt. Vielleicht versuchen Sie es mit einem anderen?",
+        "userpassword": "Das angegebene Passwort ist falsch.\nDer von Ihnen gewählte Benutzername erfordert ein spezielles Passwort.",
+        "serverpassword": "Das angegebene Passwort ist falsch.",
+        "username_in_use": "Der von Ihnen gewählte Benutzername wird bereits verwendet.",
+        "full": "Der Server ist voll.",
+        "clientcert": "Der Server erfordert die Bereitstellung eines Client-Zertifikats, was von dieser Webanwendung nicht unterstützt wird.",
+        "server": "Der Server meldet:"
+      },
+      "retry": "Wiederholen",
+      "cancel": "Abbrechen"
+    }
+  },
+  "joindialog": {
+    "title": "Mumble Sprach-Konferenz",
+    "connect": "An der Konferenz teilnehmen"
+  },
+  "usercontextmenu": {
+    "mute": "Mute",
+    "deafen": "Deafen",
+    "priority_speaker": "Priority Speaker",
+    "local_mute": "Local Mute",
+    "ignore_messages": "Ignore Messages",
+    "view_comment": "View Comment",
+    "change_comment": "Change Comment",
+    "reset_comment": "Reset Comment",
+    "view_avatar": "View Avatar",
+    "change_avatar": "Change Avatar",
+    "reset_avatar": "Reset Avatar",
+    "send_message": "Send Message",
+    "information": "Information",
+    "self_mute": "Self Mute",
+    "self_deafen": "Self Deafen",
+    "add_friend": "Add Friend",
+    "remove_friend": "Remove Friend"
+  },
+  "channelcontextmenu": {
+    "join": "Join Channel",
+    "add": "Add",
+    "edit": "Edit",
+    "remove": "Remove",
+    "link": "Link",
+    "unlink": "Unlink",
+    "unlink_all": "Unlink All",
+    "copy_mumble_url": "Copy Mumble URL",
+    "copy_mumble_web_url": "Copy Mumble-Web URL",
+    "send_message": "Send Message"
+  },
+  "logentry": {
+    "connecting": "Connecting to server",
+    "connected": "Connected!",
+    "connection_error": "Connection error:",
+    "unknown_voice_mode": "Unknown voice mode:",
+    "mic_init_error": "Cannot initialize user media. Microphone will not work:"
+  },
+  "chat": {
+    "channel_message_placeholder": "Hier eine Nachricht an Kanal '% 1' eintippen...",
+    "user_message_placeholder": "Hier eine Nachricht an Teilnehmer '% 1' eintippen..."
   }
 }
+
+
 

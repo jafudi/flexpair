@@ -10,6 +10,7 @@ config.connectDialog.token = false
 
 config.settings.toolbarVertical = false
 config.settings.audioBitrate = 96000
+config.settings.voiceMode = 'cont'
 
 config.defaults.port = '443/murmur'
 

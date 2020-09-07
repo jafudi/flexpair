@@ -223,7 +223,6 @@
                   <td>
                     <select data-bind='value: voiceMode'>
                       <option value="cont">Continuous</option>
-                      <option value="vad">Voice Activity</option>
                       <option value="ptt">Push To Talk</option>
                   </td>
                 </tr>
@@ -301,8 +300,7 @@
         <input id="message-box" type="text" data-bind="
             attr: { placeholder: messageBoxHint }, textInput: messageBox">
         <img class="tb-information" rel="information" src="/svg/applications-internet.svg"
-            data-bind="click: connectionInfo.show,
-            css: { disabled: !thisUser() }">
+            data-bind="click: connectionInfo.show">
         <img class="tb-settings" data-bind="click: openSettings"
             rel="settings" src="/svg/config_basic.svg">
         <img class="tb-sourcecode" data-bind="click: openSourceCode"
