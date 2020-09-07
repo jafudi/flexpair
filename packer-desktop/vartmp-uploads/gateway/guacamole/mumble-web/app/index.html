@@ -18,7 +18,6 @@
     <script src="config.js"></script>
     <script src="config.local.js"></script>
     <script src="theme.js"></script>
-    <script src="matrix.js"></script>
   </head>
   <body>
     <div class="loading-container" data-bind="css: { loaded: true }">
@@ -168,18 +167,14 @@
       <!-- /ko -->
       <!-- ko with: connectionInfo -->
       <div class="connection-info-dialog dialog" data-bind="visible: visible">
-        <div class="dialog-header">
-          Connection Information
+        <div id="connection-info-dialog_title" class="dialog-header">
+          Audio transmission info
         </div>
         <div class="dialog-content">
-          <h3>Version</h3>
+            <h3>Audio server details</h3>
           <!-- ko with: serverVersion -->
-          Protocol
-          <span data-bind="text: major + '.' + minor + '.' + patch"></span>.
-          <br>
-          <br>
-          <span data-bind="text: release"></span>
-          <br>
+          Murmur version <span data-bind="text: release"></span>
+          <br>on
           <span data-bind="text: os"></span>
           <span data-bind="text: osVersion"></span>
           <br>
@@ -187,24 +182,18 @@
           <!-- ko if: !serverVersion() -->
           Unknown
           <!-- /ko -->
+            Bandwidth limited to
+          <span data-bind="text: (maxBandwidth()/1000).toFixed(1)"></span> kbits/s
 
-          <h3>Control channel</h3>
+          <h3>Statistics for this web app</h3>
+          Sending <span data-bind="text: (currentBandwidth()/1000).toFixed(1)"></span> kbits/s
+          (<span data-bind="text: (currentBitrate()/1000).toFixed(1)"></span> kbits/s payload)
+          <br>
           <span data-bind="text: latencyMs().toFixed(2)"></span> ms average latency
           (<span data-bind="text: latencyDeviation().toFixed(2)"></span> deviation)
-          <br>
-          <br>
-          Remote host <span data-bind="text: remoteHost"></span>
-          (port <span data-bind="text: remotePort"></span>)
-          <br>
 
-          <h3>Audio bandwidth</h3>
-          Maximum <span data-bind="text: (maxBitrate()/1000).toFixed(1)"></span> kbits/s
-          (<span data-bind="text: (maxBandwidth()/1000).toFixed(1)"></span> kbits/s with overhead)
-          <br>
-          Current <span data-bind="text: (currentBitrate()/1000).toFixed(1)"></span> kbits/s
-          (<span data-bind="text: (currentBandwidth()/1000).toFixed(1)"></span> kbits/s with overhead)
-          <br>
-          Codec: <span data-bind="text: codec"></span>
+          <h3>Desktop client / mobile app</h3>
+          <a href="https://www.mumble.info/downloads/" target="_blank">Offical download page</a>
         </div>
         <div class="dialog-footer">
           <input class="dialog-close" type="button" data-bind="click: hide" value="OK">
@@ -214,7 +203,7 @@
       <!-- ko with: settingsDialog -->
       <div class="settings-dialog dialog" data-bind="visible: $data">
           <div class="dialog-header">
-            Settings
+            Audio settings
           </div>
           <form data-bind="submit: $root.applySettings">
             <table>
@@ -305,6 +294,7 @@
             rel="settings" src="/svg/config_basic.svg">
         <img class="tb-sourcecode" data-bind="click: openSourceCode"
             rel="Source Code" src="/svg/source-code.svg">
+
       </form>
     </div>
   </body>

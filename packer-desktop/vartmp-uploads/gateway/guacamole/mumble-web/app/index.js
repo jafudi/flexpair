@@ -373,9 +373,6 @@ class GlobalBindings {
           this.resetClient()
         })
 
-        // Make sure we stay open if we're running as Matrix widget
-        window.matrixWidget.setAlwaysOnScreen(true)
-
         // Register all channels, recursively
         if(channelName.indexOf("/") != 0) {
           channelName = "/"+channelName;
@@ -929,9 +926,6 @@ function initializeUI () {
   var queryParams = url.parse(document.location.href, true).query
   queryParams = Object.assign({}, window.mumbleWebConfig.defaults, queryParams)
   var useJoinDialog = queryParams.joinDialog
-  if (queryParams.matrix) {
-    useJoinDialog = true
-  }
   if (queryParams.address) {
     ui.connectDialog.address(queryParams.address)
   } else {
@@ -1094,8 +1088,11 @@ function translateEverything() {
   translatePiece('.connect-dialog.error-dialog .alternate-password', 'textcontent', {}, 'connectdialog.password');
   translatePiece('.connect-dialog.error-dialog .dialog-submit', 'attribute', {'name': 'value'}, 'connectdialog.error.retry');
   translatePiece('.connect-dialog.error-dialog .dialog-close', 'attribute', {'name': 'value'}, 'connectdialog.error.cancel');
+
   translatePiece('.join-dialog .dialog-header', 'textcontent', {}, 'joindialog.title');
   translatePiece('.join-dialog .dialog-submit', 'attribute', {'name': 'value'}, 'joindialog.connect');
+
+  translatePiece('#connection-info-dialog_title', 'textcontent', {}, 'connectinfo.title');
 }
 
 async function main() {
