@@ -11,8 +11,7 @@ pip3 install html5lib gpod eyeD3 youtube_dl
 add-apt-repository ppa:quiterss/quiterss
 sudo add-apt-repository ppa:mixxx/mixxxbetas
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --upgrade \
-gpodder \
-vlc vlc-plugin-access-extra vlc-plugin-svg
+gpodder
 
 # Install the following VLC addons
 # https://addons.videolan.org/p/1154095/

@@ -5,7 +5,8 @@ export DEBIAN_FRONTEND="noninteractive"
 apt-get clean
 apt-get update --fix-missing
 
-apt-get install -y --no-install-recommends --upgrade lubuntu-desktop
+apt-get install -y --upgrade lubuntu-desktop \
+gdm3-
 
 apt-get purge -y \
 anacron- \
@@ -23,30 +24,26 @@ ubuntu-release-upgrader-qt- \
 usb-creator-kde- usb-modeswitch- \
 whoopsie- apport- snapd- \
 wireless-tools- wpasupplicant- \
-xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra-
+xscreensaver- xscreensaver-data-extra- xscreensaver-gl- xscreensaver-gl-extra- \
+acpi-support- \
+avahi-daemon- \
+bluez- bluez-cups- \
+firefox- \
+fwupd- fwupd-signed- \
+hplip- \
+k3b- \
+laptop-detect- \
+libnss-mdns- \
+memtest86+- \
+noblenote- \
+partitionmanager- \
+pastebinit- \
+pcmciautils- \
+plasma-discover- \
+printer-driver-.*- \
+skanlite-
 
 apt-get autoremove -y
 
-apt-get install -y --no-install-recommends --upgrade \
-kmag \
-simplescreenrecorder \
-qtqr \
-locales \
-kdialog elementary-icon-theme \
-htop \
-ark \
-featherpad \
-falkon \
-qpdfview \
-lximage-qt \
-gnumeric gnumeric-plugins-extra gnumeric-doc \
-variety \
-linphone \
-gnome-clocks \
-persepolis aria2 \
-backintime-qt \
-muon \
-inkscape \
-gimp
 
 
