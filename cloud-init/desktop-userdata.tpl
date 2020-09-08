@@ -159,14 +159,17 @@ output=MumbleNullSink
 autoconnect=false
 startserver=false
 
+[privacy]
+hideos=true
+
 [ui]
 developermenu=true
 WindowLayout=2
 server=${GATEWAY_DOMAIN}
-username=YourDesktopInTheCloud
 showcontextmenuinmenubar=true
 themestyle=Dark
 stateintray=true
+usage=false
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF

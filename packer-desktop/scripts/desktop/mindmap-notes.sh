@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 apt-get install -y --upgrade \
-vym knotes kjots treeline basket \
+vym knotes kjots basket \
 focuswriter hunspell hunspell-tools hunspell-de-de

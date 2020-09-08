@@ -17,8 +17,23 @@ gpodder
 # https://addons.videolan.org/p/1154095/
 
 mkdir -p $HOME/.config/vlc
-cat << EOF >> $HOME/.config/vlc/vlcrc
+cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf
+[MainWindow]
+AdvToolbar="12;11;14;13;"
+FSCtoolbar="0-2;64;3;1;4;64;37;64;38;64;8;65;25;35-4;34;"
+InputToolbar="5-1;33;6-1;"
+MainToolbar1="64;38;65;"
+MainToolbar2="16-6;0-6;17-6;43-4;65-6;5-6;42-6;6-6;65-4;32-6;9;37;36-6;"
+QtStyle=System's default
+ToolbarPos=false
+adv-controls=0
+bgSize=@Size(100 30)
+pl-dock-status=true
+playlist-visible=true
+playlistSize=@Size(600 300)
+status-bar-visible=false
 EOF
+chown ubuntu -R $HOME/.config/vlc
 
 
 mkdir -p $HOME/gPodder
