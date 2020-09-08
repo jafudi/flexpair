@@ -48,6 +48,7 @@ export EMAIL_ADDRESS="socialnets@jafudi.com"
 export IMAP_HOST="s44.internetwerk.de"
 export IMAP_PASSWORD="JeedsEyruwiwez^"
 export MURMUR_PORT="64738"
+export MURMUR_PASSWORD="guacadmin"
 EXPAND_FOLDER="${PACKFOLDER}/builds"
 
 domain_vars='${SSL_DOMAIN},${SUB_DOMAIN_PREFIX},${REGISTERED_DOMAIN}'
