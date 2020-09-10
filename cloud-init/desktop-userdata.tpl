@@ -87,8 +87,9 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -R 6667:localhost:667 \
 -R 2222:localhost:22 \
 -R 4713:localhost:4713 \
--R 8000:localhost:8000 \
 -L ${MURMUR_PORT}:${GATEWAY_DOMAIN}:${MURMUR_PORT} \
+-L 25:${GATEWAY_DOMAIN}:25 \
+-L 143:${GATEWAY_DOMAIN}:143 \
 ubuntu@${GATEWAY_DOMAIN}
 Restart=always
 RestartSec=5s
@@ -153,7 +154,7 @@ framesperpacket=6
 jitterbuffer=5
 
 [pulseaudio]
-output=MumbleNullSink
+output=AudioConference
 
 [jack]
 autoconnect=false
@@ -219,7 +220,7 @@ app.updates.checkEnabled=false
 imap.auth.pass=${IMAP_PASSWORD}
 imap.auth.user=${EMAIL_ADDRESS}
 imap.capabilities.blacklist=
-imap.host=${IMAP_HOST}
+imap.host=localhost
 imap.method=TCP
 imap.needsNetwork=true
 imap.numberRefreshInterval=300
@@ -229,13 +230,13 @@ imap.startmode=ONLINE
 imap.starttls=true
 imapIdleRenewal=29
 msa.method=SMTP
-msa.smtp.auth=true
-msa.smtp.auth.reuseImapCredentials=true
+msa.smtp.auth=false
+msa.smtp.auth.reuseImapCredentials=false
 msa.smtp.auth.user=
 msa.smtp.burl=false
-msa.smtp.host=${IMAP_HOST}
-msa.smtp.port=587
-msa.smtp.starttls=true
+msa.smtp.host=localhost
+msa.smtp.port=25
+msa.smtp.starttls=false
 offline.cache=days
 offline.cache.numDays=30
 
@@ -244,7 +245,7 @@ enabled=true
 seconds=0
 
 [composer]
-imapSentName=Sent Messages
+imapSentName=Sent
 saveToImapEnabled=true
 
 [gui]

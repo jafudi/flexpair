@@ -119,6 +119,7 @@ services:
     depends_on:
       - guacamole
       - mumble
+      - imap
     networks:
       guacamole_net:
         ipv4_address: 172.18.0.7
@@ -140,3 +141,17 @@ services:
       - ./letsencrypt/certbot/logs:/var/log/letsencrypt/:rw
     entrypoint: "/bin/sh -c 'echo Doing nothing until told to.'"
     # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+  imap:
+    # Uncomment this for build image in local
+    # build:
+    #   context: .
+    image: antespi/docker-imap-devel
+    container_name: imap_container
+    ports:
+    - "25:25"
+    - "143:143"
+    environment:
+    - MAILNAME=${SSL_DOMAIN}
+    - MAIL_ADDRESS=mail@${SSL_DOMAIN}
+    - MAIL_PASS=${IMAP_PASSWORD}

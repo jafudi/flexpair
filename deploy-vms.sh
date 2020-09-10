@@ -44,8 +44,7 @@ do
 done
 
 export SSL_DOMAIN=${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}
-export EMAIL_ADDRESS="socialnets@jafudi.com"
-export IMAP_HOST="s44.internetwerk.de"
+export EMAIL_ADDRESS="mail@${SSL_DOMAIN}"
 export IMAP_PASSWORD="JeedsEyruwiwez^"
 export MURMUR_PORT="64738"
 export MURMUR_PASSWORD="guacadmin"
@@ -64,7 +63,7 @@ MURMUR_CONF="packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config"
 envsubst ${domain_vars},${murmur_vars} < "${MURMUR_CONF}/murmur.tpl.ini" > "${MURMUR_CONF}/murmur.ini"
 
 DOCKER_COMPOSE="packer-desktop/vartmp-uploads/gateway/guacamole"
-envsubst '${MURMUR_PORT}' < "${DOCKER_COMPOSE}/docker-compose.tpl.yml" > "${DOCKER_COMPOSE}/docker-compose.yml"
+envsubst ${domain_vars},${email_vars},${murmur_vars} < "${DOCKER_COMPOSE}/docker-compose.tpl.yml" > "${DOCKER_COMPOSE}/docker-compose.yml"
 
 TARGET="${PACKFOLDER}/oracle-cloud-free-setup.json"
 packer validate ${TARGET}  || exit 1

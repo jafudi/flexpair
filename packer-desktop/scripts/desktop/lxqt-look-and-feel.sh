@@ -18,22 +18,6 @@ EOF
 chmod +x $HOME/Desktop/trash.desktop
 chown ubuntu $HOME/Desktop/trash.desktop
 
-cat << EOF > $HOME/Desktop/home.desktop
-[Desktop Entry]
-Type=Application
-Icon=folder_home2
-Name=Home Folder
-Name[de]=Eigene Dateien
-Comment=open home folder
-Categories=FileManager;Utility;Core;GTK;
-Exec=pcmanfm-qt /home/ubuntu
-StartupNotify=true
-Terminal=false
-MimeType=x-directory/normal;inode/directory;
-EOF
-chmod +x $HOME/Desktop/home.desktop
-chown ubuntu $HOME/Desktop/home.desktop
-
 mkdir -p $HOME/.config/lxqt
 cat << EOF > $HOME/.config/lxqt/panel.conf
 [General]
