@@ -87,9 +87,9 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -R 6667:localhost:667 \
 -R 2222:localhost:22 \
 -R 4713:localhost:4713 \
--L ${MURMUR_PORT}:${GATEWAY_DOMAIN}:${MURMUR_PORT} \
--L 25:${GATEWAY_DOMAIN}:25 \
--L 143:${GATEWAY_DOMAIN}:143 \
+-L ${MURMUR_PORT}:172.18.0.1:${MURMUR_PORT} \
+-L 25:172.18.0.1:25 \
+-L 143:172.18.0.1:143 \
 ubuntu@${GATEWAY_DOMAIN}
 Restart=always
 RestartSec=5s

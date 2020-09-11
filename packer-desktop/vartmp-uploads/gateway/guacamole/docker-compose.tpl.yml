@@ -119,7 +119,6 @@ services:
     depends_on:
       - guacamole
       - mumble
-      - imap
     networks:
       guacamole_net:
         ipv4_address: 172.18.0.7
@@ -146,12 +145,16 @@ services:
     # Uncomment this for build image in local
     # build:
     #   context: .
-    image: antespi/docker-imap-devel
+    image: jafudi/mini-mail
     container_name: imap_container
+    networks:
+      guacamole_net:
+        ipv4_address: 172.18.0.9
     ports:
     - "25:25"
     - "143:143"
     environment:
     - MAILNAME=${SSL_DOMAIN}
-    - MAIL_ADDRESS=mail@${SSL_DOMAIN}
+    - MAIL_ADDRESS=${EMAIL_ADDRESS}
     - MAIL_PASS=${IMAP_PASSWORD}
+

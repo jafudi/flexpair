@@ -47,7 +47,11 @@ done
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
 chown ubuntu -R /home/ubuntu # handing over home folder to user
 
-# Provision Guacamole stack ########################################
+# Start mail server ################################################
+
+docker-compose up -d imap
+
+# Provision communication stack ####################################
 
 domain=${SSL_DOMAIN}
 export GUACAMOLE_HOME=/var/tmp/guacamole
