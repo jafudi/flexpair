@@ -64,6 +64,7 @@ Data privacy, intellectual property and saving the climate all at the same time 
 
 # Unique Selling Point(s)
 
+- receive email on project specific email account
 - PaaS between Saas and IaaS
 - desktop sharing done right
 - persistent storage of your docs
