@@ -11,6 +11,7 @@ RUN set -x; \
     && echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         postfix \
+        libsasl2-2 libsasl2-modules \
         dovecot-core \
         dovecot-imapd \
         dovecot-lmtpd \

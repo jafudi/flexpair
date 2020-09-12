@@ -82,7 +82,7 @@ _log "Docker entrypoint start"
 
 if [ -n "$MAILNAME" ]; then
     echo $MAILNAME > /etc/mailname;
-    /usr/sbin/postconf -e mydomain=$MAILNAME
+    /usr/sbin/postconf -e mydomain="$MAILNAME"
     if ! grep -q "$MAILNAME" /etc/postfix/vhost; then
         echo "$MAILNAME" >> /etc/postfix/vhost
     fi
@@ -90,23 +90,42 @@ if [ -n "$MAILNAME" ]; then
 fi
 
 if [ -n "$HOSTNAME" ]; then
-    /usr/sbin/postconf -e myhostname=$HOSTNAME
+    /usr/sbin/postconf -e myhostname="$HOSTNAME"
 fi
 
-/usr/sbin/postconf -e mynetworks="172.18.0.0/24"
-/usr/sbin/postconf -e inet_interfaces=all
-/usr/sbin/postconf -e virtual_maps='hash:/etc/postfix/virtual'
-/usr/sbin/postconf -e virtual_transport=lmtp:unix:private/dovecot-lmtp
-/usr/sbin/postconf -e mailbox_transport=lmtp:unix:private/dovecot-lmtp
-/usr/sbin/postconf -e virtual_mailbox_domains=/etc/postfix/vhost
-/usr/sbin/postconf -e virtual_mailbox_maps=hash:/etc/postfix/vmailbox
+/usr/sbin/postconf -e mynetworks='172.18.0.0/24'
+/usr/sbin/postconf -e inet_interfaces='all'
+
+# https://docs.cloud.oracle.com/de-de/iaas/Content/Email/Reference/postfix.htm
+/usr/sbin/postconf -e relayhost='smtp.email.eu-frankfurt-1.oci.oraclecloud.com:25'
+/usr/sbin/postconf -e smtp_tls_security_level='may'
+/usr/sbin/postconf -e smtp_sasl_auth_enable='yes'
+/usr/sbin/postconf -e smtp_sasl_password_maps='hash:/etc/postfix/sasl_passwd'
+/usr/sbin/postconf -e smtp_sasl_security_options='noanonymous'
+/usr/sbin/postconf -e smtpd_sasl_type='cyrus'
+/usr/sbin/postconf -e smtpd_recipient_restrictions='permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination'
+/usr/sbin/postconf -e mydestination='localhost'
+/usr/sbin/postconf -e virtual_maps='hash:/etc/postfix/virtual, regexp:/etc/postfix/virtual_regexp'
+/usr/sbin/postconf -e sender_canonical_maps='regexp:/etc/postfix/sender_canonical_regexp'
+/usr/sbin/postconf -e virtual_transport='lmtp:unix:private/dovecot-lmtp'
+/usr/sbin/postconf -e mailbox_transport='lmtp:unix:private/dovecot-lmtp'
+/usr/sbin/postconf -e virtual_mailbox_domains='/etc/postfix/vhost'
+/usr/sbin/postconf -e virtual_mailbox_maps='hash:/etc/postfix/vmailbox'
 /usr/sbin/postconf compatibility_level=2
 
 # Create mail account
 _account_add "$MAIL_ADDRESS" "$MAIL_PASS"
 
+# Force to send all emails to debug email address, no email to outside
+# _add_line "$MAIL_ADDRESS" "/.+@.+/ $MAIL_ADDRESS" /etc/postfix/virtual_regexp
+
+/usr/sbin/postmap /etc/postfix/virtual_regexp
 /usr/sbin/postmap /etc/postfix/virtual
 /usr/sbin/postmap /etc/postfix/vmailbox
+/usr/sbin/postmap /etc/postfix/sender_canonical_regexp
+
+chmod 600 /etc/postfix/sasl_passwd
+/usr/sbin/postmap hash:/etc/postfix/sasl_passwd
 
 # Configuring Dovecot
 cp -a /usr/share/dovecot/protocols.d /etc/dovecot/
