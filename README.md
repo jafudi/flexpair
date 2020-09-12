@@ -10,6 +10,7 @@ Existing virtual desktop solutions are all closed-source offers to the business 
 - [V2 Cloud](https://v2cloud.com) testen!
 - [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
 - [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
+- [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
 
 Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
 
@@ -64,6 +65,7 @@ Data privacy, intellectual property and saving the climate all at the same time 
 
 # Unique Selling Point(s)
 
+- receive email on project specific email account
 - PaaS between Saas and IaaS
 - desktop sharing done right
 - persistent storage of your docs
