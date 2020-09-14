@@ -58,6 +58,8 @@ libreoffice-base- libreoffice-draw- \
 kdeconnect- \
 snapd- \
 acpi-support- \
-screengrab-
+screengrab- \
+qps- \
+qlipper-
 
 apt-get autoremove -y

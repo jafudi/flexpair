@@ -84,9 +84,11 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -o StrictHostKeyChecking=no \
 -i /var/tmp/ssh/vm_key \
 -R 5900:localhost:5900 \
+-R 4713:localhost:4713 \
 -R 6667:localhost:667 \
 -R 2222:localhost:22 \
--R 4713:localhost:4713 \
+-R 5060:localhost:5060 \
+-R 7078:localhost:7078 \
 -L ${MURMUR_PORT}:172.18.0.1:${MURMUR_PORT} \
 -L 25:172.18.0.1:25 \
 -L 143:172.18.0.1:143 \
