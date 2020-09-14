@@ -117,6 +117,7 @@ cat << EOF > /home/ubuntu/.config/Mumble/Mumble.conf
 echomulti=false
 headphone=true
 input=PulseAudio
+loudness=20000
 noisesupress=0
 output=PulseAudio
 outputdelay=10
