@@ -5,9 +5,6 @@ import chunker from 'stream-chunker'
 import Resampler from 'libsamplerate.js'
 import CodecsBrowser from 'mumble-client-codecs-browser'
 
-// Polyfill nested webworkers for https://bugs.chromium.org/p/chromium/issues/detail?id=31666
-import 'subworkers'
-
   let sampleRate
   let nextClientId = 1
   let nextVoiceId = 1
