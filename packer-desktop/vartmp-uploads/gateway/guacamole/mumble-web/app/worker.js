@@ -272,5 +272,3 @@ import CodecsBrowser from 'mumble-client-codecs-browser'
       console.error('exception during message event', ev.data, ex)
     }
   })
-
-  export default null
