@@ -168,7 +168,7 @@ import CodecsBrowser from 'mumble-client-codecs-browser'
     pushProp(id, user, 'channel', (it) => it ? it.id : it)
     let props = [
       'uniqueId', 'username', 'mute', 'deaf', 'suppress', 'selfMute', 'selfDeaf',
-      'texture', 'textureHash', 'comment'
+      'texture', 'textureHash'
     ]
     for (let prop of props) {
       pushProp(id, user, prop)

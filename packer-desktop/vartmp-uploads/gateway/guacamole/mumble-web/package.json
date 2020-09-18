@@ -51,7 +51,6 @@
     "stream-chunker": "^1.2.8",
     "to-arraybuffer": "^1.0.1",
     "transform-loader": "^0.2.4",
-    "voice-activity-detection": "johni0702/voice-activity-detection#9f8bd90",
     "web-audio-buffer-queue": "^1.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",

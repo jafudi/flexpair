@@ -9,7 +9,7 @@ import ko from 'knockout'
 import _dompurify from 'dompurify'
 import keyboardjs from 'keyboardjs'
 
-import { ContinuousVoiceHandler, PushToTalkVoiceHandler, VADVoiceHandler, initVoice } from './voice'
+import { ContinuousVoiceHandler, PushToTalkVoiceHandler, initVoice } from './voice'
 import {initialize as localizationInitialize, translate} from './loc';
 
 const dompurify = _dompurify(window)
@@ -20,33 +20,7 @@ function sanitize (html) {
   })
 }
 
-function openContextMenu (event, contextMenu, target) {
-  contextMenu.posX(event.clientX)
-  contextMenu.posY(event.clientY)
-  contextMenu.target(target)
-
-  const closeListener = (event) => {
-    // Always close, no matter where they clicked
-    setTimeout(() => { // delay to allow click to be actually processed
-      contextMenu.target(null)
-      unregister()
-    })
-  }
-  const unregister = () => document.removeEventListener('click', closeListener)
-  document.addEventListener('click', closeListener)
-
-  event.stopPropagation()
-  event.preventDefault()
-}
-
 // GUI
-
-function ContextMenu () {
-  var self = this
-  self.posX = ko.observable()
-  self.posY = ko.observable()
-  self.target = ko.observable()
-}
 
 function ConnectDialog () {
   var self = this
@@ -144,23 +118,11 @@ class ConnectionInfo {
   }
 }
 
-function CommentDialog () {
-  var self = this
-  self.visible = ko.observable(false)
-  self.show = function () {
-    self.visible(true)
-  }
-}
-
 class SettingsDialog {
   constructor (settings) {
     this.voiceMode = ko.observable(settings.voiceMode)
     this.pttKey = ko.observable(settings.pttKey)
     this.pttKeyDisplay = ko.observable(settings.pttKey)
-    this.vadLevel = ko.observable(settings.vadLevel)
-    this.testVadLevel = ko.observable(0)
-    this.testVadActive = ko.observable(false)
-    this.showAvatars = ko.observable(settings.showAvatars())
     this.userCountInChannelName = ko.observable(settings.userCountInChannelName())
     // Need to wrap this in a pureComputed to make sure it's always numeric
     let audioBitrate = ko.observable(settings.audioBitrate)
@@ -173,36 +135,17 @@ class SettingsDialog {
       read: () => this.samplesPerPacket() / 48,
       write: (value) => this.samplesPerPacket(value * 48)
     })
-
-    this._setupTestVad()
-    this.vadLevel.subscribe(() => this._setupTestVad())
-  }
-
-  _setupTestVad () {
-    if (this._testVad) {
-      this._testVad.end()
-    }
-    let dummySettings = new Settings({})
-    this.applyTo(dummySettings)
-    this._testVad = new VADVoiceHandler(null, dummySettings)
-    this._testVad.on('started_talking', () => this.testVadActive(true))
-                 .on('stopped_talking', () => this.testVadActive(false))
-                 .on('level', level => this.testVadLevel(level))
-    testVoiceHandler = this._testVad
   }
 
   applyTo (settings) {
     settings.voiceMode = this.voiceMode()
     settings.pttKey = this.pttKey()
-    settings.vadLevel = this.vadLevel()
-    settings.showAvatars(this.showAvatars())
     settings.userCountInChannelName(this.userCountInChannelName())
     settings.audioBitrate = this.audioBitrate()
     settings.samplesPerPacket = this.samplesPerPacket()
   }
 
   end () {
-    this._testVad.end()
     testVoiceHandler = null
   }
 
@@ -256,9 +199,7 @@ class Settings {
     const load = key => window.localStorage.getItem('mumble.' + key)
     this.voiceMode = load('voiceMode') || defaults.voiceMode
     this.pttKey = load('pttKey') || defaults.pttKey
-    this.vadLevel = load('vadLevel') || defaults.vadLevel
     this.toolbarVertical = load('toolbarVertical') || defaults.toolbarVertical
-    this.showAvatars = ko.observable(load('showAvatars') || defaults.showAvatars)
     this.userCountInChannelName = ko.observable(load('userCountInChannelName') || defaults.userCountInChannelName)
     this.audioBitrate = Number(load('audioBitrate')) || defaults.audioBitrate
     this.samplesPerPacket = Number(load('samplesPerPacket')) || defaults.samplesPerPacket
@@ -268,9 +209,7 @@ class Settings {
     const save = (key, val) => window.localStorage.setItem('mumble.' + key, val)
     save('voiceMode', this.voiceMode)
     save('pttKey', this.pttKey)
-    save('vadLevel', this.vadLevel)
     save('toolbarVertical', this.toolbarVertical)
-    save('showAvatars', this.showAvatars())
     save('userCountInChannelName', this.userCountInChannelName())
     save('audioBitrate', this.audioBitrate)
     save('samplesPerPacket', this.samplesPerPacket)
@@ -283,20 +222,15 @@ class GlobalBindings {
     this.settings = new Settings(config.settings)
     this.connector = new WorkerBasedMumbleConnector()
     this.client = null
-    this.userContextMenu = new ContextMenu()
-    this.channelContextMenu = new ContextMenu()
     this.connectDialog = new ConnectDialog()
     this.connectErrorDialog = new ConnectErrorDialog(this.connectDialog)
     this.connectionInfo = new ConnectionInfo(this)
-    this.commentDialog = new CommentDialog()
     this.settingsDialog = ko.observable()
-    this.minimalView = ko.observable(false)
     this.log = ko.observableArray()
     this.remoteHost = ko.observable()
     this.remotePort = ko.observable()
     this.thisUser = ko.observable()
     this.root = ko.observable()
-    this.avatarView = ko.observable()
     this.messageBox = ko.observable('')
     this.toolbarHorizontal = ko.observable(!this.settings.toolbarVertical)
     this.selected = ko.observable()
@@ -308,12 +242,6 @@ class GlobalBindings {
         voiceHandler.setMute(mute)
       }
     })
-
-    this.toggleToolbarOrientation = () => {
-      this.toolbarHorizontal(!this.toolbarHorizontal())
-      this.settings.toolbarVertical = !this.toolbarHorizontal()
-      this.settings.save()
-    }
 
     this.select = element => {
       this.selected(element)
@@ -454,8 +382,7 @@ class GlobalBindings {
         selfMute: 'selfMute',
         selfDeaf: 'selfDeaf',
         texture: 'rawTexture',
-        textureHash: 'textureHash',
-        comment: 'comment'
+        textureHash: 'textureHash'
       }
       var ui = user.__ui = {
         model: user,
@@ -467,60 +394,8 @@ class GlobalBindings {
         if (!raw || raw.offset >= raw.limit) return null
         return 'data:image/*;base64,' + ByteBuffer.wrap(raw).toBase64()
       })
-      ui.show_avatar = () => {
-        let setting = this.settings.showAvatars()
-        switch (setting) {
-          case 'always':
-            break
-          case 'own_channel':
-            if (this.thisUser().channel() !== ui.channel()) return false
-            break
-          case 'linked_channel':
-            if (!ui.channel().linked()) return false
-            break
-          case 'minimal_only':
-            if (!this.minimalView()) return false
-            if (this.thisUser().channel() !== ui.channel()) return false
-            break
-          case 'never':
-          default: return false
-        }
-        if (!ui.texture()) {
-          if (ui.textureHash()) {
-            // The user has an avatar set but it's of sufficient size to not be
-            // included by default, so we need to fetch it explicitly now.
-            // mumble-client should make sure we only send one request per hash
-            user.requestTexture()
-          }
-          return false
-        }
-        return true
-      }
       ui.openContextMenu = (_, event) => openContextMenu(event, this.userContextMenu, ui)
-      ui.canChangeMute = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canChangeDeafen = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canChangePrioritySpeaker = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canLocalMute = () => {
-        return false // TODO implement local mute
-        // return this.thisUser() !== ui
-      }
-      ui.canIgnoreMessages = () => {
-        return false // TODO implement ignore messages
-        // return this.thisUser() !== ui
-      }
-      ui.canChangeComment = () => {
-        return false // TODO implement changing of comments
-        // return this.thisUser() === ui // TODO check for perms
-      }
-      ui.canChangeAvatar = () => {
-        return this.thisUser() === ui // TODO check for perms
-      }
+
       ui.toggleMute = () => {
         if (ui.selfMute()) {
           this.requestUnmute(ui)
@@ -534,24 +409,6 @@ class GlobalBindings {
         } else {
           this.requestDeaf(ui)
         }
-      }
-      ui.viewAvatar = () => {
-        this.avatarView(ui.texture())
-      }
-      ui.changeAvatar = () => {
-        let input = document.createElement('input')
-        input.type = 'file'
-        input.addEventListener('change', () => {
-          let reader = new window.FileReader()
-          reader.onload = () => {
-            this.client.setSelfTexture(reader.result)
-          }
-          reader.readAsArrayBuffer(input.files[0])
-        })
-        input.click()
-      }
-      ui.removeAvatar = () => {
-        user.clearTexture()
       }
       Object.entries(simpleProperties).forEach(key => {
         ui[key[1]] = ko.observable(user[key[0]])
@@ -579,8 +436,6 @@ class GlobalBindings {
           this._updateLinks()
         }
         if (properties.textureHash !== undefined) {
-          // Invalidate avatar texture when its hash has changed
-          // If the avatar is still visible, this will trigger a fetch of the new one.
           ui.rawTexture(null)
         }
       }).on('remove', () => {
@@ -629,27 +484,6 @@ class GlobalBindings {
         return ui.channels().reduce((acc, c) => acc + c.userCount(), ui.users().length)
       }
       ui.openContextMenu = (_, event) => openContextMenu(event, this.channelContextMenu, ui)
-      ui.canJoin = () => {
-        return true // TODO check for perms
-      }
-      ui.canAdd = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canEdit = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canRemove = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canLink = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canUnlink = () => {
-        return false // TODO check for perms and implement
-      }
-      ui.canSendMessage = () => {
-        return false // TODO check for perms and implement
-      }
       Object.entries(simpleProperties).forEach(key => {
         ui[key[1]] = ko.observable(channel[key[0]])
       })
@@ -708,8 +542,6 @@ class GlobalBindings {
         voiceHandler = new ContinuousVoiceHandler(this.client, this.settings)
       } else if (mode === 'ptt') {
         voiceHandler = new PushToTalkVoiceHandler(this.client, this.settings)
-      } else if (mode === 'vad') {
-        voiceHandler = new VADVoiceHandler(this.client, this.settings)
       } else {
         log(translate('logentry.unknown_voice_mode'), mode)
         return
@@ -784,32 +616,6 @@ class GlobalBindings {
             user: target
           })
         }
-      }
-    }
-
-    this.requestMove = (user, channel) => {
-      if (this.connected()) {
-        user.model.setChannel(channel.model)
-
-        let currentUrl = url.parse(document.location.href, true)
-        // delete search param so that query one can be taken into account
-        delete currentUrl.search
-
-        // get full channel path
-        if( channel.parent() ){ // in case this channel is not Root
-          let parent = channel.parent()
-          currentUrl.query.channelName = channel.name()
-          while( parent.parent() ){
-            currentUrl.query.channelName = parent.name() + '/' + currentUrl.query.channelName
-            parent = parent.parent()
-          }
-        } else {
-          // there is no channelName as we moved to Root
-          delete currentUrl.query.channelName
-        }
-
-        // reflect this change in URL
-        window.history.pushState(null, channel.name(), url.format(currentUrl))
       }
     }
 
@@ -905,15 +711,6 @@ class GlobalBindings {
       var homepage = require('../package.json').homepage
       window.open(homepage, '_blank').focus()
     }
-
-    this.updateSize = () => {
-      this.minimalView(window.innerWidth < 320)
-      if (this.minimalView()) {
-        this.toolbarHorizontal(window.innerWidth < window.innerHeight)
-      } else {
-        this.toolbarHorizontal(!this.settings.toolbarVertical)
-      }
-    }
   }
 }
 var ui = new GlobalBindings(window.mumbleWebConfig)
@@ -953,38 +750,8 @@ function initializeUI () {
   if (queryParams.channelName) {
     ui.connectDialog.channelName(queryParams.channelName)
   }
-  if (queryParams.avatarurl) {
-    // Download the avatar and upload it to the mumble server when connected
-    let url = queryParams.avatarurl
-    console.log('Fetching avatar from', url)
-    let req = new window.XMLHttpRequest()
-    req.open('GET', url, true)
-    req.responseType = 'arraybuffer'
-    req.onload = () => {
-      let upload = (avatar) => {
-        if (req.response) {
-          console.log('Uploading user avatar to server')
-          ui.client.setSelfTexture(req.response)
-        }
-      }
-      // On any future connections
-      ui.thisUser.subscribe((thisUser) => {
-        if (thisUser) {
-          upload()
-        }
-      })
-      // And the current one (if already connected)
-      if (ui.thisUser()) {
-        upload()
-      }
-    }
-    req.send()
-  }
   ui.connectDialog.joinOnly(useJoinDialog)
   ko.applyBindings(ui)
-
-  window.onresize = () => ui.updateSize()
-  ui.updateSize()
 }
 
 function log () {
@@ -1012,18 +779,15 @@ function compareUsers (u1, u2) {
 
 function userToState () {
   var flags = []
-  // TODO: Friend
   if (this.uid()) {
     flags.push('Authenticated')
   }
-  // TODO: Priority Speaker, Recording
   if (this.mute()) {
     flags.push('Muted (server)')
   }
   if (this.deaf()) {
     flags.push('Deafened (server)')
   }
-  // TODO: Local Ignore (Text messages), Local Mute
   if (this.selfMute()) {
     flags.push('Muted (self)')
   }

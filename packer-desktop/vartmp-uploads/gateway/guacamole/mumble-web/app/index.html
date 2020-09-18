@@ -215,18 +215,6 @@
                       <option id="settings-dialog_ptt" value="ptt">Push To Talk</option>
                   </td>
                 </tr>
-                <tr data-bind="visible: voiceMode() == 'vad'">
-                  <td colspan="2">
-                    <div class="mic-volume-container">
-                      <div class="mic-volume" data-bind="style: {
-                          width: testVadLevel()*100 + '%',
-                          background: testVadActive() ? 'green' : 'red'
-                        }"></div>
-                    </div>
-                    <input type="range" min="0" max="1" step="0.01"
-                           data-bind="value: vadLevel">
-                  </td>
-                </tr>
                 <tr data-bind="visible: voiceMode() == 'ptt'">
                   <td id="settings-dialog_ptt_key">PTT Key</td>
                   <td>
