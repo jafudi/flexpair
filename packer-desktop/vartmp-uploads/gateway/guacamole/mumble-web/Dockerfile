@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:20200626
 
 COPY ./ /home/node
 
