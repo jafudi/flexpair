@@ -55,7 +55,7 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "worker-loader": "^2.0.0",
-    "webrtc-adapter": "^2.0.2"
+    "webrtc-adapter": "^7.7.0"
   },
   "optionalDependencies": {}
 }
