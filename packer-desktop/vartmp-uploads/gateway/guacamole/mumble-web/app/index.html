@@ -48,7 +48,7 @@
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.password">
                   <td id="connect-dialog_input_password">Password</td>
-                  <td><input id="password" type="password" data-bind="value: password"></td>
+                  <td><input id="password" type="password" autocomplete="off" data-bind="value: password"></td>
                 </tr>
                 <tr data-bind="if: $root.config.connectDialog.token">
                   <td id="connect-dialog_input_tokens">Tokens</td>
@@ -154,7 +154,7 @@
                 </tr>
                 <tr data-bind="if: type() == 3 || type() == 4">
                   <td class="alternate-password">Password</td>
-                  <td><input id="password" type="password" data-bind="value: password" required></td>
+                  <td><input id="password" type="password" autocomplete="off" data-bind="value: password" required></td>
                 </tr>
             </table>
             <div class="dialog-footer">
