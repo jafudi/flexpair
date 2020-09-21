@@ -4,6 +4,7 @@ import toArrayBuffer from 'to-arraybuffer'
 import chunker from 'stream-chunker'
 import Resampler from 'libsamplerate.js'
 import CodecsBrowser from 'mumble-client-codecs-browser'
+import 'subworkers'
 
   let sampleRate
   let nextClientId = 1
