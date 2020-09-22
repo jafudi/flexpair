@@ -89,7 +89,7 @@ services:
       - TZ=UTC
 
   mumble:
-    image: jafudi/mumble-web
+    image: jafudi/mumble-web-lite:latest
     networks:
       guacamole_net:
         ipv4_address: 172.18.0.6
