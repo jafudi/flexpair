@@ -100,8 +100,6 @@ services:
       - murmur
     environment:
       - MUMBLE_SERVER=murmur:${MURMUR_PORT}
-    volumes:
-      - ./mumble-web/app/config.local.js:/home/node/app/config.local.js:ro
 
 #  To debug nginx replace '&& nginx -g 'daemon off' with '&& nginx-debug -g 'daemon off'
   nginx:
