@@ -57,8 +57,14 @@ variable "images" {
   }
 }
 
+resource "oci_identity_compartment" "dev_compartment" {
+    compartment_id = var.tenancy_ocid
+    description = "Development on free tier resources"
+    name = "FreeDev"
+}
+
 data "oci_identity_availability_domain" "ad" {
-  compartment_id = var.compartment_ocid
+  compartment_id = oci_identity_compartment.dev_compartment.name
   ad_number      = var.ad_region_mapping[var.region]
 }
 
