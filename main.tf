@@ -60,7 +60,7 @@ variable "images" {
 resource "oci_identity_compartment" "dev_compartment" {
     compartment_id = var.tenancy_ocid
     description = "Development on free tier resources"
-    name = "FreeDev"
+    name = "FreeDevCompartment"
 }
 
 data "oci_identity_availability_domain" "ad" {
