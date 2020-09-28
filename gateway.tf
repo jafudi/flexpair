@@ -38,6 +38,46 @@ resource "oci_core_security_list" "gateway_security_list" {
       min = "80"
     }
   }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "443"
+      min = "443"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "64738"
+      min = "64738"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "17"
+    source   = "0.0.0.0/0"
+
+    udp_options {
+      max = "64738"
+      min = "64738"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "25"
+      min = "25"
+    }
+  }
 }
 
 resource "oci_core_instance" "gateway" {

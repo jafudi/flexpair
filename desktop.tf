@@ -28,6 +28,26 @@ resource "oci_core_security_list" "desktop_security_list" {
       min = "22"
     }
   }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "5060"
+      min = "5060"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "7078"
+      min = "7078"
+    }
+  }
 }
 
 resource "oci_core_instance" "desktop" {
