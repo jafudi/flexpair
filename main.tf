@@ -40,7 +40,7 @@ variable "ad_region_mapping" {
   default = {
     # The only availability domain in Frankfurt which allows for creating Micro instance
     # This could change over time!!!
-    eu-frankfurt-1 = 2
+    eu-frankfurt-1 = "HMsA:EU-FRANKFURT-1-AD-2"
   }
 }
 
@@ -55,7 +55,7 @@ variable "images" {
 
 data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
-  ad_number      = var.ad_region_mapping[var.region]
+  id             = var.ad_region_mapping[var.region]
 }
 
 resource "oci_core_virtual_network" "test_vcn" {
