@@ -148,7 +148,7 @@ resource "oci_core_security_list" "test_security_list" {
   }
 }
 
-resource "oci_core_instance" "free_instance0" {
+resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.dev_compartment.id
   display_name        = "freeInstance0"
@@ -171,7 +171,7 @@ resource "oci_core_instance" "free_instance0" {
   }
 }
 
-resource "oci_core_instance" "free_instance1" {
+resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.dev_compartment.id
   display_name        = "freeInstance1"
@@ -194,25 +194,11 @@ resource "oci_core_instance" "free_instance1" {
   }
 }
 
-data "oci_core_vnic_attachments" "app_vnics" {
-  compartment_id      = oci_identity_compartment.dev_compartment.id
-  availability_domain = data.oci_identity_availability_domain.ad.name
-  instance_id         = oci_core_instance.free_instance0.id
-}
-
-data "oci_core_vnic" "app_vnic" {
-  vnic_id = data.oci_core_vnic_attachments.app_vnics.vnic_attachments[0]["vnic_id"]
-}
-
-data "oci_core_images" "test_images" {
-  #Required
-  compartment_id = oci_identity_compartment.dev_compartment.id
-
-  #Optional
-  shape = "VM.Standard.E2.1.Micro"
+data "oci_core_instance" "gateway" {
+    instance_id = oci_core_instance.gateway.id
 }
 
 output "app" {
-  value = "http://${data.oci_core_vnic.app_vnic.public_ip_address}"
+  value = "http://${data.oci_core_instance.gateway.public_ip}"
 }
 
