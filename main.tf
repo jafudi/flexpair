@@ -151,14 +151,14 @@ resource "oci_core_security_list" "test_security_list" {
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.dev_compartment.id
-  display_name        = "freeInstance0"
+  display_name        = "gateway"
   shape               = "VM.Standard.E2.1.Micro"
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.test_subnet.id
-    display_name     = "primaryvnic"
+    display_name     = "eth0"
     assign_public_ip = true
-    hostname_label   = "freeinstance0"
+    hostname_label   = "gateway"
   }
 
   source_details {
@@ -174,14 +174,14 @@ resource "oci_core_instance" "gateway" {
 resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.dev_compartment.id
-  display_name        = "freeInstance1"
+  display_name        = "desktop"
   shape               = "VM.Standard.E2.1.Micro"
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.test_subnet.id
-    display_name     = "primaryvnic"
+    display_name     = "eth0"
     assign_public_ip = true
-    hostname_label   = "freeinstance1"
+    hostname_label   = "desktop"
   }
 
   source_details {
