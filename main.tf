@@ -68,10 +68,21 @@ resource "oci_core_virtual_network" "test_vcn" {
   dns_label      = "testvcn"
 }
 
-resource "oci_core_subnet" "test_subnet" {
+resource "oci_core_subnet" "gateway_subnet" {
+  cidr_block        = "10.1.10.0/24"
+  display_name      = "gateway_subnet"
+  dns_label         = "gateway-subnet"
+  security_list_ids = [oci_core_security_list.test_security_list.id]
+  compartment_id    = oci_identity_compartment.dev_compartment.id
+  vcn_id            = oci_core_virtual_network.test_vcn.id
+  route_table_id    = oci_core_route_table.test_route_table.id
+  dhcp_options_id   = oci_core_virtual_network.test_vcn.default_dhcp_options_id
+}
+
+resource "oci_core_subnet" "desktop_subnet" {
   cidr_block        = "10.1.20.0/24"
-  display_name      = "testSubnet"
-  dns_label         = "testsubnet"
+  display_name      = "desktop_subnet"
+  dns_label         = "desktop-subnet"
   security_list_ids = [oci_core_security_list.test_security_list.id]
   compartment_id    = oci_identity_compartment.dev_compartment.id
   vcn_id            = oci_core_virtual_network.test_vcn.id
@@ -155,7 +166,7 @@ resource "oci_core_instance" "gateway" {
   shape               = "VM.Standard.E2.1.Micro"
 
   create_vnic_details {
-    subnet_id        = oci_core_subnet.test_subnet.id
+    subnet_id        = oci_core_subnet.gateway_subnet.id
     display_name     = "eth0"
     assign_public_ip = true
     hostname_label   = "gateway"
@@ -178,7 +189,7 @@ resource "oci_core_instance" "desktop" {
   shape               = "VM.Standard.E2.1.Micro"
 
   create_vnic_details {
-    subnet_id        = oci_core_subnet.test_subnet.id
+    subnet_id        = oci_core_subnet.desktop_subnet.id
     display_name     = "eth0"
     assign_public_ip = true
     hostname_label   = "desktop"
@@ -198,7 +209,7 @@ data "oci_core_instance" "gateway" {
     instance_id = oci_core_instance.gateway.id
 }
 
-output "app" {
+output "gateway" {
   value = "http://${data.oci_core_instance.gateway.public_ip}"
 }
 
