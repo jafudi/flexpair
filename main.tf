@@ -37,6 +37,7 @@ variable "ad_region_mapping" {
     us-phoenix-1 = 2
     us-ashburn-1 = 3
     us-seattle-1 = 2
+    eu-frankfurt-1 = 3
   }
 }
 
