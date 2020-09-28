@@ -4,6 +4,9 @@
 variable "tenancy_ocid" {
 }
 
+variable "compartment_ocid" {
+}
+
 variable "user_ocid" {
 }
 
@@ -55,7 +58,7 @@ variable "images" {
 }
 
 data "oci_identity_availability_domain" "ad" {
-  compartment_id = var.tenancy_ocid
+  compartment_id = var.compartment_ocid
   ad_number      = var.ad_region_mapping[var.region]
 }
 
