@@ -40,7 +40,7 @@ variable "ad_region_mapping" {
   default = {
     # The only availability domain in Frankfurt which allows for creating Micro instance
     # This could change over time!!!
-    eu-frankfurt-1 = "HMsA:EU-FRANKFURT-1-AD-2"
+    eu-frankfurt-1 = 2
   }
 }
 
@@ -55,7 +55,7 @@ variable "images" {
 
 data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
-  id             = var.ad_region_mapping[var.region]
+  ad_number      = var.ad_region_mapping[var.region]
 }
 
 resource "oci_core_virtual_network" "test_vcn" {
@@ -146,7 +146,7 @@ resource "oci_core_security_list" "test_security_list" {
 }
 
 resource "oci_core_instance" "free_instance0" {
-  availability_domain = data.oci_identity_availability_domain.ad.ad_number
+  availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = var.compartment_ocid
   display_name        = "freeInstance0"
   shape               = "VM.Standard.E2.1.Micro"
@@ -169,7 +169,7 @@ resource "oci_core_instance" "free_instance0" {
 }
 
 resource "oci_core_instance" "free_instance1" {
-  availability_domain = data.oci_identity_availability_domain.ad.ad_number
+  availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = var.compartment_ocid
   display_name        = "freeInstance1"
   shape               = "VM.Standard.E2.1.Micro"
@@ -193,7 +193,7 @@ resource "oci_core_instance" "free_instance1" {
 
 data "oci_core_vnic_attachments" "app_vnics" {
   compartment_id      = var.compartment_ocid
-  availability_domain = data.oci_identity_availability_domain.ad.ad_number
+  availability_domain = data.oci_identity_availability_domain.ad.name
   instance_id         = oci_core_instance.free_instance0.id
 }
 
