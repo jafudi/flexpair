@@ -70,8 +70,8 @@ resource "oci_core_virtual_network" "test_vcn" {
 
 resource "oci_core_subnet" "gateway_subnet" {
   cidr_block        = "10.1.10.0/24"
-  display_name      = "gateway_subnet"
-  dns_label         = "gateway-subnet"
+  display_name      = "Gateway Subnet"
+  dns_label         = "gatewaynet"
   security_list_ids = [oci_core_security_list.test_security_list.id]
   compartment_id    = oci_identity_compartment.dev_compartment.id
   vcn_id            = oci_core_virtual_network.test_vcn.id
@@ -81,8 +81,8 @@ resource "oci_core_subnet" "gateway_subnet" {
 
 resource "oci_core_subnet" "desktop_subnet" {
   cidr_block        = "10.1.20.0/24"
-  display_name      = "desktop_subnet"
-  dns_label         = "desktop-subnet"
+  display_name      = "Desktop Subnet"
+  dns_label         = "desktopnet"
   security_list_ids = [oci_core_security_list.test_security_list.id]
   compartment_id    = oci_identity_compartment.dev_compartment.id
   vcn_id            = oci_core_virtual_network.test_vcn.id
