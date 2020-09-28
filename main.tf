@@ -17,7 +17,6 @@ variable "private_key" {
 }
 
 variable "private_key_password" {
-
 }
 
 variable "ssh_public_key" {
@@ -39,6 +38,8 @@ variable "ad_region_mapping" {
   type = map(string)
 
   default = {
+    # The only availability domain in Frankfurt which allows for creating Micro instance
+    # This could change over time!!!
     eu-frankfurt-1 = 2
   }
 }
@@ -47,30 +48,19 @@ variable "images" {
   type = map(string)
 
   default = {
-    # See https://docs.us-phoenix-1.oraclecloud.com/images/
-    # Oracle-provided image "Oracle-Linux-7.5-2018.10.16-0"
-    us-phoenix-1   = "ocid1.image.oc1.phx.aaaaaaaadtmpmfm77czi5ghi5zh7uvkguu6dsecsg7kuo3eigc5663und4za"
-    us-ashburn-1   = "ocid1.image.oc1.iad.aaaaaaaayuihpsm2nfkxztdkottbjtfjqhgod7hfuirt2rqlewxrmdlgg75q"
-    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaitzn6tdyjer7jl34h2ujz74jwy5nkbukbh55ekp6oyzwrtfa4zma"
-    uk-london-1    = "ocid1.image.oc1.uk-london-1.aaaaaaaa32voyikkkzfxyo4xbdmadc2dmvorfxxgdhpnk6dw64fa3l4jh7wa"
-    us-seattle-1   = "ocid1.image.region1.sea.aaaaaaaau2iablsucjq62zapd3fr4laaoiqviwsujgois2wcaejaazjnhivq"
+    # Oracle-provided image "Ubuntu 20.04 minimal"
+    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q"
   }
 }
 
-resource "oci_identity_compartment" "dev_compartment" {
-    compartment_id = var.tenancy_ocid
-    description = "Development on free tier resources"
-    name = "FreeDevCompartment"
-}
-
 data "oci_identity_availability_domain" "ad" {
-  compartment_id = oci_identity_compartment.dev_compartment.name
+  compartment_id = var.tenancy_ocid
   ad_number      = var.ad_region_mapping[var.region]
 }
 
 resource "oci_core_virtual_network" "test_vcn" {
   cidr_block     = "10.1.0.0/16"
-  compartment_id = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id = var.compartment_ocid
   display_name   = "testVCN"
   dns_label      = "testvcn"
 }
@@ -80,20 +70,20 @@ resource "oci_core_subnet" "test_subnet" {
   display_name      = "testSubnet"
   dns_label         = "testsubnet"
   security_list_ids = [oci_core_security_list.test_security_list.id]
-  compartment_id    = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id    = var.compartment_ocid
   vcn_id            = oci_core_virtual_network.test_vcn.id
   route_table_id    = oci_core_route_table.test_route_table.id
   dhcp_options_id   = oci_core_virtual_network.test_vcn.default_dhcp_options_id
 }
 
 resource "oci_core_internet_gateway" "test_internet_gateway" {
-  compartment_id = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id = var.compartment_ocid
   display_name   = "testIG"
   vcn_id         = oci_core_virtual_network.test_vcn.id
 }
 
 resource "oci_core_route_table" "test_route_table" {
-  compartment_id = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id = var.compartment_ocid
   vcn_id         = oci_core_virtual_network.test_vcn.id
   display_name   = "testRouteTable"
 
@@ -105,7 +95,7 @@ resource "oci_core_route_table" "test_route_table" {
 }
 
 resource "oci_core_security_list" "test_security_list" {
-  compartment_id = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id = var.compartment_ocid
   vcn_id         = oci_core_virtual_network.test_vcn.id
   display_name   = "testSecurityList"
 
@@ -157,7 +147,7 @@ resource "oci_core_security_list" "test_security_list" {
 
 resource "oci_core_instance" "free_instance0" {
   availability_domain = data.oci_identity_availability_domain.ad.ad_number
-  compartment_id      = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id      = var.compartment_ocid
   display_name        = "freeInstance0"
   shape               = "VM.Standard.E2.1.Micro"
 
@@ -180,7 +170,7 @@ resource "oci_core_instance" "free_instance0" {
 
 resource "oci_core_instance" "free_instance1" {
   availability_domain = data.oci_identity_availability_domain.ad.ad_number
-  compartment_id      = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id      = var.compartment_ocid
   display_name        = "freeInstance1"
   shape               = "VM.Standard.E2.1.Micro"
 
@@ -202,7 +192,7 @@ resource "oci_core_instance" "free_instance1" {
 }
 
 data "oci_core_vnic_attachments" "app_vnics" {
-  compartment_id      = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id      = var.compartment_ocid
   availability_domain = data.oci_identity_availability_domain.ad.ad_number
   instance_id         = oci_core_instance.free_instance0.id
 }
@@ -213,7 +203,7 @@ data "oci_core_vnic" "app_vnic" {
 
 data "oci_core_images" "test_images" {
   #Required
-  compartment_id = data.oci_identity_availability_domain.ad.compartment_id
+  compartment_id = var.compartment_ocid
 
   #Optional
   shape = "VM.Standard.E2.1.Micro"
