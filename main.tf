@@ -36,7 +36,7 @@ variable "ad_region_mapping" {
   type = map(string)
 
   default = {
-    eu-frankfurt-1 = "iEUO:EU-FRANKFURT-1-AD-3"
+    eu-frankfurt-1 = 2
   }
 }
 
