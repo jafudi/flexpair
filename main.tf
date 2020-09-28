@@ -50,7 +50,7 @@ variable "images" {
   }
 }
 
-resource "oci_identity_compartment" "dev_compartment" {
+resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
     name = terraform.workspace
@@ -61,57 +61,57 @@ data "oci_identity_availability_domain" "ad" {
   ad_number      = var.ad_region_mapping[var.region]
 }
 
-resource "oci_core_virtual_network" "test_vcn" {
+resource "oci_core_virtual_network" "main_vcn" {
   cidr_block     = "10.1.0.0/16"
-  compartment_id = oci_identity_compartment.dev_compartment.id
-  display_name   = "testVCN"
-  dns_label      = "testvcn"
+  compartment_id = oci_identity_compartment.client_workspace.id
+  display_name   = "Main Virtual Cloud Network"
+  dns_label      = "mainvcn"
 }
 
 resource "oci_core_subnet" "gateway_subnet" {
   cidr_block        = "10.1.10.0/24"
   display_name      = "Gateway Subnet"
   dns_label         = "gatewaynet"
-  security_list_ids = [oci_core_security_list.test_security_list.id]
-  compartment_id    = oci_identity_compartment.dev_compartment.id
-  vcn_id            = oci_core_virtual_network.test_vcn.id
-  route_table_id    = oci_core_route_table.test_route_table.id
-  dhcp_options_id   = oci_core_virtual_network.test_vcn.default_dhcp_options_id
+  security_list_ids = [oci_core_security_list.gateway_security_list.id]
+  compartment_id    = oci_identity_compartment.client_workspace.id
+  vcn_id            = oci_core_virtual_network.main_vcn.id
+  route_table_id    = oci_core_route_table.common_route_table.id
+  dhcp_options_id   = oci_core_virtual_network.main_vcn.default_dhcp_options_id
 }
 
 resource "oci_core_subnet" "desktop_subnet" {
   cidr_block        = "10.1.20.0/24"
   display_name      = "Desktop Subnet"
   dns_label         = "desktopnet"
-  security_list_ids = [oci_core_security_list.test_security_list.id]
-  compartment_id    = oci_identity_compartment.dev_compartment.id
-  vcn_id            = oci_core_virtual_network.test_vcn.id
-  route_table_id    = oci_core_route_table.test_route_table.id
-  dhcp_options_id   = oci_core_virtual_network.test_vcn.default_dhcp_options_id
+  security_list_ids = [oci_core_security_list.desktop_security_list.id]
+  compartment_id    = oci_identity_compartment.client_workspace.id
+  vcn_id            = oci_core_virtual_network.main_vcn.id
+  route_table_id    = oci_core_route_table.common_route_table.id
+  dhcp_options_id   = oci_core_virtual_network.main_vcn.default_dhcp_options_id
 }
 
-resource "oci_core_internet_gateway" "test_internet_gateway" {
-  compartment_id = oci_identity_compartment.dev_compartment.id
-  display_name   = "testIG"
-  vcn_id         = oci_core_virtual_network.test_vcn.id
+resource "oci_core_internet_gateway" "common_internet_gateway" {
+  compartment_id = oci_identity_compartment.client_workspace.id
+  display_name   = "Common Internet Gateway"
+  vcn_id         = oci_core_virtual_network.main_vcn.id
 }
 
-resource "oci_core_route_table" "test_route_table" {
-  compartment_id = oci_identity_compartment.dev_compartment.id
-  vcn_id         = oci_core_virtual_network.test_vcn.id
-  display_name   = "testRouteTable"
+resource "oci_core_route_table" "common_route_table" {
+  compartment_id = oci_identity_compartment.client_workspace.id
+  vcn_id         = oci_core_virtual_network.main_vcn.id
+  display_name   = "Common Route Table"
 
   route_rules {
     destination       = "0.0.0.0/0"
     destination_type  = "CIDR_BLOCK"
-    network_entity_id = oci_core_internet_gateway.test_internet_gateway.id
+    network_entity_id = oci_core_internet_gateway.common_internet_gateway.id
   }
 }
 
-resource "oci_core_security_list" "test_security_list" {
-  compartment_id = oci_identity_compartment.dev_compartment.id
-  vcn_id         = oci_core_virtual_network.test_vcn.id
-  display_name   = "testSecurityList"
+resource "oci_core_security_list" "gateway_security_list" {
+  compartment_id = oci_identity_compartment.client_workspace.id
+  vcn_id         = oci_core_virtual_network.main_vcn.id
+  display_name   = "Gateway Firewall"
 
   egress_security_rules {
     protocol    = "6"
@@ -133,35 +133,36 @@ resource "oci_core_security_list" "test_security_list" {
     source   = "0.0.0.0/0"
 
     tcp_options {
-      max = "3000"
-      min = "3000"
-    }
-  }
-
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-
-    tcp_options {
-      max = "3005"
-      min = "3005"
-    }
-  }
-
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-
-    tcp_options {
       max = "80"
       min = "80"
     }
   }
 }
 
+resource "oci_core_security_list" "desktop_security_list" {
+  compartment_id = oci_identity_compartment.client_workspace.id
+  vcn_id         = oci_core_virtual_network.main_vcn.id
+  display_name   = "Desktop Firewall"
+
+  egress_security_rules {
+    protocol    = "6"
+    destination = "0.0.0.0/0"
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "22"
+      min = "22"
+    }
+  }
+}
+
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = oci_identity_compartment.dev_compartment.id
+  compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "gateway"
   shape               = "VM.Standard.E2.1.Micro"
 
@@ -184,7 +185,7 @@ resource "oci_core_instance" "gateway" {
 
 resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = oci_identity_compartment.dev_compartment.id
+  compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "desktop"
   shape               = "VM.Standard.E2.1.Micro"
 
@@ -211,5 +212,13 @@ data "oci_core_instance" "gateway" {
 
 output "gateway" {
   value = "http://${data.oci_core_instance.gateway.public_ip}"
+}
+
+data "oci_core_instance" "desktop" {
+    instance_id = oci_core_instance.desktop.id
+}
+
+output "desktop" {
+  value = "http://${data.oci_core_instance.desktop.public_ip}"
 }
 
