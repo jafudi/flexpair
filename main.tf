@@ -13,6 +13,9 @@ variable "region" {
 variable "compartment" {
 }
 
+variable "dns_zone_name" {
+}
+
 variable "private_key" {
 }
 
@@ -58,6 +61,12 @@ resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
     name = var.compartment
+}
+
+resource "oci_dns_zone" "test_zone" {
+    compartment_id = oci_identity_compartment.client_workspace.id
+    name = var.dns_zone_name
+    zone_type = "PRIMARY"
 }
 
 data "oci_identity_availability_domain" "ad" {
