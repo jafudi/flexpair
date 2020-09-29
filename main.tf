@@ -7,10 +7,16 @@ variable "tenancy_ocid" {
 variable "user_ocid" {
 }
 
-variable "fingerprint" {
+variable "region" {
+}
+
+variable "compartment" {
 }
 
 variable "private_key" {
+}
+
+variable "fingerprint" {
 }
 
 variable "private_key_password" {
@@ -19,8 +25,6 @@ variable "private_key_password" {
 variable "vm_public_key" {
 }
 
-variable "region" {
-}
 
 provider "oci" {
   region           = var.region
@@ -53,7 +57,7 @@ variable "images" {
 resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
-    name = terraform.workspace
+    name = var.compartment
 }
 
 data "oci_identity_availability_domain" "ad" {

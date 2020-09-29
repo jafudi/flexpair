@@ -7,8 +7,8 @@ URL='https://www.dynu.com/support/downloadfile/31'; FILE=`mktemp`; wget "$URL" -
 
 mkdir -p /etc/dynuiuc
 cat <<EOF > /etc/dynuiuc/dynuiuc.conf;
-username Jafudi
-password Fyqfoz-cinwij-8huvmi
+username terraform
+password quvka1-xesBut-nofxog
 location
 ipv4 true
 ipv6 false

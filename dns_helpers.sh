@@ -22,7 +22,7 @@ function random_free_registered_domain() {
 function create_ddns_record() {
     echo "Creating dynamic DNS record for domain $1..."
     DYNU_API_URL="https://api.dynu.com/v2"
-    DYNU_API_KEY="56ge3636efbe35323352VX6d6c4dY4f5"
+    DYNU_API_KEY="666W63e6Z3T55334e6f3g5e5d33d45fa"
     return_status=$(curl --silent -X POST "${DYNU_API_URL}/dns" \
          -H "accept: application/json" \
          -H "API-Key: ${DYNU_API_KEY}" \
