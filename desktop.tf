@@ -69,7 +69,7 @@ resource "oci_core_security_list" "desktop_security_list" {
   }
 
   metadata = {
-    ssh_authorized_keys = var.ssh_public_key
+    ssh_authorized_keys = var.vm_public_key
   }
 }
 

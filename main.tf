@@ -16,7 +16,7 @@ variable "private_key" {
 variable "private_key_password" {
 }
 
-variable "ssh_public_key" {
+variable "vm_public_key" {
 }
 
 variable "region" {
