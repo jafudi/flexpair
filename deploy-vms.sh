@@ -15,10 +15,6 @@ export REGISTERED_DOMAIN=$(random_free_registered_domain)
 for arg in "$@"
 do
     case $arg in
-        -key=*|--api-key=*)
-        DYNU_API_KEY="${arg#*=}"
-        shift # Remove --api-key= from processing
-        ;;
         -desktop|--desktop-only)
         EXCLUDE="-except=guacamole-gateway"
         FROM_SCRATCH=false
@@ -31,10 +27,6 @@ do
         -subdomain=*|--subdomain-prefix=*)
         export SUB_DOMAIN_PREFIX="${arg#*=}"
         shift # Remove --subdomain-prefix= from processing
-        ;;
-        -target=*|--cloud-target=*)
-        TARGET="${arg#*=}"
-        shift # Remove --cloud-target= from processing
         ;;
         *)
         OTHER_ARGUMENTS+=("$1")

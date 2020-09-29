@@ -102,6 +102,11 @@ resource "oci_core_instance" "gateway" {
   metadata = {
     ssh_authorized_keys = var.vm_public_key
   }
+
+  agent_config {
+    is_management_disabled = true
+    is_monitoring_disabled = true
+  }
 }
 
 data "oci_core_instance" "gateway" {
