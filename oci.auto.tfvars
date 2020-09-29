@@ -4,5 +4,5 @@ user_ocid = "ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62
 
 region = "eu-frankfurt-1"
 
-compartment = "terraform-branch"
+
 
