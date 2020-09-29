@@ -50,7 +50,7 @@ resource "oci_core_security_list" "desktop_security_list" {
   }
 }
 
-resource "oci_core_instance" "desktop" {
+/*resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "desktop"
@@ -79,4 +79,4 @@ data "oci_core_instance" "desktop" {
 
 output "desktop" {
   value = "http://${data.oci_core_instance.desktop.public_ip}"
-}
+}*/

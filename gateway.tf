@@ -80,6 +80,7 @@ resource "oci_core_security_list" "gateway_security_list" {
   }
 }
 
+/*
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
@@ -109,4 +110,4 @@ data "oci_core_instance" "gateway" {
 
 output "gateway" {
   value = "http://${data.oci_core_instance.gateway.public_ip}"
-}
+}*/
