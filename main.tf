@@ -53,7 +53,7 @@ variable "images" {
 resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
-    name = terraform.workspace
+    name = TFC_CONFIGURATION_VERSION_GIT_BRANCH
 }
 
 data "oci_identity_availability_domain" "ad" {
