@@ -12,34 +12,6 @@ clear && printf '\e[3J'
 PACKFOLDER=$PWD/packer-desktop
 cat ${PACKFOLDER}/vartmp-uploads/gateway/ascii-art
 
-FROM_SCRATCH=true
-EXCLUDE=""
-export REGISTERED_DOMAIN=$(random_free_registered_domain)
-
-# Loop through arguments and process them
-for arg in "$@"
-do
-    case $arg in
-        -desktop|--desktop-only)
-        EXCLUDE="-except=guacamole-gateway"
-        FROM_SCRATCH=false
-        shift # Remove --desktop-only from processing
-        ;;
-        -domain=*|--registered-domain=*)
-        export REGISTERED_DOMAIN="${arg#*=}"
-        shift # Remove --registered-domain= from processing
-        ;;
-        -subdomain=*|--subdomain-prefix=*)
-        export SUB_DOMAIN_PREFIX="${arg#*=}"
-        shift # Remove --subdomain-prefix= from processing
-        ;;
-        *)
-        OTHER_ARGUMENTS+=("$1")
-        shift # Remove generic argument from processing
-        ;;
-    esac
-done
-
 export SSL_DOMAIN=${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}
 export EMAIL_ADDRESS="mail@${SSL_DOMAIN}"
 export IMAP_PASSWORD="JeedsEyruwiwez^"
@@ -70,11 +42,9 @@ PRIVKEY_FILE="${SSH_KEY_FOLDER}/vm_key"
 PUBKEY_FILE="${PRIVKEY_FILE}.pub"
 COMMENT="$USER@$HOSTNAME"
 
-echo "Provisioning VM(s) $EXCLUDE"
 echo "This will take some minutes..."
 
 packer build \
-${EXCLUDE} \
 -var "ssh_public_key=$(cat ${PUBKEY_FILE})" \
 -var "private_key_file=${PRIVKEY_FILE}" \
 -var "ssh_keypair_name=${COMMENT}" \
