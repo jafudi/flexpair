@@ -78,9 +78,27 @@ resource "oci_core_security_list" "gateway_security_list" {
       min = "25"
     }
   }
+
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
+
+    icmp_options {
+      type = "8" // Echo requests (used to ping)
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
+
+    icmp_options {
+      type = "3" // Destination Unreachable
+    }
+  }
 }
 
-/*
+
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
@@ -109,10 +127,7 @@ resource "oci_core_instance" "gateway" {
   }
 }
 
-data "oci_core_instance" "gateway" {
-    instance_id = oci_core_instance.gateway.id
+output "gateway" {
+  value = oci_core_instance.gateway.public_ip
 }
 
-output "gateway" {
-  value = "http://${data.oci_core_instance.gateway.public_ip}"
-}*/

@@ -16,6 +16,9 @@ variable "compartment" {
 variable "dns_zone_name" {
 }
 
+variable "target_subdomain" {
+}
+
 variable "private_key" {
 }
 
@@ -67,6 +70,15 @@ resource "oci_dns_zone" "test_zone" {
     compartment_id = oci_identity_compartment.client_workspace.id
     name = var.dns_zone_name
     zone_type = "PRIMARY"
+}
+
+resource "oci_dns_record" "A_record" {
+    compartment_id = oci_dns_zone.test_zone.compartment_id
+    zone_name_or_id = var.dns_zone_name
+    domain = "${var.target_subdomain}.${var.dns_zone_name}"
+    rtype = "A"
+    rdata = oci_core_instance.gateway.public_ip
+    ttl = 300
 }
 
 data "oci_identity_availability_domain" "ad" {

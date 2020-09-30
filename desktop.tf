@@ -48,9 +48,18 @@ resource "oci_core_security_list" "desktop_security_list" {
       min = "7078"
     }
   }
+
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
+
+    icmp_options {
+      type = "3" // Destination Unreachable
+    }
+  }
 }
 
-/*resource "oci_core_instance" "desktop" {
+resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "desktop"
@@ -78,10 +87,6 @@ resource "oci_core_security_list" "desktop_security_list" {
   }
 }
 
-data "oci_core_instance" "desktop" {
-    instance_id = oci_core_instance.desktop.id
-}
-
 output "desktop" {
-  value = "http://${data.oci_core_instance.desktop.public_ip}"
-}*/
+  value = oci_core_instance.desktop.public_ip
+}
