@@ -134,7 +134,7 @@
     {
       "environment_vars": [
         "HOME_DIR=/home/ubuntu",
-        "DYNU_DOMAIN={{user `dynu_domain`}}"
+        "FULLY_QUALIFIED_DOMAIN={{user `full_domain`}}"
       ],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [

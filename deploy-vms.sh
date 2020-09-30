@@ -78,7 +78,7 @@ ${EXCLUDE} \
 -var "ssh_public_key=$(cat ${PUBKEY_FILE})" \
 -var "private_key_file=${PRIVKEY_FILE}" \
 -var "ssh_keypair_name=${COMMENT}" \
--var "dynu_domain=${SSL_DOMAIN}" \
+-var "full_domain=${SSL_DOMAIN}" \
 -on-error=abort \
 ${TARGET}
 

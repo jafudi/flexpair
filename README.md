@@ -60,7 +60,6 @@ Data privacy, intellectual property and saving the climate all at the same time 
 
 - 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
 - not necessarily with the same cloud provider (cloud-agnostic)
-- a free user account at [Dynu Dynamic DNS](https://www.dynu.com)
 - 100 kbit/s uplink at the user's location
 - Server must have the following open ports: 22 (SSH), 443 (SSL), 80 (LetsEncrypt)
 - Nice to have open server ports: 64738 (Mumble), 25 (SMTP), 5060 and 7078 (SIP+RTP) 
