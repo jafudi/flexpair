@@ -50,9 +50,3 @@ sudo add-apt-repository universe
 sudo apt-get -y update
 sudo apt-get -y install sshfs less nano locales
 
-sudo reboot
-
-echo "Block until cloud-init finished..."
-set +e
-cloud-init status --long --wait
-set -e

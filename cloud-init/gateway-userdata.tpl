@@ -27,20 +27,12 @@ Content-Disposition: attachment; filename="guacamole-user-script.sh"
 
 #!/usr/bin/env bash
 
-# Check whether required packages are installed to proceed #########
+if [ ! -f /etc/.terraform-complete ]; then
+    echo "Terraform provisioning not yet complete, exiting"
+    exit 0
+fi
 
-packages=("docker.io")
-
-for pkg in ${packages[@]}; do
-    is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
-
-    if [ "${is_pkg_installed}" == "install ok installed" ]; then
-        echo ${pkg} is installed.
-    else
-        echo Missing package ${pkg}! Skip further execution.
-        exit 0
-    fi
-done
+echo "Bootstrapping using cloud-init..."
 
 # Is there an alternative to removing the user password ? ###########
 

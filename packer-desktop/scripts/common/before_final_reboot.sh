@@ -37,7 +37,9 @@ while true; do
     esac
 done
 echo "${results}" | jq -r '.problems'
-echo "Let's Encrypt should succeed assuming nginx starts up correctly."
+
+
+sudo touch /etc/.terraform-complete
 echo "Initiating final reboot now..."
 
 
