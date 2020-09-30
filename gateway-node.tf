@@ -24,6 +24,17 @@ resource "oci_core_instance" "gateway" {
     is_management_disabled = true
     is_monitoring_disabled = true
   }
+
+  provisioner "remote-exec" {
+    scripts = [
+      "${script_dir}/common/update.sh",
+      "${script_dir}/common/sshd.sh",
+      "${script_dir}/common/networking.sh",
+      "${script_dir}/common/sudoers.sh",
+      "${script_dir}/common/docker-backend.sh"
+    ]
+  }
+
 }
 
 output "gateway" {

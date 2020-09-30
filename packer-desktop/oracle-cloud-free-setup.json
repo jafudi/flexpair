@@ -1,25 +1,8 @@
 {
-  "variables": {
-    "script_dir": "packer-desktop/scripts",
-    "gitlab_runner_token": "JW6YYWLG4mTsr_-mSaz8"
-  },
+
   "builders": [
     {
       "name": "guacamole-gateway",
-      "instance_name": "gateway",
-      "type": "oracle-oci",
-      "user_ocid": "ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa",
-      "tenancy_ocid": "ocid1.tenancy.oc1..aaaaaaaas3oie74wurpodkrygjpztwfscowu3rx42hadgheqrcmesnefllqa",
-      "fingerprint": "15:b0:eb:db:8c:3d:e3:f0:36:97:fa:ee:23:89:7e:c0",
-      "key_file": "~/.oci/oci_api_key.pem",
-      "pass_phrase": "jafudi",
-      "compartment_ocid": "ocid1.compartment.oc1..aaaaaaaax7u6bckuql4vcbw7iwrtaxvzd7sxxb6eomymip4mvak2sp3vvu2q",
-      "region": "eu-frankfurt-1",
-      "availability_domain": "HMsA:EU-FRANKFURT-1-AD-2",
-      "base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q",
-      "image_name": "UpgradeNecessaryForCustomImages",
-      "shape": "VM.Standard.E2.1.Micro",
-      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaaf3ky5sqjcxjdqekjufybaj7kzhxwkgrk2vonosoe7x2pmq42xqxq",
       "user_data_file": "packer-desktop/builds/gateway-userdata",
       "metadata": {
         "ssh_authorized_keys": "{{user `ssh_public_key`}}"
@@ -30,20 +13,6 @@
     },
     {
       "name": "lubuntu-desktop",
-      "instance_name": "desktop",
-      "type": "oracle-oci",
-      "user_ocid": "ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa",
-      "tenancy_ocid": "ocid1.tenancy.oc1..aaaaaaaas3oie74wurpodkrygjpztwfscowu3rx42hadgheqrcmesnefllqa",
-      "fingerprint": "15:b0:eb:db:8c:3d:e3:f0:36:97:fa:ee:23:89:7e:c0",
-      "key_file": "~/.oci/oci_api_key.pem",
-      "pass_phrase": "jafudi",
-      "compartment_ocid": "ocid1.compartment.oc1..aaaaaaaax7u6bckuql4vcbw7iwrtaxvzd7sxxb6eomymip4mvak2sp3vvu2q",
-      "region": "eu-frankfurt-1",
-      "availability_domain": "HMsA:EU-FRANKFURT-1-AD-2",
-      "base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q",
-      "image_name": "UpgradeNecessaryForCustomImages",
-      "shape": "VM.Standard.E2.1.Micro",
-      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaab4dg2jsomyty3vjjbugvigwaqrd5lqxxtucgu7s7k6oocwubulxq",
       "user_data_file": "packer-desktop/builds/desktop-userdata",
       "metadata": {
         "ssh_authorized_keys": "{{user `ssh_public_key`}}",
@@ -56,24 +25,6 @@
   ],
   "provisioners": [
     {
-      "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
-      ],
-      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-      "expect_disconnect": true,
-      "scripts": [
-        "{{user `script_dir`}}/common/update.sh",
-        "{{user `script_dir`}}/common/sshd.sh",
-        "{{user `script_dir`}}/common/networking.sh",
-        "{{user `script_dir`}}/common/sudoers.sh",
-        "{{user `script_dir`}}/common/docker-backend.sh"
-      ],
-      "type": "shell"
-    },
-    {
-      "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
-      ],
       "only": ["lubuntu-desktop"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
@@ -121,9 +72,6 @@
       "destination": "/home/ubuntu/uploads/"
     },
     {
-      "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
-      ],
       "only": ["guacamole-gateway"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "scripts": [
@@ -133,7 +81,6 @@
     },
     {
       "environment_vars": [
-        "HOME_DIR=/home/ubuntu",
         "FULLY_QUALIFIED_DOMAIN={{user `full_domain`}}"
       ],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
