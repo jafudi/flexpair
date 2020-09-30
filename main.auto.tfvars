@@ -10,6 +10,6 @@ dns_zone_name = "jafudi.de"
 
 target_subdomain = "sep30"
 
-gitlab_runner_token: "JW6YYWLG4mTsr_-mSaz8"
+gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
 
-script_dir: "packer-desktop/scripts"
+script_dir = "packer-desktop/scripts"
