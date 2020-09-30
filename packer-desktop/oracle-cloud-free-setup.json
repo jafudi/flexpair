@@ -59,17 +59,6 @@
       "environment_vars": [
         "HOME_DIR=/home/ubuntu"
       ],
-      "only": ["guacamole-gateway"],
-      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
-      "scripts": [
-        "{{user `script_dir`}}/gateway/dynu-dns-resolution.sh"
-      ],
-      "type": "shell"
-    },
-    {
-      "environment_vars": [
-        "HOME_DIR=/home/ubuntu"
-      ],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
       "expect_disconnect": true,
       "scripts": [

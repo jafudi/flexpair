@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 source "./assert_helpers.sh"
-source "./dns_helpers.sh"
+
+function check_size() {
+    size_bytes=$(stat -f "%z" $1)
+    MAX_USERDATA_BYTES=32000
+    assert_le "${size_bytes}" "${MAX_USERDATA_BYTES}" "Metadata too large." || exit 1
+}
 
 clear && printf '\e[3J'
 PACKFOLDER=$PWD/packer-desktop
@@ -60,57 +65,10 @@ envsubst ${domain_vars},${email_vars},${murmur_vars} < "${DOCKER_COMPOSE}/docker
 TARGET="${PACKFOLDER}/oracle-cloud-free-setup.json"
 packer validate ${TARGET}  || exit 1
 
-ping -c 1 -W 2 ${SSL_DOMAIN}  ;  PING_STATUS=`echo $?`
-case ${PING_STATUS} in
-    0)
-    echo "There is already a host responding under this IP address."
-    ;;
-    2)
-    echo "This domain is pointing into the void."
-    ;;
-    *)
-    echo "No DNS records seem to exist for this (sub)domain."
-    ;;
-esac
-
 SSH_KEY_FOLDER="${PACKFOLDER}/vartmp-uploads/common/ssh"
 PRIVKEY_FILE="${SSH_KEY_FOLDER}/vm_key"
 PUBKEY_FILE="${PRIVKEY_FILE}.pub"
 COMMENT="$USER@$HOSTNAME"
-
-if ${FROM_SCRATCH} ; then
-    case ${PING_STATUS} in
-        0)
-        echo "You may have to either remove the cloud VM first"
-        sleep 5
-        echo "OR accept that the domain will point to a new IP."
-        sleep 5
-        ;;
-        2)
-        echo "The VM was probably already terminated."
-        ;;
-        *)
-        create_ddns_record ${SSL_DOMAIN}
-    esac
-    mkdir -p ${SSH_KEY_FOLDER}
-    echo
-    echo "Generate a new SSH key..."
-    ssh-keygen -t ed25519 -f ${PRIVKEY_FILE} -q -N "" -C ${COMMENT} || exit 1
-else
-    case ${PING_STATUS} in
-        0)
-        echo "This is probably your running gateway."
-        ;;
-        2)
-        echo "Please deploy from scratch."
-        exit 1
-        ;;
-        *)
-        echo "Please deploy from scratch."
-        exit 1
-        ;;
-    esac
-fi
 
 echo "Provisioning VM(s) $EXCLUDE"
 echo "This will take some minutes..."
