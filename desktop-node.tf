@@ -27,11 +27,11 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${script_dir}/common/update.sh",
-      "${script_dir}/common/sshd.sh",
-      "${script_dir}/common/networking.sh",
-      "${script_dir}/common/sudoers.sh",
-      "${script_dir}/common/docker-backend.sh"
+      "${var.script_dir}/common/update.sh",
+      "${var.script_dir}/common/sshd.sh",
+      "${var.script_dir}/common/networking.sh",
+      "${var.script_dir}/common/sudoers.sh",
+      "${var.script_dir}/common/docker-backend.sh"
     ]
   }
 }

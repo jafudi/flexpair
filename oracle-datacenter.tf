@@ -22,6 +22,9 @@ variable "fingerprint" {
 variable "private_key_password" {
 }
 
+variable "script_dir" {
+}
+
 provider "oci" {
   region           = var.region
   tenancy_ocid     = var.tenancy_ocid
