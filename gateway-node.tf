@@ -25,6 +25,14 @@ resource "oci_core_instance" "gateway" {
     is_monitoring_disabled = true
   }
 
+  connection {
+    type        = "ssh"
+    host        = self.public_ip
+    port        = 22
+    user        = "ubuntu"
+    private_key = var.vm_private_key
+  }
+
   provisioner "remote-exec" {
     scripts = [
       "${var.script_dir}/common/update.sh",

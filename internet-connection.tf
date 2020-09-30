@@ -7,6 +7,9 @@ variable "target_subdomain" {
 variable "vm_public_key" {
 }
 
+variable "vm_private_key" {
+}
+
 resource "oci_dns_zone" "test_zone" {
     compartment_id = oci_identity_compartment.client_workspace.id
     name = var.dns_zone_name
