@@ -23,7 +23,7 @@ resource "oci_core_instance" "gateway" {
 
   metadata = {
     ssh_authorized_keys = var.vm_public_key
-    user_data = templatefile("cloud-init/gateway-userdata.tpl", {
+    user_data = base64encode(templatefile("cloud-init/gateway-userdata.tpl", {
       SSL_DOMAIN = local.domain
       SUB_DOMAIN_PREFIX = var.target_subdomain
       REGISTERED_DOMAIN = var.dns_zone_name
@@ -35,7 +35,7 @@ resource "oci_core_instance" "gateway" {
       GUACAMOLE_HOME = local.guacamole_home
       CERTBOT_FOLDER = local.certbot_subfolder
       STAGING_MODE = 0 # Set to 1 if you're testing your setup to avoid hitting request limits
-    })
+    }))
   }
 
   agent_config {

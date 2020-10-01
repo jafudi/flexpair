@@ -20,7 +20,7 @@ resource "oci_core_instance" "desktop" {
 
   metadata = {
     ssh_authorized_keys = var.vm_public_key
-    user_data = templatefile("cloud-init/desktop-userdata.tpl", {
+    user_data = base64encode(templatefile("cloud-init/desktop-userdata.tpl", {
       SSL_DOMAIN = local.domain
       SUB_DOMAIN_PREFIX = var.target_subdomain
       REGISTERED_DOMAIN = var.dns_zone_name
@@ -29,7 +29,7 @@ resource "oci_core_instance" "desktop" {
       IMAP_PASSWORD = var.imap_password
       MURMUR_PORT = var.murmur_port
       MURMUR_PASSWORD = var.murmur_password
-    })
+    }))
     gitlab_runner_token = var.gitlab_runner_token
   }
 
