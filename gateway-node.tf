@@ -81,6 +81,7 @@ resource "oci_core_instance" "gateway" {
         IMAP_HOST = local.domain
         IMAP_PASSWORD = var.imap_password
         MURMUR_PORT = var.murmur_port
+        GUACAMOLE_HOME = local.guacamole_home
       })
       destination = "/var/tmp/guacamole/docker-compose.yml"
   }
