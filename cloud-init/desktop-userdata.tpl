@@ -58,8 +58,6 @@ function get_info() {
        "http://169.254.169.254/opc/v2/instance/$1"
 }
 export -f get_info
-GATEWAY_DOMAIN=${SSL_DOMAIN}
-GITLAB_RUNNER_TOKEN=`get_info metadata/gitlab-runner-token`
 
 # Configure connection between desktop and gateway #################
 
@@ -84,7 +82,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -L ${MURMUR_PORT}:172.18.0.1:${MURMUR_PORT} \
 -L 25:172.18.0.1:25 \
 -L 143:172.18.0.1:143 \
-ubuntu@${GATEWAY_DOMAIN}
+ubuntu@${SSL_DOMAIN}
 Restart=always
 RestartSec=5s
 
@@ -161,7 +159,7 @@ hideos=true
 [ui]
 developermenu=true
 WindowLayout=2
-server=${GATEWAY_DOMAIN}
+server=${SSL_DOMAIN}
 showcontextmenuinmenubar=true
 themestyle=Dark
 stateintray=true
@@ -180,7 +178,7 @@ GenericName[fr]=Chat vocal
 Comment=A low-latency, high quality voice chat program for gaming
 Comment[de]=Ein Sprachkonferenzprogramm mit niedriger Latenz und hoher Qualitaet fuer Spiele
 Comment[fr]=Un logiciel de chat vocal de haute qualite et de faible latence pour les jeux
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${GATEWAY_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Icon=mumble
 Terminal=false
 Type=Application
@@ -194,7 +192,7 @@ EOF
 cat << EOF > /home/ubuntu/.config/autostart/mumble.desktop
 [Desktop Entry]
 Name=Mumble
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${GATEWAY_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Terminal=false
 Type=Application
 StartupNotify=false
@@ -207,9 +205,8 @@ chown ubuntu /home/ubuntu/.config/autostart/mumble.desktop
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade trojita
 
-MAILCONF=/home/ubuntu/.config/flaska.net
-mkdir -p $MAILCONF
-cat << EOF > ${MAILCONF}/trojita.conf
+mkdir -p $MAILCONF/home/ubuntu/.config/flaska.net
+cat << EOF > /home/ubuntu/.config/flaska.net/trojita.conf
 [General]
 app.updates.checkEnabled=false
 imap.auth.pass=${IMAP_PASSWORD}
@@ -265,7 +262,7 @@ revealVersions=true
 addressbook=abookaddressbook
 password=cleartextpassword
 EOF
-chown ubuntu ${MAILCONF}/trojita.conf
+chown ubuntu /home/ubuntu/.config/flaska.net/trojita.conf
 
 # Deploy DevOps application ########################################
 
@@ -328,7 +325,7 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #sudo gitlab-runner register \
 #--non-interactive \
 #--url="https://gitlab.com/" \
-#--registration-token="${GITLAB_RUNNER_TOKEN}" \
+#--registration-token="$(get_info metadata/gitlab-runner-token)" \
 #--executor="shell" \
 #--description="${DESCRIPTION}" \
 #--tag-list="${HOST_TAGS},${ROUTE_TAGS}"
