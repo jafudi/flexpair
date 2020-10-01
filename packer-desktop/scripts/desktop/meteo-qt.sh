@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y --no-install-recommends --upgrade meteo-qt
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --no-install-recommends --upgrade meteo-qt
 
 mkdir -p $HOME/.config/meteo-qt
 cat << EOF > $HOME/.config/meteo-qt/meteo-qt.conf

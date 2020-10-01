@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y --no-install-recommends --upgrade \
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --no-install-recommends --upgrade \
 2048-qt \
 blockout2 \
 kstars \
@@ -20,7 +21,7 @@ ri-li \
 monsterz monsterz-data \
 kdegames
 
-DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y --upgrade tuxmath tuxpaint
+sudo -E apt-get install -y --upgrade tuxmath tuxpaint
 # https://wiki.ubuntuusers.de/Tux_Paint/
 sudo mkdir -p /etc/tuxpaint/
 cat << EOF | sudo tee /etc/tuxpaint/tuxpaint.conf

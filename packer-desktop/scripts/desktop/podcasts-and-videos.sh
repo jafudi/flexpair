@@ -8,8 +8,8 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 pip3 install html5lib gpod eyeD3 youtube_dl
 
-DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y --upgrade \
-gpodder
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --upgrade gpodder
 
 mkdir -p $HOME/.config/vlc
 cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf

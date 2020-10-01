@@ -7,7 +7,7 @@
 
 DEBIAN_FRONTEND="noninteractive"
 
-sudo apt-get install -y --no-install-recommends --upgrade \
+sudo -E apt-get install -y --no-install-recommends --upgrade \
 x11vnc \
 xvfb \
 xserver-xorg-video-fbdev \

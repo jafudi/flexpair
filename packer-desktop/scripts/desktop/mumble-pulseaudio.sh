@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # https://www.mumble.info
-DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y --no-install-recommends --upgrade \
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --no-install-recommends --upgrade \
 mumble \
 paprefs \
 audacity
