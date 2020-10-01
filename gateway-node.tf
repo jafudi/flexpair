@@ -1,5 +1,6 @@
 locals {
   guacamole_home = "/var/tmp/guacamole"
+  certbot_subfolder = "./letsencrypt/certbot"
 }
 
 resource "oci_core_instance" "gateway" {
@@ -32,6 +33,8 @@ resource "oci_core_instance" "gateway" {
       MURMUR_PORT = var.murmur_port
       MURMUR_PASSWORD = var.murmur_password
       GUACAMOLE_HOME = local.guacamole_home
+      CERTBOT_FOLDER = local.certbot_subfolder
+      STAGING_MODE = 0 # Set to 1 if you're testing your setup to avoid hitting request limits
     })
   }
 
