@@ -23,7 +23,7 @@ variable "mailbox_prefix" {
 }
 
 locals {
-    email_address = "${mailbox_prefix}@${var.target_subdomain}.${var.dns_zone_name}"
+    email_address = "${var.mailbox_prefix}@${var.target_subdomain}.${var.dns_zone_name}"
 }
 
 resource "oci_dns_zone" "test_zone" {
