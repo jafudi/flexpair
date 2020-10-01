@@ -34,7 +34,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   provisioner "file" {
-      content = var.vm_private_key,
+      content = var.vm_private_key
       destination = "/var/tmp/ssh/vm_key"
   }
 

@@ -33,6 +33,11 @@ resource "oci_core_instance" "gateway" {
     private_key = var.vm_private_key
   }
 
+  provisioner "file" {
+      content = var.vm_private_key
+      destination = "/var/tmp/ssh/vm_key"
+  }
+
   provisioner "remote-exec" {
     scripts = [
       "${var.script_dir}/common/update.sh",
