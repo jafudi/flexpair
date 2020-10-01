@@ -23,7 +23,6 @@ resource "oci_core_instance" "desktop" {
     user_data = base64encode(templatefile("cloud-init/desktop-userdata.tpl", {
       SSL_DOMAIN = local.domain
       SUB_DOMAIN_PREFIX = var.target_subdomain
-      REGISTERED_DOMAIN = var.dns_zone_name
       EMAIL_ADDRESS = local.email_address
       IMAP_HOST = local.domain
       IMAP_PASSWORD = var.imap_password
@@ -80,6 +79,14 @@ resource "oci_core_instance" "desktop" {
   provisioner "file" {
       source = "packer-desktop/desktop-home-uploads/"
       destination = "/home/ubuntu/uploads/"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "cloud-init clean --logs",
+      "sudo touch /etc/.terraform-complete",
+      "reboot"
+    ]
   }
 
 }

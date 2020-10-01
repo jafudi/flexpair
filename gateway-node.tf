@@ -25,13 +25,7 @@ resource "oci_core_instance" "gateway" {
     ssh_authorized_keys = var.vm_public_key
     user_data = base64encode(templatefile("cloud-init/gateway-userdata.tpl", {
       SSL_DOMAIN = local.domain
-      SUB_DOMAIN_PREFIX = var.target_subdomain
-      REGISTERED_DOMAIN = var.dns_zone_name
       EMAIL_ADDRESS = local.email_address
-      IMAP_HOST = local.domain
-      IMAP_PASSWORD = var.imap_password
-      MURMUR_PORT = var.murmur_port
-      MURMUR_PASSWORD = var.murmur_password
       GUACAMOLE_HOME = local.guacamole_home
       CERTBOT_FOLDER = local.certbot_subfolder
       STAGING_MODE = 0 # Set to 1 if you're testing your setup to avoid hitting request limits
@@ -63,6 +57,55 @@ resource "oci_core_instance" "gateway" {
       "${local.script_dir}/common/networking.sh",
       "${local.script_dir}/common/sudoers.sh",
       "${local.script_dir}/common/docker-backend.sh"
+    ]
+  }
+
+  provisioner "file" {
+      source = "packer-desktop/vartmp-uploads/gateway/"
+      destination = "/var/tmp/"
+  }
+
+  provisioner "file" {
+      content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.tpl.ini", {
+        SSL_DOMAIN = local.domain
+        MURMUR_PORT = var.murmur_port
+        MURMUR_PASSWORD = var.murmur_password
+      })
+      destination = "/var/tmp/guacamole/murmur_config/murmur.ini"
+  }
+
+  provisioner "file" {
+      content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.tpl.yml", {
+        SSL_DOMAIN = local.domain
+        EMAIL_ADDRESS = local.email_address
+        IMAP_HOST = local.domain
+        IMAP_PASSWORD = var.imap_password
+        MURMUR_PORT = var.murmur_port
+      })
+      destination = "/var/tmp/guacamole/docker-compose.yml"
+  }
+
+  provisioner "file" {
+      source = "packer-desktop/gateway-home-uploads/"
+      destination = "/home/ubuntu/uploads/"
+  }
+
+  provisioner "file" {
+      source = "packer-desktop/gateway-home-uploads/"
+      destination = "/home/ubuntu/uploads/"
+  }
+
+  provisioner "remote-exec" {
+    scripts = [
+      "${local.script_dir}/gateway/motd.sh"
+    ]
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "cloud-init clean --logs",
+      "sudo touch /etc/.terraform-complete",
+      "reboot"
     ]
   }
 
