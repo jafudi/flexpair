@@ -15,8 +15,6 @@ StartupNotify=true
 Terminal=false
 MimeType=x-directory/normal;inode/directory;
 EOF
-chmod +x $HOME/Desktop/trash.desktop
-chown ubuntu $HOME/Desktop/trash.desktop
 
 mkdir -p $HOME/.config/lxqt
 cat << EOF > $HOME/.config/lxqt/panel.conf
