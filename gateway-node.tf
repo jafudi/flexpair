@@ -1,3 +1,7 @@
+locals {
+  guacamole_home = "/var/tmp/guacamole"
+}
+
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
@@ -27,6 +31,7 @@ resource "oci_core_instance" "gateway" {
       IMAP_PASSWORD = var.imap_password
       MURMUR_PORT = var.murmur_port
       MURMUR_PASSWORD = var.murmur_password
+      GUACAMOLE_HOME = local.guacamole_home
     })
   }
 
@@ -50,11 +55,11 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${var.script_dir}/common/update.sh",
-      "${var.script_dir}/common/sshd.sh",
-      "${var.script_dir}/common/networking.sh",
-      "${var.script_dir}/common/sudoers.sh",
-      "${var.script_dir}/common/docker-backend.sh"
+      "${local.script_dir}/common/update.sh",
+      "${local.script_dir}/common/sshd.sh",
+      "${local.script_dir}/common/networking.sh",
+      "${local.script_dir}/common/sudoers.sh",
+      "${local.script_dir}/common/docker-backend.sh"
     ]
   }
 

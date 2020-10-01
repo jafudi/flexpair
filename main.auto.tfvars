@@ -8,8 +8,6 @@ target_subdomain = "sep30"
 
 gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
 
-script_dir = "packer-desktop/scripts"
-
 murmur_port = "64738"
 murmur_password = "guacadmin"
 

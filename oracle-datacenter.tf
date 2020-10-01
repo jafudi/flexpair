@@ -22,7 +22,8 @@ variable "fingerprint" {
 variable "private_key_password" {
 }
 
-variable "script_dir" {
+locals {
+  script_dir = "packer-desktop/scripts"
 }
 
 provider "oci" {

@@ -46,7 +46,6 @@ docker-compose up -d imap
 # Provision communication stack ####################################
 
 domain=${SSL_DOMAIN}
-export GUACAMOLE_HOME=/var/tmp/guacamole
 cd ${GUACAMOLE_HOME}
 
 echo "Preparing folder init and creating ./init/initdb.sql"

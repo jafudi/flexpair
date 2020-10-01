@@ -53,22 +53,22 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${var.script_dir}/common/update.sh",
-      "${var.script_dir}/common/sshd.sh",
-      "${var.script_dir}/common/networking.sh",
-      "${var.script_dir}/common/sudoers.sh",
-      "${var.script_dir}/common/docker-backend.sh",
-      "${var.script_dir}/desktop/lubuntu-desktop.sh",
-      "${var.script_dir}/desktop/lxqt-look-and-feel.sh",
-      "${var.script_dir}/desktop/multiple-languages.sh",
-      "${var.script_dir}/desktop/meteo-qt.sh",
-      "${var.script_dir}/desktop/podcasts-and-videos.sh",
-      "${var.script_dir}/desktop/resource-monitor.sh",
-      "${var.script_dir}/desktop/mumble-pulseaudio.sh",
-      "${var.script_dir}/desktop/desktop-sharing.sh",
-      "${var.script_dir}/desktop/edu-games.sh",
-      "${var.script_dir}/desktop/mindmap-notes.sh",
-      "${var.script_dir}/desktop/office-applications.sh"
+      "${local.script_dir}/common/update.sh",
+      "${local.script_dir}/common/sshd.sh",
+      "${local.script_dir}/common/networking.sh",
+      "${local.script_dir}/common/sudoers.sh",
+      "${local.script_dir}/common/docker-backend.sh",
+      "${local.script_dir}/desktop/lubuntu-desktop.sh",
+      "${local.script_dir}/desktop/lxqt-look-and-feel.sh",
+      "${local.script_dir}/desktop/multiple-languages.sh",
+      "${local.script_dir}/desktop/meteo-qt.sh",
+      "${local.script_dir}/desktop/podcasts-and-videos.sh",
+      "${local.script_dir}/desktop/resource-monitor.sh",
+      "${local.script_dir}/desktop/mumble-pulseaudio.sh",
+      "${local.script_dir}/desktop/desktop-sharing.sh",
+      "${local.script_dir}/desktop/edu-games.sh",
+      "${local.script_dir}/desktop/mindmap-notes.sh",
+      "${local.script_dir}/desktop/office-applications.sh"
     ]
   }
 

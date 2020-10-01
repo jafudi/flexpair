@@ -60,7 +60,7 @@ services:
       POSTGRES_HOSTNAME: postgres
       POSTGRES_PASSWORD: sdfalksjhdlkfjhasdf676876234fds78723ghsdfk
       POSTGRES_USER: guacamole_user
-      GUACAMOLE_HOME: /var/tmp/guacamole
+      GUACAMOLE_HOME: ${GUACAMOLE_HOME}
     volumes:
       - ./guaca_config:/var/tmp/guacamole
     image: guacamole/guacamole
