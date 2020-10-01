@@ -308,26 +308,21 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #sudo gitlab-runner unregister --all-runners
 #sudo rm -f /etc/gitlab-runner/config.toml
 #
-#
-#HOST_TAGS="$( \
-#    hostnamectl \
-#    | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;' \
-#    | tr '\n' ',' \
-#)"
-#
-#ROUTE_TAGS="$( \
-#    traceroute --max-hops=3 8.8.8.8 \
-#    | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/' \
-#    | tr '\n' ',' \
-#)"
-#
 #sudo gitlab-runner register \
 #--non-interactive \
 #--url="https://gitlab.com/" \
 #--registration-token="$(get_info metadata/gitlab-runner-token)" \
 #--executor="shell" \
 #--description="Shell executor on $(uname -s)" \
-#--tag-list="${HOST_TAGS},${ROUTE_TAGS}"
+#--tag-list="$( \
+#    hostnamectl \
+#    | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;' \
+#    | tr '\n' ',' \
+#)","$( \
+#    traceroute --max-hops=3 8.8.8.8 \
+#    | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/' \
+#    | tr '\n' ',' \
+#)"
 #
 #sudo gitlab-runner restart
 #sudo gitlab-runner status
