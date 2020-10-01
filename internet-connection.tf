@@ -1,29 +1,22 @@
-variable "dns_zone_name" {
-}
+variable "dns_zone_name" {}
 
-variable "target_subdomain" {
-}
+variable "target_subdomain" {}
 
-variable "vm_public_key" {
-}
+variable "vm_public_key" {}
 
-variable "vm_private_key" {
-}
+variable "vm_private_key" {}
 
-variable "murmur_port" {
-}
+variable "murmur_port" {}
 
-variable "murmur_password" {
-}
+variable "murmur_password" {}
 
-variable "imap_password" {
-}
+variable "imap_password" {}
 
-variable "mailbox_prefix" {
-}
+variable "mailbox_prefix" {}
 
 locals {
-    email_address = "${var.mailbox_prefix}@${var.target_subdomain}.${var.dns_zone_name}"
+    domain = "${var.target_subdomain}.${var.dns_zone_name}"
+    email_address = "${var.mailbox_prefix}@${local.domain}"
 }
 
 resource "oci_dns_zone" "test_zone" {
@@ -35,7 +28,7 @@ resource "oci_dns_zone" "test_zone" {
 resource "oci_dns_record" "A_record" {
     compartment_id = oci_dns_zone.test_zone.compartment_id
     zone_name_or_id = var.dns_zone_name
-    domain = "${var.target_subdomain}.${var.dns_zone_name}"
+    domain = local.domain
     rtype = "A"
     rdata = oci_core_instance.gateway.public_ip
     ttl = 300

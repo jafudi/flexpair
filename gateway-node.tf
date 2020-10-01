@@ -18,6 +18,16 @@ resource "oci_core_instance" "gateway" {
 
   metadata = {
     ssh_authorized_keys = var.vm_public_key
+    user_data = templatefile("cloud-init/gateway-userdata.tpl", {
+      SSL_DOMAIN = local.domain
+      SUB_DOMAIN_PREFIX = var.target_subdomain
+      REGISTERED_DOMAIN = var.dns_zone_name
+      EMAIL_ADDRESS = local.email_address
+      IMAP_HOST = local.domain
+      IMAP_PASSWORD = var.imap_password
+      MURMUR_PORT = var.murmur_port
+      MURMUR_PASSWORD = var.murmur_password
+    })
   }
 
   agent_config {

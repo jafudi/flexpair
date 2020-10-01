@@ -1,28 +1,4 @@
 {
-
-  "builders": [
-    {
-      "name": "guacamole-gateway",
-      "user_data_file": "packer-desktop/builds/gateway-userdata",
-      "metadata": {
-        "ssh_authorized_keys": "{{user `ssh_public_key`}}"
-      },
-      "ssh_username": "ubuntu",
-      "ssh_private_key_file": "{{user `private_key_file`}}",
-      "ssh_keypair_name": "{{user `ssh_keypair_name`}}"
-    },
-    {
-      "name": "lubuntu-desktop",
-      "user_data_file": "packer-desktop/builds/desktop-userdata",
-      "metadata": {
-        "ssh_authorized_keys": "{{user `ssh_public_key`}}",
-        "gitlab-runner-token": "{{user `gitlab_runner_token`}}"
-      },
-      "ssh_username": "ubuntu",
-      "ssh_private_key_file": "{{user `private_key_file`}}",
-      "ssh_keypair_name": "{{user `ssh_keypair_name`}}"
-    }
-  ],
   "provisioners": [
     {
       "type": "file",
@@ -30,24 +6,14 @@
       "source": "packer-desktop/vartmp-uploads/gateway/",
       "destination": "/var/tmp/"
     },
-    {
-      "type": "file",
-      "only": ["lubuntu-desktop"],
-      "source": "packer-desktop/vartmp-uploads/desktop/",
-      "destination": "/var/tmp/"
-    },
+
     {
       "type": "file",
       "only": ["guacamole-gateway"],
       "source": "packer-desktop/gateway-home-uploads/",
       "destination": "/home/ubuntu/uploads/"
     },
-    {
-      "type": "file",
-      "only": ["lubuntu-desktop"],
-      "source": "packer-desktop/desktop-home-uploads/",
-      "destination": "/home/ubuntu/uploads/"
-    },
+
     {
       "only": ["guacamole-gateway"],
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
