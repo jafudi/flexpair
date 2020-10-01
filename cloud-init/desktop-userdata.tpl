@@ -308,7 +308,6 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #sudo gitlab-runner unregister --all-runners
 #sudo rm -f /etc/gitlab-runner/config.toml
 #
-#DESCRIPTION="Shell executor on $(uname -s)"
 #
 #HOST_TAGS="$( \
 #    hostnamectl \
@@ -327,7 +326,7 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #--url="https://gitlab.com/" \
 #--registration-token="$(get_info metadata/gitlab-runner-token)" \
 #--executor="shell" \
-#--description="${DESCRIPTION}" \
+#--description="Shell executor on $(uname -s)" \
 #--tag-list="${HOST_TAGS},${ROUTE_TAGS}"
 #
 #sudo gitlab-runner restart
