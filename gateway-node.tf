@@ -82,6 +82,7 @@ resource "oci_core_instance" "gateway" {
         IMAP_PASSWORD = var.imap_password
         MURMUR_PORT = var.murmur_port
         GUACAMOLE_HOME = local.guacamole_home
+        CERTBOT_FOLDER = local.certbot_subfolder
       })
       destination = "/var/tmp/guacamole/docker-compose.yml"
   }
