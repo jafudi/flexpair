@@ -73,12 +73,12 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "file" {
       source = "packer-desktop/vartmp-uploads/desktop/"
-      destination = "/var/tmp/"
+      destination = "/var/tmp"
   }
 
   provisioner "file" {
       source = "packer-desktop/desktop-home-uploads/"
-      destination = "/home/ubuntu/uploads/"
+      destination = "/home/ubuntu/uploads"
   }
 
   provisioner "remote-exec" {

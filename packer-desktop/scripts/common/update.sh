@@ -3,7 +3,6 @@
 echo "Block until cloud-init finished..."
 set +e
 cloud-init status --long --wait
-sudo cat /var/log/cloud-init-output.log
 set -e
 
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";

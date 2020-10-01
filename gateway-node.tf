@@ -62,7 +62,7 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "file" {
       source = "packer-desktop/vartmp-uploads/gateway/"
-      destination = "/var/tmp/"
+      destination = "/var/tmp"
   }
 
   provisioner "file" {
@@ -89,12 +89,12 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "file" {
       source = "packer-desktop/gateway-home-uploads/"
-      destination = "/home/ubuntu/uploads/"
+      destination = "/home/ubuntu/uploads"
   }
 
   provisioner "file" {
       source = "packer-desktop/gateway-home-uploads/"
-      destination = "/home/ubuntu/uploads/"
+      destination = "/home/ubuntu/uploads"
   }
 
   provisioner "remote-exec" {

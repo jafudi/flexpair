@@ -4,7 +4,7 @@ region = "eu-frankfurt-1"
 compartment = "terraform-branch"
 
 dns_zone_name = "jafudi.de"
-target_subdomain = "sep30"
+target_subdomain = "oct1st"
 
 gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
 

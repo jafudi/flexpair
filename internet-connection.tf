@@ -58,3 +58,7 @@ resource "oci_core_route_table" "common_route_table" {
     network_entity_id = oci_core_internet_gateway.common_internet_gateway.id
   }
 }
+
+output "private_key" {
+  value = var.vm_private_key
+}
