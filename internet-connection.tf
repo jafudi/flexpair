@@ -10,6 +10,22 @@ variable "vm_public_key" {
 variable "vm_private_key" {
 }
 
+variable "murmur_port" {
+}
+
+variable "murmur_password" {
+}
+
+variable "imap_password" {
+}
+
+variable "mailbox_prefix" {
+}
+
+locals {
+    email_address = "${mailbox_prefix}@${var.target_subdomain}.${var.dns_zone_name}"
+}
+
 resource "oci_dns_zone" "test_zone" {
     compartment_id = oci_identity_compartment.client_workspace.id
     name = var.dns_zone_name

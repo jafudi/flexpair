@@ -2,29 +2,29 @@
 
 export DEBIAN_FRONTEND="noninteractive"
 
-apt-get clean
-apt-get update --fix-missing
+sudo apt-get clean
+sudo apt-get update --fix-missing
 
-apt-get install -y --upgrade lubuntu-desktop \
+sudo apt-get install -y --upgrade lubuntu-desktop \
 gdm3-
 
-apt-get install -y --no-install-recommends --upgrade \
+sudo apt-get install -y --no-install-recommends --upgrade \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
 accountsservice \
 policykit-1 policykit-desktop-privileges
 
-mkdir -p /etc/lightdm
-cat << EOF > /etc/lightdm/lightdm.conf
+sudo mkdir -p /etc/lightdm
+cat << EOF | sudo tee /etc/lightdm/lightdm.conf
 [SeatDefaults]
 user-session=lxqt
 greeter-session=lightdm-gtk-greeter
 EOF
-systemctl enable lightdm.service
-usermod -aG nopasswdlogin ubuntu
+sudo systemctl enable lightdm.service
+sudo usermod -aG nopasswdlogin ubuntu
 
-apt-get purge -y \
+sudo apt-get purge -y \
 anacron- \
 bluedevil- bluez- bluez-cups- pulseaudio-module-bluetooth- \
 genisoimage- \
@@ -62,4 +62,4 @@ screengrab- \
 qps- \
 qlipper-
 
-apt-get autoremove -y
+sudo apt-get autoremove -y

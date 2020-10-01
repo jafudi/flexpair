@@ -8,17 +8,6 @@ function check_size() {
     assert_le "${size_bytes}" "${MAX_USERDATA_BYTES}" "Metadata too large." || exit 1
 }
 
-clear && printf '\e[3J'
-PACKFOLDER=$PWD/packer-desktop
-cat ${PACKFOLDER}/vartmp-uploads/gateway/ascii-art
-
-export SSL_DOMAIN=${SUB_DOMAIN_PREFIX}.${REGISTERED_DOMAIN}
-export EMAIL_ADDRESS="mail@${SSL_DOMAIN}"
-export IMAP_PASSWORD="JeedsEyruwiwez^"
-export MURMUR_PORT="64738"
-export MURMUR_PASSWORD="guacadmin"
-EXPAND_FOLDER="${PACKFOLDER}/builds"
-
 domain_vars='${SSL_DOMAIN},${SUB_DOMAIN_PREFIX},${REGISTERED_DOMAIN}'
 email_vars='${EMAIL_ADDRESS},${IMAP_HOST},${IMAP_PASSWORD}'
 murmur_vars='${MURMUR_PORT},${MURMUR_PASSWORD}'

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade meteo-qt
+DEBIAN_FRONTEND="noninteractive" sudo apt-get install -y --no-install-recommends --upgrade meteo-qt
 
 mkdir -p $HOME/.config/meteo-qt
 cat << EOF > $HOME/.config/meteo-qt/meteo-qt.conf
@@ -23,4 +23,3 @@ TrayType=temp
 Unit=metric
 Wind_unit=km
 EOF
-chown ubuntu -R /home/ubuntu/.config

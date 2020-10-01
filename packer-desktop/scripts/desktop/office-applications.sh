@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-apt-get install -y --no-install-recommends --upgrade \
+sudo apt-get install -y --no-install-recommends --upgrade \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 inkscape \
 gimp \
