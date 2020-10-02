@@ -5147,7 +5147,7 @@ metadata-network-access=1
 # Playlist bookmark 10 (string)
 #bookmark10=
 EOF
-chown ubuntu -R $HOME/.config/vlc
+chown -R ubuntu $HOME/.config/vlc
 
 
 mkdir -p $HOME/gPodder

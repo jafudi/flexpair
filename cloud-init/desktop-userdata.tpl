@@ -11,7 +11,7 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 bootcmd:
   - mkdir -p /home/ubuntu/uploads
   - mkdir -p /home/ubuntu/Desktop/Uploads
-  - chown ubuntu -R /home/ubuntu
+  - chown -R ubuntu /home/ubuntu
 
 users:
   - default
@@ -167,7 +167,7 @@ usage=false
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF
-chown ubuntu -R /home/ubuntu/.config
+chown -R ubuntu /home/ubuntu/.config
 
 cat << EOF > /usr/share/applications/mumble.desktop
 [Desktop Entry]
@@ -327,6 +327,6 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #sudo gitlab-runner restart
 #sudo gitlab-runner status
 
-chown ubuntu -R /home/ubuntu
+chown -R ubuntu /home/ubuntu
 
 --====Part=Boundary=================================================--

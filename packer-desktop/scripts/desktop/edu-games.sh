@@ -34,4 +34,4 @@ alllocalefonts=yes
 noprint=yes
 savedir=/home/ubuntu/Desktop/Uploads/
 EOF
-sudo chown ubuntu -R /etc/tuxpaint/
+sudo chown -R ubuntu /etc/tuxpaint/

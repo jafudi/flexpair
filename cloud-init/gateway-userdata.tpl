@@ -10,7 +10,7 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 
 bootcmd:
   - mkdir -p /home/ubuntu/uploads
-  - chown ubuntu -R /home/ubuntu
+  - chown -R ubuntu /home/ubuntu
 
 users:
     - default
@@ -37,7 +37,7 @@ echo "Bootstrapping using cloud-init..."
 # Is there an alternative to removing the user password ? ###########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
-chown ubuntu -R /home/ubuntu # handing over home folder to user
+chown -R ubuntu /home/ubuntu # handing over home folder to user
 
 # Start mail server ################################################
 
