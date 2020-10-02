@@ -1,5 +1,8 @@
 #!/bin/sh -eux
 
+echo "Running script motd.sh..."
+echo
+
 apt-get -y update;
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade glances
 

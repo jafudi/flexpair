@@ -1,5 +1,8 @@
 #!/bin/bash -eux
 
+echo "Running script docker-backend.sh..."
+echo
+
 sudo apt-get update
 export DEBIAN_FRONTEND=noninteractive
 sudo -E apt-get install -y --no-install-recommends docker.io git

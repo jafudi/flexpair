@@ -1,5 +1,8 @@
 #!/bin/sh -eux
 
+echo "Running script sshd.sh..."
+echo
+
 cat <<EOF | sudo tee /etc/ssh/sshd_config
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.

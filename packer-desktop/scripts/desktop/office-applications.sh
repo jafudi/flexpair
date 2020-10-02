@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Running script office-applications.sh..."
+echo
+
 sudo -E apt-get install -y --no-install-recommends --upgrade \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 inkscape \

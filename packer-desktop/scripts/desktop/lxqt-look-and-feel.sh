@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Running script lxqt-look-and-feel.sh..."
+echo
+
 mkdir -p $HOME/Desktop
 
 cat << EOF > $HOME/Desktop/trash.desktop

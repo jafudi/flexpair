@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Running script podcasts-and-videos.sh..."
+echo
+
 # https://wiki.ubuntuusers.de/gPodder/
 # https://gpodder.github.io/docs/user-manual.html
 

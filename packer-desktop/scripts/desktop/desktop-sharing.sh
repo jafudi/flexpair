@@ -1,5 +1,8 @@
 #!/bin/bash -eux
 
+echo "Running script desktop-sharing.sh..."
+echo
+
 # https://wiki.ubuntuusers.de/VNC/#VNC-Sitzung-gemeinsam-nutzen
 # http://www.karlrunge.com/x11vnc/faq.html#faq
 # https://wiki.archlinux.org/index.php/TigerVNC#Running_vncserver_for_virtual_(headless)_sessions

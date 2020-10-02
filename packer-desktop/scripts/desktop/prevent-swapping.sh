@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Running script prevent-swapping.sh..."
+echo
+
 cat << 'EOF' | sudo tee -a /etc/sysctl.conf
 vm.swappiness = 1
 EOF

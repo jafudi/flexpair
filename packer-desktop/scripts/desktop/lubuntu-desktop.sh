@@ -1,5 +1,8 @@
 #!/bin/bash -eux
 
+echo "Running script lubuntu-desktop.sh..."
+echo
+
 export DEBIAN_FRONTEND="noninteractive"
 
 sudo apt-get clean

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Running script edu-games.sh..."
+echo
+
 export DEBIAN_FRONTEND="noninteractive"
 sudo -E apt-get install -y --no-install-recommends --upgrade \
 2048-qt \
