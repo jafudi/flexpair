@@ -4,6 +4,7 @@ echo "Running script lxqt-look-and-feel.sh..."
 echo
 
 ls -al $HOME/Desktop
+sudo chown -R ubuntu $HOME
 
 mkdir -p $HOME/Desktop
 
