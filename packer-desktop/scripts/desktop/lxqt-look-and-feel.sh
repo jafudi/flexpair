@@ -3,6 +3,8 @@
 echo "Running script lxqt-look-and-feel.sh..."
 echo
 
+ls -al $HOME/Desktop
+
 mkdir -p $HOME/Desktop
 
 cat << EOF > $HOME/Desktop/trash.desktop
