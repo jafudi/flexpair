@@ -49,7 +49,7 @@ resource "oci_core_instance" "gateway" {
     scripts = [
       "${local.script_dir}/common/update.sh",
       "${local.script_dir}/common/sshd.sh",
-      "${local.script_dir}/common/networking.sh",
+      "${local.script_dir}/gateway/networking.sh",
       "${local.script_dir}/common/sudoers.sh",
       "${local.script_dir}/common/docker-backend.sh"
     ]
