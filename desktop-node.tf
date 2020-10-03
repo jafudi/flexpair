@@ -96,5 +96,5 @@ resource "oci_core_instance" "desktop" {
 }
 
 output "desktop" {
-  value = oci_core_instance.desktop.public_ip
+  value = "${oci_core_instance.desktop.public_ip} in data center ${data.oci_identity_availability_domain.ad.name}"
 }

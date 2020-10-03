@@ -96,7 +96,23 @@ resource "oci_identity_compartment" "client_workspace" {
     name = terraform.workspace
 }
 
+data "oci_identity_tenancy" "te" {
+  tenancy_id = var.tenancy_ocid
+}
+
+locals {
+  tenancy_name = data.oci_identity_tenancy.te.name
+  home_region_key = data.oci_identity_tenancy.te.home_region_key
+}
+
+output "compartment" {
+  value = "${local.home_region_key}/${local.tenancy_name}/${oci_identity_compartment.client_workspace.name}"
+}
+
 data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
   ad_number      = var.ad_region_mapping[var.region]
 }
+
+
+
