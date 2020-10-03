@@ -79,8 +79,6 @@ variable "images" {
 
     # United States
     us-ashburn-1 = "ocid1.image.oc1.iad.aaaaaaaaffttreqvrrvnn5yj57jdqdcl4dhxuin543fb3debmbmgk7n4bf2a"
-    us-langley-1 = "ocid1.image.oc2.us-langley-1.aaaaaaaadr3ahvhb2bw427ukvz7iw6hvuzqh3o657fjqdw4fqmjidds7ds5q"
-    us-luke-1 = "ocid1.image.oc2.us-luke-1.aaaaaaaajv3zon3mvr5gp2d7qz6f4ea62jyisgglzammyf5tooghwyh4m7wq"
     us-phoenix-1 = "ocid1.image.oc1.phx.aaaaaaaaizxszm6byd2azc5hz5hfxx7gr3r4f5v3inm2ukopzr5juvpslofa"
     us-sanjose-1 = "ocid1.image.oc1.us-sanjose-1.aaaaaaaaldq7nqiaf7jwojhudbsfgyqprmg576ddgns3b3comrkrkstblooq"
 
