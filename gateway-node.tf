@@ -45,11 +45,6 @@ resource "oci_core_instance" "gateway" {
     private_key = var.vm_private_key
   }
 
-  provisioner "file" {
-      content = var.vm_private_key
-      destination = "/var/tmp/ssh/vm_key"
-  }
-
   provisioner "remote-exec" {
     scripts = [
       "${local.script_dir}/common/update.sh",
@@ -58,6 +53,11 @@ resource "oci_core_instance" "gateway" {
       "${local.script_dir}/common/sudoers.sh",
       "${local.script_dir}/common/docker-backend.sh"
     ]
+  }
+
+  provisioner "file" {
+      content = var.vm_private_key
+      destination = "/var/tmp/ssh/vm_key"
   }
 
   provisioner "file" {
@@ -107,8 +107,7 @@ resource "oci_core_instance" "gateway" {
     inline = [
       "sudo touch /etc/.terraform-complete",
       "sudo cloud-init clean --logs",
-      "( sleep 10 ; sudo reboot ) &",
-      "exit 0"
+      "sudo shutdown -r +1"
     ]
   }
 

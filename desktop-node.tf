@@ -45,11 +45,6 @@ resource "oci_core_instance" "desktop" {
     private_key = var.vm_private_key
   }
 
-  provisioner "file" {
-      content = var.vm_private_key
-      destination = "/var/tmp/ssh/vm_key"
-  }
-
   provisioner "remote-exec" {
     scripts = [
       "${local.script_dir}/common/update.sh",
@@ -72,6 +67,11 @@ resource "oci_core_instance" "desktop" {
   }
 
   provisioner "file" {
+      content = var.vm_private_key
+      destination = "/var/tmp/ssh/vm_key"
+  }
+
+  provisioner "file" {
       source = "packer-desktop/vartmp-uploads/desktop/"
       destination = "/var/tmp"
   }
@@ -85,8 +85,7 @@ resource "oci_core_instance" "desktop" {
     inline = [
       "sudo touch /etc/.terraform-complete",
       "sudo cloud-init clean --logs",
-      "( sleep 10 ; sudo reboot ) &",
-      "exit 0"
+      "sudo shutdown -r +1"
     ]
   }
 
