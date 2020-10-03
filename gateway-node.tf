@@ -105,9 +105,10 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo cloud-init clean --logs",
       "sudo touch /etc/.terraform-complete",
-      "sudo reboot"
+      "sudo cloud-init clean --logs",
+      "( sleep 10 ; sudo reboot ) &",
+      "exit 0"
     ]
   }
 
