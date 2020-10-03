@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-apt-get install -y --install-recommends --upgrade \
+echo "Running script multiple-languages.sh..."
+echo
+
+sudo -E apt-get install -y --install-recommends --upgrade \
 language-pack-ja fonts-takao-mincho \
 fcitx-mozc fcitx-config-gtk
 
-apt-get install -y --install-recommends --upgrade \
+sudo -E apt-get install -y --install-recommends --upgrade \
 language-pack-de

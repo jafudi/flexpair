@@ -11,7 +11,7 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 bootcmd:
   - mkdir -p /home/ubuntu/uploads
   - mkdir -p /home/ubuntu/Desktop/Uploads
-  - chown ubuntu -R /home/ubuntu
+  - chown -R ubuntu /home/ubuntu
 
 users:
   - default
@@ -28,7 +28,7 @@ mount_default_fields:
   - "none"
   - "none"
   - "fuse.sshfs"
-  - "nofail,noauto,_netdev,IdentityFile=/var/tmp/ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
+  - "nofail,noauto,_netdev,IdentityFile=/home/ubuntu/.ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
   - "0"
   - "0"
 
@@ -43,20 +43,12 @@ Content-Disposition: attachment; filename="lubuntu-user-script.sh"
 
 #!/usr/bin/env bash
 
-# Check whether required packages are installed to proceed #########
+if [ ! -f /etc/.terraform-complete ]; then
+    echo "Terraform provisioning not yet complete, exiting"
+    exit 0
+fi
 
-packages=("docker.io" "kdialog" "mumble")
-
-for pkg in ${packages[@]}; do
-    is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
-
-    if [ "${is_pkg_installed}" == "install ok installed" ]; then
-        echo ${pkg} is installed.
-    else
-        echo Missing package ${pkg}! Skip further execution.
-        exit 0
-    fi
-done
+echo "Bootstrapping using cloud-init..."
 
 # Obtain instance parameters / degrees of freedom ###################
 
@@ -66,8 +58,6 @@ function get_info() {
        "http://169.254.169.254/opc/v2/instance/$1"
 }
 export -f get_info
-GATEWAY_DOMAIN=${SSL_DOMAIN}
-GITLAB_RUNNER_TOKEN=`get_info metadata/gitlab-runner-token`
 
 # Configure connection between desktop and gateway #################
 
@@ -82,17 +72,15 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -o ServerAliveInterval=10 \
 -o ExitOnForwardFailure=yes \
 -o StrictHostKeyChecking=no \
--i /var/tmp/ssh/vm_key \
+-i /home/ubuntu/.ssh/vm_key \
 -R 5900:localhost:5900 \
 -R 4713:localhost:4713 \
 -R 6667:localhost:667 \
 -R 2222:localhost:22 \
--R 5060:localhost:5060 \
--R 7078:localhost:7078 \
 -L ${MURMUR_PORT}:172.18.0.1:${MURMUR_PORT} \
 -L 25:172.18.0.1:25 \
 -L 143:172.18.0.1:143 \
-ubuntu@${GATEWAY_DOMAIN}
+ubuntu@${SSL_DOMAIN}
 Restart=always
 RestartSec=5s
 
@@ -169,7 +157,7 @@ hideos=true
 [ui]
 developermenu=true
 WindowLayout=2
-server=${GATEWAY_DOMAIN}
+server=${SSL_DOMAIN}
 showcontextmenuinmenubar=true
 themestyle=Dark
 stateintray=true
@@ -177,7 +165,7 @@ usage=false
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF
-chown ubuntu -R /home/ubuntu/.config
+chown -R ubuntu /home/ubuntu/.config
 
 cat << EOF > /usr/share/applications/mumble.desktop
 [Desktop Entry]
@@ -188,7 +176,7 @@ GenericName[fr]=Chat vocal
 Comment=A low-latency, high quality voice chat program for gaming
 Comment[de]=Ein Sprachkonferenzprogramm mit niedriger Latenz und hoher Qualitaet fuer Spiele
 Comment[fr]=Un logiciel de chat vocal de haute qualite et de faible latence pour les jeux
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${GATEWAY_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Icon=mumble
 Terminal=false
 Type=Application
@@ -202,7 +190,7 @@ EOF
 cat << EOF > /home/ubuntu/.config/autostart/mumble.desktop
 [Desktop Entry]
 Name=Mumble
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${GATEWAY_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Terminal=false
 Type=Application
 StartupNotify=false
@@ -215,9 +203,8 @@ chown ubuntu /home/ubuntu/.config/autostart/mumble.desktop
 
 DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade trojita
 
-MAILCONF=/home/ubuntu/.config/flaska.net
-mkdir -p $MAILCONF
-cat << EOF > ${MAILCONF}/trojita.conf
+mkdir -p $MAILCONF/home/ubuntu/.config/flaska.net
+cat << EOF > /home/ubuntu/.config/flaska.net/trojita.conf
 [General]
 app.updates.checkEnabled=false
 imap.auth.pass=${IMAP_PASSWORD}
@@ -273,7 +260,7 @@ revealVersions=true
 addressbook=abookaddressbook
 password=cleartextpassword
 EOF
-chown ubuntu ${MAILCONF}/trojita.conf
+chown ubuntu /home/ubuntu/.config/flaska.net/trojita.conf
 
 # Deploy DevOps application ########################################
 
@@ -319,31 +306,31 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 #sudo gitlab-runner unregister --all-runners
 #sudo rm -f /etc/gitlab-runner/config.toml
 #
-#DESCRIPTION="Shell executor on $(uname -s)"
-#
-#HOST_TAGS="$( \
+#sudo gitlab-runner register \
+#--non-interactive \
+#--url="https://gitlab.com/" \
+#--registration-token="$(get_info metadata/gitlab-runner-token)" \
+#--executor="shell" \
+#--description="Shell executor on $(uname -s)" \
+#--tag-list="$( \
 #    hostnamectl \
 #    | sed -E -e 's/^[ ]*//;s/[^a-zA-Z0-9\.]+/-/g;s/(.*)/\L\1/;' \
 #    | tr '\n' ',' \
-#)"
-#
-#ROUTE_TAGS="$( \
+#)","$( \
 #    traceroute --max-hops=3 8.8.8.8 \
 #    | sed -E -e '1d;s/^[ ]+[0-9][ ]+([a-zA-Z]+?).*/\1/;/^$/d;s/^/gateway-/' \
 #    | tr '\n' ',' \
 #)"
 #
-#sudo gitlab-runner register \
-#--non-interactive \
-#--url="https://gitlab.com/" \
-#--registration-token="${GITLAB_RUNNER_TOKEN}" \
-#--executor="shell" \
-#--description="${DESCRIPTION}" \
-#--tag-list="${HOST_TAGS},${ROUTE_TAGS}"
-#
 #sudo gitlab-runner restart
 #sudo gitlab-runner status
 
-chown ubuntu -R /home/ubuntu
+chown -R ubuntu /home/ubuntu
+
+cloud-init collect-logs
+tar -xzf cloud-init.tar.gz
+rm -f cloud-init.tar.gz
+cd cloud-init-logs*
+cat cloud-init-output.log
 
 --====Part=Boundary=================================================--

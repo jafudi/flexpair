@@ -60,7 +60,7 @@ services:
       POSTGRES_HOSTNAME: postgres
       POSTGRES_PASSWORD: sdfalksjhdlkfjhasdf676876234fds78723ghsdfk
       POSTGRES_USER: guacamole_user
-      GUACAMOLE_HOME: /var/tmp/guacamole
+      GUACAMOLE_HOME: ${GUACAMOLE_HOME}
     volumes:
       - ./guaca_config:/var/tmp/guacamole
     image: guacamole/guacamole
@@ -109,8 +109,8 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./letsencrypt/certbot/conf:/etc/letsencrypt:ro
-      - ./letsencrypt/certbot/www:/var/www/certbot:ro
+      - ${CERTBOT_FOLDER}/conf:/etc/letsencrypt:ro
+      - ${CERTBOT_FOLDER}/www:/var/www/certbot:ro
     ports:
       - "443:443"
       - "80:80"
@@ -133,16 +133,13 @@ services:
       guacamole_net:
         ipv4_address: 172.18.0.8
     volumes:
-      - ./letsencrypt/certbot/conf:/etc/letsencrypt:rw
-      - ./letsencrypt/certbot/www:/var/www/certbot:rw
-      - ./letsencrypt/certbot/logs:/var/log/letsencrypt/:rw
+      - ${CERTBOT_FOLDER}/conf:/etc/letsencrypt:rw
+      - ${CERTBOT_FOLDER}/www:/var/www/certbot:rw
+      - ${CERTBOT_FOLDER}/logs:/var/log/letsencrypt/:rw
     entrypoint: "/bin/sh -c 'echo Doing nothing until told to.'"
     # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
   imap:
-    # Uncomment this for build image in local
-    # build:
-    #   context: .
     image: jafudi/mini-mail
     container_name: imap_container
     networks:

@@ -1,5 +1,8 @@
 #!/bin/bash -eux
 
+echo "Running script desktop-sharing.sh..."
+echo
+
 # https://wiki.ubuntuusers.de/VNC/#VNC-Sitzung-gemeinsam-nutzen
 # http://www.karlrunge.com/x11vnc/faq.html#faq
 # https://wiki.archlinux.org/index.php/TigerVNC#Running_vncserver_for_virtual_(headless)_sessions
@@ -7,7 +10,7 @@
 
 DEBIAN_FRONTEND="noninteractive"
 
-apt-get install -y --no-install-recommends --upgrade \
+sudo -E apt-get install -y --no-install-recommends --upgrade \
 x11vnc \
 xvfb \
 xserver-xorg-video-fbdev \
@@ -16,7 +19,7 @@ xserver-xorg-video-dummy \
 xserver-xorg-legacy \
 xfonts-base
 
-cat <<EOF > /etc/systemd/system/x11vnc.service
+cat <<EOF | sudo tee /etc/systemd/system/x11vnc.service
 [Unit]
 Description=VNC server for X11
 Wants=lightdm.service
@@ -30,15 +33,15 @@ ExecStop=/usr/bin/x11vnc -R stop
 [Install]
 WantedBy=graphical.target
 EOF
-systemctl enable x11vnc.service
-systemctl set-default graphical.target
+sudo systemctl enable x11vnc.service
+sudo systemctl set-default graphical.target
 
-usermod -aG tty ubuntu
+sudo usermod -aG tty ubuntu
 
-echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
+echo "allowed_users=anybody" | sudo tee /etc/X11/Xwrapper.config
 
-mkdir -p /etc/X11
-cat <<EOF > /etc/X11/xorg.conf;
+sudo mkdir -p /etc/X11
+cat <<EOF | sudo tee /etc/X11/xorg.conf;
 Section "Device"
     Identifier  "Dummy"
     Driver      "dummy"

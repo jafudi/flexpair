@@ -15,7 +15,7 @@ resource "oci_core_security_list" "gateway_security_list" {
   display_name   = "Gateway Firewall"
 
   egress_security_rules {
-    protocol    = "6"
+    protocol    = "all"
     destination = "0.0.0.0/0"
   }
 
@@ -78,36 +78,22 @@ resource "oci_core_security_list" "gateway_security_list" {
       min = "25"
     }
   }
-}
 
-/*
-resource "oci_core_instance" "gateway" {
-  availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = oci_identity_compartment.client_workspace.id
-  display_name        = "gateway"
-  shape               = "VM.Standard.E2.1.Micro"
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
 
-  create_vnic_details {
-    subnet_id        = oci_core_subnet.gateway_subnet.id
-    display_name     = "eth0"
-    assign_public_ip = true
-    hostname_label   = "gateway"
+    icmp_options {
+      type = "8" // Echo requests (used to ping)
+    }
   }
 
-  source_details {
-    source_type = "image"
-    source_id   = var.images[var.region]
-  }
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
 
-  metadata = {
-    ssh_authorized_keys = var.ssh_public_key
+    icmp_options {
+      type = "3" // Destination Unreachable
+    }
   }
 }
-
-data "oci_core_instance" "gateway" {
-    instance_id = oci_core_instance.gateway.id
-}
-
-output "gateway" {
-  value = "http://${data.oci_core_instance.gateway.public_ip}"
-}*/

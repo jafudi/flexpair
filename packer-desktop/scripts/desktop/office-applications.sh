@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-apt-get install -y --no-install-recommends --upgrade \
+echo "Running script office-applications.sh..."
+echo
+
+sudo -E apt-get install -y --no-install-recommends --upgrade \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 inkscape \
 gimp \
@@ -11,7 +14,6 @@ locales \
 kdialog elementary-icon-theme \
 falkon \
 variety \
-linphone \
 gnome-clocks \
 persepolis aria2 \
 backintime-qt

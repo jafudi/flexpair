@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+echo "Running script lxqt-look-and-feel.sh..."
+echo
+
+ls -al $HOME/Desktop
+sudo chown -R ubuntu $HOME
+
 mkdir -p $HOME/Desktop
 
 cat << EOF > $HOME/Desktop/trash.desktop
@@ -15,8 +21,6 @@ StartupNotify=true
 Terminal=false
 MimeType=x-directory/normal;inode/directory;
 EOF
-chmod +x $HOME/Desktop/trash.desktop
-chown ubuntu $HOME/Desktop/trash.desktop
 
 mkdir -p $HOME/.config/lxqt
 cat << EOF > $HOME/.config/lxqt/panel.conf
@@ -64,8 +68,7 @@ apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
 apps\10\desktop=/usr/share/applications/trojita.desktop
 apps\11\desktop=/usr/share/applications/org.gnome.clocks.desktop
 apps\12\desktop=/usr/share/applications/vym.desktop
-apps\13\desktop=/usr/share/applications/linphone.desktop
-apps\14\desktop=/usr/share/applications/focuswriter.desktop
+apps\13\desktop=/usr/share/applications/focuswriter.desktop
 apps\2\desktop=/usr/share/applications/lxqt-config.desktop
 apps\3\desktop=/usr/share/applications/qterminal.desktop
 apps\4\desktop=/usr/share/applications/gnumeric.desktop
@@ -74,7 +77,7 @@ apps\6\desktop=/usr/share/applications/pavucontrol-qt.desktop
 apps\7\desktop=/usr/share/applications/simplescreenrecorder.desktop
 apps\8\desktop=/usr/share/applications/gpodder.desktop
 apps\9\desktop=/usr/share/applications/vlc.desktop
-apps\size=14
+apps\size=13
 type=quicklaunch
 
 [showdesktop]
@@ -145,13 +148,13 @@ placement=bottom-left
 EOF
 
 cd /etc/xdg/autostart/
-rm -f lxqt-globalkeyshortcuts.desktop
-rm -f lxqt-powermanagement.desktop
-rm -f lxqt-xscreensaver-autostart.desktop
-rm -f nm-applet.desktop
-rm -f nm-tray-autostart.desktop
-rm -f snap-userd-autostart.desktop
-rm -f upg-notifier-autostart.desktop
+sudo rm -f lxqt-globalkeyshortcuts.desktop
+sudo rm -f lxqt-powermanagement.desktop
+sudo rm -f lxqt-xscreensaver-autostart.desktop
+sudo rm -f nm-applet.desktop
+sudo rm -f nm-tray-autostart.desktop
+sudo rm -f snap-userd-autostart.desktop
+sudo rm -f upg-notifier-autostart.desktop
 
 FILES="lxqt-hibernate
 lxqt-leave

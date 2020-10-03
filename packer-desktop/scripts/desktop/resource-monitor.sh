@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade \
+echo "Running script resource-monitor.sh..."
+echo
+
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --no-install-recommends --upgrade \
 conky-all \
 etherape
 
@@ -73,4 +77,4 @@ Exec=conky --daemonize --pause=5
 StartupNotify=false
 Terminal=false
 EOF
-chown ubuntu -R /home/ubuntu/.config
+

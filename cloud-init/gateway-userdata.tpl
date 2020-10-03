@@ -10,7 +10,7 @@ Content-Disposition: attachment; filename="cloud-config.yaml"
 
 bootcmd:
   - mkdir -p /home/ubuntu/uploads
-  - chown ubuntu -R /home/ubuntu
+  - chown -R ubuntu /home/ubuntu
 
 users:
     - default
@@ -27,35 +27,23 @@ Content-Disposition: attachment; filename="guacamole-user-script.sh"
 
 #!/usr/bin/env bash
 
-# Check whether required packages are installed to proceed #########
+if [ ! -f /etc/.terraform-complete ]; then
+    echo "Terraform provisioning not yet complete, exiting"
+    exit 0
+fi
 
-packages=("docker.io")
-
-for pkg in ${packages[@]}; do
-    is_pkg_installed=$(dpkg-query -W --showformat='${Status}\n' ${pkg} | grep "install ok installed")
-
-    if [ "${is_pkg_installed}" == "install ok installed" ]; then
-        echo ${pkg} is installed.
-    else
-        echo Missing package ${pkg}! Skip further execution.
-        exit 0
-    fi
-done
+echo "Bootstrapping using cloud-init..."
 
 # Is there an alternative to removing the user password ? ###########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
-chown ubuntu -R /home/ubuntu # handing over home folder to user
-
-# Start mail server ################################################
-
-docker-compose up -d imap
+chown -R ubuntu /home/ubuntu # handing over home folder to user
 
 # Provision communication stack ####################################
 
-domain=${SSL_DOMAIN}
-export GUACAMOLE_HOME=/var/tmp/guacamole
 cd ${GUACAMOLE_HOME}
+
+docker-compose up -d imap
 
 echo "Preparing folder init and creating ./init/initdb.sql"
 mkdir ./init >/dev/null 2>&1
@@ -70,64 +58,51 @@ else
     exit 1
 fi
 
+mkdir -p ${CERTBOT_FOLDER}
 
-rsa_key_size=4096
-data_path="./letsencrypt/certbot"
-mkdir -p ${data_path}
-email="${EMAIL_ADDRESS}" # Adding a valid address is strongly recommended
-staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
-
-if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/ssl-dhparams.pem" ]; then
+if [ ! -e "${CERTBOT_FOLDER}/conf/options-ssl-nginx.conf" ] || [ ! -e "${CERTBOT_FOLDER}/conf/ssl-dhparams.pem" ]; then
   echo "### Downloading recommended TLS parameters ..."
-  mkdir -p "$data_path/conf"
-  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | sudo tee "$data_path/conf/options-ssl-nginx.conf" > /dev/null
-  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem | sudo tee "$data_path/conf/ssl-dhparams.pem" > /dev/null
+  mkdir -p "${CERTBOT_FOLDER}/conf"
+  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | sudo tee "${CERTBOT_FOLDER}/conf/options-ssl-nginx.conf" > /dev/null
+  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem | sudo tee "${CERTBOT_FOLDER}/conf/ssl-dhparams.pem" > /dev/null
   echo
 fi
 
-echo "### Creating dummy certificate for $domain ..."
-container_path="/etc/letsencrypt"
-host_path="$data_path/conf"
-sudo mkdir -p "${host_path}/live"
-sudo chmod 777 "${host_path}/live"
+echo "### Creating dummy certificate for ${SSL_DOMAIN} ..."
+sudo mkdir -p "${CERTBOT_FOLDER}/conf/live"
+sudo chmod 777 "${CERTBOT_FOLDER}/conf/live"
 docker-compose run --rm --entrypoint "\
-  openssl req -x509 -nodes -newkey 'rsa:${rsa_key_size}' -days 90\
-    -keyout '${container_path}/live/privkey.pem' \
-    -out '${container_path}/live/fullchain.pem' \
+  openssl req -x509 -nodes -newkey 'rsa:4096' -days 90\
+    -keyout '/etc/letsencrypt/live/privkey.pem' \
+    -out '/etc/letsencrypt/live/fullchain.pem' \
     -subj '/CN=localhost'" certbot
 
 echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
 echo
 
-echo "### Saving away dummy certificate for $domain ..."
-sudo mkdir -p ${host_path}/archive/dummy
-sudo mv ${host_path}/live/* ${host_path}/archive/dummy/
-sudo rm -Rf ${host_path}/renewal/$domain.conf
+echo "### Saving away dummy certificate for ${SSL_DOMAIN} ..."
+sudo mkdir -p ${CERTBOT_FOLDER}/conf/archive/dummy
+sudo mv ${CERTBOT_FOLDER}/conf/live/* ${CERTBOT_FOLDER}/conf/archive/dummy/
+sudo rm -Rf ${CERTBOT_FOLDER}/conf/renewal/${SSL_DOMAIN}.conf
 
-echo "### Requesting Let's Encrypt certificate for $domain ..."
+echo "### Requesting Let's Encrypt certificate for ${SSL_DOMAIN} ..."
 # https://letsencrypt.org/docs/rate-limits/
 # 50 certificates per registered domain per week i.e. theworkpc.com
 # including other people's certificates!
 # + 5 renewals per subdomain per week
 
-# Select appropriate email arg
-case "$email" in
-  "") email_arg="--register-unsafely-without-email" ;;
-  *) email_arg="--email $email" ;;
-esac
-
 # Enable staging mode if needed
-if [ $staging != "0" ]; then staging_arg="--staging"; fi
+if [ ${STAGING_MODE} != "0" ]; then staging_arg="--staging"; fi
 
-mkdir -p "$data_path/logs"
+mkdir -p "${CERTBOT_FOLDER}/logs"
 
 docker-compose run --rm --entrypoint "\
   certbot certonly --webroot --webroot-path /var/www/certbot \
     $staging_arg \
-    $email_arg \
-    -d $domain \
-    --rsa-key-size $rsa_key_size \
+    --email ${EMAIL_ADDRESS} \
+    -d ${SSL_DOMAIN} \
+    --rsa-key-size 4096 \
     --agree-tos \
     --non-interactive \
     --force-renewal" \
@@ -136,20 +111,45 @@ docker-compose run --rm --entrypoint "\
 exitcode=$?
 
 if [ $exitcode -eq 0 ]; then
-  if [ -d "${host_path}/live/$domain-0001" ]; then
+  if [ -d "${CERTBOT_FOLDER}/conf/live/${SSL_DOMAIN}-0001" ]; then
     echo "Deduplicating certificate. Look here https://community.letsencrypt.org/t/certbot-renew-request-saves-certificates-to-0001-to-folder/49654/9"
-    mv "${host_path}/live/$domain-0001" "${host_path}/live/$domain"
+    mv "${CERTBOT_FOLDER}/conf/live/${SSL_DOMAIN}-0001" "${CERTBOT_FOLDER}/conf/live/${SSL_DOMAIN}"
   fi
-  sudo cp -L ${host_path}/live/$domain/* ${host_path}/live/
+  sudo cp -L ${CERTBOT_FOLDER}/conf/live/${SSL_DOMAIN}/* ${CERTBOT_FOLDER}/conf/live/
 
   echo "### Loading nginx and murmur with new certificate..."
   sudo rm -rf ${GUACAMOLE_HOME}/murmur_cert
   sudo mkdir -p ${GUACAMOLE_HOME}/murmur_cert
-  sudo cp -L ${host_path}/live/$domain/* ${GUACAMOLE_HOME}/murmur_cert/
+  sudo cp -L ${CERTBOT_FOLDER}/conf/live/${SSL_DOMAIN}/* ${GUACAMOLE_HOME}/murmur_cert/
   docker-compose up --force-recreate -d nginx
 else
-  echo "Certbot returned error code '$exitcode'."
-  exit 1
+    # https://github.com/letsdebug/letsdebug#problems-detected
+    apt-get install --upgrade -y --no-install-recommends jq
+    while true; do
+        reqid=$(curl --silent --data "{\"method\":\"http-01\",\"domain\":\"${SSL_DOMAIN}\"}" -H 'content-type: application/json' https://letsdebug.net | jq -r '.ID')
+        sleep 30s
+        results=$(curl --silent -H 'accept: application/json' "https://letsdebug.net/${SSL_DOMAIN}/$reqid?debug=y" |sed 's/\\./ /g' | jq -r '.result')
+        severity=$(echo "$results" | jq -r '.problems[0].severity')
+        case "$severity" in
+        Fatal)
+            echo "$results" | jq -r '.problems[0]'
+            ;;
+        Error|Warning|Debug)
+            break
+            ;;
+        *)
+            echo "Unknown severity level."
+            exit 1
+            ;;
+        esac
+    done
+    echo "$results" | jq -r '.problems'
 fi
+
+cloud-init collect-logs
+tar -xzf cloud-init.tar.gz
+rm -f cloud-init.tar.gz
+cd cloud-init-logs*
+cat cloud-init-output.log
 
 --====Part=Boundary=================================================--

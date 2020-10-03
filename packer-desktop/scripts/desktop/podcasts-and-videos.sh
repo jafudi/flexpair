@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Running script podcasts-and-videos.sh..."
+echo
+
 # https://wiki.ubuntuusers.de/gPodder/
 # https://gpodder.github.io/docs/user-manual.html
 
@@ -8,8 +11,8 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 pip3 install html5lib gpod eyeD3 youtube_dl
 
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --upgrade \
-gpodder
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --upgrade gpodder
 
 mkdir -p $HOME/.config/vlc
 cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf
@@ -5144,7 +5147,7 @@ metadata-network-access=1
 # Playlist bookmark 10 (string)
 #bookmark10=
 EOF
-chown ubuntu -R $HOME/.config/vlc
+chown -R ubuntu $HOME/.config/vlc
 
 
 mkdir -p $HOME/gPodder
@@ -5325,4 +5328,3 @@ cat << EOF > $HOME/gPodder/Settings.json
   }
 }
 'EOF'
-chown ubuntu -R $HOME/gPodder

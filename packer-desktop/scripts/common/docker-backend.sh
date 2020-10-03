@@ -1,11 +1,15 @@
 #!/bin/bash -eux
 
-apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends docker.io git
-systemctl enable --now docker
-usermod -aG docker ubuntu
+echo "Running script docker-backend.sh..."
+echo
+
+sudo apt-get update
+export DEBIAN_FRONTEND=noninteractive
+sudo -E apt-get install -y --no-install-recommends docker.io git
+sudo systemctl enable --now docker
+sudo usermod -aG docker ubuntu
 
 url="https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)"
-curl --silent -L ${url} -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+sudo curl --silent -L ${url} -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 

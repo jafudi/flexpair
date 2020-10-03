@@ -1,6 +1,12 @@
 #!/bin/sh -eux
 
-cat <<EOF > /etc/ssh/sshd_config
+echo "Running script sshd.sh..."
+echo
+
+mkdir -p "/home/ubuntu/.ssh"
+touch "/home/ubuntu/.ssh/vm_key"
+
+cat <<EOF | sudo tee /etc/ssh/sshd_config
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
 
