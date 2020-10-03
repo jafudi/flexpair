@@ -140,9 +140,6 @@ services:
     # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
   imap:
-    # Uncomment this for build image in local
-    # build:
-    #   context: .
     image: jafudi/mini-mail
     container_name: imap_container
     networks:

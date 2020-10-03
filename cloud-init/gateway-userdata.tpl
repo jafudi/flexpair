@@ -39,13 +39,11 @@ echo "Bootstrapping using cloud-init..."
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
 chown -R ubuntu /home/ubuntu # handing over home folder to user
 
-# Start mail server ################################################
-
-docker-compose up -d imap
-
 # Provision communication stack ####################################
 
 cd ${GUACAMOLE_HOME}
+
+docker-compose up -d imap
 
 echo "Preparing folder init and creating ./init/initdb.sql"
 mkdir ./init >/dev/null 2>&1
@@ -152,6 +150,6 @@ cloud-init collect-logs
 tar -xzf cloud-init.tar.gz
 rm -f cloud-init.tar.gz
 cd cloud-init-logs*
-cat /var/log/cloud-init-output.log
+cat cloud-init-output.log
 
 --====Part=Boundary=================================================--

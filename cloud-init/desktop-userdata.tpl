@@ -329,4 +329,10 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 
 chown -R ubuntu /home/ubuntu
 
+cloud-init collect-logs
+tar -xzf cloud-init.tar.gz
+rm -f cloud-init.tar.gz
+cd cloud-init-logs*
+cat cloud-init-output.log
+
 --====Part=Boundary=================================================--
