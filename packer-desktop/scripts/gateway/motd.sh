@@ -3,8 +3,9 @@
 echo "Running script motd.sh..."
 echo
 
-apt-get -y update;
-DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends --upgrade glances
+sudo apt-get -y update;
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get install -y --no-install-recommends --upgrade glances
 
 img=$(cat /var/tmp/ascii-art)
 
@@ -22,7 +23,7 @@ You may connect to the desktop host using:
 if [ -d /etc/update-motd.d ]; then
     MOTD_CONFIG='/etc/update-motd.d/99-bento'
 
-    cat >> "$MOTD_CONFIG" <<BENTO
+cat << BENTO | sudo tee -a "$MOTD_CONFIG"
 #!/bin/sh
 
 cat <<'EOF'
@@ -31,7 +32,7 @@ $msg
 EOF
 BENTO
 
-    chmod 0755 "$MOTD_CONFIG"
+    sudo chmod 0755 "$MOTD_CONFIG"
 else
-    echo "$msg" >> /etc/motd
+    echo "$msg" | sudo tee -a /etc/motd
 fi
