@@ -10,9 +10,6 @@ variable "user_ocid" {
 variable "region" {
 }
 
-variable "compartment" {
-}
-
 variable "private_key" {
 }
 
@@ -57,7 +54,7 @@ variable "images" {
 resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
-    name = var.compartment
+    name = terraform.workspace
 }
 
 data "oci_identity_availability_domain" "ad" {
