@@ -1,6 +1,6 @@
 # Market Analysis and Unique Selling Point
 
-[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but it there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
+[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
 
 Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
 
@@ -45,11 +45,8 @@ Data privacy, intellectual property and saving the climate all at the same time 
 
 # Potential Testers / Early Adopters
 
-- Papa für seine Partei mit OpenSlides
 - Papa um uns Unterlagen für Wipperfliess zu zeigen
-- Mama für Sippentreffen
 - Lea für Stationsversammlung mit OpenSlides
-- Yayoi für Hoshuko
 - Ying zum Demonstrieren Ihrer eigenen App
 - Werner zum Qt-Programmieren
 - Selbsthilfebüro für Karaoke-Abend
@@ -89,11 +86,6 @@ Data privacy, intellectual property and saving the climate all at the same time 
 - and did we mention: it's free
 - mumble.com charges 7.50$ a month for up to 15 users (without desktop!!)
 - [Mumble](https://www.mumble.info) and [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) both over HTTPS
-- Automatically register DDNS records
-- Mount home folder on gateway as folder on desktop
-- Mumble web works with Chrome, not with Firefox or Safari so far
-- Add support for [OpenSlides](https://openslides.com/en)
-- gateway and desktop traffic stats available directly in the browser
 - [SSH tunnel](https://www.ssh.com/ssh/tunneling/) secured with [ed25519 encryption](http://ed25519.cr.yp.to)
 - fast network connection in the cloud
 - usable with standard set of open ports (22 SSH, 80 HTTP, 443 HTTPS)
@@ -106,14 +98,11 @@ Data privacy, intellectual property and saving the climate all at the same time 
 - list of my favorite podcasts in OPML format
 - desktop takes part in Mumble conference, ability to record
 - [Opus](https://opus-codec.org) audio codec
-- meteo-qt weather app
 - Automatic [Trojita](http://trojita.flaska.net) email client configuration
 - separate VMs for desktop and gateway, both deployed in parallel
 - basic architecture diagram in structurizr according to the [C4 model](https://c4model.com)
-- lightdm login manager
 - [Openbox](https://en.wikipedia.org/wiki/Openbox) window manager
 - rock-solid [x11vnc](http://www.karlrunge.com/x11vnc/) server
-- Combine letsencrypt ssl settings with [Apache Guacamole](https://guacamole.apache.org) proxy_pass
 - chose Oracle Cloud mainly because two free VMs
 - using [Docker Compose](https://docs.docker.com/compose/)
 - VM will register itself as Gitlab
