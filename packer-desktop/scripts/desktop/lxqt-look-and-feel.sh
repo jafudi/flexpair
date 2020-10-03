@@ -68,8 +68,7 @@ apps\1\desktop=/usr/share/applications/pcmanfm-qt.desktop
 apps\10\desktop=/usr/share/applications/trojita.desktop
 apps\11\desktop=/usr/share/applications/org.gnome.clocks.desktop
 apps\12\desktop=/usr/share/applications/vym.desktop
-apps\13\desktop=/usr/share/applications/linphone.desktop
-apps\14\desktop=/usr/share/applications/focuswriter.desktop
+apps\13\desktop=/usr/share/applications/focuswriter.desktop
 apps\2\desktop=/usr/share/applications/lxqt-config.desktop
 apps\3\desktop=/usr/share/applications/qterminal.desktop
 apps\4\desktop=/usr/share/applications/gnumeric.desktop
@@ -78,7 +77,7 @@ apps\6\desktop=/usr/share/applications/pavucontrol-qt.desktop
 apps\7\desktop=/usr/share/applications/simplescreenrecorder.desktop
 apps\8\desktop=/usr/share/applications/gpodder.desktop
 apps\9\desktop=/usr/share/applications/vlc.desktop
-apps\size=14
+apps\size=13
 type=quicklaunch
 
 [showdesktop]

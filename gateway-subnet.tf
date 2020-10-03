@@ -15,7 +15,7 @@ resource "oci_core_security_list" "gateway_security_list" {
   display_name   = "Gateway Firewall"
 
   egress_security_rules {
-    protocol    = "6"
+    protocol    = "all"
     destination = "0.0.0.0/0"
   }
 

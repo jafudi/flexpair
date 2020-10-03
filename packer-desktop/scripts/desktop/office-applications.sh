@@ -14,7 +14,6 @@ locales \
 kdialog elementary-icon-theme \
 falkon \
 variety \
-linphone \
 gnome-clocks \
 persepolis aria2 \
 backintime-qt
