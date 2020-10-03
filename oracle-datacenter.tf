@@ -46,8 +46,9 @@ variable "images" {
   type = map(string)
 
   default = {
-    # Oracle-provided image "Ubuntu 20.04 minimal"
-    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaukhdqqokh3evzyqvashnxld2gyl2wx6k5cratnb7hcxij4u7eh3q"
+    # Canonical-Ubuntu-20.04-Minimal-2020.09.07-0
+    # Updates: https://docs.cloud.oracle.com/en-us/iaas/images/ubuntu-2004/
+    eu-frankfurt-1 = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaarlmgtd4s7adtcuxi3dbri34kb5lcommgbmf5ywrggymccjvqv6gq"
   }
 }
 
