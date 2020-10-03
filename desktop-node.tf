@@ -5,6 +5,11 @@ resource "oci_core_instance" "desktop" {
   compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "desktop"
   shape               = "VM.Standard.E2.1.Micro"
+  # Processor: 1/8th of an AMD EPYC 7551
+  # Base frequency: 2.0 GHz, max boost frequency: 3.0 GHz
+  # Memory: 1 GB
+  # Bandwidth: 480 Mbps
+  # Boot Volume Size: 50 GB
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.desktop_subnet.id
@@ -14,7 +19,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   source_details {
-    source_type = "image"
+    source_type = "image" # Ubuntu-20.04-Minimal
     source_id   = var.images[var.region]
   }
 
