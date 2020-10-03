@@ -57,7 +57,7 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "file" {
       content = var.vm_private_key
-      destination = "/var/tmp/ssh/vm_key"
+      destination = "/home/ubuntu/.ssh/vm_key"
   }
 
   provisioner "file" {

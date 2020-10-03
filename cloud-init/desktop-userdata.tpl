@@ -28,7 +28,7 @@ mount_default_fields:
   - "none"
   - "none"
   - "fuse.sshfs"
-  - "nofail,noauto,_netdev,IdentityFile=/var/tmp/ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
+  - "nofail,noauto,_netdev,IdentityFile=/home/ubuntu/.ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
   - "0"
   - "0"
 
@@ -72,7 +72,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -o ServerAliveInterval=10 \
 -o ExitOnForwardFailure=yes \
 -o StrictHostKeyChecking=no \
--i /var/tmp/ssh/vm_key \
+-i /home/ubuntu/.ssh/vm_key \
 -R 5900:localhost:5900 \
 -R 4713:localhost:4713 \
 -R 6667:localhost:667 \
