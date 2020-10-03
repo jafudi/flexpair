@@ -93,7 +93,7 @@ variable "images" {
 resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
-    name = terraform.workspace
+    name = "${terraform.workspace}-workspace"
 }
 
 data "oci_identity_tenancy" "te" {
