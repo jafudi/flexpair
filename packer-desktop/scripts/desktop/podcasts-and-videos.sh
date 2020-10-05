@@ -9,9 +9,9 @@ export DEBIAN_FRONTEND="noninteractive"
 # https://gpodder.github.io/docs/user-manual.html
 
 export PATH="$HOME/.local/bin:$PATH"
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-pip3 install html5lib gpod eyeD3 youtube_dl
+curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py > /dev/null
+pip3 -q install html5lib gpod eyeD3 youtube_dl
 
 sudo -E apt-get -y install -qq gpodder
 
