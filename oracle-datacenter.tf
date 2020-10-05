@@ -19,6 +19,9 @@ variable "fingerprint" {
 variable "private_key_password" {
 }
 
+variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
+}
+
 locals {
   script_dir = "packer-desktop/scripts"
 }
@@ -93,7 +96,7 @@ variable "images" {
 resource "oci_identity_compartment" "client_workspace" {
     compartment_id = var.tenancy_ocid
     description = "Named after corresponding Terraform workspace"
-    name = "${terraform.workspace}-workspace"
+    name = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch"
 }
 
 data "oci_identity_tenancy" "te" {
