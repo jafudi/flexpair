@@ -4,7 +4,7 @@ echo "Running script edu-games.sh..."
 echo
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y --no-install-recommends --upgrade \
+sudo -E apt-get install -y --no-install-recommends  \
 2048-qt \
 blockout2 \
 kstars \
@@ -24,7 +24,7 @@ ri-li \
 monsterz monsterz-data \
 kdegames
 
-sudo -E apt-get install -y --upgrade tuxmath tuxpaint
+sudo -E apt-get install -y  tuxmath tuxpaint
 # https://wiki.ubuntuusers.de/Tux_Paint/
 sudo mkdir -p /etc/tuxpaint/
 cat << EOF | sudo tee /etc/tuxpaint/tuxpaint.conf

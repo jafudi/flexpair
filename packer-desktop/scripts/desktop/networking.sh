@@ -4,7 +4,7 @@ echo "Running script networking.sh..."
 echo
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y --no-install-recommends --upgrade \
+sudo -E apt-get install -y --no-install-recommends  \
 mtr net-tools \
 darkstat
 

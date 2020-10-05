@@ -12,7 +12,7 @@ python3 get-pip.py
 pip3 install html5lib gpod eyeD3 youtube_dl
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y --upgrade gpodder
+sudo -E apt-get install -y  gpodder
 
 mkdir -p $HOME/.config/vlc
 cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf
