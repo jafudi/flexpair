@@ -14,8 +14,12 @@ variable "imap_password" {}
 
 variable "mailbox_prefix" {}
 
+variable "TFC_RUN_ID" {
+  // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
+}
+
 locals {
-    domain = "${var.target_subdomain}.${var.dns_zone_name}"
+    domain = "${var.TFC_RUN_ID}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
 }
 

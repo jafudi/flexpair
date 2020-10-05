@@ -20,6 +20,7 @@ variable "private_key_password" {
 }
 
 variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
+  // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
 }
 
 locals {

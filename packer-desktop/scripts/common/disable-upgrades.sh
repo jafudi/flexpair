@@ -9,7 +9,6 @@ cloud-init status --long --wait
 set -e
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install apt-utils
 
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
