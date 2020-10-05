@@ -4,7 +4,7 @@ user_ocid = "ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62
 region = "eu-frankfurt-1"
 
 dns_zone_name = "jafudi.de"
-target_subdomain = "monster"
+target_subdomain = "usecommithash"
 
 gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
 
