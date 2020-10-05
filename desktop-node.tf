@@ -52,7 +52,7 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${local.script_dir}/common/update.sh",
+      "${local.script_dir}/common/disable-upgrades.sh",
       "${local.script_dir}/common/sshd.sh",
       "${local.script_dir}/desktop/networking.sh",
       "${local.script_dir}/common/sudoers.sh",
