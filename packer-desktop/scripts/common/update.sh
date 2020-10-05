@@ -42,9 +42,6 @@ sudo apt-get -y autoremove
 # Update the package list
 sudo apt-get -y update;
 
-# Upgrade all installed packages incl. kernel and kernel headers
-sudo apt-get -y dist-upgrade -o Dpkg::Options::="--force-confnew";
-
 sudo apt-get -y update;
 sudo apt-get -y install software-properties-common
 sudo apt-get -y update;
