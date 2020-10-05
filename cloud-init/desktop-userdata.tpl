@@ -143,6 +143,7 @@ opus/encoder/music=true
 autoconnect=true
 framesperpacket=6
 jitterbuffer=5
+tcponly=true
 
 [pulseaudio]
 output=AudioConference
