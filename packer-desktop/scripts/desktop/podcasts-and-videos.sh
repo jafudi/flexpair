@@ -13,7 +13,7 @@ curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py > /dev/null
 pip3 -q install html5lib gpod eyeD3 youtube_dl
 
-sudo -E apt-get -y install -qq gpodder
+sudo -E apt-get -qq install gpodder
 
 mkdir -p $HOME/.config/vlc
 cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf

@@ -36,16 +36,16 @@ EOF
 
 # Clean and nuke the package from orbit
 sudo rm -rf /var/log/unattended-upgrades;
-sudo apt-get -y -qq purge unattended-upgrades snapd apport;
-sudo apt-get -y -qq autoremove
+sudo apt-get -qq purge unattended-upgrades snapd apport;
+sudo apt-get -qq autoremove
 
 # Update the package list
-sudo apt-get -y -qq update;
+sudo apt-get -qq update;
 
-sudo apt-get -y -qq update;
-sudo -E apt-get -y install -qq software-properties-common
-sudo apt-get -y -qq update;
+sudo apt-get -qq update;
+sudo -E apt-get -qq install software-properties-common
+sudo apt-get -qq update;
 sudo add-apt-repository universe
-sudo apt-get -y -qq update
-sudo -E apt-get -y install -qq sshfs less nano locales
+sudo apt-get -qq update
+sudo -E apt-get -qq install sshfs less nano locales
 

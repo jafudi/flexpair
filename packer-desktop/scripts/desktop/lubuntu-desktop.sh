@@ -8,11 +8,11 @@ export DEBIAN_FRONTEND="noninteractive"
 sudo apt-get -qq clean
 sudo apt-get -qq update --fix-missing
 
-sudo -E apt-get -y install -qq \
+sudo -E apt-get -qq install \
 lubuntu-desktop \
 gdm3-
 
-sudo -E apt-get -y install -qq --no-install-recommends  \
+sudo -E apt-get -qq install --no-install-recommends  \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
@@ -28,7 +28,7 @@ EOF
 sudo systemctl enable lightdm.service
 sudo usermod -aG nopasswdlogin ubuntu
 
-sudo apt-get -qq purge -y \
+sudo apt-get -qq purge \
 anacron- \
 bluedevil- bluez- bluez-cups- pulseaudio-module-bluetooth- \
 genisoimage- \
@@ -66,4 +66,4 @@ screengrab- \
 qps- \
 qlipper-
 
-sudo apt-get -qq autoremove -y
+sudo apt-get -qq autoremove

@@ -3,9 +3,9 @@
 echo "Running script motd.sh..."
 echo
 
-sudo apt-get -y -qq update;
+sudo apt-get -qq update;
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -y install -qq --no-install-recommends glances
+sudo -E apt-get -qq install --no-install-recommends glances
 
 img=$(cat /var/tmp/ascii-art)
 

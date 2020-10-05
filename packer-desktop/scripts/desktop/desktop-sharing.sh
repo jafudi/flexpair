@@ -10,7 +10,7 @@ echo
 
 export DEBIAN_FRONTEND="noninteractive"
 
-sudo -E apt-get -y install -qq --no-install-recommends  \
+sudo -E apt-get -qq install --no-install-recommends  \
 x11vnc \
 xvfb \
 xserver-xorg-video-fbdev \

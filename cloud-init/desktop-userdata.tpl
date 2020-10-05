@@ -202,7 +202,7 @@ chown ubuntu /home/ubuntu/.config/autostart/mumble.desktop
 
 # https://wiki.ubuntuusers.de/Trojita/
 
-DEBIAN_FRONTEND="noninteractive" apt-get -qq install -y --no-install-recommends --upgrade trojita
+DEBIAN_FRONTEND="noninteractive" apt-get -qq install --no-install-recommends trojita
 
 mkdir -p $MAILCONF/home/ubuntu/.config/flaska.net
 cat << EOF > /home/ubuntu/.config/flaska.net/trojita.conf
@@ -286,13 +286,13 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 # Install GitLab runner ############################################
 
 #echo "\n\nInstall Python packages required for testing on guest OS..."
-#DEBIAN_FRONTEND=noninteractive apt-get -qq install --upgrade -y --no-install-recommends python3-pip
+#DEBIAN_FRONTEND=noninteractive apt-get -qq install --no-install-recommends python3-pip
 #pip3 install setuptools
 #pip3 install behave invoke jsonschema
 #
 #echo "\n\nInstall Gitlab Runnner for uploading artifacts from guest VM..."
 #curl --silent -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
-#apt-get install -qq --upgrade -y gitlab-runner traceroute
+#apt-get -qq install gitlab-runner traceroute
 #
 #echo 'gitlab-runner ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 #usermod -aG docker gitlab-runner

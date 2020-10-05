@@ -5,7 +5,7 @@ echo
 
 export DEBIAN_FRONTEND="noninteractive"
 
-sudo -E apt-get -y install -qq --no-install-recommends  \
+sudo -E apt-get -qq install --no-install-recommends  \
 gnumeric gnumeric-plugins-extra gnumeric-doc \
 inkscape \
 gimp \

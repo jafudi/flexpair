@@ -124,7 +124,7 @@ if [ $exitcode -eq 0 ]; then
   docker-compose up --force-recreate -d nginx
 else
     # https://github.com/letsdebug/letsdebug#problems-detected
-    apt-get install -qq -y --no-install-recommends jq
+    apt-get -qq install --no-install-recommends jq
     while true; do
         reqid=$(curl --silent --data "{\"method\":\"http-01\",\"domain\":\"${SSL_DOMAIN}\"}" -H 'content-type: application/json' https://letsdebug.net | jq -r '.ID')
         sleep 30s

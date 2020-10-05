@@ -5,7 +5,7 @@ echo
 
 sudo apt-get -qq update
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -y install -qq --no-install-recommends docker.io git
+sudo -E apt-get -qq install --no-install-recommends docker.io git
 sudo systemctl enable --now docker
 sudo usermod -aG docker ubuntu
 
