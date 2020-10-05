@@ -2,8 +2,6 @@ variable "dns_zone_name" {}
 
 variable "vm_public_key" {}
 
-variable "vm_private_key" {}
-
 variable "murmur_port" {}
 
 variable "murmur_password" {}
@@ -12,6 +10,11 @@ variable "mailbox_prefix" {}
 
 variable "TFC_RUN_ID" {
   // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
+}
+
+resource "tls_private_key" "vm_mutual_key" {
+  algorithm   = "ECDSA"
+  ecdsa_curve = "P521"
 }
 
 resource "random_string" "imap_password" {
@@ -67,5 +70,5 @@ resource "oci_core_route_table" "common_route_table" {
 }
 
 output "private_key" {
-  value = var.vm_private_key
+  value = tls_private_key.vm_mutual_key.private_key_pem
 }

@@ -24,7 +24,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   metadata = {
-    ssh_authorized_keys = var.vm_public_key
+    ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
     user_data = base64encode(templatefile("cloud-init/desktop-userdata.tpl", {
       SSL_DOMAIN = local.domain
       SUB_DOMAIN_PREFIX = local.subdomain
@@ -47,7 +47,7 @@ resource "oci_core_instance" "desktop" {
     host        = self.public_ip
     port        = 22
     user        = "ubuntu"
-    private_key = var.vm_private_key
+    private_key = tls_private_key.vm_mutual_key.private_key_pem
   }
 
   provisioner "remote-exec" {
@@ -70,7 +70,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   provisioner "file" {
-      content = var.vm_private_key
+      content = tls_private_key.vm_mutual_key.private_key_pem
       destination = "/home/ubuntu/.ssh/vm_key"
   }
 
