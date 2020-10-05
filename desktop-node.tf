@@ -56,7 +56,6 @@ resource "oci_core_instance" "desktop" {
       "${local.script_dir}/common/sshd.sh",
       "${local.script_dir}/desktop/networking.sh",
       "${local.script_dir}/common/sudoers.sh",
-      "${local.script_dir}/common/docker-backend.sh",
       "${local.script_dir}/desktop/lubuntu-desktop.sh",
       "${local.script_dir}/desktop/lxqt-look-and-feel.sh",
       "${local.script_dir}/desktop/multiple-languages.sh",
