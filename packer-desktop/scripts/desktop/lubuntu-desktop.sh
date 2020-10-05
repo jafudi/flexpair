@@ -5,8 +5,8 @@ echo
 
 export DEBIAN_FRONTEND="noninteractive"
 
-sudo apt-get clean
-sudo apt-get update --fix-missing
+sudo apt-get -qq clean
+sudo apt-get -qq update --fix-missing
 
 sudo -E apt-get -y install -qq \
 lubuntu-desktop \
@@ -28,7 +28,7 @@ EOF
 sudo systemctl enable lightdm.service
 sudo usermod -aG nopasswdlogin ubuntu
 
-sudo apt-get purge -y \
+sudo apt-get -qq purge -y \
 anacron- \
 bluedevil- bluez- bluez-cups- pulseaudio-module-bluetooth- \
 genisoimage- \
@@ -66,4 +66,4 @@ screengrab- \
 qps- \
 qlipper-
 
-sudo apt-get autoremove -y
+sudo apt-get -qq autoremove -y

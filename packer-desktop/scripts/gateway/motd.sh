@@ -3,7 +3,7 @@
 echo "Running script motd.sh..."
 echo
 
-sudo apt-get -y update;
+sudo apt-get -y -qq update;
 export DEBIAN_FRONTEND="noninteractive"
 sudo -E apt-get -y install -qq --no-install-recommends glances
 

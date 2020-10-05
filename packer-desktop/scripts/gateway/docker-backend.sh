@@ -3,7 +3,7 @@
 echo "Running script docker-backend.sh..."
 echo
 
-sudo apt-get update
+sudo apt-get -qq update
 export DEBIAN_FRONTEND="noninteractive"
 sudo -E apt-get -y install -qq --no-install-recommends docker.io git
 sudo systemctl enable --now docker
