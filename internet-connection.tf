@@ -1,6 +1,8 @@
 variable "dns_zone_name" {}
 
-variable "target_subdomain" {}
+variable "subdomain" {
+  default = var.TFC_RUN_ID
+}
 
 variable "vm_public_key" {}
 
@@ -19,7 +21,7 @@ variable "TFC_RUN_ID" {
 }
 
 locals {
-    domain = "${var.TFC_RUN_ID}.${var.dns_zone_name}"
+    domain = "${var.subdomain}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
 }
 

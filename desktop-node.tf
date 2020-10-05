@@ -27,7 +27,7 @@ resource "oci_core_instance" "desktop" {
     ssh_authorized_keys = var.vm_public_key
     user_data = base64encode(templatefile("cloud-init/desktop-userdata.tpl", {
       SSL_DOMAIN = local.domain
-      SUB_DOMAIN_PREFIX = var.target_subdomain
+      SUB_DOMAIN_PREFIX = local.subdomain
       EMAIL_ADDRESS = local.email_address
       IMAP_HOST = local.domain
       IMAP_PASSWORD = var.imap_password
