@@ -23,7 +23,7 @@ resource "random_string" "imap_password" {
 }
 
 locals {
-    subdomain = var.TFC_RUN_ID
+    subdomain = lower(var.TFC_RUN_ID)
     domain = "${local.subdomain}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
     imap_password = random_string.imap_password.result
