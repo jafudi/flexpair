@@ -84,7 +84,7 @@ resource "oci_core_instance" "gateway" {
         SSL_DOMAIN = local.domain
         EMAIL_ADDRESS = local.email_address
         IMAP_HOST = local.domain
-        IMAP_PASSWORD = var.imap_password
+        IMAP_PASSWORD = local.imap_password
         MURMUR_PORT = var.murmur_port
         GUACAMOLE_HOME = local.guacamole_home
         CERTBOT_FOLDER = local.certbot_subfolder

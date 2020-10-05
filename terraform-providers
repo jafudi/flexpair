@@ -1,4 +1,5 @@
-https://www.terraform.io/docs/providers/acme/index.html
+https://www.terraform.io/docs/providers/acme/index.html vs. certbot
+
 https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs
 https://www.terraform.io/docs/providers/dyn/index.html
 https://www.terraform.io/docs/providers/docker/index.html

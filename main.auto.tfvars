@@ -10,5 +10,4 @@ gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
 murmur_port = "64738"
 murmur_password = "guacadmin"
 
-imap_password = "JeedsEyruwiwez^"
 mailbox_prefix = "mail"

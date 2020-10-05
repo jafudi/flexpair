@@ -1,9 +1,5 @@
 variable "dns_zone_name" {}
 
-variable "subdomain" {
-  default = var.TFC_RUN_ID
-}
-
 variable "vm_public_key" {}
 
 variable "vm_private_key" {}
@@ -12,17 +8,22 @@ variable "murmur_port" {}
 
 variable "murmur_password" {}
 
-variable "imap_password" {}
-
 variable "mailbox_prefix" {}
 
 variable "TFC_RUN_ID" {
   // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
 }
 
+resource "random_string" "imap_password" {
+ length = 16
+ special = true
+}
+
 locals {
-    domain = "${var.subdomain}.${var.dns_zone_name}"
+    subdomain = var.TFC_RUN_ID
+    domain = "${local.subdomain}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
+    imap_password = random_string.imap_password.result
 }
 
 resource "oci_dns_zone" "test_zone" {

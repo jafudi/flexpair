@@ -30,7 +30,7 @@ resource "oci_core_instance" "desktop" {
       SUB_DOMAIN_PREFIX = local.subdomain
       EMAIL_ADDRESS = local.email_address
       IMAP_HOST = local.domain
-      IMAP_PASSWORD = var.imap_password
+      IMAP_PASSWORD = local.imap_password
       MURMUR_PORT = var.murmur_port
       MURMUR_PASSWORD = var.murmur_password
     }))
