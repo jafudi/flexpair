@@ -8,10 +8,11 @@ export DEBIAN_FRONTEND="noninteractive"
 sudo apt-get clean
 sudo apt-get update --fix-missing
 
-sudo -E apt-get install -y  lubuntu-desktop \
+sudo -E apt-get -y install -qq \
+lubuntu-desktop \
 gdm3-
 
-sudo -E apt-get install -y --no-install-recommends  \
+sudo -E apt-get -y install -qq --no-install-recommends  \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \

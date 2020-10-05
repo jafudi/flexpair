@@ -3,6 +3,8 @@
 echo "Running script podcasts-and-videos.sh..."
 echo
 
+export DEBIAN_FRONTEND="noninteractive"
+
 # https://wiki.ubuntuusers.de/gPodder/
 # https://gpodder.github.io/docs/user-manual.html
 
@@ -11,8 +13,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 pip3 install html5lib gpod eyeD3 youtube_dl
 
-export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y  gpodder
+sudo -E apt-get -y install -qq gpodder
 
 mkdir -p $HOME/.config/vlc
 cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf

@@ -5,7 +5,7 @@ echo
 
 sudo apt-get -y update;
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y --no-install-recommends  glances
+sudo -E apt-get -y install -qq --no-install-recommends glances
 
 img=$(cat /var/tmp/ascii-art)
 

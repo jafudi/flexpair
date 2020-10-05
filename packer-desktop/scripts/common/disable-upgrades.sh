@@ -8,6 +8,8 @@ set +e
 cloud-init status --long --wait
 set -e
 
+export DEBIAN_FRONTEND="noninteractive"
+
 ubuntu_version="`lsb_release -r | awk '{print $2}'`";
 major_version="`echo $ubuntu_version | awk -F. '{print $1}'`";
 
@@ -32,8 +34,6 @@ APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Unattended-Upgrade "0";
 EOF
 
-export DEBIAN_FRONTEND=noninteractive
-
 # Clean and nuke the package from orbit
 sudo rm -rf /var/log/unattended-upgrades;
 sudo apt-get -y purge unattended-upgrades snapd apport;
@@ -43,9 +43,9 @@ sudo apt-get -y autoremove
 sudo apt-get -y update;
 
 sudo apt-get -y update;
-sudo apt-get -y install software-properties-common
+sudo -E apt-get -y install -qq software-properties-common
 sudo apt-get -y update;
 sudo add-apt-repository universe
 sudo apt-get -y update
-sudo apt-get -y install sshfs less nano locales
+sudo -E apt-get -y install -qq sshfs less nano locales
 

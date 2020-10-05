@@ -3,6 +3,8 @@
 echo "Running script prevent-swapping.sh..."
 echo
 
+export DEBIAN_FRONTEND="noninteractive"
+
 cat << 'EOF' | sudo tee -a /etc/sysctl.conf
 vm.swappiness = 1
 EOF

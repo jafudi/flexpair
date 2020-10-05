@@ -5,7 +5,7 @@ echo
 
 # https://www.mumble.info
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y --no-install-recommends  \
+sudo -E apt-get -y install -qq --no-install-recommends \
 mumble \
 paprefs \
 audacity

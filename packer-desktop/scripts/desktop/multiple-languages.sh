@@ -3,9 +3,11 @@
 echo "Running script multiple-languages.sh..."
 echo
 
-sudo -E apt-get install -y --install-recommends  \
+export DEBIAN_FRONTEND="noninteractive"
+
+sudo -E apt-get -y install -qq --install-recommends  \
 language-pack-ja fonts-takao-mincho \
 fcitx-mozc fcitx-config-gtk
 
-sudo -E apt-get install -y --install-recommends  \
+sudo -E apt-get -y install -qq --install-recommends  \
 language-pack-de

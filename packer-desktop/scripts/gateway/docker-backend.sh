@@ -4,8 +4,8 @@ echo "Running script docker-backend.sh..."
 echo
 
 sudo apt-get update
-export DEBIAN_FRONTEND=noninteractive
-sudo -E apt-get install -y --no-install-recommends docker.io git
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get -y install -qq --no-install-recommends docker.io git
 sudo systemctl enable --now docker
 sudo usermod -aG docker ubuntu
 

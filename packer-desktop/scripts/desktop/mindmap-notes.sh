@@ -3,8 +3,12 @@
 echo "Running script mindmap-notes.sh..."
 echo
 
-sudo -E apt-get install -y  vym
+export DEBIAN_FRONTEND="noninteractive"
 
-sudo -E apt-get install -y  knotes
+sudo -E apt-get -y install -qq --no-install-recommends vym
 
-sudo -E apt-get install -y  focuswriter hunspell hunspell-tools hunspell-de-de
+sudo -E apt-get -y install -qq --no-install-recommends knotes
+
+sudo -E apt-get -y install -qq --no-install-recommends \
+focuswriter \
+hunspell hunspell-tools hunspell-de-de

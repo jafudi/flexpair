@@ -4,7 +4,7 @@ echo "Running script networking.sh..."
 echo
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get install -y --no-install-recommends  \
+sudo -E apt-get -y install -qq --no-install-recommends \
 mtr net-tools \
 darkstat
 
@@ -22,7 +22,7 @@ sudo sed -i 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="net.ifnames=0 bio
 sudo update-grub;
 
 # The following three lines circumvent a hardly documented reject rule on Oracle Cloud provided images
-sudo -E apt-get install -y --no-install-recommends iptables-persistent
+sudo -E apt-get -y install -qq --no-install-recommends iptables-persistent
 sudo iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # VNC incoming
 sudo iptables -I INPUT 2 -p tcp --dport 4713 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # PulseAudio incoming
 sudo iptables -I INPUT 3 -p tcp --dport 143 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # IMAP

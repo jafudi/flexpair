@@ -8,9 +8,9 @@ echo
 # https://wiki.archlinux.org/index.php/TigerVNC#Running_vncserver_for_virtual_(headless)_sessions
 # https://wiki.ubuntuusers.de/VNC/#Manuell-ueber-SSH
 
-DEBIAN_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
 
-sudo -E apt-get install -y --no-install-recommends  \
+sudo -E apt-get -y install -qq --no-install-recommends  \
 x11vnc \
 xvfb \
 xserver-xorg-video-fbdev \
