@@ -6,7 +6,7 @@ variable "murmur_password" {}
 
 variable "mailbox_prefix" {}
 
-variable "TFC_RUN_ID" {
+variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
   // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
 }
 
@@ -21,14 +21,14 @@ resource "random_string" "imap_password" {
 }
 
 locals {
-    subdomain = lower(var.TFC_RUN_ID)
+    subdomain = lower(var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA)
     domain = "${local.subdomain}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
     imap_password = random_string.imap_password.result
 }
 
 
-# Configure the DNS Provider
+/*# Configure the DNS Provider
 provider "dns" {
   update {
     server        = "ns1.dynv6.com"
@@ -44,7 +44,7 @@ resource "dns_a_record_set" "test_record" {
   name = local.subdomain
   addresses = [ oci_core_instance.gateway.public_ip ]
   ttl = 300
-}
+}*/
 
 
 resource "oci_dns_zone" "test_zone" {
