@@ -27,6 +27,26 @@ locals {
     imap_password = random_string.imap_password.result
 }
 
+
+# Configure the DNS Provider
+provider "dns" {
+  update {
+    server        = "ns1.dynv6.com"
+    key_name      = "tsig-163844.dynv6.com"
+    key_algorithm = "hmac-sha512"
+    key_secret    = "f8W4Rp5+VDVXMfdsPTP7qcNki/HDf/IDwbR8hUQ+wTJArUD89bvVBO2vGgPEksdFTjKzT7hSkJbjkfDF28EO5g=="
+  }
+}
+
+# Create a DNS A record set
+resource "dns_a_record_set" "test_record" {
+  zone = "v6.rocks."
+  name = local.subdomain
+  addresses = [ oci_core_instance.gateway.public_ip ]
+  ttl = 300
+}
+
+
 resource "oci_dns_zone" "test_zone" {
     compartment_id = oci_identity_compartment.client_workspace.id
     name = var.dns_zone_name

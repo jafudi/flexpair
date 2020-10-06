@@ -17,5 +17,4 @@ kdialog elementary-icon-theme \
 falkon \
 variety \
 gnome-clocks \
-persepolis aria2 \
-backintime-qt
+persepolis aria2
