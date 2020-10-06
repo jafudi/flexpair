@@ -1,7 +1,5 @@
 variable "dns_zone_name" {}
 
-variable "vm_public_key" {}
-
 variable "murmur_port" {}
 
 variable "murmur_password" {}
