@@ -60,7 +60,7 @@ data "oci_core_images" "ubuntu-20-04-minimal" {
 }
 
 output "ubuntu-18-04-minimal-latest-name" {
-  value = data.oci_core_images.ubuntu-20-04-minimal.0.display_name
+  value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
 }
 
 resource "oci_identity_compartment" "client_workspace" {
