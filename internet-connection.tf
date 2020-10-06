@@ -28,7 +28,7 @@ locals {
 }
 
 
-/*# Configure the DNS Provider
+# Configure the DNS Provider
 provider "dns" {
   update {
     server        = "ns1.dynv6.com"
@@ -38,6 +38,7 @@ provider "dns" {
   }
 }
 
+/*
 # Create a DNS A record set
 resource "dns_a_record_set" "test_record" {
   zone = "jafudi.v6.rocks."
