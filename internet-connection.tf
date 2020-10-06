@@ -40,7 +40,7 @@ provider "dns" {
 
 # Create a DNS A record set
 resource "dns_a_record_set" "test_record" {
-  zone = "v6.rocks."
+  zone = "jafudi.v6.rocks."
   name = local.subdomain
   addresses = [ oci_core_instance.gateway.public_ip ]
   ttl = 300
