@@ -23,7 +23,7 @@ resource "oci_core_instance" "gateway" {
 
   source_details {
     source_type = "image" # Ubuntu-20.04-Minimal
-    source_id   = var.images[var.region]
+    source_id   = data.oci_core_images.ubuntu-20-04-minimal.0.id
   }
 
   metadata = {
