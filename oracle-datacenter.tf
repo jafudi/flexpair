@@ -59,7 +59,7 @@ data "oci_core_images" "ubuntu-20-04-minimal" {
   sort_order = "DESC"
 }
 
-output "ubuntu-18-04-minimal-latest-name" {
+output "ubuntu-20-04-minimal-latest" {
   value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
 }
 

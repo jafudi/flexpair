@@ -119,6 +119,6 @@ resource "oci_core_instance" "gateway" {
 }
 
 output "gateway" {
-  value = "${oci_core_instance.gateway.public_ip} in data center ${data.oci_identity_availability_domain.ad.name}"
+  value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}"
 }
 
