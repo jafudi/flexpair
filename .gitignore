@@ -10,3 +10,5 @@
 /packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.ini
 /packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.yml
 /.ssh/
+/.oci/
+/.terraform/
