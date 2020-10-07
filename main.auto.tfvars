@@ -11,3 +11,7 @@ murmur_port = "64738"
 murmur_password = "guacadmin"
 
 mailbox_prefix = "mail"
+
+tsig_key_name = "tsig-164066.dynv6.com."
+
+tsig_key_secret = "7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL9qnZBX7uy6Vi8r+46/HmOrMq767RRTPA=="

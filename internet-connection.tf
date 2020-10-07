@@ -6,6 +6,10 @@ variable "murmur_password" {}
 
 variable "mailbox_prefix" {}
 
+variable "tsig_key_name" {}
+
+variable "tsig_key_secret" {}
+
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
   // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
 }
@@ -32,9 +36,9 @@ locals {
 provider "dns" {
   update {
     server        = "ns1.dynv6.com"
-    key_name      = "tsig-163949.dynv6.com."
+    key_name      = var.tsig_key_name
     key_algorithm = "hmac-sha512"
-    key_secret    = "YVzr92fPuDkECv1fbrFc66aeubfp8fZH+94VbHMF0e7qGHy2t4KNAEMJ+vA5dW+dIVXfMJCjSltx9f7qVuu9HQ=="
+    key_secret    = var.tsig_key_secret
   }
 }
 
