@@ -32,9 +32,9 @@ locals {
 provider "dns" {
   update {
     server        = "ns1.dynv6.com"
-    key_name      = "tsig-163844.dynv6.com."
+    key_name      = "tsig-163949.dynv6.com."
     key_algorithm = "hmac-sha512"
-    key_secret    = "f8W4Rp5+VDVXMfdsPTP7qcNki/HDf/IDwbR8hUQ+wTJArUD89bvVBO2vGgPEksdFTjKzT7hSkJbjkfDF28EO5g=="
+    key_secret    = "YVzr92fPuDkECv1fbrFc66aeubfp8fZH+94VbHMF0e7qGHy2t4KNAEMJ+vA5dW+dIVXfMJCjSltx9f7qVuu9HQ=="
   }
 }
 
