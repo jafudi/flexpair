@@ -38,17 +38,16 @@ provider "dns" {
   }
 }
 
-/*
 # Create a DNS A record set
 resource "dns_a_record_set" "test_record" {
-  zone = "jafudi.v6.rocks."
+  zone = "${var.dns_zone_name}."
   name = local.subdomain
   addresses = [ oci_core_instance.gateway.public_ip ]
   ttl = 300
-}*/
+}
 
 
-resource "oci_dns_zone" "test_zone" {
+/*resource "oci_dns_zone" "test_zone" {
     compartment_id = oci_identity_compartment.client_workspace.id
     name = var.dns_zone_name
     zone_type = "PRIMARY"
@@ -61,7 +60,7 @@ resource "oci_dns_record" "A_record" {
     rtype = "A"
     rdata = oci_core_instance.gateway.public_ip
     ttl = 300
-}
+}*/
 
 resource "oci_core_virtual_network" "main_vcn" {
   cidr_block     = "10.1.0.0/16"
