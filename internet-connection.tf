@@ -2,8 +2,6 @@ variable "dns_zone_name" {}
 
 variable "murmur_port" {}
 
-variable "murmur_password" {}
-
 variable "mailbox_prefix" {}
 
 variable "tsig_key_name" {}
@@ -20,17 +18,26 @@ resource "tls_private_key" "vm_mutual_key" {
 }
 
 resource "random_string" "imap_password" {
- length = 16
- special = true
+  length = 16
+  special = true
+  keepers = {
+    # Generate a new password each time we change the web address
+    user_facing_web_address = local.domain
+  }
 }
 
 resource "random_string" "murmur_password" {
- length = 16
- special = false
+  length = 16
+  special = false
+  keepers = {
+    # Generate a new password each time we change the web address
+    user_facing_web_address = local.domain
+  }
 }
 
 locals {
-    subdomain = lower(var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA)
+    commit_hash = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
+    subdomain = lower(local.commit_hash)
     domain = "${local.subdomain}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
     imap_password = random_string.imap_password.result
