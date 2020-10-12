@@ -32,7 +32,7 @@ resource "oci_core_instance" "desktop" {
       IMAP_HOST = local.domain
       IMAP_PASSWORD = local.imap_password
       MURMUR_PORT = var.murmur_port
-      MURMUR_PASSWORD = var.murmur_password
+      MURMUR_PASSWORD = local.murmur_password
     }))
     gitlab_runner_token = var.gitlab_runner_token
   }

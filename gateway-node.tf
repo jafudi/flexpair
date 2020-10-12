@@ -74,7 +74,7 @@ resource "oci_core_instance" "gateway" {
       content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.tpl.ini", {
         SSL_DOMAIN = local.domain
         MURMUR_PORT = var.murmur_port
-        MURMUR_PASSWORD = var.murmur_password
+        MURMUR_PASSWORD = local.murmur_password
       })
       destination = "/var/tmp/guacamole/murmur_config/murmur.ini"
   }
