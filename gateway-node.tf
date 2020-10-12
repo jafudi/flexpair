@@ -119,6 +119,6 @@ resource "oci_core_instance" "gateway" {
 }
 
 output "gateway" {
-  value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}"
+  value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}/?password=${local.murmur_password}"
 }
 

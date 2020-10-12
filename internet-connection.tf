@@ -24,11 +24,17 @@ resource "random_string" "imap_password" {
  special = true
 }
 
+resource "random_string" "murmur_password" {
+ length = 16
+ special = false
+}
+
 locals {
     subdomain = lower(var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA)
     domain = "${local.subdomain}.${var.dns_zone_name}"
     email_address = "${var.mailbox_prefix}@${local.domain}"
     imap_password = random_string.imap_password.result
+    murmur_password = random_string.murmur_password.result
 }
 
 
