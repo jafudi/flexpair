@@ -1,3 +1,32 @@
+# What are the main features?
+
+<table border="0">
+ <tr>
+    <td><b style="font-size:30px">Desktop node</b></td>
+    <td><b style="font-size:30px">Gateway node</b></td>
+ </tr>
+ <tr>
+   <td>
+     <ul>
+       <li>Ubuntu 20.04 LTS</li>
+       <li>Light weight LXQt Desktop</li>
+       <li>Participates as Mumble user</li>
+       <li>Record conference audio</li>
+       <li>Listen to music or podcasts together</li>
+     </ul>
+   </td>
+   <td>
+     <ul>
+       <li>In-browser remote desktop using Apache Guacamole</li>
+       <li>Mumble audio server backend within Docker</li>
+       <li>In-browser high-quality audio conferencing</li>
+       <li>Dockerized Dovecot IMAP Server</li>
+       <li>LetsEncrypt Certbot</li>
+     </ul>
+   </td>
+ </tr>
+</table>
+
 # Market Analysis and Unique Selling Point
 
 [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
