@@ -15,4 +15,5 @@ locales \
 kdialog elementary-icon-theme \
 falkon \
 gnome-clocks \
-persepolis aria2
+persepolis aria2 \
+nextcloud-desktop
