@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+
+mkdir -p $HOME/.config/texlive
+cd $HOME/.config/texlive
+
+wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+tar xvzf install-tl-unx.tar.gz
+
+cat << EOF > texlive.profile
 # texlive.profile written on Fri Sep  4 15:24:23 2020 UTC
 # It will NOT be updated and reflects only the
 # installation profile at installation time.
@@ -28,3 +37,23 @@ tlpdbopt_sys_bin /usr/local/bin
 tlpdbopt_sys_info /usr/local/share/info
 tlpdbopt_sys_man /usr/local/share/man
 tlpdbopt_w32_multi_user 1
+EOF
+
+# install basic scheme without documentation and source in $HOME/.local
+sudo perl install-tl-*/install-tl \
+    -profile texlive.profile \
+    -repository https://ftp.rrze.uni-erlangen.de/ctan/systems/texlive/tlnet
+
+# optional:
+# tlmgr repository add https://www.komascript.de/repository/texlive/2020 KOMA
+# tlmgr pinning add KOMA koma-script
+
+PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
+
+sudo tlmgr install koma-script amsfonts helvetic psnfss lh latexmk \
+              cmap babel-german babel-russian hyphen-german hyphen-russian \
+              cm cm-super cyrillic microtype caption pdfpages pgf pdflscape \
+              xstring
+
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get -qq install kile

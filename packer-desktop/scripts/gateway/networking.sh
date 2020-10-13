@@ -4,9 +4,7 @@ echo "Running script networking.sh..."
 echo
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends \
-mtr net-tools \
-darkstat
+sudo -E apt-get -qq install --no-install-recommends darkstat
 
 echo "Create netplan config for eth0"
 cat <<EOF | sudo tee /etc/netplan/01-netcfg.yaml;

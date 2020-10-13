@@ -5,8 +5,7 @@ echo
 
 export DEBIAN_FRONTEND="noninteractive"
 sudo -E apt-get -qq install --no-install-recommends \
-conky-all \
-etherape
+conky-all
 
 # https://wiki.ubuntuusers.de/Conky/
 

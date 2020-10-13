@@ -11,10 +11,8 @@ inkscape \
 gimp \
 kmag \
 simplescreenrecorder \
-qtqr \
 locales \
 kdialog elementary-icon-theme \
 falkon \
-variety \
 gnome-clocks \
 persepolis aria2
