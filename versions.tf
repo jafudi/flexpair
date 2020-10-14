@@ -1,20 +1,23 @@
 terraform {
   required_providers {
     dns = {
-      source = "hashicorp/dns"
+      source  = "hashicorp/dns"
       version = "~> 2.2.0"
     }
     oci = {
-      source = "hashicorp/oci"
+      source  = "hashicorp/oci"
       version = "~> 3.95.0"
     }
     random = {
-      source = "hashicorp/random"
+      source  = "hashicorp/random"
       version = "~> 2.3.0"
     }
     tls = {
-      source = "hashicorp/tls"
+      source  = "hashicorp/tls"
       version = "~> 2.2.0"
+    }
+    acme = {
+      source = "terraform-providers/acme"
     }
   }
   required_version = ">= 0.13"
