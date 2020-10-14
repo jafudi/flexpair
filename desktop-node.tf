@@ -4,11 +4,11 @@ resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "desktop"
-  shape               = "VM.Standard.E2.1"
-  # Processor: AMD EPYC 7551
+  shape               = "VM.Standard.E2.1.Micro"
+  # Processor: 1/8th of an AMD EPYC 7551
   # Base frequency: 2.0 GHz, max boost frequency: 3.0 GHz
-  # Memory: 8 GB
-  # Bandwidth: 700 Mbps
+  # Memory: 1 GB
+  # Bandwidth: 480 Mbps
   # Boot Volume Size: 50 GB
 
   create_vnic_details {
