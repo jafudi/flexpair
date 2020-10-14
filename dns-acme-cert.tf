@@ -71,7 +71,7 @@ resource "acme_certificate" "certificate" {
     config = {
       RFC2136_NAMESERVER = var.rfc2136_name_server
       // To disable TSIG authentication, leave the RFC2136_TSIG* variables unset.
-      RFC2136_TSIG_ALGORITHM = var.rfc2136_tsig_algorithm
+      RFC2136_TSIG_ALGORITHM = "${var.rfc2136_tsig_algorithm}."
       RFC2136_TSIG_KEY = var.rfc2136_key_name // Name of the secret key as defined in DNS server configuration
       RFC2136_TSIG_SECRET = var.rfc2136_key_secret // Secret key payload
       // RFC2136_DNS_TIMEOUT = "" // API request timeout.
