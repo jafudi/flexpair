@@ -1,5 +1,11 @@
 # What are the main features?
 
+Isomorphisms between
+- Git branch
+- Terraform workspace
+- OCI compartment
+- DNS zone
+
 <table border="0">
  <tr>
     <td><b style="font-size:30px">Desktop node</b></td>

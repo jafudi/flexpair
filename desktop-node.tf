@@ -1,15 +1,12 @@
+variable "desktop_shape" {}
+
 variable "gitlab_runner_token" {}
 
 resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.client_workspace.id
   display_name        = "desktop"
-  shape               = "VM.Standard.E2.1"
-  # Processor: AMD EPYC 7551
-  # Base frequency: 2.0 GHz, max boost frequency: 3.0 GHz
-  # Memory: 8 GB
-  # Bandwidth: 700 Mbps
-  # Boot Volume Size: 50 GB
+  shape               = var.desktop_shape
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.desktop_subnet.id
