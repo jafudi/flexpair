@@ -84,6 +84,16 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "file" {
+    content     = acme_certificate.letsencrypt_certificate.private_key_pem
+    destination = join("/", [local.guacamole_home, local.certbot_subfolder, "conf", "live", "privkey.pem"])
+  }
+
+  provisioner "file" {
+    content     = local.acme_cert_fullchain
+    destination = join("/", [local.guacamole_home, local.certbot_subfolder, "conf", "live", "fullchain.pem"])
+  }
+
+  provisioner "file" {
     source      = "packer-desktop/gateway-home-uploads/"
     destination = "/home/ubuntu/uploads"
   }

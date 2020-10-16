@@ -1,3 +1,5 @@
+variable "TFC_WORKSPACE_NAME" {}
+
 variable "registered_domain" {}
 
 variable "rfc2136_name_server" {}
@@ -20,9 +22,8 @@ provider "dns" {
 }
 
 locals {
-  commit_hash = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
-  subdomain   = lower(local.commit_hash)
-  domain      = "${local.subdomain}.${var.registered_domain}"
+  subdomain = lower("${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}")
+  domain    = "${local.subdomain}.${var.registered_domain}"
 }
 
 # Create a DNS A record set
@@ -65,6 +66,7 @@ resource "acme_registration" "letsencrypt_reg" {
 resource "acme_certificate" "letsencrypt_certificate" {
   account_key_pem = acme_registration.letsencrypt_reg.account_key_pem
   common_name     = local.domain
+  key_type        = 4096
 
   dns_challenge {
     provider = "rfc2136" // https://go-acme.github.io/lego/dns/
@@ -81,4 +83,9 @@ resource "acme_certificate" "letsencrypt_certificate" {
       // RFC2136_TTL = "" // The time-to-live of the TXT record used for the DNS challenge.
     }
   }
+}
+
+locals {
+  letsencrypt_chain   = acme_certificate.letsencrypt_certificate.issuer_pem
+  acme_cert_fullchain = "${acme_certificate.letsencrypt_certificate.certificate_pem}${local.letsencrypt_chain}"
 }
