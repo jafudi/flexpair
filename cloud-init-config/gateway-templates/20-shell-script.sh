@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ ! -f /etc/.terraform-complete ]; then
     echo "Terraform provisioning not yet complete, exiting"
     exit 0
@@ -31,55 +33,55 @@ fi
 
 mkdir -p ${CERTBOT_FOLDER}
 
-if [ ! -e "${CERTBOT_FOLDER}/conf/options-ssl-nginx.conf" ] || [ ! -e "${CERTBOT_FOLDER}/conf/ssl-dhparams.pem" ]; then
-  echo "### Downloading recommended TLS parameters ..."
-  mkdir -p "${CERTBOT_FOLDER}/conf"
-  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | sudo tee "${CERTBOT_FOLDER}/conf/options-ssl-nginx.conf" > /dev/null
-  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem | sudo tee "${CERTBOT_FOLDER}/conf/ssl-dhparams.pem" > /dev/null
-  echo
-fi
+#if [ ! -e "${CERTBOT_FOLDER}/conf/options-ssl-nginx.conf" ] || [ ! -e "${CERTBOT_FOLDER}/conf/ssl-dhparams.pem" ]; then
+#  echo "### Downloading recommended TLS parameters ..."
+#  mkdir -p "${CERTBOT_FOLDER}/conf"
+#  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | sudo tee "${CERTBOT_FOLDER}/conf/options-ssl-nginx.conf" > /dev/null
+#  curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem | sudo tee "${CERTBOT_FOLDER}/conf/ssl-dhparams.pem" > /dev/null
+#  echo
+#fi
 
-echo "### Creating dummy certificate for ${SSL_DOMAIN} ..."
-sudo mkdir -p "${CERTBOT_FOLDER}/conf/live"
-sudo chmod 777 "${CERTBOT_FOLDER}/conf/live"
-docker-compose run --rm --entrypoint "\
-  openssl req -x509 -nodes -newkey 'rsa:4096' -days 90\
-    -keyout '/etc/letsencrypt/live/privkey.pem' \
-    -out '/etc/letsencrypt/live/fullchain.pem' \
-    -subj '/CN=localhost'" certbot
+#echo "### Creating dummy certificate for ${SSL_DOMAIN} ..."
+#sudo mkdir -p "${CERTBOT_FOLDER}/conf/live"
+#sudo chmod 777 "${CERTBOT_FOLDER}/conf/live"
+#docker-compose run --rm --entrypoint "\
+#  openssl req -x509 -nodes -newkey 'rsa:4096' -days 90\
+#    -keyout '/etc/letsencrypt/live/privkey.pem' \
+#    -out '/etc/letsencrypt/live/fullchain.pem' \
+#    -subj '/CN=localhost'" certbot
+#
+#echo "### Starting nginx ..."
+#docker-compose up --force-recreate -d nginx
+#echo
 
-echo "### Starting nginx ..."
-docker-compose up --force-recreate -d nginx
-echo
-
-echo "### Saving away dummy certificate for ${SSL_DOMAIN} ..."
-sudo mkdir -p ${CERTBOT_FOLDER}/conf/archive/dummy
-sudo mv ${CERTBOT_FOLDER}/conf/live/* ${CERTBOT_FOLDER}/conf/archive/dummy/
-sudo rm -Rf ${CERTBOT_FOLDER}/conf/renewal/${SSL_DOMAIN}.conf
-
-echo "### Requesting Let's Encrypt certificate for ${SSL_DOMAIN} ..."
-# https://letsencrypt.org/docs/rate-limits/
-# 50 certificates per registered domain per week i.e. theworkpc.com
-# including other people's certificates!
-# + 5 renewals per subdomain per week
-
-# Enable staging mode if needed
-if [ ${STAGING_MODE} != "0" ]; then staging_arg="--staging"; fi
-
-mkdir -p "${CERTBOT_FOLDER}/logs"
-
-docker-compose run --rm --entrypoint "\
-  certbot certonly --webroot --webroot-path /var/www/certbot \
-    $staging_arg \
-    --email ${EMAIL_ADDRESS} \
-    -d ${SSL_DOMAIN} \
-    --rsa-key-size 4096 \
-    --agree-tos \
-    --non-interactive \
-    --force-renewal" \
-    certbot
-
-exitcode=$?
+#echo "### Saving away dummy certificate for ${SSL_DOMAIN} ..."
+#sudo mkdir -p ${CERTBOT_FOLDER}/conf/archive/dummy
+#sudo mv ${CERTBOT_FOLDER}/conf/live/* ${CERTBOT_FOLDER}/conf/archive/dummy/
+#sudo rm -Rf ${CERTBOT_FOLDER}/conf/renewal/${SSL_DOMAIN}.conf
+#
+#echo "### Requesting Let's Encrypt certificate for ${SSL_DOMAIN} ..."
+## https://letsencrypt.org/docs/rate-limits/
+## 50 certificates per registered domain per week i.e. theworkpc.com
+## including other people's certificates!
+## + 5 renewals per subdomain per week
+#
+## Enable staging mode if needed
+#if [ ${STAGING_MODE} != "0" ]; then staging_arg="--staging"; fi
+#
+#mkdir -p "${CERTBOT_FOLDER}/logs"
+#
+#docker-compose run --rm --entrypoint "\
+#  certbot certonly --webroot --webroot-path /var/www/certbot \
+#    $staging_arg \
+#    --email ${EMAIL_ADDRESS} \
+#    -d ${SSL_DOMAIN} \
+#    --rsa-key-size 4096 \
+#    --agree-tos \
+#    --non-interactive \
+#    --force-renewal" \
+#    certbot
+#
+#exitcode=$?
 
 if [ $exitcode -eq 0 ]; then
   if [ -d "${CERTBOT_FOLDER}/conf/live/${SSL_DOMAIN}-0001" ]; then

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ ! -f /etc/.terraform-complete ]; then
     echo "Terraform provisioning not yet complete, exiting"
     exit 0
