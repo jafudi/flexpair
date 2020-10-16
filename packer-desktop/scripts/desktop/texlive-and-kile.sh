@@ -5,6 +5,9 @@ cd $HOME/.config/texlive
 
 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar xvzf install-tl-unx.tar.gz
+rm install-tl-unx.tar.gz
+
+cd install-tl-*
 
 cat << EOF > texlive.profile
 # texlive.profile written on Fri Sep  4 15:24:23 2020 UTC
@@ -40,7 +43,7 @@ tlpdbopt_w32_multi_user 1
 EOF
 
 # install basic scheme without documentation and source in $HOME/.local
-sudo perl install-tl-*/install-tl \
+sudo perl install-tl \
     -profile texlive.profile \
     -repository https://ftp.rrze.uni-erlangen.de/ctan/systems/texlive/tlnet
 
