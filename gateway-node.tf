@@ -25,13 +25,7 @@ resource "oci_core_instance" "gateway" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data = base64encode(templatefile("cloud-init/gateway-userdata.tpl", {
-      SSL_DOMAIN = local.domain
-      EMAIL_ADDRESS = local.email_address
-      GUACAMOLE_HOME = local.guacamole_home
-      CERTBOT_FOLDER = local.certbot_subfolder
-      STAGING_MODE = 0 # Set to 1 if you're testing your setup to avoid hitting request limits
-    }))
+    user_data = data.cloudinit_config.gateway_config.rendered
   }
 
   agent_config {

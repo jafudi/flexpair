@@ -19,6 +19,10 @@ terraform {
     acme = {
       source = "terraform-providers/acme"
     }
+    cloudinit = {
+      source = "hashicorp/cloudinit"
+      version = "~> 2.0.0"
+    }
   }
   required_version = ">= 0.13"
 }

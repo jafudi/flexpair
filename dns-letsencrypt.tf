@@ -57,13 +57,13 @@ resource "tls_private_key" "acme_private_key" {
   algorithm = "RSA"
 }
 
-resource "acme_registration" "reg" {
+resource "acme_registration" "letsencrypt_reg" {
   account_key_pem = tls_private_key.acme_private_key.private_key_pem
   email_address   = local.email_address
 }
 
-resource "acme_certificate" "certificate" {
-  account_key_pem           = acme_registration.reg.account_key_pem
+resource "acme_certificate" "letsencrypt_certificate" {
+  account_key_pem           = acme_registration.letsencrypt_reg.account_key_pem
   common_name               = local.domain
 
   dns_challenge {

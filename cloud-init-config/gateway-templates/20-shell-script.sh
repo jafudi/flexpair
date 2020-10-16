@@ -1,32 +1,3 @@
-Content-Type: multipart/mixed; boundary="====Part=Boundary================================================="
-MIME-Version: 1.0
-
---====Part=Boundary=================================================
-Content-Type: text/cloud-config; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="cloud-config.yaml"
-
-#cloud-config
-
-bootcmd:
-  - mkdir -p /home/ubuntu/uploads
-  - chown -R ubuntu /home/ubuntu
-
-users:
-    - default
-
-# Set the system timezone
-timezone: Europe/Berlin
-
-locale: de_DE.UTF-8
-
---====Part=Boundary=================================================
-Content-Type: text/x-shellscript; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="guacamole-user-script.sh"
-
-#!/usr/bin/env bash
-
 if [ ! -f /etc/.terraform-complete ]; then
     echo "Terraform provisioning not yet complete, exiting"
     exit 0
@@ -151,5 +122,3 @@ tar -xzf cloud-init.tar.gz
 rm -f cloud-init.tar.gz
 cd cloud-init-logs*
 cat cloud-init-output.log
-
---====Part=Boundary=================================================--

@@ -1,48 +1,3 @@
-Content-Type: multipart/mixed; boundary="====Part=Boundary================================================="
-MIME-Version: 1.0
-
---====Part=Boundary=================================================
-Content-Type: text/cloud-config; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="cloud-config.yaml"
-
-#cloud-config
-
-bootcmd:
-  - mkdir -p /home/ubuntu/uploads
-  - mkdir -p /home/ubuntu/Desktop/Uploads
-  - chown -R ubuntu /home/ubuntu
-
-users:
-  - default
-
-# Set the system timezone
-timezone: Europe/Berlin
-
-locale: de_DE.UTF-8
-
-mounts:
-  - ["ubuntu@${SSL_DOMAIN}:/home/ubuntu/uploads", "/home/ubuntu/Desktop/Uploads"]
-
-mount_default_fields:
-  - "none"
-  - "none"
-  - "fuse.sshfs"
-  - "nofail,noauto,_netdev,IdentityFile=/home/ubuntu/.ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
-  - "0"
-  - "0"
-
-# https://blog.luukhendriks.eu/2019/01/25/sshfs-too-many-levels-of-symbolic-links.html
-runcmd:
-    - "touch /home/ubuntu/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
-
---====Part=Boundary=================================================
-Content-Type: text/x-shellscript; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
-Content-Disposition: attachment; filename="lubuntu-user-script.sh"
-
-#!/usr/bin/env bash
-
 if [ ! -f /etc/.terraform-complete ]; then
     echo "Terraform provisioning not yet complete, exiting"
     exit 0
@@ -333,5 +288,3 @@ tar -xzf cloud-init.tar.gz
 rm -f cloud-init.tar.gz
 cd cloud-init-logs*
 cat cloud-init-output.log
-
---====Part=Boundary=================================================--

@@ -22,15 +22,7 @@ resource "oci_core_instance" "desktop" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data = base64encode(templatefile("cloud-init/desktop-userdata.tpl", {
-      SSL_DOMAIN = local.domain
-      SUB_DOMAIN_PREFIX = local.subdomain
-      EMAIL_ADDRESS = local.email_address
-      IMAP_HOST = local.domain
-      IMAP_PASSWORD = local.imap_password
-      MURMUR_PORT = var.murmur_port
-      MURMUR_PASSWORD = local.murmur_password
-    }))
+    user_data = data.cloudinit_config.desktop_config.rendered
     gitlab_runner_token = var.gitlab_runner_token
   }
 
