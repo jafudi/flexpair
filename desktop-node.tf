@@ -39,6 +39,7 @@ resource "oci_core_instance" "desktop" {
     private_key = tls_private_key.vm_mutual_key.private_key_pem
   }
 
+  # Must-haves
   provisioner "remote-exec" {
     scripts = [
       "${local.script_dir}/common/disable-upgrades.sh",
@@ -48,15 +49,23 @@ resource "oci_core_instance" "desktop" {
       "${local.script_dir}/desktop/lubuntu-desktop.sh",
       "${local.script_dir}/desktop/lxqt-look-and-feel.sh",
       "${local.script_dir}/desktop/multiple-languages.sh",
-      "${local.script_dir}/desktop/podcasts-and-videos.sh",
       "${local.script_dir}/desktop/resource-monitor.sh",
       "${local.script_dir}/desktop/mumble-pulseaudio.sh",
       "${local.script_dir}/desktop/desktop-sharing.sh",
-      "${local.script_dir}/desktop/edu-games.sh",
-      "${local.script_dir}/desktop/mindmap-notes.sh",
-      "${local.script_dir}/desktop/office-applications.sh"
     ]
+    on_failure = fail
   }
+
+  # Nice-to-haves
+//  provisioner "remote-exec" {
+//    scripts = [
+//      "${local.script_dir}/desktop/podcasts-and-videos.sh",
+//      "${local.script_dir}/desktop/edu-games.sh",
+//      "${local.script_dir}/desktop/mindmap-notes.sh",
+//      "${local.script_dir}/desktop/office-applications.sh"
+//    ]
+//    on_failure = continue
+//  }
 
   provisioner "file" {
     content     = tls_private_key.vm_mutual_key.private_key_pem
