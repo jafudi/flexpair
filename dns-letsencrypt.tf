@@ -20,17 +20,17 @@ provider "dns" {
 }
 
 locals {
-    commit_hash = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
-    subdomain = lower(local.commit_hash)
-    domain = "${local.subdomain}.${var.registered_domain}"
+  commit_hash = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
+  subdomain   = lower(local.commit_hash)
+  domain      = "${local.subdomain}.${var.registered_domain}"
 }
 
 # Create a DNS A record set
 resource "dns_a_record_set" "test_record" {
-  zone = "${var.registered_domain}."
-  name = local.subdomain
-  addresses = [ oci_core_instance.gateway.public_ip ]
-  ttl = 300
+  zone      = "${var.registered_domain}."
+  name      = local.subdomain
+  addresses = [oci_core_instance.gateway.public_ip]
+  ttl       = 300
 }
 
 
@@ -63,8 +63,8 @@ resource "acme_registration" "letsencrypt_reg" {
 }
 
 resource "acme_certificate" "letsencrypt_certificate" {
-  account_key_pem           = acme_registration.letsencrypt_reg.account_key_pem
-  common_name               = local.domain
+  account_key_pem = acme_registration.letsencrypt_reg.account_key_pem
+  common_name     = local.domain
 
   dns_challenge {
     provider = "rfc2136" // https://go-acme.github.io/lego/dns/
@@ -72,8 +72,8 @@ resource "acme_certificate" "letsencrypt_certificate" {
       RFC2136_NAMESERVER = var.rfc2136_name_server
       // To disable TSIG authentication, leave the RFC2136_TSIG* variables unset.
       RFC2136_TSIG_ALGORITHM = "${var.rfc2136_tsig_algorithm}."
-      RFC2136_TSIG_KEY = var.rfc2136_key_name // Name of the secret key as defined in DNS server configuration
-      RFC2136_TSIG_SECRET = var.rfc2136_key_secret // Secret key payload
+      RFC2136_TSIG_KEY       = var.rfc2136_key_name   // Name of the secret key as defined in DNS server configuration
+      RFC2136_TSIG_SECRET    = var.rfc2136_key_secret // Secret key payload
       // RFC2136_DNS_TIMEOUT = "" // API request timeout.
       // RFC2136_POLLING_INTERVAL = "" // Time between DNS propagation check.
       // RFC2136_PROPAGATION_TIMEOUT = "" // Maximum waiting time for DNS propagation.

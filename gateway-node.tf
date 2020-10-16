@@ -1,7 +1,7 @@
 variable "gateway_shape" {}
 
 locals {
-  guacamole_home = "/var/tmp/guacamole"
+  guacamole_home    = "/var/tmp/guacamole"
   certbot_subfolder = "./letsencrypt/certbot"
 }
 
@@ -25,7 +25,7 @@ resource "oci_core_instance" "gateway" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data = data.cloudinit_config.gateway_config.rendered
+    user_data           = data.cloudinit_config.gateway_config.rendered
   }
 
   agent_config {
@@ -52,45 +52,45 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "file" {
-      content = tls_private_key.vm_mutual_key.private_key_pem
-      destination = "/home/ubuntu/.ssh/vm_key"
+    content     = tls_private_key.vm_mutual_key.private_key_pem
+    destination = "/home/ubuntu/.ssh/vm_key"
   }
 
   provisioner "file" {
-      source = "packer-desktop/vartmp-uploads/gateway/"
-      destination = "/var/tmp"
+    source      = "packer-desktop/vartmp-uploads/gateway/"
+    destination = "/var/tmp"
   }
 
   provisioner "file" {
-      content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.tpl.ini", {
-        SSL_DOMAIN = local.domain
-        MURMUR_PORT = var.murmur_port
-        MURMUR_PASSWORD = local.murmur_password
-      })
-      destination = "/var/tmp/guacamole/murmur_config/murmur.ini"
+    content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.tpl.ini", {
+      SSL_DOMAIN      = local.domain
+      MURMUR_PORT     = var.murmur_port
+      MURMUR_PASSWORD = local.murmur_password
+    })
+    destination = "/var/tmp/guacamole/murmur_config/murmur.ini"
   }
 
   provisioner "file" {
-      content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.tpl.yml", {
-        SSL_DOMAIN = local.domain
-        EMAIL_ADDRESS = local.email_address
-        IMAP_HOST = local.domain
-        IMAP_PASSWORD = local.imap_password
-        MURMUR_PORT = var.murmur_port
-        GUACAMOLE_HOME = local.guacamole_home
-        CERTBOT_FOLDER = local.certbot_subfolder
-      })
-      destination = "/var/tmp/guacamole/docker-compose.yml"
+    content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.tpl.yml", {
+      SSL_DOMAIN     = local.domain
+      EMAIL_ADDRESS  = local.email_address
+      IMAP_HOST      = local.domain
+      IMAP_PASSWORD  = local.imap_password
+      MURMUR_PORT    = var.murmur_port
+      GUACAMOLE_HOME = local.guacamole_home
+      CERTBOT_FOLDER = local.certbot_subfolder
+    })
+    destination = "/var/tmp/guacamole/docker-compose.yml"
   }
 
   provisioner "file" {
-      source = "packer-desktop/gateway-home-uploads/"
-      destination = "/home/ubuntu/uploads"
+    source      = "packer-desktop/gateway-home-uploads/"
+    destination = "/home/ubuntu/uploads"
   }
 
   provisioner "file" {
-      source = "packer-desktop/gateway-home-uploads/"
-      destination = "/home/ubuntu/uploads"
+    source      = "packer-desktop/gateway-home-uploads/"
+    destination = "/home/ubuntu/uploads"
   }
 
   provisioner "remote-exec" {

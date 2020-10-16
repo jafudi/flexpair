@@ -1,8 +1,8 @@
 tenancy_ocid = "ocid1.tenancy.oc1..aaaaaaaas3oie74wurpodkrygjpztwfscowu3rx42hadgheqrcmesnefllqa"
-user_ocid = "ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa"
-region = "eu-frankfurt-1" // Must equal home region of the tenancy
-timezone = "Europe/Berlin"
-locale = "de_DE.UTF-8"
+user_ocid    = "ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa"
+region       = "eu-frankfurt-1" // Must equal home region of the tenancy
+timezone     = "Europe/Berlin"
+locale       = "de_DE.UTF-8"
 
 gateway_shape = "VM.Standard.E2.1"
 desktop_shape = "VM.Standard.E2.1"
@@ -21,10 +21,10 @@ TSIG uses shared secret keys and one-way hashing to provide a cryptographically 
 of authenticating each endpoint of a connection as being allowed to make or respond to a DNS update.
 Source: Wikipedia */
 
-rfc2136_name_server = "ns1.dynv6.com" // Offers full implementation of RFC2136 and TSIG for free
-rfc2136_key_name = "tsig-164066.dynv6.com."
+rfc2136_name_server    = "ns1.dynv6.com" // Offers full implementation of RFC2136 and TSIG for free
+rfc2136_key_name       = "tsig-164066.dynv6.com."
 rfc2136_tsig_algorithm = "hmac-sha512" // Support for hmac-sha224, hmac-sha256, hmac-sha384, hmac-sha512
-rfc2136_key_secret = "7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL9qnZBX7uy6Vi8r+46/HmOrMq767RRTPA=="
+rfc2136_key_secret     = "7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL9qnZBX7uy6Vi8r+46/HmOrMq767RRTPA=="
 
 murmur_port = "64738" // Standard is port 64738
 

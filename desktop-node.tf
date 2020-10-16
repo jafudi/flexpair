@@ -22,7 +22,7 @@ resource "oci_core_instance" "desktop" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data = data.cloudinit_config.desktop_config.rendered
+    user_data           = data.cloudinit_config.desktop_config.rendered
     gitlab_runner_token = var.gitlab_runner_token
   }
 
@@ -59,18 +59,18 @@ resource "oci_core_instance" "desktop" {
   }
 
   provisioner "file" {
-      content = tls_private_key.vm_mutual_key.private_key_pem
-      destination = "/home/ubuntu/.ssh/vm_key"
+    content     = tls_private_key.vm_mutual_key.private_key_pem
+    destination = "/home/ubuntu/.ssh/vm_key"
   }
 
   provisioner "file" {
-      source = "packer-desktop/vartmp-uploads/desktop/"
-      destination = "/var/tmp"
+    source      = "packer-desktop/vartmp-uploads/desktop/"
+    destination = "/var/tmp"
   }
 
   provisioner "file" {
-      source = "packer-desktop/desktop-home-uploads/"
-      destination = "/home/ubuntu/uploads"
+    source      = "packer-desktop/desktop-home-uploads/"
+    destination = "/home/ubuntu/uploads"
   }
 
   provisioner "remote-exec" {

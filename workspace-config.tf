@@ -1,4 +1,13 @@
 terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "jafudi"
+
+    workspaces {
+      name = "branch-dns01"
+    }
+  }
+
   required_providers {
     dns = {
       source  = "hashicorp/dns"
@@ -20,7 +29,7 @@ terraform {
       source = "terraform-providers/acme"
     }
     cloudinit = {
-      source = "hashicorp/cloudinit"
+      source  = "hashicorp/cloudinit"
       version = "~> 2.0.0"
     }
   }

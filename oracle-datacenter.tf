@@ -28,11 +28,11 @@ locals {
 }
 
 provider "oci" {
-  region           = var.region
-  tenancy_ocid     = var.tenancy_ocid
-  user_ocid        = var.user_ocid
-  fingerprint      = var.fingerprint
-  private_key      = var.private_key
+  region               = var.region
+  tenancy_ocid         = var.tenancy_ocid
+  user_ocid            = var.user_ocid
+  fingerprint          = var.fingerprint
+  private_key          = var.private_key
   private_key_password = var.private_key_password
 }
 
@@ -51,11 +51,11 @@ variable "ad_region_mapping" {
 data "oci_core_images" "ubuntu-20-04-minimal" {
   compartment_id = oci_identity_compartment.client_workspace.id
   filter {
-    name = "display_name"
+    name   = "display_name"
     values = ["^Canonical-Ubuntu-20.04-Minimal-([\\.0-9-]+)$"]
     regex  = true
   }
-  sort_by = "TIMECREATED"
+  sort_by    = "TIMECREATED"
   sort_order = "DESC"
 }
 
@@ -64,9 +64,9 @@ output "ubuntu-20-04-minimal-latest" {
 }
 
 resource "oci_identity_compartment" "client_workspace" {
-    compartment_id = var.tenancy_ocid
-    description = "Named after corresponding Terraform workspace"
-    name = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch"
+  compartment_id = var.tenancy_ocid
+  description    = "Named after corresponding Terraform workspace"
+  name           = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch"
 }
 
 data "oci_identity_tenancy" "te" {
@@ -74,7 +74,7 @@ data "oci_identity_tenancy" "te" {
 }
 
 locals {
-  tenancy_name = data.oci_identity_tenancy.te.name
+  tenancy_name    = data.oci_identity_tenancy.te.name
   home_region_key = data.oci_identity_tenancy.te.home_region_key
 }
 

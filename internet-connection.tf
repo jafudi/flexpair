@@ -12,7 +12,7 @@ resource "tls_private_key" "vm_mutual_key" {
 }
 
 resource "random_string" "imap_password" {
-  length = 16
+  length  = 16
   special = true
   keepers = {
     # Generate a new password each time we change the web address
@@ -21,7 +21,7 @@ resource "random_string" "imap_password" {
 }
 
 resource "random_string" "murmur_password" {
-  length = 16
+  length  = 16
   special = false
   keepers = {
     # Generate a new password each time we change the web address
@@ -30,9 +30,9 @@ resource "random_string" "murmur_password" {
 }
 
 locals {
-    email_address = "${var.mailbox_prefix}@${local.domain}"
-    imap_password = random_string.imap_password.result
-    murmur_password = random_string.murmur_password.result
+  email_address   = "${var.mailbox_prefix}@${local.domain}"
+  imap_password   = random_string.imap_password.result
+  murmur_password = random_string.murmur_password.result
 }
 
 resource "oci_core_virtual_network" "main_vcn" {
