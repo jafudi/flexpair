@@ -12,6 +12,8 @@ desktop_shape = "VM.Standard.E2.1"
 # Bandwidth: 700 Mbps
 # Boot Volume Size: 50 GB
 
+# https://letsencrypt.org/docs/rate-limits/
+# 50 certificates per registered domain per week
 registered_domain = "jafudi.de" // Registered through internetwerk.de
 
 /* TSIG (Transaction SIGnature) is a computer-networking protocol defined in RFCs 2136 and 2845.
