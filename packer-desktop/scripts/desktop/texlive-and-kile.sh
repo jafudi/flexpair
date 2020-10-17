@@ -14,12 +14,12 @@ cat << EOF > texlive.profile
 # It will NOT be updated and reflects only the
 # installation profile at installation time.
 selected_scheme scheme-basic
-TEXDIR /home/xop/.local/texlive/2020
+TEXDIR /home/ubuntu/.local/texlive/2020
 TEXMFCONFIG ~/.texlive2020/texmf-config
 TEXMFHOME ~/texmf
-TEXMFLOCAL /home/xop/.local/texlive/texmf-local
-TEXMFSYSCONFIG /home/xop/.local/texlive/2020/texmf-config
-TEXMFSYSVAR /home/xop/.local/texlive/2020/texmf-var
+TEXMFLOCAL /home/ubuntu/.local/texlive/texmf-local
+TEXMFSYSCONFIG /home/ubuntu/.local/texlive/2020/texmf-config
+TEXMFSYSVAR /home/ubuntu/.local/texlive/2020/texmf-var
 TEXMFVAR ~/.texlive2020/texmf-var
 binary_x86_64-linux 1
 instopt_adjustpath 0
