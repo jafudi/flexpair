@@ -10,8 +10,9 @@ sudo -E apt-get -qq install --no-install-recommends glances
 MOTD_CONFIG="/etc/update-motd.d"
 sudo mkdir -p ${MOTD_CONFIG}
 
-cat << ASCIIART | sudo tee -a "${MOTD_CONFIG}/98-ascii-art"
+cat << 'ASCIIART' | sudo tee -a "${MOTD_CONFIG}/98-ascii-art"
 #!/bin/sh
+
 cat <<'EOF'
                           _      _                                      _
 /'\_/`\                  ( )    (_ )  _                  /'\_/`\       (_ )
@@ -33,8 +34,9 @@ ______ `\___/' ___ Jens Fielenbach, 2020 ________________-""(((:-.,_,.-:)))""-__
 EOF
 ASCIIART
 
-cat << MESSAGE | sudo tee -a "${MOTD_CONFIG}/99-message"
+cat << 'MESSAGE' | sudo tee -a "${MOTD_CONFIG}/99-message"
 #!/bin/sh
+
 cat <<'EOF'
 
 Welcome to your gateway :-)
@@ -44,6 +46,7 @@ For opening a performance monitor, enter:
 
 You may connect to the desktop host using:
 "ssh -p 2222 ubuntu@127.0.0.1"
+
 EOF
 MESSAGE
 
