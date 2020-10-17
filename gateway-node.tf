@@ -70,7 +70,7 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "remote-exec" {
-    inline = "mkdir -p ${local.docker_compose_folder}"
+    inline = ["mkdir -p ${local.docker_compose_folder}"]
   }
   provisioner "file" {
     source      = "docker-compose/"
