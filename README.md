@@ -36,7 +36,7 @@ Isomorphisms between
 
 ![Energy Consumption and Privacy Legislation](docs/EnergyConsumptionAndPrivacy.png)
 
-Source: https://www.oracle.com/de/cloud/data-regions.html
+Source: https://www.oracle.com/de/cloud/data-regions.html (17.10.2020)
 
 # Market Analysis and Unique Selling Point
 
