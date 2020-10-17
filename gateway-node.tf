@@ -1,5 +1,7 @@
 variable "gateway_shape" {}
 
+variable "docker_compose_release" {}
+
 locals {
   docker_compose_folder = "/var/tmp/docker-compose"
   certbot_repo          = "https://raw.githubusercontent.com/certbot/certbot/master"
@@ -47,8 +49,7 @@ resource "oci_core_instance" "gateway" {
       "remote-provision/common/sshd.sh",
       "remote-provision/gateway/networking.sh",
       "remote-provision/common/sudoers.sh",
-      "remote-provision/gateway/docker-backend.sh",
-      "remote-provision/gateway/motd.sh"
+      "remote-provision/gateway/message-of-the-day.sh"
     ]
   }
 

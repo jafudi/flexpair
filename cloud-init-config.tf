@@ -42,6 +42,7 @@ data "cloudinit_config" "gateway_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/20-shell-script.sh", {
+      DOCKER_COMPOSE_RELEASE = var.docker_compose_release
       DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
     })
   }

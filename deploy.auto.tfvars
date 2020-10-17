@@ -5,6 +5,8 @@ timezone     = "Europe/Berlin"
 locale       = "de_DE.UTF-8"
 
 gateway_shape = "VM.Standard.E2.1"
+docker_compose_release = "1.27.4"
+
 desktop_shape = "VM.Standard.E2.1"
 # Processor: AMD EPYC 7551
 # Base frequency: 2.0 GHz, max boost frequency: 3.0 GHz

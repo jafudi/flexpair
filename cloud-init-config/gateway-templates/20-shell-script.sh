@@ -12,11 +12,24 @@ echo "Bootstrapping using cloud-init..."
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
 chown -R ubuntu /home/ubuntu # handing over home folder to user
 
-# Provision communication stack ####################################
+# Provision Docker Compose ####################################
+
+echo "Installing Docker and Docker Compose..."
+echo
+
+apt-get -qq update
+export DEBIAN_FRONTEND="noninteractive"
+apt-get -qq install --no-install-recommends docker.io git
+systemctl enable --now docker
+usermod -aG docker ubuntu
+
+url="https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)"
+sudo curl --silent -L ${url} -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 cd ${DOCKER_COMPOSE_FOLDER}
 
-echo "Preparing folder init and creating ./init/initdb.sql"
+echo "Preparing folder init and creating ./init/initdb.sql..."
 mkdir ./init >/dev/null 2>&1
 mkdir -p ./nginx/ssl >/dev/null 2>&1
 rm -rf ./data
@@ -29,6 +42,8 @@ else
     exit 1
 fi
 
+echo "Bringing up Docker Compose..."
+echo
 docker-compose up
 
 cloud-init collect-logs
