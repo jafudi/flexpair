@@ -47,7 +47,8 @@ resource "oci_core_instance" "gateway" {
       "remote-provision/common/sshd.sh",
       "remote-provision/gateway/networking.sh",
       "remote-provision/common/sudoers.sh",
-      "remote-provision/gateway/docker-backend.sh"
+      "remote-provision/gateway/docker-backend.sh",
+      "remote-provision/gateway/motd.sh"
     ]
   }
 
@@ -68,6 +69,9 @@ resource "oci_core_instance" "gateway" {
     command     = "curl -s ${local.certbot_repo}/certbot/certbot/ssl-dhparams.pem | tee ssl-dhparams.pem > /dev/null"
   }
 
+  provisioner "remote-exec" {
+    inline = "mkdir -p ${local.docker_compose_folder}"
+  }
   provisioner "file" {
     source      = "docker-compose/"
     destination = local.docker_compose_folder
@@ -111,12 +115,6 @@ resource "oci_core_instance" "gateway" {
   provisioner "file" {
     source      = "packer-desktop/gateway-home-uploads/"
     destination = "/home/ubuntu/uploads"
-  }
-
-  provisioner "remote-exec" {
-    scripts = [
-      "remote-provision/gateway/motd.sh"
-    ]
   }
 
   provisioner "remote-exec" {
