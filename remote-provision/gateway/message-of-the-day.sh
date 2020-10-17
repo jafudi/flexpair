@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND="noninteractive"
 sudo -E apt-get -qq install --no-install-recommends glances
 
 MOTD_CONFIG="/etc/update-motd.d"
-mkdir -p ${MOTD_CONFIG}
+sudo mkdir -p ${MOTD_CONFIG}
 
 cat << ASCIIART | sudo tee -a "${MOTD_CONFIG}/98-ascii-art"
 #!/bin/sh
