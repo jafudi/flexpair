@@ -58,6 +58,7 @@ resource "oci_core_instance" "desktop" {
       "${local.script_dir}/common/sudoers.sh",
       "${local.script_dir}/desktop/lubuntu-desktop.sh",
       "${local.script_dir}/desktop/lxqt-look-and-feel.sh",
+      "${local.script_dir}/desktop/texlive-and-kile.sh",
       "${local.script_dir}/desktop/multiple-languages.sh",
       "${local.script_dir}/desktop/podcasts-and-videos.sh",
       "${local.script_dir}/desktop/resource-monitor.sh",

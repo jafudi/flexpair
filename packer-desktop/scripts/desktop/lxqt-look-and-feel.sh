@@ -77,7 +77,9 @@ apps\6\desktop=/usr/share/applications/pavucontrol-qt.desktop
 apps\7\desktop=/usr/share/applications/simplescreenrecorder.desktop
 apps\8\desktop=/usr/share/applications/gpodder.desktop
 apps\9\desktop=/usr/share/applications/vlc.desktop
-apps\size=13
+apps\14\desktop=/usr/share/applications/persepolis.desktop
+apps\15\desktop=/usr/share/applications/org.kde.kile.desktop
+apps\size=15
 type=quicklaunch
 
 [showdesktop]
