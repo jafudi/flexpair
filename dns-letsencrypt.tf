@@ -31,7 +31,7 @@ resource "dns_a_record_set" "gateway_hostname" {
   zone      = "${var.registered_domain}."
   name      = local.subdomain
   addresses = [oci_core_instance.gateway.public_ip]
-  // ttl       = 60
+  ttl       = 60
 }
 
 provider "acme" {
