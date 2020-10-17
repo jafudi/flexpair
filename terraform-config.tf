@@ -1,12 +1,12 @@
 terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "jafudi"
-
-    workspaces {
-      name = "branch-dns01"
-    }
-  }
+  //  backend "remote" {
+  //    hostname     = "app.terraform.io"
+  //    organization = "jafudi"
+  //
+  //    workspaces {
+  //      name = "branch-dns01"
+  //    }
+  //  }
 
   required_providers {
     dns = {

@@ -306,30 +306,6 @@
                         ],
                         "components": [
                             {
-                                "id": "19",
-                                "tags": "Element,Component",
-                                "name": "LetsEncrypt certbot",
-                                "relationships": [
-                                    {
-                                        "id": "62",
-                                        "tags": "Relationship",
-                                        "sourceId": "19",
-                                        "destinationId": "9",
-                                        "description": "runs on",
-                                        "technology": "Docker container"
-                                    },
-                                    {
-                                        "id": "76",
-                                        "tags": "Relationship",
-                                        "sourceId": "19",
-                                        "destinationId": "18",
-                                        "description": "creates SSL certificate",
-                                        "technology": "LetsEncrypt"
-                                    }
-                                ],
-                                "size": 0
-                            },
-                            {
                                 "id": "18",
                                 "tags": "Element,Component",
                                 "name": "nginx",

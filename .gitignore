@@ -4,11 +4,10 @@
 /**/*.vmdk
 /packer_cache/*
 
-/packer-desktop/vartmp-uploads/gateway/guacamole/data/
-/packer-desktop/vartmp-uploads/common/ssh/
+/gateway/guacamole/data/
 /packer-desktop/builds/
-/packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.ini
-/packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.yml
+/gateway/murmur_config/murmur.ini
+/gateway/guacamole/docker-compose.yml
 /.ssh/
 /.oci/
 /.terraform/

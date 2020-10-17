@@ -23,10 +23,6 @@ variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
   // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
 }
 
-locals {
-  script_dir = "packer-desktop/scripts"
-}
-
 provider "oci" {
   region               = var.region
   tenancy_ocid         = var.tenancy_ocid

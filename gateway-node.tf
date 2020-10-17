@@ -1,8 +1,8 @@
 variable "gateway_shape" {}
 
 locals {
-  guacamole_home    = "/var/tmp/guacamole"
-  certbot_subfolder = "./letsencrypt/certbot"
+  docker_compose_folder = "/var/tmp/docker-compose"
+  certbot_repo          = "https://raw.githubusercontent.com/certbot/certbot/master"
 }
 
 resource "oci_core_instance" "gateway" {
@@ -43,11 +43,11 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${local.script_dir}/common/disable-upgrades.sh",
-      "${local.script_dir}/common/sshd.sh",
-      "${local.script_dir}/gateway/networking.sh",
-      "${local.script_dir}/common/sudoers.sh",
-      "${local.script_dir}/gateway/docker-backend.sh"
+      "remote-provision/common/disable-upgrades.sh",
+      "remote-provision/common/sshd.sh",
+      "remote-provision/gateway/networking.sh",
+      "remote-provision/common/sudoers.sh",
+      "remote-provision/gateway/docker-backend.sh"
     ]
   }
 
@@ -56,41 +56,51 @@ resource "oci_core_instance" "gateway" {
     destination = "/home/ubuntu/.ssh/vm_key"
   }
 
-  provisioner "file" {
-    source      = "packer-desktop/vartmp-uploads/gateway/"
-    destination = "/var/tmp"
+  # This file contains important security parameters for NGINX.
+  provisioner "local-exec" {
+    working_dir = "docker-compose/nginx/conf.d"
+    command     = "curl -s ${local.certbot_repo}/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | tee options-ssl-nginx.conf > /dev/null"
+  }
+
+  # Diffie-Hellman parameters for https://en.wikipedia.org/wiki/Forward_secrecy
+  provisioner "local-exec" {
+    working_dir = "docker-compose/letsencrypt"
+    command     = "curl -s ${local.certbot_repo}/certbot/certbot/ssl-dhparams.pem | tee ssl-dhparams.pem > /dev/null"
   }
 
   provisioner "file" {
-    content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.tpl.ini", {
+    source      = "docker-compose/"
+    destination = local.docker_compose_folder
+  }
+
+  provisioner "file" {
+    content = templatefile("docker-compose/murmur_config/murmur.tpl.ini", {
       SSL_DOMAIN      = local.domain
       MURMUR_PORT     = var.murmur_port
       MURMUR_PASSWORD = local.murmur_password
     })
-    destination = "/var/tmp/guacamole/murmur_config/murmur.ini"
+    destination = "${local.docker_compose_folder}/murmur_config/murmur.ini"
   }
 
   provisioner "file" {
-    content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.tpl.yml", {
-      SSL_DOMAIN     = local.domain
-      EMAIL_ADDRESS  = local.email_address
-      IMAP_HOST      = local.domain
-      IMAP_PASSWORD  = local.imap_password
-      MURMUR_PORT    = var.murmur_port
-      GUACAMOLE_HOME = local.guacamole_home
-      CERTBOT_FOLDER = local.certbot_subfolder
+    content = templatefile("docker-compose/docker-compose.tpl.yml", {
+      SSL_DOMAIN    = local.domain
+      EMAIL_ADDRESS = local.email_address
+      IMAP_HOST     = local.domain
+      IMAP_PASSWORD = local.imap_password
+      MURMUR_PORT   = var.murmur_port
     })
-    destination = "/var/tmp/guacamole/docker-compose.yml"
+    destination = "${local.docker_compose_folder}/docker-compose.yml"
   }
 
   provisioner "file" {
     content     = acme_certificate.letsencrypt_certificate.private_key_pem
-    destination = join("/", [local.guacamole_home, local.certbot_subfolder, "conf", "live", "privkey.pem"])
+    destination = join("/", [local.docker_compose_folder, "letsencrypt", "privkey.pem"])
   }
 
   provisioner "file" {
     content     = local.acme_cert_fullchain
-    destination = join("/", [local.guacamole_home, local.certbot_subfolder, "conf", "live", "fullchain.pem"])
+    destination = join("/", [local.docker_compose_folder, "letsencrypt", "fullchain.pem"])
   }
 
   provisioner "file" {
@@ -105,7 +115,7 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${local.script_dir}/gateway/motd.sh"
+      "remote-provision/gateway/motd.sh"
     ]
   }
 

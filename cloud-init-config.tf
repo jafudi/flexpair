@@ -42,11 +42,7 @@ data "cloudinit_config" "gateway_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/20-shell-script.sh", {
-      SSL_DOMAIN     = local.domain
-      EMAIL_ADDRESS  = local.email_address
-      GUACAMOLE_HOME = local.guacamole_home
-      CERTBOT_FOLDER = local.certbot_subfolder
-      STAGING_MODE   = 0 # Set to 1 if you're testing your setup to avoid hitting request limits
+      DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
     })
   }
 }

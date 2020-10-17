@@ -42,39 +42,34 @@ resource "oci_core_instance" "desktop" {
   # Must-haves
   provisioner "remote-exec" {
     scripts = [
-      "${local.script_dir}/common/disable-upgrades.sh",
-      "${local.script_dir}/common/sshd.sh",
-      "${local.script_dir}/desktop/networking.sh",
-      "${local.script_dir}/common/sudoers.sh",
-      "${local.script_dir}/desktop/lubuntu-desktop.sh",
-      "${local.script_dir}/desktop/lxqt-look-and-feel.sh",
-      "${local.script_dir}/desktop/multiple-languages.sh",
-      "${local.script_dir}/desktop/resource-monitor.sh",
-      "${local.script_dir}/desktop/mumble-pulseaudio.sh",
-      "${local.script_dir}/desktop/desktop-sharing.sh",
+      "remote-provision/common/disable-upgrades.sh",
+      "remote-provision/common/sshd.sh",
+      "remote-provision/desktop/networking.sh",
+      "remote-provision/common/sudoers.sh",
+      "remote-provision/desktop/lubuntu-desktop.sh",
+      "remote-provision/desktop/lxqt-look-and-feel.sh",
+      "remote-provision/desktop/multiple-languages.sh",
+      "remote-provision/desktop/resource-monitor.sh",
+      "remote-provision/desktop/mumble-pulseaudio.sh",
+      "remote-provision/desktop/desktop-sharing.sh",
     ]
     on_failure = fail
   }
 
   # Nice-to-haves
-//  provisioner "remote-exec" {
-//    scripts = [
-//      "${local.script_dir}/desktop/podcasts-and-videos.sh",
-//      "${local.script_dir}/desktop/edu-games.sh",
-//      "${local.script_dir}/desktop/mindmap-notes.sh",
-//      "${local.script_dir}/desktop/office-applications.sh"
-//    ]
-//    on_failure = continue
-//  }
+  //  provisioner "remote-exec" {
+  //    scripts = [
+  //      "remote-provision/desktop/podcasts-and-videos.sh",
+  //      "remote-provision/desktop/edu-games.sh",
+  //      "remote-provision/desktop/mindmap-notes.sh",
+  //      "remote-provision/desktop/office-applications.sh"
+  //    ]
+  //    on_failure = continue
+  //  }
 
   provisioner "file" {
     content     = tls_private_key.vm_mutual_key.private_key_pem
     destination = "/home/ubuntu/.ssh/vm_key"
-  }
-
-  provisioner "file" {
-    source      = "packer-desktop/vartmp-uploads/desktop/"
-    destination = "/var/tmp"
   }
 
   provisioner "file" {
