@@ -8,9 +8,8 @@ resource "oci_core_instance" "desktop" {
   display_name        = "desktop"
   shape               = var.desktop_shape
 
-  # VM creation only makes sense with DNS pre-requisites in place
+  # Continue only after certificate was successfully issued
   depends_on = [
-    dns_a_record_set.gateway_hostname,
     acme_certificate.letsencrypt_certificate
   ]
 
