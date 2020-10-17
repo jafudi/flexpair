@@ -8,6 +8,12 @@ resource "oci_core_instance" "desktop" {
   display_name        = "desktop"
   shape               = var.desktop_shape
 
+  # VM creation only makes sense with DNS pre-requisites in place
+  depends_on = [
+    dns_a_record_set.gateway_hostname,
+    acme_certificate.letsencrypt_certificate
+  ]
+
   create_vnic_details {
     subnet_id        = oci_core_subnet.desktop_subnet.id
     display_name     = "eth0"
