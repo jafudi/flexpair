@@ -4,7 +4,7 @@ region       = "eu-frankfurt-1" // Must equal home region of the tenancy
 timezone     = "Europe/Berlin"
 locale       = "de_DE.UTF-8"
 
-gateway_shape = "VM.Standard.E2.1"
+gateway_shape          = "VM.Standard.E2.1"
 docker_compose_release = "1.27.4"
 
 desktop_shape = "VM.Standard.E2.1"

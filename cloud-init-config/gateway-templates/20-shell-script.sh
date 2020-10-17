@@ -23,8 +23,10 @@ apt-get -qq install --no-install-recommends docker.io git
 systemctl enable --now docker
 usermod -aG docker ubuntu
 
-url="https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)"
-sudo curl --silent -L ${url} -o /usr/local/bin/docker-compose
+sudo curl --silent \
+  -L "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_RELEASE}/docker-compose-$(uname -s)-$(uname -m)" \
+  -o /usr/local/bin/docker-compose
+
 sudo chmod +x /usr/local/bin/docker-compose
 
 cd ${DOCKER_COMPOSE_FOLDER}
