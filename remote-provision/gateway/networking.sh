@@ -21,7 +21,8 @@ EOF
 sudo sed -i 's/GRUB_CMDLINE_LINUX="\(.*\)"/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0 \1"/g' /etc/default/grub;
 sudo update-grub;
 
-# The following three lines circumvent a hardly documented reject rule on Oracle Cloud provided images
+# Allow connections to non-standard localhost ports which are necessary for the 'nginx' and 'guac' containers
+# which do have their own IP addresses within a virtualized Docker network while still running on the same VM
 sudo -E apt-get -qq install --no-install-recommends iptables-persistent
 sudo iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to VNC
 sudo iptables -I INPUT 2 -p tcp --dport 4713 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to PulseAudio
