@@ -35,6 +35,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -R 6667:localhost:667 \
 -R 2222:localhost:22 \
 -L ${MURMUR_PORT}:172.18.0.1:${MURMUR_PORT} \
+-L 25:172.18.0.1:25 \
 -L 143:172.18.0.1:143 \
 ubuntu@${SSL_DOMAIN}
 Restart=always
