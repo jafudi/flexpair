@@ -23,12 +23,7 @@ sudo update-grub;
 
 # The following three lines circumvent a hardly documented reject rule on Oracle Cloud provided images
 sudo -E apt-get -qq install --no-install-recommends iptables-persistent
-sudo iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # VNC incoming
-sudo iptables -I INPUT 2 -p tcp --dport 4713 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # PulseAudio incoming
-sudo iptables -I INPUT 3 -p tcp --dport 667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # DarkStat for gateway
-sudo iptables -I INPUT 4 -p tcp --dport 6667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # DarkStat for desktop
-# sudo iptables -I INPUT 5 -p tcp --dport 25 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # SMTP
-# sudo iptables -I INPUT 6 -p tcp --dport 143 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # IMAP
+sudo iptables -I INPUT 1 -p tcp --dport 667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # DarkStat for gateway
 sudo netfilter-persistent save
 
 cat <<EOF | sudo tee /etc/darkstat/init.cfg
