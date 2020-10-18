@@ -62,15 +62,15 @@ resource "oci_core_instance" "desktop" {
   }
 
   # Nice-to-haves
-  //  provisioner "remote-exec" {
-  //    scripts = [
-  //      "remote-provision/desktop/podcasts-and-videos.sh",
-  //      "remote-provision/desktop/edu-games.sh",
-  //      "remote-provision/desktop/mindmap-notes.sh",
-  //      "remote-provision/desktop/office-applications.sh"
-  //    ]
-  //    on_failure = continue
-  //  }
+  provisioner "remote-exec" {
+    scripts = [
+      "remote-provision/desktop/podcasts-and-videos.sh",
+      "remote-provision/desktop/edu-games.sh",
+      "remote-provision/desktop/mindmap-notes.sh",
+      "remote-provision/desktop/office-applications.sh"
+    ]
+    on_failure = fail // or continue
+  }
 
   provisioner "file" {
     content     = tls_private_key.vm_mutual_key.private_key_pem
