@@ -114,12 +114,7 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "file" {
-    source      = "packer-desktop/gateway-home-uploads/"
-    destination = "/home/ubuntu/uploads"
-  }
-
-  provisioner "file" {
-    source      = "packer-desktop/gateway-home-uploads/"
+    source      = "upload-directory/"
     destination = "/home/ubuntu/uploads"
   }
 

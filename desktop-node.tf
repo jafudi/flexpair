@@ -77,11 +77,6 @@ resource "oci_core_instance" "desktop" {
     destination = "/home/ubuntu/.ssh/vm_key"
   }
 
-  provisioner "file" {
-    source      = "packer-desktop/desktop-home-uploads/"
-    destination = "/home/ubuntu/uploads"
-  }
-
   provisioner "remote-exec" {
     inline = [
       "sudo touch /etc/.terraform-complete",

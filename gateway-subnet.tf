@@ -44,6 +44,16 @@ resource "oci_core_security_list" "gateway_security_list" {
     source   = "0.0.0.0/0"
 
     tcp_options {
+      max = "80"
+      min = "80"
+    }
+  }
+
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
       max = "64738"
       min = "64738"
     }
