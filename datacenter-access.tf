@@ -42,23 +42,6 @@ variable "ad_region_mapping" {
   }
 }
 
-# get latest Ubuntu Linux 20.04 Minimal image
-# https://docs.cloud.oracle.com/en-us/iaas/images/ubuntu-2004/
-data "oci_core_images" "ubuntu-20-04-minimal" {
-  compartment_id = oci_identity_compartment.one_per_subdomain.id
-  filter {
-    name   = "display_name"
-    values = ["^Canonical-Ubuntu-20.04-Minimal-([\\.0-9-]+)$"]
-    regex  = true
-  }
-  sort_by    = "TIMECREATED"
-  sort_order = "DESC"
-}
-
-output "ubuntu-20-04-minimal-latest" {
-  value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
-}
-
 resource "oci_identity_compartment" "one_per_subdomain" {
     compartment_id = var.tenancy_ocid
     description = "Setting compartment label equal to subdomain label"
