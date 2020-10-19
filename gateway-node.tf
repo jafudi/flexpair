@@ -1,18 +1,20 @@
+variable "gateway_shape" {}
+
 locals {
-  guacamole_home = "/var/tmp/guacamole"
-  certbot_subfolder = "./letsencrypt/certbot"
+  docker_compose_folder = "/var/tmp/docker-compose"
+  certbot_repo          = "https://raw.githubusercontent.com/certbot/certbot/master"
 }
 
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = oci_identity_compartment.client_workspace.id
+  compartment_id      = oci_identity_compartment.one_per_subdomain.id
   display_name        = "gateway"
-  shape               = "VM.Standard.E2.1"
-  # Processor: AMD EPYC 7551
-  # Base frequency: 2.0 GHz, max boost frequency: 3.0 GHz
-  # Memory: 8 GB
-  # Bandwidth: 700 Mbps
-  # Boot Volume Size: 50 GB
+  shape               = var.gateway_shape
+
+  # Continue only after certificate was successfully issued
+  depends_on = [
+    acme_certificate.letsencrypt_certificate
+  ]
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.gateway_subnet.id
@@ -28,13 +30,7 @@ resource "oci_core_instance" "gateway" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data = base64encode(templatefile("cloud-init/gateway-userdata.tpl", {
-      SSL_DOMAIN = local.domain
-      EMAIL_ADDRESS = local.email_address
-      GUACAMOLE_HOME = local.guacamole_home
-      CERTBOT_FOLDER = local.certbot_subfolder
-      STAGING_MODE = 0 # Set to 1 if you're testing your setup to avoid hitting request limits
-    }))
+    user_data           = data.cloudinit_config.gateway_config.rendered
   }
 
   agent_config {
@@ -52,60 +48,72 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     scripts = [
-      "${local.script_dir}/common/disable-upgrades.sh",
-      "${local.script_dir}/common/sshd.sh",
-      "${local.script_dir}/gateway/networking.sh",
-      "${local.script_dir}/common/sudoers.sh",
-      "${local.script_dir}/gateway/docker-backend.sh"
+      "remote-provision/common/disable-upgrades.sh",
+      "remote-provision/common/sshd.sh",
+      "remote-provision/gateway/networking.sh",
+      "remote-provision/common/sudoers.sh",
+      "remote-provision/gateway/message-of-the-day.sh"
     ]
   }
 
   provisioner "file" {
-      content = tls_private_key.vm_mutual_key.private_key_pem
-      destination = "/home/ubuntu/.ssh/vm_key"
+    content     = tls_private_key.vm_mutual_key.private_key_pem
+    destination = "/home/ubuntu/.ssh/vm_key"
   }
 
-  provisioner "file" {
-      source = "packer-desktop/vartmp-uploads/gateway/"
-      destination = "/var/tmp"
+  # This file contains important security parameters for NGINX.
+  provisioner "local-exec" {
+    working_dir = "docker-compose/nginx/conf.d"
+    command     = "curl -s ${local.certbot_repo}/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | tee options-ssl-nginx.conf > /dev/null"
   }
 
-  provisioner "file" {
-      content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/murmur_config/murmur.tpl.ini", {
-        SSL_DOMAIN = local.domain
-        MURMUR_PORT = var.murmur_port
-        MURMUR_PASSWORD = local.murmur_password
-      })
-      destination = "/var/tmp/guacamole/murmur_config/murmur.ini"
-  }
-
-  provisioner "file" {
-      content = templatefile("packer-desktop/vartmp-uploads/gateway/guacamole/docker-compose.tpl.yml", {
-        SSL_DOMAIN = local.domain
-        EMAIL_ADDRESS = local.email_address
-        IMAP_HOST = local.domain
-        IMAP_PASSWORD = local.imap_password
-        MURMUR_PORT = var.murmur_port
-        GUACAMOLE_HOME = local.guacamole_home
-        CERTBOT_FOLDER = local.certbot_subfolder
-      })
-      destination = "/var/tmp/guacamole/docker-compose.yml"
-  }
-
-  provisioner "file" {
-      source = "packer-desktop/gateway-home-uploads/"
-      destination = "/home/ubuntu/uploads"
-  }
-
-  provisioner "file" {
-      source = "packer-desktop/gateway-home-uploads/"
-      destination = "/home/ubuntu/uploads"
+  # Diffie-Hellman parameters for https://en.wikipedia.org/wiki/Forward_secrecy
+  provisioner "local-exec" {
+    working_dir = "docker-compose/letsencrypt"
+    command     = "curl -s ${local.certbot_repo}/certbot/certbot/ssl-dhparams.pem | tee ssl-dhparams.pem > /dev/null"
   }
 
   provisioner "remote-exec" {
-    scripts = [
-      "${local.script_dir}/gateway/motd.sh"
-    ]
+    inline = ["mkdir -p ${local.docker_compose_folder}"]
+  }
+  provisioner "file" {
+    source      = "docker-compose/"
+    destination = local.docker_compose_folder
+  }
+
+  provisioner "file" {
+    content = templatefile("docker-compose/murmur_config/murmur.tpl.ini", {
+      SSL_DOMAIN      = local.domain
+      MURMUR_PORT     = var.murmur_port
+      MURMUR_PASSWORD = local.murmur_password
+    })
+    destination = "${local.docker_compose_folder}/murmur_config/murmur.ini"
+  }
+
+  provisioner "file" {
+    content = templatefile("docker-compose/docker-compose.tpl.yml", {
+      SSL_DOMAIN    = local.domain
+      EMAIL_ADDRESS = local.email_address
+      IMAP_HOST     = local.domain
+      IMAP_PASSWORD = local.imap_password
+      MURMUR_PORT   = var.murmur_port
+    })
+    destination = "${local.docker_compose_folder}/docker-compose.yml"
+  }
+
+  provisioner "file" {
+    content     = acme_certificate.letsencrypt_certificate.private_key_pem
+    destination = join("/", [local.docker_compose_folder, "letsencrypt", "privkey.pem"])
+  }
+
+  provisioner "file" {
+    content     = local.acme_cert_fullchain
+    destination = join("/", [local.docker_compose_folder, "letsencrypt", "fullchain.pem"])
+  }
+
+  provisioner "file" {
+    source      = "upload-directory/"
+    destination = "/home/ubuntu/uploads"
   }
 
   provisioner "remote-exec" {

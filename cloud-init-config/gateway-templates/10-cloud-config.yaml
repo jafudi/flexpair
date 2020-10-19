@@ -1,0 +1,13 @@
+#cloud-config
+
+bootcmd:
+  - mkdir -p /home/ubuntu/uploads
+  - chown -R ubuntu /home/ubuntu
+
+users:
+    - default
+
+# Set the system timezone
+timezone: ${GATEWAY_TIMEZONE}
+
+locale: ${GATEWAY_LOCALE}

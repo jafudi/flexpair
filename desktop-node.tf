@@ -1,15 +1,17 @@
+variable "desktop_shape" {}
+
 variable "gitlab_runner_token" {}
 
 resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = oci_identity_compartment.client_workspace.id
+  compartment_id      = oci_identity_compartment.one_per_subdomain.id
   display_name        = "desktop"
-  shape               = "VM.Standard.E2.1.Micro"
-  # Processor: 1/8th of an AMD EPYC 7551
-  # Base frequency: 2.0 GHz, max boost frequency: 3.0 GHz
-  # Memory: 1 GB
-  # Bandwidth: 480 Mbps
-  # Boot Volume Size: 50 GB
+  shape               = var.desktop_shape
+
+  # Continue only after certificate was successfully issued
+  depends_on = [
+    acme_certificate.letsencrypt_certificate
+  ]
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.desktop_subnet.id
@@ -25,15 +27,7 @@ resource "oci_core_instance" "desktop" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data = base64encode(templatefile("cloud-init/desktop-userdata.tpl", {
-      SSL_DOMAIN = local.domain
-      SUB_DOMAIN_PREFIX = local.subdomain
-      EMAIL_ADDRESS = local.email_address
-      IMAP_HOST = local.domain
-      IMAP_PASSWORD = local.imap_password
-      MURMUR_PORT = var.murmur_port
-      MURMUR_PASSWORD = local.murmur_password
-    }))
+    user_data           = data.cloudinit_config.desktop_config.rendered
     gitlab_runner_token = var.gitlab_runner_token
   }
 
@@ -50,39 +44,38 @@ resource "oci_core_instance" "desktop" {
     private_key = tls_private_key.vm_mutual_key.private_key_pem
   }
 
+  # Must-haves
   provisioner "remote-exec" {
     scripts = [
-      "${local.script_dir}/common/disable-upgrades.sh",
-      "${local.script_dir}/common/sshd.sh",
-      "${local.script_dir}/desktop/networking.sh",
-      "${local.script_dir}/common/sudoers.sh",
-      "${local.script_dir}/desktop/lubuntu-desktop.sh",
-      "${local.script_dir}/desktop/lxqt-look-and-feel.sh",
-      "${local.script_dir}/desktop/texlive-and-kile.sh",
-      "${local.script_dir}/desktop/multiple-languages.sh",
-      "${local.script_dir}/desktop/podcasts-and-videos.sh",
-      "${local.script_dir}/desktop/resource-monitor.sh",
-      "${local.script_dir}/desktop/mumble-pulseaudio.sh",
-      "${local.script_dir}/desktop/desktop-sharing.sh",
-      "${local.script_dir}/desktop/edu-games.sh",
-      "${local.script_dir}/desktop/mindmap-notes.sh",
-      "${local.script_dir}/desktop/office-applications.sh"
+      "remote-provision/common/disable-upgrades.sh",
+      "remote-provision/common/sshd.sh",
+      "remote-provision/desktop/networking.sh",
+      "remote-provision/common/sudoers.sh",
+      "remote-provision/desktop/lubuntu-desktop.sh",
+      "remote-provision/desktop/lxqt-look-and-feel.sh",
+      "remote-provision/desktop/multiple-languages.sh",
+      "remote-provision/desktop/resource-monitor.sh",
+      "remote-provision/desktop/mumble-pulseaudio.sh",
+      "remote-provision/desktop/desktop-sharing.sh",
     ]
+    on_failure = fail
+  }
+
+  # Nice-to-haves
+  provisioner "remote-exec" {
+    scripts = [
+      "remote-provision/desktop/texlive-and-kile.sh",
+      "remote-provision/desktop/podcasts-and-videos.sh",
+      "remote-provision/desktop/edu-games.sh",
+      "remote-provision/desktop/mindmap-notes.sh",
+      "remote-provision/desktop/office-applications.sh"
+    ]
+    on_failure = fail // or continue
   }
 
   provisioner "file" {
-      content = tls_private_key.vm_mutual_key.private_key_pem
-      destination = "/home/ubuntu/.ssh/vm_key"
-  }
-
-  provisioner "file" {
-      source = "packer-desktop/vartmp-uploads/desktop/"
-      destination = "/var/tmp"
-  }
-
-  provisioner "file" {
-      source = "packer-desktop/desktop-home-uploads/"
-      destination = "/home/ubuntu/uploads"
+    content     = tls_private_key.vm_mutual_key.private_key_pem
+    destination = "/home/ubuntu/.ssh/vm_key"
   }
 
   provisioner "remote-exec" {
