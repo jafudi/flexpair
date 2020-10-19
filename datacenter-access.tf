@@ -43,9 +43,9 @@ variable "ad_region_mapping" {
 }
 
 resource "oci_identity_compartment" "one_per_subdomain" {
-    compartment_id = var.tenancy_ocid
-    description = "Setting compartment label equal to subdomain label"
-    name = local.subdomain
+  compartment_id = var.tenancy_ocid
+  description    = "Setting compartment label equal to subdomain label"
+  name           = local.subdomain
 }
 
 data "oci_identity_tenancy" "te" {
