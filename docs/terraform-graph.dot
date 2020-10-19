@@ -19,7 +19,7 @@ digraph {
 		"[root] oci_core_subnet.desktop_subnet" [label = "oci_core_subnet.desktop_subnet", shape = "box"]
 		"[root] oci_core_subnet.gateway_subnet" [label = "oci_core_subnet.gateway_subnet", shape = "box"]
 		"[root] oci_core_virtual_network.main_vcn" [label = "oci_core_virtual_network.main_vcn", shape = "box"]
-		"[root] oci_identity_compartment.client_workspace" [label = "oci_identity_compartment.client_workspace", shape = "box"]
+		"[root] oci_identity_compartment.one_per_subdomain" [label = "oci_identity_compartment.one_per_subdomain", shape = "box"]
 		"[root] provider[\"registry.terraform.io/hashicorp/cloudinit\"]" [label = "provider[\"registry.terraform.io/hashicorp/cloudinit\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/dns\"]" [label = "provider[\"registry.terraform.io/hashicorp/dns\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/oci\"]" [label = "provider[\"registry.terraform.io/hashicorp/oci\"]", shape = "diamond"]
@@ -73,7 +73,7 @@ digraph {
 		"[root] data.cloudinit_config.gateway_config" -> "[root] provider[\"registry.terraform.io/hashicorp/cloudinit\"]"
 		"[root] data.cloudinit_config.gateway_config" -> "[root] var.locale"
 		"[root] data.cloudinit_config.gateway_config" -> "[root] var.timezone"
-		"[root] data.oci_core_images.ubuntu-20-04-minimal" -> "[root] oci_identity_compartment.client_workspace"
+		"[root] data.oci_core_images.ubuntu-20-04-minimal" -> "[root] oci_identity_compartment.one_per_subdomain"
 		"[root] data.oci_identity_availability_domain.ad" -> "[root] provider[\"registry.terraform.io/hashicorp/oci\"]"
 		"[root] data.oci_identity_availability_domain.ad" -> "[root] var.ad_region_mapping"
 		"[root] data.oci_identity_tenancy.te" -> "[root] provider[\"registry.terraform.io/hashicorp/oci\"]"
@@ -129,12 +129,12 @@ digraph {
 		"[root] oci_core_subnet.desktop_subnet" -> "[root] oci_core_security_list.desktop_security_list"
 		"[root] oci_core_subnet.gateway_subnet" -> "[root] oci_core_route_table.common_route_table"
 		"[root] oci_core_subnet.gateway_subnet" -> "[root] oci_core_security_list.gateway_security_list"
-		"[root] oci_core_virtual_network.main_vcn" -> "[root] oci_identity_compartment.client_workspace"
-		"[root] oci_identity_compartment.client_workspace" -> "[root] provider[\"registry.terraform.io/hashicorp/oci\"]"
-		"[root] oci_identity_compartment.client_workspace" -> "[root] var.TFC_CONFIGURATION_VERSION_GIT_BRANCH"
+		"[root] oci_core_virtual_network.main_vcn" -> "[root] oci_identity_compartment.one_per_subdomain"
+		"[root] oci_identity_compartment.one_per_subdomain" -> "[root] provider[\"registry.terraform.io/hashicorp/oci\"]"
+		"[root] oci_identity_compartment.one_per_subdomain" -> "[root] var.TFC_CONFIGURATION_VERSION_GIT_BRANCH"
 		"[root] output.compartment (expand)" -> "[root] local.home_region_key (expand)"
 		"[root] output.compartment (expand)" -> "[root] local.tenancy_name (expand)"
-		"[root] output.compartment (expand)" -> "[root] oci_identity_compartment.client_workspace"
+		"[root] output.compartment (expand)" -> "[root] oci_identity_compartment.one_per_subdomain"
 		"[root] output.desktop (expand)" -> "[root] oci_core_instance.desktop"
 		"[root] output.gateway (expand)" -> "[root] oci_core_instance.gateway"
 		"[root] output.private_key (expand)" -> "[root] tls_private_key.vm_mutual_key"

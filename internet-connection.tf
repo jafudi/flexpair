@@ -37,19 +37,19 @@ locals {
 
 resource "oci_core_virtual_network" "main_vcn" {
   cidr_block     = "10.1.0.0/16"
-  compartment_id = oci_identity_compartment.client_workspace.id
+  compartment_id = oci_identity_compartment.one_per_subdomain.id
   display_name   = "Main Virtual Cloud Network"
   dns_label      = "mainvcn"
 }
 
 resource "oci_core_internet_gateway" "common_internet_gateway" {
-  compartment_id = oci_identity_compartment.client_workspace.id
+  compartment_id = oci_identity_compartment.one_per_subdomain.id
   display_name   = "Common Internet Gateway"
   vcn_id         = oci_core_virtual_network.main_vcn.id
 }
 
 resource "oci_core_route_table" "common_route_table" {
-  compartment_id = oci_identity_compartment.client_workspace.id
+  compartment_id = oci_identity_compartment.one_per_subdomain.id
   vcn_id         = oci_core_virtual_network.main_vcn.id
   display_name   = "Common Route Table"
 

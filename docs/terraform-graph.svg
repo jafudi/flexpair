@@ -269,15 +269,15 @@
 <polygon fill="none" stroke="#000000" points="1603.3063,-540 1334.8978,-540 1334.8978,-504 1603.3063,-504 1603.3063,-540"/>
 <text text-anchor="middle" x="1469.1021" y="-517.8" font-family="Times,serif" font-size="14.00" fill="#000000">data.oci_core_images.ubuntu&#45;20&#45;04&#45;minimal</text>
 </g>
-<!-- [root] oci_identity_compartment.client_workspace -->
+<!-- [root] oci_identity_compartment.one_per_subdomain -->
 <g id="node18" class="node">
-<title>[root] oci_identity_compartment.client_workspace</title>
+<title>[root] oci_identity_compartment.one_per_subdomain</title>
 <polygon fill="none" stroke="#000000" points="1248.7994,-252 983.4047,-252 983.4047,-216 1248.7994,-216 1248.7994,-252"/>
-<text text-anchor="middle" x="1116.1021" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">oci_identity_compartment.client_workspace</text>
+<text text-anchor="middle" x="1116.1021" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">oci_identity_compartment.one_per_subdomain</text>
 </g>
-<!-- [root] data.oci_core_images.ubuntu&#45;20&#45;04&#45;minimal&#45;&gt;[root] oci_identity_compartment.client_workspace -->
+<!-- [root] data.oci_core_images.ubuntu&#45;20&#45;04&#45;minimal&#45;&gt;[root] oci_identity_compartment.one_per_subdomain -->
 <g id="edge22" class="edge">
-<title>[root] data.oci_core_images.ubuntu&#45;20&#45;04&#45;minimal&#45;&gt;[root] oci_identity_compartment.client_workspace</title>
+<title>[root] data.oci_core_images.ubuntu&#45;20&#45;04&#45;minimal&#45;&gt;[root] oci_identity_compartment.one_per_subdomain</title>
 <path fill="none" stroke="#000000" d="M1363.038,-503.9816C1295.5504,-487.1454 1211.324,-455.2905 1159.1021,-396 1125.8978,-358.3014 1117.9222,-297.7738 1116.2488,-262.3527"/>
 <polygon fill="#000000" stroke="#000000" points="1119.7423,-262.0968 1115.9108,-252.219 1112.7462,-262.3302 1119.7423,-262.0968"/>
 </g>
@@ -643,15 +643,15 @@
 <path fill="none" stroke="#000000" d="M1669.2084,-503.9081C1591.3519,-477.2778 1446.1893,-427.626 1363.3215,-399.2817"/>
 <polygon fill="#000000" stroke="#000000" points="1364.3739,-395.9427 1353.7794,-396.0179 1362.1084,-402.5659 1364.3739,-395.9427"/>
 </g>
-<!-- [root] oci_core_virtual_network.main_vcn&#45;&gt;[root] oci_identity_compartment.client_workspace -->
+<!-- [root] oci_core_virtual_network.main_vcn&#45;&gt;[root] oci_identity_compartment.one_per_subdomain -->
 <g id="edge78" class="edge">
-<title>[root] oci_core_virtual_network.main_vcn&#45;&gt;[root] oci_identity_compartment.client_workspace</title>
+<title>[root] oci_core_virtual_network.main_vcn&#45;&gt;[root] oci_identity_compartment.one_per_subdomain</title>
 <path fill="none" stroke="#000000" d="M1419.6873,-287.9707C1361.204,-277.5737 1287.5914,-264.487 1227.5003,-253.8041"/>
 <polygon fill="#000000" stroke="#000000" points="1228.0534,-250.3476 1217.5951,-252.0432 1226.8281,-257.2396 1228.0534,-250.3476"/>
 </g>
-<!-- [root] oci_identity_compartment.client_workspace&#45;&gt;[root] provider[&quot;registry.terraform.io/hashicorp/oci&quot;] -->
+<!-- [root] oci_identity_compartment.one_per_subdomain&#45;&gt;[root] provider[&quot;registry.terraform.io/hashicorp/oci&quot;] -->
 <g id="edge79" class="edge">
-<title>[root] oci_identity_compartment.client_workspace&#45;&gt;[root] provider[&quot;registry.terraform.io/hashicorp/oci&quot;]</title>
+<title>[root] oci_identity_compartment.one_per_subdomain&#45;&gt;[root] provider[&quot;registry.terraform.io/hashicorp/oci&quot;]</title>
 <path fill="none" stroke="#000000" d="M1189.6602,-215.9243C1236.7227,-204.3594 1297.2687,-189.4812 1342.8377,-178.2834"/>
 <polygon fill="#000000" stroke="#000000" points="1343.7397,-181.666 1352.6155,-175.8807 1342.0692,-174.8682 1343.7397,-181.666"/>
 </g>
@@ -663,9 +663,9 @@
 <polyline fill="none" stroke="#000000" points="2828.2847,-30 2822.2847,-30 "/>
 <text text-anchor="middle" x="2655.1021" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">var.TFC_CONFIGURATION_VERSION_GIT_BRANCH</text>
 </g>
-<!-- [root] oci_identity_compartment.client_workspace&#45;&gt;[root] var.TFC_CONFIGURATION_VERSION_GIT_BRANCH -->
+<!-- [root] oci_identity_compartment.one_per_subdomain&#45;&gt;[root] var.TFC_CONFIGURATION_VERSION_GIT_BRANCH -->
 <g id="edge80" class="edge">
-<title>[root] oci_identity_compartment.client_workspace&#45;&gt;[root] var.TFC_CONFIGURATION_VERSION_GIT_BRANCH</title>
+<title>[root] oci_identity_compartment.one_per_subdomain&#45;&gt;[root] var.TFC_CONFIGURATION_VERSION_GIT_BRANCH</title>
 <path fill="none" stroke="#000000" d="M1111.6313,-215.8626C1104.4759,-181.9302 1095.023,-108.9485 1135.1021,-72 1159.3581,-49.6386 2072.5593,-29.273 2471.6183,-21.4213"/>
 <polygon fill="#000000" stroke="#000000" points="2471.8914,-24.9167 2481.8207,-21.2211 2471.754,-17.9181 2471.8914,-24.9167"/>
 </g>
@@ -1049,9 +1049,9 @@
 <path fill="none" stroke="#000000" d="M1344.8125,-723.7334C1280.631,-710.8504 1217.8067,-687.6512 1253.1021,-648 1263.5575,-636.2543 1432.035,-618.862 1562.7687,-607.0117"/>
 <polygon fill="#000000" stroke="#000000" points="1563.2611,-610.4816 1572.9061,-606.097 1562.632,-603.5099 1563.2611,-610.4816"/>
 </g>
-<!-- [root] output.compartment (expand)&#45;&gt;[root] oci_identity_compartment.client_workspace -->
+<!-- [root] output.compartment (expand)&#45;&gt;[root] oci_identity_compartment.one_per_subdomain -->
 <g id="edge83" class="edge">
-<title>[root] output.compartment (expand)&#45;&gt;[root] oci_identity_compartment.client_workspace</title>
+<title>[root] output.compartment (expand)&#45;&gt;[root] oci_identity_compartment.one_per_subdomain</title>
 <path fill="none" stroke="#000000" d="M929.9716,-653.6116C914.61,-651.7236 898.9331,-649.8041 884.1021,-648 817.4485,-639.892 628.6626,-662.2275 584.1021,-612 531.0103,-552.1563 532.5335,-493.1611 584.1021,-432 645.143,-359.6045 704.1536,-425.6038 794.1021,-396 902.718,-360.2524 1020.3284,-293.0025 1078.7574,-257.4331"/>
 <polygon fill="#000000" stroke="#000000" points="1080.9175,-260.2144 1087.6163,-252.0061 1077.2608,-254.2454 1080.9175,-260.2144"/>
 </g>

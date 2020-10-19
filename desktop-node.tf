@@ -4,7 +4,7 @@ variable "gitlab_runner_token" {}
 
 resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
-  compartment_id      = oci_identity_compartment.client_workspace.id
+  compartment_id      = oci_identity_compartment.one_per_subdomain.id
   display_name        = "desktop"
   shape               = var.desktop_shape
 
