@@ -1,5 +1,11 @@
 # What are the main features?
 
+Isomorphisms between
+- Git branch
+- Terraform workspace
+- OCI compartment
+- DNS zone
+
 <table border="0">
  <tr>
     <td><b style="font-size:30px">Desktop node</b></td>
@@ -21,11 +27,16 @@
        <li>Mumble audio server backend within Docker</li>
        <li>In-browser high-quality audio conferencing</li>
        <li>Dockerized Dovecot IMAP Server</li>
-       <li>LetsEncrypt Certbot</li>
      </ul>
    </td>
  </tr>
 </table>
+
+# Energy Consumption and Privacy Legislation
+
+![Energy Consumption and Privacy Legislation](docs/EnergyConsumptionAndPrivacy.png)
+
+Source: https://www.oracle.com/de/cloud/data-regions.html (17.10.2020)
 
 # Market Analysis and Unique Selling Point
 
@@ -87,8 +98,8 @@ Data privacy, intellectual property and saving the climate all at the same time 
 - 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
 - not necessarily with the same cloud provider (cloud-agnostic)
 - 100 kbit/s uplink at the user's location
-- Server must have the following open ports: 22 (SSH), 443 (SSL), 80 (LetsEncrypt)
-- Nice to have open server ports: 64738 (Mumble), 25 (SMTP), 5060 and 7078 (SIP+RTP) 
+- Server must have the following open ports: 22 (SSH), 443 (SSL)
+- Nice to have open server ports: 64738 (Mumble), 25 (SMTP)
 
 # Unique Selling Point(s)
 
@@ -117,7 +128,7 @@ Data privacy, intellectual property and saving the climate all at the same time 
 - [Mumble](https://www.mumble.info) and [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) both over HTTPS
 - [SSH tunnel](https://www.ssh.com/ssh/tunneling/) secured with [ed25519 encryption](http://ed25519.cr.yp.to)
 - fast network connection in the cloud
-- usable with standard set of open ports (22 SSH, 80 HTTP, 443 HTTPS)
+- usable with standard set of open ports (22 SSH, 443 HTTPS)
 - access (multiple) desktops via one central gateway, no need to remember IPs
 - [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/) and murmur share SSL certificate form [LetsEncrypt](https://letsencrypt.org)
 - Prevention of full RAM and swapping

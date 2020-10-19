@@ -3,14 +3,14 @@ resource "oci_core_subnet" "gateway_subnet" {
   display_name      = "Gateway Subnet"
   dns_label         = "gatewaynet"
   security_list_ids = [oci_core_security_list.gateway_security_list.id]
-  compartment_id    = oci_identity_compartment.client_workspace.id
+  compartment_id    = oci_identity_compartment.one_per_subdomain.id
   vcn_id            = oci_core_virtual_network.main_vcn.id
   route_table_id    = oci_core_route_table.common_route_table.id
   dhcp_options_id   = oci_core_virtual_network.main_vcn.default_dhcp_options_id
 }
 
 resource "oci_core_security_list" "gateway_security_list" {
-  compartment_id = oci_identity_compartment.client_workspace.id
+  compartment_id = oci_identity_compartment.one_per_subdomain.id
   vcn_id         = oci_core_virtual_network.main_vcn.id
   display_name   = "Gateway Firewall"
 
@@ -34,8 +34,8 @@ resource "oci_core_security_list" "gateway_security_list" {
     source   = "0.0.0.0/0"
 
     tcp_options {
-      max = "80"
-      min = "80"
+      max = "443"
+      min = "443"
     }
   }
 
@@ -44,8 +44,8 @@ resource "oci_core_security_list" "gateway_security_list" {
     source   = "0.0.0.0/0"
 
     tcp_options {
-      max = "443"
-      min = "443"
+      max = "80"
+      min = "80"
     }
   }
 
