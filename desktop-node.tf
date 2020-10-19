@@ -47,16 +47,16 @@ resource "oci_core_instance" "desktop" {
   # Must-haves
   provisioner "remote-exec" {
     scripts = [
-      "remote-provision/common/disable-upgrades.sh",
-      "remote-provision/common/sshd.sh",
-      "remote-provision/desktop/networking.sh",
-      "remote-provision/common/sudoers.sh",
-      "remote-provision/desktop/lubuntu-desktop.sh",
-      "remote-provision/desktop/lxqt-look-and-feel.sh",
-      "remote-provision/desktop/multiple-languages.sh",
-      "remote-provision/desktop/resource-monitor.sh",
-      "remote-provision/desktop/mumble-pulseaudio.sh",
-      "remote-provision/desktop/desktop-sharing.sh",
+      "desktop-scripts/disable-upgrades.sh",
+      "desktop-scripts/sshd.sh",
+      "desktop-scripts/networking.sh",
+      "desktop-scripts/sudoers.sh",
+      "desktop-scripts/lubuntu-desktop.sh",
+      "desktop-scripts/lxqt-look-and-feel.sh",
+      "desktop-scripts/multiple-languages.sh",
+      "desktop-scripts/resource-monitor.sh",
+      "desktop-scripts/mumble-pulseaudio.sh",
+      "desktop-scripts/desktop-sharing.sh",
     ]
     on_failure = fail
   }
@@ -64,7 +64,7 @@ resource "oci_core_instance" "desktop" {
   # Nice-to-haves
   provisioner "remote-exec" {
     scripts = [
-      "remote-provision/desktop/podcasts-and-videos.sh",
+      "desktop-scripts/podcasts-and-videos.sh",
     ]
     on_failure = fail // or continue
   }

@@ -48,11 +48,11 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     scripts = [
-      "remote-provision/common/disable-upgrades.sh",
-      "remote-provision/common/sshd.sh",
-      "remote-provision/gateway/networking.sh",
-      "remote-provision/common/sudoers.sh",
-      "remote-provision/gateway/message-of-the-day.sh"
+      "cloud-init-config/gateway-templates/01-disable-upgrades.sh",
+      "cloud-init-config/gateway-templates/02-sshd.sh",
+      "cloud-init-config/gateway-templates/03-networking.sh",
+      "cloud-init-config/gateway-templates/04-sudoers.sh",
+      "cloud-init-config/gateway-templates/05-message-of-the-day.sh"
     ]
   }
 
