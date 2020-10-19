@@ -1,7 +1,5 @@
 variable "gateway_shape" {}
 
-variable "docker_compose_release" {}
-
 locals {
   docker_compose_folder = "/var/tmp/docker-compose"
   certbot_repo          = "https://raw.githubusercontent.com/certbot/certbot/master"
