@@ -33,7 +33,7 @@ RUN set -x; \
 ADD postfix /etc/postfix
 
 COPY dovecot/auth-passwdfile.inc /etc/dovecot/conf.d/
-COPY dovecot??-*.conf /etc/dovecot/conf.d/
+COPY dovecot/??-*.conf /etc/dovecot/conf.d/
 
 ADD entrypoint /usr/local/bin/
 RUN chmod a+rx /usr/local/bin/entrypoint
