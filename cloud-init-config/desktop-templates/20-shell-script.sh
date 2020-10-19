@@ -49,10 +49,6 @@ systemctl start ssh-tunnel.service
 
 # Configure Mumble #################################################
 
-iptables -I INPUT 3 -p tcp --dport ${MURMUR_PORT} -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # Mumble incoming
-iptables -I INPUT 4 -p udp --dport ${MURMUR_PORT} -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # Mumble incoming
-netfilter-persistent save
-
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
 

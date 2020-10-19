@@ -64,11 +64,7 @@ resource "oci_core_instance" "desktop" {
   # Nice-to-haves
   provisioner "remote-exec" {
     scripts = [
-      "remote-provision/desktop/texlive-and-kile.sh",
       "remote-provision/desktop/podcasts-and-videos.sh",
-      "remote-provision/desktop/edu-games.sh",
-      "remote-provision/desktop/mindmap-notes.sh",
-      "remote-provision/desktop/office-applications.sh"
     ]
     on_failure = fail // or continue
   }
