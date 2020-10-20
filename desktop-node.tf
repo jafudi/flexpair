@@ -69,11 +69,6 @@ resource "oci_core_instance" "desktop" {
     on_failure = fail // or continue
   }
 
-  provisioner "file" {
-    content     = tls_private_key.vm_mutual_key.private_key_pem
-    destination = "/home/ubuntu/.ssh/vm_key"
-  }
-
   provisioner "remote-exec" {
     inline = [
       "sudo touch /etc/.terraform-complete",

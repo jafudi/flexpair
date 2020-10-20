@@ -56,11 +56,6 @@ resource "oci_core_instance" "gateway" {
     ]
   }
 
-  provisioner "file" {
-    content     = tls_private_key.vm_mutual_key.private_key_pem
-    destination = "/home/ubuntu/.ssh/vm_key"
-  }
-
   # This file contains important security parameters for NGINX.
   provisioner "local-exec" {
     working_dir = "docker-compose/nginx/conf.d"
