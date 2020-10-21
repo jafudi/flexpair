@@ -15,6 +15,7 @@ resource "null_resource" "health_check" {
       URL  = "https://${local.subdomain}.${var.registered_domain}"
       CMD  = "curl --write-out '%%{http_code}' --silent --head --output /dev/null"
     }
-    command = "sleep $WAIT; RET=$($CMD $URL); [[ $RET -eq 200 ]] || exit 1;"
+    interpreter = ["/bin/bash", "-c"]
+    command = "sleep $WAIT; RET=$($CMD $URL); if [[ $RET -eq 200 ]]; then exit 0; else exit 1; fi"
   }
 }
