@@ -12,8 +12,9 @@ resource "null_resource" "health_check" {
   provisioner "local-exec" {
     environment = {
       WAIT_BEFORE = 120
-      CHECK_IF_OK = "curl --write-out '%{http_code}' --silent --head --output /dev/null https://${local.subdomain}.${var.registered_domain}"
+      CHECK_URL = "https://${local.subdomain}.${var.registered_domain}"
+      CHECK_CMD = "curl --write-out '%%{http_code}' --silent --head --output /dev/null"
     }
-    command = "sleep ${WAIT_BEFORE}; [ $(CHECK_IF_OK) -eq 200 ] || exit 1;"
+    command = 'sleep ${WAIT_BEFORE}; RET=$(${CHECK_CMD} ${CHECK_URL}); [ $RET -eq 200 ] || exit 1;'
   }
 }
