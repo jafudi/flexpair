@@ -29,7 +29,8 @@ runcmd:
     - "touch /home/ubuntu/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
 
 write_files:
-- content: "${VM_PRIVATE_KEY}"
+- content: |
+    ${VM_PRIVATE_KEY}
   path: /home/ubuntu/.ssh/vm_key
   owner: root:root
   permissions: '0600'
