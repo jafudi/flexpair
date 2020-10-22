@@ -11,11 +11,11 @@ resource "null_resource" "health_check" {
 
   provisioner "local-exec" {
     environment = {
-      WAIT = 120
+      WAIT = 1
       URL  = "https://${local.subdomain}.${var.registered_domain}"
       CMD  = "curl --write-out '%%{http_code}' --silent --head --output /dev/null"
     }
     interpreter = ["/bin/bash", "-c"]
-    command = "sleep $WAIT; RET=$($CMD $URL); if [[ $RET == '200' ]]; then exit 0; else exit 1; fi"
+    command = "sleep $WAIT; RET=$($CMD $URL); echo $RET; if [[ $RET == '200' ]]; then exit 0; else exit 1; fi"
   }
 }
