@@ -16,6 +16,6 @@ resource "null_resource" "health_check" {
       CMD  = "curl --write-out '%%{http_code}' --silent --head --output /dev/null"
     }
     interpreter = ["/bin/bash", "-c"]
-    command = "sleep $WAIT; RET=$($CMD $URL); if [[ $RET -eq 200 ]]; then exit 0; else exit 1; fi"
+    command = "sleep $WAIT; RET=$($CMD $URL); if [[ $RET == '200' ]]; then exit 0; else exit 1; fi"
   }
 }
