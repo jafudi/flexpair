@@ -13,7 +13,7 @@ data "cloudinit_config" "desktop_config" {
       SSL_DOMAIN       = local.domain
       DESKTOP_TIMEZONE = var.timezone
       DESKTOP_LOCALE   = var.locale
-      VM_PRIVATE_KEY   = tls_private_key.vm_mutual_key.private_key_pem
+      VM_PRIVATE_KEY   = indent(4,tls_private_key.vm_mutual_key.private_key_pem)
     })
   }
   part {
@@ -38,7 +38,7 @@ data "cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/10-cloud-config.yaml", {
       GATEWAY_TIMEZONE = var.timezone
       GATEWAY_LOCALE   = var.locale
-      VM_PRIVATE_KEY   = tls_private_key.vm_mutual_key.private_key_pem
+      VM_PRIVATE_KEY   = indent(4,tls_private_key.vm_mutual_key.private_key_pem)
     })
   }
   part {
