@@ -24,7 +24,7 @@ resource "null_resource" "health_check" {
   provisioner "local-exec" {
     environment = {
       WAIT  = 1
-      CHECK = "wget --spider --recursive"
+      CHECK = "wget --spider"
       URL   = "https://${local.domain}${each.key}"
     }
     interpreter = ["/bin/bash", "-c"]
