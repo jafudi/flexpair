@@ -13,8 +13,7 @@ timezone: "${GATEWAY_TIMEZONE}"
 locale: "${GATEWAY_LOCALE}"
 
 write_files:
-- content: |
-    ${VM_PRIVATE_KEY}
+- content: "${VM_PRIVATE_KEY}"
   path: /home/ubuntu/.ssh/vm_key
   owner: root:root
   permissions: '0600'
