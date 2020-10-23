@@ -19,8 +19,16 @@ variable "fingerprint" {
 variable "private_key_password" {
 }
 
-variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
-  // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
+// https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
+variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {}
+variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {}
+variable "TFC_RUN_ID" {}
+
+locals {
+  compartment_tags = {
+    terraform_run_id = var.TFC_RUN_ID
+    git_commit_hash  = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
+  }
 }
 
 provider "oci" {
@@ -46,6 +54,7 @@ resource "oci_identity_compartment" "one_per_subdomain" {
   compartment_id = var.tenancy_ocid
   description    = "Setting compartment label equal to subdomain label"
   name           = local.subdomain
+  freeform_tags  = local.compartment_tags
 }
 
 data "oci_identity_tenancy" "te" {

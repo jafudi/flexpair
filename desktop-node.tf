@@ -8,6 +8,8 @@ resource "oci_core_instance" "desktop" {
   display_name        = "desktop"
   shape               = var.desktop_shape
 
+  freeform_tags = local.compartment_tags
+
   # Continue only after certificate was successfully issued
   depends_on = [
     acme_certificate.letsencrypt_certificate

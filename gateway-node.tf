@@ -11,6 +11,8 @@ resource "oci_core_instance" "gateway" {
   display_name        = "gateway"
   shape               = var.gateway_shape
 
+  freeform_tags = local.compartment_tags
+
   # Continue only after certificate was successfully issued
   depends_on = [
     acme_certificate.letsencrypt_certificate
