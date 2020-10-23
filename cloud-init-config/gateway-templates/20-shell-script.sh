@@ -5,6 +5,11 @@ if [ ! -f /etc/.terraform-complete ]; then
     exit 0
 fi
 
+cat << EOF > /home/ubuntu/.ssh/vm_key
+${VM_PRIVATE_KEY}
+EOF
+chmod 600 /home/ubuntu/.ssh/vm_key
+
 echo "Bootstrapping using cloud-init..."
 
 # Is there an alternative to removing the user password ? ###########

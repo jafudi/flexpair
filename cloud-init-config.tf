@@ -13,12 +13,12 @@ data "cloudinit_config" "desktop_config" {
       SSL_DOMAIN       = local.domain
       DESKTOP_TIMEZONE = var.timezone
       DESKTOP_LOCALE   = var.locale
-      VM_PRIVATE_KEY   = "${indent(4, chomp(tls_private_key.vm_mutual_key.private_key_pem))}\n"
     })
   }
   part {
     content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/desktop-templates/20-shell-script.sh", {
+      VM_PRIVATE_KEY    = tls_private_key.vm_mutual_key.private_key_pem
       SSL_DOMAIN        = local.domain
       SUB_DOMAIN_PREFIX = local.subdomain
       EMAIL_ADDRESS     = local.email_address
@@ -38,12 +38,12 @@ data "cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/10-cloud-config.yaml", {
       GATEWAY_TIMEZONE = var.timezone
       GATEWAY_LOCALE   = var.locale
-      VM_PRIVATE_KEY   = "${indent(4, chomp(tls_private_key.vm_mutual_key.private_key_pem))}\n"
     })
   }
   part {
     content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/20-shell-script.sh", {
+      VM_PRIVATE_KEY         = tls_private_key.vm_mutual_key.private_key_pem
       DOCKER_COMPOSE_RELEASE = local.docker_compose_release
       DOCKER_COMPOSE_FOLDER  = local.docker_compose_folder
     })
