@@ -11,11 +11,11 @@ resource "null_resource" "health_check" {
 
   provisioner "local-exec" {
     environment = {
-      WAIT = 1
-      URL  = "https://${local.subdomain}.${var.registered_domain}"
-      CMD  = "curl --write-out '%%{http_code}' --silent --head --output /dev/null"
+      WAIT  = 1
+      CHECK = "wget --spider --recursive"
+      URL   = "https://${local.subdomain}.${var.registered_domain}"
     }
     interpreter = ["/bin/bash", "-c"]
-    command = "sleep $WAIT; RET=$($CMD $URL); echo $RET; [[ $RET == '200' ]] || exit 1;"
+    command     = "sleep $WAIT; $CHECK $URL; [[ $? == '0' ]] || exit 1;"
   }
 }
