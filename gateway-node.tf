@@ -8,7 +8,7 @@ locals {
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.one_per_subdomain.id
-  display_name        = "gateway"
+  display_name        = "Gateway VM"
   shape               = var.gateway_shape
 
   freeform_tags = local.compartment_tags
