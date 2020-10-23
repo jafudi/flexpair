@@ -23,7 +23,7 @@ resource "null_resource" "health_check" {
 
   provisioner "local-exec" {
     environment = {
-      WAIT  = 1
+      WAIT  = 120
       CHECK = "wget --spider"
       URL   = "https://${local.domain}${each.key}"
     }
