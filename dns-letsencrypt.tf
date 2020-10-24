@@ -34,6 +34,12 @@ resource "dns_a_record_set" "gateway_hostname" {
   ttl       = 60
 }
 
+resource "time_sleep" "dns_propagation" {
+  depends_on = [dns_a_record_set.gateway_hostname]
+
+  create_duration = "120s"
+}
+
 provider "acme" {
   server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }
