@@ -51,10 +51,6 @@ resource "tls_private_key" "acme_private_key" {
 resource "acme_registration" "letsencrypt_reg" {
   account_key_pem = tls_private_key.acme_private_key.private_key_pem
   email_address   = local.email_address
-
-  provisioner "local-exec" {
-    command = "terraform taint tls_private_key.acme_private_key"
-  }
 }
 
 resource "acme_certificate" "letsencrypt_certificate" {
