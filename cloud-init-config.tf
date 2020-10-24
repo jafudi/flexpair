@@ -5,7 +5,7 @@ variable "locale" {}
 # https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
 
 data "cloudinit_config" "desktop_config" {
-  gzip          = false
+  gzip          = true
   base64_encode = true
   part {
     content_type = "text/cloud-config"
@@ -31,7 +31,7 @@ data "cloudinit_config" "desktop_config" {
 }
 
 data "cloudinit_config" "gateway_config" {
-  gzip          = false
+  gzip          = true
   base64_encode = true
   part {
     content_type = "text/cloud-config"

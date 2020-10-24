@@ -116,7 +116,6 @@ resource "oci_core_instance" "gateway" {
   provisioner "remote-exec" {
     inline = [
       "sudo touch /etc/.terraform-complete",
-      "sudo cloud-init clean --logs",
       "sudo shutdown -r +1"
     ]
   }
