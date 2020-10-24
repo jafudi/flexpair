@@ -17,13 +17,14 @@ resource "null_resource" "health_check" {
   }
 
   depends_on = [
+    oci_core_instance.gateway,
     dns_a_record_set.gateway_hostname,
-    oci_core_instance.gateway
+    oci_core_instance.desktop
   ]
 
   provisioner "local-exec" {
     environment = {
-      WAIT  = 120
+      WAIT  = 5
       CHECK = "wget --spider"
       URL   = "https://${local.domain}${each.key}"
     }
