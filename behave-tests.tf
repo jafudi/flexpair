@@ -13,10 +13,10 @@ resource "null_resource" "health_check" {
 
   depends_on = [
     oci_core_instance.gateway,
-    time_sleep.gateway_rebooting_now,
+    time_sleep.gateway_rebooted,
     time_sleep.dns_propagation,
     oci_core_instance.desktop,
-    time_sleep.desktop_rebooting_now
+    time_sleep.desktop_rebooted
   ]
 
   # Wait until host is pingable
@@ -27,10 +27,7 @@ resource "null_resource" "health_check" {
 
   # Give nginx time to come up and then test HTTPS endpoint
   provisioner "local-exec" {
-    environment = {
-      EXPECTIDLE = 300
-    }
     interpreter = ["/bin/bash", "-c"]
-    command     = "sleep $EXPECTIDLE; wget --spider --recursive --level 1 https://${local.domain}${each.key};"
+    command     = "wget --spider --recursive --level 1 https://${local.domain}${each.key};"
   }
 }
