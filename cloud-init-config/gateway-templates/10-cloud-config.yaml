@@ -6,7 +6,7 @@ users:
 # Set the system timezone
 timezone: "${GATEWAY_TIMEZONE}"
 
-locale: "${GATEWAY_LOCALE}"
+# locale: "${GATEWAY_LOCALE}"
 
 package_update: true
 package_upgrade: false
