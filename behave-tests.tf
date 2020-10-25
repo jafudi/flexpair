@@ -1,3 +1,13 @@
+resource "time_sleep" "gateway_rebooted" {
+  depends_on = [oci_core_instance.gateway]
+  create_duration = "300s" # Includes 1m before scheduled shutdown
+}
+
+resource "time_sleep" "desktop_rebooted" {
+  depends_on = [oci_core_instance.desktop]
+  create_duration = "300s" # Includes 1m before scheduled shutdown
+}
+
 resource "null_resource" "health_check" {
 
   for_each = toset([
