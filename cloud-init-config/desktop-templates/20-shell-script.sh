@@ -18,11 +18,6 @@ export -f get_info
 
 # Configure connection between desktop and gateway #################
 
-cat << EOF > /home/ubuntu/.ssh/vm_key
-${VM_PRIVATE_KEY}
-EOF
-chmod 600 /home/ubuntu/.ssh/vm_key
-
 cat << EOF > /etc/systemd/system/ssh-tunnel.service
 [Unit]
 Description=Reverse SSH connection

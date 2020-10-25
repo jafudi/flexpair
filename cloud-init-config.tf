@@ -8,6 +8,12 @@ data "cloudinit_config" "desktop_config" {
   gzip          = true
   base64_encode = true
   part {
+    content_type = "text/cloud-boothook"
+    content = templatefile("cloud-init-config/desktop-templates/01-boot-hook.sh", {
+      VM_PRIVATE_KEY = tls_private_key.vm_mutual_key.private_key_pem
+    })
+  }
+  part {
     content_type = "text/cloud-config"
     content = templatefile("cloud-init-config/desktop-templates/10-cloud-config.yaml", {
       SSL_DOMAIN       = local.domain
@@ -34,6 +40,12 @@ data "cloudinit_config" "gateway_config" {
   gzip          = true
   base64_encode = true
   part {
+    content_type = "text/cloud-boothook"
+    content = templatefile("cloud-init-config/gateway-templates/01-boot-hook.sh", {
+      VM_PRIVATE_KEY = tls_private_key.vm_mutual_key.private_key_pem
+    })
+  }
+  part {
     content_type = "text/cloud-config"
     content = templatefile("cloud-init-config/gateway-templates/10-cloud-config.yaml", {
       GATEWAY_TIMEZONE = var.timezone
@@ -43,7 +55,6 @@ data "cloudinit_config" "gateway_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/20-shell-script.sh", {
-      VM_PRIVATE_KEY         = tls_private_key.vm_mutual_key.private_key_pem
       DOCKER_COMPOSE_RELEASE = local.docker_compose_release
       DOCKER_COMPOSE_FOLDER  = local.docker_compose_folder
     })

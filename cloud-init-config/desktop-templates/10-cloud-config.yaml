@@ -1,10 +1,5 @@
 #cloud-config
 
-bootcmd:
-  - mkdir -p /home/ubuntu/uploads
-  - mkdir -p /home/ubuntu/Desktop/Uploads
-  - chown -R ubuntu /home/ubuntu
-
 users:
   - default
 

@@ -5,17 +5,11 @@ if [ ! -f /etc/.terraform-complete ]; then
     exit 0
 fi
 
-cat << EOF > /home/ubuntu/.ssh/vm_key
-${VM_PRIVATE_KEY}
-EOF
-chmod 600 /home/ubuntu/.ssh/vm_key
-
 echo "Bootstrapping using cloud-init..."
 
 # Is there an alternative to removing the user password ? ###########
 
 sudo passwd -d ubuntu # for direct SSH access from guacd_container
-chown -R ubuntu /home/ubuntu # handing over home folder to user
 
 # Provision Docker Compose ####################################
 
