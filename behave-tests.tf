@@ -13,17 +13,24 @@ resource "null_resource" "health_check" {
 
   depends_on = [
     oci_core_instance.gateway,
-    time_sleep.gateway_unnecessary_reboot,
+    time_sleep.gateway_rebooting_now,
     time_sleep.dns_propagation,
     oci_core_instance.desktop,
-    time_sleep.desktop_unnecessary_reboot
+    time_sleep.desktop_rebooting_now
   ]
 
+  # Wait until host is pingable
+  provisioner "local-exec" {
+    interpreter = ["/bin/bash", "-c"]
+    command     = "while ! ping -c 1 -w 1 ${local.domain} &>/dev/null; do sleep 1; done;"
+  }
+
+  # Give nginx time to come up and then test HTTPS endpoint
   provisioner "local-exec" {
     environment = {
-      URL = "https://${local.domain}${each.key}"
+      NGINXUP = 120
     }
     interpreter = ["/bin/bash", "-c"]
-    command     = "wget --spider $URL; [[ $? == '0' ]] || exit 1;"
+    command     = "sleep $NGINXUP; wget --spider --recursive --level 1 https://${local.domain}${each.key};"
   }
 }

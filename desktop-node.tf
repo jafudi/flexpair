@@ -81,9 +81,9 @@ resource "oci_core_instance" "desktop" {
 
 }
 
-resource "time_sleep" "desktop_unnecessary_reboot" {
+resource "time_sleep" "desktop_rebooting_now" {
   depends_on = [oci_core_instance.desktop]
-  create_duration = "120s"
+  create_duration = "90s"
 }
 
 output "desktop" {

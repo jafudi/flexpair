@@ -123,9 +123,9 @@ resource "oci_core_instance" "gateway" {
 
 }
 
-resource "time_sleep" "gateway_unnecessary_reboot" {
+resource "time_sleep" "gateway_rebooting_now" {
   depends_on = [oci_core_instance.gateway]
-  create_duration = "120s"
+  create_duration = "90s"
 }
 
 output "gateway" {
