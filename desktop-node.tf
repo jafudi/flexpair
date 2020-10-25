@@ -81,6 +81,11 @@ resource "oci_core_instance" "desktop" {
 
 }
 
+resource "time_sleep" "desktop_unnecessary_reboot" {
+  depends_on = [oci_core_instance.desktop]
+  create_duration = "120s"
+}
+
 output "desktop" {
   value = "${oci_core_instance.desktop.public_ip} in data center ${data.oci_identity_availability_domain.ad.name}"
 }

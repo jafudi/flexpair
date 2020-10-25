@@ -13,8 +13,10 @@ resource "null_resource" "health_check" {
 
   depends_on = [
     oci_core_instance.gateway,
+    time_sleep.gateway_unnecessary_reboot,
     time_sleep.dns_propagation,
-    oci_core_instance.desktop
+    oci_core_instance.desktop,
+    time_sleep.desktop_unnecessary_reboot
   ]
 
   provisioner "local-exec" {

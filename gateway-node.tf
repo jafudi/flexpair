@@ -123,6 +123,11 @@ resource "oci_core_instance" "gateway" {
 
 }
 
+resource "time_sleep" "gateway_unnecessary_reboot" {
+  depends_on = [oci_core_instance.gateway]
+  create_duration = "120s"
+}
+
 output "gateway" {
   value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}/?password=${local.murmur_password}"
 }
