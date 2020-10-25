@@ -8,10 +8,9 @@ ${VM_PRIVATE_KEY}
 EOF
 chmod 600 /home/ubuntu/.ssh/vm_key
 
-MOTD_CONFIG="/etc/update-motd.d"
-mkdir -p ${MOTD_CONFIG}
+mkdir -p /etc/update-motd.d
 
-cat << 'ASCIIART' > "${MOTD_CONFIG}/98-ascii-art"
+cat << 'ASCIIART' > "/etc/update-motd.d/98-ascii-art"
 #!/bin/sh
 
 cat <<'EOF'
@@ -35,7 +34,7 @@ ______ `\___/' ___ Jens Fielenbach, 2020 ________________-""(((:-.,_,.-:)))""-__
 EOF
 ASCIIART
 
-cat << 'MESSAGE' > "${MOTD_CONFIG}/99-message"
+cat << 'MESSAGE' > "/etc/update-motd.d/99-message"
 #!/bin/sh
 
 cat <<'EOF'
@@ -51,4 +50,4 @@ You may connect to the desktop host using:
 EOF
 MESSAGE
 
-chmod -R 0755 ${MOTD_CONFIG}
+chmod -R 0755 /etc/update-motd.d

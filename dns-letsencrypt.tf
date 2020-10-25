@@ -35,7 +35,7 @@ resource "dns_a_record_set" "gateway_hostname" {
 }
 
 resource "time_sleep" "dns_propagation" {
-  depends_on = [dns_a_record_set.gateway_hostname]
+  depends_on      = [dns_a_record_set.gateway_hostname]
   create_duration = "120s"
 }
 
