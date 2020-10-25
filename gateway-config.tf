@@ -34,3 +34,7 @@ data "cloudinit_config" "gateway_config" {
     })
   }
 }
+
+output "gateway_config_size" {
+  value = length(data.cloudinit_config.desktop_config.rendered)
+}

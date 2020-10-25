@@ -31,3 +31,7 @@ data "cloudinit_config" "desktop_config" {
     })
   }
 }
+
+output "desktop_config_size" {
+  value = length(data.cloudinit_config.desktop_config.rendered)
+}
