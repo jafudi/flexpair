@@ -28,9 +28,9 @@ resource "null_resource" "health_check" {
   # Give nginx time to come up and then test HTTPS endpoint
   provisioner "local-exec" {
     environment = {
-      NGINXUP = 120
+      EXPECTIDLE = 300
     }
     interpreter = ["/bin/bash", "-c"]
-    command     = "sleep $NGINXUP; wget --spider --recursive --level 1 https://${local.domain}${each.key};"
+    command     = "sleep $EXPECTIDLE; wget --spider --recursive --level 1 https://${local.domain}${each.key};"
   }
 }
