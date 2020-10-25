@@ -1,12 +1,6 @@
 #!/bin/sh -eux
 
 echo "Running script networking.sh..."
-echo
-
-export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends \
-mtr net-tools \
-darkstat
 
 echo "Create netplan config for eth0"
 cat <<EOF | sudo tee /etc/netplan/01-netcfg.yaml;
@@ -23,7 +17,6 @@ sudo update-grub;
 
 # Allow connections to non-standard localhost ports which are necessary for the 'nginx' and 'guac' containers
 # which do have their own IP addresses within a virtualized Docker network while still running on the same VM
-sudo -E apt-get -qq install --no-install-recommends iptables-persistent
 sudo iptables -I INPUT 1 -p tcp --dport 5900 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to VNC
 sudo iptables -I INPUT 2 -p tcp --dport 4713 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to PulseAudio
 sudo iptables -I INPUT 3 -p tcp --dport 2222 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac via SSH to desktop

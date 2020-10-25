@@ -1,16 +1,17 @@
-#!/bin/sh -eux
+#!/usr/bin/env bash
 
-echo "Running script motd.sh..."
-echo
+mkdir -p /home/ubuntu/uploads
+chown -R ubuntu /home/ubuntu
 
-sudo apt-get -qq update;
-export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends glances
+cat << EOF > /home/ubuntu/.ssh/vm_key
+${VM_PRIVATE_KEY}
+EOF
+chmod 600 /home/ubuntu/.ssh/vm_key
 
 MOTD_CONFIG="/etc/update-motd.d"
-sudo mkdir -p ${MOTD_CONFIG}
+mkdir -p ${MOTD_CONFIG}
 
-cat << 'ASCIIART' | sudo tee -a "${MOTD_CONFIG}/98-ascii-art"
+cat << 'ASCIIART' > "${MOTD_CONFIG}/98-ascii-art"
 #!/bin/sh
 
 cat <<'EOF'
@@ -34,7 +35,7 @@ ______ `\___/' ___ Jens Fielenbach, 2020 ________________-""(((:-.,_,.-:)))""-__
 EOF
 ASCIIART
 
-cat << 'MESSAGE' | sudo tee -a "${MOTD_CONFIG}/99-message"
+cat << 'MESSAGE' > "${MOTD_CONFIG}/99-message"
 #!/bin/sh
 
 cat <<'EOF'
@@ -50,5 +51,4 @@ You may connect to the desktop host using:
 EOF
 MESSAGE
 
-sudo chmod -R 0755 ${MOTD_CONFIG}
-
+chmod -R 0755 ${MOTD_CONFIG}

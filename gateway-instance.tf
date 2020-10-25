@@ -49,12 +49,20 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "remote-exec" {
+    inline = [
+      "echo Block until cloud-init finished...",
+      "set +e",
+      "cloud-init status --long --wait",
+      "set -e"
+    ]
+  }
+
+  provisioner "remote-exec" {
     scripts = [
-      "cloud-init-config/gateway-templates/01-disable-upgrades.sh",
-      "cloud-init-config/gateway-templates/02-sshd.sh",
-      "cloud-init-config/gateway-templates/03-networking.sh",
-      "cloud-init-config/gateway-templates/04-sudoers.sh",
-      "cloud-init-config/gateway-templates/05-message-of-the-day.sh"
+      "cloud-init-config/gateway-templates/03-sshd.sh",
+      "cloud-init-config/gateway-templates/04-networking.sh",
+      "cloud-init-config/gateway-templates/05-sudoers.sh",
+      "cloud-init-config/gateway-templates/09-install-before-cloud-config.sh"
     ]
   }
 

@@ -46,6 +46,15 @@ resource "oci_core_instance" "desktop" {
     private_key = tls_private_key.vm_mutual_key.private_key_pem
   }
 
+  provisioner "remote-exec" {
+    inline = [
+      "echo Block until cloud-init finished...",
+      "set +e",
+      "cloud-init status --long --wait",
+      "set -e"
+    ]
+  }
+
   # Must-haves
   provisioner "remote-exec" {
     scripts = [

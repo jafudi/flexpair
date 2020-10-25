@@ -25,7 +25,7 @@ resource "null_resource" "health_check" {
     command     = "while ! ping -c 1 -w 1 ${local.domain} &>/dev/null; do sleep 1; done;"
   }
 
-  # Give nginx time to come up and then test HTTPS endpoint
+  # Check HTTPS endpoint and first-level links availability
   provisioner "local-exec" {
     interpreter = ["/bin/bash", "-c"]
     command     = "wget --spider --recursive --level 1 https://${local.domain}${each.key};"

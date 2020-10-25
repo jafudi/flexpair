@@ -1,12 +1,6 @@
 #!/bin/sh -eux
 
 echo "Running script update.sh..."
-echo
-
-echo "Block until cloud-init finished..."
-set +e
-cloud-init status --long --wait
-set -e
 
 export DEBIAN_FRONTEND="noninteractive"
 

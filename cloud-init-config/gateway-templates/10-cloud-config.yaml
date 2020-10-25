@@ -1,12 +1,18 @@
 #cloud-config
 
 users:
-    - default
+  - default
 
 # Set the system timezone
 timezone: "${GATEWAY_TIMEZONE}"
 
 locale: "${GATEWAY_LOCALE}"
 
-
-
+package_update: true
+package_upgrade: false
+packages:
+  - docker.io
+  - nano
+  - darkstat
+  - iptables-persistent
+  - glances

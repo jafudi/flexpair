@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+unattended-upgrades snapd apport
+
 if [ ! -f /etc/.terraform-complete ]; then
     echo "Terraform provisioning not yet complete, exiting"
     exit 0
@@ -14,11 +16,7 @@ sudo passwd -d ubuntu # for direct SSH access from guacd_container
 # Provision Docker Compose ####################################
 
 echo "Installing Docker and Docker Compose..."
-echo
 
-apt-get -qq update
-export DEBIAN_FRONTEND="noninteractive"
-apt-get -qq install --no-install-recommends docker.io git
 systemctl enable --now docker
 usermod -aG docker ubuntu
 
