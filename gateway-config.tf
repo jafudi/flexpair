@@ -17,14 +17,10 @@ data "cloudinit_config" "gateway_config" {
     content_type = "text/cloud-boothook"
     content      = file("cloud-init-config/gateway-templates/02-disable-upgrades.sh")
   }
-//  part {
-//    content_type = "text/cloud-boothook"
-//    content      = file("cloud-init-config/gateway-templates/03-sshd-config.sh")
-//  }
-//  part {
-//    content_type = "text/cloud-boothook"
-//    content      = file("cloud-init-config/gateway-templates/05-sudoers.sh")
-//  }
+  part {
+    content_type = "text/cloud-boothook"
+    content      = file("cloud-init-config/gateway-templates/03-sshd-config.sh")
+  }
   part {
     content_type = "text/cloud-config"
     content = templatefile("cloud-init-config/gateway-templates/10-cloud-config.yaml", {
@@ -34,7 +30,11 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("cloud-init-config/gateway-templates/11-networking.sh", {
+    content      = file("cloud-init-config/gateway-templates/11-sudoers.sh")
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("cloud-init-config/gateway-templates/13-networking.sh", {
       VNC_PORT = 5900
     })
   }

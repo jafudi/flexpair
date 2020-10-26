@@ -3,8 +3,8 @@
 echo "Running script sshd.sh..."
 echo
 
-sudo mkdir -p "/home/ubuntu/.ssh"
-sudo touch "/home/ubuntu/.ssh/vm_key"
+mkdir -p "/home/ubuntu/.ssh"
+touch "/home/ubuntu/.ssh/vm_key"
 
 cat <<EOF | sudo tee /etc/ssh/sshd_config
 # This is the sshd server system-wide configuration file.  See
