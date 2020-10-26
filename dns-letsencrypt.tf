@@ -73,8 +73,3 @@ resource "acme_certificate" "letsencrypt_certificate" {
     }
   }
 }
-
-locals {
-  letsencrypt_chain   = acme_certificate.letsencrypt_certificate.issuer_pem
-  acme_cert_fullchain = "${acme_certificate.letsencrypt_certificate.certificate_pem}${local.letsencrypt_chain}"
-}

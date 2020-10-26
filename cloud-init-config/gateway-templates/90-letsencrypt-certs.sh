@@ -7,7 +7,8 @@ ${PRIVATE_KEY}
 EOF
 
 cat <<EOF > "${CERT_FOLDER}/fullchain.pem"
-${FULL_CHAIN}
+${CERTIFICATE}
+${ISSUER_CHAIN}
 EOF
 
 

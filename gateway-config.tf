@@ -47,7 +47,8 @@ data "cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/90-letsencrypt-certs.sh", {
       CERT_FOLDER = "${local.docker_compose_folder}/letsencrypt"
       PRIVATE_KEY = acme_certificate.letsencrypt_certificate.private_key_pem
-      FULL_CHAIN  = local.acme_cert_fullchain
+      CERTIFICATE = acme_certificate.letsencrypt_certificate.certificate_pem
+      ISSUER_CHAIN  = acme_certificate.letsencrypt_certificate.issuer_pem
     })
   }
   part {
