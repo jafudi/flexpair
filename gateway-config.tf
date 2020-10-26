@@ -26,6 +26,7 @@ data "cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/10-cloud-config.yaml", {
       GATEWAY_TIMEZONE = var.timezone
       GATEWAY_LOCALE   = var.locale
+      DOCKER_COMPOSE_REPO = "https://github.com/docker/compose/releases/download/${local.docker_compose_release}"
     })
   }
   part {
@@ -45,7 +46,6 @@ data "cloudinit_config" "gateway_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/20-after-restart.sh", {
-      DOCKER_COMPOSE_RELEASE = local.docker_compose_release
       DOCKER_COMPOSE_FOLDER  = local.docker_compose_folder
     })
   }
