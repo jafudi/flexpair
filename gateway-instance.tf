@@ -98,16 +98,6 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "file" {
-    content     = acme_certificate.letsencrypt_certificate.private_key_pem
-    destination = join("/", [local.docker_compose_folder, "letsencrypt", "privkey.pem"])
-  }
-
-  provisioner "file" {
-    content     = local.acme_cert_fullchain
-    destination = join("/", [local.docker_compose_folder, "letsencrypt", "fullchain.pem"])
-  }
-
-  provisioner "file" {
     source      = "upload-directory/"
     destination = "/home/ubuntu/uploads"
   }

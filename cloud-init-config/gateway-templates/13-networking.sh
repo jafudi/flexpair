@@ -1,7 +1,7 @@
 #!/bin/sh -eux
 
 echo "Create netplan config for eth0"
-cat <<EOF | tee /etc/netplan/01-netcfg.yaml;
+cat <<EOF > /etc/netplan/01-netcfg.yaml;
 network:
   version: 2
   ethernets:
@@ -22,7 +22,7 @@ iptables -I INPUT 4 -p tcp --dport 667 -m conntrack --ctstate NEW,ESTABLISHED -j
 iptables -I INPUT 5 -p tcp --dport 6667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # nginx to DarkStat on desktop
 netfilter-persistent save
 
-cat <<EOF | tee /etc/darkstat/init.cfg
+cat <<EOF > /etc/darkstat/init.cfg
 START_DARKSTAT=yes
 
 # You must set this option, else darkstat may not listen to

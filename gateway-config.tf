@@ -26,7 +26,6 @@ data "cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/10-cloud-config.yaml", {
       GATEWAY_TIMEZONE = var.timezone
       GATEWAY_LOCALE   = var.locale
-      DOCKER_COMPOSE_REPO = "https://github.com/docker/compose/releases/download/${local.docker_compose_release}"
     })
   }
   part {
@@ -45,8 +44,17 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("cloud-init-config/gateway-templates/20-after-restart.sh", {
-      DOCKER_COMPOSE_FOLDER  = local.docker_compose_folder
+    content = templatefile("cloud-init-config/gateway-templates/90-letsencrypt-certs.sh", {
+      CERT_FOLDER = "${local.docker_compose_folder}/letsencrypt"
+      PRIVATE_KEY = acme_certificate.letsencrypt_certificate.private_key_pem
+      FULL_CHAIN  = local.acme_cert_fullchain
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("cloud-init-config/gateway-templates/99-after-restart.sh", {
+      DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
+      DOCKER_COMPOSE_REPO   = "https://github.com/docker/compose/releases/download/${local.docker_compose_release}"
     })
   }
 }
