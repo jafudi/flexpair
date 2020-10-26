@@ -57,6 +57,13 @@ resource "oci_core_instance" "gateway" {
     ]
   }
 
+  provisioner "remote-exec" {
+    scripts = [
+      "cloud-init-config/gateway-templates/03-sshd-config.sh",
+      "cloud-init-config/gateway-templates/05-sudoers.sh",
+    ]
+  }
+
   # This file contains important security parameters for NGINX.
   provisioner "local-exec" {
     working_dir = "docker-compose/nginx/conf.d"
