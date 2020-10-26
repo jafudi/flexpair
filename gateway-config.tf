@@ -15,9 +15,15 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/cloud-boothook"
-    content = templatefile("cloud-init-config/gateway-templates/02-disable-upgrades.sh", {
-      VM_PRIVATE_KEY = tls_private_key.vm_mutual_key.private_key_pem
-    })
+    content      = file("cloud-init-config/gateway-templates/02-disable-upgrades.sh")
+  }
+  part {
+    content_type = "text/cloud-boothook"
+    content      = file("cloud-init-config/gateway-templates/03-sshd-config.sh")
+  }
+  part {
+    content_type = "text/cloud-boothook"
+    content      = file("cloud-init-config/gateway-templates/05-sudoers.sh")
   }
   part {
     content_type = "text/cloud-config"
@@ -28,7 +34,17 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("cloud-init-config/gateway-templates/20-shell-script.sh", {
+    content = templatefile("cloud-init-config/gateway-templates/11-networking.sh", {
+      VNC_PORT = 5900
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content      = file("cloud-init-config/gateway-templates/15-etc.sh")
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("cloud-init-config/gateway-templates/20-after-restart.sh", {
       DOCKER_COMPOSE_RELEASE = local.docker_compose_release
       DOCKER_COMPOSE_FOLDER  = local.docker_compose_folder
     })
