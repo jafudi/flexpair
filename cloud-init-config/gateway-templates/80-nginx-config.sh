@@ -123,4 +123,4 @@ map $http_upgrade $connection_upgrade {
 EOF
 
 # This file contains important security parameters for NGINX.
-curl -s "${CERTBOT_REPO}/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf" | tee options-ssl-nginx.conf > /dev/null
+curl -s "${CERTBOT_REPO}/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf" | tee "${NGINX_CONFIG}/conf.d/options-ssl-nginx.conf" > /dev/null
