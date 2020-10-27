@@ -5,12 +5,25 @@ variable "locale" {}
 # https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
 
 locals {
+  dc_config_rendered = templatefile("cloud-init-config/gateway-templates/docker-compose.tpl.yml", {
+    SSL_DOMAIN    = local.domain
+    EMAIL_ADDRESS = local.email_address
+    IMAP_HOST     = local.domain
+    IMAP_PASSWORD = local.imap_password
+    MURMUR_PORT   = var.murmur_port
+  })
+}
+
+locals { # Folders to create on target system
   docker_compose_folder = "/var/tmp/docker-compose"
   murmur_config_folder  = "${local.docker_compose_folder}/murmur_config"
   nginx_config_folder   = "${local.docker_compose_folder}/nginx"
   letsencrypt_folder    = "${local.docker_compose_folder}/letsencrypt"
   guacamole_config      = "${local.docker_compose_folder}/guaca_config"
-  certbot_repo_url      = "https://raw.githubusercontent.com/certbot/certbot/master"
+}
+
+locals {
+  certbot_repo_url = "https://raw.githubusercontent.com/certbot/certbot/master"
 }
 
 data "cloudinit_config" "gateway_config" {
@@ -53,17 +66,6 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("cloud-init-config/gateway-templates/50-docker-compose.sh", {
-      DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
-      SSL_DOMAIN            = local.domain
-      EMAIL_ADDRESS         = local.email_address
-      IMAP_HOST             = local.domain
-      IMAP_PASSWORD         = local.imap_password
-      MURMUR_PORT           = var.murmur_port
-    })
-  }
-  part {
-    content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/60-guacamole-config.sh", {
       GUACAMOLE_CONFIG = local.guacamole_config
     })
@@ -96,11 +98,13 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("cloud-init-config/gateway-templates/99-after-restart.sh", {
-      DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
+    content = templatefile("cloud-init-config/gateway-templates/99-docker-compose.sh", {
       DOCKER_COMPOSE_REPO   = "https://github.com/docker/compose/releases/download/${local.docker_compose_release}"
+      DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
+      DOCKER_COMPOSE_YAML   = local.dc_config_rendered
     })
   }
+
 }
 
 # The size of the config is limited to 16384 bytes on most platforms

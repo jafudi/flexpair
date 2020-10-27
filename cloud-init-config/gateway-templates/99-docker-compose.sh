@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-if [ ! -f /etc/.terraform-complete ]; then
-    echo "Terraform provisioning not yet complete, exiting"
-    exit 0
-fi
-
 systemctl enable --now docker
 usermod -aG docker ubuntu
 
+mkdir -p "${DOCKER_COMPOSE_FOLDER}"
 cd ${DOCKER_COMPOSE_FOLDER}
 
 curl  --silent -L "${DOCKER_COMPOSE_REPO}/docker-compose-$(uname -s)-$(uname -m)" \
@@ -21,5 +17,9 @@ passwd -d ubuntu # for direct SSH access from guacd_container
 cloud-init collect-logs
 tar -xzf cloud-init.tar.gz
 rm -f cloud-init.tar.gz
+
+cat << EOF > "${DOCKER_COMPOSE_FOLDER}/docker-compose.yml"
+${DOCKER_COMPOSE_YAML}
+EOF
 
 docker-compose up
