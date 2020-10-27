@@ -131,7 +131,7 @@ services:
     # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   imap:
-    image: jafudi/mini-mail
+    image: jafudi/docker-imap-devel
     container_name: imap_container
     networks:
       guacamole_net:
