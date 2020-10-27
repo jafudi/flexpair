@@ -2,7 +2,6 @@ variable "gateway_shape" {}
 
 locals {
   docker_compose_folder = "/var/tmp/docker-compose"
-  certbot_repo          = "https://raw.githubusercontent.com/certbot/certbot/master"
 }
 
 resource "oci_core_instance" "gateway" {
@@ -57,18 +56,6 @@ resource "oci_core_instance" "gateway" {
     ]
   }
 
-  # This file contains important security parameters for NGINX.
-  provisioner "local-exec" {
-    working_dir = "docker-compose/nginx/conf.d"
-    command     = "curl -s ${local.certbot_repo}/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf | tee options-ssl-nginx.conf > /dev/null"
-  }
-
-  # Diffie-Hellman parameters for https://en.wikipedia.org/wiki/Forward_secrecy
-  provisioner "local-exec" {
-    working_dir = "docker-compose/letsencrypt"
-    command     = "curl -s ${local.certbot_repo}/certbot/certbot/ssl-dhparams.pem | tee ssl-dhparams.pem > /dev/null"
-  }
-
   provisioner "remote-exec" {
     inline = ["mkdir -p ${local.docker_compose_folder}"]
   }
@@ -111,7 +98,6 @@ resource "oci_core_instance" "gateway" {
   }
 
 }
-
 
 output "gateway" {
   value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}/?password=${local.murmur_password}"
