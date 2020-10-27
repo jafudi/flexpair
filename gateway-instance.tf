@@ -1,9 +1,5 @@
 variable "gateway_shape" {}
 
-locals {
-  docker_compose_folder = "/var/tmp/docker-compose"
-}
-
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.one_per_subdomain.id
@@ -65,26 +61,6 @@ resource "oci_core_instance" "gateway" {
   provisioner "file" {
     source      = "docker-compose/"
     destination = local.docker_compose_folder
-  }
-
-  provisioner "file" {
-    content = templatefile("docker-compose/murmur_config/murmur.tpl.ini", {
-      SSL_DOMAIN      = local.domain
-      MURMUR_PORT     = var.murmur_port
-      MURMUR_PASSWORD = local.murmur_password
-    })
-    destination = "${local.docker_compose_folder}/murmur_config/murmur.ini"
-  }
-
-  provisioner "file" {
-    content = templatefile("docker-compose/docker-compose.tpl.yml", {
-      SSL_DOMAIN    = local.domain
-      EMAIL_ADDRESS = local.email_address
-      IMAP_HOST     = local.domain
-      IMAP_PASSWORD = local.imap_password
-      MURMUR_PORT   = var.murmur_port
-    })
-    destination = "${local.docker_compose_folder}/docker-compose.yml"
   }
 
   provisioner "file" {

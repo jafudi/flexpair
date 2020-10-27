@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+mkdir -p  "${GUACAMOLE_CONFIG}"
+
+cat << 'EOF' > "${GUACAMOLE_CONFIG}/user-mapping.xml"
 <user-mapping>
 
     <!-- Per-user authentication and config information -->
@@ -44,3 +49,4 @@
     </authorize>
 
 </user-mapping>
+EOF

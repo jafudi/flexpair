@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+mkdir -p  "${GUACAMOLE_CONFIG}"
+
+cat << EOF > "${GUACAMOLE_CONFIG}/docker-compose.yml"
 # The initial login to the guacamole webinterface is:
 #
 #     Username: guacadmin
@@ -138,4 +143,4 @@ services:
     - MAILNAME=${SSL_DOMAIN}
     - MAIL_ADDRESS=${EMAIL_ADDRESS}
     - MAIL_PASS=${IMAP_PASSWORD}
-
+EOF
