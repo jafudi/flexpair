@@ -43,37 +43,9 @@ resource "oci_core_instance" "gateway" {
     private_key = tls_private_key.vm_mutual_key.private_key_pem
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "echo Block until cloud-init finished...",
-      "set +e",
-      "cloud-init status --long --wait",
-      "set -e"
-    ]
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "mkdir -p ${local.docker_compose_folder}",
-      "sudo chown -R ubuntu ${local.docker_compose_folder}"
-    ]
-  }
-  provisioner "file" {
-    source      = "docker-compose/"
-    destination = local.docker_compose_folder
-  }
-
   provisioner "file" {
     source      = "upload-directory/"
     destination = "/home/ubuntu/uploads"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo touch /etc/.terraform-complete",
-      "sudo cloud-init clean --logs",
-      "sudo shutdown -r +1"
-    ]
   }
 
 }
