@@ -57,7 +57,7 @@ ${color grey}File systems:
  / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
 $hr
 ${color grey}Current network traffic:
-Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+Up:$color ${upspeed ens3} ${color grey} - Down:$color ${downspeed ens3}
 $hr
 Press Alt+Ctrl+Shift for
 - main menu and settings
