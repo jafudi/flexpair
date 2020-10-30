@@ -22,3 +22,5 @@ EOF
 systemctl enable darkstat.service
 systemctl start darkstat.service
 
+systemctl daemon-reload
+
