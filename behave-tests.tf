@@ -11,7 +11,6 @@ resource "null_resource" "health_check" {
   for_each = toset([
     "/",
     "/guacamole/",
-    "/gateway-traffic/",
     "/desktop-traffic/"
   ])
 

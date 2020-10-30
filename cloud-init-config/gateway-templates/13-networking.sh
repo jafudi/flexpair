@@ -9,18 +9,6 @@ iptables -I INPUT 4 -p tcp --dport 667 -m conntrack --ctstate NEW,ESTABLISHED -j
 iptables -I INPUT 5 -p tcp --dport 6667 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # nginx to DarkStat on desktop
 netfilter-persistent save
 
-cat <<EOF > /etc/darkstat/init.cfg
-START_DARKSTAT=yes
-
-# You must set this option, else darkstat may not listen to
-# the interface you want
-INTERFACE="-i ens3"
-
-DIR="/var/lib/darkstat"
-PORT="-p 667"
-EOF
-
-service darkstat start # still uses SysVinit, not systemd
 
 
 
