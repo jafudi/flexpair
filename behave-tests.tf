@@ -1,11 +1,3 @@
-resource "time_sleep" "gateway_rebooted" {
-  depends_on      = [oci_core_instance.gateway]
-  create_duration = "300s" # Includes 1m before scheduled shutdown
-  triggers = {
-    ip_change = oci_core_instance.gateway.public_ip
-  }
-}
-
 resource "time_sleep" "desktop_rebooted" {
   depends_on      = [oci_core_instance.desktop]
   create_duration = "300s" # Includes 1m before scheduled shutdown
@@ -29,7 +21,6 @@ resource "null_resource" "health_check" {
 
   depends_on = [
     oci_core_instance.gateway,
-    time_sleep.gateway_rebooted,
     time_sleep.dns_propagation,
     oci_core_instance.desktop,
     time_sleep.desktop_rebooted

@@ -19,8 +19,8 @@ INTERFACE="-i ens3"
 DIR="/var/lib/darkstat"
 PORT="-p 667"
 EOF
-systemctl enable darkstat.service
-systemctl start darkstat.service
 
-systemctl daemon-reload
+service darkstat start # still uses SysVinit, not systemd
+
+
 

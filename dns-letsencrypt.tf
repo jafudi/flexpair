@@ -37,6 +37,10 @@ resource "dns_a_record_set" "gateway_hostname" {
 resource "time_sleep" "dns_propagation" {
   depends_on      = [dns_a_record_set.gateway_hostname]
   create_duration = "120s"
+  triggers = {
+    map_from = local.domain
+    map_to = oci_core_instance.gateway.public_ip
+  }
 }
 
 provider "acme" {
