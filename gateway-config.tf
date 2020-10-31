@@ -52,6 +52,10 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
+    content      = file("cloud-init-config/gateway-templates/11-sudoers.sh")
+  }
+  part {
+    content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/13-networking.sh", {
       VNC_PORT = 5900
     })
