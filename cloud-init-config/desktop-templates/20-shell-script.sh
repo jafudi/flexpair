@@ -40,6 +40,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 ubuntu@${SSL_DOMAIN}
 Restart=always
 RestartSec=5s
+StartLimitIntervalSec=0
 
 [Install]
 WantedBy=default.target
