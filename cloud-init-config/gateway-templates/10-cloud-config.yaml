@@ -7,9 +7,7 @@
 #       - 'plain_text_passwd', 'hashed_passwd', 'lock_passwd', 'sudo',
 #         'ssh_authorized_keys', 'ssh_redirect_user'.
 users:
-  - name: ubuntu
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    # Set up password-less sudo for the ubuntu user
+  - default
 
 timezone: "${GATEWAY_TIMEZONE}"
 
