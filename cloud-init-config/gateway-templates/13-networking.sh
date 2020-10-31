@@ -1,5 +1,7 @@
 #!/bin/sh -eux
 
+chown -R ubuntu /home/ubuntu
+
 # Allow connections to non-standard localhost ports which are necessary for the 'nginx' and 'guac' containers
 # which do have their own IP addresses within a virtualized Docker network while still running on the same VM
 iptables -I INPUT 1 -p tcp --dport "${VNC_PORT}" -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to VNC
