@@ -18,11 +18,10 @@ package_upgrade: false
 packages:
   - docker.io
   - nano
-  - darkstat
   - iptables-persistent
   - glances
 
-runcmd:
-  - rm -rf /var/log/unattended-upgrades
-  - DEBIAN_FRONTEND="noninteractive" apt-get -qq purge unattended-upgrades snapd apport
-  - DEBIAN_FRONTEND="noninteractive" apt-get -qq autoremove
+#runcmd:
+#  - rm -rf /var/log/unattended-upgrades
+#  - DEBIAN_FRONTEND="noninteractive" apt-get -qq purge unattended-upgrades snapd apport
+#  - DEBIAN_FRONTEND="noninteractive" apt-get -qq autoremove

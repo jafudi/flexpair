@@ -42,6 +42,7 @@ resource "oci_core_instance" "gateway" {
     port        = 22
     user        = "ubuntu"
     private_key = tls_private_key.vm_mutual_key.private_key_pem
+    timeout = "30s"
   }
 
   provisioner "file" {
