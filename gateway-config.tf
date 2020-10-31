@@ -2,8 +2,6 @@ variable "timezone" {}
 
 variable "locale" {}
 
-# https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
-
 locals {
   dc_config_rendered = templatefile("cloud-init-config/gateway-templates/docker-compose.tpl.yml", {
     SSL_DOMAIN    = local.domain
@@ -26,6 +24,7 @@ locals {
   certbot_repo_url = "https://raw.githubusercontent.com/certbot/certbot/master"
 }
 
+# https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
 data "cloudinit_config" "gateway_config" {
   gzip          = true
   base64_encode = true
