@@ -10,7 +10,6 @@ package_upgrade: false
 packages:
   - docker.io
   - nano
-  - darkstat
   - iptables-persistent
   - glances
 
