@@ -104,6 +104,6 @@ data "cloudinit_config" "gateway_config" {
 }
 
 # The size of the config is limited to 16384 bytes on most platforms
-output "gateway_config_size" {
-  value = "${length(data.cloudinit_config.gateway_config.rendered)} bytes"
+output "gateway_user_data" {
+  value = "${length(base64gzip(data.cloudinit_config.gateway_config.rendered))} bytes"
 }
