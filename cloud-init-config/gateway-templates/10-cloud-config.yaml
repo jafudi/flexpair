@@ -8,7 +8,7 @@
 #         'ssh_authorized_keys', 'ssh_redirect_user'.
 users:
   - name: ubuntu
-    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    sudo: ALL=(ALL) NOPASSWD:ALL
     # Set up password-less sudo for the ubuntu user
 
 timezone: "${GATEWAY_TIMEZONE}"
