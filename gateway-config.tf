@@ -62,10 +62,6 @@ data "cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content      = file("cloud-init-config/gateway-templates/15-etc.sh")
-  }
-  part {
-    content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/gateway-templates/60-guacamole-config.sh", {
       GUACAMOLE_CONFIG = local.guacamole_config
     })
