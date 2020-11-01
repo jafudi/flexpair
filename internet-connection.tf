@@ -5,7 +5,7 @@ resource "tls_private_key" "vm_mutual_key" {
 
 resource "random_string" "imap_password" {
   length  = 16
-  special = true
+  special = false
   keepers = {
     # Generate a new password each time we change the web address
     user_facing_web_address = local.domain
