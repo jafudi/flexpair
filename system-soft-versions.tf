@@ -41,9 +41,9 @@ terraform {
       source  = "terraform-providers/acme"
       version = "~> 1.5.0"
     }
-    cloudinit = {
-      source  = "hashicorp/cloudinit"
-      version = "~> 2.0.0"
+    template = {
+      source = "hashicorp/template"
+      version = "2.2.0"
     }
   }
   required_version = ">= 0.13"

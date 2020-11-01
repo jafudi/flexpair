@@ -1,6 +1,6 @@
 # https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
 
-data "cloudinit_config" "desktop_config" {
+data "template_cloudinit_config" "desktop_config" {
   gzip          = true
   base64_encode = true
   part {

@@ -2,14 +2,15 @@ variable "timezone" {}
 
 variable "locale" {}
 
-locals {
-  dc_config_rendered = templatefile("cloud-init-config/gateway-templates/docker-compose.tpl.yml", {
+data "template_file" "docker_compose_config" {
+  template = file("cloud-init-config/gateway-templates/docker-compose.tpl.yml")
+  vars = {
     SSL_DOMAIN    = local.domain
     EMAIL_ADDRESS = local.email_address
     IMAP_HOST     = local.domain
     IMAP_PASSWORD = local.imap_password
     MURMUR_PORT   = var.murmur_port
-  })
+  }
 }
 
 locals { # Folders to create on target system
@@ -25,7 +26,7 @@ locals {
 }
 
 # https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
-data "cloudinit_config" "gateway_config" {
+data "template_cloudinit_config" "gateway_config" {
   gzip          = true
   base64_encode = true
   part {
@@ -96,7 +97,7 @@ data "cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/99-docker-compose.sh", {
       DOCKER_COMPOSE_REPO   = "https://github.com/docker/compose/releases/download/${local.docker_compose_release}"
       DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
-      DOCKER_COMPOSE_YAML   = local.dc_config_rendered
+      DOCKER_COMPOSE_YAML   = data.template_file.docker_compose_config
     })
   }
 
@@ -104,5 +105,5 @@ data "cloudinit_config" "gateway_config" {
 
 # The size of the config is limited to 16384 bytes on most platforms
 output "gateway_user_data" {
-  value = "${length(base64gzip(data.cloudinit_config.gateway_config.rendered))} bytes"
+  value = "${length(base64gzip(data.template_cloudinit_config.gateway_config.rendered))} bytes"
 }

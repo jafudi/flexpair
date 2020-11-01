@@ -29,7 +29,7 @@ resource "oci_core_instance" "desktop" {
 
   metadata = {
     ssh_authorized_keys = tls_private_key.vm_mutual_key.public_key_openssh
-    user_data           = data.cloudinit_config.desktop_config.rendered
+    user_data           = data.template_cloudinit_config.desktop_config.rendered
     gitlab_runner_token = var.gitlab_runner_token
   }
 
