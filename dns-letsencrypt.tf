@@ -39,7 +39,7 @@ resource "time_sleep" "dns_propagation" {
   create_duration = "120s"
   triggers = {
     map_from = local.domain
-    map_to = oci_core_instance.gateway.public_ip
+    map_to   = oci_core_instance.gateway.public_ip
   }
 }
 

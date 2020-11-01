@@ -18,7 +18,7 @@ resource "oci_core_instance" "gateway" {
     display_name     = "ens3"
     assign_public_ip = true
     hostname_label   = "gateway"
-    freeform_tags = local.compartment_tags
+    freeform_tags    = local.compartment_tags
   }
 
   source_details {
