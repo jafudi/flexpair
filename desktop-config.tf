@@ -23,15 +23,25 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("cloud-init-config/desktop-templates/20-shell-script.sh", {
-      VM_PRIVATE_KEY    = tls_private_key.vm_mutual_key.private_key_pem
+    content = templatefile("cloud-init-config/desktop-templates/20-ssh-tunnel.sh", {
       SSL_DOMAIN        = local.domain
-      SUB_DOMAIN_PREFIX = local.subdomain
-      EMAIL_ADDRESS     = local.email_address
-      IMAP_HOST         = local.domain
-      IMAP_PASSWORD     = local.imap_password
+      MURMUR_PORT       = var.murmur_port
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("cloud-init-config/desktop-templates/30-mumble-client.sh", {
+      SSL_DOMAIN        = local.domain
       MURMUR_PORT       = var.murmur_port
       MURMUR_PASSWORD   = local.murmur_password
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("cloud-init-config/desktop-templates/40-trojita-mail.sh", {
+      SUB_DOMAIN_PREFIX = local.subdomain
+      EMAIL_ADDRESS     = local.email_address
+      IMAP_PASSWORD     = local.imap_password
     })
   }
 }
