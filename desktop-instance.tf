@@ -55,6 +55,7 @@ resource "oci_core_instance" "desktop" {
   provisioner "remote-exec" {
     scripts = [
       "desktop-scripts/disable-upgrades.sh",
+      "desktop-scripts/networking.sh",
       "desktop-scripts/lubuntu-desktop.sh",
       "desktop-scripts/lxqt-look-and-feel.sh",
       "desktop-scripts/multiple-languages.sh",

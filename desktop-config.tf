@@ -23,10 +23,6 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content      = file("cloud-init-config/desktop-templates/13-networking.sh")
-  }
-  part {
-    content_type = "text/x-shellscript"
     content = templatefile("cloud-init-config/desktop-templates/20-shell-script.sh", {
       VM_PRIVATE_KEY    = tls_private_key.vm_mutual_key.private_key_pem
       SSL_DOMAIN        = local.domain
