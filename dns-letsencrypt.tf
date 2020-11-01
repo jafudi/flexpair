@@ -1,16 +1,3 @@
-variable "TFC_WORKSPACE_NAME" {}
-
-variable "registered_domain" {}
-
-variable "rfc2136_name_server" {}
-
-variable "rfc2136_key_name" {}
-
-variable "rfc2136_key_secret" {}
-
-variable "rfc2136_tsig_algorithm" {}
-
-
 # Configure the DNS Provider
 provider "dns" {
   update {
@@ -32,6 +19,15 @@ resource "dns_a_record_set" "gateway_hostname" {
   name      = local.subdomain
   addresses = [oci_core_instance.gateway.public_ip]
   ttl       = 60
+}
+
+resource "time_sleep" "dns_propagation" {
+  depends_on      = [dns_a_record_set.gateway_hostname]
+  create_duration = "120s"
+  triggers = {
+    map_from = local.domain
+    map_to   = oci_core_instance.gateway.public_ip
+  }
 }
 
 provider "acme" {
@@ -67,9 +63,4 @@ resource "acme_certificate" "letsencrypt_certificate" {
       // RFC2136_TTL = "" // The time-to-live of the TXT record used for the DNS challenge.
     }
   }
-}
-
-locals {
-  letsencrypt_chain   = acme_certificate.letsencrypt_certificate.issuer_pem
-  acme_cert_fullchain = "${acme_certificate.letsencrypt_certificate.certificate_pem}${local.letsencrypt_chain}"
 }

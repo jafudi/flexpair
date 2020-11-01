@@ -1,13 +1,20 @@
 #cloud-config
 
-bootcmd:
-  - mkdir -p /home/ubuntu/uploads
-  - chown -R ubuntu /home/ubuntu
-
 users:
-    - default
+  - default
 
-# Set the system timezone
-timezone: ${GATEWAY_TIMEZONE}
+timezone: "${GATEWAY_TIMEZONE}"
 
-locale: ${GATEWAY_LOCALE}
+package_update: true
+package_upgrade: false
+packages:
+  - docker.io
+  - nano
+  - iptables-persistent
+  - glances
+
+runcmd:
+  - export DEBIAN_FRONTEND=noninteractive
+  - rm -rf /var/log/unattended-upgrades
+  - apt-get -qq purge unattended-upgrades snapd apport
+  - apt-get -qq autoremove
