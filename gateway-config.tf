@@ -93,7 +93,7 @@ data "template_cloudinit_config" "gateway_config" {
     content = templatefile("cloud-init-config/gateway-templates/99-docker-compose.sh", {
       DOCKER_COMPOSE_REPO   = "https://github.com/docker/compose/releases/download/${local.docker_compose_release}"
       DOCKER_COMPOSE_FOLDER = local.docker_compose_folder
-      DOCKER_COMPOSE_YAML   = data.template_file.docker_compose_config
+      DOCKER_COMPOSE_YAML   = data.template_file.docker_compose_config.rendered
     })
   }
 
