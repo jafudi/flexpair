@@ -5,7 +5,7 @@ data "template_cloudinit_config" "desktop_config" {
   base64_encode = true
   part {
     content_type = "text/cloud-boothook"
-    content = templatefile("cloud-init-config/desktop-templates/01-boot-hook.sh", {
+    content = templatefile("cloud-init-config/desktop-templates/01-private-key-etc.sh", {
       VM_PRIVATE_KEY = tls_private_key.vm_mutual_key.private_key_pem
     })
   }
@@ -16,6 +16,14 @@ data "template_cloudinit_config" "desktop_config" {
       DESKTOP_TIMEZONE = var.timezone
       DESKTOP_LOCALE   = var.locale
     })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content      = file("cloud-init-config/desktop-templates/11-sudoers.sh")
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content      = file("cloud-init-config/desktop-templates/13-networking.sh")
   }
   part {
     content_type = "text/x-shellscript"

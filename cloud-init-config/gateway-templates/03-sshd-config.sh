@@ -6,7 +6,7 @@ echo
 mkdir -p "/home/ubuntu/.ssh"
 touch "/home/ubuntu/.ssh/vm_key"
 
-cat <<EOF | sudo tee /etc/ssh/sshd_config
+cat <<EOF > /etc/ssh/sshd_config
 Include /etc/ssh/sshd_config.d/*.conf
 
 # To disable tunneled clear text passwords, change to no here!
