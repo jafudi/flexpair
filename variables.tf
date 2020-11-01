@@ -31,14 +31,7 @@ variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {}
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {}
 variable "TFC_RUN_ID" {}
 
-variable "ad_region_mapping" {
-  type = map(string)
-
-  default = {
-    # The only availability domain in Frankfurt which allows for creating Micro instance
-    # This could change over time!!!
-    eu-frankfurt-1 = 2
-  }
+variable "free_tier_available_in" {
 }
 
 variable "TFC_WORKSPACE_NAME" {}

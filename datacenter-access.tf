@@ -32,7 +32,7 @@ locals {
 
 data "oci_identity_availability_domain" "ad" {
   compartment_id = var.tenancy_ocid
-  ad_number      = var.ad_region_mapping[var.region]
+  ad_number      = var.free_tier_available_in
 }
 
 
