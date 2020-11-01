@@ -1,5 +1,3 @@
-variable "gateway_shape" {}
-
 resource "oci_core_instance" "gateway" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.one_per_subdomain.id
@@ -51,7 +49,4 @@ resource "oci_core_instance" "gateway" {
 
 }
 
-output "gateway" {
-  value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}/?password=${local.murmur_password}"
-}
 

@@ -31,8 +31,3 @@ data "template_cloudinit_config" "desktop_config" {
     })
   }
 }
-
-# The size of the config is limited to 16384 bytes on most platforms
-output "desktop_config_size" {
-  value = "${length(data.template_cloudinit_config.desktop_config.rendered)} bytes"
-}

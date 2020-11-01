@@ -1,16 +1,3 @@
-variable "TFC_WORKSPACE_NAME" {}
-
-variable "registered_domain" {}
-
-variable "rfc2136_name_server" {}
-
-variable "rfc2136_key_name" {}
-
-variable "rfc2136_key_secret" {}
-
-variable "rfc2136_tsig_algorithm" {}
-
-
 # Configure the DNS Provider
 provider "dns" {
   update {

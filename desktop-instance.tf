@@ -1,7 +1,3 @@
-variable "desktop_shape" {}
-
-variable "gitlab_runner_token" {}
-
 resource "oci_core_instance" "desktop" {
   availability_domain = data.oci_identity_availability_domain.ad.name
   compartment_id      = oci_identity_compartment.one_per_subdomain.id
@@ -90,6 +86,3 @@ resource "oci_core_instance" "desktop" {
 
 }
 
-output "desktop" {
-  value = "${oci_core_instance.desktop.public_ip} in data center ${data.oci_identity_availability_domain.ad.name}"
-}

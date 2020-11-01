@@ -1,7 +1,3 @@
-variable "timezone" {}
-
-variable "locale" {}
-
 data "template_file" "docker_compose_config" {
   template = file("cloud-init-config/gateway-templates/docker-compose.tpl.yml")
   vars = {
@@ -103,7 +99,3 @@ data "template_cloudinit_config" "gateway_config" {
 
 }
 
-# The size of the config is limited to 16384 bytes on most platforms
-output "gateway_user_data" {
-  value = "${length(base64gzip(data.template_cloudinit_config.gateway_config.rendered))} bytes"
-}

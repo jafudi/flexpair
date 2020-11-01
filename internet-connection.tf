@@ -1,7 +1,3 @@
-variable "murmur_port" {}
-
-variable "mailbox_prefix" {}
-
 resource "tls_private_key" "vm_mutual_key" {
   algorithm   = "ECDSA"
   ecdsa_curve = "P521"
@@ -59,8 +55,3 @@ resource "oci_core_route_table" "common_route_table" {
   }
 }
 
-output "private_key" {
-  value       = tls_private_key.vm_mutual_key.private_key_pem
-  description = "Private key for connecting to either of the VMs as user 'ubuntu' via SSH"
-  sensitive   = true
-}
