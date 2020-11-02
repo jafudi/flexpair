@@ -4,10 +4,7 @@ variable "tenancy_ocid" {
 
   validation {
     condition     = can(regex("^ocid1\\.tenancy\\.oc1\\.[a-z0-9\\.]+", var.tenancy_ocid))
-    error_message = <<EOF
-    This does not look like a valid OCID for a tenancy.
-    Please refer to https://jafudi.net/ocid for detailed guidance.
-    EOF
+    error_message = "This does not look like a valid OCID for a tenancy. Please refer to https://jafudi.net/ocid for detailed guidance."
   }
 }
 
@@ -17,10 +14,7 @@ variable "user_ocid" {
 
   validation {
     condition     = can(regex("^ocid1\\.tenancy\\.oc1\\.[a-z0-9\\.]+", var.user_ocid))
-    error_message = <<EOF
-    This does not look like a valid OCID for a user.
-    Please refer to https://jafudi.net/ocid for detailed guidance.
-    EOF
+    error_message = "This does not look like a valid OCID for a user. Please refer to https://jafudi.net/ocid for detailed guidance."
   }
 }
 
@@ -46,9 +40,7 @@ variable "timezone" {
 
   validation {
     condition     = can(regex("^[a-zA-Z_-]{1,14}/[a-zA-Z_-]{1,14}$", var.timezone))
-    error_message = <<EOF
-    This does not look like a valid IANA time zone.
-    Please choose from e.g. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+    error_message = "This does not look like a valid IANA time zone. Please choose from e.g. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones."
     EOF
   }
 }
@@ -103,10 +95,7 @@ variable "desktop_username" {
 
   validation {
     condition     = can(regex("^[a-z_][a-z0-9_-]{0,31}$", var.desktop_username))
-    error_message = <<EOF
-    The desktop username should start with a lowercase letter or an underscore.
-    The following 31 letters may also contain numbers and hyphens.
-    EOF
+    error_message = "The desktop username should start with a lowercase letter or an underscore. The following 31 letters may also contain numbers and hyphens."
   }
 }
 
@@ -116,9 +105,6 @@ variable "gateway_username" {
 
   validation {
     condition     = can(regex("^[a-z_][a-z0-9_-]{0,31}$", var.gateway_username))
-    error_message = <<EOF
-    The gateway username should start with a lowercase letter or an underscore.
-    The following 31 letters may also contain numbers and hyphens.
-    EOF
+    error_message = "The gateway username should start with a lowercase letter or an underscore. The following 31 letters may also contain numbers and hyphens."
   }
 }
