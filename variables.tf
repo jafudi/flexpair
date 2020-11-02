@@ -41,7 +41,6 @@ variable "timezone" {
   validation {
     condition     = can(regex("^[a-zA-Z_-]{1,14}/[a-zA-Z_-]{1,14}$", var.timezone))
     error_message = "This does not look like a valid IANA time zone. Please choose from e.g. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones."
-    EOF
   }
 }
 
