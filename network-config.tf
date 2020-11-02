@@ -1,32 +1,3 @@
-resource "tls_private_key" "vm_mutual_key" {
-  algorithm   = "ECDSA"
-  ecdsa_curve = "P521"
-}
-
-resource "random_string" "imap_password" {
-  length  = 16
-  special = true
-  keepers = {
-    # Generate a new password each time we change the web address
-    user_facing_web_address = local.domain
-  }
-}
-
-resource "random_string" "murmur_password" {
-  length  = 16
-  special = false
-  keepers = {
-    # Generate a new password each time we change the web address
-    user_facing_web_address = local.domain
-  }
-}
-
-locals {
-  email_address   = "${var.mailbox_prefix}@${local.domain}"
-  imap_password   = random_string.imap_password.result
-  murmur_password = random_string.murmur_password.result
-}
-
 resource "oci_core_virtual_network" "main_vcn" {
   cidr_block     = "10.1.0.0/16"
   compartment_id = oci_identity_compartment.one_per_subdomain.id
@@ -54,4 +25,13 @@ resource "oci_core_route_table" "common_route_table" {
     network_entity_id = oci_core_internet_gateway.common_internet_gateway.id
   }
 }
+
+locals {
+  network_config = {
+    vcn_id          = oci_core_virtual_network.main_vcn.id
+    route_table_id  = oci_core_route_table.common_route_table.id
+    dhcp_options_id = oci_core_virtual_network.main_vcn.default_dhcp_options_id
+  }
+}
+
 
