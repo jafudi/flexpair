@@ -9,7 +9,7 @@ resource "random_string" "murmur_password" {
 
 locals {
   murmur_config = {
-    port     = 69115
+    port     = 53123 // must be less than or equal to 65535
     password = random_string.murmur_password.result
   }
 }
