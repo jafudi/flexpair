@@ -73,3 +73,11 @@ variable "url" {
 variable "docker_compose_release" {
   type = string
 }
+
+variable "local_username" {
+  type        = string
+}
+
+variable "remote_username" {
+  type        = string
+}

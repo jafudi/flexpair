@@ -65,3 +65,11 @@ variable "url" {
 variable "gitlab_runner_token" {
   type = string
 }
+
+variable "local_username" {
+  type        = string
+}
+
+variable "remote_username" {
+  type        = string
+}

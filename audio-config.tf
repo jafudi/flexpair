@@ -9,7 +9,7 @@ resource "random_string" "murmur_password" {
 
 locals {
   murmur_config = {
-    port     = 64738
+    port     = 69115
     password = random_string.murmur_password.result
   }
 }
