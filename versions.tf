@@ -11,10 +11,6 @@ data "oci_core_images" "ubuntu-20-04-minimal" {
   sort_order = "DESC"
 }
 
-output "ubuntu-20-04-minimal-latest" {
-  value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
-}
-
 locals {
   docker_compose_release = "1.27.4"
 }

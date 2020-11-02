@@ -1,27 +1,11 @@
-# root module #################################################################
-
-output "compartment" {
-  value = "${local.home_region_key}/${local.tenancy_name}/${oci_identity_compartment.one_per_subdomain.name}"
+output "used_base_image" {
+  value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
 }
 
-# gateway module ##############################################################
-
-# The size of the config is limited to 16384 bytes on most platforms
-output "gateway_user_data" {
-  value = "${length(base64gzip(data.template_cloudinit_config.gateway_config.rendered))} bytes"
+output "gateway_in_browser" {
+  value = module.gateway.access_url
 }
 
-output "gateway" {
-  value = "${oci_core_instance.gateway.public_ip}, domain = ${local.domain}/?password=${local.murmur_password}"
-}
-
-# desktop module ##############################################################
-
-# The size of the config is limited to 16384 bytes on most platforms
-output "desktop_config_size" {
-  value = "${length(data.template_cloudinit_config.desktop_config.rendered)} bytes"
-}
-
-output "desktop" {
-  value = "${oci_core_instance.desktop.public_ip} in data center ${data.oci_identity_availability_domain.ad.name}"
+output "ssh_into_desktop" {
+  value = "ssh -i ${abspath(path.root)}/.ssh/privkey -o StrictHostKeyChecking=no ubuntu@${module.desktop_1.public_ip}"
 }

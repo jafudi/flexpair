@@ -1,5 +1,3 @@
-# root module #################################################################
-
 variable "tenancy_ocid" {
 }
 
@@ -22,10 +20,6 @@ variable "timezone" {}
 
 variable "locale" {}
 
-variable "murmur_port" {}
-
-variable "mailbox_prefix" {}
-
 // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
 variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {}
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {}
@@ -46,12 +40,5 @@ variable "rfc2136_key_secret" {}
 
 variable "rfc2136_tsig_algorithm" {}
 
-# gateway module ##############################################################
-
 variable "gateway_shape" {}
-
-# desktop module ##############################################################
-
 variable "desktop_shape" {}
-
-variable "gitlab_runner_token" {}

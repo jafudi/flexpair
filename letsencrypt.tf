@@ -1,35 +1,3 @@
-# Configure the DNS Provider
-provider "dns" {
-  update {
-    server        = var.rfc2136_name_server
-    key_name      = var.rfc2136_key_name
-    key_algorithm = var.rfc2136_tsig_algorithm
-    key_secret    = var.rfc2136_key_secret
-  }
-}
-
-locals {
-  subdomain = lower("${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}")
-  domain    = "${local.subdomain}.${var.registered_domain}"
-}
-
-# Create a DNS A record set
-resource "dns_a_record_set" "gateway_hostname" {
-  zone      = "${var.registered_domain}."
-  name      = local.subdomain
-  addresses = [oci_core_instance.gateway.public_ip]
-  ttl       = 60
-}
-
-resource "time_sleep" "dns_propagation" {
-  depends_on      = [dns_a_record_set.gateway_hostname]
-  create_duration = "120s"
-  triggers = {
-    map_from = local.domain
-    map_to   = oci_core_instance.gateway.public_ip
-  }
-}
-
 provider "acme" {
   server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }
@@ -40,12 +8,12 @@ resource "tls_private_key" "acme_private_key" {
 
 resource "acme_registration" "letsencrypt_reg" {
   account_key_pem = tls_private_key.acme_private_key.private_key_pem
-  email_address   = local.email_address
+  email_address   = local.email_config.address
 }
 
 resource "acme_certificate" "letsencrypt_certificate" {
   account_key_pem = acme_registration.letsencrypt_reg.account_key_pem
-  common_name     = local.domain
+  common_name     = local.url.full_hostname
   key_type        = 4096
 
   dns_challenge {

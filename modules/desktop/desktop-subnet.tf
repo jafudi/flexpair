@@ -1,21 +1,21 @@
 resource "oci_core_subnet" "desktop_subnet" {
   cidr_block        = "10.1.20.0/24"
-  display_name      = "Desktop Subnet"
-  dns_label         = "desktopnet"
+  display_name      = "${local.display_name} Subnet"
+  dns_label         = "${lower(local.hostname)}net"
   security_list_ids = [oci_core_security_list.desktop_security_list.id]
-  compartment_id    = oci_identity_compartment.one_per_subdomain.id
-  vcn_id            = oci_core_virtual_network.main_vcn.id
-  route_table_id    = oci_core_route_table.common_route_table.id
-  dhcp_options_id   = oci_core_virtual_network.main_vcn.default_dhcp_options_id
+  compartment_id    = var.compartment.id
+  vcn_id            = var.network_config.vcn_id
+  route_table_id    = var.network_config.route_table_id
+  dhcp_options_id   = var.network_config.dhcp_options_id
 
-  freeform_tags = local.compartment_tags
+  freeform_tags = var.compartment.freeform_tags
 }
 
 resource "oci_core_security_list" "desktop_security_list" {
-  compartment_id = oci_identity_compartment.one_per_subdomain.id
-  vcn_id         = oci_core_virtual_network.main_vcn.id
-  display_name   = "Desktop Firewall"
-  freeform_tags  = local.compartment_tags
+  compartment_id = var.compartment.id
+  vcn_id         = var.network_config.vcn_id
+  display_name   = "${local.display_name} Firewall"
+  freeform_tags  = var.compartment.freeform_tags
 
   egress_security_rules {
     protocol    = "all"
