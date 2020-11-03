@@ -45,7 +45,7 @@ For opening a performance monitor, enter:
 "glances"
 
 You may connect to the desktop host using:
-"ssh -p 2222 ${GATEWAY_USERNAME}@127.0.0.1"
+"ssh -p 2222 ${DESKTOP_USERNAME}@127.0.0.1"
 
 EOF
 MESSAGE

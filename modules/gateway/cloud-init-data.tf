@@ -29,6 +29,7 @@ data "template_cloudinit_config" "gateway_config" {
     content_type = "text/cloud-boothook"
     content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
       GATEWAY_USERNAME = var.gateway_username
+      DESKTOP_USERNAME = var.desktop_username
       VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
     })
   }
