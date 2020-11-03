@@ -74,10 +74,10 @@ variable "docker_compose_release" {
   type = string
 }
 
-variable "local_username" {
+variable "gateway_username" {
   type        = string
 }
 
-variable "remote_username" {
+variable "desktop_username" {
   type        = string
 }

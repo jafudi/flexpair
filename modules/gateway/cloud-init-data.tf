@@ -28,6 +28,7 @@ data "template_cloudinit_config" "gateway_config" {
   part {
     content_type = "text/cloud-boothook"
     content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
+      GATEWAY_USERNAME = var.gateway_username
       VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
     })
   }
@@ -37,7 +38,9 @@ data "template_cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/cloud-boothook"
-    content      = file("${path.module}/init-scripts/03-sshd-config.sh")
+    content      = templatefile("${path.module}/init-scripts/03-sshd-config.sh", {
+      GATEWAY_USERNAME = var.gateway_username
+    })
   }
   part {
     content_type = "text/cloud-config"
@@ -48,7 +51,9 @@ data "template_cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content      = file("${path.module}/init-scripts/11-sudoers.sh")
+    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
+      GATEWAY_USERNAME = var.gateway_username
+    })
   }
   part {
     content_type = "text/x-shellscript"

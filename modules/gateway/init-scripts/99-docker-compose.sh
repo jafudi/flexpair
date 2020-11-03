@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 systemctl enable --now docker
-usermod -aG docker ubuntu
+usermod -aG docker "${GATEWAY_USERNAME}"
 
 mkdir -p "${DOCKER_COMPOSE_FOLDER}"
 cd ${DOCKER_COMPOSE_FOLDER}
@@ -12,7 +12,7 @@ curl  --silent -L "${DOCKER_COMPOSE_REPO}/docker-compose-$(uname -s)-$(uname -m)
 mkdir ./init >/dev/null 2>&1
 docker run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --postgres > ./init/initdb.sql
 chmod -R +x ./init
-passwd -d ubuntu # for direct SSH access from guacd_container
+passwd -d "${GATEWAY_USERNAME}" # for direct SSH access from guacd_container
 
 cloud-init collect-logs
 tar -xzf cloud-init.tar.gz

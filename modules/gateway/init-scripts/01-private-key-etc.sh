@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-mkdir -p /home/ubuntu/uploads
-chown -R ubuntu /home/ubuntu
+mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
+chown -R "${GATEWAY_USERNAME}" "/home/${GATEWAY_USERNAME}"
 
-cat << EOF > /home/ubuntu/.ssh/vm_key
+cat << EOF > "/home/${GATEWAY_USERNAME}/.ssh/vm_key"
 ${VM_PRIVATE_KEY}
 EOF
-chmod 600 /home/ubuntu/.ssh/vm_key
+chmod 600 "/home/${GATEWAY_USERNAME}/.ssh/vm_key"
 
 mkdir -p /etc/update-motd.d
 
@@ -45,7 +45,7 @@ For opening a performance monitor, enter:
 "glances"
 
 You may connect to the desktop host using:
-"ssh -p 2222 ubuntu@127.0.0.1"
+"ssh -p 2222 ${GATEWAY_USERNAME}@127.0.0.1"
 
 EOF
 MESSAGE
