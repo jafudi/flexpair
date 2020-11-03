@@ -12,8 +12,8 @@ module "gateway" {
     source_image_id = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
   }
   vm_mutual_keypair      = tls_private_key.vm_mutual_key
-  gateway_username       = local.tenancy_name
-  desktop_username       = local.tenancy_name
+  gateway_username    = "ubuntu"
+  desktop_username    = "ubuntu"
   ssl_certificate        = acme_certificate.letsencrypt_certificate
   murmur_config          = local.murmur_config
   url                    = local.url
@@ -41,7 +41,7 @@ module "desktop_1" {
   }
   vm_mutual_keypair   = tls_private_key.vm_mutual_key
   gateway_username    = "ubuntu"
-  desktop_username    = local.tenancy_name
+  desktop_username    = "ubuntu"
   murmur_config       = local.murmur_config
   email_config        = local.email_config
   url                 = local.url
