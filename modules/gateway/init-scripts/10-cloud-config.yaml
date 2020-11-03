@@ -1,7 +1,7 @@
 #cloud-config
 
 users:
-  - default
+  - name: "${GATEWAY_USERNAME}"
 
 timezone: "${GATEWAY_TIMEZONE}"
 
