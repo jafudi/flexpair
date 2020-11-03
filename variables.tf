@@ -19,7 +19,13 @@ variable "user_ocid" {
 }
 
 variable "region" {
-  type = string
+  type        = string
+  description = "Must be equal to the home region of the tenancy."
+
+  validation {
+    condition     = can(regex("^[a-z]{2}-[a-z]+-[0-3]$", var.region))
+    error_message = "This does not look like a valid Oracle cloud region. Please refer to https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm for detailed guidance."
+  }
 }
 
 variable "private_key" {
@@ -62,7 +68,13 @@ variable "TFC_WORKSPACE_NAME" {
 }
 
 variable "registered_domain" {
-  type = string
+  type        = string
+  description = "A registered domain pointing to rfc2136_name_server."
+
+  validation {
+    condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.registered_domain))
+    error_message = "This does not look like a valid domain."
+  }
 }
 
 variable "rfc2136_name_server" {
