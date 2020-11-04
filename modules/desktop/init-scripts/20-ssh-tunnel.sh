@@ -30,12 +30,10 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -o ExitOnForwardFailure=yes \
 -o StrictHostKeyChecking=no \
 -i /home/ubuntu/.ssh/vm_key \
--R 5900:localhost:5900 \
--R 4713:localhost:4713 \
--R 6667:localhost:667 \
--R 2222:localhost:22 \
--L ${MURMUR_PORT}:localhost:${MURMUR_PORT} \
--L 25:localhost:25 \
+-R 172.18.0.2:5900:localhost:5900 \
+-R 172.18.0.2:4713:localhost:4713 \
+-R 172.18.0.7:6667:localhost:667 \
+-R 172.18.0.2:2222:localhost:22 \
 -L 143:localhost:143 \
 ubuntu@${SSL_DOMAIN}
 Restart=always

@@ -11,6 +11,7 @@ packages:
   - docker.io
   - nano
   - iptables-persistent
+  - net-tools
   - glances
 
 runcmd:

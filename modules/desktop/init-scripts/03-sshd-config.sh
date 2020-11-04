@@ -7,11 +7,8 @@ mkdir -p "/home/${DESKTOP_USERNAME}/.ssh"
 touch "/home/${DESKTOP_USERNAME}/.ssh/vm_key"
 
 cat <<EOF > /etc/ssh/sshd_config
-Include /etc/ssh/sshd_config.d/*.conf
-
 # To disable tunneled clear text passwords, change to no here!
 PasswordAuthentication no
-#PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
@@ -31,27 +28,8 @@ GSSAPIAuthentication no
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
-AllowTcpForwarding yes
-GatewayPorts yes
-PrintMotd yes
-UseDNS no
-
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
-
-# override default of no subsystems
-Subsystem       sftp    /usr/lib/openssh/sftp-server
-
-# Override the global settings for guacd_container because Guacamole does not work with RSA private keys
-Match address 172.18.0.2
-    PasswordAuthentication yes
-    PermitEmptyPasswords yes
-    PermitRootLogin yes
-
-Match address 127.0.0.1
-    PasswordAuthentication yes
-    PermitEmptyPasswords yes
-    PermitRootLogin yes
 EOF
 
 
