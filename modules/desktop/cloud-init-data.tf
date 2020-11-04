@@ -11,7 +11,7 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/cloud-boothook"
-    content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
+    content = templatefile("${path.module}/init-scripts/03-sshd-config.sh", {
       DESKTOP_USERNAME = var.desktop_username
     })
   }
