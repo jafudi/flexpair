@@ -10,8 +10,8 @@ darkstat iptables-persistent
 
 # Allow connections to non-standard localhost ports which are necessary for the 'nginx' and 'guac' containers
 # which do have their own IP addresses within a virtualized Docker network while still running on the same VM
-iptables -I INPUT 1 -p tcp --dport 143 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to VNC
-netfilter-persistent save
+sudo iptables -I INPUT 1 -p tcp --dport 143 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT # guac container to VNC
+sudo netfilter-persistent save
 
 cat <<EOF | sudo tee /etc/darkstat/init.cfg
 START_DARKSTAT=yes
