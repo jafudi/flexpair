@@ -35,6 +35,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -R  6667:localhost:667 \
 -R  2222:localhost:22 \
 -L 143:localhost:143 \
+-L 993:localhost:993 \
 ubuntu@${SSL_DOMAIN}
 Restart=always
 RestartSec=5s

@@ -66,6 +66,7 @@ data "template_cloudinit_config" "gateway_config" {
     content = templatefile("${path.module}/init-scripts/60-guacamole-config.sh", {
       GUACAMOLE_CONFIG = local.guacamole_config
       GATEWAY_USERNAME = var.gateway_username
+      DESKTOP_USERNAME = var.desktop_username
     })
   }
   part {
