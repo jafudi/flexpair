@@ -3,9 +3,6 @@
 echo "Running script sshd.sh..."
 echo
 
-mkdir -p "/home/${GATEWAY_USERNAME}/.ssh"
-touch "/home/${GATEWAY_USERNAME}/.ssh/vm_key"
-
 cat <<EOF > /etc/ssh/sshd_config
 # To disable tunneled clear text passwords, change to no here!
 PasswordAuthentication no
