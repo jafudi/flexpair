@@ -30,9 +30,9 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -o ExitOnForwardFailure=yes \
 -o StrictHostKeyChecking=no \
 -i /home/ubuntu/.ssh/vm_key \
--R  172.18.0.1:5900:localhost:5900 \
--R  172.18.0.1:4713:localhost:4713 \
--R  172.18.0.1:6667:localhost:667 \
+-R  :5900:localhost:5900 \
+-R  :4713:localhost:4713 \
+-R  :6667:localhost:667 \
 -R  172.18.0.1:2222:localhost:22 \
 -L 143:172.18.0.1:143 \
 ubuntu@${SSL_DOMAIN}

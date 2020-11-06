@@ -29,6 +29,7 @@ resource "oci_core_instance" "gateway" {
     is_monitoring_disabled = true
   }
 
+  // Not needed if all provisioning is done via cloud-init
   connection {
     type        = "ssh"
     host        = self.public_ip
