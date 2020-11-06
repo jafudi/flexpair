@@ -26,7 +26,7 @@ GSSAPIAuthentication no
 UsePAM yes
 
 AllowTcpForwarding yes
-GatewayPorts clientspecified
+GatewayPorts yes
 PrintMotd yes
 UseDNS no
 
