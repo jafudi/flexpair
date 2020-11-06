@@ -10,6 +10,6 @@ output "ssh_into_desktop" {
   value = "ssh -i ${abspath(path.root)}/.ssh/privkey -o StrictHostKeyChecking=no ubuntu@${module.desktop_1.public_ip}"
 }
 
-ouptut "private_key" {
+output "private_key" {
   value = tls_private_key.vm_mutual_key.private_key_pem
 }
