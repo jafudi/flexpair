@@ -7,13 +7,12 @@ data "template_cloudinit_config" "desktop_config" {
     content_type = "text/cloud-boothook"
     content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
       VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
+      DESKTOP_USERNAME = var.desktop_username
     })
   }
   part {
     content_type = "text/cloud-boothook"
-    content = templatefile("${path.module}/init-scripts/03-sshd-config.sh", {
-      DESKTOP_USERNAME = var.desktop_username
-    })
+    content = file("${path.module}/init-scripts/03-sshd-config.sh")
   }
   part {
     content_type = "text/cloud-config"

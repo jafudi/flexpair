@@ -39,9 +39,7 @@ data "template_cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/cloud-boothook"
-    content      = templatefile("${path.module}/init-scripts/03-sshd-config.sh", {
-      GATEWAY_USERNAME = var.gateway_username
-    })
+    content      = file("${path.module}/init-scripts/03-sshd-config.sh")
   }
   part {
     content_type = "text/cloud-config"
