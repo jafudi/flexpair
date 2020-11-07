@@ -14,7 +14,7 @@ packages:
   - glances
   - darkstat
 
-locale: "${DESKTOP_LOCALE}"
+# locale: "${DESKTOP_LOCALE}"
 
 mounts:
   - ["${GATEWAY_USERNAME}@${SSL_DOMAIN}:/home/${GATEWAY_USERNAME}/uploads", "/home/${DESKTOP_USERNAME}/Desktop/Uploads"]

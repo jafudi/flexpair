@@ -53,7 +53,7 @@ resource "oci_core_instance" "desktop" {
       "${path.module}/ssh-remote-exec/install-sshfs-locales.sh",
       "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
       "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
-      "${path.module}/ssh-remote-exec/multiple-languages.sh",
+//      "${path.module}/ssh-remote-exec/multiple-languages.sh",
       "${path.module}/ssh-remote-exec/resource-monitor.sh",
       "${path.module}/ssh-remote-exec/mumble-pulseaudio.sh",
       "${path.module}/ssh-remote-exec/desktop-sharing.sh",
