@@ -1,10 +1,12 @@
 #!/bin/sh -eux
 
-echo "Running script networking.sh..."
-echo
+if [ ! -f /etc/.terraform-complete ]; then
+    echo "Terraform provisioning not yet complete, exiting"
+    exit 0
+fi
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends \
+apt-get -qq install --no-install-recommends \
 darkstat \
 net-tools \
 glances
@@ -24,5 +26,5 @@ StartLimitIntervalSec=0
 [Install]
 WantedBy=default.target
 EOF
-sudo systemctl enable darkstat.service
-sudo systemctl start darkstat.service
+systemctl enable darkstat.service
+systemctl start darkstat.service

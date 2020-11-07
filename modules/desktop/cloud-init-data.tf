@@ -62,7 +62,7 @@ data "template_cloudinit_config" "desktop_config" {
     })
   }
   part {
-    content_type = "text/cloud-boothook"
+    content_type = "text/x-shellscript"
     content = file("${path.module}/init-scripts/50-darkstat.sh")
   }
 }
