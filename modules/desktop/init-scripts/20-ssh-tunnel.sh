@@ -29,14 +29,14 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -o ServerAliveInterval=10 \
 -o ExitOnForwardFailure=yes \
 -o StrictHostKeyChecking=no \
--i /home/ubuntu/.ssh/vm_key \
+-i /home/${DESKTOP_USERNAME}/.ssh/vm_key \
 -R  5900:localhost:5900 \
 -R  4713:localhost:4713 \
 -R  6667:localhost:667 \
 -R  2222:localhost:22 \
 -L 143:localhost:143 \
 -L 993:localhost:993 \
-ubuntu@${SSL_DOMAIN}
+${GATEWAY_USERNAME}@${SSL_DOMAIN}
 Restart=always
 RestartSec=5s
 StartLimitIntervalSec=0

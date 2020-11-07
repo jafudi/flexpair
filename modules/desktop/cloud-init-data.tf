@@ -20,17 +20,23 @@ data "template_cloudinit_config" "desktop_config" {
       SSL_DOMAIN       = var.url.full_hostname
       DESKTOP_TIMEZONE = var.location_info.timezone_name
       DESKTOP_LOCALE   = var.location_info.locale_settings
+      DESKTOP_USERNAME = var.desktop_username
+      GATEWAY_USERNAME = var.gateway_username
     })
   }
   part {
     content_type = "text/x-shellscript"
-    content      = file("${path.module}/init-scripts/11-sudoers.sh")
+    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
   }
   part {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
       SSL_DOMAIN        = var.url.full_hostname
       MURMUR_PORT       = var.murmur_config.port
+      DESKTOP_USERNAME = var.desktop_username
+      GATEWAY_USERNAME = var.gateway_username
     })
   }
   part {
@@ -39,6 +45,7 @@ data "template_cloudinit_config" "desktop_config" {
       SSL_DOMAIN        = var.url.full_hostname
       MURMUR_PORT       = var.murmur_config.port
       MURMUR_PASSWORD   = var.murmur_config.password
+      DESKTOP_USERNAME = var.desktop_username
     })
   }
   part {
@@ -47,6 +54,7 @@ data "template_cloudinit_config" "desktop_config" {
       SUB_DOMAIN_PREFIX = var.url.subdomain_label
       EMAIL_ADDRESS     = var.email_config.address
       IMAP_PASSWORD     = var.email_config.password
+      DESKTOP_USERNAME = var.desktop_username
     })
   }
 }

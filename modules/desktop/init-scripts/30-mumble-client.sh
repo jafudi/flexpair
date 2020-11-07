@@ -10,8 +10,8 @@ fi
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
 
-mkdir -p /home/ubuntu/.config/Mumble
-cat << EOF > /home/ubuntu/.config/Mumble/Mumble.conf
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/Mumble"
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/Mumble/Mumble.conf"
 [audio]
 echomulti=false
 headphone=true
@@ -28,7 +28,7 @@ voicehold=250
 positional=false
 
 [recording]
-path=/home/ubuntu/Desktop/Uploads
+path=/home/${DESKTOP_USERNAME}/Desktop/Uploads
 
 [shortcuts]
 size=0
@@ -77,7 +77,7 @@ usage=false
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF
-chown -R ubuntu /home/ubuntu/.config
+chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}/.config"
 
 cat << EOF > /usr/share/applications/mumble.desktop
 [Desktop Entry]
@@ -99,7 +99,7 @@ Keywords=VoIP;Messaging;Voice Chat;Secure Communication;
 Version=1.0
 EOF
 
-cat << EOF > /home/ubuntu/.config/autostart/mumble.desktop
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"
 [Desktop Entry]
 Name=Mumble
 Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
@@ -107,4 +107,4 @@ Terminal=false
 Type=Application
 StartupNotify=false
 EOF
-chown ubuntu /home/ubuntu/.config/autostart/mumble.desktop
+chown "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"
