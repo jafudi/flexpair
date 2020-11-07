@@ -50,8 +50,7 @@ resource "oci_core_instance" "desktop" {
   # Must-haves
   provisioner "remote-exec" {
     scripts = [
-      "${path.module}/ssh-remote-exec/disable-upgrades.sh",
-      "${path.module}/ssh-remote-exec/darkstat.sh",
+      "${path.module}/ssh-remote-exec/install-sshfs-locales.sh",
       "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
       "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
       "${path.module}/ssh-remote-exec/multiple-languages.sh",

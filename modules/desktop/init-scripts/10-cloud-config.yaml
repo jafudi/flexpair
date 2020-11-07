@@ -6,6 +6,14 @@ users:
 # Set the system timezone
 timezone: "${DESKTOP_TIMEZONE}"
 
+package_update: true
+package_upgrade: false
+packages:
+  - nano
+  - net-tools
+  - glances
+  - darkstat
+
 locale: "${DESKTOP_LOCALE}"
 
 mounts:
@@ -21,4 +29,8 @@ mount_default_fields:
 
 # https://blog.luukhendriks.eu/2019/01/25/sshfs-too-many-levels-of-symbolic-links.html
 runcmd:
-    - "touch /home/${DESKTOP_USERNAME}/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
+  - "touch /home/${DESKTOP_USERNAME}/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
+  - export DEBIAN_FRONTEND=noninteractive
+  - rm -rf /var/log/unattended-upgrades
+  - apt-get -qq purge unattended-upgrades snapd apport
+  - apt-get -qq autoremove
