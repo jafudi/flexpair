@@ -23,8 +23,8 @@ locals {
 
 # https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
 data "template_cloudinit_config" "gateway_config" {
-  gzip          = true
-  base64_encode = true
+  gzip          = false
+  base64_encode = false
   part {
     content_type = "text/cloud-boothook"
     content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
@@ -104,6 +104,9 @@ data "template_cloudinit_config" "gateway_config" {
       GATEWAY_USERNAME = var.gateway_username
     })
   }
+}
 
+locals {
+  unzipped_config = data.template_cloudinit_config.gateway_config.rendered
 }
 

@@ -1,8 +1,8 @@
 # https://registry.terraform.io/providers/hashicorp/cloudinit/latest/docs/data-sources/cloudinit_config
 
 data "template_cloudinit_config" "desktop_config" {
-  gzip          = true
-  base64_encode = true
+  gzip          = false
+  base64_encode = false
   part {
     content_type = "text/cloud-boothook"
     content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
@@ -65,4 +65,8 @@ data "template_cloudinit_config" "desktop_config" {
     content_type = "text/x-shellscript"
     content = file("${path.module}/init-scripts/50-darkstat.sh")
   }
+}
+
+locals {
+  unzipped_config = data.template_cloudinit_config.desktop_config.rendered
 }
