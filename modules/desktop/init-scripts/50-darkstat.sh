@@ -11,20 +11,13 @@ darkstat \
 net-tools \
 glances
 
-cat << EOF > /etc/systemd/system/darkstat.service
-[Unit]
-Description=Network Traffic Visualization in Browser
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=/usr/sbin/darkstat -i ens3 -p 667
-Restart=always
-RestartSec=5s
-StartLimitIntervalSec=0
-
-[Install]
-WantedBy=default.target
+cat <<EOF | sudo tee /etc/darkstat/init.cfg
+START_DARKSTAT=yes
+# You must set this option, else darkstat may not listen to
+# the interface you want
+INTERFACE="-i ens3"
+DIR="/var/lib/darkstat"
+PORT="-p 667"
 EOF
-systemctl enable darkstat.service
-systemctl start darkstat.service
+systemctl start darkstat
+/lib/systemd/systemd-sysv-install enable darkstat
