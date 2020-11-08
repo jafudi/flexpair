@@ -13,6 +13,7 @@ systemctl mask apt-daily-upgrade.service;
 systemctl daemon-reload;
 
 # Disable periodic activities of apt to be safe
+mkdir -p /etc/apt/apt.conf.d
 cat <<EOF > /etc/apt/apt.conf.d/10periodic;
 APT::Periodic::Enable "0";
 APT::Periodic::Update-Package-Lists "0";

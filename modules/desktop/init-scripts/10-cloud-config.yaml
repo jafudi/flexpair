@@ -12,7 +12,6 @@ packages:
   - nano
   - net-tools
   - glances
-  - darkstat
 
 # locale: "${DESKTOP_LOCALE}"
 

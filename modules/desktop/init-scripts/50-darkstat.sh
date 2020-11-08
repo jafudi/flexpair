@@ -6,12 +6,10 @@ if [ ! -f /etc/.terraform-complete ]; then
 fi
 
 export DEBIAN_FRONTEND="noninteractive"
-apt-get -qq install --no-install-recommends \
-darkstat \
-net-tools \
-glances
+apt-get -qq install --no-install-recommends darkstat
 
-cat <<EOF | sudo tee /etc/darkstat/init.cfg
+mkdir -p /etc/darkstat
+cat <<EOF > /etc/darkstat/init.cfg
 START_DARKSTAT=yes
 # You must set this option, else darkstat may not listen to
 # the interface you want
