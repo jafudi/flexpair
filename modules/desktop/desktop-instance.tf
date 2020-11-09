@@ -46,36 +46,36 @@ resource "oci_core_instance" "desktop" {
       "set -e"
     ]
   }
-
-  # Must-haves
-  provisioner "remote-exec" {
-    scripts = [
-      "${path.module}/ssh-remote-exec/install-sshfs-locales.sh",
-      "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
-      "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
-//      "${path.module}/ssh-remote-exec/multiple-languages.sh",
-      "${path.module}/ssh-remote-exec/resource-monitor.sh",
-      "${path.module}/ssh-remote-exec/mumble-pulseaudio.sh",
-      "${path.module}/ssh-remote-exec/desktop-sharing.sh",
-    ]
-    on_failure = fail
-  }
-
-  # Nice-to-haves
-  provisioner "remote-exec" {
-    scripts = [
-      "${path.module}/ssh-remote-exec/podcasts-and-videos.sh",
-    ]
-    on_failure = fail // or continue
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo touch /etc/.terraform-complete",
-      "sudo cloud-init clean --logs",
-      "sudo shutdown -r +1"
-    ]
-  }
+//
+//  # Must-haves
+//  provisioner "remote-exec" {
+//    scripts = [
+//      "${path.module}/ssh-remote-exec/install-sshfs-locales.sh",
+//      "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
+//      "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
+////      "${path.module}/ssh-remote-exec/multiple-languages.sh",
+//      "${path.module}/ssh-remote-exec/resource-monitor.sh",
+//      "${path.module}/ssh-remote-exec/mumble-pulseaudio.sh",
+//      "${path.module}/ssh-remote-exec/desktop-sharing.sh",
+//    ]
+//    on_failure = fail
+//  }
+//
+//  # Nice-to-haves
+//  provisioner "remote-exec" {
+//    scripts = [
+//      "${path.module}/ssh-remote-exec/podcasts-and-videos.sh",
+//    ]
+//    on_failure = fail // or continue
+//  }
+//
+//  provisioner "remote-exec" {
+//    inline = [
+//      "sudo touch /etc/.terraform-complete",
+//      "sudo cloud-init clean --logs",
+//      "sudo shutdown -r +1"
+//    ]
+//  }
 
 }
 
