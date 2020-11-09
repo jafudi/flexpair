@@ -7,6 +7,7 @@ data "template_cloudinit_config" "desktop_config" {
     content_type = "text/cloud-boothook"
     content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
       VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
+      VM_PUBLIC_KEY = var.vm_mutual_keypair.public_key_openssh
       DESKTOP_USERNAME = var.desktop_username
     })
   }
