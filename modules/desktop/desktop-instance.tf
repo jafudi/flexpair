@@ -34,18 +34,18 @@ resource "oci_core_instance" "desktop" {
     type        = "ssh"
     host        = self.public_ip
     port        = 22
-    user        = "ubuntu"
+    user        = var.desktop_username
     private_key = var.vm_mutual_keypair.private_key_pem
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "echo Block until cloud-init finished...",
-      "set +e",
-      "cloud-init status --long --wait",
-      "set -e"
-    ]
-  }
+//  provisioner "remote-exec" {
+//    inline = [
+//      "echo Block until cloud-init finished...",
+//      "set +e",
+//      "cloud-init status --long --wait",
+//      "set -e"
+//    ]
+//  }
 //
 //  # Must-haves
 //  provisioner "remote-exec" {
