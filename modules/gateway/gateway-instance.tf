@@ -21,7 +21,7 @@ resource "oci_core_instance" "gateway" {
 
   metadata = {
     ssh_authorized_keys = var.vm_mutual_keypair.public_key_openssh
-    user_data           = base64gzip(data.template_cloudinit_config.gateway_config.rendered)
+    user_data           = base64gzip(local.unzipped_config)
   }
 
   agent_config {

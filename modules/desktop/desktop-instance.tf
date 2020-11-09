@@ -21,7 +21,7 @@ resource "oci_core_instance" "desktop" {
 
   metadata = {
     ssh_authorized_keys = var.vm_mutual_keypair.public_key_openssh
-    user_data           = local.unzipped_config
+    user_data           = base64gzip(local.unzipped_config)
     gitlab_runner_token = var.gitlab_runner_token
   }
 
