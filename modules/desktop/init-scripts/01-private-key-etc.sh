@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-#mkdir -p "/home/${DESKTOP_USERNAME}/.ssh"
-#
-#cat << EOF > "/home/${DESKTOP_USERNAME}/.ssh/vm_key"
-#${VM_PRIVATE_KEY}
-#EOF
-#chmod 600 "/home/${DESKTOP_USERNAME}/.ssh/vm_key"
+mkdir -p "/home/${DESKTOP_USERNAME}/.ssh"
+
+cat << EOF > "/home/${DESKTOP_USERNAME}/.ssh/vm_key"
+${VM_PRIVATE_KEY}
+EOF
+chmod 600 "/home/${DESKTOP_USERNAME}/.ssh/vm_key"
 
 #cat << EOF >> "/home/${DESKTOP_USERNAME}/.ssh/authorized_keys"
 #${VM_PUBLIC_KEY}
