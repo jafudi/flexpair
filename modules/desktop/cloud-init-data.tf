@@ -11,10 +11,10 @@ data "template_cloudinit_config" "desktop_config" {
       DESKTOP_USERNAME = var.desktop_username
     })
   }
-//  part {
-//    content_type = "text/cloud-boothook"
-//    content      = file("${path.module}/init-scripts/02-disable-upgrades.sh")
-//  }
+  part {
+    content_type = "text/cloud-boothook"
+    content      = file("${path.module}/init-scripts/02-disable-upgrades.sh")
+  }
 //  part {
 //    content_type = "text/cloud-boothook"
 //    content = file("${path.module}/init-scripts/03-sshd-config.sh")
