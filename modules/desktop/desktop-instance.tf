@@ -36,7 +36,7 @@ resource "oci_core_instance" "desktop" {
     port        = 22
     user        = var.desktop_username
     private_key = var.vm_mutual_keypair.private_key_pem
-    timeout = "1m"
+    timeout     = "30s"
   }
 
   provisioner "remote-exec" {
@@ -47,29 +47,29 @@ resource "oci_core_instance" "desktop" {
       "set -e"
     ]
   }
-//
-//  # Must-haves
-//  provisioner "remote-exec" {
-//    scripts = [
-//      "${path.module}/ssh-remote-exec/install-sshfs-locales.sh",
-//      "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
-//      "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
-////      "${path.module}/ssh-remote-exec/multiple-languages.sh",
-//      "${path.module}/ssh-remote-exec/resource-monitor.sh",
-//      "${path.module}/ssh-remote-exec/mumble-pulseaudio.sh",
-//      "${path.module}/ssh-remote-exec/desktop-sharing.sh",
-//    ]
-//    on_failure = fail
-//  }
-//
-//  # Nice-to-haves
-//  provisioner "remote-exec" {
-//    scripts = [
-//      "${path.module}/ssh-remote-exec/podcasts-and-videos.sh",
-//    ]
-//    on_failure = fail // or continue
-//  }
-//
+  //
+  //  # Must-haves
+  //  provisioner "remote-exec" {
+  //    scripts = [
+  //      "${path.module}/ssh-remote-exec/install-sshfs-locales.sh",
+  //      "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
+  //      "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
+  ////      "${path.module}/ssh-remote-exec/multiple-languages.sh",
+  //      "${path.module}/ssh-remote-exec/resource-monitor.sh",
+  //      "${path.module}/ssh-remote-exec/mumble-pulseaudio.sh",
+  //      "${path.module}/ssh-remote-exec/desktop-sharing.sh",
+  //    ]
+  //    on_failure = fail
+  //  }
+  //
+  //  # Nice-to-haves
+  //  provisioner "remote-exec" {
+  //    scripts = [
+  //      "${path.module}/ssh-remote-exec/podcasts-and-videos.sh",
+  //    ]
+  //    on_failure = fail // or continue
+  //  }
+  //
   provisioner "remote-exec" {
     inline = [
       "sudo touch /etc/.terraform-complete",
