@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-mkdir -p "/home/${DESKTOP_USERNAME}/.ssh"
+echo "${DESKTOP_USERNAME} shall be the username :-) Hiho"
+
+#mkdir -p "/home/${DESKTOP_USERNAME}/.ssh"
 
 #cat << EOF > "/home/${DESKTOP_USERNAME}/.ssh/vm_key"
 #${VM_PRIVATE_KEY}
