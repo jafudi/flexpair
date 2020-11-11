@@ -81,5 +81,5 @@ data "template_cloudinit_config" "desktop_config" {
 }
 
 locals {
-  unzipped_config = data.template_cloudinit_config.desktop_config.rendered
+  encoded_config = data.template_cloudinit_config.desktop_config.rendered
 }

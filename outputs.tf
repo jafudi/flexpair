@@ -23,7 +23,7 @@ output "gateway_config" {
 }
 
 output "desktop_config" {
-  value = module.desktop_1.cloud_init_config
+  value = module.desktop_1.encoded_config
 }
 
 output "gateway_config_size" {
@@ -31,5 +31,5 @@ output "gateway_config_size" {
 }
 
 output "desktop_config_size" {
-  value = module.desktop_1.cloud_config_size
+  value = module.desktop_1.encoded_config_size
 }

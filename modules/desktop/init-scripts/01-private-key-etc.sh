@@ -13,4 +13,4 @@ EOF
 chmod 600 "/home/${DESKTOP_USERNAME}/.ssh/authorized_keys"
 
 mkdir -p "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
-chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"
+# chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"
