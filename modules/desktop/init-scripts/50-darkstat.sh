@@ -1,8 +1,5 @@
 #!/bin/sh -eux
 
-export DEBIAN_FRONTEND="noninteractive"
-apt-get -qq install --no-install-recommends darkstat
-
 mkdir -p /etc/darkstat
 cat <<EOF > /etc/darkstat/init.cfg
 START_DARKSTAT=yes

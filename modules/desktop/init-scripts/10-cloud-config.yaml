@@ -10,8 +10,11 @@ package_update: true
 package_upgrade: false
 packages:
   - nano
+  - darkstat
   - net-tools
   - glances
+  - sshfs
+  - locales
 
 # locale: "${DESKTOP_LOCALE}"
 
