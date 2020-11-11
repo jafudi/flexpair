@@ -29,43 +29,43 @@ data "template_cloudinit_config" "desktop_config" {
       GATEWAY_USERNAME = var.gateway_username
     })
   }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
-//      DESKTOP_USERNAME = var.desktop_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
-//      SSL_DOMAIN        = var.url.full_hostname
-//      MURMUR_PORT       = var.murmur_config.port
-//      DESKTOP_USERNAME = var.desktop_username
-//      GATEWAY_USERNAME = var.gateway_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content = templatefile("${path.module}/init-scripts/30-mumble-client.sh", {
-//      SSL_DOMAIN        = var.url.full_hostname
-//      MURMUR_PORT       = var.murmur_config.port
-//      MURMUR_PASSWORD   = var.murmur_config.password
-//      DESKTOP_USERNAME = var.desktop_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content = templatefile("${path.module}/init-scripts/40-trojita-mail.sh", {
-//      SUB_DOMAIN_PREFIX = var.url.subdomain_label
-//      EMAIL_ADDRESS     = var.email_config.address
-//      IMAP_PASSWORD     = var.email_config.password
-//      DESKTOP_USERNAME = var.desktop_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content = file("${path.module}/init-scripts/50-darkstat.sh")
-//  }
+  part {
+    content_type = "text/x-shellscript"
+    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
+      SSL_DOMAIN        = var.url.full_hostname
+      MURMUR_PORT       = var.murmur_config.port
+      DESKTOP_USERNAME = var.desktop_username
+      GATEWAY_USERNAME = var.gateway_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/30-mumble-client.sh", {
+      SSL_DOMAIN        = var.url.full_hostname
+      MURMUR_PORT       = var.murmur_config.port
+      MURMUR_PASSWORD   = var.murmur_config.password
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/40-trojita-mail.sh", {
+      SUB_DOMAIN_PREFIX = var.url.subdomain_label
+      EMAIL_ADDRESS     = var.email_config.address
+      IMAP_PASSWORD     = var.email_config.password
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = file("${path.module}/init-scripts/50-darkstat.sh")
+  }
 }
 
 locals {
