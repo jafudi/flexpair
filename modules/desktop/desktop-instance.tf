@@ -69,13 +69,13 @@ resource "oci_core_instance" "desktop" {
 //    on_failure = fail // or continue
 //  }
 //
-  provisioner "remote-exec" {
-    inline = [
-      "sudo touch /etc/.terraform-complete",
-      "sudo cloud-init clean --logs",
-      "sudo shutdown -r +1"
-    ]
-  }
+//  provisioner "remote-exec" {
+//    inline = [
+//      "sudo touch /etc/.terraform-complete",
+//      "sudo cloud-init clean --logs",
+//      "sudo shutdown -r +1"
+//    ]
+//  }
 
 }
 

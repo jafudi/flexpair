@@ -1,10 +1,5 @@
 #!/bin/sh -eux
 
-if [ ! -f /etc/.terraform-complete ]; then
-    echo "Terraform provisioning not yet complete, exiting"
-    exit 0
-fi
-
 export DEBIAN_FRONTEND="noninteractive"
 apt-get -qq install --no-install-recommends darkstat
 
