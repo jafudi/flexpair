@@ -18,18 +18,10 @@ output "private_key" {
   value = tls_private_key.vm_mutual_key.private_key_pem
 }
 
-output "gateway_config" {
-  value = module.gateway.cloud_init_config
-}
-
-output "desktop_config" {
-  value = module.desktop_1.encoded_config
-}
-
 output "gateway_config_size" {
   value = module.gateway.cloud_config_size
 }
 
 output "desktop_config_size" {
-  value = module.desktop_1.encoded_config_size
+  value = module.desktop_1.cloud_config_size
 }
