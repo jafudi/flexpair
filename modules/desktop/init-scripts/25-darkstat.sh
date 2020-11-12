@@ -9,5 +9,7 @@ INTERFACE="-i ens3"
 DIR="/var/lib/darkstat"
 PORT="-p 667"
 EOF
+
+
 systemctl start darkstat
 /lib/systemd/systemd-sysv-install enable darkstat

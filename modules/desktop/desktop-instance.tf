@@ -39,14 +39,6 @@ resource "oci_core_instance" "desktop" {
     timeout     = "30s"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "echo Block until cloud-init finished...",
-      "set +e",
-      "cloud-init status --long --wait",
-      "set -e"
-    ]
-  }
   //
   //  # Must-haves
   //  provisioner "remote-exec" {
@@ -70,13 +62,6 @@ resource "oci_core_instance" "desktop" {
   //    on_failure = fail // or continue
   //  }
   //
-  provisioner "remote-exec" {
-    inline = [
-      "sudo touch /etc/.terraform-complete",
-      "sudo cloud-init analyze show",
-      "sudo shutdown -r +1"
-    ]
-  }
 
 }
 

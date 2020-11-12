@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-if [ ! -f /etc/.terraform-complete ]; then
-    echo "Terraform provisioning not yet complete, exiting"
-    exit 0
-fi
-
 # Configure mail account ###########################################
 
 # https://wiki.ubuntuusers.de/Trojita/

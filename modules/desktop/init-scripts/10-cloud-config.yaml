@@ -23,3 +23,6 @@ mount_default_fields:
 runcmd:
   - "touch /home/${DESKTOP_USERNAME}/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
 
+power_state:
+  delay: now
+  mode: reboot

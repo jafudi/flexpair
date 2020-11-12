@@ -1,6 +1,6 @@
 resource "time_sleep" "desktop_rebooted" {
   depends_on      = [module.desktop_1]
-  create_duration = "300s" # Includes 1m before scheduled shutdown
+  create_duration = "3m"
   triggers = {
     ip_change = module.desktop_1.public_ip
   }
