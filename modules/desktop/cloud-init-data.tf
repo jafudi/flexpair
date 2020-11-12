@@ -12,54 +12,54 @@ data "template_cloudinit_config" "desktop_config" {
       DESKTOP_USERNAME = var.desktop_username
     })
   }
-//  part {
-//    content_type = "text/cloud-boothook"
-//    filename = "02-disable-upgrades.sh"
-//    content      = file("${path.module}/init-scripts/02-disable-upgrades.sh")
-//  }
-//  part {
-//    content_type = "text/cloud-boothook"
-//    filename = "03-sshd-config.sh"
-//    content = file("${path.module}/init-scripts/03-sshd-config.sh")
-//  }
-//  part {
-//    content_type = "text/cloud-config"
-//    filename = "10-cloud-config.yaml"
-//    content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
-//      SSL_DOMAIN       = var.url.full_hostname
-//      DESKTOP_TIMEZONE = var.location_info.timezone_name
-//      DESKTOP_LOCALE   = var.location_info.locale_settings
-//      DESKTOP_USERNAME = var.desktop_username
-//      GATEWAY_USERNAME = var.gateway_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    filename = "11-sudoers.sh"
-//    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
-//      DESKTOP_USERNAME = var.desktop_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    filename = "15-install-packages.sh"
-//    content = file("${path.module}/init-scripts/15-install-packages.sh")
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    filename = "20-ssh-tunnel.sh"
-//    content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
-//      SSL_DOMAIN        = var.url.full_hostname
-//      MURMUR_PORT       = var.murmur_config.port
-//      DESKTOP_USERNAME = var.desktop_username
-//      GATEWAY_USERNAME = var.gateway_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    filename = "25-darkstat.sh"
-//    content = file("${path.module}/init-scripts/25-darkstat.sh")
-//  }
+  part {
+    content_type = "text/cloud-boothook"
+    filename = "02-disable-upgrades.sh"
+    content      = file("${path.module}/init-scripts/02-disable-upgrades.sh")
+  }
+  part {
+    content_type = "text/cloud-boothook"
+    filename = "03-sshd-config.sh"
+    content = file("${path.module}/init-scripts/03-sshd-config.sh")
+  }
+  part {
+    content_type = "text/cloud-config"
+    filename = "10-cloud-config.yaml"
+    content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
+      SSL_DOMAIN       = var.url.full_hostname
+      DESKTOP_TIMEZONE = var.location_info.timezone_name
+      DESKTOP_LOCALE   = var.location_info.locale_settings
+      DESKTOP_USERNAME = var.desktop_username
+      GATEWAY_USERNAME = var.gateway_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    filename = "11-sudoers.sh"
+    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    filename = "15-install-packages.sh"
+    content = file("${path.module}/init-scripts/15-install-packages.sh")
+  }
+  part {
+    content_type = "text/x-shellscript"
+    filename = "20-ssh-tunnel.sh"
+    content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
+      SSL_DOMAIN        = var.url.full_hostname
+      MURMUR_PORT       = var.murmur_config.port
+      DESKTOP_USERNAME = var.desktop_username
+      GATEWAY_USERNAME = var.gateway_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    filename = "25-darkstat.sh"
+    content = file("${path.module}/init-scripts/25-darkstat.sh")
+  }
 //  part {
 //    content_type = "text/x-shellscript"
 //    content = templatefile("${path.module}/init-scripts/30-mumble-client.sh", {
