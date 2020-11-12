@@ -11,11 +11,10 @@ add-apt-repository universe
 apt-get -qq update
 
 apt-get -qq install \
-darkstat net-tools \
 less nano \
 locales \
 glances \
-sshfs \
+sshfs
 
 rm -rf /var/log/unattended-upgrades
 apt-get -qq purge unattended-upgrades snapd apport

@@ -1,5 +1,9 @@
 #!/bin/sh -eux
 
+apt-get -qq install \
+darkstat \
+net-tools
+
 mkdir -p /etc/darkstat
 cat <<EOF > /etc/darkstat/init.cfg
 START_DARKSTAT=yes
