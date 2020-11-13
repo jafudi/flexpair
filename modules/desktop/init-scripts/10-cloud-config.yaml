@@ -34,8 +34,7 @@ mount_default_fields:
 #   Module: rsyslog
 #   Module: users-groups
 users:
-  - default
-  - name: "${DESKTOP_USERNAME}_desktop"
+  - name: "${DESKTOP_USERNAME}"
     sudo: ALL=(ALL) NOPASSWD:ALL
 #   Module: ssh
 
