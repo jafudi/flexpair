@@ -41,7 +41,7 @@ resource "oci_core_instance" "desktop" {
   provisioner "remote-exec" {
     inline = [
       "cloud-init status --wait >/dev/null",
-      "cloud-init analyze show"
+      "cloud-init analyze blame"
     ]
   }
 
