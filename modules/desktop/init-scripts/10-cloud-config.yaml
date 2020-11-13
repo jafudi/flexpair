@@ -30,7 +30,8 @@ mount_default_fields:
 #   Module: rsyslog
 #   Module: users-groups
 users:
-  - name: ${DESKTOP_USERNAME}
+  - default
+  - name: "${DESKTOP_USERNAME}_desktop"
     sudo: ALL=(ALL) NOPASSWD:ALL
 #   Module: ssh
 
@@ -51,10 +52,6 @@ runcmd:
 
 # BOOT STAGE: modules-final
 #   Module: package-update-upgrade-install
-#   Module: scripts-vendor
-#   Module: scripts-per-once
-#   Module: scripts-per-boot
-#   Module: scripts-per-instance
 #   Module: scripts-user
 #   Module: ssh-authkey-fingerprints
 #   Module: keys-to-console

@@ -19,7 +19,8 @@ bootcmd:
 #   Module: rsyslog
 #   Module: users-groups
 users:
-  - name: ${GATEWAY_USERNAME}
+  - default
+  - name: "${GATEWAY_USERNAME}_gateway"
     sudo: ALL=(ALL) NOPASSWD:ALL
 #   Module: ssh
 
@@ -50,10 +51,6 @@ packages:
   - iptables-persistent
   - net-tools
   - glances
-#   Module: scripts-vendor
-#   Module: scripts-per-once
-#   Module: scripts-per-boot
-#   Module: scripts-per-instance
 #   Module: scripts-user
 #   Module: ssh-authkey-fingerprints
 #   Module: keys-to-console
