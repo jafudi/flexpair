@@ -6,7 +6,9 @@
 #   Module: seed_random
 #   Module: bootcmd
 bootcmd:
-  - mkdir -p /home/${DESKTOP_USERNAME}/Desktop/Uploads
+  - mkdir -p "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
+  - chown -R "${GATEWAY_USERNAME}" "/home/${DESKTOP_USERNAME}"
+  - chmod -R 770 "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
 #   Module: write-files
 #   Module: growpart
 #   Module: resizefs
