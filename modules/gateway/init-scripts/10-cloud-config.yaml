@@ -5,6 +5,8 @@
 # BOOT STAGE: init-network
 #   Module: seed_random
 #   Module: bootcmd
+bootcmd:
+  - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
 #   Module: write-files
 #   Module: growpart
 #   Module: resizefs

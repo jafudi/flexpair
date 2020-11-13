@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-mkdir -p "/home/${GATEWAY_USERNAME}/.ssh"
-cat << EOF > "/home/${GATEWAY_USERNAME}/.ssh/vm_key"
-${VM_PRIVATE_KEY}
-EOF
-chmod 600 "/home/${GATEWAY_USERNAME}/.ssh/vm_key"
-
-mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
-chown -R "${GATEWAY_USERNAME}" "/home/${GATEWAY_USERNAME}"
-
 mkdir -p /etc/update-motd.d
 cat << 'ASCIIART' > "/etc/update-motd.d/98-ascii-art"
 #!/bin/sh

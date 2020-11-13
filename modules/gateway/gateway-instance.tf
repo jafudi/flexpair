@@ -36,6 +36,7 @@ resource "oci_core_instance" "gateway" {
     port        = 22
     user        = var.gateway_username
     private_key = var.vm_mutual_keypair.private_key_pem
+    timeout     = "30s"
   }
 
   provisioner "file" {

@@ -27,11 +27,7 @@ data "template_cloudinit_config" "gateway_config" {
   base64_encode = false
   part {
     content_type = "text/cloud-boothook"
-    content = templatefile("${path.module}/init-scripts/01-private-key-etc.sh", {
-      GATEWAY_USERNAME = var.gateway_username
-      DESKTOP_USERNAME = var.desktop_username
-      VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
-    })
+    content      = file("${path.module}/init-scripts/01-welcome-message.sh")
   }
   part {
     content_type = "text/cloud-boothook"
@@ -51,8 +47,9 @@ data "template_cloudinit_config" "gateway_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content      = templatefile("${path.module}/init-scripts/11-sudoers.sh", {
+    content      = templatefile("${path.module}/init-scripts/11-add-privkey.sh", {
       GATEWAY_USERNAME = var.gateway_username
+      VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
     })
   }
   part {
