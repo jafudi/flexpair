@@ -36,7 +36,6 @@ users:
 #   Module: locale
 # locale: "${DESKTOP_LOCALE}"
 #   Module: set-passwords
-#   Module: grub-dpkg
 #   Module: apt-pipelining
 #   Module: apt-configure
 #   Module: ntp

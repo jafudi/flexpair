@@ -25,7 +25,6 @@ users:
 #   Module: ssh-import-id
 #   Module: locale
 #   Module: set-passwords
-#   Module: grub-dpkg
 #   Module: apt-pipelining
 #   Module: apt-configure
 #   Module: ntp
