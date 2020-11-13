@@ -7,6 +7,7 @@
 #   Module: bootcmd
 bootcmd:
   - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
+  - chmod -R 770 "/home/${GATEWAY_USERNAME}/uploads"
 #   Module: write-files
 #   Module: growpart
 #   Module: resizefs

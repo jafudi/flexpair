@@ -6,7 +6,6 @@
 #   Module: seed_random
 #   Module: bootcmd
 bootcmd:
-  - mkdir -p /home/${DESKTOP_USERNAME}/uploads
   - mkdir -p /home/${DESKTOP_USERNAME}/Desktop/Uploads
 #   Module: write-files
 #   Module: growpart
@@ -14,7 +13,10 @@ bootcmd:
 #   Module: disk_setup
 #   Module: mounts
 mounts:
-  - ["${GATEWAY_USERNAME}@${SSL_DOMAIN}:/home/${GATEWAY_USERNAME}/uploads", "/home/${DESKTOP_USERNAME}/Desktop/Uploads"]
+  - [
+      "${GATEWAY_USERNAME}@${SSL_DOMAIN}:/home/${GATEWAY_USERNAME}/uploads",
+      "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
+  ]
 
 mount_default_fields:
   - "none"
