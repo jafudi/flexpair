@@ -1,46 +1,45 @@
 #cloud-config
 
-# Stage: init-local
+# BOOT STAGE: init-local
 
-# Stage: init-network
-# seed_random
-# bootcmd
-# write-files
-# growpart
-# resizefs
-# disk_setup
-# mounts
-# set_hostname
-# update_hostname
-# update_etc_hosts
-# ca-certs
-# rsyslog
-# users-groups
+# BOOT STAGE: init-network
+#   Module: seed_random
+#   Module: bootcmd
+#   Module: write-files
+#   Module: growpart
+#   Module: resizefs
+#   Module: disk_setup
+#   Module: mounts
+#   Module: set_hostname
+#   Module: update_hostname
+#   Module: update_etc_hosts
+#   Module: ca-certs
+#   Module: rsyslog
+#   Module: users-groups
 users:
   - default
-# ssh
+#   Module: ssh
 
-# Stage: modules-config
-# snap
-# ssh-import-id
-# locale
-# set-passwords
-# grub-dpkg
-# apt-pipelining
-# apt-configure
-# ntp
-# timezone
+# BOOT STAGE: modules-config
+#   Module: ssh-import-id
+#   Module: locale
+#   Module: set-passwords
+#   Module: grub-dpkg
+#   Module: apt-pipelining
+#   Module: apt-configure
+#   Module: ntp
+#   Module: timezone
 timezone: "${GATEWAY_TIMEZONE}"
-# disable-ec2-metadata
-# runcmd
+#   Module: disable-ec2-metadata
+#   Module: runcmd
 runcmd:
   - export DEBIAN_FRONTEND=noninteractive
   - rm -rf /var/log/unattended-upgrades
   - apt-get -qq purge unattended-upgrades snapd apport
   - apt-get -qq autoremove
 
-# Stage: modules-final
-# package-update-upgrade-install
+# BOOT STAGE: modules-final
+#   Module: package-update-upgrade-install
 package_update: true
 package_upgrade: false
 packages:
@@ -49,15 +48,15 @@ packages:
   - iptables-persistent
   - net-tools
   - glances
-# scripts-vendor
-# scripts-per-once
-# scripts-per-boot
-# scripts-per-instance
-# scripts-user
-# ssh-authkey-fingerprints
-# keys-to-console
-# phone-home
-# final-message
-# power-state-change
+#   Module: scripts-vendor
+#   Module: scripts-per-once
+#   Module: scripts-per-boot
+#   Module: scripts-per-instance
+#   Module: scripts-user
+#   Module: ssh-authkey-fingerprints
+#   Module: keys-to-console
+#   Module: phone-home
+#   Module: final-message
+#   Module: power-state-change
 
 
