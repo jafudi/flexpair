@@ -17,7 +17,8 @@
 #   Module: rsyslog
 #   Module: users-groups
 users:
-  - default
+  - name: ${GATEWAY_USERNAME}
+    sudo: ALL=(ALL) NOPASSWD:ALL
 #   Module: ssh
 
 # BOOT STAGE: modules-config
