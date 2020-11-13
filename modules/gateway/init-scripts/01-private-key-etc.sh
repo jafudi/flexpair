@@ -44,9 +44,6 @@ Welcome to your gateway :-)
 For opening a performance monitor, enter:
 "glances"
 
-You may connect to the desktop host using:
-"ssh -i /home/${GATEWAY_USERNAME}/.ssh/vm_key -p 2222 ${DESKTOP_USERNAME}@127.0.0.1"
-
 EOF
 MESSAGE
 

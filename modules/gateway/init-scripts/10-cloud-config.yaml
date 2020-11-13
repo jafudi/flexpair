@@ -1,10 +1,46 @@
 #cloud-config
 
+# Stage: init-local
+
+# Stage: init-network
+# seed_random
+# bootcmd
+# write-files
+# growpart
+# resizefs
+# disk_setup
+# mounts
+# set_hostname
+# update_hostname
+# update_etc_hosts
+# ca-certs
+# rsyslog
+# users-groups
 users:
   - default
+# ssh
 
+# Stage: modules-config
+# snap
+# ssh-import-id
+# locale
+# set-passwords
+# grub-dpkg
+# apt-pipelining
+# apt-configure
+# ntp
+# timezone
 timezone: "${GATEWAY_TIMEZONE}"
+# disable-ec2-metadata
+# runcmd
+runcmd:
+  - export DEBIAN_FRONTEND=noninteractive
+  - rm -rf /var/log/unattended-upgrades
+  - apt-get -qq purge unattended-upgrades snapd apport
+  - apt-get -qq autoremove
 
+# Stage: modules-final
+# package-update-upgrade-install
 package_update: true
 package_upgrade: false
 packages:
@@ -13,9 +49,15 @@ packages:
   - iptables-persistent
   - net-tools
   - glances
+# scripts-vendor
+# scripts-per-once
+# scripts-per-boot
+# scripts-per-instance
+# scripts-user
+# ssh-authkey-fingerprints
+# keys-to-console
+# phone-home
+# final-message
+# power-state-change
 
-runcmd:
-  - export DEBIAN_FRONTEND=noninteractive
-  - rm -rf /var/log/unattended-upgrades
-  - apt-get -qq purge unattended-upgrades snapd apport
-  - apt-get -qq autoremove
+

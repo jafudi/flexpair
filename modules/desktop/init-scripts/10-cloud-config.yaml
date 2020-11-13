@@ -1,13 +1,15 @@
 #cloud-config
 
-users:
-  - default
+# Stage: init-local
 
-# Set the system timezone
-timezone: "${DESKTOP_TIMEZONE}"
-
-# locale: "${DESKTOP_LOCALE}"
-
+# Stage: init-network
+# seed_random
+# bootcmd
+# write-files
+# growpart
+# resizefs
+# disk_setup
+# mounts
 mounts:
   - ["${GATEWAY_USERNAME}@${SSL_DOMAIN}:/home/${GATEWAY_USERNAME}/uploads", "/home/${DESKTOP_USERNAME}/Desktop/Uploads"]
 
@@ -18,11 +20,44 @@ mount_default_fields:
   - "nofail,noauto,_netdev,IdentityFile=/home/${DESKTOP_USERNAME}/.ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
   - "0"
   - "0"
+# set_hostname
+# update_hostname
+# update_etc_hosts
+# ca-certs
+# rsyslog
+# users-groups
+users:
+  - default
+# ssh
 
-# https://blog.luukhendriks.eu/2019/01/25/sshfs-too-many-levels-of-symbolic-links.html
+# Stage: modules-config
+# snap
+# ssh-import-id
+# locale: "${DESKTOP_LOCALE}"
+# set-passwords
+# grub-dpkg
+# apt-pipelining
+# apt-configure
+# ntp
+# timezone
+timezone: "${DESKTOP_TIMEZONE}"
+# disable-ec2-metadata
+# runcmd
 runcmd:
   - "touch /home/${DESKTOP_USERNAME}/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
 
+# Stage: modules-final
+# package-update-upgrade-install
+# scripts-vendor
+# scripts-per-once
+# scripts-per-boot
+# scripts-per-instance
+# scripts-user
+# ssh-authkey-fingerprints
+# keys-to-console
+# phone-home
+# final-message
+# power-state-change
 power_state:
   delay: now
   mode: reboot

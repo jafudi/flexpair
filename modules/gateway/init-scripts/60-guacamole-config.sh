@@ -52,7 +52,7 @@ cat << 'EOF' > "${GUACAMOLE_CONFIG}/user-mapping.xml"
             <param name="enable-sftp">true</param>
             <param name="sftp-root-directory">/home/${GATEWAY_USERNAME}/uploads</param>
             <param name="color-scheme">gray-black</param>
-            <param name="command">ssh -i /home/${GATEWAY_USERNAME}/.ssh/vm_key -p 2222 ${DESKTOP_USERNAME}@127.0.0.1</param>
+            <param name="command">ssh -i /home/${GATEWAY_USERNAME}/.ssh/vm_key -o StrictHostKeyChecking=no -p 2222 ${DESKTOP_USERNAME}@127.0.0.1</param>
         </connection>
 
     </authorize>
