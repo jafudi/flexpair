@@ -39,6 +39,13 @@ resource "oci_core_instance" "desktop" {
     timeout     = "30s"
   }
 
+  provisioner "remote-exec" {
+    inline = [
+      "cloud-init status --long --wait",
+      "cloud-init analyze show"
+    ]
+  }
+
   //
   //  # Must-haves
   //  provisioner "remote-exec" {

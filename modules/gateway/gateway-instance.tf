@@ -39,11 +39,17 @@ resource "oci_core_instance" "gateway" {
     timeout     = "30s"
   }
 
+  provisioner "remote-exec" {
+    inline = [
+      "cloud-init status --long --wait",
+      "cloud-init analyze show"
+    ]
+  }
+
   provisioner "file" {
     source      = "${path.module}/upload-directory/"
     destination = "/home/${var.gateway_username}/uploads"
   }
-
 }
 
 
