@@ -40,7 +40,7 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "remote-exec" {
     inline = [
-      "cloud-init status --wait >/dev/null"
+      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'"
     ]
     on_failure = continue
   }

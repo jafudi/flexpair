@@ -20,7 +20,7 @@ resource "oci_core_instance" "gateway" {
   }
 
   metadata = {
-    user_data           = base64gzip(local.unzipped_config)
+    user_data = base64gzip(local.unzipped_config)
   }
 
   agent_config {
@@ -39,7 +39,7 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     inline = [
-      "cloud-init status --wait >/dev/null"
+      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'"
     ]
     on_failure = continue
   }
@@ -47,7 +47,7 @@ resource "oci_core_instance" "gateway" {
   provisioner "file" {
     source      = "${path.module}/upload-directory/"
     destination = "/home/${var.gateway_username}/uploads"
-    on_failure = continue
+    on_failure  = continue
   }
 
 }
