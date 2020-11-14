@@ -26,6 +26,7 @@ data "template_cloudinit_config" "desktop_config" {
       DESKTOP_LOCALE   = var.location_info.locale_settings
       DESKTOP_USERNAME = var.desktop_username
       GATEWAY_USERNAME = var.gateway_username
+      SSH_PUBLIC_KEY   = var.vm_mutual_keypair.public_key_openssh
     })
   }
   part {
