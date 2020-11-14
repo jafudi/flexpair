@@ -96,6 +96,7 @@ Keywords=VoIP;Messaging;Voice Chat;Secure Communication;
 Version=1.0
 EOF
 
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/autostart"
 cat << EOF > "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"
 [Desktop Entry]
 Name=Mumble

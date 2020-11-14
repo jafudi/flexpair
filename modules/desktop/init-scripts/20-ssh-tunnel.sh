@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Bootstrapping using cloud-init..."
-
 # Obtain instance parameters / degrees of freedom ###################
 
 function get_info() {

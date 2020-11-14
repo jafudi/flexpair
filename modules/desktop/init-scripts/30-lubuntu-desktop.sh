@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND="noninteractive"
 
 apt-get -qq clean
-apt-get -qq update --fix-missing
+apt-get -qq update --fix-missing > /dev/null
 
 apt-get -qq install \
 lubuntu-desktop \

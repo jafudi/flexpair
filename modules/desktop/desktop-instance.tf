@@ -40,6 +40,7 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "remote-exec" {
     inline = [
+      "cat /var/log/cloud-init-output.log",
       "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'"
     ]
     on_failure = continue
