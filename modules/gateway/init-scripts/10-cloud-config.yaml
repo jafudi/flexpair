@@ -17,7 +17,7 @@
 #   Module: rsyslog
 #   Module: users-groups
 users:
-  - name: "${GATEWAY_USERNAME}"
+  - name: ${GATEWAY_USERNAME}
     sudo: ALL=(ALL) NOPASSWD:ALL
 #   Module: ssh
 
