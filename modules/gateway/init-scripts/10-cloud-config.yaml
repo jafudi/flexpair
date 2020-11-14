@@ -5,10 +5,6 @@
 # BOOT STAGE: init-network
 #   Module: seed_random
 #   Module: bootcmd
-bootcmd:
-  - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
-  - chown -R "${GATEWAY_USERNAME}" "/home/${GATEWAY_USERNAME}"
-  - chmod -R 770 "/home/${GATEWAY_USERNAME}/uploads"
 #   Module: write-files
 #   Module: growpart
 #   Module: resizefs
@@ -37,6 +33,9 @@ timezone: "${GATEWAY_TIMEZONE}"
 #   Module: disable-ec2-metadata
 #   Module: runcmd
 runcmd:
+  - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
+  - chown -R "${GATEWAY_USERNAME}" "/home/${GATEWAY_USERNAME}"
+  - chmod -R 770 "/home/${GATEWAY_USERNAME}/uploads"
   - export DEBIAN_FRONTEND=noninteractive
   - rm -rf /var/log/unattended-upgrades
   - apt-get -qq purge unattended-upgrades snapd apport
