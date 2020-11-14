@@ -9,17 +9,14 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/cloud-boothook"
-    filename = "02-disable-upgrades.sh"
     content      = file("${path.module}/init-scripts/02-disable-upgrades.sh")
   }
   part {
     content_type = "text/cloud-boothook"
-    filename = "03-sshd-config.sh"
     content = file("${path.module}/init-scripts/03-sshd-config.sh")
   }
   part {
     content_type = "text/cloud-config"
-    filename = "10-cloud-config.yaml"
     content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
       SSL_DOMAIN       = var.url.full_hostname
       DESKTOP_TIMEZONE = var.location_info.timezone_name
@@ -31,7 +28,6 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/cloud-boothook"
-    filename = "01-private-key-etc.sh"
     content = templatefile("${path.module}/init-scripts/11-add-privkey.sh", {
       VM_PRIVATE_KEY = var.vm_mutual_keypair.private_key_pem
       DESKTOP_USERNAME = var.desktop_username
@@ -39,12 +35,10 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    filename = "15-install-packages.sh"
     content = file("${path.module}/init-scripts/15-install-packages.sh")
   }
   part {
     content_type = "text/x-shellscript"
-    filename = "20-ssh-tunnel.sh"
     content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
       SSL_DOMAIN        = var.url.full_hostname
       MURMUR_PORT       = var.murmur_config.port
@@ -54,27 +48,56 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    filename = "25-darkstat.sh"
     content = file("${path.module}/init-scripts/25-darkstat.sh")
   }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content = templatefile("${path.module}/init-scripts/30-mumble-client.sh", {
-//      SSL_DOMAIN        = var.url.full_hostname
-//      MURMUR_PORT       = var.murmur_config.port
-//      MURMUR_PASSWORD   = var.murmur_config.password
-//      DESKTOP_USERNAME = var.desktop_username
-//    })
-//  }
-//  part {
-//    content_type = "text/x-shellscript"
-//    content = templatefile("${path.module}/init-scripts/40-trojita-mail.sh", {
-//      SUB_DOMAIN_PREFIX = var.url.subdomain_label
-//      EMAIL_ADDRESS     = var.email_config.address
-//      IMAP_PASSWORD     = var.email_config.password
-//      DESKTOP_USERNAME = var.desktop_username
-//    })
-//  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/30-lubuntu-desktop.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/32-lxqt-look-and-feel.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/35-desktop-sharing.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/40-pulseaudio-server.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/45-mumble-client.sh", {
+      SSL_DOMAIN        = var.url.full_hostname
+      MURMUR_PORT       = var.murmur_config.port
+      MURMUR_PASSWORD   = var.murmur_config.password
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/50-trojita-mail.sh", {
+      SUB_DOMAIN_PREFIX = var.url.subdomain_label
+      EMAIL_ADDRESS     = var.email_config.address
+      IMAP_PASSWORD     = var.email_config.password
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile("${path.module}/init-scripts/60-prevent-swapping.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
+  }
 }
 
 locals {

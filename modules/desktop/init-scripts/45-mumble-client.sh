@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-# Configure Mumble #################################################
-
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
+# https://www.mumble.info
+export DEBIAN_FRONTEND="noninteractive"
+sudo -E apt-get -qq install --no-install-recommends \
+mumble
 
 mkdir -p "/home/${DESKTOP_USERNAME}/.config/Mumble"
 cat << EOF > "/home/${DESKTOP_USERNAME}/.config/Mumble/Mumble.conf"
@@ -83,7 +85,7 @@ GenericName[fr]=Chat vocal
 Comment=A low-latency, high quality voice chat program for gaming
 Comment[de]=Ein Sprachkonferenzprogramm mit niedriger Latenz und hoher Qualitaet fuer Spiele
 Comment[fr]=Un logiciel de chat vocal de haute qualite et de faible latence pour les jeux
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://${DESKTOP_USERNAME}:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Icon=mumble
 Terminal=false
 Type=Application
@@ -97,7 +99,7 @@ EOF
 cat << EOF > "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"
 [Desktop Entry]
 Name=Mumble
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://${DESKTOP_USERNAME}:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Terminal=false
 Type=Application
 StartupNotify=false

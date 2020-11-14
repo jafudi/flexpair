@@ -16,8 +16,7 @@ sudo deb/build.sh
 
 sudo apt install --reinstall ./deb/package.deb
 
-CONFIG="/etc/systemd/system/nohang/conf/nohang/nohang-desktop.conf.in"
-cat << EOF | sudo tee ${CONFIG}
+cat << EOF | sudo tee "/etc/systemd/system/nohang/conf/nohang/nohang-desktop.conf.in"
 ## This is the configuration file of the nohang daemon.
 
 ## The configuration includes the following sections:

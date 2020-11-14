@@ -1,8 +1,5 @@
 #!/bin/bash -eux
 
-echo "Running script lubuntu-desktop.sh..."
-echo
-
 export DEBIAN_FRONTEND="noninteractive"
 
 sudo apt-get -qq clean
@@ -47,7 +44,7 @@ user-session=lxqt
 greeter-session=lightdm-gtk-greeter
 EOF
 sudo systemctl enable lightdm.service
-sudo usermod -aG nopasswdlogin ubuntu
+sudo usermod -aG nopasswdlogin "${DESKTOP_USERNAME}"
 
 # lubuntu-desktop depends on (for installation)
 sudo apt-get -qq purge \

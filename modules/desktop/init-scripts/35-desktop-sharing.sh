@@ -36,7 +36,7 @@ EOF
 sudo systemctl enable x11vnc.service
 sudo systemctl set-default graphical.target
 
-sudo usermod -aG tty ubuntu
+sudo usermod -aG tty "${DESKTOP_USERNAME}"
 
 echo "allowed_users=anybody" | sudo tee /etc/X11/Xwrapper.config
 
