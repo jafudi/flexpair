@@ -43,6 +43,7 @@ data "template_cloudinit_config" "gateway_config" {
       GATEWAY_TIMEZONE = var.location_info.timezone_name
       GATEWAY_LOCALE   = var.location_info.locale_settings
       GATEWAY_USERNAME = var.gateway_username
+      SSH_PUBLIC_KEY   = var.vm_mutual_keypair.public_key_openssh
     })
   }
   part {
