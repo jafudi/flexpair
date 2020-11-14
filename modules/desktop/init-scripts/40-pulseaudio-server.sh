@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends \
+apt-get -qq install --no-install-recommends \
 paprefs \
 audacity
 

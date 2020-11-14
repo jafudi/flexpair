@@ -4,7 +4,7 @@
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
 # https://www.mumble.info
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends \
+apt-get -qq install --no-install-recommends \
 mumble
 
 mkdir -p "/home/${DESKTOP_USERNAME}/.config/Mumble"

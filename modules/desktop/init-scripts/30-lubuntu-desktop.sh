@@ -2,10 +2,10 @@
 
 export DEBIAN_FRONTEND="noninteractive"
 
-sudo apt-get -qq clean
-sudo apt-get -qq update --fix-missing
+apt-get -qq clean
+apt-get -qq update --fix-missing
 
-sudo -E apt-get -qq install \
+apt-get -qq install \
 lubuntu-desktop \
 gdm3- \
 avahi-daemon- \
@@ -30,24 +30,24 @@ screengrab- \
 qps- \
 qlipper-
 
-sudo -E apt-get -qq install --no-install-recommends  \
+apt-get -qq install --no-install-recommends  \
 lightdm \
 lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings \
 accountsservice \
 policykit-1 policykit-desktop-privileges
 
-sudo mkdir -p /etc/lightdm
-cat << EOF | sudo tee /etc/lightdm/lightdm.conf
+mkdir -p /etc/lightdm
+cat << EOF > /etc/lightdm/lightdm.conf
 [SeatDefaults]
 user-session=lxqt
 greeter-session=lightdm-gtk-greeter
 EOF
-sudo systemctl enable lightdm.service
-sudo usermod -aG nopasswdlogin "${DESKTOP_USERNAME}"
+systemctl enable lightdm.service
+usermod -aG nopasswdlogin "${DESKTOP_USERNAME}"
 
 # lubuntu-desktop depends on (for installation)
-sudo apt-get -qq purge \
+apt-get -qq purge \
 anacron- \
 bluedevil- bluez- bluez-cups- pulseaudio-module-bluetooth- \
 genisoimage- \
@@ -64,4 +64,4 @@ whoopsie- apport- \
 wireless-tools- wpasupplicant- \
 xscreensaver.*-
 
-sudo apt-get -qq autoremove
+apt-get -qq autoremove

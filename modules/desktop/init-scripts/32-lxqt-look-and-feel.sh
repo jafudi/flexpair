@@ -4,7 +4,7 @@ echo "Running script lxqt-look-and-feel.sh..."
 echo
 
 ls -al $HOME/Desktop
-sudo chown -R "${DESKTOP_USERNAME}" $HOME
+chown -R "${DESKTOP_USERNAME}" $HOME
 
 mkdir -p $HOME/Desktop
 
@@ -149,13 +149,13 @@ placement=bottom-left
 EOF
 
 cd /etc/xdg/autostart/
-sudo rm -f lxqt-globalkeyshortcuts.desktop
-sudo rm -f lxqt-powermanagement.desktop
-sudo rm -f lxqt-xscreensaver-autostart.desktop
-sudo rm -f nm-applet.desktop
-sudo rm -f nm-tray-autostart.desktop
-sudo rm -f snap-userd-autostart.desktop
-sudo rm -f upg-notifier-autostart.desktop
+rm -f lxqt-globalkeyshortcuts.desktop
+rm -f lxqt-powermanagement.desktop
+rm -f lxqt-xscreensaver-autostart.desktop
+rm -f nm-applet.desktop
+rm -f nm-tray-autostart.desktop
+rm -f snap-userd-autostart.desktop
+rm -f upg-notifier-autostart.desktop
 
 FILES="lxqt-hibernate
 lxqt-leave
