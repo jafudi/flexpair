@@ -40,10 +40,9 @@ resource "oci_core_instance" "desktop" {
 
   provisioner "remote-exec" {
     inline = [
-      "set -e",
-      "cloud-init status --wait >/dev/null",
-      "cloud-init analyze blame"
+      "cloud-init status --wait >/dev/null"
     ]
+    on_failure = continue
   }
 
   //

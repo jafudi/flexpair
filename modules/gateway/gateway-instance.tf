@@ -39,16 +39,16 @@ resource "oci_core_instance" "gateway" {
 
   provisioner "remote-exec" {
     inline = [
-      "set -e",
-      "cloud-init status --wait >/dev/null",
-      "cloud-init analyze show"
+      "cloud-init status --wait >/dev/null"
     ]
+    on_failure = continue
   }
 
-//  provisioner "file" {
-//    source      = "${path.module}/upload-directory/"
-//    destination = "/home/${var.gateway_username}/uploads"
-//  }
+  provisioner "file" {
+    source      = "${path.module}/upload-directory/"
+    destination = "/home/${var.gateway_username}/uploads"
+    on_failure = continue
+  }
 
 }
 
