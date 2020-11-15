@@ -1,5 +1,7 @@
 #!/bin/bash -eux
 
+echo Checkpoint1
+
 # https://wiki.ubuntuusers.de/VNC/#VNC-Sitzung-gemeinsam-nutzen
 # http://www.karlrunge.com/x11vnc/faq.html#faq
 # https://wiki.archlinux.org/index.php/TigerVNC#Running_vncserver_for_virtual_(headless)_sessions
@@ -16,7 +18,9 @@ xserver-xorg-video-dummy \
 xserver-xorg-legacy \
 xfonts-base
 
-cat <<EOF > /etc/systemd/system/x11vnc.service
+echo Checkpoint2
+
+tee /etc/systemd/system/x11vnc.service << EOF
 [Unit]
 Description=VNC server for X11
 Wants=lightdm.service
@@ -33,12 +37,15 @@ EOF
 systemctl enable x11vnc.service
 systemctl set-default graphical.target
 
+echo Checkpoint3
+
 usermod -aG tty "${DESKTOP_USERNAME}"
 
-echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
+echo Checkpoint4
 
 mkdir -p /etc/X11
-cat <<EOF > /etc/X11/xorg.conf;
+echo "allowed_users=anybody" > /etc/X11/Xwrapper.config
+cat << EOF > /etc/X11/xorg.conf;
 Section "Device"
     Identifier  "Dummy"
     Driver      "dummy"
@@ -64,4 +71,6 @@ Section "Screen"
     EndSubSection
 EndSection
 EOF
+
+echo Checkpoint5
 
