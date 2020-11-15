@@ -50,7 +50,7 @@ timezone: "${DESKTOP_TIMEZONE}"
 #   Module: runcmd
 runcmd:
   - mkdir -p "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
-  - chown -R "${GATEWAY_USERNAME}" "/home/${DESKTOP_USERNAME}"
+  - chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"
   - chmod -R 770 "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
   - "touch /home/${DESKTOP_USERNAME}/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
 
