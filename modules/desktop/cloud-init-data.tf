@@ -58,12 +58,6 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = templatefile("${path.module}/init-scripts/31-desktop-sharing.sh", {
-      DESKTOP_USERNAME = var.desktop_username
-    })
-  }
-  part {
-    content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/32-lxqt-look-and-feel.sh", {
       DESKTOP_USERNAME = var.desktop_username
     })

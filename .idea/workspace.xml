@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/35-desktop-sharing.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/31-desktop-sharing.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/31-desktop-sharing.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605571248887</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Try to eliminate reasons why the script would not be executed (properly)">
+      <created>1605579575878</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605579575878</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +118,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First shot" />
     <MESSAGE value="Save this as a sketch, but need to redo this from master step by step" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save this as a sketch, but need to redo this from master step by step" />
+    <MESSAGE value="Try to eliminate reasons why the script would not be executed (properly)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try to eliminate reasons why the script would not be executed (properly)" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605579581188">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605579581188" />
   </component>
 </project>
