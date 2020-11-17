@@ -21,8 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/30-lubuntu-desktop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/30-lubuntu-desktop.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.auto.tfvars" beforeDir="false" afterPath="$PROJECT_DIR$/default.auto.tfvars" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605617088521</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Debugging">
+      <created>1605619377435</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605619377435</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,12 +132,13 @@
     <MESSAGE value="Save this as a sketch, but need to redo this from master step by step" />
     <MESSAGE value="Try to eliminate reasons why the script would not be executed (properly)" />
     <MESSAGE value="Put content of script that won't get executed into previous script for debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put content of script that won't get executed into previous script for debugging" />
+    <MESSAGE value="Debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605617096809">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605619390193">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605617096809" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605619390193" />
   </component>
 </project>
