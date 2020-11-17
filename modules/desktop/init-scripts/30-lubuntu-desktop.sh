@@ -65,3 +65,5 @@ wireless-tools- wpasupplicant- \
 xscreensaver.*-
 
 apt-get -qq autoremove
+
+echo "Fertig mit 30-lubuntu-desktop.sh"
