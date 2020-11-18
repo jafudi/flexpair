@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/31-dummy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/behave-tests.tf" beforeDir="false" afterPath="$PROJECT_DIR$/behave-tests.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605654721070</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Use paid instances">
+      <created>1605702155895</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605702155895</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,13 +159,14 @@
     <MESSAGE value="Debugging" />
     <MESSAGE value="Use paid account" />
     <MESSAGE value="Try free instances until paid account is unlocked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try free instances until paid account is unlocked" />
+    <MESSAGE value="Use paid instances" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use paid instances" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605654730090">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605702205323">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605654730090" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605635875648" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605702205323" />
   </component>
 </project>

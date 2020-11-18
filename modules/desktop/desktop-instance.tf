@@ -45,5 +45,13 @@ resource "oci_core_instance" "desktop" {
     on_failure = continue
   }
 
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'Instance reachable by SSH again after reboot.'",
+      "echo 'Give some more time for services to start.'",
+      "sleep 30"
+    ]
+  }
+
 }
 
