@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/31-dummy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/31-dummy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/31-dummy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/35-desktop-sharing.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605704561519</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Debugging">
+      <created>1605721970163</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605721970164</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,17 +168,17 @@
     <MESSAGE value="Save this as a sketch, but need to redo this from master step by step" />
     <MESSAGE value="Try to eliminate reasons why the script would not be executed (properly)" />
     <MESSAGE value="Put content of script that won't get executed into previous script for debugging" />
-    <MESSAGE value="Debugging" />
     <MESSAGE value="Use paid account" />
     <MESSAGE value="Try free instances until paid account is unlocked" />
     <MESSAGE value="Use paid instances" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use paid instances" />
+    <MESSAGE value="Debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugging" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605704567416">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605721975693">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605654730090" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605704567416" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605721975693" />
   </component>
 </project>
