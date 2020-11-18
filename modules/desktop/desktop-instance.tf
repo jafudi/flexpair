@@ -52,8 +52,7 @@ resource "oci_core_instance" "desktop" {
   provisioner "remote-exec" {
     inline = [
       "echo 'Instance reachable by SSH again after reboot.'",
-      "echo 'Give some more time for services to start.'",
-      "sleep 30"
+      "until systemctl is-active --quiet darkstat; echo 'Waiting for darkstat to come up...'; sleep 5; done"
     ]
   }
 

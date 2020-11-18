@@ -1,9 +1,5 @@
 #!/bin/bash -eux
 
-echo "ich bin ein dummy und heisse ${DESKTOP_USERNAME}"
-
-echo "Checkpoint1"
-
 # https://wiki.ubuntuusers.de/VNC/#VNC-Sitzung-gemeinsam-nutzen
 # http://www.karlrunge.com/x11vnc/faq.html#faq
 # https://wiki.archlinux.org/index.php/TigerVNC#Running_vncserver_for_virtual_(headless)_sessions
@@ -19,8 +15,6 @@ xserver-xorg-video-vesa \
 xserver-xorg-video-dummy \
 xserver-xorg-legacy \
 xfonts-base
-
-echo "Checkpoint2"
 
 tee /etc/systemd/system/x11vnc.service << EOF
 [Unit]
@@ -38,8 +32,6 @@ WantedBy=graphical.target
 EOF
 systemctl enable x11vnc.service
 systemctl set-default graphical.target
-
-echo "Checkpoint3"
 
 usermod -aG tty "${DESKTOP_USERNAME}"
 
@@ -73,5 +65,3 @@ Section "Screen"
     EndSubSection
 EndSection
 EOF
-
-echo "Checkpoint5"
