@@ -21,9 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/behave-tests.tf" beforeDir="false" afterPath="$PROJECT_DIR$/behave-tests.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/35-desktop-sharing.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/init-scripts/35-desktop-sharing.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605724386080</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="until systemctl is-active --quiet darkstat sleep">
+      <created>1605731140877</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605731140879</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fix typo">
+      <created>1605733548111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605733548111</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,14 +193,15 @@
     <MESSAGE value="Try free instances until paid account is unlocked" />
     <MESSAGE value="Use paid instances" />
     <MESSAGE value="Debugging" />
+    <MESSAGE value="until systemctl is-active --quiet darkstat sleep" />
     <MESSAGE value="Fix typo" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix typo" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605724438439">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605734054420">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605654730090" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605724438439" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605734054420" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
   </component>
 </project>

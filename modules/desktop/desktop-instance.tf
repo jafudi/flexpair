@@ -40,19 +40,17 @@ resource "oci_core_instance" "desktop" {
   provisioner "remote-exec" {
     inline = [
       "cat /var/log/cloud-init-output.log",
-      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'"
+      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'",
+      "sleep 1000"
     ]
     on_failure = continue
-  }
-
-  provisioner "local-exec" {
-    command = "sleep 120"
   }
 
   provisioner "remote-exec" {
     inline = [
       "echo 'Instance reachable by SSH again after reboot.'",
-      "until systemctl is-active --quiet darkstat; do echo 'Waiting for darkstat to come up...'; sleep 5; done"
+      "until systemctl is-active darkstat; do echo 'Waiting for VNC server to come up...'; sleep 5; done"
+      "OK, VNC server seems to be active. Done."
     ]
   }
 

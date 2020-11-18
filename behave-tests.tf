@@ -1,11 +1,3 @@
-//resource "time_sleep" "desktop_rebooted" {
-//  depends_on      = [module.desktop_1]
-//  create_duration = "5m"
-//  triggers = {
-//    ip_change = module.desktop_1.public_ip
-//  }
-//}
-
 resource "null_resource" "health_check" {
 
   for_each = toset([
@@ -21,13 +13,12 @@ resource "null_resource" "health_check" {
   depends_on = [
     module.gateway,
     time_sleep.dns_propagation,
-    # time_sleep.desktop_rebooted,
     module.desktop_1
   ]
 
   # Check HTTPS endpoint and first-level links availability
   provisioner "local-exec" {
     interpreter = ["/bin/bash", "-c"]
-    command     = "wget --tries=3 --spider --recursive --level 1 https://${local.url.full_hostname}${each.key};"
+    command     = "wget --tries=30 --spider --recursive --level 1 https://${local.url.full_hostname}${each.key};"
   }
 }
