@@ -9,15 +9,15 @@ provider "dns" {
 }
 
 locals {
-  // If longer than 15 characters, use the last 15.
-  deployment_label = replace(lower("${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"),"/[_\\W]/","-")
+  compound_name = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
+  valid_subdomain = lower(replace(local.compound_name,"/[_\\W]/","-"))
 
   url = {
     proto_scheme      = "https://"
-    subdomain_label   = local.deployment_label
+    subdomain_label   = local.valid_subdomain
     registered_domain = var.registered_domain
     toplevel_domain   = reverse(split(".", var.registered_domain))[0]
-    full_hostname     = "${local.deployment_label}.${var.registered_domain}"
+    full_hostname     = "${local.valid_subdomain}.${var.registered_domain}"
   }
 }
 
