@@ -5,19 +5,19 @@ echo
 
 export DEBIAN_FRONTEND="noninteractive"
 
-cat << 'EOF' | sudo tee -a /etc/sysctl.conf
+cat << 'EOF' >> /etc/sysctl.conf
 vm.swappiness = 1
 EOF
 
-sudo apt install make fakeroot
+apt install make fakeroot
 
 git clone https://github.com/hakavlad/nohang.git && cd nohang
-sudo deb/build.sh
+deb/build.sh
 
-sudo apt install --reinstall ./deb/package.deb
+apt install --reinstall ./deb/package.deb
 
-CONFIG="/etc/systemd/system/nohang/conf/nohang/nohang-desktop.conf.in"
-cat << EOF | sudo tee ${CONFIG}
+mkdir -p "/etc/systemd/system/nohang/conf/nohang"
+cat << EOF > "/etc/systemd/system/nohang/conf/nohang/nohang-desktop.conf.in"
 ## This is the configuration file of the nohang daemon.
 
 ## The configuration includes the following sections:
@@ -653,6 +653,5 @@ separate_log = False
     https://github.com/hakavlad/nohang/issues
 
 EOF
-
-sudo systemctl enable nohang-desktop
-sudo systemctl start nohang-desktop
+systemctl enable nohang-desktop
+systemctl start nohang-desktop

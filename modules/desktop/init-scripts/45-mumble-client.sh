@@ -1,17 +1,14 @@
 #!/usr/bin/env bash
 
-if [ ! -f /etc/.terraform-complete ]; then
-    echo "Terraform provisioning not yet complete, exiting"
-    exit 0
-fi
-
-# Configure Mumble #################################################
-
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini
+# https://www.mumble.info
+export DEBIAN_FRONTEND="noninteractive"
+apt-get -qq install --no-install-recommends \
+mumble
 
-mkdir -p /home/ubuntu/.config/Mumble
-cat << EOF > /home/ubuntu/.config/Mumble/Mumble.conf
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/Mumble"
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/Mumble/Mumble.conf"
 [audio]
 echomulti=false
 headphone=true
@@ -28,7 +25,7 @@ voicehold=250
 positional=false
 
 [recording]
-path=/home/ubuntu/Desktop/Uploads
+path=/home/${DESKTOP_USERNAME}/Desktop/Uploads
 
 [shortcuts]
 size=0
@@ -77,7 +74,7 @@ usage=false
 disablepubliclist=true
 disableconnectdialogediting=false
 EOF
-chown -R ubuntu /home/ubuntu/.config
+chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}/.config"
 
 cat << EOF > /usr/share/applications/mumble.desktop
 [Desktop Entry]
@@ -88,7 +85,7 @@ GenericName[fr]=Chat vocal
 Comment=A low-latency, high quality voice chat program for gaming
 Comment[de]=Ein Sprachkonferenzprogramm mit niedriger Latenz und hoher Qualitaet fuer Spiele
 Comment[fr]=Un logiciel de chat vocal de haute qualite et de faible latence pour les jeux
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://${DESKTOP_USERNAME}:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Icon=mumble
 Terminal=false
 Type=Application
@@ -99,12 +96,13 @@ Keywords=VoIP;Messaging;Voice Chat;Secure Communication;
 Version=1.0
 EOF
 
-cat << EOF > /home/ubuntu/.config/autostart/mumble.desktop
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/autostart"
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"
 [Desktop Entry]
 Name=Mumble
-Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://${DESKTOP_USERNAME}:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Terminal=false
 Type=Application
 StartupNotify=false
 EOF
-chown ubuntu /home/ubuntu/.config/autostart/mumble.desktop
+chown "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="custom-username" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1kOiy86CerJ4O3IYqo4ndRR5KzM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TF_FMT" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
+      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
+      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
+      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
+      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
+      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
+      <created>1605528923398</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605528923398</updated>
+    </task>
+    <task id="LOCAL-00001" summary="First shot">
+      <created>1605534011255</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605534011255</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First shot">
+      <created>1605534015794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605534015794</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Save this as a sketch, but need to redo this from master step by step">
+      <created>1605571248887</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605571248887</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Try to eliminate reasons why the script would not be executed (properly)">
+      <created>1605579575878</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605579575878</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Put content of script that won't get executed into previous script for debugging">
+      <created>1605617088521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605617088521</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Debugging">
+      <created>1605619377435</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605619377435</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Use paid account">
+      <created>1605635850343</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605635850343</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Try free instances until paid account is unlocked">
+      <created>1605654721070</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605654721070</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Use paid instances">
+      <created>1605702155895</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605702155895</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Use paid instances">
+      <created>1605704561519</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605704561519</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Debugging">
+      <created>1605721970163</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605721970164</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fix typo">
+      <created>1605724386080</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605724386080</updated>
+    </task>
+    <task id="LOCAL-00013" summary="until systemctl is-active --quiet darkstat sleep">
+      <created>1605731140877</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605731140879</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fix typo">
+      <created>1605733548111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605733548111</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Try a bit longer for darkstat to react">
+      <created>1605741475433</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605741475433</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix typo">
+      <created>1605741824471</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605741824471</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First shot" />
+    <MESSAGE value="Save this as a sketch, but need to redo this from master step by step" />
+    <MESSAGE value="Try to eliminate reasons why the script would not be executed (properly)" />
+    <MESSAGE value="Put content of script that won't get executed into previous script for debugging" />
+    <MESSAGE value="Use paid account" />
+    <MESSAGE value="Try free instances until paid account is unlocked" />
+    <MESSAGE value="Use paid instances" />
+    <MESSAGE value="Debugging" />
+    <MESSAGE value="until systemctl is-active --quiet darkstat sleep" />
+    <MESSAGE value="Try a bit longer for darkstat to react" />
+    <MESSAGE value="Fix typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix typo" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605741833454">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
+  </component>
+</project>

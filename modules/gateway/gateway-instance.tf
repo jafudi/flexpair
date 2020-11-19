@@ -20,8 +20,7 @@ resource "oci_core_instance" "gateway" {
   }
 
   metadata = {
-    ssh_authorized_keys = var.vm_mutual_keypair.public_key_openssh
-    user_data           = data.template_cloudinit_config.gateway_config.rendered
+    user_data = base64gzip(local.unzipped_config)
   }
 
   agent_config {
@@ -29,17 +28,27 @@ resource "oci_core_instance" "gateway" {
     is_monitoring_disabled = true
   }
 
+  // Not needed if all provisioning is done via cloud-init
   connection {
     type        = "ssh"
     host        = self.public_ip
     port        = 22
-    user        = "ubuntu"
+    user        = var.gateway_username
     private_key = var.vm_mutual_keypair.private_key_pem
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "cat /var/log/cloud-init-output.log",
+      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'"
+    ]
+    on_failure = continue
   }
 
   provisioner "file" {
     source      = "${path.module}/upload-directory/"
-    destination = "/home/ubuntu/uploads"
+    destination = "/home/${var.gateway_username}/uploads"
+    on_failure  = continue
   }
 
 }

@@ -9,5 +9,8 @@ rfc2136_key_secret     = "7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL
 timezone = "Europe/Berlin"
 locale   = "de_DE.UTF-8"
 
-gateway_shape = "VM.Standard.E2.1.Micro"
-desktop_shape = "VM.Standard.E2.1.Micro"
+gateway_shape = "VM.Standard.E2.1"
+desktop_shape = "VM.Standard.E2.1"
+
+gateway_username = "gateway_user"
+desktop_username = "desktop_user"

@@ -25,22 +25,8 @@ GSSAPIAuthentication no
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
-AllowTcpForwarding yes
-GatewayPorts yes
-PrintMotd yes
-UseDNS no
-
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
-
-# override default of no subsystems
-Subsystem       sftp    /usr/lib/openssh/sftp-server
-
-# Override the global settings for guacd_container because Guacamole does not work with RSA private keys
-Match address 172.18.0.2
-    PasswordAuthentication yes
-    PermitEmptyPasswords yes
-    PermitRootLogin yes
 EOF
 
 

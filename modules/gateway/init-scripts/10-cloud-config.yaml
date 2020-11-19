@@ -1,20 +1,63 @@
 #cloud-config
 
+# BOOT STAGE: init-local
+
+# BOOT STAGE: init-network
+#   Module: seed_random
+#   Module: bootcmd
+#   Module: write-files
+#   Module: growpart
+#   Module: resizefs
+#   Module: disk_setup
+#   Module: mounts
+#   Module: set_hostname
+#   Module: update_hostname
+#   Module: update_etc_hosts
+#   Module: ca-certs
+#   Module: rsyslog
+#   Module: users-groups
 users:
-  - default
+  - name: "${GATEWAY_USERNAME}"
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys:
+      - "${SSH_PUBLIC_KEY}"
+#   Module: ssh
 
+# BOOT STAGE: modules-config
+#   Module: ssh-import-id
+#   Module: locale
+#   Module: set-passwords
+#   Module: apt-pipelining
+#   Module: apt-configure
+#   Module: ntp
+#   Module: timezone
 timezone: "${GATEWAY_TIMEZONE}"
+#   Module: disable-ec2-metadata
+#   Module: runcmd
+runcmd:
+  - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
+  - chown -R "${GATEWAY_USERNAME}" "/home/${GATEWAY_USERNAME}"
+  - chmod -R 770 "/home/${GATEWAY_USERNAME}/uploads"
+  - export DEBIAN_FRONTEND=noninteractive
+  - rm -rf /var/log/unattended-upgrades
+  - apt-get -qq purge unattended-upgrades snapd apport
+  - apt-get -qq autoremove
 
+# BOOT STAGE: modules-final
+#   Module: package-update-upgrade-install
 package_update: true
 package_upgrade: false
 packages:
   - docker.io
   - nano
   - iptables-persistent
+  - net-tools
   - glances
+#   Module: scripts-user
+#   Module: ssh-authkey-fingerprints
+#   Module: keys-to-console
+#   Module: phone-home
+#   Module: final-message
+#   Module: power-state-change
 
-runcmd:
-  - export DEBIAN_FRONTEND=noninteractive
-  - rm -rf /var/log/unattended-upgrades
-  - apt-get -qq purge unattended-upgrades snapd apport
-  - apt-get -qq autoremove
+

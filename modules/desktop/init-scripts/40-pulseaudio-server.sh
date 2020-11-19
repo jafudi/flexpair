@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
-echo "Running script mumble-pulseaudio.sh..."
-echo
-
-# https://www.mumble.info
 export DEBIAN_FRONTEND="noninteractive"
-sudo -E apt-get -qq install --no-install-recommends \
-mumble \
+apt-get -qq install --no-install-recommends \
 paprefs \
 audacity
 
-mkdir -p $HOME/.config/pulse
-cat << EOF > $HOME/.config/pulse/default.pa
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/pulse"
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/pulse/default.pa"
 .include /etc/pulse/default.pa
 
 load-module module-null-sink sink_name=DesktopAudio

@@ -20,8 +20,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   metadata = {
-    ssh_authorized_keys = var.vm_mutual_keypair.public_key_openssh
-    user_data           = data.template_cloudinit_config.desktop_config.rendered
+    user_data           = base64gzip(local.unzipped_config)
     gitlab_runner_token = var.gitlab_runner_token
   }
 
@@ -34,47 +33,24 @@ resource "oci_core_instance" "desktop" {
     type        = "ssh"
     host        = self.public_ip
     port        = 22
-    user        = "ubuntu"
+    user        = var.desktop_username
     private_key = var.vm_mutual_keypair.private_key_pem
   }
 
   provisioner "remote-exec" {
     inline = [
-      "echo Block until cloud-init finished...",
-      "set +e",
-      "cloud-init status --long --wait",
-      "set -e"
+      "cat /var/log/cloud-init-output.log",
+      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'",
+      "while true; do echo 'Waiting for reboot...'; sleep 5; done"
     ]
-  }
-
-  # Must-haves
-  provisioner "remote-exec" {
-    scripts = [
-      "${path.module}/ssh-remote-exec/disable-upgrades.sh",
-      "${path.module}/ssh-remote-exec/networking.sh",
-      "${path.module}/ssh-remote-exec/lubuntu-desktop.sh",
-      "${path.module}/ssh-remote-exec/lxqt-look-and-feel.sh",
-      "${path.module}/ssh-remote-exec/multiple-languages.sh",
-      "${path.module}/ssh-remote-exec/resource-monitor.sh",
-      "${path.module}/ssh-remote-exec/mumble-pulseaudio.sh",
-      "${path.module}/ssh-remote-exec/desktop-sharing.sh",
-    ]
-    on_failure = fail
-  }
-
-  # Nice-to-haves
-  provisioner "remote-exec" {
-    scripts = [
-      "${path.module}/ssh-remote-exec/podcasts-and-videos.sh",
-    ]
-    on_failure = fail // or continue
+    on_failure = continue
   }
 
   provisioner "remote-exec" {
     inline = [
-      "sudo touch /etc/.terraform-complete",
-      "sudo cloud-init clean --logs",
-      "sudo shutdown -r +1"
+      "echo 'Instance reachable by SSH again after reboot.'",
+      "echo 'Waiting for darkstat server to come up...'",
+      "until systemctl is-active darkstat; do sleep 5; done"
     ]
   }
 

@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir -p /home/ubuntu/uploads
-chown -R ubuntu /home/ubuntu
-
-cat << EOF > /home/ubuntu/.ssh/vm_key
-${VM_PRIVATE_KEY}
-EOF
-chmod 600 /home/ubuntu/.ssh/vm_key
-
 mkdir -p /etc/update-motd.d
-
 cat << 'ASCIIART' > "/etc/update-motd.d/98-ascii-art"
 #!/bin/sh
 
@@ -43,9 +34,6 @@ Welcome to your gateway :-)
 
 For opening a performance monitor, enter:
 "glances"
-
-You may connect to the desktop host using:
-"ssh -p 2222 ubuntu@127.0.0.1"
 
 EOF
 MESSAGE

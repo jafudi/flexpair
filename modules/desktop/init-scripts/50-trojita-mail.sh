@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
-if [ ! -f /etc/.terraform-complete ]; then
-    echo "Terraform provisioning not yet complete, exiting"
-    exit 0
-fi
-
 # Configure mail account ###########################################
 
 # https://wiki.ubuntuusers.de/Trojita/
 
 DEBIAN_FRONTEND="noninteractive" apt-get -qq install --no-install-recommends trojita
 
-mkdir -p $MAILCONF/home/ubuntu/.config/flaska.net
-cat << EOF > /home/ubuntu/.config/flaska.net/trojita.conf
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/flaska.net"
+cat << EOF > /home/${DESKTOP_USERNAME}/.config/flaska.net/trojita.conf
 [General]
 app.updates.checkEnabled=false
 imap.auth.pass=${IMAP_PASSWORD}
@@ -68,11 +63,11 @@ revealVersions=true
 addressbook=abookaddressbook
 password=cleartextpassword
 EOF
-chown ubuntu /home/ubuntu/.config/flaska.net/trojita.conf
+chown "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}/.config/flaska.net/trojita.conf"
 
 # Deploy DevOps application ########################################
 
-#DESKTOP=/home/ubuntu/Desktop
+#DESKTOP=/home/${DESKTOP_USERNAME}/Desktop
 #mkdir -p $DESKTOP
 #cat << EOF > $DESKTOP/ideops.desktop
 #[Desktop Entry]
@@ -129,7 +124,6 @@ chown ubuntu /home/ubuntu/.config/flaska.net/trojita.conf
 #gitlab-runner restart
 #gitlab-runner status
 
-passwd -d ubuntu # for direct SSH access from guacd_container
+passwd -d "${DESKTOP_USERNAME}" # for direct SSH access from guacd_container
 
-chown -R ubuntu /home/ubuntu
-
+chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"

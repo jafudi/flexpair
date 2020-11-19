@@ -126,7 +126,7 @@ services:
     # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   imap:
-    image: jafudi/docker-imap-devel
+    image: antespi/docker-imap-devel
     container_name: imap_container
     networks:
       guacamole_net:
@@ -134,6 +134,7 @@ services:
     ports:
     - "25:25"
     - "143:143"
+    - "993:993"
     environment:
     - MAILNAME=${SSL_DOMAIN}
     - MAIL_ADDRESS=${EMAIL_ADDRESS}
