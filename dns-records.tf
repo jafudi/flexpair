@@ -10,7 +10,7 @@ provider "dns" {
 
 locals {
   // If longer than 15 characters, use the last 15.
-  deployment_label = strrev(substr(strrev(lower("${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}")), 0, 15))
+  deployment_label = lower("${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}")
 
   url = {
     proto_scheme      = "https://"
