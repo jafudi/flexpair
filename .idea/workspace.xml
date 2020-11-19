@@ -22,9 +22,6 @@
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dns-records.tf" beforeDir="false" afterPath="$PROJECT_DIR$/dns-records.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/cloud-init-data.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605823561032</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Bugfix">
+      <created>1605826093301</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605826093301</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,14 +233,15 @@
     <MESSAGE value="Fix typo" />
     <MESSAGE value="Carve out the composition of cloud-init config into separate module" />
     <MESSAGE value="Enforce a maximum char length of 15 for subdomain" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enforce a maximum char length of 15 for subdomain" />
+    <MESSAGE value="Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605823567648">
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605826101190">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605823567648" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605826101190" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605825802998">
       <screen x="1280" y="-79" width="1280" height="1024" />
