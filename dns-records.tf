@@ -24,7 +24,7 @@ locals {
 resource "dns_a_record_set" "gateway_hostname" {
   zone      = "${var.registered_domain}."
   name      = local.url.subdomain_label
-  addresses = [module.gateway.public_ip]
+  addresses = [module.gateway_machine.public_ip]
   ttl       = 60
 }
 
@@ -33,6 +33,6 @@ resource "time_sleep" "dns_propagation" {
   create_duration = "120s"
   triggers = {
     map_from = local.url.full_hostname
-    map_to   = module.gateway.public_ip
+    map_to   = module.gateway_machine.public_ip
   }
 }

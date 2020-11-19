@@ -20,7 +20,7 @@ resource "oci_core_instance" "gateway" {
   }
 
   metadata = {
-    user_data = base64gzip(local.unzipped_config)
+    user_data = var.encoded_userdata
   }
 
   agent_config {

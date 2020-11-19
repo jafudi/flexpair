@@ -20,7 +20,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   metadata = {
-    user_data           = base64gzip(local.unzipped_config)
+    user_data = var.encoded_userdata
     gitlab_runner_token = var.gitlab_runner_token
   }
 

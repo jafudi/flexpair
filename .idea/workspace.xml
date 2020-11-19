@@ -21,7 +21,81 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-records.tf" beforeDir="false" afterPath="$PROJECT_DIR$/dns-records.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/cloud-init-data.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/cloud-init-data.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/desktop-instance.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-subnet.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/desktop-subnet.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/01-welcome-message.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/01-welcome-message.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/02-disable-upgrades.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/02-disable-upgrades.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/03-sshd-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/03-sshd-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/11-add-privkey.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/11-add-privkey.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/15-install-packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/15-install-packages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/20-ssh-tunnel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/20-ssh-tunnel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/25-darkstat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/30-lubuntu-desktop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/30-lubuntu-desktop.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/35-desktop-sharing.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/35-desktop-sharing.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/40-pulseaudio-server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/40-pulseaudio-server.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/45-mumble-client.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/45-mumble-client.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/50-trojita-mail.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/50-trojita-mail.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/init-scripts/60-prevent-swapping.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/60-prevent-swapping.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/outputs.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/edu-games.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/edu-games.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/mindmap-notes.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/mindmap-notes.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/multiple-languages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/multiple-languages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/office-applications.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/office-applications.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/podcasts-and-videos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/podcasts-and-videos.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/resource-monitor.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/resource-monitor.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/ssh-remote-exec/texlive-and-kile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/texlive-and-kile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop/variables.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/cloud-init-data.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/gateway-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/gateway-instance.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/gateway-subnet.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/gateway-subnet.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/01-welcome-message.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/02-disable-upgrades.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/02-disable-upgrades.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/03-sshd-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/11-add-privkey.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/11-add-privkey.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/13-networking.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/13-networking.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/60-guacamole-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/60-guacamole-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/70-murmur-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/70-murmur-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/80-nginx-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/80-nginx-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/90-letsencrypt-certs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/90-letsencrypt-certs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/99-docker-compose.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/99-docker-compose.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/docker-compose.tpl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/docker-compose.tpl.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/init-scripts/gen-murmur-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/gen-murmur-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/outputs.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/.directory" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/.directory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/AdobeStock_104745476.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/AdobeStock_104745476.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/AdobeStock_232934010-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/AdobeStock_232934010-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/AdobeStock_74031703.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/AdobeStock_74031703.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/JF_avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/JF_avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/JF_lockscreen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/JF_lockscreen.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/Jane.png" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/Jane.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/Jon.png" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/Jon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/jafudi-avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/jafudi-avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/podcasts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/podcasts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/upload-directory/run_app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/upload-directory/run_app.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway/variables.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +105,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="custom-username" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,17 +122,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
+      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
-      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -217,5 +292,10 @@
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
+    <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605820699174">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1627" y="188" width="586" height="490" key="find.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605820631409" />
+    <state x="1627" y="188" width="586" height="548" key="find.popup/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605820699174" />
   </component>
 </project>

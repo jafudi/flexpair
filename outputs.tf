@@ -2,16 +2,12 @@ output "used_base_image" {
   value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
 }
 
-output "gateway_in_browser" {
-  value = module.gateway.access_url
-}
-
 locals {
   working_dir = "/Users/jens/PycharmProjects/traction"
 }
 
-output "ssh_into_desktop" {
-  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${var.desktop_username}@${module.desktop_1.public_ip}"
+output "ssh_into_desktop_1" {
+  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${var.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {
@@ -19,9 +15,13 @@ output "private_key" {
 }
 
 output "gateway_config_size" {
-  value = module.gateway.cloud_config_size
+  value = "${length(module.gateway_installer.unencoded_config)} zip to ${length(local.encoded_gateway_config)} / 16384 bytes maximum"
 }
 
 output "desktop_config_size" {
-  value = module.desktop_1.cloud_config_size
+  value = "${length(module.desktop_installer.unencoded_config)} zip to ${length(local.encoded_desktop_config)} / 16384 bytes maximum"
+}
+
+output "access_url" {
+  value = "${local.url.proto_scheme}${local.url.full_hostname}/?password=${local.murmur_config.password}"
 }

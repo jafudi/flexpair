@@ -11,9 +11,9 @@ resource "null_resource" "health_check" {
   }
 
   depends_on = [
-    module.gateway,
+    module.gateway_machine,
     time_sleep.dns_propagation,
-    module.desktop_1
+    module.desktop_machine_1
   ]
 
   # Check HTTPS endpoint and first-level links availability

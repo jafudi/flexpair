@@ -1,16 +1,6 @@
-module "gateway" {
-  source = "./modules/gateway"
-  depends_on = [
-    # Continue only after certificate was successfully issued
-    acme_certificate.letsencrypt_certificate
-  ]
-  compartment    = oci_identity_compartment.one_per_subdomain
-  location_info  = local.location_info
-  network_config = local.network_config
-  vm_specs = {
-    compute_shape   = var.gateway_shape
-    source_image_id = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
-  }
+module "gateway_installer" {
+  source                 = "./modules/gateway_userdata_cloudinit"
+  location_info          = local.location_info
   vm_mutual_keypair      = tls_private_key.vm_mutual_key
   gateway_username       = var.gateway_username
   desktop_username       = var.desktop_username
@@ -21,16 +11,51 @@ module "gateway" {
   docker_compose_release = local.docker_compose_release
 }
 
+locals {
+  encoded_gateway_config = base64gzip(module.gateway_installer.unencoded_config)
+}
+
+module "gateway_machine" {
+  source         = "./modules/gateway_infrastructure_oci"
+  compartment    = oci_identity_compartment.one_per_subdomain
+  location_info  = local.location_info
+  network_config = local.network_config
+  vm_specs = {
+    compute_shape   = var.gateway_shape
+    source_image_id = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
+  }
+  gateway_username  = var.gateway_username
+  murmur_config     = local.murmur_config
+  email_config      = local.email_config
+  encoded_userdata  = local.encoded_gateway_config
+  vm_mutual_keypair = tls_private_key.vm_mutual_key
+}
+
 resource "tls_private_key" "vm_mutual_key" {
   algorithm   = "ECDSA"
   ecdsa_curve = "P521"
 }
 
-module "desktop_1" {
-  source = "./modules/desktop"
+module "desktop_installer" {
+  source            = "./modules/desktop_userdata_cloudinit"
+  location_info     = local.location_info
+  vm_mutual_keypair = tls_private_key.vm_mutual_key
+  gateway_username  = var.gateway_username
+  desktop_username  = var.desktop_username
+  murmur_config     = local.murmur_config
+  url               = local.url
+  email_config      = local.email_config
+}
+
+locals {
+  encoded_desktop_config = base64gzip(module.desktop_installer.unencoded_config)
+}
+
+module "desktop_machine_1" {
+  source = "./modules/desktop_infrastructure_oci"
   depends_on = [
-    # Continue only after certificate was successfully issued
-    acme_certificate.letsencrypt_certificate
+    # Desktop without gateway would be of little use
+    module.gateway_installer
   ]
   compartment    = oci_identity_compartment.one_per_subdomain
   location_info  = local.location_info
@@ -39,11 +64,10 @@ module "desktop_1" {
     compute_shape   = var.desktop_shape
     source_image_id = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
   }
-  vm_mutual_keypair   = tls_private_key.vm_mutual_key
-  gateway_username    = var.gateway_username
   desktop_username    = var.desktop_username
   murmur_config       = local.murmur_config
   email_config        = local.email_config
-  url                 = local.url
+  encoded_userdata    = local.encoded_desktop_config
+  vm_mutual_keypair   = tls_private_key.vm_mutual_key
   gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
 }
