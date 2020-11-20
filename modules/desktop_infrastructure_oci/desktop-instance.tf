@@ -41,7 +41,7 @@ resource "oci_core_instance" "desktop" {
     inline = [
       "cat /var/log/cloud-init-output.log",
       "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'",
-      "while true; do echo 'Waiting for reboot...'; sleep 5; done"
+      "sleep 1000"
     ]
     on_failure = continue
   }
