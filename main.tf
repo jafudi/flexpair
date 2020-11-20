@@ -25,14 +25,24 @@ locals {
   encoded_gateway_config = base64gzip(module.gateway_installer.unencoded_config)
 }
 
+module "oracle_infrastructure" {
+  source                     = "./modules/shared_infrastructure_oci"
+  tenancy_ocid               = var.tenancy_ocid
+  user_ocid                  = var.user_ocid
+  region                     = var.region
+  availibility_domain_number = var.free_tier_available_in
+  compartment_name           = module.certified_hostname.subdomain_label
+  deployment_tags            = local.deployment_tags
+}
+
 module "gateway_machine" {
   source         = "./modules/gateway_infrastructure_oci"
-  compartment    = oci_identity_compartment.one_per_subdomain
+  compartment    = module.oracle_infrastructure.compartment
   location_info  = local.location_info
-  network_config = local.network_config
+  network_config = module.oracle_infrastructure.network_config
   vm_specs = {
     compute_shape   = var.gateway_shape
-    source_image_id = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
+    source_image_id = module.oracle_infrastructure.source_image.id
   }
   gateway_username  = var.gateway_username
   murmur_config     = local.murmur_config
@@ -67,12 +77,12 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  compartment    = oci_identity_compartment.one_per_subdomain
+  compartment    = module.oracle_infrastructure.compartment
   location_info  = local.location_info
-  network_config = local.network_config
+  network_config = module.oracle_infrastructure.network_config
   vm_specs = {
     compute_shape   = var.desktop_shape
-    source_image_id = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
+    source_image_id = module.oracle_infrastructure.source_image.id
   }
   desktop_username    = var.desktop_username
   murmur_config       = local.murmur_config

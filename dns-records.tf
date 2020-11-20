@@ -1,13 +1,3 @@
-# Configure the DNS Provider
-provider "dns" {
-  update {
-    server        = var.rfc2136_name_server
-    key_name      = var.rfc2136_key_name
-    key_algorithm = var.rfc2136_tsig_algorithm
-    key_secret    = var.rfc2136_key_secret
-  }
-}
-
 # Create a DNS A record set
 resource "dns_a_record_set" "gateway_hostname" {
   zone      = "${var.registered_domain}."

@@ -1,5 +1,5 @@
 output "used_base_image" {
-  value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
+  value = module.oracle_infrastructure.source_image.display_name
 }
 
 locals {

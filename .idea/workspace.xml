@@ -19,7 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/locals.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio-config.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-records.tf" beforeDir="false" afterPath="$PROJECT_DIR$/dns-records.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email-config.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network-config.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oci-datacenter.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/providers.tf" beforeDir="false" afterPath="$PROJECT_DIR$/providers.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605833663785</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Centralize provider configs">
+      <created>1605833969112</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1605833969112</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,14 +284,15 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Make sure that subdomain contains only valid characters" />
     <MESSAGE value="Separate module for certificate creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Separate module for certificate creation" />
+    <MESSAGE value="Centralize provider configs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Centralize provider configs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605828347077">
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605834002101">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605828347077" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605834002101" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605833382228">
       <screen x="1280" y="-79" width="1280" height="1024" />
