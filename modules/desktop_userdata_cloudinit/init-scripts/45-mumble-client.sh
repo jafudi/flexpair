@@ -85,7 +85,7 @@ GenericName[fr]=Chat vocal
 Comment=A low-latency, high quality voice chat program for gaming
 Comment[de]=Ein Sprachkonferenzprogramm mit niedriger Latenz und hoher Qualitaet fuer Spiele
 Comment[fr]=Un logiciel de chat vocal de haute qualite et de faible latence pour les jeux
-Exec=mumble mumble://${DESKTOP_USERNAME}:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Icon=mumble
 Terminal=false
 Type=Application
@@ -100,7 +100,7 @@ mkdir -p "/home/${DESKTOP_USERNAME}/.config/autostart"
 cat << EOF > "/home/${DESKTOP_USERNAME}/.config/autostart/mumble.desktop"
 [Desktop Entry]
 Name=Mumble
-Exec=mumble mumble://${DESKTOP_USERNAME}:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
+Exec=mumble mumble://Desktop:${MURMUR_PASSWORD}@${SSL_DOMAIN}:${MURMUR_PORT}
 Terminal=false
 Type=Application
 StartupNotify=false

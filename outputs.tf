@@ -7,7 +7,7 @@ locals {
 }
 
 output "ssh_into_desktop_1" {
-  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${var.desktop_username}@${module.desktop_machine_1.public_ip}"
+  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${local.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {
