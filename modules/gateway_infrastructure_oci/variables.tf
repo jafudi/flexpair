@@ -58,4 +58,8 @@ variable "gateway_username" {
 
 variable "encoded_userdata" {
   type = string
+  validation {
+    condition     = length(var.encoded_userdata) < 32000
+    error_message = "Oracle Cloud limits userdata to 32000 bytes."
+  }
 }

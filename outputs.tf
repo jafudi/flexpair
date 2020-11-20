@@ -15,11 +15,11 @@ output "private_key" {
 }
 
 output "gateway_config_size" {
-  value = "${local.unzipped_gateway_bytes} zip to ${local.zipped_gateway_bytes} / 16384 bytes maximum BEFORE base64 encoding"
+  value = "${local.unzipped_gateway_bytes} base64gzip to ${length(local.encoded_gateway_config)} / 16384 bytes maximum"
 }
 
 output "desktop_config_size" {
-  value = "${local.unzipped_desktop_bytes} zip to ${local.zipped_desktop_bytes} / 16384 bytes maximum BEFORE base64 encoding"
+  value = "${local.unzipped_desktop_bytes} base64gzip to ${length(local.encoded_desktop_config)} / 16384 bytes maximum"
 }
 
 output "access_url" {

@@ -41,9 +41,7 @@ module "gateway_installer" {
 
 locals {
   unzipped_gateway_bytes = length(module.gateway_installer.unzipped_config)
-  zipped_gateway_bytes   = length(base64decode(local.encoded_gateway_config))
   encoded_gateway_config = base64gzip(module.gateway_installer.unzipped_config)
-
 
   deployment_tags = {
     terraform_run_id = var.TFC_RUN_ID
@@ -115,7 +113,6 @@ module "desktop_installer" {
 
 locals {
   unzipped_desktop_bytes = length(module.desktop_installer.unzipped_config)
-  zipped_desktop_bytes   = length(base64decode(local.encoded_desktop_config))
   encoded_desktop_config = base64gzip(module.desktop_installer.unzipped_config)
 }
 
