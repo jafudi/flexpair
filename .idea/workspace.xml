@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/01-welcome-message.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/01-welcome-message.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/15-install-packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/15-install-packages.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605876824108</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Racing condition with reboot">
+      <created>1605879023000</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1605879023000</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -280,14 +288,15 @@
     <MESSAGE value="Separate module for certificate creation" />
     <MESSAGE value="Centralize provider configs" />
     <MESSAGE value="Factor out shared infrastructure into separate module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Factor out shared infrastructure into separate module" />
+    <MESSAGE value="Racing condition with reboot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Racing condition with reboot" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605876839856">
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605879030822">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605876839856" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605879030822" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605833382228">
       <screen x="1280" y="-79" width="1280" height="1024" />
