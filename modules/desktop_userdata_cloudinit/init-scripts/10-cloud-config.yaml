@@ -46,7 +46,6 @@ locale: "${DESKTOP_LOCALE}"
 #   Module: set-passwords
 #   Module: apt-pipelining
 #   Module: apt-configure
-#   Module: ntp
 #   Module: timezone
 timezone: "${DESKTOP_TIMEZONE}"
 #   Module: disable-ec2-metadata

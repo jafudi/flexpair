@@ -33,7 +33,6 @@ locale: "${GATEWAY_LOCALE}"
 #   Module: set-passwords
 #   Module: apt-pipelining
 #   Module: apt-configure
-#   Module: ntp
 #   Module: timezone
 timezone: "${GATEWAY_TIMEZONE}"
 #   Module: disable-ec2-metadata
