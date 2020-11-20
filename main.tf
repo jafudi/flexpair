@@ -8,10 +8,28 @@ module "certified_hostname" {
   rfc2136_tsig_algorithm = var.rfc2136_tsig_algorithm
 }
 
+module "shared_secrets" {
+  source = "./modules/shared_secrets"
+}
+
+locals {
+  email_config = {
+    address   = "${var.desktop_username}@${module.certified_hostname.full_hostname}"
+    password  = module.shared_secrets.imap_password
+    imap_port = 143
+    smtp_port = 25
+  }
+
+  murmur_config = {
+    port     = 53123 // must be less than or equal to 65535
+    password = module.shared_secrets.murmur_password
+  }
+}
+
 module "gateway_installer" {
   source                 = "./modules/gateway_userdata_cloudinit"
   location_info          = local.location_info
-  vm_mutual_keypair      = tls_private_key.vm_mutual_key
+  vm_mutual_keypair      = module.shared_secrets.vm_mutual_key
   gateway_username       = var.gateway_username
   desktop_username       = var.desktop_username
   ssl_certificate        = module.certified_hostname.certificate
@@ -23,6 +41,11 @@ module "gateway_installer" {
 
 locals {
   encoded_gateway_config = base64gzip(module.gateway_installer.unencoded_config)
+
+  deployment_tags = {
+    terraform_run_id = var.TFC_RUN_ID
+    git_commit_hash  = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
+  }
 }
 
 module "oracle_infrastructure" {
@@ -33,6 +56,15 @@ module "oracle_infrastructure" {
   availibility_domain_number = var.free_tier_available_in
   compartment_name           = module.certified_hostname.subdomain_label
   deployment_tags            = local.deployment_tags
+}
+
+locals {
+  location_info = {
+    cloud_region     = var.region
+    data_center_name = module.oracle_infrastructure.availability_domain_name
+    timezone_name    = var.timezone
+    locale_settings  = var.locale
+  }
 }
 
 module "gateway_machine" {
@@ -48,18 +80,29 @@ module "gateway_machine" {
   murmur_config     = local.murmur_config
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
-  vm_mutual_keypair = tls_private_key.vm_mutual_key
+  vm_mutual_keypair = module.shared_secrets.vm_mutual_key
 }
 
-resource "tls_private_key" "vm_mutual_key" {
-  algorithm   = "ECDSA"
-  ecdsa_curve = "P521"
+resource "dns_a_record_set" "gateway_hostname" {
+  zone      = "${var.registered_domain}."
+  name      = module.certified_hostname.subdomain_label
+  addresses = [module.gateway_machine.public_ip]
+  ttl       = 60
+}
+
+resource "time_sleep" "dns_propagation" {
+  depends_on      = [dns_a_record_set.gateway_hostname]
+  create_duration = "120s"
+  triggers = {
+    map_from = module.certified_hostname.full_hostname
+    map_to   = module.gateway_machine.public_ip
+  }
 }
 
 module "desktop_installer" {
   source               = "./modules/desktop_userdata_cloudinit"
   location_info        = local.location_info
-  vm_mutual_keypair    = tls_private_key.vm_mutual_key
+  vm_mutual_keypair    = module.shared_secrets.vm_mutual_key
   gateway_username     = var.gateway_username
   desktop_username     = var.desktop_username
   murmur_config        = local.murmur_config
@@ -88,6 +131,31 @@ module "desktop_machine_1" {
   murmur_config       = local.murmur_config
   email_config        = local.email_config
   encoded_userdata    = local.encoded_desktop_config
-  vm_mutual_keypair   = tls_private_key.vm_mutual_key
+  vm_mutual_keypair   = module.shared_secrets.vm_mutual_key
   gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
+}
+
+resource "null_resource" "health_check" {
+
+  for_each = toset([
+    "/",
+    "/guacamole/",
+    "/desktop-traffic/"
+  ])
+
+  triggers = {
+    on_every_apply = timestamp()
+  }
+
+  depends_on = [
+    module.gateway_machine,
+    time_sleep.dns_propagation,
+    module.desktop_machine_1
+  ]
+
+  # Check HTTPS endpoint and first-level links availability
+  provisioner "local-exec" {
+    interpreter = ["/bin/bash", "-c"]
+    command     = "wget --tries=30 --spider --recursive --level 1 https://${module.certified_hostname.full_hostname}${each.key};"
+  }
 }

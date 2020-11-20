@@ -11,7 +11,7 @@ output "ssh_into_desktop_1" {
 }
 
 output "private_key" {
-  value = tls_private_key.vm_mutual_key.private_key_pem
+  value = module.shared_secrets.vm_mutual_key.private_key_pem
 }
 
 output "gateway_config_size" {
