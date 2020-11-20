@@ -3,7 +3,7 @@ resource "random_string" "murmur_password" {
   special = false // may lead to quoting issues otherwise
   keepers = {
     # Generate a new password each time we change the web address
-    user_facing_web_address = local.url.full_hostname
+    user_facing_web_address = module.certified_hostname.full_hostname
   }
 }
 

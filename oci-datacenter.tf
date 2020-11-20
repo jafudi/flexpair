@@ -14,7 +14,7 @@ data "oci_identity_tenancy" "te" {
 resource "oci_identity_compartment" "one_per_subdomain" {
   compartment_id = var.tenancy_ocid
   description    = "Setting compartment label equal to subdomain label"
-  name           = local.url.subdomain_label
+  name           = module.certified_hostname.subdomain_label
   freeform_tags  = local.compartment_tags
 }
 

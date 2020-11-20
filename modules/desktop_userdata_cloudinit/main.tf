@@ -18,7 +18,7 @@ data "template_cloudinit_config" "desktop_config" {
   part {
     content_type = "text/cloud-config"
     content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
-      SSL_DOMAIN       = var.url.full_hostname
+      SSL_DOMAIN       = var.gateway_dns_hostname
       DESKTOP_TIMEZONE = var.location_info.timezone_name
       DESKTOP_LOCALE   = var.location_info.locale_settings
       DESKTOP_USERNAME = var.desktop_username
@@ -40,7 +40,7 @@ data "template_cloudinit_config" "desktop_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/20-ssh-tunnel.sh", {
-      SSL_DOMAIN        = var.url.full_hostname
+      SSL_DOMAIN        = var.gateway_dns_hostname
       MURMUR_PORT       = var.murmur_config.port
       DESKTOP_USERNAME = var.desktop_username
       GATEWAY_USERNAME = var.gateway_username
@@ -77,7 +77,7 @@ data "template_cloudinit_config" "desktop_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/45-mumble-client.sh", {
-      SSL_DOMAIN        = var.url.full_hostname
+      SSL_DOMAIN        = var.gateway_dns_hostname
       MURMUR_PORT       = var.murmur_config.port
       MURMUR_PASSWORD   = var.murmur_config.password
       DESKTOP_USERNAME = var.desktop_username
@@ -86,7 +86,6 @@ data "template_cloudinit_config" "desktop_config" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/50-trojita-mail.sh", {
-      SUB_DOMAIN_PREFIX = var.url.subdomain_label
       EMAIL_ADDRESS     = var.email_config.address
       IMAP_PASSWORD     = var.email_config.password
       DESKTOP_USERNAME = var.desktop_username

@@ -1,12 +1,22 @@
+module "certified_hostname" {
+  source                 = "./modules/certified_dns_hostname"
+  registered_domain      = var.registered_domain
+  subdomain_proposition  = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
+  rfc2136_name_server    = var.rfc2136_name_server
+  rfc2136_key_name       = var.rfc2136_key_name
+  rfc2136_key_secret     = var.rfc2136_key_secret
+  rfc2136_tsig_algorithm = var.rfc2136_tsig_algorithm
+}
+
 module "gateway_installer" {
   source                 = "./modules/gateway_userdata_cloudinit"
   location_info          = local.location_info
   vm_mutual_keypair      = tls_private_key.vm_mutual_key
   gateway_username       = var.gateway_username
   desktop_username       = var.desktop_username
-  ssl_certificate        = acme_certificate.letsencrypt_certificate
+  ssl_certificate        = module.certified_hostname.certificate
   murmur_config          = local.murmur_config
-  url                    = local.url
+  gateway_dns_hostname   = module.certified_hostname.full_hostname
   email_config           = local.email_config
   docker_compose_release = local.docker_compose_release
 }
@@ -37,14 +47,14 @@ resource "tls_private_key" "vm_mutual_key" {
 }
 
 module "desktop_installer" {
-  source            = "./modules/desktop_userdata_cloudinit"
-  location_info     = local.location_info
-  vm_mutual_keypair = tls_private_key.vm_mutual_key
-  gateway_username  = var.gateway_username
-  desktop_username  = var.desktop_username
-  murmur_config     = local.murmur_config
-  url               = local.url
-  email_config      = local.email_config
+  source               = "./modules/desktop_userdata_cloudinit"
+  location_info        = local.location_info
+  vm_mutual_keypair    = tls_private_key.vm_mutual_key
+  gateway_username     = var.gateway_username
+  desktop_username     = var.desktop_username
+  murmur_config        = local.murmur_config
+  gateway_dns_hostname = module.certified_hostname.full_hostname
+  email_config         = local.email_config
 }
 
 locals {

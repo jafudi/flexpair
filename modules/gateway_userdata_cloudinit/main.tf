@@ -1,9 +1,9 @@
 data "template_file" "docker_compose_config" {
   template = file("${path.module}/init-scripts/docker-compose.tpl.yml")
   vars = {
-    SSL_DOMAIN    = var.url.full_hostname
+    SSL_DOMAIN    = var.gateway_dns_hostname
     EMAIL_ADDRESS = var.email_config.address
-    IMAP_HOST     = var.url.full_hostname
+    IMAP_HOST     = var.gateway_dns_hostname
     IMAP_PASSWORD = var.email_config.password
     MURMUR_PORT   = var.murmur_config.port
   }
@@ -71,7 +71,7 @@ data "template_cloudinit_config" "gateway_config" {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/70-murmur-config.sh", {
       MURMUR_CONFIG   = local.murmur_config_folder
-      SSL_DOMAIN      = var.url.full_hostname
+      SSL_DOMAIN      = var.gateway_dns_hostname
       MURMUR_PORT     = var.murmur_config.port
       MURMUR_PASSWORD = var.murmur_config.password
     })

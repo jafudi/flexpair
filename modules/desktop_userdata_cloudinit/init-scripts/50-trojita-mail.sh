@@ -52,7 +52,6 @@ startMinimized=false
 [identities]
 1\address=${EMAIL_ADDRESS}
 1\organisation=
-1\realName=${SUB_DOMAIN_PREFIX}
 1\signature=
 size=1
 

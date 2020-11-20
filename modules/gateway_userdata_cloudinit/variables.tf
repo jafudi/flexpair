@@ -17,14 +17,8 @@ variable "docker_compose_release" {
   type = string
 }
 
-variable "url" {
-    type = object({
-    proto_scheme      = string
-    subdomain_label   = string
-    registered_domain = string
-    toplevel_domain   = string
-    full_hostname     = string
-  })
+variable "gateway_dns_hostname" {
+    type = string
 }
 
 variable "gateway_username" {

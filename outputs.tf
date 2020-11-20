@@ -23,5 +23,5 @@ output "desktop_config_size" {
 }
 
 output "access_url" {
-  value = "${local.url.proto_scheme}${local.url.full_hostname}/?password=${local.murmur_config.password}"
+  value = "https://${module.certified_hostname.full_hostname}/?password=${local.murmur_config.password}"
 }

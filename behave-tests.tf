@@ -19,6 +19,6 @@ resource "null_resource" "health_check" {
   # Check HTTPS endpoint and first-level links availability
   provisioner "local-exec" {
     interpreter = ["/bin/bash", "-c"]
-    command     = "wget --tries=30 --spider --recursive --level 1 https://${local.url.full_hostname}${each.key};"
+    command     = "wget --tries=30 --spider --recursive --level 1 https://${module.certified_hostname.full_hostname}${each.key};"
   }
 }
