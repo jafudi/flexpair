@@ -30,7 +30,7 @@ cat << 'MESSAGE' > "/etc/update-motd.d/99-message"
 
 cat <<'EOF'
 
-Welcome to your gateway :-)
+Welcome!
 
 For opening a performance monitor, enter:
 "glances"

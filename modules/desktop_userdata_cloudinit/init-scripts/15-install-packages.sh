@@ -12,7 +12,6 @@ apt-get -qq update > /dev/null
 
 apt-get -qq install \
 less nano \
-locales \
 glances \
 build-essential \
 sshfs

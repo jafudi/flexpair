@@ -1,5 +1,9 @@
-provider "acme" {
-  server_url = "https://acme-v02.api.letsencrypt.org/directory"
+locals {
+  valid_subdomain = lower(replace(var.subdomain_proposition,"/[_\\W]/","-"))
+
+  full_hostname     = "${local.valid_subdomain}.${var.registered_domain}"
+
+  email_address = "mail@${local.full_hostname}"
 }
 
 resource "tls_private_key" "acme_private_key" {
@@ -8,12 +12,12 @@ resource "tls_private_key" "acme_private_key" {
 
 resource "acme_registration" "letsencrypt_reg" {
   account_key_pem = tls_private_key.acme_private_key.private_key_pem
-  email_address   = local.email_config.address
+  email_address   = local.email_address
 }
 
 resource "acme_certificate" "letsencrypt_certificate" {
   account_key_pem = acme_registration.letsencrypt_reg.account_key_pem
-  common_name     = local.url.full_hostname
+  common_name     = local.full_hostname
   key_type        = 4096
 
   dns_challenge {

@@ -20,7 +20,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   metadata = {
-    user_data           = base64gzip(local.unzipped_config)
+    user_data = var.encoded_userdata
     gitlab_runner_token = var.gitlab_runner_token
   }
 
@@ -41,9 +41,12 @@ resource "oci_core_instance" "desktop" {
     inline = [
       "cat /var/log/cloud-init-output.log",
       "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'",
-      "while true; do echo 'Waiting for reboot...'; sleep 5; done"
     ]
     on_failure = continue
+  }
+
+  provisioner "local-exec" {
+    command = "sleep 60"
   }
 
   provisioner "remote-exec" {

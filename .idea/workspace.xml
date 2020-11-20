@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop/desktop-instance.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/45-mumble-client.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/45-mumble-client.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="custom-username" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,20 +48,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/certified_dns_hostname" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
+      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/certified_dns_hostname" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
-      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -182,7 +186,126 @@
       <option name="project" value="LOCAL" />
       <updated>1605741824471</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Carve out the composition of cloud-init config into separate module">
+      <created>1605822108427</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1605822108427</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Enforce a maximum char length of 15 for subdomain">
+      <created>1605823561032</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605823561032</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Bugfix">
+      <created>1605826093301</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605826093301</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Make sure that subdomain contains only valid characters">
+      <created>1605827688645</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1605827688645</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Make sure that subdomain contains only valid characters">
+      <created>1605827967194</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1605827967194</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Make sure that subdomain contains only valid characters">
+      <created>1605828341682</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1605828341682</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Separate module for certificate creation">
+      <created>1605833663785</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1605833663785</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Centralize provider configs">
+      <created>1605833969112</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1605833969112</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Factor out shared infrastructure into separate module">
+      <created>1605876824108</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1605876824108</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Racing condition with reboot">
+      <created>1605879023000</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1605879023000</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Try to set locales via cloud-config">
+      <created>1605880350895</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1605880350895</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Retry">
+      <created>1605894555463</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1605894555463</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Create shared_secrets module">
+      <created>1605905322415</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1605905322415</updated>
+    </task>
+    <task id="LOCAL-00030" summary="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after">
+      <created>1605907455756</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1605907455756</updated>
+    </task>
+    <task id="LOCAL-00031" summary="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after">
+      <created>1605909088800</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1605909088800</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Bugfix">
+      <created>1605909106035</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1605909106035</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Set usernames equal to tenancy name on both nodes">
+      <created>1605910573466</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1605910573466</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,13 +332,37 @@
     <MESSAGE value="until systemctl is-active --quiet darkstat sleep" />
     <MESSAGE value="Try a bit longer for darkstat to react" />
     <MESSAGE value="Fix typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix typo" />
+    <MESSAGE value="Carve out the composition of cloud-init config into separate module" />
+    <MESSAGE value="Enforce a maximum char length of 15 for subdomain" />
+    <MESSAGE value="Make sure that subdomain contains only valid characters" />
+    <MESSAGE value="Separate module for certificate creation" />
+    <MESSAGE value="Centralize provider configs" />
+    <MESSAGE value="Factor out shared infrastructure into separate module" />
+    <MESSAGE value="Racing condition with reboot" />
+    <MESSAGE value="Try to set locales via cloud-config" />
+    <MESSAGE value="Retry" />
+    <MESSAGE value="Create shared_secrets module" />
+    <MESSAGE value="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after" />
+    <MESSAGE value="Bugfix" />
+    <MESSAGE value="Set usernames equal to tenancy name on both nodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set usernames equal to tenancy name on both nodes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1605741833454">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605904069383" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605910581791">
+      <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605731149010" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605909113899" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605880362504" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605910581791" />
+    <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605905205931">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1627" y="188" width="586" height="548" key="find.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605905205931" />
+    <state x="1627" y="188" width="586" height="548" key="find.popup/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605820699174" />
   </component>
 </project>

@@ -11,4 +11,4 @@
 /.ssh/
 /.oci/
 /.terraform/
-/.ssh/
+/.idea/*
