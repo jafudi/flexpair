@@ -15,11 +15,11 @@ output "private_key" {
 }
 
 output "gateway_config_size" {
-  value = "${length(module.gateway_installer.unencoded_config)} zip to ${length(local.encoded_gateway_config)} / 16384 bytes maximum"
+  value = "${local.unzipped_gateway_bytes} zip to ${local.zipped_gateway_bytes} / 16384 bytes maximum BEFORE base64 encoding"
 }
 
 output "desktop_config_size" {
-  value = "${length(module.desktop_installer.unencoded_config)} zip to ${length(local.encoded_desktop_config)} / 16384 bytes maximum"
+  value = "${local.unzipped_desktop_bytes} zip to ${local.zipped_desktop_bytes} / 16384 bytes maximum BEFORE base64 encoding"
 }
 
 output "access_url" {
