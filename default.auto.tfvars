@@ -12,5 +12,3 @@ locale   = "de_DE.UTF-8"
 gateway_shape = "VM.Standard.E2.1"
 desktop_shape = "VM.Standard.E2.1"
 
-gateway_username = "gateway_user"
-desktop_username = "desktop_user"

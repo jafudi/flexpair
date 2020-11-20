@@ -41,9 +41,12 @@ resource "oci_core_instance" "desktop" {
     inline = [
       "cat /var/log/cloud-init-output.log",
       "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'",
-      "sleep 1000"
     ]
     on_failure = continue
+  }
+
+  provisioner "local-exec" {
+    command = "sleep 60"
   }
 
   provisioner "remote-exec" {

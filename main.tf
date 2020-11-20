@@ -8,41 +8,7 @@ module "certified_hostname" {
   rfc2136_tsig_algorithm = var.rfc2136_tsig_algorithm
 }
 
-module "shared_secrets" {
-  source = "./modules/shared_secrets"
-}
-
 locals {
-  email_config = {
-    address   = "${var.desktop_username}@${module.certified_hostname.full_hostname}"
-    password  = module.shared_secrets.imap_password
-    imap_port = 143
-    smtp_port = 25
-  }
-
-  murmur_config = {
-    port     = 53123 // must be less than or equal to 65535
-    password = module.shared_secrets.murmur_password
-  }
-}
-
-module "gateway_installer" {
-  source                 = "./modules/gateway_userdata_cloudinit"
-  location_info          = local.location_info
-  vm_mutual_keypair      = module.shared_secrets.vm_mutual_key
-  gateway_username       = var.gateway_username
-  desktop_username       = var.desktop_username
-  ssl_certificate        = module.certified_hostname.certificate
-  murmur_config          = local.murmur_config
-  gateway_dns_hostname   = module.certified_hostname.full_hostname
-  email_config           = local.email_config
-  docker_compose_release = local.docker_compose_release
-}
-
-locals {
-  unzipped_gateway_bytes = length(module.gateway_installer.unzipped_config)
-  encoded_gateway_config = base64gzip(module.gateway_installer.unzipped_config)
-
   deployment_tags = {
     terraform_run_id = var.TFC_RUN_ID
     git_commit_hash  = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
@@ -66,6 +32,45 @@ locals {
     timezone_name    = var.timezone
     locale_settings  = var.locale
   }
+
+  gateway_username = module.oracle_infrastructure.tenancy_name
+  desktop_username = module.oracle_infrastructure.tenancy_name
+}
+
+module "shared_secrets" {
+  source = "./modules/shared_secrets"
+}
+
+locals {
+  email_config = {
+    address   = "${local.desktop_username}@${module.certified_hostname.full_hostname}"
+    password  = module.shared_secrets.imap_password
+    imap_port = 143
+    smtp_port = 25
+  }
+
+  murmur_config = {
+    port     = 53123 // must be less than or equal to 65535
+    password = module.shared_secrets.murmur_password
+  }
+}
+
+module "gateway_installer" {
+  source                 = "./modules/gateway_userdata_cloudinit"
+  location_info          = local.location_info
+  vm_mutual_keypair      = module.shared_secrets.vm_mutual_key
+  gateway_username       = local.gateway_username
+  desktop_username       = local.desktop_username
+  ssl_certificate        = module.certified_hostname.certificate
+  murmur_config          = local.murmur_config
+  gateway_dns_hostname   = module.certified_hostname.full_hostname
+  email_config           = local.email_config
+  docker_compose_release = local.docker_compose_release
+}
+
+locals {
+  unzipped_gateway_bytes = length(module.gateway_installer.unzipped_config)
+  encoded_gateway_config = base64gzip(module.gateway_installer.unzipped_config)
 }
 
 module "gateway_machine" {
@@ -77,7 +82,7 @@ module "gateway_machine" {
     compute_shape   = var.gateway_shape
     source_image_id = module.oracle_infrastructure.source_image.id
   }
-  gateway_username  = var.gateway_username
+  gateway_username  = local.gateway_username
   murmur_config     = local.murmur_config
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
@@ -104,8 +109,8 @@ module "desktop_installer" {
   source               = "./modules/desktop_userdata_cloudinit"
   location_info        = local.location_info
   vm_mutual_keypair    = module.shared_secrets.vm_mutual_key
-  gateway_username     = var.gateway_username
-  desktop_username     = var.desktop_username
+  gateway_username     = local.gateway_username
+  desktop_username     = local.desktop_username
   murmur_config        = local.murmur_config
   gateway_dns_hostname = module.certified_hostname.full_hostname
   email_config         = local.email_config
@@ -129,7 +134,7 @@ module "desktop_machine_1" {
     compute_shape   = var.desktop_shape
     source_image_id = module.oracle_infrastructure.source_image.id
   }
-  desktop_username    = var.desktop_username
+  desktop_username    = local.desktop_username
   murmur_config       = local.murmur_config
   email_config        = local.email_config
   encoded_userdata    = local.encoded_desktop_config
