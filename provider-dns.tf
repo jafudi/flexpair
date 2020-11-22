@@ -1,3 +1,5 @@
+// https://registry.terraform.io/providers/hashicorp/dns/latest/docs
+
 provider "dns" {
   update {
     server        = var.rfc2136_name_server

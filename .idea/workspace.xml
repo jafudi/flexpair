@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/provider-aws.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider-dns.tf" beforeDir="false" afterPath="$PROJECT_DIR$/provider-dns.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider-oci.tf" beforeDir="false" afterPath="$PROJECT_DIR$/provider-oci.tf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -334,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606061870922</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Extend gitignore">
+      <created>1606062054127</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606062054127</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,7 +362,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Put content of script that won't get executed into previous script for debugging" />
     <MESSAGE value="Use paid account" />
     <MESSAGE value="Try free instances until paid account is unlocked" />
     <MESSAGE value="Use paid instances" />
@@ -375,7 +386,8 @@
     <MESSAGE value="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified" />
     <MESSAGE value="Add some syntactic sugar before tackling AWS configuration" />
     <MESSAGE value="Bugfix Mumble URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix Mumble URL" />
+    <MESSAGE value="Extend gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extend gitignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">

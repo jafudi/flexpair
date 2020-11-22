@@ -1,3 +1,5 @@
+// https://registry.terraform.io/providers/hashicorp/oci/latest/docs
+
 provider "oci" {
   region               = var.oci_region
   tenancy_ocid         = var.oci_tenancy_ocid
