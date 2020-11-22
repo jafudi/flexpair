@@ -19,7 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/desktop-instance.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/desktop-subnet.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/edu-games.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/edu-games.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/mindmap-notes.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/mindmap-notes.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/multiple-languages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/multiple-languages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/office-applications.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/office-applications.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/podcasts-and-videos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/podcasts-and-videos.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/resource-monitor.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/resource-monitor.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/ssh-remote-exec/texlive-and-kile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/texlive-and-kile.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/gateway-instance.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/gateway-subnet.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,9 +65,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
-      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
     </key>
@@ -356,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606083529670</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill.">
+      <created>1606083683151</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1606083683151</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +398,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Use paid instances" />
     <MESSAGE value="Debugging" />
     <MESSAGE value="until systemctl is-active --quiet darkstat sleep" />
     <MESSAGE value="Try a bit longer for darkstat to react" />
@@ -397,7 +422,8 @@
     <MESSAGE value="Extend gitignore" />
     <MESSAGE value="Create first AWS instance" />
     <MESSAGE value="Move upload directory out of module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move upload directory out of module" />
+    <MESSAGE value="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill." />
+    <option name="LAST_COMMIT_MESSAGE" value="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -420,5 +446,9 @@
     </state>
     <state x="1627" y="188" width="586" height="548" key="find.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605905205931" />
     <state x="1627" y="188" width="586" height="548" key="find.popup/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605820699174" />
+    <state x="1585" y="148" width="670" height="676" key="search.everywhere.popup" timestamp="1606084711029">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1585" y="148" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606084711029" />
   </component>
 </project>

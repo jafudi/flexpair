@@ -33,6 +33,7 @@ variable "network_config" {
     vcn_id          = string
     route_table_id  = string
     dhcp_options_id = string
+    security_list_id = string
   })
 }
 

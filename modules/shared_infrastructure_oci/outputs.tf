@@ -3,6 +3,7 @@ output "network_config" {
     vcn_id = oci_core_virtual_network.main_vcn.id
     route_table_id = oci_core_route_table.common_route_table.id
     dhcp_options_id = oci_core_virtual_network.main_vcn.default_dhcp_options_id
+    security_list_id = oci_core_security_list.shared_security_list.id
   }
 }
 

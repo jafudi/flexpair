@@ -7,17 +7,17 @@ provider "aws" {
 }
 
 variable "aws_region" {
-  type = string
+  type    = string
   default = "eu-central-1"
 }
 
 variable "aws_access_key" {
-  type = string
+  type        = string
   description = "Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials"
 }
 
 variable "aws_secret_key" {
-  type = string
+  type        = string
   description = "Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials"
 }
 
