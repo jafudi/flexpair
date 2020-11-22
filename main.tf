@@ -17,17 +17,17 @@ locals {
 
 module "oracle_infrastructure" {
   source                     = "./modules/shared_infrastructure_oci"
-  tenancy_ocid               = var.tenancy_ocid
-  user_ocid                  = var.user_ocid
-  region                     = var.region
-  availibility_domain_number = var.free_tier_available_in
+  tenancy_ocid               = var.oci_tenancy_ocid
+  user_ocid                  = var.oci_user_ocid
+  region                     = var.oci_region
+  availibility_domain_number = var.oci_free_tier_avail
   compartment_name           = module.certified_hostname.subdomain_label
   deployment_tags            = local.deployment_tags
 }
 
 locals {
   location_info = {
-    cloud_region     = var.region
+    cloud_region     = var.oci_region
     data_center_name = module.oracle_infrastructure.availability_domain_name
     timezone_name    = var.timezone
     locale_settings  = var.locale
@@ -79,7 +79,7 @@ module "gateway_machine" {
   location_info  = local.location_info
   network_config = module.oracle_infrastructure.network_config
   vm_specs = {
-    compute_shape   = var.gateway_shape
+    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
     source_image_id = module.oracle_infrastructure.source_image.id
   }
   gateway_username  = local.gateway_username
@@ -131,7 +131,7 @@ module "desktop_machine_1" {
   location_info  = local.location_info
   network_config = module.oracle_infrastructure.network_config
   vm_specs = {
-    compute_shape   = var.desktop_shape
+    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
     source_image_id = module.oracle_infrastructure.source_image.id
   }
   desktop_username    = local.desktop_username

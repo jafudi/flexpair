@@ -21,3 +21,7 @@ output "source_image" {
 output "availability_domain_name" {
   value = data.oci_identity_availability_domain.ad.name
 }
+
+output "minimum_viable_shape" {
+  value = "VM.Standard.E2.1"
+}
