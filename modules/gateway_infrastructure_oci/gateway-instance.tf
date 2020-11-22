@@ -46,7 +46,7 @@ resource "oci_core_instance" "gateway" {
   }
 
   provisioner "file" {
-    source      = "${path.module}/upload-directory/"
+    source      = "${path.root}/uploads/"
     destination = "/home/${var.gateway_username}/uploads"
     on_failure  = continue
   }
