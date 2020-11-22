@@ -6,15 +6,9 @@ resource "tls_private_key" "vm_mutual_key" {
 resource "random_password" "imap_password" {
   length  = 16
   special = false // may lead to quoting issues otherwise
-  keepers = {
-    on_every_apply = timestamp()
-  }
 }
 
 resource "random_password" "murmur_password" {
   length  = 16
   special = false // may lead to quoting issues otherwise
-  keepers = {
-    on_every_apply = timestamp()
-  }
 }
