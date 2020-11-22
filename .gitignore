@@ -11,4 +11,5 @@
 /.ssh/
 /.oci/
 /.terraform/
-/.idea/*
+/.idea/workspace.xml
+
