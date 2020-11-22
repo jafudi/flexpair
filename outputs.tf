@@ -27,5 +27,5 @@ output "access_via_browser" {
 }
 
 output "access_via_mumble" {
-  value = "mumble://${urlencode(local.murmur_config.password)}@${module.certified_hostname.full_hostname}:${local.murmur_config.port}"
+  value = "mumble://:${urlencode(local.murmur_config.password)}@${module.certified_hostname.full_hostname}:${local.murmur_config.port}"
 }

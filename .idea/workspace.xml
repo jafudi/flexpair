@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/provider-dns.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/provider-oci.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default.auto.tfvars" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/certified_dns_hostname/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/variables.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/providers.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/misc-variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +315,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605914998199</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified">
+      <created>1606059052490</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1606059052490</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add some syntactic sugar before tackling AWS configuration">
+      <created>1606059072424</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1606059072424</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,8 +345,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First shot" />
-    <MESSAGE value="Save this as a sketch, but need to redo this from master step by step" />
     <MESSAGE value="Try to eliminate reasons why the script would not be executed (properly)" />
     <MESSAGE value="Put content of script that won't get executed into previous script for debugging" />
     <MESSAGE value="Use paid account" />
@@ -366,7 +368,9 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Set usernames equal to tenancy name on both nodes" />
     <MESSAGE value="Try VM.Standard.E2.1.Micro" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try VM.Standard.E2.1.Micro" />
+    <MESSAGE value="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified" />
+    <MESSAGE value="Add some syntactic sugar before tackling AWS configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some syntactic sugar before tackling AWS configuration" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -377,11 +381,11 @@
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605915003790">
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606059078661">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605915003789" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606059078661" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605880362504" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605911313379" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605905205931">
