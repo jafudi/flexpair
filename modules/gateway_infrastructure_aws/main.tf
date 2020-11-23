@@ -15,6 +15,7 @@ resource "aws_instance" "gateway" {
   monitoring                  = false
   subnet_id                   = var.network_config.subnet_id
   vpc_security_group_ids      = [var.network_config.shared_security_group_id, aws_security_group.gateway_rules.id]
+  user_data_base64            = var.encoded_userdata
 
   connection {
     type        = "ssh"
