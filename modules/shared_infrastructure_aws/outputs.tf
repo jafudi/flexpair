@@ -1,7 +1,8 @@
 output "network_config" {
   value = {
-    subnet_id              = aws_subnet.public_subnet.id
-    vpc_security_group_ids = []
+    vpc_id                   = aws_vpc.main.id
+    subnet_id                = aws_subnet.public_subnet.id
+    shared_security_group_id = aws_security_group.basic.id
   }
 }
 

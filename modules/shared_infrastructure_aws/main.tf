@@ -57,3 +57,44 @@ data "aws_ami" "latest-ubuntu-focal" {
 
   owners = ["099720109477"] # Canonical
 }
+
+resource "aws_security_group" "basic" {
+  description = "Basic Rules"
+  vpc_id      = aws_vpc.main.id
+
+  egress {
+    description = "Allow all outgoing traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Allow inbound SSH connections"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Allow echo requests (used to ping)"
+    from_port   = 8
+    to_port     = 0
+    protocol    = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Allow destination unreachable messages"
+    from_port   = 3
+    to_port     = 0
+    protocol    = "icmp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = merge(var.deployment_tags, {
+    Name = "basic"
+  })
+}

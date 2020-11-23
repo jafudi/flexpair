@@ -27,8 +27,9 @@ variable "deployment_tags" {
 
 variable "network_config" {
   type = object({
+    vpc_id                 = string
     subnet_id              = string
-    vpc_security_group_ids = list(string)
+    shared_security_group_id = string
   })
 }
 
