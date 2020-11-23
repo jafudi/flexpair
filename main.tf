@@ -84,10 +84,10 @@ locals {
 }
 
 module "gateway_machine" {
-  source         = "./modules/gateway_infrastructure_aws"
-  compartment    = module.oracle_infrastructure.compartment
-  location_info  = local.location_info
-  network_config = module.oracle_infrastructure.network_config
+  source          = "./modules/gateway_infrastructure_aws"
+  deployment_tags = local.deployment_tags
+  location_info   = local.location_info
+  network_config  = module.amazon_infrastructure.network_config
   vm_specs = {
     compute_shape   = module.amazon_infrastructure.minimum_viable_shape
     source_image_id = module.amazon_infrastructure.source_image.id

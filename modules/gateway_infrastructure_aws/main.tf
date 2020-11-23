@@ -1,7 +1,7 @@
 locals {
   hostname     = "gateway"
   display_name = title(local.hostname)
-  tags = merge(var.compartment.freeform_tags, {
+  tags = merge(var.deployment_tags, {
     Name = local.display_name
   })
 }

@@ -21,11 +21,8 @@ variable "location_info" {
   })
 }
 
-variable "compartment" {
-  type = object({
-    id            = string
-    freeform_tags = map(string)
-  })
+variable "deployment_tags" {
+  type = map(string)
 }
 
 variable "network_config" {
