@@ -97,6 +97,7 @@ module "gateway_machine" {
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
   vm_mutual_keypair = module.shared_secrets.vm_mutual_key
+  depends_on        = [module.amazon_infrastructure]
 }
 
 resource "dns_a_record_set" "gateway_hostname" {

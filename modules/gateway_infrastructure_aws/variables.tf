@@ -30,10 +30,8 @@ variable "compartment" {
 
 variable "network_config" {
   type = object({
-    vcn_id          = string
-    route_table_id  = string
-    dhcp_options_id = string
-    security_list_id = string
+    subnet_id = string
+    vpc_security_group_ids = list(string)
   })
 }
 

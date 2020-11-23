@@ -1,12 +1,10 @@
-//output "network_config" {
-//  value = {
-//    vcn_id = oci_core_virtual_network.main_vcn.id
-//    route_table_id = oci_core_route_table.common_route_table.id
-//    dhcp_options_id = oci_core_virtual_network.main_vcn.default_dhcp_options_id
-//    security_list_id = oci_core_security_list.shared_security_list.id
-//  }
-//}
-//
+output "network_config" {
+  value = {
+    subnet_id = aws_subnet.public_subnet.id
+    vpc_security_group_ids = []
+  }
+}
+
 //output "tenancy_name" {
 //  value = data.oci_identity_tenancy.te.name
 //}
