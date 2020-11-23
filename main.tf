@@ -25,6 +25,16 @@ module "oracle_infrastructure" {
   deployment_tags            = local.deployment_tags
 }
 
+module "amazon_infrastructure" {
+  source                     = "./modules/shared_infrastructure_aws"
+  tenancy_ocid               = var.oci_tenancy_ocid
+  user_ocid                  = var.oci_user_ocid
+  region                     = var.oci_region
+  availibility_domain_number = var.oci_free_tier_avail
+  compartment_name           = module.certified_hostname.subdomain_label
+  deployment_tags            = local.deployment_tags
+}
+
 locals {
   location_info = {
     cloud_region     = var.oci_region
@@ -74,13 +84,13 @@ locals {
 }
 
 module "gateway_machine" {
-  source         = "./modules/gateway_infrastructure_oci"
+  source         = "./modules/gateway_infrastructure_aws"
   compartment    = module.oracle_infrastructure.compartment
   location_info  = local.location_info
   network_config = module.oracle_infrastructure.network_config
   vm_specs = {
-    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
-    source_image_id = module.oracle_infrastructure.source_image.id
+    compute_shape   = module.amazon_infrastructure.minimum_viable_shape
+    source_image_id = module.amazon_infrastructure.source_image.id
   }
   gateway_username  = local.gateway_username
   murmur_config     = local.murmur_config

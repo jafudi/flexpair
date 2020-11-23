@@ -20,10 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/EnergyConsumptionAndPrivacy.png" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/EnergyConsumptionAndPrivacy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/TerraformAndCloudinitSupport.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/TerraformAndCloudinitSupport.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/competitor-features.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/competitor-features.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/structurizr-55946-workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/structurizr-55946-workspace.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main_obs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/variables.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main_obs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider-aws.tf" beforeDir="false" afterPath="$PROJECT_DIR$/provider-aws.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606086349988</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Remove obsolete documentation">
+      <created>1606088633185</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1606088633185</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
