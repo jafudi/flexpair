@@ -114,6 +114,7 @@ resource "oci_core_instance" "gateway" {
     private_key = var.vm_mutual_keypair.private_key_pem
   }
 
+  // Follow the cloud-init logs until finished
   provisioner "remote-exec" {
     inline = [
       "cat /var/log/cloud-init-output.log",
@@ -122,10 +123,11 @@ resource "oci_core_instance" "gateway" {
     on_failure = continue
   }
 
+  // Test whether file upload via SSH works
   provisioner "file" {
     source      = "${path.root}/uploads/"
     destination = "/home/${var.gateway_username}/uploads"
-    on_failure  = continue
+    on_failure  = fail
   }
 
 }
