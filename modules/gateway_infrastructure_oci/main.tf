@@ -1,11 +1,11 @@
 locals {
-  hostname = "gateway"
+  hostname     = "gateway"
   display_name = title(local.hostname)
 }
 
 resource "oci_core_security_list" "gateway_security_list" {
   compartment_id = var.compartment.id
-  vcn_id            = var.network_config.vcn_id
+  vcn_id         = var.network_config.vcn_id
   display_name   = "${local.display_name} Firewall"
   freeform_tags  = var.compartment.freeform_tags
 
@@ -61,18 +61,18 @@ resource "oci_core_security_list" "gateway_security_list" {
 }
 
 resource "oci_core_subnet" "gateway_subnet" {
-  cidr_block        = "10.1.10.0/24"
-  display_name      = "${local.display_name} Subnet"
-  dns_label         = "${lower(local.hostname)}net"
+  cidr_block   = "10.1.10.0/24"
+  display_name = "${local.display_name} Subnet"
+  dns_label    = "${lower(local.hostname)}net"
   security_list_ids = [
     var.network_config.security_list_id,
     oci_core_security_list.gateway_security_list.id
   ]
-  compartment_id    = var.compartment.id
-  vcn_id            = var.network_config.vcn_id
-  route_table_id    = var.network_config.route_table_id
-  dhcp_options_id   = var.network_config.dhcp_options_id
-  freeform_tags     = var.compartment.freeform_tags
+  compartment_id  = var.compartment.id
+  vcn_id          = var.network_config.vcn_id
+  route_table_id  = var.network_config.route_table_id
+  dhcp_options_id = var.network_config.dhcp_options_id
+  freeform_tags   = var.compartment.freeform_tags
 }
 
 resource "oci_core_instance" "gateway" {

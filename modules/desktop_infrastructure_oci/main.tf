@@ -1,5 +1,5 @@
 locals {
-  hostname = "desktop"
+  hostname     = "desktop"
   display_name = title(local.hostname)
 }
 
@@ -38,7 +38,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   metadata = {
-    user_data = var.encoded_userdata
+    user_data           = var.encoded_userdata
     gitlab_runner_token = var.gitlab_runner_token
   }
 

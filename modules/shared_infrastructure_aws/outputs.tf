@@ -1,6 +1,6 @@
 output "network_config" {
   value = {
-    subnet_id = aws_subnet.public_subnet.id
+    subnet_id              = aws_subnet.public_subnet.id
     vpc_security_group_ids = []
   }
 }

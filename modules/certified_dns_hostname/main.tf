@@ -1,7 +1,7 @@
 locals {
-  valid_subdomain = lower(replace(var.subdomain_proposition,"/[_\\W]/","-"))
+  valid_subdomain = lower(replace(var.subdomain_proposition, "/[_\\W]/", "-"))
 
-  full_hostname     = "${local.valid_subdomain}.${var.registered_domain}"
+  full_hostname = "${local.valid_subdomain}.${var.registered_domain}"
 
   email_address = "mail@${local.full_hostname}"
 }

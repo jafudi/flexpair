@@ -44,7 +44,7 @@ resource "oci_core_route_table" "common_route_table" {
 
 resource "oci_core_security_list" "shared_security_list" {
   compartment_id = oci_identity_compartment.one_per_subdomain.id
-  vcn_id            = oci_core_virtual_network.main_vcn.id
+  vcn_id         = oci_core_virtual_network.main_vcn.id
   display_name   = "Shared Firewall"
   freeform_tags  = var.deployment_tags
 

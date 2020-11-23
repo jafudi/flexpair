@@ -30,9 +30,9 @@ variable "compartment" {
 
 variable "network_config" {
   type = object({
-    vcn_id          = string
-    route_table_id  = string
-    dhcp_options_id = string
+    vcn_id           = string
+    route_table_id   = string
+    dhcp_options_id  = string
     security_list_id = string
   })
 }
@@ -47,14 +47,14 @@ variable "murmur_config" {
 variable "email_config" {
   type = object({
     address   = string
-    password   = string
+    password  = string
     imap_port = number
     smtp_port = number
   })
 }
 
 variable "gateway_username" {
-  type        = string
+  type = string
 }
 
 variable "encoded_userdata" {

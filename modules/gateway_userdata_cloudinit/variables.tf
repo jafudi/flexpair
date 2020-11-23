@@ -18,7 +18,7 @@ variable "docker_compose_release" {
 }
 
 variable "gateway_dns_hostname" {
-    type = string
+  type = string
 }
 
 variable "desktop_username" {
@@ -51,7 +51,7 @@ variable "murmur_config" {
 variable "email_config" {
   type = object({
     address   = string
-    password   = string
+    password  = string
     imap_port = number
     smtp_port = number
   })

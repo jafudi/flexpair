@@ -27,7 +27,7 @@ variable "deployment_tags" {
 
 variable "network_config" {
   type = object({
-    subnet_id = string
+    subnet_id              = string
     vpc_security_group_ids = list(string)
   })
 }
@@ -42,14 +42,14 @@ variable "murmur_config" {
 variable "email_config" {
   type = object({
     address   = string
-    password   = string
+    password  = string
     imap_port = number
     smtp_port = number
   })
 }
 
 variable "gateway_username" {
-  type        = string
+  type = string
 }
 
 variable "encoded_userdata" {
