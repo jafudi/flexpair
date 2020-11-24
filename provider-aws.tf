@@ -12,27 +12,27 @@ variable "aws_region" {
   description = "Seems to determines the region of all created resources."
   validation {
     condition = contains([
-      "af-south-1", // Cape Town (Opt-in Required)
-      "ap-east-1", // Hong Kong (Opt-in Required)
+      "af-south-1",     // Cape Town (Opt-in Required)
+      "ap-east-1",      // Hong Kong (Opt-in Required)
       "ap-northeast-1", // Tokyo
       "ap-northeast-2", // Seoul
       "ap-northeast-3", // Osaka
-      "ap-south-1", // Mumbai
+      "ap-south-1",     // Mumbai
       "ap-southeast-1", // Singapore
       "ap-southeast-2", // Sydney
-      "ca-central-1", // Central Canada
-      "eu-central-1", // Frankfurt
-      "eu-north-1", // Stockholm
-      "eu-south-1", // Milan (Opt-in Required)
-      "eu-west-1", // Ireland
-      "eu-west-2", // London
-      "eu-west-3", // Paris
-      "me-south-1", // Bahrain (Opt-in Required)
-      "sa-east-1", // São Paulo
-      "us-east-1", // North Virginia
-      "us-east-2", // Ohio
-      "us-west-1", // Northern California
-      "us-west-2", // Oregon
+      "ca-central-1",   // Central Canada
+      "eu-central-1",   // Frankfurt
+      "eu-north-1",     // Stockholm
+      "eu-south-1",     // Milan (Opt-in Required)
+      "eu-west-1",      // Ireland
+      "eu-west-2",      // London
+      "eu-west-3",      // Paris
+      "me-south-1",     // Bahrain (Opt-in Required)
+      "sa-east-1",      // São Paulo
+      "us-east-1",      // North Virginia
+      "us-east-2",      // Ohio
+      "us-west-1",      // Northern California
+      "us-west-2",      // Oregon
     ], var.aws_region)
     error_message = "Undefined Amazon EC2 region specified."
   }
