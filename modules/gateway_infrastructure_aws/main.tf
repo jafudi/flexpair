@@ -23,7 +23,7 @@ resource "aws_instance" "gateway" {
     port        = 22
     user        = var.gateway_username
     private_key = var.vm_mutual_keypair.private_key_pem
-    timeout     = "30s"
+    timeout     = "75s"
   }
 
   // Test whether file upload via SSH works
