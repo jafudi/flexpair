@@ -69,13 +69,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00010" summary="Use paid instances">
-      <created>1605704561519</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1605704561519</updated>
-    </task>
     <task id="LOCAL-00011" summary="Debugging">
       <created>1605721970163</created>
       <option name="number" value="00011" />
@@ -412,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606265724996</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Re-add desktop node">
+      <created>1606332412991</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1606332412994</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -428,7 +428,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create shared_secrets module" />
     <MESSAGE value="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after" />
     <MESSAGE value="Set usernames equal to tenancy name on both nodes" />
     <MESSAGE value="Try VM.Standard.E2.1.Micro" />
@@ -453,7 +452,8 @@
     <MESSAGE value="Leave out the desktop node until gateway is properly created in Tokyo" />
     <MESSAGE value="Prolong timeout" />
     <MESSAGE value="Remove file provisioner in order to detect whether it is the culprit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove file provisioner in order to detect whether it is the culprit" />
+    <MESSAGE value="Re-add desktop node" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-add desktop node" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
