@@ -132,26 +132,26 @@ locals {
   encoded_desktop_config = base64gzip(module.desktop_installer.unzipped_config)
 }
 
-//module "desktop_machine_1" {
-//  source = "./modules/desktop_infrastructure_oci"
-//  depends_on = [
-//    # Desktop without gateway would be of little use
-//    module.gateway_installer
-//  ]
-//  compartment    = module.oracle_infrastructure.compartment
-//  location_info  = local.location_info
-//  network_config = module.oracle_infrastructure.network_config
-//  vm_specs = {
-//    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
-//    source_image_id = module.oracle_infrastructure.source_image.id
-//  }
-//  desktop_username    = local.desktop_username
-//  murmur_config       = local.murmur_config
-//  email_config        = local.email_config
-//  encoded_userdata    = local.encoded_desktop_config
-//  vm_mutual_keypair   = module.shared_secrets.vm_mutual_key
-//  gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
-//}
+module "desktop_machine_1" {
+  source = "./modules/desktop_infrastructure_oci"
+  depends_on = [
+    # Desktop without gateway would be of little use
+    module.gateway_installer
+  ]
+  compartment    = module.oracle_infrastructure.compartment
+  location_info  = local.location_info
+  network_config = module.oracle_infrastructure.network_config
+  vm_specs = {
+    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
+    source_image_id = module.oracle_infrastructure.source_image.id
+  }
+  desktop_username    = local.desktop_username
+  murmur_config       = local.murmur_config
+  email_config        = local.email_config
+  encoded_userdata    = local.encoded_desktop_config
+  vm_mutual_keypair   = module.shared_secrets.vm_mutual_key
+  gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
+}
 
 resource "null_resource" "health_check" {
 

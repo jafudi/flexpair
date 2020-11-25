@@ -6,9 +6,9 @@ locals {
   working_dir = "/Users/jens/PycharmProjects/traction"
 }
 
-//output "ssh_into_desktop_1" {
-//  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${local.desktop_username}@${module.desktop_machine_1.public_ip}"
-//}
+output "ssh_into_desktop_1" {
+  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${local.desktop_username}@${module.desktop_machine_1.public_ip}"
+}
 
 output "private_key" {
   value = module.shared_secrets.vm_mutual_key.private_key_pem

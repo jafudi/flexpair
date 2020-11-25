@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,13 +68,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Use paid instances">
-      <created>1605702155895</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1605702155895</updated>
     </task>
     <task id="LOCAL-00010" summary="Use paid instances">
       <created>1605704561519</created>
@@ -414,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606257484733</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Remove file provisioner in order to detect whether it is the culprit">
+      <created>1606265724992</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1606265724996</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +428,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Retry" />
     <MESSAGE value="Create shared_secrets module" />
     <MESSAGE value="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after" />
     <MESSAGE value="Set usernames equal to tenancy name on both nodes" />
@@ -455,7 +452,8 @@
     <MESSAGE value="Move gateway to Tokyo for testing" />
     <MESSAGE value="Leave out the desktop node until gateway is properly created in Tokyo" />
     <MESSAGE value="Prolong timeout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prolong timeout" />
+    <MESSAGE value="Remove file provisioner in order to detect whether it is the culprit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove file provisioner in order to detect whether it is the culprit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -466,11 +464,11 @@
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606257494638">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606265733518">
+      <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606170958447" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606265733518" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606257494638" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606096413285" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605905205931">
