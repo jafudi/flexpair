@@ -26,12 +26,12 @@ resource "aws_instance" "gateway" {
     timeout     = "75s"
   }
 
-  // Test whether file upload via SSH works
-  provisioner "file" {
-    source      = "${path.root}/uploads/"
-    destination = "/home/${var.gateway_username}/uploads"
-    on_failure  = fail
-  }
+//  // Test whether file upload via SSH works
+//  provisioner "file" {
+//    source      = "${path.root}/uploads/"
+//    destination = "/home/${var.gateway_username}/uploads"
+//    on_failure  = continue
+//  }
 
   // Follow the cloud-init logs until finished
   provisioner "remote-exec" {

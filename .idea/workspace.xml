@@ -71,13 +71,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00008" summary="Try free instances until paid account is unlocked">
-      <created>1605654721070</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1605654721070</updated>
-    </task>
     <task id="LOCAL-00009" summary="Use paid instances">
       <created>1605702155895</created>
       <option name="number" value="00009" />
@@ -414,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606246357263</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Prolong timeout">
+      <created>1606257484730</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1606257484733</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +430,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Try to set locales via cloud-config" />
     <MESSAGE value="Retry" />
     <MESSAGE value="Create shared_secrets module" />
     <MESSAGE value="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after" />
@@ -455,7 +454,8 @@
     <MESSAGE value="Add userdata" />
     <MESSAGE value="Move gateway to Tokyo for testing" />
     <MESSAGE value="Leave out the desktop node until gateway is properly created in Tokyo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leave out the desktop node until gateway is properly created in Tokyo" />
+    <MESSAGE value="Prolong timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prolong timeout" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -466,12 +466,12 @@
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606246370960">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606257494638">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606170958447" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606246370960" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606257494638" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606096413285" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605905205931">
       <screen x="1280" y="-79" width="1280" height="1024" />
