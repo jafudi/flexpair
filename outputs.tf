@@ -2,6 +2,10 @@ output "used_base_image" {
   value = module.oracle_infrastructure.source_image.display_name
 }
 
+output "email_adress" {
+  value = local.email_config.address
+}
+
 locals {
   working_dir = "/Users/jens/PycharmProjects/traction"
 }
