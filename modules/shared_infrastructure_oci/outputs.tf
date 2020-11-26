@@ -1,8 +1,9 @@
 output "network_config" {
   value = {
-    vcn_id = oci_core_virtual_network.main_vcn.id
-    route_table_id = oci_core_route_table.common_route_table.id
-    dhcp_options_id = oci_core_virtual_network.main_vcn.default_dhcp_options_id
+    vcn_id           = oci_core_virtual_network.main_vcn.id
+    route_table_id   = oci_core_route_table.common_route_table.id
+    dhcp_options_id  = oci_core_virtual_network.main_vcn.default_dhcp_options_id
+    security_list_id = oci_core_security_list.shared_security_list.id
   }
 }
 
@@ -20,4 +21,8 @@ output "source_image" {
 
 output "availability_domain_name" {
   value = data.oci_identity_availability_domain.ad.name
+}
+
+output "minimum_viable_shape" {
+  value = "VM.Standard.E2.1"
 }

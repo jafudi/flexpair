@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,21 +45,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/certified_dns_hostname" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
       <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
       <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/modules/certified_dns_hostname" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
-      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
-      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -69,83 +71,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00001" summary="First shot">
-      <created>1605534011255</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605534011255</updated>
-    </task>
-    <task id="LOCAL-00002" summary="First shot">
-      <created>1605534015794</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1605534015794</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Save this as a sketch, but need to redo this from master step by step">
-      <created>1605571248887</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1605571248887</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Try to eliminate reasons why the script would not be executed (properly)">
-      <created>1605579575878</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1605579575878</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Put content of script that won't get executed into previous script for debugging">
-      <created>1605617088521</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1605617088521</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Debugging">
-      <created>1605619377435</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1605619377435</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Use paid account">
-      <created>1605635850343</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1605635850343</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Try free instances until paid account is unlocked">
-      <created>1605654721070</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1605654721070</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Use paid instances">
-      <created>1605702155895</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1605702155895</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Use paid instances">
-      <created>1605704561519</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1605704561519</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Debugging">
-      <created>1605721970163</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1605721970164</updated>
     </task>
     <task id="LOCAL-00012" summary="Fix typo">
       <created>1605724386080</created>
@@ -308,7 +233,189 @@
       <option name="project" value="LOCAL" />
       <updated>1605911306322</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Try VM.Standard.E2.1.Micro">
+      <created>1605914998199</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1605914998199</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified">
+      <created>1606059052490</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1606059052490</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add some syntactic sugar before tackling AWS configuration">
+      <created>1606059072424</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1606059072424</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Bugfix Mumble URL">
+      <created>1606061870921</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1606061870922</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Extend gitignore">
+      <created>1606062054127</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606062054127</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Create first AWS instance">
+      <created>1606066824485</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1606066824485</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Move upload directory out of module">
+      <created>1606083529670</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1606083529670</updated>
+    </task>
+    <task id="LOCAL-00042" summary="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill.">
+      <created>1606083683151</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1606083683151</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Factor out common security list into shared infrastructure module">
+      <created>1606086098939</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1606086098939</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Remove obsolete documentation">
+      <created>1606086349988</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1606086349988</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Remove obsolete documentation">
+      <created>1606088633185</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1606088633185</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Create a vanilla Ubuntu instance on AWS =&gt; function tests are supposed to fail">
+      <created>1606090850055</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1606090850055</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Make network infrastructure explicit. Still no ports open or userdata supplied.">
+      <created>1606094904501</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1606094904502</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Bugfix">
+      <created>1606095003580</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1606095003580</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Bugfix">
+      <created>1606095763266</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1606095763266</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Attempt to connect via SSH must fail for two reasons: 1. No port 22 open 2. No public SSH key placed on server">
+      <created>1606096365446</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1606096365459</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Format Terraform source files">
+      <created>1606096921453</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1606096921453</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Verify that SSH connection fails and produces an error">
+      <created>1606097591374</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1606097591375</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Open ports on AWS">
+      <created>1606170294134</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1606170294136</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Add userdata">
+      <created>1606170952998</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1606170952999</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Move gateway to Tokyo for testing">
+      <created>1606239421174</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1606239421177</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Leave out the desktop node until gateway is properly created in Tokyo">
+      <created>1606246357263</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1606246357263</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Prolong timeout">
+      <created>1606257484730</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1606257484733</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Remove file provisioner in order to detect whether it is the culprit">
+      <created>1606265724992</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1606265724996</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Re-add desktop node">
+      <created>1606332412991</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1606332412994</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Re-add desktop node">
+      <created>1606333004627</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1606333004628</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,48 +431,58 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First shot" />
-    <MESSAGE value="Save this as a sketch, but need to redo this from master step by step" />
-    <MESSAGE value="Try to eliminate reasons why the script would not be executed (properly)" />
-    <MESSAGE value="Put content of script that won't get executed into previous script for debugging" />
-    <MESSAGE value="Use paid account" />
-    <MESSAGE value="Try free instances until paid account is unlocked" />
-    <MESSAGE value="Use paid instances" />
-    <MESSAGE value="Debugging" />
-    <MESSAGE value="until systemctl is-active --quiet darkstat sleep" />
-    <MESSAGE value="Try a bit longer for darkstat to react" />
-    <MESSAGE value="Fix typo" />
-    <MESSAGE value="Carve out the composition of cloud-init config into separate module" />
-    <MESSAGE value="Enforce a maximum char length of 15 for subdomain" />
-    <MESSAGE value="Make sure that subdomain contains only valid characters" />
-    <MESSAGE value="Separate module for certificate creation" />
-    <MESSAGE value="Centralize provider configs" />
-    <MESSAGE value="Factor out shared infrastructure into separate module" />
-    <MESSAGE value="Racing condition with reboot" />
-    <MESSAGE value="Try to set locales via cloud-config" />
-    <MESSAGE value="Retry" />
-    <MESSAGE value="Create shared_secrets module" />
     <MESSAGE value="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after" />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Set usernames equal to tenancy name on both nodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set usernames equal to tenancy name on both nodes" />
+    <MESSAGE value="Try VM.Standard.E2.1.Micro" />
+    <MESSAGE value="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified" />
+    <MESSAGE value="Add some syntactic sugar before tackling AWS configuration" />
+    <MESSAGE value="Bugfix Mumble URL" />
+    <MESSAGE value="Extend gitignore" />
+    <MESSAGE value="Create first AWS instance" />
+    <MESSAGE value="Move upload directory out of module" />
+    <MESSAGE value="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill." />
+    <MESSAGE value="Factor out common security list into shared infrastructure module" />
+    <MESSAGE value="Remove obsolete documentation" />
+    <MESSAGE value="Create a vanilla Ubuntu instance on AWS =&gt; function tests are supposed to fail" />
+    <MESSAGE value="Make network infrastructure explicit. Still no ports open or userdata supplied." />
+    <MESSAGE value="Bugfix" />
+    <MESSAGE value="Attempt to connect via SSH must fail for two reasons: 1. No port 22 open 2. No public SSH key placed on server" />
+    <MESSAGE value="Format Terraform source files" />
+    <MESSAGE value="Verify that SSH connection fails and produces an error" />
+    <MESSAGE value="Open ports on AWS" />
+    <MESSAGE value="Add userdata" />
+    <MESSAGE value="Move gateway to Tokyo for testing" />
+    <MESSAGE value="Leave out the desktop node until gateway is properly created in Tokyo" />
+    <MESSAGE value="Prolong timeout" />
+    <MESSAGE value="Remove file provisioner in order to detect whether it is the culprit" />
+    <MESSAGE value="Re-add desktop node" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-add desktop node" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605904069383" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1605911313379">
+    <state x="1729" y="142" key="RollbackChangesDialog" timestamp="1606048677823">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606333030190">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605909113899" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1605880362504" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605911313379" />
-    <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1605905205931">
-      <screen x="1280" y="-79" width="1280" height="1024" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606265733518" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606257494638" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606333030190" />
+    <state x="347" y="209" width="586" height="490" key="find.popup" timestamp="1606377325510">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="1627" y="188" width="586" height="548" key="find.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605905205931" />
+    <state x="347" y="209" width="586" height="490" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1606377325510" />
     <state x="1627" y="188" width="586" height="548" key="find.popup/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605820699174" />
+    <state x="1585" y="148" width="670" height="676" key="search.everywhere.popup" timestamp="1606084711029">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1585" y="148" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606084711029" />
   </component>
 </project>

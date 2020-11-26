@@ -2,6 +2,10 @@ output "used_base_image" {
   value = module.oracle_infrastructure.source_image.display_name
 }
 
+output "email_adress" {
+  value = local.email_config.address
+}
+
 locals {
   working_dir = "/Users/jens/PycharmProjects/traction"
 }
@@ -22,6 +26,10 @@ output "desktop_config_size" {
   value = "${local.unzipped_desktop_bytes} base64gzip to ${length(local.encoded_desktop_config)} / 16384 bytes maximum"
 }
 
-output "access_url" {
-  value = "https://${module.certified_hostname.full_hostname}/?password=${local.murmur_config.password}"
+output "access_via_browser" {
+  value = "https://${module.certified_hostname.full_hostname}/?password=${urlencode(local.murmur_config.password)}"
+}
+
+output "access_via_mumble" {
+  value = "mumble://:${urlencode(local.murmur_config.password)}@${module.certified_hostname.full_hostname}:${local.murmur_config.port}"
 }

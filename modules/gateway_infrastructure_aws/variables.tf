@@ -21,19 +21,15 @@ variable "location_info" {
   })
 }
 
-variable "compartment" {
-  type = object({
-    id            = string
-    freeform_tags = map(string)
-  })
+variable "deployment_tags" {
+  type = map(string)
 }
 
 variable "network_config" {
   type = object({
-    vcn_id           = string
-    route_table_id   = string
-    dhcp_options_id  = string
-    security_list_id = string
+    vpc_id                 = string
+    subnet_id              = string
+    shared_security_group_id = string
   })
 }
 
@@ -53,11 +49,7 @@ variable "email_config" {
   })
 }
 
-variable "desktop_username" {
-  type = string
-}
-
-variable "gitlab_runner_token" {
+variable "gateway_username" {
   type = string
 }
 

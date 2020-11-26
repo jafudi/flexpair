@@ -17,17 +17,27 @@ locals {
 
 module "oracle_infrastructure" {
   source                     = "./modules/shared_infrastructure_oci"
-  tenancy_ocid               = var.tenancy_ocid
-  user_ocid                  = var.user_ocid
-  region                     = var.region
-  availibility_domain_number = var.free_tier_available_in
+  tenancy_ocid               = var.oci_tenancy_ocid
+  user_ocid                  = var.oci_user_ocid
+  region                     = var.oci_region
+  availibility_domain_number = var.oci_free_tier_avail
+  compartment_name           = module.certified_hostname.subdomain_label
+  deployment_tags            = local.deployment_tags
+}
+
+module "amazon_infrastructure" {
+  source                     = "./modules/shared_infrastructure_aws"
+  tenancy_ocid               = var.oci_tenancy_ocid
+  user_ocid                  = var.oci_user_ocid
+  region                     = var.oci_region
+  availibility_domain_number = var.oci_free_tier_avail
   compartment_name           = module.certified_hostname.subdomain_label
   deployment_tags            = local.deployment_tags
 }
 
 locals {
   location_info = {
-    cloud_region     = var.region
+    cloud_region     = var.oci_region
     data_center_name = module.oracle_infrastructure.availability_domain_name
     timezone_name    = var.timezone
     locale_settings  = var.locale
@@ -74,19 +84,20 @@ locals {
 }
 
 module "gateway_machine" {
-  source         = "./modules/gateway_infrastructure_oci"
-  compartment    = module.oracle_infrastructure.compartment
-  location_info  = local.location_info
-  network_config = module.oracle_infrastructure.network_config
+  source          = "./modules/gateway_infrastructure_aws"
+  deployment_tags = local.deployment_tags
+  location_info   = local.location_info
+  network_config  = module.amazon_infrastructure.network_config
   vm_specs = {
-    compute_shape   = var.gateway_shape
-    source_image_id = module.oracle_infrastructure.source_image.id
+    compute_shape   = module.amazon_infrastructure.minimum_viable_shape
+    source_image_id = module.amazon_infrastructure.source_image.id
   }
   gateway_username  = local.gateway_username
   murmur_config     = local.murmur_config
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
   vm_mutual_keypair = module.shared_secrets.vm_mutual_key
+  depends_on        = [module.amazon_infrastructure]
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -131,7 +142,7 @@ module "desktop_machine_1" {
   location_info  = local.location_info
   network_config = module.oracle_infrastructure.network_config
   vm_specs = {
-    compute_shape   = var.desktop_shape
+    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
     source_image_id = module.oracle_infrastructure.source_image.id
   }
   desktop_username    = local.desktop_username
@@ -156,8 +167,8 @@ resource "null_resource" "health_check" {
 
   depends_on = [
     module.gateway_machine,
-    time_sleep.dns_propagation,
-    module.desktop_machine_1
+    module.desktop_machine_1,
+    time_sleep.dns_propagation
   ]
 
   # Check HTTPS endpoint and first-level links availability

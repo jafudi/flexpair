@@ -42,6 +42,50 @@ resource "oci_core_route_table" "common_route_table" {
   }
 }
 
+resource "oci_core_security_list" "shared_security_list" {
+  compartment_id = oci_identity_compartment.one_per_subdomain.id
+  vcn_id         = oci_core_virtual_network.main_vcn.id
+  display_name   = "Shared Firewall"
+  freeform_tags  = var.deployment_tags
+
+  // Outbound connections via any protocol
+  egress_security_rules {
+    protocol    = "all"
+    destination = "0.0.0.0/0"
+  }
+
+  // Inbound SSH connections
+  ingress_security_rules {
+    protocol = "6"
+    source   = "0.0.0.0/0"
+
+    tcp_options {
+      max = "22"
+      min = "22"
+    }
+  }
+
+  // Echo requests (used to ping)
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
+
+    icmp_options {
+      type = "8"
+    }
+  }
+
+  // Destination unreachable messages
+  ingress_security_rules {
+    protocol = "1"
+    source   = "0.0.0.0/0"
+
+    icmp_options {
+      type = "3"
+    }
+  }
+}
+
 # get latest Ubuntu Linux 20.04 Minimal image
 # https://docs.cloud.oracle.com/en-us/iaas/images/ubuntu-2004/
 data "oci_core_images" "ubuntu-20-04-minimal" {

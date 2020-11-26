@@ -6,7 +6,7 @@ variable "vm_mutual_keypair" {
 }
 
 variable "gateway_dns_hostname" {
-    type = string
+  type = string
 }
 
 variable "murmur_config" {
@@ -39,7 +39,7 @@ variable "gateway_username" {
 variable "email_config" {
   type = object({
     address   = string
-    password   = string
+    password  = string
     imap_port = number
     smtp_port = number
   })

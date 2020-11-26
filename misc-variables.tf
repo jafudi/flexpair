@@ -1,23 +1,8 @@
-variable "tenancy_ocid" {}
 
-variable "user_ocid" {}
-
-variable "region" {}
-
-variable "private_key" {
-  type = string
-}
-
-variable "fingerprint" {
-  type = string
-}
-
-variable "private_key_password" {
-  type = string
-}
 
 variable "timezone" {
   type        = string
+  default     = "Europe/Berlin"
   description = "The name of the common system time zone applied to both VMs"
 
   validation {
@@ -27,7 +12,8 @@ variable "timezone" {
 }
 
 variable "locale" {
-  type = string
+  type    = string
+  default = "de_DE.UTF-8"
 }
 
 // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
@@ -35,36 +21,9 @@ variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {}
 variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {}
 variable "TFC_RUN_ID" {}
 
-variable "free_tier_available_in" {
-  type = number
-}
-
 variable "TFC_WORKSPACE_NAME" {
   type = string
 }
 
-variable "registered_domain" {}
 
-variable "rfc2136_name_server" {
-  type = string
-}
-
-variable "rfc2136_key_name" {
-  type = string
-}
-
-variable "rfc2136_key_secret" {
-  type = string
-}
-
-variable "rfc2136_tsig_algorithm" {
-  type = string
-}
-
-variable "gateway_shape" {
-  type = string
-}
-variable "desktop_shape" {
-  type = string
-}
 
