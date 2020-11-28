@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/modules" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -467,6 +471,10 @@
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
+    <state x="1429" y="72" key="SettingsEditor" timestamp="1606588823053">
+      <screen x="1280" y="-79" width="1280" height="1024" />
+    </state>
+    <state x="1429" y="72" key="SettingsEditor/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606588823053" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606333030190">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
