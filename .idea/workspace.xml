@@ -74,13 +74,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00015" summary="Try a bit longer for darkstat to react">
-      <created>1605741475433</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1605741475433</updated>
-    </task>
     <task id="LOCAL-00016" summary="Fix typo">
       <created>1605741824471</created>
       <option name="number" value="00016" />
@@ -417,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606591070693</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Add --inplace option">
+      <created>1606591607032</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1606591607032</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -433,7 +433,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified" />
     <MESSAGE value="Add some syntactic sugar before tackling AWS configuration" />
     <MESSAGE value="Bugfix Mumble URL" />
     <MESSAGE value="Extend gitignore" />
@@ -458,7 +457,8 @@
     <MESSAGE value="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys" />
     <MESSAGE value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
     <MESSAGE value="Fix syntax error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix syntax error" />
+    <MESSAGE value="Add --inplace option" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add --inplace option" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -473,11 +473,11 @@
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1429" y="72" key="SettingsEditor/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606588823053" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606590810452">
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606591614036">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606590810452" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606591614036" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606257494638" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606333030190" />
     <state x="347" y="209" width="586" height="490" key="find.popup" timestamp="1606377325510">

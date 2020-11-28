@@ -180,15 +180,19 @@ cp "/etc/xdg/openbox/lxqt-rc.xml" "$OCD/lxqt-rc.xml"
 
 apt-get install -qq xmlstarlet
 
-xmlstarlet ed --inplace -u "/openbox_config/focus/raiseOnFocus" -v "yes" "$OCD/lxqt-rc.xml"
+function update {
+  xmlstarlet ed -u $1 -v $2 "$OCD/lxqt-rc.xml" > "$OCD/lxqt-rc.xml"
+}
 
-xmlstarlet ed --inplace -u "/openbox_config/placement/monitor" -v "Active" "$OCD/lxqt-rc.xml"
-xmlstarlet ed --inplace -u "/openbox_config/placement/primaryMonitor" -v "Active" "$OCD/lxqt-rc.xml"
+update "/openbox_config/focus/raiseOnFocus" "yes"
 
-xmlstarlet ed --inplace -u "/openbox_config/theme/name" -v "Lubuntu Round" "$OCD/lxqt-rc.xml"
-xmlstarlet ed --inplace -u "/openbox_config/theme/titleLayout" -v "NLMSC" "$OCD/lxqt-rc.xml"
-xmlstarlet ed --inplace -u "/openbox_config/theme/animateIconify" -v "no" "$OCD/lxqt-rc.xml"
+update "/openbox_config/placement/monitor" "Active"
+update "/openbox_config/placement/primaryMonitor" "Active"
 
-xmlstarlet ed --inplace -u "/openbox_config/desktops/names/name[1]" -v "Front" "$OCD/lxqt-rc.xml"
-xmlstarlet ed --inplace -u "/openbox_config/desktops/names/name[2]" -v "Back" "$OCD/lxqt-rc.xml"
+update "/openbox_config/theme/name" "Lubuntu Round"
+update "/openbox_config/theme/titleLayout" "NLMSC"
+update "/openbox_config/theme/animateIconify" "no"
+
+update "/openbox_config/desktops/names/name[1]" "Front"
+update "/openbox_config/desktops/names/name[2]" "Back"
 
