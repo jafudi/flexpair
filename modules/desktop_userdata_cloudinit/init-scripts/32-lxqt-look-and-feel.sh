@@ -180,16 +180,15 @@ cp "/etc/xdg/openbox/lxqt-rc.xml" "$OCD/lxqt-rc.xml"
 
 apt-get install -qq xmlstarlet
 
-xmlstarlet ed -u "openbox_config/focus/raiseOnFocus" -v "yes" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/focus/raiseOnFocus" -v "yes" "$OCD/lxqt-rc.xml"
 
-xmlstarlet ed -u "openbox_config/placement/monitor" -v "Active" "$OCD/lxqt-rc.xml"
-xmlstarlet ed -u "openbox_config/placement/primaryMonitor" -v "Active" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/placement/monitor" -v "Active" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/placement/primaryMonitor" -v "Active" "$OCD/lxqt-rc.xml"
 
-xmlstarlet ed -u "openbox_config/theme/name" -v "Lubuntu Round" "$OCD/lxqt-rc.xml"
-xmlstarlet ed -u "openbox_config/theme/titleLayout" -v "NLMSC" "$OCD/lxqt-rc.xml"
-xmlstarlet ed -u "openbox_config/theme/animateIconify" -v "no" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/theme/name" -v "Lubuntu Round" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/theme/titleLayout" -v "NLMSC" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/theme/animateIconify" -v "no" "$OCD/lxqt-rc.xml"
 
-xmlstarlet ed -u "openbox_config/desktops/names/name[1]" -v "Front" "$OCD/lxqt-rc.xml"
-xmlstarlet ed -u "openbox_config/desktops/names/name[2]" -v "Back" "$OCD/lxqt-rc.xml"
-
+xmlstarlet ed -u "/openbox_config/desktops/names/name[1]" -v "Front" "$OCD/lxqt-rc.xml"
+xmlstarlet ed -u "/openbox_config/desktops/names/name[2]" -v "Back" "$OCD/lxqt-rc.xml"
 
