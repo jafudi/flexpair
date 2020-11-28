@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,13 +73,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Fix typo">
-      <created>1605733548111</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1605733548111</updated>
     </task>
     <task id="LOCAL-00015" summary="Try a bit longer for darkstat to react">
       <created>1605741475433</created>
@@ -416,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606590802824</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Fix syntax error">
+      <created>1606591070692</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1606591070693</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,7 +433,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Try VM.Standard.E2.1.Micro" />
     <MESSAGE value="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified" />
     <MESSAGE value="Add some syntactic sugar before tackling AWS configuration" />
     <MESSAGE value="Bugfix Mumble URL" />
@@ -457,7 +457,8 @@
     <MESSAGE value="Re-add desktop node" />
     <MESSAGE value="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys" />
     <MESSAGE value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
+    <MESSAGE value="Fix syntax error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix syntax error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
