@@ -175,25 +175,23 @@ done
 OCD="/home/${DESKTOP_USERNAME}/.config/openbox"
 mkdir -p $OCD # Openbox Config Directory
 
-# http://openbox.org/wiki/Help:Configuration
+# Remove namespace which complicates editing
 sed 's/ xmlns.*=".*"//g' "/etc/xdg/openbox/lxqt-rc.xml" > "$OCD/lxqt-rc.xml"
 
 apt-get install -qq xmlstarlet
 
-function update {
-  xmlstarlet ed -u "$1" -v "$2" "$OCD/lxqt-rc.xml" > "$OCD/tmp.xml"
-  mv -f "$OCD/tmp.xml" "$OCD/lxqt-rc.xml"
-}
+# http://openbox.org/wiki/Help:Configuration
+xmlstarlet ed \
+--update "/openbox_config/focus/raiseOnFocus" --value "yes" \
+--update "/openbox_config/placement/monitor" --value "Active" \
+--update "/openbox_config/placement/primaryMonitor" --value "Active" \
+--update "/openbox_config/theme/name" --value "Lubuntu Round" \
+--update "/openbox_config/theme/titleLayout" --value "NLMSC" \
+--update "/openbox_config/theme/animateIconify" --value "no" \
+--subnode "/openbox_config/desktops/names" --type elem -n "name" -v "Front" \
+--subnode "/openbox_config/desktops/names" --type elem -n "name" -v "Back" \
+"$OCD/lxqt-rc.xml" > "$OCD/tmp.xml"
 
-update "/openbox_config/focus/raiseOnFocus" "yes"
+mv -f "$OCD/tmp.xml" "$OCD/lxqt-rc.xml"
 
-update "/openbox_config/placement/monitor" "Active"
-update "/openbox_config/placement/primaryMonitor" "Active"
-
-update "/openbox_config/theme/name" "Lubuntu Round"
-update "/openbox_config/theme/titleLayout" "NLMSC"
-update "/openbox_config/theme/animateIconify" "no"
-
-update "/openbox_config/desktops/names/name[1]" "Front"
-update "/openbox_config/desktops/names/name[2]" "Back"
 
