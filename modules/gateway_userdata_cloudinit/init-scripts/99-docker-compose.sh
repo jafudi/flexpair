@@ -18,11 +18,11 @@ cloud-init collect-logs
 tar -xzf cloud-init.tar.gz
 rm -f cloud-init.tar.gz
 
-cat << EOF > "${DOCKER_COMPOSE_FOLDER}/docker-compose.yml"
+cat << 'EOF' > "${DOCKER_COMPOSE_FOLDER}/docker-compose.yml"
 ${DOCKER_COMPOSE_YAML}
 EOF
 
-cat << EOF > /etc/systemd/system/docker-compose.service
+cat << 'EOF' > /etc/systemd/system/docker-compose.service
 [Unit]
 Description=Docker Compose as a Service
 Requires=docker.service

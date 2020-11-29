@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/02-disable-upgrades.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/02-disable-upgrades.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/13-networking.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/13-networking.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/99-docker-compose.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/99-docker-compose.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudo-pre-commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/sudo-pre-commit.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +54,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/modules" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -76,27 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Make sure that subdomain contains only valid characters">
-      <created>1605827688645</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1605827688645</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Make sure that subdomain contains only valid characters">
-      <created>1605827967194</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1605827967194</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Make sure that subdomain contains only valid characters">
-      <created>1605828341682</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1605828341682</updated>
     </task>
     <task id="LOCAL-00023" summary="Separate module for certificate creation">
       <created>1605833663785</created>
@@ -420,7 +403,28 @@
       <option name="project" value="LOCAL" />
       <updated>1606652492290</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Use #!/bin/bash -eux as shebang in all scripts">
+      <created>1606678998381</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1606678998383</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Roll back changes in the gateway boothooks">
+      <created>1606680773284</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1606680773284</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Quote heredoc in order to prevent variable expansion">
+      <created>1606681304636</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1606681304636</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,9 +440,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Move upload directory out of module" />
-    <MESSAGE value="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill." />
-    <MESSAGE value="Factor out common security list into shared infrastructure module" />
     <MESSAGE value="Remove obsolete documentation" />
     <MESSAGE value="Create a vanilla Ubuntu instance on AWS =&gt; function tests are supposed to fail" />
     <MESSAGE value="Make network infrastructure explicit. Still no ports open or userdata supplied." />
@@ -461,13 +462,20 @@
     <MESSAGE value="Delete bloody XML namespace" />
     <MESSAGE value="Debugging" />
     <MESSAGE value="Fix script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix script" />
+    <MESSAGE value="Use #!/bin/bash -eux as shebang in all scripts" />
+    <MESSAGE value="Roll back changes in the gateway boothooks" />
+    <MESSAGE value="Quote heredoc in order to prevent variable expansion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quote heredoc in order to prevent variable expansion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605904069383" />
+    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog" timestamp="1606680338946">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1606680338946" />
     <state x="1729" y="142" key="RollbackChangesDialog" timestamp="1606048677823">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
@@ -477,10 +485,10 @@
     </state>
     <state x="1429" y="72" key="SettingsEditor/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606588823053" />
     <state x="149" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1606602586178" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606653037765">
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606681318662">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1606681318662" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606595359627" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606653037765" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606333030190" />
