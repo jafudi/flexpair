@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/sh -eux
 
 # Disable release-upgrades
 sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades;
