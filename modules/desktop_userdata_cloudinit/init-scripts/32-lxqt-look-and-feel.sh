@@ -176,7 +176,7 @@ OCD="/home/${DESKTOP_USERNAME}/.config/openbox"
 mkdir -p $OCD # Openbox Config Directory
 
 # http://openbox.org/wiki/Help:Configuration
-cp "/etc/xdg/openbox/lxqt-rc.xml" "$OCD/lxqt-rc.xml"
+cat "/etc/xdg/openbox/lxqt-rc.xml" | sed -e 's/ xmlns.*=".*"//g' > "$OCD/lxqt-rc.xml"
 
 apt-get install -qq xmlstarlet
 
