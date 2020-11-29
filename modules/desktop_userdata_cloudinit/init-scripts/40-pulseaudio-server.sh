@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 export DEBIAN_FRONTEND="noninteractive"
 apt-get -qq install --no-install-recommends \

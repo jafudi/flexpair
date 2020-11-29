@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 # Obtain instance parameters / degrees of freedom ###################
 

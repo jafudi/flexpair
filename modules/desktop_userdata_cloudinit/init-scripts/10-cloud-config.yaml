@@ -59,6 +59,8 @@ runcmd:
 
 # BOOT STAGE: modules-final
 #   Module: package-update-upgrade-install
+packages:
+  - git
 #   Module: scripts-user
 #   Module: ssh-authkey-fingerprints
 #   Module: keys-to-console

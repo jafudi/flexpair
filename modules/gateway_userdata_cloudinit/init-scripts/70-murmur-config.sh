@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 mkdir -p  "${MURMUR_CONFIG}"
 

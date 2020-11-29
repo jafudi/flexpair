@@ -1,4 +1,4 @@
-#!/bin/sh -eux
+#!/bin/bash -eux
 
 cat << EOF > /home/${DESKTOP_USERNAME}/.ssh/vm_key
 ${VM_PRIVATE_KEY}

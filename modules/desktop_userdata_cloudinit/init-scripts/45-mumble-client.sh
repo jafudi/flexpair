@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 # https://wiki.ubuntuusers.de/Mumble/
 # https://wiki.natenom.de/mumble/benutzerhandbuch/mumble/variablen_mumble.ini

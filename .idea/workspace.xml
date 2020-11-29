@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sudo-pre-commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/sudo-pre-commit.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +50,7 @@
     <property name="TF_FMT" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/modules" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -73,34 +76,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Fix typo">
-      <created>1605741824471</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1605741824471</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Carve out the composition of cloud-init config into separate module">
-      <created>1605822108427</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1605822108427</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Enforce a maximum char length of 15 for subdomain">
-      <created>1605823561032</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1605823561032</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Bugfix">
-      <created>1605826093301</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1605826093301</updated>
     </task>
     <task id="LOCAL-00020" summary="Make sure that subdomain contains only valid characters">
       <created>1605827688645</created>
@@ -417,7 +392,35 @@
       <option name="project" value="LOCAL" />
       <updated>1606591607032</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Shorten script by implementing a little function">
+      <created>1606595348592</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1606595348592</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Delete bloody XML namespace">
+      <created>1606609447553</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1606609447553</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Debugging">
+      <created>1606611431457</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1606611431458</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Fix script">
+      <created>1606652492289</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1606652492290</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -433,10 +436,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add some syntactic sugar before tackling AWS configuration" />
-    <MESSAGE value="Bugfix Mumble URL" />
-    <MESSAGE value="Extend gitignore" />
-    <MESSAGE value="Create first AWS instance" />
     <MESSAGE value="Move upload directory out of module" />
     <MESSAGE value="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill." />
     <MESSAGE value="Factor out common security list into shared infrastructure module" />
@@ -458,7 +457,11 @@
     <MESSAGE value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
     <MESSAGE value="Fix syntax error" />
     <MESSAGE value="Add --inplace option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add --inplace option" />
+    <MESSAGE value="Shorten script by implementing a little function" />
+    <MESSAGE value="Delete bloody XML namespace" />
+    <MESSAGE value="Debugging" />
+    <MESSAGE value="Fix script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix script" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -469,16 +472,17 @@
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
-    <state x="1429" y="72" key="SettingsEditor" timestamp="1606588823053">
-      <screen x="1280" y="-79" width="1280" height="1024" />
+    <state x="149" y="78" key="SettingsEditor" timestamp="1606602586178">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="1429" y="72" key="SettingsEditor/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606588823053" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606591614036">
-      <screen x="1280" y="-79" width="1280" height="1024" />
+    <state x="149" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1606602586178" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606653037765">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1605741833454" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606591614036" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606257494638" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606595359627" />
+    <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606653037765" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606333030190" />
     <state x="347" y="209" width="586" height="490" key="find.popup" timestamp="1606377325510">
       <screen x="0" y="0" width="1280" height="800" />

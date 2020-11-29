@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 NO_COMMENTS="70-murmur-config.sh"
 

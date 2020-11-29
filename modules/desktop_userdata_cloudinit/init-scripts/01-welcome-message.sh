@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 mkdir -p /etc/update-motd.d
 cat << 'ASCIIART' > "/etc/update-motd.d/98-ascii-art"

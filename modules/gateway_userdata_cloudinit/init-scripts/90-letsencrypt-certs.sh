@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 mkdir -p  "${CERT_FOLDER}"
 

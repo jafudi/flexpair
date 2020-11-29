@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 mkdir -p $HOME/.config/texlive
 cd $HOME/.config/texlive

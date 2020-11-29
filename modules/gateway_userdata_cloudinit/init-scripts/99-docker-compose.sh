@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 systemctl enable --now docker
 usermod -aG docker "${GATEWAY_USERNAME}"

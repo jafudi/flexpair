@@ -1,4 +1,4 @@
-#!/bin/sh -eux
+#!/bin/bash -eux
 
 # Allow connections to non-standard localhost ports which are necessary for the 'nginx' and 'guac' containers
 # which do have their own IP addresses within a virtualized Docker network while still running on the same VM

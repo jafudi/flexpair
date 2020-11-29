@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 echo "Running script resource-monitor.sh..."
 echo
