@@ -176,12 +176,13 @@ OCD="/home/${DESKTOP_USERNAME}/.config/openbox"
 mkdir -p $OCD # Openbox Config Directory
 
 # http://openbox.org/wiki/Help:Configuration
-cat "/etc/xdg/openbox/lxqt-rc.xml" | sed -e 's/ xmlns.*=".*"//g' > "$OCD/lxqt-rc.xml"
+sed 's/ xmlns.*=".*"//g' "/etc/xdg/openbox/lxqt-rc.xml" > "$OCD/lxqt-rc.xml"
 
 apt-get install -qq xmlstarlet
 
 function update {
-  xmlstarlet ed -u $1 -v $2 "$OCD/lxqt-rc.xml" > "$OCD/lxqt-rc.xml"
+  xmlstarlet ed -u "$1" -v "$2" "$OCD/lxqt-rc.xml" > "$OCD/tmp.xml"
+  mv -f "$OCD/tmp.xml" "$OCD/lxqt-rc.xml"
 }
 
 update "/openbox_config/focus/raiseOnFocus" "yes"
