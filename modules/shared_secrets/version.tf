@@ -1,9 +1,7 @@
 terraform {
   required_providers {
-    acme = {
-      source  = "terraform-providers/acme"
-      version = "~> 1.5.0"
-    }
+    random   = "~> 2.3.0"
+    tls      = "~> 2.2.0"
   }
   required_version = ">= 0.12.26"
   experiments      = [variable_validation]
