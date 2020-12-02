@@ -134,10 +134,10 @@ locals {
 
 module "desktop_machine_1" {
   source = "./modules/desktop_infrastructure_oci"
-//  depends_on = [
-//    # Desktop without gateway would be of little use
-//    module.gateway_installer
-//  ]
+  //  depends_on = [
+  //    # Desktop without gateway would be of little use
+  //    module.gateway_installer
+  //  ]
   compartment    = module.oracle_infrastructure.compartment
   location_info  = local.location_info
   network_config = module.oracle_infrastructure.network_config

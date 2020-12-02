@@ -8,9 +8,3 @@ fi
 
 terraform validate
 terraform fmt
-
-FILE_NAME="documentation/terraform-graph"
-terraform graph -type=validate > "${FILE_NAME}.dot"
-
-# brew install graphviz
-dot -Tsvg "${FILE_NAME}.dot" > "${FILE_NAME}.svg"
