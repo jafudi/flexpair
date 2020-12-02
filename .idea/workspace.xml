@@ -20,22 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/shared_secrets/version.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../blast-radius/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../blast-radius/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -491,10 +477,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1606680338946" />
-    <state x="1729" y="142" key="RollbackChangesDialog" timestamp="1606048677823">
+    <state x="1729" y="142" key="RollbackChangesDialog" timestamp="1606866247553">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
-    <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
+    <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606866247553" />
     <state x="149" y="78" key="SettingsEditor" timestamp="1606602586178">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
