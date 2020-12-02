@@ -12,6 +12,10 @@ terraform {
       source  = "hashicorp/oci"
       version = "~> 3.95.0"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.18"
+    }
     random = {
       source  = "hashicorp/random"
       version = "~> 2.3.0"
@@ -37,6 +41,7 @@ terraform {
       version = "~> 3.0.0"
     }
   }
-  required_version = ">= 0.13"
+  required_version = ">= 0.12.26"
+  // experiments      = [variable_validation]
 }
 

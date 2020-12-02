@@ -21,18 +21,28 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/01-welcome-message.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/02-disable-upgrades.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/02-disable-upgrades.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/13-networking.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/13-networking.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/99-docker-compose.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/99-docker-compose.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/version.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/version.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudo-pre-commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/sudo-pre-commit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -41,8 +51,10 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1kOiy86CerJ4O3IYqo4ndRR5KzM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,24 +64,24 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/desktop_infrastructure_oci" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci" />
+      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
+      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
+      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
       <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/modules/certified_dns_hostname" />
-      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_aws" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,34 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Separate module for certificate creation">
-      <created>1605833663785</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1605833663785</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Centralize provider configs">
-      <created>1605833969112</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1605833969112</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Factor out shared infrastructure into separate module">
-      <created>1605876824108</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1605876824108</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Racing condition with reboot">
-      <created>1605879023000</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1605879023000</updated>
     </task>
     <task id="LOCAL-00027" summary="Try to set locales via cloud-config">
       <created>1605880350895</created>
@@ -424,7 +408,35 @@
       <option name="project" value="LOCAL" />
       <updated>1606681304636</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Update to Terraform version 0.12.26">
+      <created>1606858241299</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1606858241301</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Delete">
+      <created>1606859632948</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1606859632949</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Add docker-compose config">
+      <created>1606860667461</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1606860667464</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Export structural visualizations from blast-radius">
+      <created>1606922662767</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1606922662771</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,10 +452,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove obsolete documentation" />
-    <MESSAGE value="Create a vanilla Ubuntu instance on AWS =&gt; function tests are supposed to fail" />
-    <MESSAGE value="Make network infrastructure explicit. Still no ports open or userdata supplied." />
-    <MESSAGE value="Bugfix" />
     <MESSAGE value="Attempt to connect via SSH must fail for two reasons: 1. No port 22 open 2. No public SSH key placed on server" />
     <MESSAGE value="Format Terraform source files" />
     <MESSAGE value="Verify that SSH connection fails and produces an error" />
@@ -465,7 +473,11 @@
     <MESSAGE value="Use #!/bin/bash -eux as shebang in all scripts" />
     <MESSAGE value="Roll back changes in the gateway boothooks" />
     <MESSAGE value="Quote heredoc in order to prevent variable expansion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quote heredoc in order to prevent variable expansion" />
+    <MESSAGE value="Update to Terraform version 0.12.26" />
+    <MESSAGE value="Delete" />
+    <MESSAGE value="Add docker-compose config" />
+    <MESSAGE value="Export structural visualizations from blast-radius" />
+    <option name="LAST_COMMIT_MESSAGE" value="Export structural visualizations from blast-radius" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -476,26 +488,27 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="100" y="100" width="1080" height="600" key="DiffContextDialog/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1606680338946" />
-    <state x="1729" y="142" key="RollbackChangesDialog" timestamp="1606048677823">
+    <state x="1729" y="142" key="RollbackChangesDialog" timestamp="1606922525543">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
-    <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606048677823" />
+    <state x="1729" y="142" key="RollbackChangesDialog/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606866247553" />
+    <state x="1729" y="142" key="RollbackChangesDialog/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606922525543" />
     <state x="149" y="78" key="SettingsEditor" timestamp="1606602586178">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="1429" y="72" key="SettingsEditor/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606588823053" />
     <state x="149" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1606602586178" />
-    <state x="240" y="140" key="Vcs.Push.Dialog.v2" timestamp="1606681318662">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606922677980">
+      <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1606681318662" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606595359627" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606922677980" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606653037765" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606333030190" />
-    <state x="347" y="209" width="586" height="490" key="find.popup" timestamp="1606377325510">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1606837861299">
+      <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
-    <state x="1627" y="188" width="586" height="548" key="find.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605905205931" />
+    <state x="1627" y="188" width="586" height="548" key="find.popup/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606837861299" />
     <state x="347" y="209" width="586" height="490" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1606377325510" />
     <state x="1627" y="188" width="586" height="548" key="find.popup/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1605820699174" />
     <state x="1585" y="148" width="670" height="676" key="search.everywhere.popup" timestamp="1606084711029">
