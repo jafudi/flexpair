@@ -21,18 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/version.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/version.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudo-pre-commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/sudo-pre-commit.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,13 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Try to set locales via cloud-config">
-      <created>1605880350895</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1605880350895</updated>
     </task>
     <task id="LOCAL-00028" summary="Retry">
       <created>1605894555463</created>
@@ -436,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606922662771</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fix: Experiment has concluded">
+      <created>1606926020028</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1606926020028</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +440,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Attempt to connect via SSH must fail for two reasons: 1. No port 22 open 2. No public SSH key placed on server" />
     <MESSAGE value="Format Terraform source files" />
     <MESSAGE value="Verify that SSH connection fails and produces an error" />
     <MESSAGE value="Open ports on AWS" />
@@ -477,7 +464,8 @@
     <MESSAGE value="Delete" />
     <MESSAGE value="Add docker-compose config" />
     <MESSAGE value="Export structural visualizations from blast-radius" />
-    <option name="LAST_COMMIT_MESSAGE" value="Export structural visualizations from blast-radius" />
+    <MESSAGE value="Fix: Experiment has concluded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: Experiment has concluded" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
@@ -498,13 +486,13 @@
     </state>
     <state x="1429" y="72" key="SettingsEditor/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606588823053" />
     <state x="149" y="78" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1606602586178" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606922677980">
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2" timestamp="1606926415392">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@0.0.1280.800" timestamp="1606681318662" />
     <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.0.1280.800/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606922677980" />
     <state x="240" y="140" key="Vcs.Push.Dialog.v2/0.0.1280.800@0.0.1280.800" timestamp="1606653037765" />
-    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606333030190" />
+    <state x="1520" y="100" key="Vcs.Push.Dialog.v2/0.23.1280.777/1280.-79.1280.1024@1280.-79.1280.1024" timestamp="1606926415392" />
     <state x="1627" y="188" width="586" height="548" key="find.popup" timestamp="1606837861299">
       <screen x="1280" y="-79" width="1280" height="1024" />
     </state>
