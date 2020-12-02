@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,11 +63,11 @@
       <recent name="$PROJECT_DIR$/modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/modules/certified_hostname_record" />
-      <recent name="$PROJECT_DIR$/modules/gateway_userdata_cloudinit" />
-      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
+      <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
+      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation" />
+      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/documentation" />
+      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws/documentation" />
+      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci/documentation" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -80,13 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Retry">
-      <created>1605894555463</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1605894555463</updated>
     </task>
     <task id="LOCAL-00029" summary="Create shared_secrets module">
       <created>1605905322415</created>
@@ -424,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606926020028</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Cleanup">
+      <created>1606942940543</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1606942940544</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,7 +438,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Format Terraform source files" />
     <MESSAGE value="Verify that SSH connection fails and produces an error" />
     <MESSAGE value="Open ports on AWS" />
     <MESSAGE value="Add userdata" />
@@ -465,7 +462,8 @@
     <MESSAGE value="Add docker-compose config" />
     <MESSAGE value="Export structural visualizations from blast-radius" />
     <MESSAGE value="Fix: Experiment has concluded" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: Experiment has concluded" />
+    <MESSAGE value="Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1593" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605904069383">
