@@ -11,7 +11,7 @@ etherape
 # https://wiki.ubuntuusers.de/Conky/
 
 # Quoting EOF turns of variable substitution on purpose
-cat << 'EOF' > $HOME/.conkyrc
+cat << 'EOF' > "$HOME/.conkyrc"
 conky.config = {
     alignment = 'top_right',
     background = false,
@@ -68,8 +68,8 @@ Press Alt+Ctrl+Shift for
 ]]
 EOF
 
-mkdir -p  $HOME/.config/autostart
-cat << EOF > $HOME/.config/autostart/conky.desktop
+mkdir -p  "$HOME/.config/autostart"
+cat << EOF > "$HOME/.config/autostart/conky.desktop"
 [Desktop Entry]
 Type=Application
 Name=conky

@@ -15,7 +15,7 @@ else
     OUTPUT_BASE=$3
 fi
 
-docker pull ${DOCKER_IMAGE}
+docker pull "${DOCKER_IMAGE}"
 
 INTERNAL_NETWORK=strictly_internal
 docker network inspect $INTERNAL_NETWORK >/dev/null 2>&1\
@@ -29,6 +29,6 @@ docker run\
     --network=strictly_internal\
     --mount "type=bind,source=${INPUT_FOLDER},target=/input"\
     --mount "type=bind,source=${OUTPUT_BASE},target=/output"\
-    ${DOCKER_IMAGE}
+    "${DOCKER_IMAGE}"
 
-sudo chmod 777 -R ${OUTPUT_BASE}
+sudo chmod 777 -R "${OUTPUT_BASE}"

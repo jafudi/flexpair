@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 
-mkdir -p $HOME/.config/texlive
-cd $HOME/.config/texlive
+mkdir -p "$HOME/.config/texlive"
+cd "$HOME/.config/texlive"
 
 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar xvzf install-tl-unx.tar.gz

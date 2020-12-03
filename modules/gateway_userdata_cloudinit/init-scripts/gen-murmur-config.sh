@@ -25,6 +25,7 @@ EOF
 
 # Path to database. If blank, will search for
 # murmur.sqlite in default locations or create it if not found.
+# shellcheck disable=SC2129
 cat << 'EOF' >> "${NO_COMMENTS}"
 database=/opt/murmur/data/murmur.sqlite
 EOF

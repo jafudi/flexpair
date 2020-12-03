@@ -15,8 +15,8 @@ pip3 -q install html5lib gpod eyeD3 youtube_dl
 
 # Try installing gPodder from Git on the deployed desktop
 
-mkdir -p $HOME/.config/vlc
-cat << EOF >> $HOME/.config/vlc/vlc-qt-interface.conf
+mkdir -p "$HOME/.config/vlc"
+cat << EOF >> "$HOME/.config/vlc/vlc-qt-interface.conf"
 [MainWindow]
 AdvToolbar="12;11;14;13;"
 FSCtoolbar="0-2;64;3;1;4;64;37;64;38;64;8;65;25;35-4;34;"
@@ -33,7 +33,7 @@ playlistSize=@Size(600 300)
 status-bar-visible=false
 EOF
 
-cat << 'EOF' >> $HOME/.config/vlc/vlcrc
+cat << 'EOF' >> "$HOME/.config/vlc/vlcrc"
 ###
 ###  vlc 3.0.9.2
 ###
@@ -5148,11 +5148,11 @@ metadata-network-access=1
 # Playlist bookmark 10 (string)
 #bookmark10=
 EOF
-chown -R ubuntu $HOME/.config/vlc
+chown -R ubuntu "$HOME/.config/vlc"
 
 
-mkdir -p $HOME/gPodder
-cat << EOF > $HOME/gPodder/Settings.json
+mkdir -p "$HOME/gPodder"
+cat << 'EOF' > "$HOME/gPodder/Settings.json"
 {
   "auto": {
     "cleanup": {
@@ -5328,4 +5328,4 @@ cat << EOF > $HOME/gPodder/Settings.json
     "preferred_fmt_ids": []
   }
 }
-'EOF'
+EOF

@@ -7,7 +7,7 @@
 DEBIAN_FRONTEND="noninteractive" apt-get -qq install --no-install-recommends trojita
 
 mkdir -p "/home/${DESKTOP_USERNAME}/.config/flaska.net"
-cat << EOF > /home/${DESKTOP_USERNAME}/.config/flaska.net/trojita.conf
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/flaska.net/trojita.conf"
 [General]
 app.updates.checkEnabled=false
 imap.auth.pass=${IMAP_PASSWORD}

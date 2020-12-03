@@ -3,11 +3,11 @@
 echo "Running script lxqt-look-and-feel.sh..."
 echo
 
-chown -R "${DESKTOP_USERNAME}" /home/${DESKTOP_USERNAME}
+chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"
 
-mkdir -p /home/${DESKTOP_USERNAME}/Desktop
+mkdir -p "/home/${DESKTOP_USERNAME}/Desktop"
 
-cat << EOF > /home/${DESKTOP_USERNAME}/Desktop/trash.desktop
+cat << EOF > "/home/${DESKTOP_USERNAME}/Desktop/trash.desktop"
 [Desktop Entry]
 Type=Application
 Icon=user-trash
@@ -21,8 +21,8 @@ Terminal=false
 MimeType=x-directory/normal;inode/directory;
 EOF
 
-mkdir -p /home/${DESKTOP_USERNAME}/.config/lxqt
-cat << EOF > /home/${DESKTOP_USERNAME}/.config/lxqt/panel.conf
+mkdir -p "/home/${DESKTOP_USERNAME}/.config/lxqt"
+cat << EOF > "/home/${DESKTOP_USERNAME}/.config/lxqt/panel.conf"
 [General]
 __userfile__=true
 iconTheme=
@@ -173,7 +173,7 @@ do
 done
 
 OCD="/home/${DESKTOP_USERNAME}/.config/openbox"
-mkdir -p $OCD # Openbox Config Directory
+mkdir -p "$OCD" # Openbox Config Directory
 
 # Remove namespace which complicates editing
 sed 's/ xmlns.*=".*"//g' "/etc/xdg/openbox/lxqt-rc.xml" > "$OCD/lxqt-rc.xml"
