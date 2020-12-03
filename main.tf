@@ -26,10 +26,10 @@ module "oracle_infrastructure" {
 }
 
 module "amazon_infrastructure" {
-  source                     = "./modules/shared_infrastructure_aws"
+  source = "./modules/shared_infrastructure_aws"
   // currently unused
-  compartment_name           = module.certified_hostname.subdomain_label
-  deployment_tags            = local.deployment_tags
+  compartment_name = module.certified_hostname.subdomain_label
+  deployment_tags  = local.deployment_tags
 }
 
 locals {
@@ -40,7 +40,7 @@ locals {
     locale_settings  = var.locale
   }
 
-  gateway_username = module.amazon_infrastructure.account_name
+  gateway_username = "account${module.amazon_infrastructure.account_id}"
   desktop_username = module.oracle_infrastructure.tenancy_name
 }
 
