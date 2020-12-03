@@ -1,4 +1,4 @@
-data "aws_iam_account_alias" "current" {}
+data "aws_caller_identity" "current" {}
 
 resource "aws_vpc" "main" {
   cidr_block       = "10.1.0.0/16"

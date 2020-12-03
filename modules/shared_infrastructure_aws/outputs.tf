@@ -27,5 +27,5 @@ output "minimum_viable_shape" {
 }
 
 output "account_name" {
-  value = data.aws_iam_account_alias.current.account_alias
+  value = data.aws_caller_identity.current.user_id
 }
