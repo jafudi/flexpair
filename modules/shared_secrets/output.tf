@@ -9,3 +9,11 @@ output "imap_password" {
 output "murmur_password" {
   value = random_password.murmur_password.result
 }
+
+output "gateway_username" {
+  value = var.gateway_username
+}
+
+output "desktop_username" {
+  value = var.desktop_username
+}

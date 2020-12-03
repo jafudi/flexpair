@@ -39,18 +39,17 @@ locals {
     timezone_name    = var.timezone
     locale_settings  = var.locale
   }
-
-  gateway_username = "account${module.amazon_infrastructure.account_id}"
-  desktop_username = module.oracle_infrastructure.tenancy_name
 }
 
 module "shared_secrets" {
   source = "./modules/shared_secrets"
+  gateway_username = "account${module.amazon_infrastructure.account_id}"
+  desktop_username = module.oracle_infrastructure.tenancy_name
 }
 
 locals {
   email_config = {
-    address   = "${local.desktop_username}@${module.certified_hostname.full_hostname}"
+    address   = "${module.shared_secrets.desktop_username}@${module.certified_hostname.full_hostname}"
     password  = module.shared_secrets.imap_password
     imap_port = 143
     smtp_port = 25
@@ -66,8 +65,8 @@ module "gateway_installer" {
   source                 = "./modules/gateway_userdata_cloudinit"
   location_info          = local.location_info
   vm_mutual_keypair      = module.shared_secrets.vm_mutual_key
-  gateway_username       = local.gateway_username
-  desktop_username       = local.desktop_username
+  gateway_username       = module.shared_secrets.gateway_username
+  desktop_username       = module.shared_secrets.desktop_username
   ssl_certificate        = module.certified_hostname.certificate
   murmur_config          = local.murmur_config
   gateway_dns_hostname   = module.certified_hostname.full_hostname
@@ -89,7 +88,7 @@ module "gateway_machine" {
     compute_shape   = module.amazon_infrastructure.minimum_viable_shape
     source_image_id = module.amazon_infrastructure.source_image.id
   }
-  gateway_username  = local.gateway_username
+  gateway_username  = module.shared_secrets.gateway_username
   murmur_config     = local.murmur_config
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
@@ -117,8 +116,8 @@ module "desktop_installer" {
   source               = "./modules/desktop_userdata_cloudinit"
   location_info        = local.location_info
   vm_mutual_keypair    = module.shared_secrets.vm_mutual_key
-  gateway_username     = local.gateway_username
-  desktop_username     = local.desktop_username
+  gateway_username     = module.shared_secrets.gateway_username
+  desktop_username     = module.shared_secrets.desktop_username
   murmur_config        = local.murmur_config
   gateway_dns_hostname = module.certified_hostname.full_hostname
   email_config         = local.email_config
@@ -142,7 +141,7 @@ module "desktop_machine_1" {
     compute_shape   = module.oracle_infrastructure.minimum_viable_shape
     source_image_id = module.oracle_infrastructure.source_image.id
   }
-  desktop_username    = local.desktop_username
+  desktop_username    = module.shared_secrets.desktop_username
   murmur_config       = local.murmur_config
   email_config        = local.email_config
   encoded_userdata    = local.encoded_desktop_config

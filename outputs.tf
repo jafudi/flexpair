@@ -7,11 +7,11 @@ output "email_adress" {
 }
 
 output "gateway_username" {
-  value = local.gateway_username
+  value = module.shared_secrets.gateway_username
 }
 
 output "ssh_into_desktop_1" {
-  value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${local.desktop_username}@${module.desktop_machine_1.public_ip}"
+  value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${module.shared_secrets.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {
