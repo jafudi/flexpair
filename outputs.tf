@@ -6,12 +6,12 @@ output "email_adress" {
   value = local.email_config.address
 }
 
-locals {
-  working_dir = "/Users/jens/PycharmProjects/traction"
+output "gateway_username" {
+  value = local.gateway_username
 }
 
 output "ssh_into_desktop_1" {
-  value = "ssh -i ${local.working_dir}/.ssh/privkey -o StrictHostKeyChecking=no ${local.desktop_username}@${module.desktop_machine_1.public_ip}"
+  value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${local.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {

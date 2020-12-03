@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,13 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Set usernames equal to tenancy name on both nodes">
-      <created>1605910573466</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1605910573466</updated>
     </task>
     <task id="LOCAL-00034" summary="Set usernames equal to tenancy name on both nodes">
       <created>1605911306322</created>
@@ -544,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607034581252</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="data.aws_caller_identity.current.account_id">
+      <created>1607037103590</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1607037103597</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -560,7 +558,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Move gateway to Tokyo for testing" />
     <MESSAGE value="Leave out the desktop node until gateway is properly created in Tokyo" />
     <MESSAGE value="Prolong timeout" />
     <MESSAGE value="Remove file provisioner in order to detect whether it is the culprit" />
@@ -585,6 +582,7 @@
     <MESSAGE value="Proper double quoting" />
     <MESSAGE value="Remove unused variables from AWS module" />
     <MESSAGE value="data.aws_caller_identity.current.user_id" />
-    <option name="LAST_COMMIT_MESSAGE" value="data.aws_caller_identity.current.user_id" />
+    <MESSAGE value="data.aws_caller_identity.current.account_id" />
+    <option name="LAST_COMMIT_MESSAGE" value="data.aws_caller_identity.current.account_id" />
   </component>
 </project>
