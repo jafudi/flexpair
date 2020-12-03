@@ -22,10 +22,8 @@
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/output.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,13 +201,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Try VM.Standard.E2.1.Micro">
-      <created>1605914998199</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1605914998199</updated>
     </task>
     <task id="LOCAL-00036" summary="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified">
       <created>1606059052490</created>
@@ -547,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607037579207</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Move usernames to module shared_secrets">
+      <created>1607037975425</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1607037975425</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +561,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Prolong timeout" />
     <MESSAGE value="Remove file provisioner in order to detect whether it is the culprit" />
     <MESSAGE value="Re-add desktop node" />
     <MESSAGE value="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys" />
@@ -588,6 +585,7 @@
     <MESSAGE value="data.aws_caller_identity.current.user_id" />
     <MESSAGE value="data.aws_caller_identity.current.account_id" />
     <MESSAGE value="output &quot;gateway_username&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="output &quot;gateway_username&quot;" />
+    <MESSAGE value="Move usernames to module shared_secrets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move usernames to module shared_secrets" />
   </component>
 </project>

@@ -42,9 +42,9 @@ locals {
 }
 
 module "shared_secrets" {
-  source = "./modules/shared_secrets"
-  gateway_username = "account${module.amazon_infrastructure.account_id}"
-  desktop_username = module.oracle_infrastructure.tenancy_name
+  source           = "./modules/shared_secrets"
+  gateway_username = module.amazon_infrastructure.account_name
+  desktop_username = module.oracle_infrastructure.account_name
 }
 
 locals {

@@ -7,8 +7,8 @@ output "network_config" {
   }
 }
 
-output "tenancy_name" {
-  value = data.oci_identity_tenancy.te.name
+output "account_name" {
+  value = "oci_account_${data.oci_identity_tenancy.te.name}"
 }
 
 output "compartment" {
