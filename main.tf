@@ -27,10 +27,7 @@ module "oracle_infrastructure" {
 
 module "amazon_infrastructure" {
   source                     = "./modules/shared_infrastructure_aws"
-  tenancy_ocid               = var.oci_tenancy_ocid
-  user_ocid                  = var.oci_user_ocid
-  region                     = var.oci_region
-  availibility_domain_number = var.oci_free_tier_avail
+  // currently unused
   compartment_name           = module.certified_hostname.subdomain_label
   deployment_tags            = local.deployment_tags
 }
@@ -43,7 +40,7 @@ locals {
     locale_settings  = var.locale
   }
 
-  gateway_username = module.oracle_infrastructure.tenancy_name
+  gateway_username = module.amazon_infrastructure.account_name
   desktop_username = module.oracle_infrastructure.tenancy_name
 }
 
@@ -97,7 +94,7 @@ module "gateway_machine" {
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
   vm_mutual_keypair = module.shared_secrets.vm_mutual_key
-  // depends_on        = [module.amazon_infrastructure]
+  depends_on        = [module.amazon_infrastructure]
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -134,10 +131,10 @@ locals {
 
 module "desktop_machine_1" {
   source = "./modules/desktop_infrastructure_oci"
-  //  depends_on = [
-  //    # Desktop without gateway would be of little use
-  //    module.gateway_installer
-  //  ]
+  depends_on = [
+    # Desktop without gateway would be of little use
+    module.gateway_installer
+  ]
   compartment    = module.oracle_infrastructure.compartment
   location_info  = local.location_info
   network_config = module.oracle_infrastructure.network_config

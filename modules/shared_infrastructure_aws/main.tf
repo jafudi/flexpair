@@ -1,3 +1,5 @@
+data "aws_iam_account_alias" "current" {}
+
 resource "aws_vpc" "main" {
   cidr_block       = "10.1.0.0/16"
   instance_tenancy = "default" // Using either of the other options costs at least $2/hr!!

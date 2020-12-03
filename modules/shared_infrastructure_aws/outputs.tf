@@ -25,3 +25,7 @@ output "source_image" {
 output "minimum_viable_shape" {
   value = "t2.micro"
 }
+
+output "account_name" {
+  value = data.aws_iam_account_alias.current.account_alias
+}

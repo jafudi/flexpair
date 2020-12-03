@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/11-add-privkey.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/11-add-privkey.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/32-lxqt-look-and-feel.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/50-trojita-mail.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/50-trojita-mail.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/podcasts-and-videos.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/podcasts-and-videos.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/resource-monitor.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/resource-monitor.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/texlive-and-kile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/optional/texlive-and-kile.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/gen-murmur-config.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/gen-murmur-config.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/run_app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/run_app.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="metadata-updates" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +52,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
@@ -209,13 +202,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00030" summary="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after">
-      <created>1605907455756</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1605907455756</updated>
     </task>
     <task id="LOCAL-00031" summary="User data is limited to 16 KB, in raw form, before it is base64-encoded, not after">
       <created>1605909088800</created>
@@ -553,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606943383176</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Proper double quoting">
+      <created>1606997904242</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1606997904245</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +562,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Verify that SSH connection fails and produces an error" />
     <MESSAGE value="Open ports on AWS" />
     <MESSAGE value="Add userdata" />
     <MESSAGE value="Move gateway to Tokyo for testing" />
@@ -594,6 +586,7 @@
     <MESSAGE value="Export structural visualizations from blast-radius" />
     <MESSAGE value="Fix: Experiment has concluded" />
     <MESSAGE value="Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <MESSAGE value="Proper double quoting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proper double quoting" />
   </component>
 </project>
