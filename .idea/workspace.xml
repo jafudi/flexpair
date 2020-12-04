@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +199,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Bugfix Mumble URL">
-      <created>1606061870921</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1606061870922</updated>
     </task>
     <task id="LOCAL-00039" summary="Extend gitignore">
       <created>1606062054127</created>
@@ -542,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607042391076</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Randomize mumble port">
+      <created>1607042920344</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1607042920344</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
