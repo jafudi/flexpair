@@ -32,12 +32,6 @@ Isomorphisms between
  </tr>
 </table>
 
-# Energy Consumption and Privacy Legislation
-
-![Energy Consumption and Privacy Legislation](docs/EnergyConsumptionAndPrivacy.png)
-
-Source: https://www.oracle.com/de/cloud/data-regions.html (17.10.2020)
-
 # Market Analysis and Unique Selling Point
 
 [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
