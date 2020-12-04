@@ -20,8 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/modules/credentials_generator/output.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/documentation/terraform-graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/documentation/acme_certificate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/outputs.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/variables.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/certified_dns_hostname/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/documentation/terraform-graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/documentation/terraform-graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/output.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/version.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider-dns.tf" beforeDir="false" afterPath="$PROJECT_DIR$/provider-dns.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +57,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="metadata-updates" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,11 +89,11 @@
       <recent name="$PROJECT_DIR$/modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/credential_generator/documentation" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
       <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation" />
       <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/documentation" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws/documentation" />
     </key>
   </component>
   <component name="RunManager">

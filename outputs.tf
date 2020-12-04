@@ -3,15 +3,15 @@ output "used_base_image" {
 }
 
 output "email_adress" {
-  value = local.email_config.address
+  value = module.credentials_generator.email_config.address
 }
 
 output "ssh_into_desktop_1" {
-  value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${module.shared_secrets.desktop_username}@${module.desktop_machine_1.public_ip}"
+  value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {
-  value = module.shared_secrets.vm_mutual_key.private_key_pem
+  value = module.credentials_generator.vm_mutual_key.private_key_pem
 }
 
 output "gateway_config_size" {
@@ -23,9 +23,9 @@ output "desktop_config_size" {
 }
 
 output "access_via_browser" {
-  value = "https://${module.certified_hostname.full_hostname}/?password=${urlencode(module.shared_secrets.murmur_credentials.password)}"
+  value = "https://${module.credentials_generator.full_hostname}/?password=${urlencode(module.credentials_generator.murmur_credentials.password)}"
 }
 
 output "access_via_mumble" {
-  value = "mumble://:${urlencode(module.shared_secrets.murmur_credentials.password)}@${module.certified_hostname.full_hostname}:${module.shared_secrets.murmur_credentials.port}"
+  value = "mumble://:${urlencode(module.credentials_generator.murmur_credentials.password)}@${module.credentials_generator.full_hostname}:${module.credentials_generator.murmur_credentials.port}"
 }
