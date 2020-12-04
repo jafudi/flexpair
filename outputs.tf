@@ -6,10 +6,6 @@ output "email_adress" {
   value = local.email_config.address
 }
 
-output "gateway_username" {
-  value = module.shared_secrets.gateway_username
-}
-
 output "ssh_into_desktop_1" {
   value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${module.shared_secrets.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
@@ -27,9 +23,9 @@ output "desktop_config_size" {
 }
 
 output "access_via_browser" {
-  value = "https://${module.certified_hostname.full_hostname}/?password=${urlencode(local.murmur_config.password)}"
+  value = "https://${module.certified_hostname.full_hostname}/?password=${urlencode(module.shared_secrets.murmur_credentials.password)}"
 }
 
 output "access_via_mumble" {
-  value = "mumble://:${urlencode(local.murmur_config.password)}@${module.certified_hostname.full_hostname}:${local.murmur_config.port}"
+  value = "mumble://:${urlencode(module.shared_secrets.murmur_credentials.password)}@${module.certified_hostname.full_hostname}:${module.shared_secrets.murmur_credentials.port}"
 }

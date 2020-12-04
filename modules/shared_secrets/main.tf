@@ -12,3 +12,15 @@ resource "random_password" "murmur_password" {
   length  = 16
   special = false // may lead to quoting issues otherwise
 }
+
+resource "random_integer" "murmur_port" {
+  max = 10000
+  min = 65535
+}
+
+locals {
+  murmur_credentials = {
+    port     = random_integer.murmur_port.result
+    password = random_password.murmur_password.result
+  }
+}

@@ -6,8 +6,8 @@ output "imap_password" {
   value = random_password.imap_password.result
 }
 
-output "murmur_password" {
-  value = random_password.murmur_password.result
+output "murmur_credentials" {
+  value = local.murmur_credentials
 }
 
 output "gateway_username" {

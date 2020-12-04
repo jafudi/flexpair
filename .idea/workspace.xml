@@ -22,8 +22,9 @@
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/output.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,13 +202,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Prioritize in which order I will expand to other cloud providers, depending on them offering a considerable free tier plan and whether the corresponding Terraform provider is verified">
-      <created>1606059052490</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1606059052490</updated>
     </task>
     <task id="LOCAL-00037" summary="Add some syntactic sugar before tackling AWS configuration">
       <created>1606059072424</created>
@@ -545,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607037975425</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Standardize format of cloud account name">
+      <created>1607039243312</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1607039243313</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +562,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove file provisioner in order to detect whether it is the culprit" />
     <MESSAGE value="Re-add desktop node" />
     <MESSAGE value="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys" />
     <MESSAGE value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
@@ -586,6 +586,7 @@
     <MESSAGE value="data.aws_caller_identity.current.account_id" />
     <MESSAGE value="output &quot;gateway_username&quot;" />
     <MESSAGE value="Move usernames to module shared_secrets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move usernames to module shared_secrets" />
+    <MESSAGE value="Standardize format of cloud account name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Standardize format of cloud account name" />
   </component>
 </project>

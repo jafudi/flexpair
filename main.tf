@@ -49,15 +49,10 @@ module "shared_secrets" {
 
 locals {
   email_config = {
-    address   = "${module.shared_secrets.desktop_username}@${module.certified_hostname.full_hostname}"
+    address   = "mail@${module.certified_hostname.full_hostname}"
     password  = module.shared_secrets.imap_password
     imap_port = 143
     smtp_port = 25
-  }
-
-  murmur_config = {
-    port     = 53123 // must be less than or equal to 65535
-    password = module.shared_secrets.murmur_password
   }
 }
 
@@ -68,7 +63,7 @@ module "gateway_installer" {
   gateway_username       = module.shared_secrets.gateway_username
   desktop_username       = module.shared_secrets.desktop_username
   ssl_certificate        = module.certified_hostname.certificate
-  murmur_config          = local.murmur_config
+  murmur_config          = module.shared_secrets.murmur_credentials
   gateway_dns_hostname   = module.certified_hostname.full_hostname
   email_config           = local.email_config
   docker_compose_release = local.docker_compose_release
@@ -89,7 +84,7 @@ module "gateway_machine" {
     source_image_id = module.amazon_infrastructure.source_image.id
   }
   gateway_username  = module.shared_secrets.gateway_username
-  murmur_config     = local.murmur_config
+  murmur_config     = module.shared_secrets.murmur_credentials
   email_config      = local.email_config
   encoded_userdata  = local.encoded_gateway_config
   vm_mutual_keypair = module.shared_secrets.vm_mutual_key
@@ -118,7 +113,7 @@ module "desktop_installer" {
   vm_mutual_keypair    = module.shared_secrets.vm_mutual_key
   gateway_username     = module.shared_secrets.gateway_username
   desktop_username     = module.shared_secrets.desktop_username
-  murmur_config        = local.murmur_config
+  murmur_config        = module.shared_secrets.murmur_credentials
   gateway_dns_hostname = module.certified_hostname.full_hostname
   email_config         = local.email_config
 }
@@ -142,7 +137,7 @@ module "desktop_machine_1" {
     source_image_id = module.oracle_infrastructure.source_image.id
   }
   desktop_username    = module.shared_secrets.desktop_username
-  murmur_config       = local.murmur_config
+  murmur_config       = module.shared_secrets.murmur_credentials
   email_config        = local.email_config
   encoded_userdata    = local.encoded_desktop_config
   vm_mutual_keypair   = module.shared_secrets.vm_mutual_key
