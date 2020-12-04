@@ -14,8 +14,8 @@ resource "random_password" "murmur_password" {
 }
 
 resource "random_integer" "murmur_port" {
-  max = 10000
-  min = 65535
+  max = 65535
+  min = 10000
 }
 
 locals {

@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/shared_secrets/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_secrets/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_secrets/output.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,13 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Add some syntactic sugar before tackling AWS configuration">
-      <created>1606059072424</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1606059072424</updated>
     </task>
     <task id="LOCAL-00038" summary="Bugfix Mumble URL">
       <created>1606061870921</created>
@@ -546,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607039243313</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Randomize mumble port">
+      <created>1607042391076</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1607042391076</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,7 +558,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Re-add desktop node" />
     <MESSAGE value="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys" />
     <MESSAGE value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
     <MESSAGE value="Fix syntax error" />
@@ -587,6 +582,7 @@
     <MESSAGE value="output &quot;gateway_username&quot;" />
     <MESSAGE value="Move usernames to module shared_secrets" />
     <MESSAGE value="Standardize format of cloud account name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Standardize format of cloud account name" />
+    <MESSAGE value="Randomize mumble port" />
+    <option name="LAST_COMMIT_MESSAGE" value="Randomize mumble port" />
   </component>
 </project>
