@@ -68,8 +68,7 @@ module "gateway_machine" {
   }
   source = "./modules/gateway_infrastructure_aws"
   // below variables are specific to AWS and should be prefixed accordingly
-  cloud_provider_context = module.oracle_infrastructure.vm_instance_context
-  depends_on             = [module.amazon_infrastructure]
+  cloud_provider_context = module.amazon_infrastructure.vm_instance_context
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
