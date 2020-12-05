@@ -1,5 +1,9 @@
-output "used_base_image" {
+output "oci_base_image" {
   value = module.oracle_infrastructure.source_image_name
+}
+
+output "aws_base_image" {
+  value = module.amazon_infrastructure.source_image_name
 }
 
 output "email_adress" {

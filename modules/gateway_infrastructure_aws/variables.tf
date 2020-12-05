@@ -1,3 +1,13 @@
+variable "cloud_provider_context" {
+  type = object({
+    vpc_id                   = string
+    subnet_id                = string
+    shared_security_group_id = string
+    source_image_id          = string
+    minimum_viable_shape     = string
+  })
+}
+
 variable "vm_mutual_keypair" {
   type = object({
     private_key_pem    = string
@@ -5,23 +15,8 @@ variable "vm_mutual_keypair" {
   })
 }
 
-variable "vm_specs" {
-  type = object({
-    compute_shape   = string
-    source_image_id = string
-  })
-}
-
 variable "deployment_tags" {
   type = map(string)
-}
-
-variable "network_config" {
-  type = object({
-    vpc_id                   = string
-    subnet_id                = string
-    shared_security_group_id = string
-  })
 }
 
 variable "open_tcp_ports" {

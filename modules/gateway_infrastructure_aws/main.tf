@@ -7,14 +7,14 @@ locals {
 }
 
 resource "aws_instance" "gateway" {
-  ami                         = var.vm_specs.source_image_id
-  instance_type               = var.vm_specs.compute_shape
+  ami                         = var.cloud_provider_context.source_image_id
+  instance_type               = var.cloud_provider_context.minimum_viable_shape
   associate_public_ip_address = true
   tags                        = local.tags
   volume_tags                 = local.tags
   monitoring                  = false
-  subnet_id                   = var.network_config.subnet_id
-  vpc_security_group_ids      = [var.network_config.shared_security_group_id, aws_security_group.gateway_rules.id]
+  subnet_id                   = var.cloud_provider_context.subnet_id
+  vpc_security_group_ids      = [var.cloud_provider_context.shared_security_group_id, aws_security_group.gateway_rules.id]
   user_data_base64            = var.encoded_userdata
 
   connection {
@@ -24,13 +24,6 @@ resource "aws_instance" "gateway" {
     user        = var.gateway_username
     private_key = var.vm_mutual_keypair.private_key_pem
   }
-
-  //  // Test whether file upload via SSH works
-  //  provisioner "file" {
-  //    source      = "${path.root}/uploads/"
-  //    destination = "/home/${var.gateway_username}/uploads"
-  //    on_failure  = continue
-  //  }
 
   // Follow the cloud-init logs until finished
   provisioner "remote-exec" {
@@ -44,7 +37,7 @@ resource "aws_instance" "gateway" {
 
 resource "aws_security_group" "gateway_rules" {
   description = "Additional rules for the gateway node"
-  vpc_id      = var.network_config.vpc_id
+  vpc_id      = var.cloud_provider_context.vpc_id
 
   dynamic "ingress" {
     for_each = var.open_tcp_ports

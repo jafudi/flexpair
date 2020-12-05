@@ -25,7 +25,7 @@ module "amazon_infrastructure" {
 module "credentials_generator" {
   registered_domain     = var.registered_domain
   subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
-  gateway_username      = module.amazon_infrastructure.account_name
+  gateway_username      = module.amazon_infrastructure.cloud_account_name
   desktop_username      = module.oracle_infrastructure.cloud_account_name
   source                = "./modules/credentials_generator"
   // below variables are specific to dynv6.com DNS as an RFC2136 implementation
@@ -68,12 +68,8 @@ module "gateway_machine" {
   }
   source = "./modules/gateway_infrastructure_aws"
   // below variables are specific to AWS and should be prefixed accordingly
-  network_config = module.amazon_infrastructure.network_config
-  vm_specs = {
-    compute_shape   = module.amazon_infrastructure.minimum_viable_shape
-    source_image_id = module.amazon_infrastructure.source_image.id
-  }
-  depends_on = [module.amazon_infrastructure]
+  cloud_provider_context = module.oracle_infrastructure.vm_instance_context
+  depends_on             = [module.amazon_infrastructure]
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
