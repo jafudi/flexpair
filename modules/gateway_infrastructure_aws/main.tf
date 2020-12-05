@@ -42,40 +42,23 @@ resource "aws_instance" "gateway" {
   }
 }
 
+locals {
+  open_tcp_ports = [22, 443, 80, var.murmur_config.port, var.email_config.smtp_port]
+}
+
 resource "aws_security_group" "gateway_rules" {
   description = "Additional rules for the gateway node"
   vpc_id      = var.network_config.vpc_id
 
-  ingress {
-    description = "Allow inbound SSH connections"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound TLS connections"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound HTTP connections"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound Mumble TCP"
-    from_port   = var.murmur_config.port
-    to_port     = var.murmur_config.port
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+  dynamic "ingress" {
+    for_each = local.open_tcp_ports
+    iterator = port_num
+    content {
+      from_port   = port_num.value
+      to_port     = port_num.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
   }
 
   ingress {
@@ -83,14 +66,6 @@ resource "aws_security_group" "gateway_rules" {
     from_port   = var.murmur_config.port
     to_port     = var.murmur_config.port
     protocol    = "udp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound email transmission"
-    from_port   = var.email_config.smtp_port
-    to_port     = var.email_config.smtp_port
-    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
