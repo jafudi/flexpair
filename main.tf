@@ -69,11 +69,16 @@ module "gateway_machine" {
     source_image_id = module.amazon_infrastructure.source_image.id
   }
   gateway_username  = module.credentials_generator.gateway_username
-  murmur_config     = module.credentials_generator.murmur_credentials
-  email_config      = module.credentials_generator.email_config
   encoded_userdata  = local.encoded_gateway_config
   vm_mutual_keypair = module.credentials_generator.vm_mutual_key
   depends_on        = [module.amazon_infrastructure]
+  open_tcp_ports = {
+    ssh    = 22
+    https  = 443
+    http   = 80
+    mumble = module.credentials_generator.murmur_credentials.port
+    smtp   = module.credentials_generator.email_config.smtp_port
+  }
 }
 
 resource "dns_a_record_set" "gateway_hostname" {

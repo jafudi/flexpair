@@ -42,20 +42,17 @@ resource "aws_instance" "gateway" {
   }
 }
 
-locals {
-  open_tcp_ports = [22, 443, 80, var.murmur_config.port, var.email_config.smtp_port]
-}
-
 resource "aws_security_group" "gateway_rules" {
   description = "Additional rules for the gateway node"
   vpc_id      = var.network_config.vpc_id
 
   dynamic "ingress" {
-    for_each = local.open_tcp_ports
-    iterator = port_num
+    for_each = var.open_tcp_ports
+    iterator = port
     content {
-      from_port   = port_num.value
-      to_port     = port_num.value
+      description = port.key
+      from_port   = port.value
+      to_port     = port.value
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
@@ -63,8 +60,8 @@ resource "aws_security_group" "gateway_rules" {
 
   ingress {
     description = "Allow inbound Mumble UDP"
-    from_port   = var.murmur_config.port
-    to_port     = var.murmur_config.port
+    from_port   = var.open_tcp_ports["mumble"]
+    to_port     = var.open_tcp_ports["mumble"]
     protocol    = "udp"
     cidr_blocks = ["0.0.0.0/0"]
   }

@@ -33,20 +33,9 @@ variable "network_config" {
   })
 }
 
-variable "murmur_config" {
-  type = object({
-    port     = number
-    password = string
-  })
-}
-
-variable "email_config" {
-  type = object({
-    address   = string
-    password  = string
-    imap_port = number
-    smtp_port = number
-  })
+variable "open_tcp_ports" {
+  type = map(number)
+  default = {}
 }
 
 variable "gateway_username" {
