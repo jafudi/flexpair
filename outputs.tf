@@ -1,5 +1,5 @@
 output "used_base_image" {
-  value = module.oracle_infrastructure.source_image.display_name
+  value = module.oracle_infrastructure.source_image_name
 }
 
 output "email_adress" {

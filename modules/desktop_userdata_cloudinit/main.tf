@@ -93,7 +93,7 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content = file("${path.module}/init-scripts/60-prevent-swapping.sh")
+    content      = file("${path.module}/init-scripts/60-prevent-swapping.sh")
   }
 }
 

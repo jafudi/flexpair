@@ -49,7 +49,7 @@ variable "email_config" {
 }
 
 variable "open_tcp_ports" {
-  type = map(number)
+  type    = map(number)
   default = {}
 }
 

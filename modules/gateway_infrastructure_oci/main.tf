@@ -13,8 +13,8 @@ resource "oci_core_security_list" "gateway_security_list" {
     for_each = var.open_tcp_ports
     iterator = port
     content {
-      protocol = "6"
-      source   = "0.0.0.0/0"
+      protocol    = "6"
+      source      = "0.0.0.0/0"
       description = port.key
       tcp_options {
         max = port.value
@@ -24,8 +24,8 @@ resource "oci_core_security_list" "gateway_security_list" {
   }
 
   ingress_security_rules {
-    protocol = "17"
-    source   = "0.0.0.0/0"
+    protocol    = "17"
+    source      = "0.0.0.0/0"
     description = "Mumble incoming via UDP"
     udp_options {
       max = var.open_tcp_ports["mumble"]

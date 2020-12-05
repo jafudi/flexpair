@@ -17,11 +17,11 @@ variable "murmur_config" {
 }
 
 variable "desktop_username" {
-  type        = string
+  type = string
 }
 
 variable "gateway_username" {
-  type        = string
+  type = string
 }
 
 variable "email_config" {

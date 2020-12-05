@@ -25,12 +25,12 @@ resource "aws_instance" "gateway" {
     private_key = var.vm_mutual_keypair.private_key_pem
   }
 
-//  // Test whether file upload via SSH works
-//  provisioner "file" {
-//    source      = "${path.root}/uploads/"
-//    destination = "/home/${var.gateway_username}/uploads"
-//    on_failure  = continue
-//  }
+  //  // Test whether file upload via SSH works
+  //  provisioner "file" {
+  //    source      = "${path.root}/uploads/"
+  //    destination = "/home/${var.gateway_username}/uploads"
+  //    on_failure  = continue
+  //  }
 
   // Follow the cloud-init logs until finished
   provisioner "remote-exec" {

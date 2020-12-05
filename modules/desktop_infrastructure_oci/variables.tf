@@ -1,34 +1,25 @@
-variable "oci_availability_zone" {
-  type = string
+variable "deployment_tags" {
+  type = map(string)
 }
+
+variable "cloud_provider_context" {
+  type = object({
+    vcn_id                   = string
+    route_table_id           = string
+    dhcp_options_id          = string
+    security_list_id         = string
+    availability_domain_name = string
+    compartment_id           = string
+    source_image_id          = string
+    minimum_viable_shape     = string
+  })
+}
+
 
 variable "vm_mutual_keypair" {
   type = object({
     private_key_pem    = string
     public_key_openssh = string
-  })
-}
-
-variable "vm_specs" {
-  type = object({
-    compute_shape   = string
-    source_image_id = string
-  })
-}
-
-variable "compartment" {
-  type = object({
-    id            = string
-    freeform_tags = map(string)
-  })
-}
-
-variable "network_config" {
-  type = object({
-    vcn_id           = string
-    route_table_id   = string
-    dhcp_options_id  = string
-    security_list_id = string
   })
 }
 

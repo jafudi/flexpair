@@ -18,14 +18,14 @@ variable "deployment_tags" {
 
 variable "network_config" {
   type = object({
-    vpc_id                 = string
-    subnet_id              = string
+    vpc_id                   = string
+    subnet_id                = string
     shared_security_group_id = string
   })
 }
 
 variable "open_tcp_ports" {
-  type = map(number)
+  type    = map(number)
   default = {}
 }
 

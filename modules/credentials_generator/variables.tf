@@ -19,7 +19,7 @@ variable "gateway_username" {
 }
 
 variable "registered_domain" {
-  type        = string
+  type = string
 
   validation {
     condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.registered_domain))
