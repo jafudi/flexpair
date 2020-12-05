@@ -6,44 +6,38 @@ locals {
 }
 
 module "oracle_infrastructure" {
-  source                     = "./modules/shared_infrastructure_oci"
+  deployment_tags = local.deployment_tags
+  source          = "./modules/shared_infrastructure_oci"
+  // below variables are specific to OCI and should be prefixed accordingly
   tenancy_ocid               = var.oci_tenancy_ocid
   user_ocid                  = var.oci_user_ocid
   region                     = var.oci_region
   availibility_domain_number = var.oci_free_tier_avail
   compartment_name           = var.TFC_WORKSPACE_NAME
-  deployment_tags            = local.deployment_tags
 }
 
 module "amazon_infrastructure" {
-  source          = "./modules/shared_infrastructure_aws"
   deployment_tags = local.deployment_tags
+  source          = "./modules/shared_infrastructure_aws"
+  // below variables are specific to AWS and should be prefixed accordingly
 }
 
 module "credentials_generator" {
-  source                 = "./modules/credentials_generator"
-  gateway_username       = module.amazon_infrastructure.account_name
-  desktop_username       = module.oracle_infrastructure.account_name
-  registered_domain      = var.registered_domain
-  subdomain_proposition  = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
+  registered_domain     = var.registered_domain
+  subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
+  gateway_username      = module.amazon_infrastructure.account_name
+  desktop_username      = module.oracle_infrastructure.account_name
+  source                = "./modules/credentials_generator"
+  // below variables are specific to dynv6.com DNS as an RFC2136 implementation
   rfc2136_name_server    = var.rfc2136_name_server
   rfc2136_key_name       = var.rfc2136_key_name
   rfc2136_key_secret     = var.rfc2136_key_secret
   rfc2136_tsig_algorithm = var.rfc2136_tsig_algorithm
 }
 
-locals {
-  location_info = {
-    cloud_region     = var.oci_region
-    data_center_name = module.oracle_infrastructure.availability_domain_name
-    timezone_name    = var.timezone
-    locale_settings  = var.locale
-  }
-}
-
 module "gateway_installer" {
-  source                 = "./modules/gateway_userdata_cloudinit"
-  location_info          = local.location_info
+  timezone_name          = var.timezone
+  locale_name            = var.locale
   vm_mutual_keypair      = module.credentials_generator.vm_mutual_key
   gateway_username       = module.credentials_generator.gateway_username
   desktop_username       = module.credentials_generator.desktop_username
@@ -52,6 +46,7 @@ module "gateway_installer" {
   gateway_dns_hostname   = module.credentials_generator.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
+  source                 = "./modules/gateway_userdata_cloudinit"
 }
 
 locals {
@@ -60,18 +55,10 @@ locals {
 }
 
 module "gateway_machine" {
-  source          = "./modules/gateway_infrastructure_aws"
-  deployment_tags = local.deployment_tags
-  location_info   = local.location_info
-  network_config  = module.amazon_infrastructure.network_config
-  vm_specs = {
-    compute_shape   = module.amazon_infrastructure.minimum_viable_shape
-    source_image_id = module.amazon_infrastructure.source_image.id
-  }
+  deployment_tags   = local.deployment_tags
   gateway_username  = module.credentials_generator.gateway_username
   encoded_userdata  = local.encoded_gateway_config
   vm_mutual_keypair = module.credentials_generator.vm_mutual_key
-  depends_on        = [module.amazon_infrastructure]
   open_tcp_ports = {
     ssh    = 22
     https  = 443
@@ -79,6 +66,14 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
+  source = "./modules/gateway_infrastructure_aws"
+  // below variables are specific to AWS and should be prefixed accordingly
+  network_config = module.amazon_infrastructure.network_config
+  vm_specs = {
+    compute_shape   = module.amazon_infrastructure.minimum_viable_shape
+    source_image_id = module.amazon_infrastructure.source_image.id
+  }
+  depends_on = [module.amazon_infrastructure]
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -98,14 +93,15 @@ resource "time_sleep" "dns_propagation" {
 }
 
 module "desktop_installer" {
-  source               = "./modules/desktop_userdata_cloudinit"
-  location_info        = local.location_info
+  timezone_name        = var.timezone
+  locale_name          = var.locale
   vm_mutual_keypair    = module.credentials_generator.vm_mutual_key
   gateway_username     = module.credentials_generator.gateway_username
   desktop_username     = module.credentials_generator.desktop_username
   murmur_config        = module.credentials_generator.murmur_credentials
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
+  source               = "./modules/desktop_userdata_cloudinit"
 }
 
 locals {
@@ -114,24 +110,25 @@ locals {
 }
 
 module "desktop_machine_1" {
-  source = "./modules/desktop_infrastructure_oci"
-  depends_on = [
-    # Desktop without gateway would be of little use
-    module.gateway_installer
-  ]
-  compartment    = module.oracle_infrastructure.compartment
-  location_info  = local.location_info
-  network_config = module.oracle_infrastructure.network_config
-  vm_specs = {
-    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
-    source_image_id = module.oracle_infrastructure.source_image.id
-  }
   desktop_username    = module.credentials_generator.desktop_username
   murmur_config       = module.credentials_generator.murmur_credentials
   email_config        = module.credentials_generator.email_config
   encoded_userdata    = local.encoded_desktop_config
   vm_mutual_keypair   = module.credentials_generator.vm_mutual_key
   gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
+  depends_on = [
+    # Desktop without gateway would be of little use
+    module.gateway_installer
+  ]
+  source = "./modules/desktop_infrastructure_oci"
+  // below variables are specific to OCI and should be prefixed accordingly
+  compartment    = module.oracle_infrastructure.compartment
+  network_config = module.oracle_infrastructure.network_config
+  vm_specs = {
+    compute_shape   = module.oracle_infrastructure.minimum_viable_shape
+    source_image_id = module.oracle_infrastructure.source_image.id
+  }
+  oci_availability_zone = module.oracle_infrastructure.availability_domain_name
 }
 
 resource "null_resource" "health_check" {

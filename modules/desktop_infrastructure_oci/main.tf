@@ -17,7 +17,7 @@ resource "oci_core_subnet" "desktop_subnet" {
 }
 
 resource "oci_core_instance" "desktop" {
-  availability_domain = var.location_info.data_center_name
+  availability_domain = var.oci_availability_zone
   compartment_id      = var.compartment.id
   display_name        = "${local.display_name} VM"
   shape               = var.vm_specs.compute_shape

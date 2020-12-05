@@ -19,8 +19,8 @@ data "template_cloudinit_config" "desktop_config" {
     content_type = "text/cloud-config"
     content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
       SSL_DOMAIN       = var.gateway_dns_hostname
-      DESKTOP_TIMEZONE = var.location_info.timezone_name
-      DESKTOP_LOCALE   = var.location_info.locale_settings
+      DESKTOP_TIMEZONE = var.timezone_name
+      DESKTOP_LOCALE   = var.locale_name
       DESKTOP_USERNAME = var.desktop_username
       GATEWAY_USERNAME = var.gateway_username
       SSH_PUBLIC_KEY   = var.vm_mutual_keypair.public_key_openssh

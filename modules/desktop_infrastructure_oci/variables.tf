@@ -1,3 +1,7 @@
+variable "oci_availability_zone" {
+  type = string
+}
+
 variable "vm_mutual_keypair" {
   type = object({
     private_key_pem    = string
@@ -9,15 +13,6 @@ variable "vm_specs" {
   type = object({
     compute_shape   = string
     source_image_id = string
-  })
-}
-
-variable "location_info" {
-  type = object({
-    cloud_region     = string
-    data_center_name = string
-    timezone_name    = string
-    locale_settings  = string
   })
 }
 

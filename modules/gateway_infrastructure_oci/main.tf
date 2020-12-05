@@ -9,55 +9,30 @@ resource "oci_core_security_list" "gateway_security_list" {
   display_name   = "${local.display_name} Firewall"
   freeform_tags  = var.compartment.freeform_tags
 
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-
-    tcp_options {
-      max = "443"
-      min = "443"
-    }
-  }
-
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-
-    tcp_options {
-      max = "80"
-      min = "80"
-    }
-  }
-
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-
-    tcp_options {
-      max = var.murmur_config.port
-      min = var.murmur_config.port
+  dynamic "ingress_security_rules" {
+    for_each = var.open_tcp_ports
+    iterator = port
+    content {
+      protocol = "6"
+      source   = "0.0.0.0/0"
+      description = port.key
+      tcp_options {
+        max = port.value
+        min = port.value
+      }
     }
   }
 
   ingress_security_rules {
     protocol = "17"
     source   = "0.0.0.0/0"
-
+    description = "Mumble incoming via UDP"
     udp_options {
-      max = var.murmur_config.port
-      min = var.murmur_config.port
+      max = var.open_tcp_ports["mumble"]
+      min = var.open_tcp_ports["mumble"]
     }
   }
 
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-
-    tcp_options {
-      max = var.email_config.smtp_port
-      min = var.email_config.smtp_port
-    }
-  }
 }
 
 resource "oci_core_subnet" "gateway_subnet" {
@@ -76,7 +51,7 @@ resource "oci_core_subnet" "gateway_subnet" {
 }
 
 resource "oci_core_instance" "gateway" {
-  availability_domain = var.location_info.data_center_name
+  availability_domain = var.oci_availability_zone
   compartment_id      = var.compartment.id
   display_name        = "${local.display_name} VM"
   shape               = var.vm_specs.compute_shape

@@ -12,15 +12,6 @@ variable "vm_specs" {
   })
 }
 
-variable "location_info" {
-  type = object({
-    cloud_region     = string
-    data_center_name = string
-    timezone_name    = string
-    locale_settings  = string
-  })
-}
-
 variable "deployment_tags" {
   type = map(string)
 }

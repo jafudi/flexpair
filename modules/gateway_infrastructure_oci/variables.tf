@@ -12,13 +12,8 @@ variable "vm_specs" {
   })
 }
 
-variable "location_info" {
-  type = object({
-    cloud_region     = string
-    data_center_name = string
-    timezone_name    = string
-    locale_settings  = string
-  })
+variable "oci_availability_zone" {
+  type = string
 }
 
 variable "compartment" {
@@ -51,6 +46,11 @@ variable "email_config" {
     imap_port = number
     smtp_port = number
   })
+}
+
+variable "open_tcp_ports" {
+  type = map(number)
+  default = {}
 }
 
 variable "gateway_username" {
