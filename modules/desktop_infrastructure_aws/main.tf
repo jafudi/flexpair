@@ -29,8 +29,20 @@ resource "aws_instance" "desktop" {
   provisioner "remote-exec" {
     inline = [
       "cat /var/log/cloud-init-output.log",
-      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'"
+      "tail -f /var/log/cloud-init-output.log | sed '/^.*finished at.*$/ q'",
     ]
     on_failure = continue
+  }
+
+  provisioner "local-exec" {
+    command = "sleep 60"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'Instance reachable by SSH again after reboot.'",
+      "echo 'Waiting for darkstat server to come up...'",
+      "until systemctl is-active darkstat; do sleep 5; done"
+    ]
   }
 }

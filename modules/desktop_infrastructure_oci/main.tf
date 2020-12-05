@@ -54,6 +54,7 @@ resource "oci_core_instance" "desktop" {
     private_key = var.vm_mutual_keypair.private_key_pem
   }
 
+  // Follow the cloud-init logs until finished
   provisioner "remote-exec" {
     inline = [
       "cat /var/log/cloud-init-output.log",
