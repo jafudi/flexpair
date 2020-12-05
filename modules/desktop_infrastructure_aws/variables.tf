@@ -19,12 +19,7 @@ variable "deployment_tags" {
   type = map(string)
 }
 
-variable "open_tcp_ports" {
-  type    = map(number)
-  default = {}
-}
-
-variable "gateway_username" {
+variable "desktop_username" {
   type = string
 }
 
@@ -34,4 +29,20 @@ variable "encoded_userdata" {
     condition     = length(var.encoded_userdata) < 16384
     error_message = "AWS limits userdata to 16384 bytes."
   }
+}
+
+variable "murmur_config" {
+  type = object({
+    port     = number
+    password = string
+  })
+}
+
+variable "email_config" {
+  type = object({
+    address   = string
+    password  = string
+    imap_port = number
+    smtp_port = number
+  })
 }

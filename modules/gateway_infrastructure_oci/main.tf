@@ -4,10 +4,10 @@ locals {
 }
 
 resource "oci_core_security_list" "gateway_security_list" {
-  compartment_id = var.compartment.id
-  vcn_id         = var.network_config.vcn_id
+  compartment_id = var.cloud_provider_context.compartment_id
+  vcn_id         = var.cloud_provider_context.vcn_id
   display_name   = "${local.display_name} Firewall"
-  freeform_tags  = var.compartment.freeform_tags
+  freeform_tags  = var.deployment_tags
 
   dynamic "ingress_security_rules" {
     for_each = var.open_tcp_ports
@@ -40,35 +40,35 @@ resource "oci_core_subnet" "gateway_subnet" {
   display_name = "${local.display_name} Subnet"
   dns_label    = "${lower(local.hostname)}net"
   security_list_ids = [
-    var.network_config.security_list_id,
+    var.cloud_provider_context.security_list_id,
     oci_core_security_list.gateway_security_list.id
   ]
-  compartment_id  = var.compartment.id
-  vcn_id          = var.network_config.vcn_id
-  route_table_id  = var.network_config.route_table_id
-  dhcp_options_id = var.network_config.dhcp_options_id
-  freeform_tags   = var.compartment.freeform_tags
+  compartment_id  = var.cloud_provider_context.compartment_id
+  vcn_id          = var.cloud_provider_context.vcn_id
+  route_table_id  = var.cloud_provider_context.route_table_id
+  dhcp_options_id = var.cloud_provider_context.dhcp_options_id
+  freeform_tags   = var.deployment_tags
 }
 
 resource "oci_core_instance" "gateway" {
-  availability_domain = var.oci_availability_zone
-  compartment_id      = var.compartment.id
+  availability_domain = var.cloud_provider_context.availability_domain_name
+  compartment_id      = var.cloud_provider_context.compartment_id
   display_name        = "${local.display_name} VM"
-  shape               = var.vm_specs.compute_shape
+  shape               = var.cloud_provider_context.minimum_viable_shape
 
-  freeform_tags = var.compartment.freeform_tags
+  freeform_tags = var.deployment_tags
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.gateway_subnet.id
     display_name     = "ens3"
     assign_public_ip = true
     hostname_label   = local.hostname
-    freeform_tags    = var.compartment.freeform_tags
+    freeform_tags    = var.deployment_tags
   }
 
   source_details {
     source_type = "image"
-    source_id   = var.vm_specs.source_image_id
+    source_id   = var.cloud_provider_context.source_image_id
   }
 
   metadata = {

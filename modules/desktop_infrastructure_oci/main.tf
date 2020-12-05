@@ -38,8 +38,7 @@ resource "oci_core_instance" "desktop" {
   }
 
   metadata = {
-    user_data           = var.encoded_userdata
-    gitlab_runner_token = var.gitlab_runner_token
+    user_data = var.encoded_userdata
   }
 
   agent_config {

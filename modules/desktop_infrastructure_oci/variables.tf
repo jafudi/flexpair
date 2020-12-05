@@ -43,10 +43,6 @@ variable "desktop_username" {
   type = string
 }
 
-variable "gitlab_runner_token" {
-  type = string
-}
-
 variable "encoded_userdata" {
   type = string
   validation {

@@ -66,9 +66,9 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source = "./modules/gateway_infrastructure_aws"
+  source = "./modules/gateway_infrastructure_oci"
   // below variables are specific to AWS and should be prefixed accordingly
-  cloud_provider_context = module.amazon_infrastructure.vm_instance_context
+  cloud_provider_context = module.oracle_infrastructure.vm_instance_context
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -105,20 +105,19 @@ locals {
 }
 
 module "desktop_machine_1" {
-  deployment_tags     = local.deployment_tags
-  desktop_username    = module.credentials_generator.desktop_username
-  murmur_config       = module.credentials_generator.murmur_credentials
-  email_config        = module.credentials_generator.email_config
-  encoded_userdata    = local.encoded_desktop_config
-  vm_mutual_keypair   = module.credentials_generator.vm_mutual_key
-  gitlab_runner_token = "JW6YYWLG4mTsr_-mSaz8"
+  deployment_tags   = local.deployment_tags
+  desktop_username  = module.credentials_generator.desktop_username
+  murmur_config     = module.credentials_generator.murmur_credentials
+  email_config      = module.credentials_generator.email_config
+  encoded_userdata  = local.encoded_desktop_config
+  vm_mutual_keypair = module.credentials_generator.vm_mutual_key
   depends_on = [
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source = "./modules/desktop_infrastructure_oci"
+  source = "./modules/desktop_infrastructure_aws"
   // below variables are specific to OCI and should be prefixed accordingly
-  cloud_provider_context = module.oracle_infrastructure.vm_instance_context
+  cloud_provider_context = module.amazon_infrastructure.vm_instance_context
 }
 
 resource "null_resource" "health_check" {
