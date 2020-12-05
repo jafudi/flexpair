@@ -31,18 +31,3 @@ variable "encoded_userdata" {
   }
 }
 
-variable "murmur_config" {
-  type = object({
-    port     = number
-    password = string
-  })
-}
-
-variable "email_config" {
-  type = object({
-    address   = string
-    password  = string
-    imap_port = number
-    smtp_port = number
-  })
-}

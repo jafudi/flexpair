@@ -107,8 +107,6 @@ locals {
 module "desktop_machine_1" {
   deployment_tags   = local.deployment_tags
   desktop_username  = module.credentials_generator.desktop_username
-  murmur_config     = module.credentials_generator.murmur_credentials
-  email_config      = module.credentials_generator.email_config
   encoded_userdata  = local.encoded_desktop_config
   vm_mutual_keypair = module.credentials_generator.vm_mutual_key
   depends_on = [

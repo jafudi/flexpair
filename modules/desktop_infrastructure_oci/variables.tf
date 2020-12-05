@@ -23,22 +23,6 @@ variable "vm_mutual_keypair" {
   })
 }
 
-variable "murmur_config" {
-  type = object({
-    port     = number
-    password = string
-  })
-}
-
-variable "email_config" {
-  type = object({
-    address   = string
-    password  = string
-    imap_port = number
-    smtp_port = number
-  })
-}
-
 variable "desktop_username" {
   type = string
 }
