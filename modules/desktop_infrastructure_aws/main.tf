@@ -35,7 +35,7 @@ resource "aws_instance" "desktop" {
   }
 
   provisioner "local-exec" {
-    command = "sleep 60"
+    command = "sleep 120"
   }
 
   provisioner "remote-exec" {

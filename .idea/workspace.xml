@@ -26,17 +26,19 @@
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/credentials_generator/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_aws/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_aws/variables.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_aws/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation/terraform-graph.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/documentation/terraform-graph.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/documentation/terraform-graph.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/documentation/terraform-graph.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/documentation/terraform-graph.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
     </list>
@@ -56,7 +58,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../blast-radius" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="NamedScopeManager">
@@ -219,20 +221,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Bugfix">
-      <created>1606095763266</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1606095763266</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Attempt to connect via SSH must fail for two reasons: 1. No port 22 open 2. No public SSH key placed on server">
-      <created>1606096365446</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1606096365459</updated>
     </task>
     <task id="LOCAL-00051" summary="Format Terraform source files">
       <created>1606096921453</created>
@@ -563,7 +551,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607209441491</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Remove unused variables">
+      <created>1607209940252</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1607209940254</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Need to wait for desktop to reboot">
+      <created>1607210777674</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1607210777675</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,8 +581,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Roll back changes in the gateway boothooks" />
-    <MESSAGE value="Quote heredoc in order to prevent variable expansion" />
     <MESSAGE value="Update to Terraform version 0.12.26" />
     <MESSAGE value="Delete" />
     <MESSAGE value="Add docker-compose config" />
@@ -604,6 +604,8 @@
     <MESSAGE value="Fix typo" />
     <MESSAGE value="Swap desktop and gateway roles between AWS and OCI" />
     <MESSAGE value="Correct grammatical mistakes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct grammatical mistakes" />
+    <MESSAGE value="Remove unused variables" />
+    <MESSAGE value="Need to wait for desktop to reboot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Need to wait for desktop to reboot" />
   </component>
 </project>
