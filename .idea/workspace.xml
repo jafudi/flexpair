@@ -112,13 +112,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00053" summary="Open ports on AWS">
-      <created>1606170294134</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1606170294136</updated>
-    </task>
     <task id="LOCAL-00054" summary="Add userdata">
       <created>1606170952998</created>
       <option name="number" value="00054" />
@@ -455,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607291155752</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Added a list of cities where either AWS or Oracle have data centers">
+      <created>1607293440185</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1607293440185</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,7 +471,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add docker-compose config" />
     <MESSAGE value="Export structural visualizations from blast-radius" />
     <MESSAGE value="Fix: Experiment has concluded" />
     <MESSAGE value="Cleanup" />
@@ -496,6 +495,7 @@
     <MESSAGE value="Need to wait for desktop to reboot" />
     <MESSAGE value="Rename modules according to the Terraform registry requirements" />
     <MESSAGE value="Add Readme files to all submodules" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Readme files to all submodules" />
+    <MESSAGE value="Added a list of cities where either AWS or Oracle have data centers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a list of cities where either AWS or Oracle have data centers" />
   </component>
 </project>
