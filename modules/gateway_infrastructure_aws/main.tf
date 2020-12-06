@@ -7,14 +7,14 @@ locals {
 }
 
 resource "aws_instance" "gateway" {
-  ami                         = var.vm_specs.source_image_id
-  instance_type               = var.vm_specs.compute_shape
+  ami                         = var.cloud_provider_context.source_image_id
+  instance_type               = var.cloud_provider_context.minimum_viable_shape
   associate_public_ip_address = true
   tags                        = local.tags
   volume_tags                 = local.tags
   monitoring                  = false
-  subnet_id                   = var.network_config.subnet_id
-  vpc_security_group_ids      = [var.network_config.shared_security_group_id, aws_security_group.gateway_rules.id]
+  subnet_id                   = var.cloud_provider_context.subnet_id
+  vpc_security_group_ids      = [var.cloud_provider_context.shared_security_group_id, aws_security_group.gateway_rules.id]
   user_data_base64            = var.encoded_userdata
 
   connection {
@@ -24,13 +24,6 @@ resource "aws_instance" "gateway" {
     user        = var.gateway_username
     private_key = var.vm_mutual_keypair.private_key_pem
   }
-
-//  // Test whether file upload via SSH works
-//  provisioner "file" {
-//    source      = "${path.root}/uploads/"
-//    destination = "/home/${var.gateway_username}/uploads"
-//    on_failure  = continue
-//  }
 
   // Follow the cloud-init logs until finished
   provisioner "remote-exec" {
@@ -44,53 +37,25 @@ resource "aws_instance" "gateway" {
 
 resource "aws_security_group" "gateway_rules" {
   description = "Additional rules for the gateway node"
-  vpc_id      = var.network_config.vpc_id
+  vpc_id      = var.cloud_provider_context.vpc_id
 
-  ingress {
-    description = "Allow inbound SSH connections"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound TLS connections"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound HTTP connections"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound Mumble TCP"
-    from_port   = var.murmur_config.port
-    to_port     = var.murmur_config.port
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+  dynamic "ingress" {
+    for_each = var.open_tcp_ports
+    iterator = port
+    content {
+      description = port.key
+      from_port   = port.value
+      to_port     = port.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
   }
 
   ingress {
     description = "Allow inbound Mumble UDP"
-    from_port   = var.murmur_config.port
-    to_port     = var.murmur_config.port
+    from_port   = var.open_tcp_ports["mumble"]
+    to_port     = var.open_tcp_ports["mumble"]
     protocol    = "udp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "Allow inbound email transmission"
-    from_port   = var.email_config.smtp_port
-    to_port     = var.email_config.smtp_port
-    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 

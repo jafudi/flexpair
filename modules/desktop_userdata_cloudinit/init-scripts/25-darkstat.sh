@@ -9,7 +9,7 @@ cat <<EOF > /etc/darkstat/init.cfg
 START_DARKSTAT=yes
 # You must set this option, else darkstat may not listen to
 # the interface you want
-INTERFACE="-i ens3"
+INTERFACE="-i ${PRIMARY_NIC}"
 DIR="/var/lib/darkstat"
 PORT="-p 667"
 EOF

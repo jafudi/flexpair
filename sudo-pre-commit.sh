@@ -7,4 +7,4 @@ if [[ $UID != 0 ]]; then
 fi
 
 terraform validate
-terraform fmt
+terraform fmt -recursive

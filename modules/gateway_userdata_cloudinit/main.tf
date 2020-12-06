@@ -40,8 +40,8 @@ data "template_cloudinit_config" "gateway_config" {
   part {
     content_type = "text/cloud-config"
     content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
-      GATEWAY_TIMEZONE = var.location_info.timezone_name
-      GATEWAY_LOCALE   = var.location_info.locale_settings
+      GATEWAY_TIMEZONE = var.timezone_name
+      GATEWAY_LOCALE   = var.locale_name
       GATEWAY_USERNAME = var.gateway_username
       SSH_PUBLIC_KEY   = var.vm_mutual_keypair.public_key_openssh
     })

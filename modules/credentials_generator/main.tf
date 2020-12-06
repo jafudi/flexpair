@@ -1,9 +1,39 @@
+resource "tls_private_key" "vm_mutual_key" {
+  algorithm   = "ECDSA"
+  ecdsa_curve = "P521"
+}
+
+resource "random_password" "imap_password" {
+  length  = 16
+  special = false // may lead to quoting issues otherwise
+}
+
+resource "random_password" "murmur_password" {
+  length  = 16
+  special = false // may lead to quoting issues otherwise
+}
+
+resource "random_integer" "murmur_port" {
+  max = 65535
+  min = 10000
+}
+
 locals {
+  murmur_credentials = {
+    port     = random_integer.murmur_port.result
+    password = random_password.murmur_password.result
+  }
+
   valid_subdomain = lower(replace(var.subdomain_proposition, "/[_\\W]/", "-"))
 
   full_hostname = "${local.valid_subdomain}.${var.registered_domain}"
 
-  email_address = "mail@${local.full_hostname}"
+  email_config = {
+    address   = "mail@${local.full_hostname}"
+    password  = random_password.imap_password.result
+    imap_port = 143
+    smtp_port = 25
+  }
 }
 
 resource "tls_private_key" "acme_private_key" {
@@ -12,7 +42,7 @@ resource "tls_private_key" "acme_private_key" {
 
 resource "acme_registration" "letsencrypt_reg" {
   account_key_pem = tls_private_key.acme_private_key.private_key_pem
-  email_address   = local.email_address
+  email_address   = local.email_config.address
 }
 
 resource "acme_certificate" "letsencrypt_certificate" {

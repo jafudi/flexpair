@@ -34,7 +34,7 @@ Isomorphisms between
 
 # Market Analysis and Unique Selling Point
 
-[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on a asymmetric connection.
+[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on an asymmetric connection.
 
 Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
 
@@ -48,18 +48,18 @@ Existing virtual desktop solutions are all closed-source offers to the business 
 
 Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
 
-We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd work arounds like background substitution requiring the application of energy consuming deep learning models.
+We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd workarounds like background substitution requiring the application of energy consuming deep learning models.
 
-Instead we focus on:
+Instead, we focus on:
 - unsurpassed audio quality and low bandwidth usage
 - zero-install on client side
-- simpler to setup than other more video focussed open source servers like Jitsi or BigBlueButton
+- simpler to set up than other more video focussed open source servers like Jitsi or BigBlueButton
 - works from free tier virtual machines upwards
 - affordable for small clubs, schools and NGOs
 - data privacy through separate VM and strong encryption
 - no metadata collection of communications
 - choice of server location and agnostic of cloud provider
-- so you can combine free VM from e.g Amazon and Google Cloud
+- so you can combine free VM from e.g. Amazon and Google Cloud
 - custom domain and customization of provisioned software
 - automated and reproducable provisioning of the environment
 - include tools for DevOps users and software testing
@@ -110,7 +110,7 @@ Data privacy, intellectual property and saving the climate all at the same time 
 # Technical details
 - SSH tunnnel between desktop and gateway across clouds and borders
 - For example: Gateway on Azure within the US, while desktop on Alibaba in China
-- one-click install on free tier cloud infrastructure
+- one-click installation on free tier cloud infrastructure
 - communication between servers and clients always encrypted
 - stable, yet resource-friendly conferencing even at low bandwidth
 - low latency, high quality

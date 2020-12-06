@@ -19,12 +19,7 @@ variable "deployment_tags" {
   type = map(string)
 }
 
-variable "open_tcp_ports" {
-  type    = map(number)
-  default = {}
-}
-
-variable "gateway_username" {
+variable "desktop_username" {
   type = string
 }
 
@@ -35,3 +30,4 @@ variable "encoded_userdata" {
     error_message = "AWS limits userdata to 16384 bytes."
   }
 }
+

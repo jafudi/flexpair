@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Unnamed" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,8 +24,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/output.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +53,14 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="metadata-updates" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="file[deploy-vm]:*/" />
   </component>
   <component name="ProjectId" id="1kOiy86CerJ4O3IYqo4ndRR5KzM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -54,25 +74,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/desktop_infrastructure_oci" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/desktop_infrastructure_aws" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
       <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
-      <recent name="$PROJECT_DIR$/modules" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/credential_generator/documentation" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
       <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation" />
       <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/documentation" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws/documentation" />
     </key>
   </component>
   <component name="RunManager">
@@ -199,90 +219,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Extend gitignore">
-      <created>1606062054127</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1606062054127</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Create first AWS instance">
-      <created>1606066824485</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1606066824485</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Move upload directory out of module">
-      <created>1606083529670</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1606083529670</updated>
-    </task>
-    <task id="LOCAL-00042" summary="If I change the shared secrets on every apply, then always both instances are going to be re-created. This is overkill.">
-      <created>1606083683151</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1606083683151</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Factor out common security list into shared infrastructure module">
-      <created>1606086098939</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1606086098939</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Remove obsolete documentation">
-      <created>1606086349988</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1606086349988</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Remove obsolete documentation">
-      <created>1606088633185</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1606088633185</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Create a vanilla Ubuntu instance on AWS =&gt; function tests are supposed to fail">
-      <created>1606090850055</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1606090850055</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Make network infrastructure explicit. Still no ports open or userdata supplied.">
-      <created>1606094904501</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1606094904502</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Bugfix">
-      <created>1606095003580</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1606095003580</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Bugfix">
-      <created>1606095763266</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1606095763266</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Attempt to connect via SSH must fail for two reasons: 1. No port 22 open 2. No public SSH key placed on server">
-      <created>1606096365446</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1606096365459</updated>
     </task>
     <task id="LOCAL-00051" summary="Format Terraform source files">
       <created>1606096921453</created>
@@ -543,7 +479,91 @@
       <option name="project" value="LOCAL" />
       <updated>1607042920344</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Update module graph">
+      <created>1607125583939</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1607125583942</updated>
+    </task>
+    <task id="LOCAL-00089" summary="try dynamic &quot;ingress&quot; block">
+      <created>1607127852265</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1607127852268</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Pass ports to open as variable">
+      <created>1607129627215</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1607129627216</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Order variables by provider specific/independent">
+      <created>1607158850297</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1607158850300</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Bundle arguments into cloud_provider_context">
+      <created>1607163455286</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1607163455286</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Do the same for AWS infrastructure">
+      <created>1607164964926</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1607164964928</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Fix typo">
+      <created>1607165181996</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1607165181996</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Swap desktop and gateway roles between AWS and OCI">
+      <created>1607202679069</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1607202679079</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Swap desktop and gateway roles between AWS and OCI">
+      <created>1607207667586</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1607207667588</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Correct grammatical mistakes">
+      <created>1607209441491</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1607209441491</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Remove unused variables">
+      <created>1607209940252</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1607209940254</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Need to wait for desktop to reboot">
+      <created>1607210777674</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1607210777675</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -559,17 +579,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys" />
-    <MESSAGE value="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet" />
-    <MESSAGE value="Fix syntax error" />
-    <MESSAGE value="Add --inplace option" />
-    <MESSAGE value="Shorten script by implementing a little function" />
-    <MESSAGE value="Delete bloody XML namespace" />
-    <MESSAGE value="Debugging" />
-    <MESSAGE value="Fix script" />
-    <MESSAGE value="Use #!/bin/bash -eux as shebang in all scripts" />
-    <MESSAGE value="Roll back changes in the gateway boothooks" />
-    <MESSAGE value="Quote heredoc in order to prevent variable expansion" />
     <MESSAGE value="Update to Terraform version 0.12.26" />
     <MESSAGE value="Delete" />
     <MESSAGE value="Add docker-compose config" />
@@ -584,6 +593,17 @@
     <MESSAGE value="Move usernames to module shared_secrets" />
     <MESSAGE value="Standardize format of cloud account name" />
     <MESSAGE value="Randomize mumble port" />
-    <option name="LAST_COMMIT_MESSAGE" value="Randomize mumble port" />
+    <MESSAGE value="Update module graph" />
+    <MESSAGE value="try dynamic &quot;ingress&quot; block" />
+    <MESSAGE value="Pass ports to open as variable" />
+    <MESSAGE value="Order variables by provider specific/independent" />
+    <MESSAGE value="Bundle arguments into cloud_provider_context" />
+    <MESSAGE value="Do the same for AWS infrastructure" />
+    <MESSAGE value="Fix typo" />
+    <MESSAGE value="Swap desktop and gateway roles between AWS and OCI" />
+    <MESSAGE value="Correct grammatical mistakes" />
+    <MESSAGE value="Remove unused variables" />
+    <MESSAGE value="Need to wait for desktop to reboot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Need to wait for desktop to reboot" />
   </component>
 </project>

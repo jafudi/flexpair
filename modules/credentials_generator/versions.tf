@@ -1,5 +1,13 @@
 terraform {
   required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 2.3.0"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 2.2.0"
+    }
     acme = {
       source  = "terraform-providers/acme"
       version = "~> 1.5.0"
