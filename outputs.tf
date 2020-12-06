@@ -11,7 +11,7 @@ output "email_adress" {
 }
 
 output "ssh_into_desktop_1" {
-  value = "ssh -i ${path.root}/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
+  value = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {
