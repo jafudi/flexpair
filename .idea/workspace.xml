@@ -24,10 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/terraform-aws-commons/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/terraform-aws-desktop/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,18 +62,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/terraform-aws-desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules/terraform-aws-desktop" />
-      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_aws" />
-      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
+      <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
+      <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-desktop" />
+      <recent name="$PROJECT_DIR$/modules/terraform-tls-credentials" />
+      <recent name="$PROJECT_DIR$/modules/terraform-oci-gateway" />
+      <recent name="$PROJECT_DIR$/modules/terraform-oci-desktop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/modules/credential_generator/documentation" />
@@ -113,13 +111,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Verify that SSH connection fails and produces an error">
-      <created>1606097591374</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1606097591375</updated>
     </task>
     <task id="LOCAL-00053" summary="Open ports on AWS">
       <created>1606170294134</created>
@@ -457,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607287654237</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Add Readme files to all submodules">
+      <created>1607291155750</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1607291155752</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +471,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Delete" />
     <MESSAGE value="Add docker-compose config" />
     <MESSAGE value="Export structural visualizations from blast-radius" />
     <MESSAGE value="Fix: Experiment has concluded" />
@@ -498,6 +495,7 @@
     <MESSAGE value="Remove unused variables" />
     <MESSAGE value="Need to wait for desktop to reboot" />
     <MESSAGE value="Rename modules according to the Terraform registry requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename modules according to the Terraform registry requirements" />
+    <MESSAGE value="Add Readme files to all submodules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Readme files to all submodules" />
   </component>
 </project>

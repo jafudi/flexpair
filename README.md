@@ -1,3 +1,58 @@
+# Currently deployable in 33 cities worldwide
+
+- Australia
+  - Melbourne
+  - Sydney
+- Bahrain
+  - Manama
+- Brazil
+  - São Paulo
+- Canada
+  - Montreal
+  - Toronto
+- China
+  - Beijing
+  - Hong Kong
+  - Ningxiang
+- France
+  - Paris
+- Germany
+  - Frankfurt
+- India
+  - Hyderabad
+  - Mumbai
+- Ireland
+  - Dublin
+- Italy
+  - Milan
+- Japan
+  - Osaka
+  - Tokyo
+- Netherlands
+  - Amsterdam
+- Saudi Arabia
+  - Jeddah
+- Singapore
+- South Africa
+  - Cape Town
+- South Korea
+  - Chuncheon
+  - Seoul
+- Sweden
+  - Stockholm
+- Switzerland
+  - Zürich
+- United Kingdom
+  - London
+- United States
+  - Ashburn, Virginia
+  - Boardman, Oregon
+  - Hilliard, Ohio
+  - Phoenix, Arizona
+  - San Francisco, California
+  - San Jose, California
+  - Washington, D.C.
+
 # What are the main features?
 
 Isomorphisms between
