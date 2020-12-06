@@ -26,7 +26,6 @@ resource "oci_core_instance" "desktop" {
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.desktop_subnet.id
-    display_name     = "ens3"
     assign_public_ip = true
     hostname_label   = local.hostname
     freeform_tags    = var.deployment_tags

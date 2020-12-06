@@ -48,7 +48,9 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content      = file("${path.module}/init-scripts/25-darkstat.sh")
+    content = templatefile("${path.module}/init-scripts/25-darkstat.sh", {
+      PRIMARY_NIC = var.primary_nic_name
+    })
   }
   part {
     content_type = "text/x-shellscript"

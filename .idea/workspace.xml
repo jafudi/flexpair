@@ -26,21 +26,19 @@
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_aws/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_aws/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/versions.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/versions.tf" beforeDir="false" afterPath="$PROJECT_DIR$/versions.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/output.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../blast-radius" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="NamedScopeManager">

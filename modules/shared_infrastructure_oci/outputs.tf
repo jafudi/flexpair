@@ -1,8 +1,13 @@
-output "cloud_account_name" {
-  value = "oci_account_${data.oci_identity_tenancy.te.name}"
+output "additional_metadata" {
+  value = {
+    cloud_provider_name    = "oci"
+    cloud_account_name     = data.oci_identity_tenancy.te.name
+    source_image_info      = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
+    network_interface_name = "ens3"
+  }
 }
 
-output "vm_instance_context" {
+output "vm_creation_context" {
   value = {
     vcn_id                   = oci_core_virtual_network.main_vcn.id
     route_table_id           = oci_core_route_table.common_route_table.id
@@ -13,8 +18,4 @@ output "vm_instance_context" {
     source_image_id          = data.oci_core_images.ubuntu-20-04-minimal.images.0.id
     minimum_viable_shape     = "VM.Standard.E2.1"
   }
-}
-
-output "source_image_name" {
-  value = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
 }

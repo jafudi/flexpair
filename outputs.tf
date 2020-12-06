@@ -1,9 +1,9 @@
 output "oci_base_image" {
-  value = module.oracle_infrastructure.source_image_name
+  value = module.oracle_infrastructure.additional_metadata.source_image_info
 }
 
 output "aws_base_image" {
-  value = module.amazon_infrastructure.source_image_name
+  value = module.amazon_infrastructure.additional_metadata.source_image_info
 }
 
 output "email_adress" {

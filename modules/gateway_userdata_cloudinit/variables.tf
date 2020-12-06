@@ -72,3 +72,7 @@ variable "locale_name" {
   type    = string
   default = "de_DE.UTF-8"
 }
+
+variable "primary_nic_name" {
+  type = string
+}

@@ -11,11 +11,19 @@ output "murmur_credentials" {
 }
 
 output "gateway_username" {
-  value = var.gateway_username
+  value = "${var.gateway_cloud_info.cloud_provider_name}_${var.gateway_cloud_info.cloud_account_name}"
 }
 
 output "desktop_username" {
-  value = var.desktop_username
+  value = "${var.desktop_cloud_info.cloud_provider_name}_${var.desktop_cloud_info.cloud_account_name}"
+}
+
+output "gateway_primary_nic_name" {
+  value = var.gateway_cloud_info.network_interface_name
+}
+
+output "desktop_primary_nic_name" {
+  value = var.desktop_cloud_info.network_interface_name
 }
 
 output "subdomain_label" {

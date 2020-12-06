@@ -25,8 +25,8 @@ module "amazon_infrastructure" {
 module "credentials_generator" {
   registered_domain     = var.registered_domain
   subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
-  gateway_username      = module.oracle_infrastructure.cloud_account_name
-  desktop_username      = module.amazon_infrastructure.cloud_account_name
+  gateway_cloud_info    = module.oracle_infrastructure.additional_metadata
+  desktop_cloud_info    = module.amazon_infrastructure.additional_metadata
   source                = "./modules/credentials_generator"
   // below variables are specific to dynv6.com DNS as an RFC2136 implementation
   rfc2136_name_server    = var.rfc2136_name_server
@@ -41,6 +41,7 @@ module "gateway_installer" {
   vm_mutual_keypair      = module.credentials_generator.vm_mutual_key
   gateway_username       = module.credentials_generator.gateway_username
   desktop_username       = module.credentials_generator.desktop_username
+  primary_nic_name       = module.credentials_generator.gateway_primary_nic_name
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
   gateway_dns_hostname   = module.credentials_generator.full_hostname
@@ -68,7 +69,7 @@ module "gateway_machine" {
   }
   source = "./modules/gateway_infrastructure_oci"
   // below variables are specific to AWS and should be prefixed accordingly
-  cloud_provider_context = module.oracle_infrastructure.vm_instance_context
+  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -93,6 +94,7 @@ module "desktop_installer" {
   vm_mutual_keypair    = module.credentials_generator.vm_mutual_key
   gateway_username     = module.credentials_generator.gateway_username
   desktop_username     = module.credentials_generator.desktop_username
+  primary_nic_name     = module.credentials_generator.desktop_primary_nic_name
   murmur_config        = module.credentials_generator.murmur_credentials
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
@@ -115,7 +117,7 @@ module "desktop_machine_1" {
   ]
   source = "./modules/desktop_infrastructure_aws"
   // below variables are specific to OCI and should be prefixed accordingly
-  cloud_provider_context = module.amazon_infrastructure.vm_instance_context
+  cloud_provider_context = module.amazon_infrastructure.vm_creation_context
 }
 
 resource "null_resource" "health_check" {
