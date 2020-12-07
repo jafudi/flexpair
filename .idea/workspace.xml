@@ -113,13 +113,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00056" summary="Leave out the desktop node until gateway is properly created in Tokyo">
-      <created>1606246357263</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1606246357263</updated>
-    </task>
     <task id="LOCAL-00057" summary="Prolong timeout">
       <created>1606257484730</created>
       <option name="number" value="00057" />
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607375129172</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Set content_type = &quot;text/jinja2&quot; in Terraform template provider">
+      <created>1607379347084</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1607379347085</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cleanup" />
     <MESSAGE value="Proper double quoting" />
     <MESSAGE value="Remove unused variables from AWS module" />
     <MESSAGE value="data.aws_caller_identity.current.user_id" />
@@ -497,6 +496,7 @@
     <MESSAGE value="Added a list of cities where either AWS or Oracle have data centers" />
     <MESSAGE value="Add cities where we can expand using Azure or Alibaba" />
     <MESSAGE value="Set hostname using jinja2 template vars" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set hostname using jinja2 template vars" />
+    <MESSAGE value="Set content_type = &quot;text/jinja2&quot; in Terraform template provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set content_type = &quot;text/jinja2&quot; in Terraform template provider" />
   </component>
 </project>

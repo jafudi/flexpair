@@ -1,8 +1,8 @@
 #cloud-config
 
-# BOOT STAGE: init-local
+# BOOT STAGE 0: cloud-init-local.service applies cloud provided network configuration
 
-# BOOT STAGE: init-network
+# BOOT STAGE 1: cloud-init.service runs after local stage and configured networking is up
 #   Module: seed_random
 #   Module: bootcmd
 bootcmd:
@@ -14,7 +14,7 @@ bootcmd:
 #   Module: disk_setup
 #   Module: mounts
 #   Module: set_hostname
-hostname: '{{v1.cloud_name}}-gateway-{{v1.region}}'
+hostname: '{{cloud_name}}-gateway-{{region}}'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog
@@ -27,7 +27,7 @@ users:
     shell: "/bin/bash"
 #   Module: ssh
 
-# BOOT STAGE: modules-config
+# BOOT STAGE 2: cloud-config.service runs runs config modules only
 #   Module: ssh-import-id
 #   Module: locale
 locale: "${GATEWAY_LOCALE}"
@@ -36,7 +36,6 @@ locale: "${GATEWAY_LOCALE}"
 #   Module: apt-configure
 #   Module: timezone
 timezone: "${GATEWAY_TIMEZONE}"
-#   Module: disable-ec2-metadata
 #   Module: runcmd
 runcmd:
   - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
@@ -47,7 +46,7 @@ runcmd:
   - apt-get -qq purge unattended-upgrades snapd apport
   - apt-get -qq autoremove
 
-# BOOT STAGE: modules-final
+# BOOT STAGE 3: cloud-final.service runs as final part of boot (traditional “rc.local”)
 #   Module: package-update-upgrade-install
 package_update: true
 package_upgrade: false
