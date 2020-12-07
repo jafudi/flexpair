@@ -1,6 +1,5 @@
 variable "gateway_cloud_info" {
   type = object({
-    cloud_provider_name    = string
     cloud_account_name     = string
     source_image_info      = string
     network_interface_name = string
@@ -9,7 +8,6 @@ variable "gateway_cloud_info" {
 
 variable "desktop_cloud_info" {
   type = object({
-    cloud_provider_name    = string
     cloud_account_name     = string
     source_image_info      = string
     network_interface_name = string

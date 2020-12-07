@@ -1,6 +1,5 @@
 output "additional_metadata" {
   value = {
-    cloud_provider_name    = "oci"
     cloud_account_name     = data.oci_identity_tenancy.te.name
     source_image_info      = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
     network_interface_name = "ens3"

@@ -1,6 +1,5 @@
 output "additional_metadata" {
   value = {
-    cloud_provider_name    = "aws"
     cloud_account_name     = data.aws_caller_identity.current.account_id
     source_image_info      = data.aws_ami.latest-ubuntu-focal.description
     network_interface_name = "eth0"

@@ -1,3 +1,4 @@
+## template: jinja
 #cloud-config
 
 # BOOT STAGE: init-local
@@ -18,7 +19,6 @@ mounts:
       "${GATEWAY_USERNAME}@${SSL_DOMAIN}:/home/${GATEWAY_USERNAME}/uploads",
       "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
   ]
-
 mount_default_fields:
   - "none"
   - "none"
@@ -27,7 +27,7 @@ mount_default_fields:
   - "0"
   - "0"
 #   Module: set_hostname
-#   Module: update_hostname
+hostname: '{{v1.cloud_name}}-desktop-{{v1.region}}'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog

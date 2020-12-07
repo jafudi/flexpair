@@ -11,11 +11,13 @@ output "murmur_credentials" {
 }
 
 output "gateway_username" {
-  value = "${var.gateway_cloud_info.cloud_provider_name}_${var.gateway_cloud_info.cloud_account_name}"
+  // Make sure the first character is a lower case roman letter
+  value = replace(var.gateway_cloud_info.cloud_account_name, "/^([^a-z])/", "u$1")
 }
 
 output "desktop_username" {
-  value = "${var.desktop_cloud_info.cloud_provider_name}_${var.desktop_cloud_info.cloud_account_name}"
+  // Same here: Making sure the first character is a lower case roman letter
+  value = replace(var.desktop_cloud_info.cloud_account_name, "/^([^a-z])/", "u$1")
 }
 
 output "gateway_primary_nic_name" {

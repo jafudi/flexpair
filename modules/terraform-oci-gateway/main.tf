@@ -61,7 +61,6 @@ resource "oci_core_instance" "gateway" {
   create_vnic_details {
     subnet_id        = oci_core_subnet.gateway_subnet.id
     assign_public_ip = true
-    hostname_label   = local.hostname
     freeform_tags    = var.deployment_tags
   }
 
@@ -97,12 +96,12 @@ resource "oci_core_instance" "gateway" {
     on_failure = continue
   }
 
-  // Test whether file upload via SSH works
-  provisioner "file" {
-    source      = "${path.root}/uploads/"
-    destination = "/home/${var.gateway_username}/uploads"
-    on_failure  = fail
-  }
+  //  // Test whether file upload via SSH works
+  //  provisioner "file" {
+  //    source      = "${path.root}/uploads/"
+  //    destination = "/home/${var.gateway_username}/uploads"
+  //    on_failure  = fail
+  //  }
 
 }
 
