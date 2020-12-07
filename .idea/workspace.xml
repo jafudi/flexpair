@@ -24,6 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/analyze-logs.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" afterDir="false" />
@@ -112,13 +113,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Prolong timeout">
-      <created>1606257484730</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1606257484733</updated>
     </task>
     <task id="LOCAL-00058" summary="Remove file provisioner in order to detect whether it is the culprit">
       <created>1606265724992</created>
@@ -456,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607379347085</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Set content_type = &quot;text/jinja2&quot; in Terraform template provider">
+      <created>1607380545410</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1607380545411</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

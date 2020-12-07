@@ -1,3 +1,4 @@
+## template: jinja
 #cloud-config
 
 # BOOT STAGE 0: cloud-init-local.service applies cloud provided network configuration
@@ -14,7 +15,8 @@ bootcmd:
 #   Module: disk_setup
 #   Module: mounts
 #   Module: set_hostname
-hostname: '{{cloud_name}}-gateway-{{region}}'
+preserve_hostname: false
+hostname: '{{ cloud_name }}-{{ availability_zone }}'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog
@@ -26,6 +28,7 @@ users:
       - "${SSH_PUBLIC_KEY}"
     shell: "/bin/bash"
 #   Module: ssh
+ssh_genkeytypes: []
 
 # BOOT STAGE 2: cloud-config.service runs runs config modules only
 #   Module: ssh-import-id
