@@ -1,4 +1,3 @@
-## template: jinja
 #cloud-config
 
 # BOOT STAGE: init-local
