@@ -24,10 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/analyze-logs.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,13 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Re-add desktop node">
-      <created>1606332412991</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1606332412994</updated>
     </task>
     <task id="LOCAL-00060" summary="Re-add desktop node">
       <created>1606333004627</created>
@@ -457,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607384037012</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Set a constant hostname first">
+      <created>1607386555388</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1607386555388</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove unused variables from AWS module" />
     <MESSAGE value="data.aws_caller_identity.current.user_id" />
     <MESSAGE value="data.aws_caller_identity.current.account_id" />
     <MESSAGE value="output &quot;gateway_username&quot;" />
@@ -498,6 +496,7 @@
     <MESSAGE value="Set hostname using jinja2 template vars" />
     <MESSAGE value="Set content_type = &quot;text/jinja2&quot; in Terraform template provider" />
     <MESSAGE value="Try to make it work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to make it work" />
+    <MESSAGE value="Set a constant hostname first" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set a constant hostname first" />
   </component>
 </project>
