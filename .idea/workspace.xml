@@ -25,8 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Re-add desktop node">
-      <created>1606333004627</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1606333004628</updated>
     </task>
     <task id="LOCAL-00061" summary="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys">
       <created>1606590773280</created>
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607386555388</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Revert MIME type to &quot;text/cloud-config&quot;">
+      <created>1607387043944</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1607387043946</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="data.aws_caller_identity.current.user_id" />
     <MESSAGE value="data.aws_caller_identity.current.account_id" />
     <MESSAGE value="output &quot;gateway_username&quot;" />
     <MESSAGE value="Move usernames to module shared_secrets" />
@@ -497,6 +496,7 @@
     <MESSAGE value="Set content_type = &quot;text/jinja2&quot; in Terraform template provider" />
     <MESSAGE value="Try to make it work" />
     <MESSAGE value="Set a constant hostname first" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set a constant hostname first" />
+    <MESSAGE value="Revert MIME type to &quot;text/cloud-config&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert MIME type to &quot;text/cloud-config&quot;" />
   </component>
 </project>
