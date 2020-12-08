@@ -28,7 +28,6 @@
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,13 +113,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Fix syntax error">
-      <created>1606591070692</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1606591070693</updated>
     </task>
     <task id="LOCAL-00064" summary="Add --inplace option">
       <created>1606591607032</created>
@@ -458,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607388389955</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Found the bug">
+      <created>1607389203852</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1607389203854</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,7 +473,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Move usernames to module shared_secrets" />
     <MESSAGE value="Standardize format of cloud account name" />
     <MESSAGE value="Randomize mumble port" />
     <MESSAGE value="Update module graph" />
@@ -499,6 +497,7 @@
     <MESSAGE value="Revert MIME type to &quot;text/cloud-config&quot;" />
     <MESSAGE value="Switch off jinja, see if hostname setting causes the problem" />
     <MESSAGE value="Do not update hostname" />
-    <option name="LAST_COMMIT_MESSAGE" value="Do not update hostname" />
+    <MESSAGE value="Found the bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Found the bug" />
   </component>
 </project>

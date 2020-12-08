@@ -1,3 +1,4 @@
+## template:jinja
 #cloud-config
 
 # BOOT STAGE 0: cloud-init-local.service applies cloud provided network configuration
@@ -62,7 +63,7 @@ packages:
 #   Module: keys-to-console
 #   Module: phone-home
 #   Module: final-message
-final_message: '{{ cloud_name }}-{{ availability_zone }} has been up {{ uptime }} for seconds now'
+final_message: '{{ cloud_name }}-{{ availability_zone }}, finished after {{ uptime }} seconds.'
 #   Module: power-state-change
 
 

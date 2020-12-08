@@ -27,7 +27,7 @@ data "template_cloudinit_config" "desktop_config" {
     })
   }
   part {
-    content_type = "text/cloud-boothook"
+    content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/11-add-privkey.sh", {
       VM_PRIVATE_KEY   = var.vm_mutual_keypair.private_key_pem
       DESKTOP_USERNAME = var.desktop_username
