@@ -38,7 +38,7 @@ data "template_cloudinit_config" "gateway_config" {
     content      = file("${path.module}/init-scripts/03-sshd-config.sh")
   }
   part {
-    content_type = "text/jinja2"
+    content_type = "text/cloud-config"
     content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
       GATEWAY_TIMEZONE = var.timezone_name
       GATEWAY_LOCALE   = var.locale_name

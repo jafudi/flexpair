@@ -16,7 +16,7 @@ data "template_cloudinit_config" "desktop_config" {
     content      = file("${path.module}/init-scripts/03-sshd-config.sh")
   }
   part {
-    content_type = "text/jinja2"
+    content_type = "text/cloud-config"
     content = templatefile("${path.module}/init-scripts/10-cloud-config.yaml", {
       SSL_DOMAIN       = var.gateway_dns_hostname
       DESKTOP_TIMEZONE = var.timezone_name

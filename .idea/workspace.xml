@@ -25,8 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Delete bloody XML namespace">
-      <created>1606609447553</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1606609447553</updated>
     </task>
     <task id="LOCAL-00067" summary="Debugging">
       <created>1606611431457</created>
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607392758349</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Use correct stop word">
+      <created>1607394164582</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1607394164583</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update module graph" />
     <MESSAGE value="try dynamic &quot;ingress&quot; block" />
     <MESSAGE value="Pass ports to open as variable" />
     <MESSAGE value="Order variables by provider specific/independent" />
@@ -497,6 +496,7 @@
     <MESSAGE value="Found the bug" />
     <MESSAGE value="## template:jinja" />
     <MESSAGE value="This really should work now" />
-    <option name="LAST_COMMIT_MESSAGE" value="This really should work now" />
+    <MESSAGE value="Use correct stop word" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use correct stop word" />
   </component>
 </project>
