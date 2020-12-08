@@ -26,8 +26,8 @@ mount_default_fields:
   - "0"
   - "0"
 #   Module: set_hostname
-preserve_hostname: false
-hostname: 'desktop'
+#preserve_hostname: false
+#hostname: 'desktop'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog
@@ -41,7 +41,7 @@ users:
 #   Module: ssh
 ssh_genkeytypes: []
 
-# BOOT STAGE 2: cloud-config.service runs runs config modules only
+# BOOT STAGE 2: cloud-config.service runs config modules only
 #   Module: ssh-import-id
 #   Module: locale
 locale: "${DESKTOP_LOCALE}"

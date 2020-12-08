@@ -113,13 +113,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00061" summary="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys">
-      <created>1606590773280</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1606590773281</updated>
-    </task>
     <task id="LOCAL-00062" summary="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet">
       <created>1606590802824</created>
       <option name="number" value="00062" />
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607387043946</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Switch off jinja, see if hostname setting causes the problem">
+      <created>1607387595600</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1607387595602</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="data.aws_caller_identity.current.account_id" />
     <MESSAGE value="output &quot;gateway_username&quot;" />
     <MESSAGE value="Move usernames to module shared_secrets" />
     <MESSAGE value="Standardize format of cloud account name" />
@@ -497,6 +496,7 @@
     <MESSAGE value="Try to make it work" />
     <MESSAGE value="Set a constant hostname first" />
     <MESSAGE value="Revert MIME type to &quot;text/cloud-config&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert MIME type to &quot;text/cloud-config&quot;" />
+    <MESSAGE value="Switch off jinja, see if hostname setting causes the problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch off jinja, see if hostname setting causes the problem" />
   </component>
 </project>

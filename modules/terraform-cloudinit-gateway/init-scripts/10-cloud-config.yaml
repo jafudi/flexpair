@@ -14,8 +14,8 @@ bootcmd:
 #   Module: disk_setup
 #   Module: mounts
 #   Module: set_hostname
-preserve_hostname: false
-hostname: 'gateway'
+#preserve_hostname: false
+#hostname: 'gateway'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog
@@ -29,7 +29,7 @@ users:
 #   Module: ssh
 ssh_genkeytypes: []
 
-# BOOT STAGE 2: cloud-config.service runs runs config modules only
+# BOOT STAGE 2: cloud-config.service runs config modules only
 #   Module: ssh-import-id
 #   Module: locale
 locale: "${GATEWAY_LOCALE}"
