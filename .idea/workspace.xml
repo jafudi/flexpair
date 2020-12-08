@@ -26,7 +26,6 @@
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/10-cloud-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/init-scripts/10-cloud-config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,13 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Add --inplace option">
-      <created>1606591607032</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1606591607032</updated>
     </task>
     <task id="LOCAL-00065" summary="Shorten script by implementing a little function">
       <created>1606595348592</created>
@@ -457,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607389203854</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="## template:jinja">
+      <created>1607391954830</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1607391954832</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Standardize format of cloud account name" />
     <MESSAGE value="Randomize mumble port" />
     <MESSAGE value="Update module graph" />
     <MESSAGE value="try dynamic &quot;ingress&quot; block" />
@@ -498,6 +496,7 @@
     <MESSAGE value="Switch off jinja, see if hostname setting causes the problem" />
     <MESSAGE value="Do not update hostname" />
     <MESSAGE value="Found the bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Found the bug" />
+    <MESSAGE value="## template:jinja" />
+    <option name="LAST_COMMIT_MESSAGE" value="## template:jinja" />
   </component>
 </project>

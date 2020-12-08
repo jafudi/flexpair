@@ -16,7 +16,7 @@ bootcmd:
 #   Module: mounts
 #   Module: set_hostname
 preserve_hostname: false
-hostname: 'gateway'
+hostname: '{{ cloud_name }}-{{ availability_zone }}'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog
@@ -63,7 +63,7 @@ packages:
 #   Module: keys-to-console
 #   Module: phone-home
 #   Module: final-message
-final_message: '{{ cloud_name }}-{{ availability_zone }}, finished after {{ uptime }} seconds.'
+final_message: 'The current stop word is "finished". Using the Terraform Run ID would be better in many ways.'
 #   Module: power-state-change
 
 
