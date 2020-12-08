@@ -28,7 +28,7 @@ mount_default_fields:
   - "0"
 #   Module: set_hostname
 preserve_hostname: false
-hostname: '{{ cloud_name }}-{{ availability_zone }}'
+hostname: 'desktop'
 #   Module: update_etc_hosts
 #   Module: ca-certs
 #   Module: rsyslog
@@ -67,6 +67,7 @@ packages:
 #   Module: keys-to-console
 #   Module: phone-home
 #   Module: final-message
+final_message: '{{ cloud_name }}-{{ availability_zone }} has been up {{ uptime }} for seconds now'
 #   Module: power-state-change
 power_state:
   delay: now
