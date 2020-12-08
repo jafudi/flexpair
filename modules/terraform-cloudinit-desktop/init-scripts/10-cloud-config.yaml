@@ -66,7 +66,7 @@ packages:
 #   Module: keys-to-console
 #   Module: phone-home
 #   Module: final-message
-final_message: 'The current stop phrase is "finished at".'
+final_message: 'The current stop phrase is "finished at". Hostname {{ cloud_name }}-{{ availability_zone }}.'
 #   Module: power-state-change
 power_state:
   delay: now

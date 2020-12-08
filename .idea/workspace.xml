@@ -113,13 +113,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00067" summary="Debugging">
-      <created>1606611431457</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1606611431458</updated>
-    </task>
     <task id="LOCAL-00068" summary="Fix script">
       <created>1606652492289</created>
       <option name="number" value="00068" />
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607394164583</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="content_type = &quot;text/cloud-config&quot;">
+      <created>1607395313112</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1607395313112</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try dynamic &quot;ingress&quot; block" />
     <MESSAGE value="Pass ports to open as variable" />
     <MESSAGE value="Order variables by provider specific/independent" />
     <MESSAGE value="Bundle arguments into cloud_provider_context" />
@@ -497,6 +496,7 @@
     <MESSAGE value="## template:jinja" />
     <MESSAGE value="This really should work now" />
     <MESSAGE value="Use correct stop word" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use correct stop word" />
+    <MESSAGE value="content_type = &quot;text/cloud-config&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="content_type = &quot;text/cloud-config&quot;" />
   </component>
 </project>
