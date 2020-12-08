@@ -63,7 +63,7 @@ packages:
 #   Module: keys-to-console
 #   Module: phone-home
 #   Module: final-message
-final_message: 'The current stop word is "finished". Using the Terraform Run ID would be better in many ways.'
+final_message: 'The current stop phrase is "finished at".'
 #   Module: power-state-change
 
 
