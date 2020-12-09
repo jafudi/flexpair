@@ -1,4 +1,5 @@
 variable "vm_mutual_keypair" {
+  description = ""
   type = object({
     private_key_pem    = string
     public_key_openssh = string
@@ -6,10 +7,12 @@ variable "vm_mutual_keypair" {
 }
 
 variable "gateway_dns_hostname" {
-  type = string
+  description = ""
+  type        = string
 }
 
 variable "murmur_config" {
+  description = ""
   type = object({
     port     = number
     password = string
@@ -37,6 +40,7 @@ variable "gateway_username" {
 }
 
 variable "email_config" {
+  description = ""
   type = object({
     address   = string
     password  = string
@@ -57,12 +61,14 @@ variable "timezone_name" {
 }
 
 variable "locale_name" {
-  type    = string
-  default = "de_DE.UTF-8"
+  description = ""
+  type        = string
+  default     = "de_DE.UTF-8"
 }
 
 variable "primary_nic_name" {
-  type = string
+  description = ""
+  type        = string
 }
 
 

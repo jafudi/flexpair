@@ -53,8 +53,9 @@ variable "oci_region" {
 }
 
 variable "oci_free_tier_avail" {
-  type    = number
-  default = 2
+  description = ""
+  type        = number
+  default     = 2
 }
 
 variable "oci_fingerprint" {

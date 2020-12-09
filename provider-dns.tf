@@ -32,8 +32,9 @@ variable "rfc2136_name_server" {
 }
 
 variable "rfc2136_key_name" {
-  type    = string
-  default = "tsig-164066.dynv6.com."
+  description = ""
+  type        = string
+  default     = "tsig-164066.dynv6.com."
 }
 
 variable "rfc2136_key_secret" {
@@ -43,8 +44,9 @@ variable "rfc2136_key_secret" {
 }
 
 variable "rfc2136_tsig_algorithm" {
-  type    = string
-  default = "hmac-sha512"
+  description = ""
+  type        = string
+  default     = "hmac-sha512"
   validation {
     condition     = contains(["hmac-sha224", "hmac-sha256", "hmac-sha384", "hmac-sha512"], var.rfc2136_tsig_algorithm)
     error_message = "Unsupported algorithm specified."

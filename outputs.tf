@@ -1,35 +1,44 @@
 output "oci_base_image" {
-  value = module.oracle_infrastructure.additional_metadata.source_image_info
+  description = ""
+  value       = module.oracle_infrastructure.additional_metadata.source_image_info
 }
 
 output "aws_base_image" {
-  value = module.amazon_infrastructure.additional_metadata.source_image_info
+  description = ""
+  value       = module.amazon_infrastructure.additional_metadata.source_image_info
 }
 
 output "email_adress" {
-  value = module.credentials_generator.email_config.address
+  description = ""
+  value       = module.credentials_generator.email_config.address
 }
 
 output "ssh_into_desktop_1" {
-  value = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
+  description = ""
+  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
 }
 
 output "private_key" {
-  value = module.credentials_generator.vm_mutual_key.private_key_pem
+  description = ""
+  value       = module.credentials_generator.vm_mutual_key.private_key_pem
 }
 
 output "gateway_config_size" {
-  value = "${local.unzipped_gateway_bytes} base64gzip to ${length(local.encoded_gateway_config)} / 16384 bytes maximum"
+  description = ""
+  value       = "${local.unzipped_gateway_bytes} base64gzip to ${length(local.encoded_gateway_config)} / 16384 bytes maximum"
 }
 
 output "desktop_config_size" {
-  value = "${local.unzipped_desktop_bytes} base64gzip to ${length(local.encoded_desktop_config)} / 16384 bytes maximum"
+  description = ""
+  value       = "${local.unzipped_desktop_bytes} base64gzip to ${length(local.encoded_desktop_config)} / 16384 bytes maximum"
 }
 
 output "access_via_browser" {
-  value = "https://${module.credentials_generator.full_hostname}/?password=${urlencode(module.credentials_generator.murmur_credentials.password)}"
+  description = ""
+  value       = "https://${module.credentials_generator.full_hostname}/?password=${urlencode(module.credentials_generator.murmur_credentials.password)}"
 }
 
 output "access_via_mumble" {
-  value = "mumble://:${urlencode(module.credentials_generator.murmur_credentials.password)}@${module.credentials_generator.full_hostname}:${module.credentials_generator.murmur_credentials.port}"
+  description = ""
+  value       = "mumble://:${urlencode(module.credentials_generator.murmur_credentials.password)}@${module.credentials_generator.full_hostname}:${module.credentials_generator.murmur_credentials.port}"
 }

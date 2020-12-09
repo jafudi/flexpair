@@ -1,5 +1,6 @@
 variable "deployment_tags" {
-  type = map(string)
+  description = ""
+  type        = map(string)
 }
 
 

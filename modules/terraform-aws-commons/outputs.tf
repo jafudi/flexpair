@@ -1,4 +1,5 @@
 output "additional_metadata" {
+  description = ""
   value = {
     cloud_account_name     = data.aws_caller_identity.current.account_id
     source_image_info      = data.aws_ami.latest-ubuntu-focal.description
@@ -7,6 +8,7 @@ output "additional_metadata" {
 }
 
 output "vm_creation_context" {
+  description = ""
   value = {
     vpc_id                   = aws_vpc.main.id
     subnet_id                = aws_subnet.public_subnet.id

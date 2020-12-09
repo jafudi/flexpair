@@ -1,4 +1,5 @@
 variable "vm_mutual_keypair" {
+  description = ""
   type = object({
     private_key_pem    = string
     public_key_openssh = string
@@ -6,6 +7,7 @@ variable "vm_mutual_keypair" {
 }
 
 variable "ssl_certificate" {
+  description = ""
   type = object({
     private_key_pem = string
     certificate_pem = string
@@ -14,11 +16,13 @@ variable "ssl_certificate" {
 }
 
 variable "docker_compose_release" {
-  type = string
+  description = ""
+  type        = string
 }
 
 variable "gateway_dns_hostname" {
-  type = string
+  description = ""
+  type        = string
 }
 
 variable "desktop_username" {
@@ -42,6 +46,7 @@ variable "gateway_username" {
 }
 
 variable "murmur_config" {
+  description = ""
   type = object({
     port     = number
     password = string
@@ -49,6 +54,7 @@ variable "murmur_config" {
 }
 
 variable "email_config" {
+  description = ""
   type = object({
     address   = string
     password  = string
@@ -69,10 +75,12 @@ variable "timezone_name" {
 }
 
 variable "locale_name" {
-  type    = string
-  default = "de_DE.UTF-8"
+  description = ""
+  type        = string
+  default     = "de_DE.UTF-8"
 }
 
 variable "primary_nic_name" {
-  type = string
+  description = ""
+  type        = string
 }

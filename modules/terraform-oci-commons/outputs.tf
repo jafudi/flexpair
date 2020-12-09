@@ -1,4 +1,5 @@
 output "additional_metadata" {
+  description = ""
   value = {
     cloud_account_name     = data.oci_identity_tenancy.te.name
     source_image_info      = data.oci_core_images.ubuntu-20-04-minimal.images.0.display_name
@@ -7,6 +8,7 @@ output "additional_metadata" {
 }
 
 output "vm_creation_context" {
+  description = ""
   value = {
     vcn_id                   = oci_core_virtual_network.main_vcn.id
     route_table_id           = oci_core_route_table.common_route_table.id

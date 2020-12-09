@@ -25,8 +25,27 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-commons/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-aws-commons/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-commons/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-aws-commons/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-aws-desktop/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-aws-desktop/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-gateway/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-aws-gateway/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-gateway/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-aws-gateway/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-commons/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-commons/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-commons/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-commons/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-desktop/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-desktop/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-gateway/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-gateway/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-gateway/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-gateway/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-tls-credentials/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-tls-credentials/output.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-tls-credentials/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-tls-credentials/variables.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider-dns.tf" beforeDir="false" afterPath="$PROJECT_DIR$/provider-dns.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/provider-oci.tf" beforeDir="false" afterPath="$PROJECT_DIR$/provider-oci.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Fix script">
-      <created>1606652492289</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1606652492290</updated>
     </task>
     <task id="LOCAL-00069" summary="Use #!/bin/bash -eux as shebang in all scripts">
       <created>1606678998381</created>
@@ -456,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607395313112</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Is it only hostname where jinja does not work??">
+      <created>1607454454982</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1607454454984</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Pass ports to open as variable" />
     <MESSAGE value="Order variables by provider specific/independent" />
     <MESSAGE value="Bundle arguments into cloud_provider_context" />
     <MESSAGE value="Do the same for AWS infrastructure" />
@@ -497,6 +515,7 @@
     <MESSAGE value="This really should work now" />
     <MESSAGE value="Use correct stop word" />
     <MESSAGE value="content_type = &quot;text/cloud-config&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="content_type = &quot;text/cloud-config&quot;" />
+    <MESSAGE value="Is it only hostname where jinja does not work??" />
+    <option name="LAST_COMMIT_MESSAGE" value="Is it only hostname where jinja does not work??" />
   </component>
 </project>

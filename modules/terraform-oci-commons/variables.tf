@@ -14,13 +14,16 @@ variable "region" {
 }
 
 variable "deployment_tags" {
-  type = map(string)
+  description = ""
+  type        = map(string)
 }
 
 variable "compartment_name" {
-  type = string
+  description = ""
+  type        = string
 }
 
 variable "availibility_domain_number" {
-  type = number
+  description = ""
+  type        = number
 }
