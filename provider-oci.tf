@@ -11,12 +11,12 @@ provider "oci" {
 
 variable "oci_private_key" {
   type        = string
-  description = "Highly sensitive, as credit card could be charged"
+  description = "The contents of the private key file. Highly sensitive, as credit card could be charged."
 }
 
 variable "oci_passphrase" {
   type        = string
-  description = "Highly sensitive, as credit card could be charged"
+  description = "Passphrase used for the key, if it is encrypted. Highly sensitive, as credit card could be charged"
 }
 
 variable "oci_tenancy_ocid" {
@@ -44,10 +44,30 @@ variable "oci_user_ocid" {
 variable "oci_region" {
   type        = string
   default     = "eu-frankfurt-1"
-  description = "Must be equal to the home region of the tenancy."
+  description = "An Oracle Cloud Infrastructure region. Must be equal to the home region of the tenancy."
 
   validation {
-    condition     = can(regex("^[a-z]{2}-[a-z]+-[0-3]$", var.oci_region))
+    condition = contains([
+      "ap-sydney-1",    // Sydney, Australia
+      "ap-melbourne-1", // Melbourne, Australia
+      "sa-saopaulo-1",  // São Paulo, Brazil
+      "ca-montreal-1",  // Montreal, Canada
+      "ca-toronto-1",   // Toronto, Canada
+      "eu-frankfurt-1", // Frankfurt, Germany
+      "ap-hyderabad-1", // Hyderabad, India
+      "ap-mumbai-1",    // Mumbai, India
+      "ap-osaka-1",     // Osaka, Japan
+      "ap-tokyo-1",     // Tokyo, Japan
+      "eu-amsterdam-1", // Amsterdam, Netherlands
+      "me-jeddah-1",    // Jeddah, Saudi Arabia
+      "ap-seoul-1",     // Seoul, South Korea
+      "ap-chuncheon-1", // Chuncheon, South Korea
+      "eu-zurich-1",    // Zurich, Switzerland
+      "uk-london-1",    // London, United Kingdom
+      "us-ashburn-1",   // Ashburn, United States
+      "us-phoenix-1",   // Phoenix, United States
+      "us-sanjose-1"    // San Jose, United States
+    ], var.aws_region)
     error_message = "This does not look like a valid Oracle cloud region. Please refer to https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm for detailed guidance."
   }
 }
