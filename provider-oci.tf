@@ -67,7 +67,7 @@ variable "oci_region" {
       "us-ashburn-1",   // Ashburn, United States
       "us-phoenix-1",   // Phoenix, United States
       "us-sanjose-1"    // San Jose, United States
-    ], var.aws_region)
+    ], var.oci_region)
     error_message = "This does not look like a valid Oracle cloud region. Please refer to https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm for detailed guidance."
   }
 }

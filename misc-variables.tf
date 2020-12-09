@@ -1,5 +1,3 @@
-
-
 variable "timezone" {
   type        = string
   default     = "Europe/Berlin"
@@ -7,17 +5,30 @@ variable "timezone" {
 }
 
 variable "locale" {
-  type    = string
-  default = "de_DE.UTF-8"
+  description = ""
+  type        = string
+  default     = "de_DE.UTF-8"
 }
 
 // https://www.terraform.io/docs/cloud/run/run-environment.html#environment-variables
-variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {}
-variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {}
-variable "TFC_RUN_ID" {}
+variable "TFC_CONFIGURATION_VERSION_GIT_BRANCH" {
+  description = "This is the name of the branch that the associated Terraform configuration version was ingressed from (e.g. master)."
+  type        = string
+}
+
+variable "TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA" {
+  description = "This is the full commit hash of the commit that the associated Terraform configuration version was ingressed from (e.g. abcd1234...)."
+  type        = string
+}
+
+variable "TFC_RUN_ID" {
+  description = "This is a unique identifier for this run (e.g. run-CKuwsxMGgMd4W7Ui)."
+  type        = string
+}
 
 variable "TFC_WORKSPACE_NAME" {
-  type = string
+  description = "This is the name of the workspace used in this run, e.g. prod-load-balancers."
+  type        = string
 }
 
 
