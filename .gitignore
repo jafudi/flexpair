@@ -1,15 +1,5 @@
-/.vagrant/
-/**/*.box
-/**/*.ovf
-/**/*.vmdk
-/packer_cache/*
-
-/gateway/guacamole/data/
-/packer-desktop/builds/
-/gateway/murmur_config/murmur.ini
-/gateway/guacamole/docker-compose.yml
 /.ssh/
 /.oci/
 /.terraform/
-/.idea/workspace.xml
+/.idea/
 
