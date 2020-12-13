@@ -1,112 +1,46 @@
-# What are the main features?
+## Unique Selling Point
 
-- Data privacy and intellectual property
-  saving the climate all at the same time :-)
-
-
-# Market Analysis and Unique Selling Point
-
-[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on an asymmetric connection.
-
-Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
-
-- [Nutanix](https://www.nutanix.com/de/products/frame) testen!
-- [Itopia](https://itopia.com/) testen!
-- [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
-- [V2 Cloud](https://v2cloud.com) testen!
-- [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
-- [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
-- [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
-- Studio Code Live Share
-
-Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
-
-We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd workarounds like background substitution requiring the application of energy consuming deep learning models.
-
-Instead, we focus on:
-- unsurpassed audio quality and low bandwidth usage
-- zero-install on client side
-- simpler to set up than other more video focussed open source servers like Jitsi or BigBlueButton
-- works from free tier virtual machines upwards
-- affordable for small clubs, schools and NGOs
-- data privacy through separate VM and strong encryption
-- no metadata collection of communications
-- choice of server location and agnostic of cloud provider
-- so you can combine free VM from e.g. Amazon and Google Cloud
-- custom domain and customization of provisioned software
-- automated and reproducable provisioning of the environment
-- include tools for DevOps users and software testing
-
-
-https://gerrymcgovern.com/the-hidden-pollution-cost-of-online-meetings/
-
-
-# Potential Testers / Early Adopters
-
-- Papa um uns Unterlagen für Wipperfliess zu zeigen
-- Lea für Stationsversammlung mit OpenSlides
-- Ying zum Demonstrieren Ihrer eigenen App
-- Werner zum Qt-Programmieren
-- Selbsthilfebüro für Karaoke-Abend
-- Achim bei der Bahn für Mob Programming
-- Björn für CdE-Orga
-
-# Minimal Requirements
-
-- 2 VMs with 1 GB of RAM each (available for free from e.g. [Oracle Cloud](https://www.oracle.com/cloud/))
-- not necessarily with the same cloud provider (cloud-agnostic)
-- 100 kbit/s uplink at the user's location
-- Server must have the following open ports: 22 (SSH), 443 (SSL)
-- Nice to have open server ports: 64738 (Mumble), 25 (SMTP)
-
-# Unique Selling Point(s)
-
-- receive email on project specific email account
-- PaaS between Saas and IaaS
-- desktop sharing done right
+- [Infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code) using [Terraform](https://www.terraform.io) provides automated and reproducible provisioning of the environment (DevOps)
+- SSH tunnnel between desktop and gateway across clouds and borders [Multicloud](https://en.wikipedia.org/wiki/Multicloud) i.e. choice of server location and agnostic of cloud provider
 - hear each other crystal clear, listen to podcasts and more
+- High quality, low [latency](https://en.wikipedia.org/wiki/Latency_(audio)) audio conferencing using [Mumble](https://www.mumble.info) with the [Opus Codec](https://opus-codec.org)
+- Runs in all modern browsers without any installation using [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- Minimize the CO2 footprint of data intensive cross-border analytics (100 kbit/s uplink at the user's location, [bandwidth-distance product](https://en.wikipedia.org/wiki/Fiber-optic_communication#Bandwidth–distance_product))
+- No metadata collection of communications on dedicated VM
+- works from free tier virtual machines upwards (2 VMs with 1 GB of RAM each), therefore affordable for small clubs, schools and NGOs
+- receive email on project specific email account
+- desktop sharing done right
+- idea exchange reduced to the max
 - until all is said: no time limitations whatsoever
 - no additional software: use your favorite web browser
 - keep your private space private: no webcams involved
 
-# Technical details
-- SSH tunnnel between desktop and gateway across clouds and borders
-- For example: Gateway on Azure within the US, while desktop on Alibaba in China
-- one-click installation on free tier cloud infrastructure
-- communication between servers and clients always encrypted
-- now video, at least no upload
-- idea exchange reduced to the max
-- exactly what we need during Corona
-- and did we mention: it's free
-- mumble.com charges 7.50$ a month for up to 15 users (without desktop!!)
-- [SSH tunnel](https://www.ssh.com/ssh/tunneling/) secured with [ed25519 encryption](http://ed25519.cr.yp.to)
-- fast network connection in the cloud
-- usable with standard set of open ports (22 SSH, 443 HTTPS)
-- basic architecture diagram in structurizr according to the [C4 model](https://c4model.com)
-- chose Oracle Cloud mainly because two free VMs
+## Potential Use cases
 
-# Use cases
-
-## gPodder + VLC + Mumble use cases
 - Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
 - Listening to and discussing podcasts together
 - Listening to Audio porn together
-
-## Web browser use cases
 - Collaborative planning of e.g. travel over distance
 - Doing e-learning together
 - In-browser high-quality audio conferencing
-
-## Docker + GitLab Runner use cases
 - Software demos and user testing
 - Mob programming
-- Digitale Vereinssitzung, Konkurrenzsoftware OpenSlides
-
-## Other use cases
 - Presenting and discussing slides
 - Virtual conference table with positional audio
 - Project management files and conferencing in one place
 - Secretary work, virtual personal assistant
+
+## Terraform sub modules
+
+- [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)
+- [terraform-cloudinit-gateway](./modules/terraform-cloudinit-gateway/README.md)
+- [terraform-tls-credentials](./modules/terraform-tls-credentials/README.md)
+- [terraform-aws-commons](./modules/terraform-aws-commons/README.md)
+- [terraform-aws-desktop](./modules/terraform-aws-desktop/README.md)
+- [terraform-aws-gateway](./modules/terraform-aws-gateway/README.md)
+- [terraform-oci-commons](./modules/terraform-oci-commons/README.md)
+- [terraform-oci-desktop](./modules/terraform-oci-desktop/README.md)
+- [terraform-oci-gateway](./modules/terraform-oci-gateway/README.md)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -268,4 +202,24 @@ Currently deployable in 33 cities worldwide (and counting):
   - Quincy, WA (soon with Azure)
   - Richmond, Virginia (soon with Azure)
   - San Antonio, TX (soon with Azure)
+  
+## Direct and indirect competitors
+
+[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on an asymmetric connection.
+
+Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
+
+- [Nutanix](https://www.nutanix.com/de/products/frame) testen!
+- [Itopia](https://itopia.com/) testen!
+- [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
+- [V2 Cloud](https://v2cloud.com) testen!
+- [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
+- [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
+- [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
+- [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/)
+
+Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
+
+We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd workarounds like background substitution requiring the application of energy consuming deep learning models.
+
 

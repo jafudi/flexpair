@@ -24,10 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README-desktop.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README-gateway.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-commons/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-oci-commons/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,13 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Export structural visualizations from blast-radius">
-      <created>1606922662767</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1606922662771</updated>
     </task>
     <task id="LOCAL-00076" summary="Fix: Experiment has concluded">
       <created>1606926020028</created>
@@ -457,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607878453490</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Move some README content to appropriate submodules">
+      <created>1607895212109</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1607895212110</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Correct grammatical mistakes" />
     <MESSAGE value="Remove unused variables" />
     <MESSAGE value="Need to wait for desktop to reboot" />
     <MESSAGE value="Rename modules according to the Terraform registry requirements" />
@@ -498,6 +496,7 @@
     <MESSAGE value="Add some precommit hooks" />
     <MESSAGE value="Auto-generate variable documentation in README.md" />
     <MESSAGE value="Update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore" />
+    <MESSAGE value="Move some README content to appropriate submodules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move some README content to appropriate submodules" />
   </component>
 </project>

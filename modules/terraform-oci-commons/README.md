@@ -2,6 +2,8 @@
 
 Terraform module which creates common resources on OCI.
 
+- chose Oracle Cloud mainly because two free VMs
+
 ## Usage
 
 ```hcl
