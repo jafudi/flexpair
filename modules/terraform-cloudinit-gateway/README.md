@@ -2,6 +2,16 @@
 
 Terraform module which generates cloud-init userdata for provisioning the gateway.
 
+- stable, yet resource-friendly conferencing even at low bandwidth
+- low latency, high quality
+- Apache Guacamole
+- Mumble audio server backend within Docker
+- [Opus](https://opus-codec.org) audio codec
+- Dockerized Dovecot IMAP Server
+- access (multiple) desktops via one central gateway, no need to remember IPs
+- [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/) and murmur share SSL certificate form [LetsEncrypt](https://letsencrypt.org)
+- [Mumble](https://www.mumble.info) and [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing) both over HTTPS
+
 ## Usage
 
 ```hcl

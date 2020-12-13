@@ -23,7 +23,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README-desktop.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README-gateway.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,13 +113,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Add docker-compose config">
-      <created>1606860667461</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1606860667464</updated>
     </task>
     <task id="LOCAL-00075" summary="Export structural visualizations from blast-radius">
       <created>1606922662767</created>
@@ -452,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607878142295</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Update gitignore">
+      <created>1607878453490</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1607878453490</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,7 +473,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Swap desktop and gateway roles between AWS and OCI" />
     <MESSAGE value="Correct grammatical mistakes" />
     <MESSAGE value="Remove unused variables" />
     <MESSAGE value="Need to wait for desktop to reboot" />
@@ -493,6 +497,7 @@
     <MESSAGE value="Document some parameters" />
     <MESSAGE value="Add some precommit hooks" />
     <MESSAGE value="Auto-generate variable documentation in README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auto-generate variable documentation in README.md" />
+    <MESSAGE value="Update gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore" />
   </component>
 </project>
