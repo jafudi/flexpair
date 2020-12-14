@@ -19,7 +19,8 @@
 
 ## Potential Use cases
 
-- Job sharingc
+- Consultancies working remote on their clients data
+- Job sharing
 - Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
 - Listening to and discussing podcasts together
 - Listening to Audio porn together
