@@ -25,7 +25,9 @@
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-tls-credentials/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-tls-credentials/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

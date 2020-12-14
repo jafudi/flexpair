@@ -2,23 +2,28 @@
 
 Terraform module which generates cloud-init userdata for provisioning the desktop.
 
-- Light weight LXQt Desktop
-- Participates as Mumble user
-- Record conference audio
-- VM will register itself as Gitlab
-- Automatically add tags describing the host when registering gitlab runner
-- Based on [Ubuntu Focal Fossa](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes) which has long term support until April 2025
-- [Openbox](https://en.wikipedia.org/wiki/Openbox) window manager
-- rock-solid [x11vnc](http://www.karlrunge.com/x11vnc/) server
-- Automatic [Trojita](http://trojita.flaska.net) email client configuration
-- Prevention of full RAM and swapping
-- some more cool arcade games and selection of games for kids
-- lightweight [LXQt desktop](https://lxqt.github.io) with beautiful [ePapirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and breeze theme
-- [gPodder](https://gpodder.github.io) podcatcher connected with [VLC](https://www.videolan.org/vlc/index.html) media player
-- list of my favorite podcasts in OPML format
-- desktop takes part in Mumble conference, ability to record
-- persistent storage of your docs
-- everyone is able to edit without need for switching controls
+## Containers and components (C4 arch model)
+
+- Desktop
+  - some more cool arcade games and selection of games for kids
+  - lightweight [LXQt desktop](https://lxqt.github.io) with beautiful [ePapirus icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and breeze theme
+  - [Openbox](https://en.wikipedia.org/wiki/Openbox) window manager
+  - rock-solid [x11vnc](http://www.karlrunge.com/x11vnc/) server
+  - [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing)
+  - Prevention of full RAM and swapping
+  - everyone is able to edit without need for switching controls
+  - persistent storage of your docs
+- Audio
+  - Participates as additional Mumble user
+  - Record conference audio
+  - [gPodder](https://gpodder.github.io) podcatcher connected with [VLC](https://www.videolan.org/vlc/index.html) media player
+  - list of my favorite podcasts in OPML format
+  - desktop takes part in Mumble conference, ability to record
+- Email
+  - Automatic [Trojita](http://trojita.flaska.net) email client configuration
+- Use case specific software
+    
+
 
 ## Usage
 

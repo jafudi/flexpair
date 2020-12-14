@@ -2,6 +2,14 @@
 
 Terraform module which generates a Letsencrypt TLS certificate and other credentials.
 
+## Containers and components (C4 arch model)
+
+- TLS certificate
+  - public key
+  - private key
+- DNS A record
+  - ...
+
 ## Usage
 
 ```hcl
