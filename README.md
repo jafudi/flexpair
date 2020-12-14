@@ -229,10 +229,7 @@ Currently deployable in 33 cities worldwide (and counting):
   
 ## Direct and indirect competitors
 
-[Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/) integrates Skype with Outlook and SharePoint. You can store files in the cloud and share your local desktop with other meeting participants, but there is no  virtual cloud desktop that everyone can access. Same appplies to their direct competitor Slack. Also, sharing the local desktop works rather lousy because it involves a video uplink on an asymmetric connection.
-
-Existing virtual desktop solutions are all closed-source offers to the business world. The top players in this market are:
-
+### Virtual Cloud Desktops
 - [Nutanix](https://www.nutanix.com/de/products/frame) testen!
 - [Itopia](https://itopia.com/) testen!
 - [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
@@ -240,10 +237,17 @@ Existing virtual desktop solutions are all closed-source offers to the business 
 - [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
 - [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
 - [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
+
+### Remote Access and Support
+- [TeamViewer](https://www.teamviewer.com/en/)
+
+### Collaboration Tools
+- [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
+- [BigBlueButton](https://bigbluebutton.org)
 - [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/)
 
-Some of these solutions might include collaboration and conferencing components (research yet to be completed), but it is certainly not their focus.
-
-We also do not intend to compete with commercial video conferencing solutions like Zoom or WebEx for two reasons. First, they are too big and established. Second, there is already [Zoom fatigue](https://www.ardaudiothek.de/ab-21/gaehn-warum-uns-videocalls-so-muede-machen/76335364) and absurd workarounds like background substitution requiring the application of energy consuming deep learning models.
-
-
+### Video Conferencing
+- [Jitsi](https://jitsi.org)
+- [LogMeIn GotoMeeting](https://www.gotomeeting.com/de-de)
+- [WebEx](https://www.webex.com/de/index.html)
+- [Zoom](https://zoom.us)
