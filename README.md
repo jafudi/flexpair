@@ -19,6 +19,7 @@
 
 ## Potential Use cases
 
+- Job sharingc
 - Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
 - Listening to and discussing podcasts together
 - Listening to Audio porn together

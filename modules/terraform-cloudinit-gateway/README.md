@@ -12,7 +12,7 @@ Terraform module which generates cloud-init userdata for provisioning the gatewa
   - [postgres](https://hub.docker.com/_/postgres) Docker image
 - Audio
   - [goofball222/murmur](https://hub.docker.com/r/goofball222/murmur) Docker image
-  - [jafudi/mumble-web-lite](https://hub.docker.com/repository/docker/jafudi/mumble-web-lite) Docker image
+  - [jafudi/mumble-web-lite](https://github.com/jafudi/mumble-web) Docker image
 - Email
   - Dockerized Dovecot IMAP Server [antespi/docker-imap-devel](https://hub.docker.com/r/antespi/docker-imap-devel)
 
