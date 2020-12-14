@@ -24,10 +24,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BETA-TESTERS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROVIDER-PRIO.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/terraform-cloudinit-gateway/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,27 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Remove unused variables from AWS module">
-      <created>1607033293141</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1607033293147</updated>
-    </task>
-    <task id="LOCAL-00081" summary="data.aws_caller_identity.current.user_id">
-      <created>1607034581249</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1607034581252</updated>
-    </task>
-    <task id="LOCAL-00082" summary="data.aws_caller_identity.current.account_id">
-      <created>1607037103590</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1607037103597</updated>
     </task>
     <task id="LOCAL-00083" summary="output &quot;gateway_username&quot;">
       <created>1607037579207</created>
@@ -457,7 +435,28 @@
       <option name="project" value="LOCAL" />
       <updated>1607911373023</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Add a list with potential beta-testers and multiplicators">
+      <created>1607941198456</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1607941198456</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Add a list with potential beta-testers and multiplicators">
+      <created>1607941221697</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1607941221697</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Group people w.r.t. their skills">
+      <created>1607943963650</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1607943963650</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,8 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a list of cities where either AWS or Oracle have data centers" />
-    <MESSAGE value="Add cities where we can expand using Azure or Alibaba" />
     <MESSAGE value="Set hostname using jinja2 template vars" />
     <MESSAGE value="Set content_type = &quot;text/jinja2&quot; in Terraform template provider" />
     <MESSAGE value="Try to make it work" />
@@ -498,6 +495,8 @@
     <MESSAGE value="Add links to sub modules" />
     <MESSAGE value="Add section about architecture" />
     <MESSAGE value="Documentation about components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentation about components" />
+    <MESSAGE value="Add a list with potential beta-testers and multiplicators" />
+    <MESSAGE value="Group people w.r.t. their skills" />
+    <option name="LAST_COMMIT_MESSAGE" value="Group people w.r.t. their skills" />
   </component>
 </project>
