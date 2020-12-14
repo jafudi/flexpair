@@ -8,78 +8,66 @@
 ### Oracle Cloud Infrastructure (already)
 - 19 cities
 - Small startup program
-- Official API
-- `oci_core_instance`
+- `oci_core_instance` ([Official API](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/core_instance))
 
 ### Amazon EC2 (already)
 - 21 cities
 - Large startup program
-- Official API
-- `aws_instance`
+- `aws_instance` ([Official API](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance))
 
 ### Microsoft Azure
 - 52 cities
 - Large startup program
-- Official API
-- `azurerm_linux_virtual_machne`
+- `azurerm_linux_virtual_machne` ([Official API](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine))
 
 ### Alibaba Cloud
 - 22 cities
 - Medium startup program
-- Verified API
-- `alicloud_instance`
+- `alicloud_instance` ([Verified API](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/instance))
 
 ## Cloud-init support and 1 month free tier
 
 ### Digital Ocean
 - 11 cities
 - Only approved accelerators
-- Verified API
-- `digitalocean_droplet`
+- `digitalocean_droplet` ([Verified API](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/droplet))
 
 ### OVH Cloud
 - 11 cities 
 - Large startup program
-- Verified API
-- `openstack_compute_instance_v2`
+- `openstack_compute_instance_v2` ([Verified API](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs/resources/compute_instance_v2))
 
 ### Vultr
 - 17 cities
 - No startup program
-- Verified API
-- `vultr_server`
+- `vultr_instance` ([Verified API](https://registry.terraform.io/providers/vultr/vultr/latest/docs/resources/instance))
 
 ### CloudSigma
 - 12 cities
 - Only approved accelerators
-- Verified API
-- `cloudsigma_server`
+- `cloudsigma_server` ([Verified API](https://registry.terraform.io/providers/cloudsigma/cloudsigma/latest/docs/resources/server))
 
 ### OpenTelekomCloud
 - 2 cities
 - Large startup program
-- Community API
-- `opentelekomcloud_compute_instance_v2`
+- `opentelekomcloud_compute_instance_v2` ([Community API](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/compute_instance_v2))
 
 ### Yandex.Cloud
 - 3 cities
 - Medium startup program
-- Community API
-- `yandex_compute_instance`
+- `yandex_compute_instance` ([Community API](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/compute_instance))
 
 ## Cloud-init support but no free tier with sufficient RAM allowance
 
 ### Google Compute Engine
 - 3 cities
 - Only approved accelerators
-- Official API
-- `google_compute_instance`
+- `google_compute_instance` ([Official API](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance))
 
 ### TencentCloud
 - 15 cities
 - No startup program
-- Verified API
-- `tencentcloud_instance`
+- `tencentcloud_instance` ([Verified API](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/instance))
 
 ## Aggregate Locations
 
