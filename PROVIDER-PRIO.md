@@ -5,12 +5,12 @@
 
 ## Cloud-init support and 12 months free tier
 
-### Oracle Cloud Infrastructure (already)
+### Oracle Cloud Infrastructure (already adopted)
 - 19 cities
 - Small startup program
 - `oci_core_instance` ([Official API](https://registry.terraform.io/providers/hashicorp/oci/latest/docs/resources/core_instance))
 
-### Amazon EC2 (already)
+### Amazon EC2 (already adopted)
 - 21 cities
 - Large startup program
 - `aws_instance` ([Official API](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance))
@@ -19,11 +19,13 @@
 - 52 cities
 - Large startup program
 - `azurerm_linux_virtual_machne` ([Official API](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine))
+- Public IP address attribute: `public_ip_address`
 
 ### Alibaba Cloud
 - 22 cities
 - Medium startup program
 - `alicloud_instance` ([Verified API](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/instance))
+- Public IP address attribute: `public_ip`
 
 ## Cloud-init support and 1 month free tier
 
@@ -31,31 +33,31 @@
 - 11 cities
 - Only approved accelerators
 - `digitalocean_droplet` ([Verified API](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/droplet))
+- Public IP address attribute: `ipv4_address`
 
 ### OVH Cloud
 - 11 cities 
 - Large startup program
 - `openstack_compute_instance_v2` ([Verified API](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs/resources/compute_instance_v2))
+- Public IP address attribute: `access_ip_v4`
 
 ### Vultr
 - 17 cities
 - No startup program
 - `vultr_instance` ([Verified API](https://registry.terraform.io/providers/vultr/vultr/latest/docs/resources/instance))
-
-### CloudSigma
-- 12 cities
-- Only approved accelerators
-- `cloudsigma_server` ([Verified API](https://registry.terraform.io/providers/cloudsigma/cloudsigma/latest/docs/resources/server))
+- Public IP address attribute: `main_ip`
 
 ### OpenTelekomCloud
 - 2 cities
 - Large startup program
 - `opentelekomcloud_compute_instance_v2` ([Community API](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/compute_instance_v2))
+- Public IP address attribute: `access_ip_v4`
 
 ### Yandex.Cloud
 - 3 cities
 - Medium startup program
 - `yandex_compute_instance` ([Community API](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/compute_instance))
+- Public IP address attribute: `network_interface.0.nat_ip_address`
 
 ## Cloud-init support but no free tier with sufficient RAM allowance
 
@@ -63,11 +65,13 @@
 - 3 cities
 - Only approved accelerators
 - `google_compute_instance` ([Official API](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance))
+- Public IP address attribute: `network_interface.0.access_config.0.nat_ip`
 
 ### TencentCloud
 - 15 cities
 - No startup program
 - `tencentcloud_instance` ([Verified API](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/instance))
+- Public IP address attribute: `public_ip`
 
 ## Aggregate Locations
 
