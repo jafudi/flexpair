@@ -32,17 +32,39 @@
 - Project management files and conferencing in one place
 - Secretary work, virtual personal assistant
 
-## Terraform sub modules
+## Architecture
 
+### Software systems
 - [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)
 - [terraform-cloudinit-gateway](./modules/terraform-cloudinit-gateway/README.md)
-- [terraform-tls-credentials](./modules/terraform-tls-credentials/README.md)
-- [terraform-aws-commons](./modules/terraform-aws-commons/README.md)
-- [terraform-aws-desktop](./modules/terraform-aws-desktop/README.md)
-- [terraform-aws-gateway](./modules/terraform-aws-gateway/README.md)
-- [terraform-oci-commons](./modules/terraform-oci-commons/README.md)
-- [terraform-oci-desktop](./modules/terraform-oci-desktop/README.md)
-- [terraform-oci-gateway](./modules/terraform-oci-gateway/README.md)
+- [terraform-tls-credentials](./modules/terraform-tls-credentials/README.md) (refactoring needed)
+
+### Deploy mechanism
+- Clone source code from GitHub to Terraform Cloud workspace
+- Input credentials and other variables
+- Plan and execute deploy
+
+### Deploy environments / nodes
+
+- User computer or mobile device
+  - Mozilla Firefox
+  - Google Chrome
+  - Apple Safari
+  - Microsoft Edge
+  
+- Account with DynV6 DNS provider
+  - TLS certificate
+  - DNS A record
+
+- Amazon AWS cloud account
+  - [terraform-aws-commons](./modules/terraform-aws-commons/README.md)
+  - [terraform-aws-desktop](./modules/terraform-aws-desktop/README.md)
+  - [terraform-aws-gateway](./modules/terraform-aws-gateway/README.md)
+- Oracle OCI cloud cloud account
+  - [terraform-oci-commons](./modules/terraform-oci-commons/README.md)
+  - [terraform-oci-desktop](./modules/terraform-oci-desktop/README.md)
+  - [terraform-oci-gateway](./modules/terraform-oci-gateway/README.md)
+  
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
