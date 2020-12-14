@@ -1,67 +1,65 @@
+# Beta-testers
+
+## User experience
 - Papa um uns Unterlagen für Wipperfliess zu zeigen
 - Lea für Stationsversammlung
-- Ying zum Demonstrieren Ihrer eigenen App
-- Werner zum Qt-Programmieren
-- Selbsthilfebüro für Karaoke-Abend
-- Achim bei der Bahn für Mob Programming
-- Björn für CdE-Orga
-- Samy Amara => Sales
-- Ralf Anders => Market Intelligence
-- Lukas Camenzind => IT Security
-- Jörg Gerigk => Mentor, excubo AG
-- Stefan Lörwald => Software-Architektur
-- Friedrich Feuerstein => Marktmechanismen
-- Michaela Franz => Banking
-- Miriam Godau => Social Media Beratung
-- Holger Greif => Sales
-- Ying Gu => NLP und Java Script, Chinesisch
-- Christian Hallqvist => IT Security
-- Jürgen Hess => Sales
-- Olga Heismann => Agile Coach
-- Achim Hildenbrandt => Optimierung
-- Elisabeth Hirtl => Coworking
-- Oliver Kalz => IT Consulting
-- Sebastian Knecht => Print und Digitalmedien
+- Samy Amara
 - Werner Merkl => Qt-Grafik
-- Thomas Koch => IT Security and Sales
-- Jens König => Arbeitet in Heidelberg bei io
-- Kolja Kopal => Analytics
-- Valeska Köster => Sales
-- Christian Kukuk => Sales
-- Olaf Lahrsen => Sales
+- Selbsthilfebüro für Karaoke-Abend
+- Olga Heismann => Agile Coach
+- Elisabeth Hirtl => Coworking
+- Achim bei der Bahn für Mob Programming
 - Cornelia May => Projekt Management
-- Björn Münstermann => Sales
-- Adrian Ngo => Webentwicklung
-- Ali Özkan => Sales
-- Claudia Peters => Sales
+- Claudia Peters
 - Natascha Rausch => Juristin
-- Henning Rusche => Sales
-- Dr. Jürgen Schatz => Sales
-- Christophe Serra => IT Security
-- Dr. Thilo Simon => Fresenius Netcare
-- Dr. Peter Strobel => Sales
 - Stephan Teiwes => Blogging
-- Christian Theel => Online-Marketing
-- Georg Weissmüller => SAP
-- Philipp Wollermann => Google
-- Peter Ziegenhein => Informatik
-- Björn Bastian => freie Software
 - Philipp Nowak und Tonia Nikolova => Mindfulness
 - Hans Christian Hochkeppel (Sohn von Jürgen) => Design
-- Michael Fielenbach => Sales und Politik
+- Mathias Rodenstein => Coach
+
+## Technical review
+- Ying zum Demonstrieren Ihrer eigenen App
+- Lukas Camenzind => IT Security
+- Stefan Lörwald => Software-Architektur
+- Christian Hallqvist => IT Security
+- Björn für CdE-Orga, freie Software
+- Oliver Kalz => IT Consulting
+- Adrian Ngo => Webentwicklung
+- Christophe Serra => IT Security
+- Christian Theel => Online-Marketing
+- Philipp Wollermann => Google
+- Peter Ziegenhein => Informatik
 - Ana Batanero => Data Science
 - Thomas Locher => Credit Swisse
+- Christian Sengstock => SAP
+- Benjamin Knecht => Magic Leap
+- Jannik Strötgen => Bosch
+- Urs Burkhard
+
+## Sales
+- Jörg Gerigk => Mentor, excubo AG
+- Ralf Anders => Market Intelligence
+- Miriam Godau => Social Media Beratung
+- Holger Greif
+- Jürgen Hess
+- Sebastian Knecht => Print und Digitalmedien
+- Thomas Koch => IT Security and Sales
+- Christian Kukuk
+- Olaf Lahrsen
+- Björn Münstermann
+- Ali Özkan
+- Henning Rusche
+- Dr. Jürgen Schatz
+- Dr. Thilo Simon => Fresenius Netcare
+- Dr. Peter Strobel
+- Georg Weissmüller => SAP
+- Michael Fielenbach und Politik
 - Prabhash Chaudhary => BlackRock
 - Flurin Capaul => Hatte mal bei PwC präsentiert eine ähnliche Lösung
 - Chiara Vedaldi => Novartis, Haben zusammen bei PwC Consulting I gemacht
 - Ritesh Ramesh => CTO
 - Christina Cappenberg => Dezernat für Bildung
 - Riva-Melissa Tez => Intel
-- Christian Sengstock => SAP
 - Gianfranco Mautone => PwC Schweiz
-- Mathias Rodenstein => Coach
 - Reiko Mito => Investment Banking
-- Benjamin Knecht => Magic Leap
-- Jannik Strötgen => Bosch
 - Kaisa Karvonen
-- Urs Burkhard
