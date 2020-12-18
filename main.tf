@@ -7,8 +7,8 @@ locals {
 
 module "oracle_infrastructure" {
   deployment_tags = local.deployment_tags
-  source          = "./modules/shared_infrastructure_oci"
-  // below variables are specific to OCI and should be prefixed accordingly
+  source          = "./modules/terraform-oci-commons"
+  // below variables are provider specific
   tenancy_ocid               = var.oci_tenancy_ocid
   user_ocid                  = var.oci_user_ocid
   region                     = var.oci_region
@@ -18,8 +18,7 @@ module "oracle_infrastructure" {
 
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
-  source          = "./modules/shared_infrastructure_aws"
-  // below variables are specific to AWS and should be prefixed accordingly
+  source          = "./modules/terraform-aws-commons"
 }
 
 module "credentials_generator" {
@@ -27,8 +26,8 @@ module "credentials_generator" {
   subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
   gateway_cloud_info    = module.oracle_infrastructure.additional_metadata
   desktop_cloud_info    = module.amazon_infrastructure.additional_metadata
-  source                = "./modules/credentials_generator"
-  // below variables are specific to dynv6.com DNS as an RFC2136 implementation
+  source                = "./modules/terraform-tls-credentials"
+  // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
   rfc2136_key_name       = var.rfc2136_key_name
   rfc2136_key_secret     = var.rfc2136_key_secret
@@ -47,7 +46,7 @@ module "gateway_installer" {
   gateway_dns_hostname   = module.credentials_generator.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
-  source                 = "./modules/gateway_userdata_cloudinit"
+  source                 = "./modules/terraform-cloudinit-gateway"
 }
 
 locals {
@@ -67,8 +66,8 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source = "./modules/gateway_infrastructure_oci"
-  // below variables are specific to AWS and should be prefixed accordingly
+  source = "./modules/terraform-oci-gateway"
+  // below variables are provider specific
   cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }
 
@@ -98,7 +97,7 @@ module "desktop_installer" {
   murmur_config        = module.credentials_generator.murmur_credentials
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
-  source               = "./modules/desktop_userdata_cloudinit"
+  source               = "./modules/terraform-cloudinit-desktop"
 }
 
 locals {
@@ -115,8 +114,8 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source = "./modules/desktop_infrastructure_aws"
-  // below variables are specific to OCI and should be prefixed accordingly
+  source = "./modules/terraform-aws-desktop"
+  // below variables are provider specific
   cloud_provider_context = module.amazon_infrastructure.vm_creation_context
 }
 

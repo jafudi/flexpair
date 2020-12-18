@@ -1,0 +1,73 @@
+## template:jinja
+#cloud-config
+
+# BOOT STAGE 0: cloud-init-local.service applies cloud provided network configuration
+
+# BOOT STAGE 1: cloud-init.service runs after local stage and configured networking is up
+#   Module: seed_random
+#   Module: bootcmd
+bootcmd:
+  - apt-get update
+  - apt-get -qq install locales
+#   Module: write-files
+#   Module: growpart
+#   Module: resizefs
+#   Module: disk_setup
+#   Module: mounts
+mounts:
+  - [
+      "${GATEWAY_USERNAME}@${SSL_DOMAIN}:/home/${GATEWAY_USERNAME}/uploads",
+      "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
+  ]
+mount_default_fields:
+  - "none"
+  - "none"
+  - "fuse.sshfs"
+  - "nofail,noauto,_netdev,IdentityFile=/home/${DESKTOP_USERNAME}/.ssh/vm_key,x-systemd.automount,x-systemd.requires=cloud-init.service,allow_other,users,idmap=user"
+  - "0"
+  - "0"
+#   Module: set_hostname
+preserve_hostname: false
+hostname: '{{ cloud_name }}-{{ availability_zone }}'
+#   Module: update_etc_hosts
+#   Module: ca-certs
+#   Module: rsyslog
+#   Module: users-groups
+users:
+  - name: "${DESKTOP_USERNAME}"
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys:
+      - "${SSH_PUBLIC_KEY}"
+    shell: "/bin/bash"
+#   Module: ssh
+
+# BOOT STAGE 2: cloud-config.service runs config modules only
+#   Module: ssh-import-id
+#   Module: locale
+locale: "${DESKTOP_LOCALE}"
+#   Module: set-passwords
+#   Module: apt-pipelining
+#   Module: apt-configure
+#   Module: timezone
+timezone: "${DESKTOP_TIMEZONE}"
+#   Module: runcmd
+runcmd:
+  - mkdir -p "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
+  - chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"
+  - chmod -R 770 "/home/${DESKTOP_USERNAME}/Desktop/Uploads"
+  - "touch /home/${DESKTOP_USERNAME}/Desktop/Uploads/can_write_as_root || echo  SSHFS mount not working yet. Try again later..."
+
+# BOOT STAGE 3: cloud-final.service runs as final part of boot (traditional “rc.local”)
+#   Module: package-update-upgrade-install
+packages:
+  - git
+#   Module: scripts-user
+#   Module: ssh-authkey-fingerprints
+#   Module: keys-to-console
+#   Module: phone-home
+#   Module: final-message
+final_message: 'The current stop phrase is "finished at". Hostname {{ cloud_name }}-{{ availability_zone }}.'
+#   Module: power-state-change
+power_state:
+  delay: now
+  mode: reboot

@@ -1,0 +1,1 @@
+Remove regex \x1b\[[0-9]m

@@ -7,4 +7,7 @@ if [[ $UID != 0 ]]; then
 fi
 
 terraform validate
+
 terraform fmt -recursive
+
+pre-commit run -a

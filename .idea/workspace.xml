@@ -24,21 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../blast-radius/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/output.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/output.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/credentials_generator/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_infrastructure_oci/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/25-darkstat.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_infrastructure_oci/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/variables.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_aws/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/modules/shared_infrastructure_oci/outputs.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PROVIDER-PRIO.md" beforeDir="false" afterPath="$PROJECT_DIR$/PROVIDER-PRIO.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,52 +58,32 @@
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/desktop_infrastructure_aws" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_aws" />
-      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/gateway_infrastructure_aws" />
-      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit" />
+      <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
+      <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-desktop" />
+      <recent name="$PROJECT_DIR$/modules/terraform-tls-credentials" />
+      <recent name="$PROJECT_DIR$/modules/terraform-oci-gateway" />
+      <recent name="$PROJECT_DIR$/modules/terraform-oci-desktop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/documentation" />
       <recent name="$PROJECT_DIR$/modules/credential_generator/documentation" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
       <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation" />
-      <recent name="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/documentation" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="blast-radius" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="50-trojita-mail.sh" type="ShConfigurationType" temporary="true">
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/50-trojita-mail.sh" />
@@ -128,81 +95,6 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="EXECUTE_IN_TERMINAL" value="true" />
       <envs />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="blast-radius" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="blast-radius" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="blast-radius" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="blast-radius" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="blast-radius" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -219,251 +111,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Format Terraform source files">
-      <created>1606096921453</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1606096921453</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Verify that SSH connection fails and produces an error">
-      <created>1606097591374</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1606097591375</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Open ports on AWS">
-      <created>1606170294134</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1606170294136</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Add userdata">
-      <created>1606170952998</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1606170952999</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Move gateway to Tokyo for testing">
-      <created>1606239421174</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1606239421177</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Leave out the desktop node until gateway is properly created in Tokyo">
-      <created>1606246357263</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1606246357263</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Prolong timeout">
-      <created>1606257484730</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1606257484733</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Remove file provisioner in order to detect whether it is the culprit">
-      <created>1606265724992</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1606265724996</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Re-add desktop node">
-      <created>1606332412991</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1606332412994</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Re-add desktop node">
-      <created>1606333004627</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1606333004628</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Use bash instead of the standard Ubuntu dash as login shell because it enables scrolling up using the arrow keys">
-      <created>1606590773280</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1606590773281</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Instead of including the complete Openbox config XML, edit it in place using xmlstarlet">
-      <created>1606590802824</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1606590802824</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Fix syntax error">
-      <created>1606591070692</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1606591070693</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Add --inplace option">
-      <created>1606591607032</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1606591607032</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Shorten script by implementing a little function">
-      <created>1606595348592</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1606595348592</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Delete bloody XML namespace">
-      <created>1606609447553</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1606609447553</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Debugging">
-      <created>1606611431457</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1606611431458</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Fix script">
-      <created>1606652492289</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1606652492290</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Use #!/bin/bash -eux as shebang in all scripts">
-      <created>1606678998381</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1606678998383</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Roll back changes in the gateway boothooks">
-      <created>1606680773284</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1606680773284</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Quote heredoc in order to prevent variable expansion">
-      <created>1606681304636</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1606681304636</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Update to Terraform version 0.12.26">
-      <created>1606858241299</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1606858241301</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Delete">
-      <created>1606859632948</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1606859632949</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Add docker-compose config">
-      <created>1606860667461</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1606860667464</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Export structural visualizations from blast-radius">
-      <created>1606922662767</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1606922662771</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Fix: Experiment has concluded">
-      <created>1606926020028</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1606926020028</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Cleanup">
-      <created>1606942940543</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1606942940544</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Cleanup">
-      <created>1606943383176</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1606943383176</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Proper double quoting">
-      <created>1606997904242</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1606997904245</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Remove unused variables from AWS module">
-      <created>1607033293141</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1607033293147</updated>
-    </task>
-    <task id="LOCAL-00081" summary="data.aws_caller_identity.current.user_id">
-      <created>1607034581249</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1607034581252</updated>
-    </task>
-    <task id="LOCAL-00082" summary="data.aws_caller_identity.current.account_id">
-      <created>1607037103590</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1607037103597</updated>
-    </task>
-    <task id="LOCAL-00083" summary="output &quot;gateway_username&quot;">
-      <created>1607037579207</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1607037579207</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Move usernames to module shared_secrets">
-      <created>1607037975425</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1607037975425</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Standardize format of cloud account name">
-      <created>1607039243312</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1607039243313</updated>
     </task>
     <task id="LOCAL-00086" summary="Randomize mumble port">
       <created>1607042391076</created>
@@ -563,7 +210,252 @@
       <option name="project" value="LOCAL" />
       <updated>1607210777675</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Rename modules according to the Terraform registry requirements">
+      <created>1607287654236</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1607287654237</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Add Readme files to all submodules">
+      <created>1607291155750</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1607291155752</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Added a list of cities where either AWS or Oracle have data centers">
+      <created>1607293440185</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1607293440185</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Add cities where we can expand using Azure or Alibaba">
+      <created>1607295560650</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1607295560651</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Set hostname using jinja2 template vars">
+      <created>1607375129168</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1607375129172</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Set content_type = &quot;text/jinja2&quot; in Terraform template provider">
+      <created>1607379347084</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1607379347085</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Set content_type = &quot;text/jinja2&quot; in Terraform template provider">
+      <created>1607380545410</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1607380545411</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Try to make it work">
+      <created>1607384037011</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1607384037012</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Set a constant hostname first">
+      <created>1607386555388</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1607386555388</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Revert MIME type to &quot;text/cloud-config&quot;">
+      <created>1607387043944</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1607387043946</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Switch off jinja, see if hostname setting causes the problem">
+      <created>1607387595600</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1607387595602</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Do not update hostname">
+      <created>1607388389954</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1607388389955</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Found the bug">
+      <created>1607389203852</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1607389203854</updated>
+    </task>
+    <task id="LOCAL-00113" summary="## template:jinja">
+      <created>1607391954830</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1607391954832</updated>
+    </task>
+    <task id="LOCAL-00114" summary="This really should work now">
+      <created>1607392758347</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1607392758349</updated>
+    </task>
+    <task id="LOCAL-00115" summary="Use correct stop word">
+      <created>1607394164582</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1607394164583</updated>
+    </task>
+    <task id="LOCAL-00116" summary="content_type = &quot;text/cloud-config&quot;">
+      <created>1607395313112</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1607395313112</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Is it only hostname where jinja does not work??">
+      <created>1607454454982</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1607454454984</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Add empty description stubs in preparation for documenting">
+      <created>1607551820241</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1607551820241</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Document some parameters">
+      <created>1607555636712</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1607555636712</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Document some parameters">
+      <created>1607556308956</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1607556308956</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Add some precommit hooks">
+      <created>1607873871977</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1607873871977</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Auto-generate variable documentation in README.md">
+      <created>1607878142295</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1607878142295</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Update gitignore">
+      <created>1607878453490</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1607878453490</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Move some README content to appropriate submodules">
+      <created>1607895212109</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1607895212110</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Update README">
+      <created>1607900872709</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1607900872709</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Add links to sub modules">
+      <created>1607901017955</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1607901017957</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Add section about architecture">
+      <created>1607905215342</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1607905215342</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Documentation about components">
+      <created>1607911373019</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1607911373023</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Add a list with potential beta-testers and multiplicators">
+      <created>1607941198456</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1607941198456</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Add a list with potential beta-testers and multiplicators">
+      <created>1607941221697</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1607941221697</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Group people w.r.t. their skills">
+      <created>1607943963650</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1607943963650</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Consolidate research about which providers to adopt next">
+      <created>1607950599829</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1607950599830</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Add links to Terraform API documentation">
+      <created>1607955511160</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1607955511160</updated>
+    </task>
+    <task id="LOCAL-00134" summary="Check that it is clear what the Public IP address attribute is called for each cloud">
+      <created>1607957261884</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1607957261884</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -579,31 +471,31 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update to Terraform version 0.12.26" />
-    <MESSAGE value="Delete" />
-    <MESSAGE value="Add docker-compose config" />
-    <MESSAGE value="Export structural visualizations from blast-radius" />
-    <MESSAGE value="Fix: Experiment has concluded" />
-    <MESSAGE value="Cleanup" />
-    <MESSAGE value="Proper double quoting" />
-    <MESSAGE value="Remove unused variables from AWS module" />
-    <MESSAGE value="data.aws_caller_identity.current.user_id" />
-    <MESSAGE value="data.aws_caller_identity.current.account_id" />
-    <MESSAGE value="output &quot;gateway_username&quot;" />
-    <MESSAGE value="Move usernames to module shared_secrets" />
-    <MESSAGE value="Standardize format of cloud account name" />
-    <MESSAGE value="Randomize mumble port" />
-    <MESSAGE value="Update module graph" />
-    <MESSAGE value="try dynamic &quot;ingress&quot; block" />
-    <MESSAGE value="Pass ports to open as variable" />
-    <MESSAGE value="Order variables by provider specific/independent" />
-    <MESSAGE value="Bundle arguments into cloud_provider_context" />
-    <MESSAGE value="Do the same for AWS infrastructure" />
-    <MESSAGE value="Fix typo" />
-    <MESSAGE value="Swap desktop and gateway roles between AWS and OCI" />
-    <MESSAGE value="Correct grammatical mistakes" />
-    <MESSAGE value="Remove unused variables" />
-    <MESSAGE value="Need to wait for desktop to reboot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Need to wait for desktop to reboot" />
+    <MESSAGE value="Set a constant hostname first" />
+    <MESSAGE value="Revert MIME type to &quot;text/cloud-config&quot;" />
+    <MESSAGE value="Switch off jinja, see if hostname setting causes the problem" />
+    <MESSAGE value="Do not update hostname" />
+    <MESSAGE value="Found the bug" />
+    <MESSAGE value="## template:jinja" />
+    <MESSAGE value="This really should work now" />
+    <MESSAGE value="Use correct stop word" />
+    <MESSAGE value="content_type = &quot;text/cloud-config&quot;" />
+    <MESSAGE value="Is it only hostname where jinja does not work??" />
+    <MESSAGE value="Add empty description stubs in preparation for documenting" />
+    <MESSAGE value="Document some parameters" />
+    <MESSAGE value="Add some precommit hooks" />
+    <MESSAGE value="Auto-generate variable documentation in README.md" />
+    <MESSAGE value="Update gitignore" />
+    <MESSAGE value="Move some README content to appropriate submodules" />
+    <MESSAGE value="Update README" />
+    <MESSAGE value="Add links to sub modules" />
+    <MESSAGE value="Add section about architecture" />
+    <MESSAGE value="Documentation about components" />
+    <MESSAGE value="Add a list with potential beta-testers and multiplicators" />
+    <MESSAGE value="Group people w.r.t. their skills" />
+    <MESSAGE value="Consolidate research about which providers to adopt next" />
+    <MESSAGE value="Add links to Terraform API documentation" />
+    <MESSAGE value="Check that it is clear what the Public IP address attribute is called for each cloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check that it is clear what the Public IP address attribute is called for each cloud" />
   </component>
 </project>

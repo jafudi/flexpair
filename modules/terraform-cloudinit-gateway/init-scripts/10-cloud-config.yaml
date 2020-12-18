@@ -1,0 +1,69 @@
+## template:jinja
+#cloud-config
+
+# BOOT STAGE 0: cloud-init-local.service applies cloud provided network configuration
+
+# BOOT STAGE 1: cloud-init.service runs after local stage and configured networking is up
+#   Module: seed_random
+#   Module: bootcmd
+bootcmd:
+  - apt-get update
+  - apt-get -qq install locales
+#   Module: write-files
+#   Module: growpart
+#   Module: resizefs
+#   Module: disk_setup
+#   Module: mounts
+#   Module: set_hostname
+preserve_hostname: false
+hostname: '{{ cloud_name }}-{{ availability_zone }}'
+#   Module: update_etc_hosts
+#   Module: ca-certs
+#   Module: rsyslog
+#   Module: users-groups
+users:
+  - name: "${GATEWAY_USERNAME}"
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys:
+      - "${SSH_PUBLIC_KEY}"
+    shell: "/bin/bash"
+#   Module: ssh
+
+# BOOT STAGE 2: cloud-config.service runs config modules only
+#   Module: ssh-import-id
+#   Module: locale
+locale: "${GATEWAY_LOCALE}"
+#   Module: set-passwords
+#   Module: apt-pipelining
+#   Module: apt-configure
+#   Module: timezone
+timezone: "${GATEWAY_TIMEZONE}"
+#   Module: runcmd
+runcmd:
+  - mkdir -p "/home/${GATEWAY_USERNAME}/uploads"
+  - chown -R "${GATEWAY_USERNAME}" "/home/${GATEWAY_USERNAME}"
+  - chmod -R 770 "/home/${GATEWAY_USERNAME}/uploads"
+  - export DEBIAN_FRONTEND=noninteractive
+  - rm -rf /var/log/unattended-upgrades
+  - apt-get -qq purge unattended-upgrades snapd apport
+  - apt-get -qq autoremove
+
+# BOOT STAGE 3: cloud-final.service runs as final part of boot (traditional “rc.local”)
+#   Module: package-update-upgrade-install
+package_update: true
+package_upgrade: false
+packages:
+  - docker.io
+  - nano
+  - iptables-persistent
+  - net-tools
+  - glances
+#   Module: scripts-user
+#   Module: ssh-authkey-fingerprints
+#   Module: keys-to-console
+#   Module: phone-home
+#   Module: final-message
+final_message: 'The current stop phrase is "finished at". Hostname {{ cloud_name }}-{{ availability_zone }}.'
+#   Module: power-state-change
+
+

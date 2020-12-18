@@ -24,7 +24,7 @@ variable "registered_domain" {
 variable "rfc2136_name_server" {
   type        = string
   default     = "ns1.dynv6.com"
-  description = "Offers full implementation of RFC2136 and TSIG for free"
+  description = "The IPv4 address or URL of the DNS server to send updates to"
   validation {
     condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.rfc2136_name_server))
     error_message = "This does not look like a valid domain for a name server."
@@ -32,19 +32,21 @@ variable "rfc2136_name_server" {
 }
 
 variable "rfc2136_key_name" {
-  type    = string
-  default = "tsig-164066.dynv6.com."
+  description = "The name of the TSIG key used to sign the DNS update messages"
+  type        = string
+  default     = "tsig-164066.dynv6.com."
 }
 
 variable "rfc2136_key_secret" {
   type        = string
   default     = "7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL9qnZBX7uy6Vi8r+46/HmOrMq767RRTPA=="
-  description = "Sensitive, yet no cost risk"
+  description = "A Base64-encoded string containing the shared secret to be used for TSIG"
 }
 
 variable "rfc2136_tsig_algorithm" {
-  type    = string
-  default = "hmac-sha512"
+  description = "When using TSIG authentication, the algorithm to use for HMAC"
+  type        = string
+  default     = "hmac-sha512"
   validation {
     condition     = contains(["hmac-sha224", "hmac-sha256", "hmac-sha384", "hmac-sha512"], var.rfc2136_tsig_algorithm)
     error_message = "Unsupported algorithm specified."
