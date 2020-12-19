@@ -1,4 +1,4 @@
-# Main Module to be named
+# Write in blog article style an publish on Medium etc.
 
 ## Unique Selling Point
 
