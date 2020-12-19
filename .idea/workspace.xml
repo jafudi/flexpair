@@ -24,8 +24,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cv-references.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-vision.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PROVIDER-PRIO.md" beforeDir="false" afterPath="$PROJECT_DIR$/PROVIDER-PRIO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/gartner-iaas-mq-sept-2020.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/structurizr-55946-workspace.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +80,11 @@
       <recent name="$PROJECT_DIR$/modules/terraform-oci-desktop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/documentation" />
       <recent name="$PROJECT_DIR$/modules/credential_generator/documentation" />
       <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
       <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
-      <recent name="$PROJECT_DIR$/modules/desktop_infrastructure_oci/documentation" />
     </key>
   </component>
   <component name="RunManager">
