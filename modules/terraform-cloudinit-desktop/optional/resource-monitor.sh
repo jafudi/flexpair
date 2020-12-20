@@ -77,4 +77,3 @@ Exec=conky --daemonize --pause=5
 StartupNotify=false
 Terminal=false
 EOF
-

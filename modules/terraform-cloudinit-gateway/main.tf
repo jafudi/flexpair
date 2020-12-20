@@ -103,5 +103,3 @@ data "template_cloudinit_config" "gateway_config" {
     })
   }
 }
-
-

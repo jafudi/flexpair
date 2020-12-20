@@ -193,5 +193,3 @@ xmlstarlet ed \
 "$OCD/lxqt-rc.xml" > "$OCD/tmp.xml"
 
 mv -f "$OCD/tmp.xml" "$OCD/lxqt-rc.xml"
-
-

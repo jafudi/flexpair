@@ -30,6 +30,3 @@ variable "TFC_WORKSPACE_NAME" {
   description = "This is the name of the workspace used in this run, e.g. prod-load-balancers."
   type        = string
 }
-
-
-

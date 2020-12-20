@@ -74,8 +74,6 @@ resource "oci_core_instance" "desktop" {
       "until systemctl is-active x11vnc.service; do sleep 1; done",
       "echo 'Checking that darkstat.service is active...'",
       "until systemctl is-active darkstat.service; do sleep 1; done",
-      "echo 'Checking that home-${var.desktop_username}-Desktop-Uploads.mount is active...'",
-      "until systemctl is-active home-${var.desktop_username}-Desktop-Uploads.mount; do sleep 1; done",
       "echo 'Checking that ssh-tunnel.service is active...'",
       "until systemctl is-active ssh-tunnel.service; do sleep 1; done",
       "echo 'Checking that nohang-desktop.service is active...'",

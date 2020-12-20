@@ -53,7 +53,7 @@
   - Google Chrome
   - Apple Safari
   - Microsoft Edge
-  
+
 - Account with DynV6 DNS provider
   - TLS certificate
   - DNS A record
@@ -66,7 +66,7 @@
   - [terraform-oci-commons](./modules/terraform-oci-commons/README.md)
   - [terraform-oci-desktop](./modules/terraform-oci-desktop/README.md)
   - [terraform-oci-gateway](./modules/terraform-oci-gateway/README.md)
-  
+
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -134,7 +134,7 @@
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-  
+
 ## Direct and indirect competitors
 
 ### Virtual Cloud Desktops

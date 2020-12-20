@@ -39,6 +39,3 @@ WantedBy=default.target
 EOF
 systemctl enable docker-compose.service
 systemctl start docker-compose.service
-
-
-

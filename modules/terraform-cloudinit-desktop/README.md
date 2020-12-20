@@ -22,7 +22,7 @@ Terraform module which generates cloud-init userdata for provisioning the deskto
 - Email
   - Automatic [Trojita](http://trojita.flaska.net) email client configuration
 - Use case specific software
-    
+
 
 
 ## Usage
