@@ -24,8 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Add a couple of format checks">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/new_release.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/new_release.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BETA-TESTERS.md" beforeDir="false" afterPath="$PROJECT_DIR$/BETA-TESTERS.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,13 +114,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Order variables by provider specific/independent">
-      <created>1607158850297</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1607158850300</updated>
     </task>
     <task id="LOCAL-00092" summary="Bundle arguments into cloud_provider_context">
       <created>1607163455286</created>
@@ -458,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608478777513</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Add a couple of format checks">
+      <created>1608478893030</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1608478893030</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
