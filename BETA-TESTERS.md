@@ -21,7 +21,7 @@
 - Ying zum Demonstrieren Ihrer eigenen App
 - Lukas Camenzind => IT Security
 - Stefan Lörwald => Software-Architektur
-- [Christian Hallqvist](hall@id.ethz.ch) => IT Security
+- [Christian Hallqvist](mailto:hall@id.ethz.ch) => IT Security
 - Björn für CdE-Orga, freie Software
 - [Oliver Kalz](https://www.xing.com/profile/Oliver_Kalz/cv)
 - Adrian Ngo => Webentwicklung
