@@ -33,6 +33,19 @@ resource "aws_instance" "gateway" {
     ]
     on_failure = continue
   }
+
+  // Check that vital services are up and running
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'Checking that docker-compose.service is active...'",
+      "until systemctl is-active docker-compose.service; do sleep 1; done",
+      "echo 'Checking that docker.service is active...'",
+      "until systemctl is-active docker.service; do sleep 1; done",
+      "echo 'Checking that containerd.service is active...'",
+      "until systemctl is-active containerd.service; do sleep 1; done"
+    ]
+    on_failure = fail
+  }
 }
 
 resource "aws_security_group" "gateway_rules" {
