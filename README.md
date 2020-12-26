@@ -1,4 +1,14 @@
-# Write in blog article style an publish on Medium etc.
+# Write and share a blog article
+
+## Selected use cases
+
+- Delegation of project tasks
+- Interactive team programming
+- Patient-centered healthcare
+- Remote podcast production
+- Virtual karaoke party 🥳
+
+## Some screenshots
 
 ![Some screenshots](./documentation/ezgif.com-gif-maker.gif)
 
@@ -19,22 +29,7 @@
 - no additional software: use your favorite web browser
 - keep your private space private: no webcams involved
 
-## Potential Use cases
 
-- Consultancies working remote on their clients data
-- Job sharing
-- Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
-- Listening to and discussing podcasts together
-- Listening to Audio porn together
-- Collaborative planning of e.g. travel over distance
-- Doing e-learning together
-- In-browser high-quality audio conferencing
-- Software demos and user testing
-- Mob programming
-- Presenting and discussing slides
-- Virtual conference table with positional audio
-- Project management files and conferencing in one place
-- Secretary work, virtual personal assistant
 
 ## Architecture
 
