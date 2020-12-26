@@ -1,5 +1,7 @@
 # Write in blog article style an publish on Medium etc.
 
+![Some screenshots](./documentation/ezgif.com-gif-maker.gif)
+
 ## Unique Selling Point
 
 - [Infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code) using [Terraform](https://www.terraform.io) provides automated and reproducible provisioning of the environment (DevOps)

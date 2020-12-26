@@ -23,7 +23,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Add a couple of format checks">
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="mailto:">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BETA-TESTERS.md" beforeDir="false" afterPath="$PROJECT_DIR$/BETA-TESTERS.md" afterDir="false" />
     </list>
@@ -114,20 +114,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Bundle arguments into cloud_provider_context">
-      <created>1607163455286</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1607163455286</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Do the same for AWS infrastructure">
-      <created>1607164964926</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1607164964928</updated>
     </task>
     <task id="LOCAL-00094" summary="Fix typo">
       <created>1607165181996</created>
@@ -458,7 +444,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608478893030</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="Start adding contact information to contacts I want to reach out to">
+      <created>1608500949964</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1608500949965</updated>
+    </task>
+    <task id="LOCAL-00142" summary="mailto:">
+      <created>1608501095600</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1608501095600</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,8 +477,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../blast-radius" />
     </ignored-roots>
-    <MESSAGE value="Found the bug" />
-    <MESSAGE value="## template:jinja" />
     <MESSAGE value="This really should work now" />
     <MESSAGE value="Use correct stop word" />
     <MESSAGE value="content_type = &quot;text/cloud-config&quot;" />
@@ -502,6 +500,8 @@
     <MESSAGE value="Check that vital services are up and running" />
     <MESSAGE value="mount does not display as active, leave out this check" />
     <MESSAGE value="Add a couple of format checks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a couple of format checks" />
+    <MESSAGE value="Start adding contact information to contacts I want to reach out to" />
+    <MESSAGE value="mailto:" />
+    <option name="LAST_COMMIT_MESSAGE" value="mailto:" />
   </component>
 </project>
