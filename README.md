@@ -8,6 +8,8 @@
 - Remote podcast production 🧔🎙🎛⟷🎙👩‍🦱🎧
 - Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
 
+TODO: Assign contacts as well as competitor products to use cases
+
 ## Some screenshots
 
 ![Some screenshots](./documentation/ezgif.com-gif-maker.gif)
