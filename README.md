@@ -149,7 +149,7 @@
 ### Collaboration Tools
 - [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
 - [BigBlueButton](https://bigbluebutton.org)
-- [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/)
+- [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/) and [others](https://raygun.com/blog/remote-pair-programming/)
 
 ### Video Conferencing
 - [Jitsi](https://jitsi.org)
