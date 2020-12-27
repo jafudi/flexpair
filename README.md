@@ -2,7 +2,7 @@
 
 ## What is it?
 
-A collection of terraform modules and cloud-init scripts for deploying a shared cloud desktop with high quality audio conferencing and self-hosted email inbox to an arbitraty public cloud account.
+A collection of terraform modules and cloud-init scripts for deploying a shared cloud desktop with high quality audio conferencing and self-hosted email inbox to an arbitrary public cloud account.
 
 ## Selected use cases
 
