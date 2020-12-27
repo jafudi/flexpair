@@ -2,11 +2,11 @@
 
 ## Selected use cases
 
-- Delegation of project tasks 👨‍💼👉✅‍🧞‍♂️
+- Delegation of project tasks 👨‍💼👉✅👂‍🧞‍♂️
 - Interactive team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
 - Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧🧑‍🔬‍🧫🔬
 - Remote podcast production 🧔🎙🎛⟷🎙👩‍🦱🎧
-- Virtual karaoke party 🎉🕺⟷🎤🥳
+- Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
 
 ## Some screenshots
 
