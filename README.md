@@ -6,6 +6,8 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 ## Selected use cases
 
+TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
+
 - Delegation of project tasks 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
 - Interactive team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
 - Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
