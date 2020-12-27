@@ -9,9 +9,9 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 - Delegation of project tasks 👨‍💼👉✅👂‍🧞‍♂️
 - Interactive team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
 - Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧🧑‍🔬‍🧫🔬
+- 🧠 Brain storming and technology brokering 💡♻
 - Remote podcast production 🧔🎙🎛⟷🎙👩‍🦱🎧
 - Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
-- 🧠 Brain storming and technology brokering 💡♻
 
 TODO: Assign contacts as well as competitor products to use cases
 
