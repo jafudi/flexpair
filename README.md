@@ -6,11 +6,11 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 ## Selected use cases
 
-- Delegation of project tasks 👨‍💼👉✅👂‍🧞‍♂️
+- Delegation of project tasks 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
 - Interactive team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
-- Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧🧑‍🔬‍🧫🔬
+- Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
 - 🧠 Brain storming and technology brokering 💡♻
-- Remote podcast production 👩‍🦱🎙🎛⟷🎙🧔🎧
+- Remote podcast production 👩🏿‍🦱🎙🎛⟷🎙👨🏻‍🦰🎧
 - Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
 
 TODO: Assign contacts as well as competitor products to use cases

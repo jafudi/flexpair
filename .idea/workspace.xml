@@ -23,7 +23,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Makes more sense after reordering bullet points" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Better exchange roles">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,13 +114,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Try to make it work">
-      <created>1607384037011</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1607384037012</updated>
     </task>
     <task id="LOCAL-00108" summary="Set a constant hostname first">
       <created>1607386555388</created>
@@ -455,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609085475233</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="Better exchange roles">
+      <created>1609085603561</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1609085603562</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,7 +477,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../blast-radius" />
     </ignored-roots>
-    <MESSAGE value="Add some precommit hooks" />
     <MESSAGE value="Auto-generate variable documentation in README.md" />
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="Move some README content to appropriate submodules" />
@@ -499,6 +501,7 @@
     <MESSAGE value="Add link to remote pair programming tools" />
     <MESSAGE value="Add one more use case" />
     <MESSAGE value="Makes more sense after reordering bullet points" />
-    <option name="LAST_COMMIT_MESSAGE" value="Makes more sense after reordering bullet points" />
+    <MESSAGE value="Better exchange roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better exchange roles" />
   </component>
 </project>
