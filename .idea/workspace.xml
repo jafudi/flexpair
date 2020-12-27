@@ -23,7 +23,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Add emojis">
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Add link to remote pair programming tools">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,34 +114,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Add Readme files to all submodules">
-      <created>1607291155750</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1607291155752</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Added a list of cities where either AWS or Oracle have data centers">
-      <created>1607293440185</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1607293440185</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Add cities where we can expand using Azure or Alibaba">
-      <created>1607295560650</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1607295560651</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Set hostname using jinja2 template vars">
-      <created>1607375129168</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1607375129172</updated>
     </task>
     <task id="LOCAL-00105" summary="Set content_type = &quot;text/jinja2&quot; in Terraform template provider">
       <created>1607379347084</created>
@@ -457,7 +430,35 @@
       <option name="project" value="LOCAL" />
       <updated>1609030469264</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="Add emojis">
+      <created>1609030726124</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1609030726125</updated>
+    </task>
+    <task id="LOCAL-00151" summary="Add link to remote pair programming tools">
+      <created>1609031699126</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1609031699126</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Add link to remote pair programming tools">
+      <created>1609031843239</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1609031843239</updated>
+    </task>
+    <task id="LOCAL-00153" summary="Add link to remote pair programming tools">
+      <created>1609032071294</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1609032071294</updated>
+    </task>
+    <option name="localTasksCounter" value="154" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +477,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../blast-radius" />
     </ignored-roots>
-    <MESSAGE value="Is it only hostname where jinja does not work??" />
     <MESSAGE value="Add empty description stubs in preparation for documenting" />
     <MESSAGE value="Document some parameters" />
     <MESSAGE value="Add some precommit hooks" />
@@ -501,6 +501,7 @@
     <MESSAGE value="Add an animated GIF" />
     <MESSAGE value="Selected use cases" />
     <MESSAGE value="Add emojis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add emojis" />
+    <MESSAGE value="Add link to remote pair programming tools" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add link to remote pair programming tools" />
   </component>
 </project>

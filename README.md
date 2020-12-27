@@ -11,6 +11,7 @@ A collection of terraform modules and cloud-init scripts for deploying a shared 
 - Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧🧑‍🔬‍🧫🔬
 - Remote podcast production 🧔🎙🎛⟷🎙👩‍🦱🎧
 - Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
+- 🧠 Brain storming and technology brokering 💡♻
 
 TODO: Assign contacts as well as competitor products to use cases
 
