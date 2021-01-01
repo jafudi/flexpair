@@ -70,5 +70,3 @@ variable "primary_nic_name" {
   description = ""
   type        = string
 }
-
-

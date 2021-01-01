@@ -42,6 +42,3 @@ Match address 172.18.0.2
     PermitEmptyPasswords yes
     PermitRootLogin yes
 EOF
-
-
-

@@ -65,5 +65,3 @@ packages:
 #   Module: final-message
 final_message: 'The current stop phrase is "finished at". Hostname {{ cloud_name }}-{{ availability_zone }}.'
 #   Module: power-state-change
-
-

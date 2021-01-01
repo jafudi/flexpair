@@ -23,7 +23,7 @@
 
 ### Alibaba Cloud
 - 6% global market share, 22 cities
-- [Startups can apply for](https://www.alibabacloud.com/de/startup/join-us) up to 10k USD 
+- [Startups can apply for](https://www.alibabacloud.com/de/startup/join-us) up to 10k USD
 - `alicloud_instance` ([Verified API](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/instance))
 - Public IP address attribute: `public_ip`
 
@@ -36,7 +36,7 @@
 - Public IP address attribute: `ipv4_address`
 
 ### OVH Cloud
-- 11 cities 
+- 11 cities
 - [Startups can apply for](https://startup.ovhcloud.com/en/starters/) up to 10k EUR
 - `openstack_compute_instance_v2` ([Verified API](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs/resources/compute_instance_v2))
 - Public IP address attribute: `access_ip_v4`

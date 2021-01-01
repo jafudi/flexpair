@@ -98,5 +98,3 @@ data "oci_core_images" "ubuntu-20-04-minimal" {
   sort_by    = "TIMECREATED"
   sort_order = "DESC"
 }
-
-

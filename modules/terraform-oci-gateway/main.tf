@@ -96,6 +96,19 @@ resource "oci_core_instance" "gateway" {
     on_failure = continue
   }
 
+  // Check that vital services are up and running
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'Checking that docker-compose.service is active...'",
+      "until systemctl is-active docker-compose.service; do sleep 1; done",
+      "echo 'Checking that docker.service is active...'",
+      "until systemctl is-active docker.service; do sleep 1; done",
+      "echo 'Checking that containerd.service is active...'",
+      "until systemctl is-active containerd.service; do sleep 1; done"
+    ]
+    on_failure = fail
+  }
+
   //  // Test whether file upload via SSH works
   //  provisioner "file" {
   //    source      = "${path.root}/uploads/"
@@ -104,5 +117,3 @@ resource "oci_core_instance" "gateway" {
   //  }
 
 }
-
-

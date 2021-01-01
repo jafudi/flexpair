@@ -11,7 +11,7 @@ cat << CONFIG > "${MURMUR_CONFIG}/murmur.ini"
 EOF
 
 # Murmur configuration file.
-# 
+#
 # General notes:
 # * Settings in this file are default settings and many of them can be overridden
 #   with virtual server specific configuration via the Ice or DBus interface.
@@ -35,10 +35,10 @@ EOF
 # advantageous.
 # If you encounter slowdowns when moving between channels and similar
 # operations, enabling the SQLite write-ahead log might help.
-# 
+#
 # To use SQLite's write-ahead log, set sqlite_wal to one of the following
 # values:
-# 
+#
 # 0 - Use SQLite's default rollback journal.
 # 1 - Use write-ahead log with synchronous=NORMAL.
 #     If Murmur crashes, the database will be in a consistent state, but
@@ -95,7 +95,7 @@ EOF
 # Access is split in read (look only) and write (modify)
 # operations. Write access always includes read access,
 # unless read is explicitly denied (see note below).
-# 
+#
 # Note that if this is uncommented and with empty content,
 # access will be denied.
 cat << 'EOF' >> "${NO_COMMENTS}"
@@ -134,7 +134,7 @@ EOF
 # The below will be used as defaults for new configured servers.
 # If you're just running one server (the default), it's easier to
 # configure it here than through D-Bus or Ice.
-# 
+#
 # Welcome message sent to clients when they connect.
 # If the welcome message is set to an empty string,
 # no welcome message will be sent to clients.
@@ -168,7 +168,7 @@ EOF
 # occasionally one will get stuck on the server. The timeout setting will cause
 # a periodic check of all clients who haven't communicated with the server in
 # this many seconds - causing zombie clients to be disconnected.
-# 
+#
 # Note that this has no effect on idle clients or people who are AFK. It will
 # only affect people who are already disconnected, and just haven't told the
 # server.
@@ -189,7 +189,7 @@ cat << 'EOF' >> "${NO_COMMENTS}"
 EOF
 
 # Per-user rate limiting
-# 
+#
 # These two settings allow to configure the per-user rate limiter for some
 # command messages sent from the client to the server. The messageburst setting
 # specifies an amount of messages which are allowed in short bursts. The
@@ -203,7 +203,7 @@ messagelimit=1
 EOF
 
 # Respond to UDP ping packets.
-# 
+#
 # Setting to true exposes the current user count, the maximum user count, and
 # the server's maximum bandwidth per client to unauthenticated users. In the
 # Mumble client, this information is shown in the Connect dialog.
@@ -245,7 +245,7 @@ EOF
 # before, or rememberchannel is set to false) and the client hasn't been given
 # a URL that includes a channel path, the default behavior is that they will
 # end up in the root channel.
-# 
+#
 # You can set this setting to a channel ID, and the user will automatically be
 # moved into that channel instead. Note that this is the numeric ID of the
 # channel, which can be a little tricky to get (you'll either need to use an
@@ -293,7 +293,7 @@ EOF
 # addresses.
 # Location is typically the country of typical users of the server, in
 # two-letter TLD style (ISO 3166-1 alpha-2 country code)
-# 
+#
 # If you only wish to give your "Root" channel a custom name, then only
 # uncomment the 'registerName' parameter.
 cat << 'EOF' >> "${NO_COMMENTS}"
@@ -340,14 +340,14 @@ EOF
 # The sslDHParams option allows you to specify a PEM-encoded file with
 # Diffie-Hellman parameters, which will be used as the default Diffie-
 # Hellman parameters for all virtual servers.
-# 
+#
 # Instead of pointing sslDHParams to a file, you can also use the option
 # to specify a named set of Diffie-Hellman parameters for Murmur to use.
 # Murmur comes bundled with the Diffie-Hellman parameters from RFC 7919.
 # These parameters are available by using the following names:
-# 
+#
 # @ffdhe2048, @ffdhe3072, @ffdhe4096, @ffdhe6144, @ffdhe8192
-# 
+#
 # By default, Murmur uses @ffdhe2048.
 cat << 'EOF' >> "${NO_COMMENTS}"
 ;sslDHParams=@ffdhe2048
@@ -356,16 +356,16 @@ EOF
 # The sslCiphers option chooses the cipher suites to make available for use
 # in SSL/TLS. This option is server-wide, and cannot be set on a
 # per-virtual-server basis.
-# 
+#
 # This option is specified using OpenSSL cipher list notation (see
 # https://www.openssl.org/docs/apps/ciphers.html#CIPHER-LIST-FORMAT).
-# 
+#
 # It is recommended that you try your cipher string using 'openssl ciphers <string>'
 # before setting it here, to get a feel for which cipher suites you will get.
-# 
+#
 # After setting this option, it is recommend that you inspect your Murmur log
 # to ensure that Murmur is using the cipher suites that you expected it to.
-# 
+#
 # Note: Changing this option may impact the backwards compatibility of your
 # Murmur server, and can remove the ability for older Mumble clients to be able
 # to connect to it.
@@ -383,7 +383,7 @@ EOF
 # Mumble will show IP addresses - in some situations you may find this unwanted
 # behavior. If obfuscate is set to true, Murmur will randomize the IP addresses
 # of connecting users.
-# 
+#
 # The obfuscate function only affects the log file and DOES NOT effect the user
 # information section in the client window.
 cat << 'EOF' >> "${NO_COMMENTS}"
@@ -405,7 +405,7 @@ EOF
 # You can set a recommended minimum version for your server, and clients will
 # be notified in their log when they connect if their client does not meet the
 # minimum requirements. suggestVersion expects the version in the format X.X.X.
-# 
+#
 # Note that the suggest* options appeared after 1.2.3 and will have no effect
 # on client versions 1.2.3 and earlier.
 cat << 'EOF' >> "${NO_COMMENTS}"
@@ -418,7 +418,7 @@ EOF
 # enables positional audio or not, set it to blank. The message will appear in
 # the log window upon connection, but only if the user's settings do not match
 # what the server requests.
-# 
+#
 # Note that the suggest* options appeared after 1.2.3 and will have no effect
 # on client versions 1.2.3 and earlier.
 cat << 'EOF' >> "${NO_COMMENTS}"
@@ -431,7 +431,7 @@ EOF
 # enables PTT or not, set it to blank. The message will appear in the log
 # window upon connection, but only if the user's settings do not match what the
 # server requests.
-# 
+#
 # Note that the suggest* options appeared after 1.2.3 and will have no effect
 # on client versions 1.2.3 and earlier.
 cat << 'EOF' >> "${NO_COMMENTS}"
@@ -455,14 +455,14 @@ EOF
 # affecting the low-latency of other users, Murmur has a rudimentary global-ban
 # system. It's configured using the autobanAttempts, autobanTimeframe and
 # autobanTime settings.
-# 
+#
 # If a client attempts autobanAttempts connections in autobanTimeframe seconds,
 # they will be banned for autobanTime seconds. This is a global ban, from all
 # virtual servers on the Murmur process. It will not show up in any of the
 # ban-lists on the server, and they can't be removed without restarting the
 # Murmur process - just let them expire. A single, properly functioning client
 # should not trip these bans.
-# 
+#
 # To disable, set autobanAttempts or autobanTimeframe to 0. Commenting these
 # settings out will cause Murmur to use the defaults:
 cat << 'EOF' >> "${NO_COMMENTS}"

@@ -6,6 +6,8 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
+# terraform init
+
 terraform validate
 
 terraform fmt -recursive

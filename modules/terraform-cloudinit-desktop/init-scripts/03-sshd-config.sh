@@ -28,6 +28,3 @@ UsePAM yes
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
 EOF
-
-
-

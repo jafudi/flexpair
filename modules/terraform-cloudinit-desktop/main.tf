@@ -98,4 +98,3 @@ data "template_cloudinit_config" "desktop_config" {
     content      = file("${path.module}/init-scripts/60-prevent-swapping.sh")
   }
 }
-

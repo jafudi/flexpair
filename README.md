@@ -1,4 +1,25 @@
-# Write in blog article style an publish on Medium etc.
+# Brand name TBD
+
+## What is it?
+
+A collection of Terraform modules and cloud-init scripts for deploying a shared cloud desktop (Ubuntu 20.04 LTS) with high quality audio conferencing and self-hosted email inbox to an arbitrary public cloud account. Free tier resources are sufficient and multicloud is actively supported.
+
+## Selected use cases
+
+TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
+
+- Delegation of project tasks 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
+- Interactive team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
+- Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
+- 🧠 Brain storming and technology brokering 💡♻
+- Remote podcast production 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
+- Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
+
+TODO: Assign contacts as well as competitor products to use cases
+
+## Some screenshots
+
+![Some screenshots](./documentation/ezgif.com-gif-maker.gif)
 
 ## Unique Selling Point
 
@@ -17,22 +38,7 @@
 - no additional software: use your favorite web browser
 - keep your private space private: no webcams involved
 
-## Potential Use cases
 
-- Consultancies working remote on their clients data
-- Job sharing
-- Corona Karaoke including 3D audio, bring-your-own-alcohol if you like
-- Listening to and discussing podcasts together
-- Listening to Audio porn together
-- Collaborative planning of e.g. travel over distance
-- Doing e-learning together
-- In-browser high-quality audio conferencing
-- Software demos and user testing
-- Mob programming
-- Presenting and discussing slides
-- Virtual conference table with positional audio
-- Project management files and conferencing in one place
-- Secretary work, virtual personal assistant
 
 ## Architecture
 
@@ -53,7 +59,7 @@
   - Google Chrome
   - Apple Safari
   - Microsoft Edge
-  
+
 - Account with DynV6 DNS provider
   - TLS certificate
   - DNS A record
@@ -66,7 +72,7 @@
   - [terraform-oci-commons](./modules/terraform-oci-commons/README.md)
   - [terraform-oci-desktop](./modules/terraform-oci-desktop/README.md)
   - [terraform-oci-gateway](./modules/terraform-oci-gateway/README.md)
-  
+
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
@@ -134,7 +140,7 @@
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
-  
+
 ## Direct and indirect competitors
 
 ### Virtual Cloud Desktops
@@ -152,7 +158,7 @@
 ### Collaboration Tools
 - [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
 - [BigBlueButton](https://bigbluebutton.org)
-- [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/)
+- [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/) and [others](https://raygun.com/blog/remote-pair-programming/)
 
 ### Video Conferencing
 - [Jitsi](https://jitsi.org)

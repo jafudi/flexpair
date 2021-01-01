@@ -35,4 +35,3 @@ variable "encoded_userdata" {
     error_message = "AWS limits userdata to 16384 bytes."
   }
 }
-
