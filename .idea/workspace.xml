@@ -23,7 +23,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Introduce some diversity into emoji choice" />
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Introduce some diversity into emoji choice">
+      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/documentation/terraform-graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/outputs.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/variables.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/versions.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/documentation/terraform-graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/main.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/outputs.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/variables.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/versions.tf" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,27 +129,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Revert MIME type to &quot;text/cloud-config&quot;">
-      <created>1607387043944</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1607387043946</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Switch off jinja, see if hostname setting causes the problem">
-      <created>1607387595600</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1607387595602</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Do not update hostname">
-      <created>1607388389954</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1607388389955</updated>
     </task>
     <task id="LOCAL-00112" summary="Found the bug">
       <created>1607389203852</created>
@@ -455,7 +452,28 @@
       <option name="project" value="LOCAL" />
       <updated>1609086336702</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="Ignore .idea folder">
+      <created>1609536985669</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1609536985670</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Populate with files">
+      <created>1609537151414</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1609537151414</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Populate with files">
+      <created>1609537417417</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1609537417418</updated>
+    </task>
+    <option name="localTasksCounter" value="161" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,8 +492,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/../blast-radius" />
     </ignored-roots>
-    <MESSAGE value="Update gitignore" />
-    <MESSAGE value="Move some README content to appropriate submodules" />
     <MESSAGE value="Update README" />
     <MESSAGE value="Add links to sub modules" />
     <MESSAGE value="Add section about architecture" />
@@ -499,6 +515,8 @@
     <MESSAGE value="Makes more sense after reordering bullet points" />
     <MESSAGE value="Better exchange roles" />
     <MESSAGE value="Introduce some diversity into emoji choice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduce some diversity into emoji choice" />
+    <MESSAGE value="Ignore .idea folder" />
+    <MESSAGE value="Populate with files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Populate with files" />
   </component>
 </project>

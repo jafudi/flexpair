@@ -114,7 +114,8 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source = "./modules/terraform-aws-desktop"
+  source  = "app.terraform.io/jafudi/desktop/aws"
+  version = "1.0.0"
   // below variables are provider specific
   cloud_provider_context = module.amazon_infrastructure.vm_creation_context
 }

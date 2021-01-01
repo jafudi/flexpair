@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../blast-radius/.idea/blast-radius.iml" filepath="$PROJECT_DIR$/../blast-radius/.idea/blast-radius.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/deploy-vm.iml" filepath="$PROJECT_DIR$/.idea/deploy-vm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../terraform-aws-desktop/.idea/terraform-aws-desktop.iml" filepath="$PROJECT_DIR$/../terraform-aws-desktop/.idea/terraform-aws-desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../terraform-oci-desktop/.idea/terraform-oci-desktop.iml" filepath="$PROJECT_DIR$/../terraform-oci-desktop/.idea/terraform-oci-desktop.iml" />
     </modules>
   </component>
 </project>
