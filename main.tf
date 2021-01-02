@@ -7,8 +7,8 @@ locals {
 
 module "oracle_infrastructure" {
   deployment_tags = local.deployment_tags
-  source  = "app.terraform.io/jafudi/commons/oci"
-  version = "1.0.0"
+  source          = "app.terraform.io/jafudi/commons/oci"
+  version         = "1.0.0"
   // below variables are provider specific
   tenancy_ocid               = var.oci_tenancy_ocid
   user_ocid                  = var.oci_user_ocid
@@ -19,8 +19,8 @@ module "oracle_infrastructure" {
 
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
-  source  = "app.terraform.io/jafudi/commons/aws"
-  version = "1.0.0"
+  source          = "app.terraform.io/jafudi/commons/aws"
+  version         = "1.0.0"
 }
 
 module "credentials_generator" {
@@ -68,7 +68,8 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source = "./modules/terraform-oci-gateway"
+  source  = "app.terraform.io/jafudi/gateway/oci"
+  version = "1.0.0"
   // below variables are provider specific
   cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }
