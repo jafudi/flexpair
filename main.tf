@@ -7,7 +7,8 @@ locals {
 
 module "oracle_infrastructure" {
   deployment_tags = local.deployment_tags
-  source          = "./modules/terraform-oci-commons"
+  source  = "app.terraform.io/jafudi/commons/oci"
+  version = "1.0.0"
   // below variables are provider specific
   tenancy_ocid               = var.oci_tenancy_ocid
   user_ocid                  = var.oci_user_ocid
@@ -18,7 +19,8 @@ module "oracle_infrastructure" {
 
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
-  source          = "./modules/terraform-aws-commons"
+  source  = "app.terraform.io/jafudi/commons/aws"
+  version = "1.0.0"
 }
 
 module "credentials_generator" {
