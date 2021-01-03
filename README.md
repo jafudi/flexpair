@@ -8,9 +8,9 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
 
-Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates):
+Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates)
 
-### Change society towards fair intellectual property and fair healthcare
+### Change society towards fair intellectual property and fair healthcare
 
 - ☁️ Brain storming and technology brokering for everyone 🧠💡♻
 - 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
