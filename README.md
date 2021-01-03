@@ -11,14 +11,17 @@ TODO: Ask people on SurveyCircle to come up with their own emojis for how they u
 Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates):
 
 ### Change society towards fair intellectual property and fair healthcare
+
 - ☁️ Brain storming and technology brokering for everyone 🧠💡♻
 - 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
 
 ### Enable effective and human-friendly remote work
+
 - 🏄 Seamless task delegation to remote assistants 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
 - 🏄 Seamless and interactive remote team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
 
 ### Support mutual understanding through culture and leisure
+
 - 🐟 Remote podcast production 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
 - 🐚 Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
 
