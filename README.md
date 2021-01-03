@@ -9,14 +9,14 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 ### Change society towards fair intellectual property and fair healthcare
 
 - ☁️ Brain storming and technology brokering for everyone 🧠💡♻
-- 🪁 Patient-centered healthcare for everyone with an emphasis on privacy 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
+- 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
 - Keeping track of interaction history in one place
 - Maintain data privacy by locking out data collectors
 
 ### Enable effective and human-friendly remote work
 
 - 🏄 Seamless task delegation to remote assistants 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
-- 🏄 Interactive remote team programming in a reproducible yet flexible environment 🌎🏝👨‍💻♾👩‍💻☕🏠
+- 🏄 Interactive remote team programming  🌎🏝👨‍💻♾👩‍💻☕🏠
 - Unified tool for synchronous and asynchronous collaboration
 - Fully reproducible environment through infrastructure-as-code
 - Combine (free) resources across all major cloud providers
@@ -24,10 +24,10 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 ### Support mutual understanding through culture and leisure
 
-- 🐟 professional podcast production across the globe 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
+- 🐟 Professional podcast production across the globe 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
 - 🐚 Virtual karaoke parties 🎉🕺🎶⟷🎤🥳🎼
-all in the browser
 - High audio quality and low latency at moderate bandwidth requirements
+- Runs in every current browser without any installation required
 
 Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates)
 
