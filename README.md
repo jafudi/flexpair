@@ -8,12 +8,19 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
 
-- Delegation of project tasks 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
-- Interactive team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
-- Patient-centered healthcare 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
-- 🧠 Brain storming and technology brokering 💡♻
-- Remote podcast production 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
-- Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
+Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates):
+
+### Change society towards fair intellectual property and fair healthcare
+- ☁️ Brain storming and technology brokering for everyone 🧠💡♻
+- 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
+
+### Enable effective and human-friendly remote work
+- 🏄 Seamless task delegation to remote assistants 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
+- 🏄 Seamless and interactive remote team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
+
+### Support mutual understanding through culture and leisure
+- 🐟 Remote podcast production 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
+- 🐚 Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
 
 TODO: Assign contacts as well as competitor products to use cases
 
