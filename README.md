@@ -12,49 +12,34 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 - 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
 - Keeping track of interaction history in one place
 - Maintain data privacy by locking out data collectors
+- No additional software: use your favorite web browser without installation
 
 ### Enable effective and human-friendly remote work
 
 - 🏄 Seamless task delegation to remote assistants 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
 - 🏄 Interactive remote team programming  🌎🏝👨‍💻♾👩‍💻☕🏠
 - Unified tool for synchronous and asynchronous collaboration
-- Fully reproducible environment through infrastructure-as-code
+- Fully reproducible environment through infrastructure-as-code with [Terraform](https://www.terraform.io)
 - Combine (free) resources across all major cloud providers
+- Keep your private space private: no webcams involved
 
 
 ### Support mutual understanding through culture and leisure
 
 - 🐟 Professional podcast production across the globe 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
 - 🐚 Virtual karaoke parties 🎉🕺🎶⟷🎤🥳🎼
-- High audio quality and low latency at moderate bandwidth requirements
-- Runs in every current browser without any installation required
+- High audio quality and low latency at moderate bandwidth requirements using the [Opus Codec](https://opus-codec.org)
+- Until all is said: no time limitations whatsoever
+- Receive email from your followers on a dedicated email account
 
 Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates)
 
-TODO: Assign contacts as well as competitor products to use cases
-TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
+1. TODO: Assign contacts as well as competitor products to use cases
+2. TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
 
 ## Some screenshots
 
 ![Some screenshots](./documentation/ezgif.com-gif-maker.gif)
-
-## Unique Selling Point
-
-- [Infrastructure as code](https://en.wikipedia.org/wiki/Infrastructure_as_code) using [Terraform](https://www.terraform.io) provides automated and reproducible provisioning of the environment (DevOps)
-- SSH tunnnel between desktop and gateway across clouds and borders [Multicloud](https://en.wikipedia.org/wiki/Multicloud) i.e. choice of server location and agnostic of cloud provider
-- hear each other crystal clear, listen to podcasts and more
-- High quality, low [latency](https://en.wikipedia.org/wiki/Latency_(audio)) audio conferencing using [Mumble](https://www.mumble.info) with the [Opus Codec](https://opus-codec.org)
-- Runs in all modern browsers without any installation using [HTML5](https://en.wikipedia.org/wiki/HTML5)
-- Minimize the CO2 footprint of data intensive cross-border analytics (100 kbit/s uplink at the user's location, [bandwidth-distance product](https://en.wikipedia.org/wiki/Fiber-optic_communication#Bandwidth–distance_product))
-- No metadata collection of communications on dedicated VM
-- works from free tier virtual machines upwards (2 VMs with 1 GB of RAM each), therefore affordable for small clubs, schools and NGOs
-- receive email on project specific email account
-- desktop sharing done right
-- idea exchange reduced to the max
-- until all is said: no time limitations whatsoever
-- no additional software: use your favorite web browser
-- keep your private space private: no webcams involved
-
 
 
 ## Architecture
