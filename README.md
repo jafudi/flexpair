@@ -6,33 +6,33 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 ## Selected use cases
 
-TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
-
-Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates)
-
 ### Change society towards fair intellectual property and fair healthcare
 
-Persistent and cost-effective infrastructure for
 - ☁️ Brain storming and technology brokering for everyone 🧠💡♻
 - 🪁 Patient-centered healthcare for everyone with an emphasis on privacy 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
-without being subject to metadata collection
-
+- Keeping track of interaction history in one place
+- Maintain data privacy by locking out data collectors
 
 ### Enable effective and human-friendly remote work
 
-Multicloud infrastructure-as-code for
 - 🏄 Seamless task delegation to remote assistants 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
 - 🏄 Interactive remote team programming in a reproducible yet flexible environment 🌎🏝👨‍💻♾👩‍💻☕🏠
+- Unified tool for synchronous and asynchronous collaboration
+- Fully reproducible environment through infrastructure-as-code
+- Combine (free) resources across all major cloud providers
 
 
 ### Support mutual understanding through culture and leisure
 
-High audio quality and low latency for
 - 🐟 professional podcast production across the globe 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
 - 🐚 Virtual karaoke parties 🎉🕺🎶⟷🎤🥳🎼
 all in the browser
+- High audio quality and low latency at moderate bandwidth requirements
+
+Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.org/wiki/Use_case#Templates)
 
 TODO: Assign contacts as well as competitor products to use cases
+TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
 
 ## Some screenshots
 
