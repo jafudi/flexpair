@@ -12,18 +12,25 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 
 ### Change society towards fair intellectual property and fair healthcare
 
+Persistent and cost-effective infrastructure for
 - ☁️ Brain storming and technology brokering for everyone 🧠💡♻
-- 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
+- 🪁 Patient-centered healthcare for everyone with an emphasis on privacy 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
+without being subject to metadata collection
+
 
 ### Enable effective and human-friendly remote work
 
+Multicloud infrastructure-as-code for
 - 🏄 Seamless task delegation to remote assistants 👩🏻‍💼👉🏻✅👂🏼‍🧞‍♂️
-- 🏄 Seamless and interactive remote team programming 🌎🏝👨‍💻♾👩‍💻☕🏠
+- 🏄 Interactive remote team programming in a reproducible yet flexible environment 🌎🏝👨‍💻♾👩‍💻☕🏠
+
 
 ### Support mutual understanding through culture and leisure
 
-- 🐟 Remote podcast production 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
-- 🐚 Virtual karaoke party 🎉🕺🎶⟷🎤🥳🎼
+High audio quality and low latency for
+- 🐟 professional podcast production across the globe 👳🏿‍♂️🎙🎛⟷🎙👨🏻‍🦰🎧
+- 🐚 Virtual karaoke parties 🎉🕺🎶⟷🎤🥳🎼
+all in the browser
 
 TODO: Assign contacts as well as competitor products to use cases
 
