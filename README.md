@@ -10,7 +10,7 @@ A collection of Terraform modules and cloud-init scripts for deploying a shared 
 
 - ☁️ Brain storming and technology brokering for everyone 🧠💡♻
 - 🪁 Patient-centered healthcare for everyone 🏥👩‍⚕️️🩺🤕🧘📧👩🏾‍🔬‍🧫🔬
-- Keeping track of interaction history in one place
+- Keep track of the whole interaction history in one place
 - Maintain data privacy by locking out data collectors
 - No additional software: use your favorite web browser without installation
 
