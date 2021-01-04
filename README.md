@@ -67,13 +67,13 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
   - DNS A record
 
 - Amazon AWS cloud account
-  - [terraform-aws-commons](./modules/terraform-aws-commons/README.md)
-  - [terraform-aws-desktop](./modules/terraform-aws-desktop/README.md)
-  - [terraform-aws-gateway](./modules/terraform-aws-gateway/README.md)
+  - [terraform-aws-commons](https://github.com/jafudi/terraform-aws-commons/README.md)
+  - [terraform-aws-desktop](https://github.com/jafudi/terraform-aws-desktop/README.md)
+  - [terraform-aws-gateway](https://github.com/jafudi/terraform-aws-gateway/README.md)
 - Oracle OCI cloud cloud account
-  - [terraform-oci-commons](./modules/terraform-oci-commons/README.md)
-  - [terraform-oci-desktop](./modules/terraform-oci-desktop/README.md)
-  - [terraform-oci-gateway](./modules/terraform-oci-gateway/README.md)
+  - [terraform-oci-commons](https://github.com/jafudi/terraform-oci-commons/README.md)
+  - [terraform-oci-desktop](https://github.com/jafudi/terraform-oci-desktop/README.md)
+  - [terraform-oci-gateway](https://github.com/jafudi/terraform-oci-gateway/README.md)
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
