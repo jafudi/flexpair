@@ -71,7 +71,7 @@ module "gateway_machine" {
   source  = "app.terraform.io/jafudi/gateway/oci"
   version = "1.0.0"
   // below variables are provider specific
-  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
+  cloud_provider_context = module.amazon_infrastructure.vm_creation_context
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -120,7 +120,7 @@ module "desktop_machine_1" {
   source  = "app.terraform.io/jafudi/desktop/aws"
   version = "1.0.0"
   // below variables are provider specific
-  cloud_provider_context = module.amazon_infrastructure.vm_creation_context
+  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }
 
 resource "null_resource" "health_check" {
