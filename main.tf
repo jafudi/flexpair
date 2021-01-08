@@ -68,7 +68,7 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source  = "app.terraform.io/jafudi/gateway/oci"
+  source  = "app.terraform.io/jafudi/gateway/aws"
   version = "1.0.0"
   // below variables are provider specific
   cloud_provider_context = module.amazon_infrastructure.vm_creation_context
@@ -117,7 +117,7 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source  = "app.terraform.io/jafudi/desktop/aws"
+  source  = "app.terraform.io/jafudi/desktop/oci"
   version = "1.0.0"
   // below variables are provider specific
   cloud_provider_context = module.oracle_infrastructure.vm_creation_context
