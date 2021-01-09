@@ -26,8 +26,8 @@ module "amazon_infrastructure" {
 module "credentials_generator" {
   registered_domain     = var.registered_domain
   subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
-  gateway_cloud_info    = module.oracle_infrastructure.additional_metadata
-  desktop_cloud_info    = module.amazon_infrastructure.additional_metadata
+  gateway_cloud_info    = module.amazon_infrastructure.additional_metadata
+  desktop_cloud_info    = module.oracle_infrastructure.additional_metadata
   source                = "./modules/terraform-tls-credentials"
   // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
