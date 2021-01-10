@@ -29,6 +29,7 @@ ExecStart=/usr/bin/ssh -vvv -g -N -T \
 -R  2222:localhost:22 \
 -L 143:localhost:143 \
 -L 993:localhost:993 \
+-L 27017:localhost:27017 \
 ${GATEWAY_USERNAME}@${SSL_DOMAIN}
 Restart=always
 RestartSec=5s

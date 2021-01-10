@@ -14,7 +14,8 @@ apt-get -qq install \
 less nano \
 glances \
 build-essential \
-sshfs
+sshfs \
+nodejs npm
 
 rm -rf /var/log/unattended-upgrades
 apt-get -qq purge unattended-upgrades snapd apport

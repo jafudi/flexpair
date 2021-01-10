@@ -51,6 +51,7 @@ module "gateway_installer" {
 
 | Name | Version |
 |------|---------|
+| random | n/a |
 | template | ~> 2.2.0 |
 
 ## Inputs

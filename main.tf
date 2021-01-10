@@ -26,8 +26,8 @@ module "amazon_infrastructure" {
 module "credentials_generator" {
   registered_domain     = var.registered_domain
   subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
-  gateway_cloud_info    = module.oracle_infrastructure.additional_metadata
-  desktop_cloud_info    = module.amazon_infrastructure.additional_metadata
+  gateway_cloud_info    = module.amazon_infrastructure.additional_metadata
+  desktop_cloud_info    = module.oracle_infrastructure.additional_metadata
   source                = "./modules/terraform-tls-credentials"
   // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
@@ -68,10 +68,10 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source  = "app.terraform.io/jafudi/gateway/oci"
+  source  = "app.terraform.io/jafudi/gateway/aws"
   version = "1.0.0"
   // below variables are provider specific
-  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
+  cloud_provider_context = module.amazon_infrastructure.vm_creation_context
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -117,10 +117,10 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source  = "app.terraform.io/jafudi/desktop/aws"
+  source  = "app.terraform.io/jafudi/desktop/oci"
   version = "1.0.0"
   // below variables are provider specific
-  cloud_provider_context = module.amazon_infrastructure.vm_creation_context
+  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }
 
 resource "null_resource" "health_check" {

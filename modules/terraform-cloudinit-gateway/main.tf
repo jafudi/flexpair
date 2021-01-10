@@ -1,3 +1,8 @@
+resource "random_password" "postgre_password" {
+  length  = 32
+  special = false // may lead to quoting issues otherwise
+}
+
 data "template_file" "docker_compose_config" {
   template = file("${path.module}/init-scripts/docker-compose.tpl.yml")
   vars = {
@@ -6,6 +11,7 @@ data "template_file" "docker_compose_config" {
     IMAP_HOST     = var.gateway_dns_hostname
     IMAP_PASSWORD = var.email_config.password
     MURMUR_PORT   = var.murmur_config.port
+    POSTGRES_PWD  = random_password.postgre_password.result
   }
 }
 
