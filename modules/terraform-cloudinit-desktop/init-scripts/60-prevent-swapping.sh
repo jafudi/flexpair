@@ -9,7 +9,7 @@ cat << 'EOF' >> /etc/sysctl.conf
 vm.swappiness = 1
 EOF
 
-apt install make fakeroot
+apt install make libfakeroot fakeroot
 
 git clone https://github.com/hakavlad/nohang.git && cd nohang
 deb/build.sh
