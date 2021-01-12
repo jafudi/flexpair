@@ -64,6 +64,7 @@ module "desktop_installer" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| browser\_url | n/a | `string` | n/a | yes |
 | desktop\_username | Username for logging in to Ubuntu on the desktop node | `string` | n/a | yes |
 | email\_config | n/a | <pre>object({<br>    address   = string<br>    password  = string<br>    imap_port = number<br>    smtp_port = number<br>  })</pre> | n/a | yes |
 | gateway\_dns\_hostname | n/a | `string` | n/a | yes |

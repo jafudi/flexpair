@@ -19,6 +19,11 @@ variable "murmur_config" {
   })
 }
 
+variable "browser_url" {
+  description = ""
+  type        = string
+}
+
 variable "desktop_username" {
   type        = string
   description = "Username for logging in to Ubuntu on the desktop node"

@@ -47,3 +47,13 @@ output "letsencrypt_certificate" {
   description = ""
   value       = acme_certificate.letsencrypt_certificate
 }
+
+output "browser_url" {
+  description = ""
+  value       = "https://${local.full_hostname}/?password=${urlencode(local.murmur_credentials.password)}"
+}
+
+output "mumble_url" {
+  description = ""
+  value       = "mumble://:${urlencode(local.murmur_credentials.password)}@${local.full_hostname}:${local.murmur_credentials.port}"
+}

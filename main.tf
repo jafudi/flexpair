@@ -98,6 +98,7 @@ module "desktop_installer" {
   desktop_username     = module.credentials_generator.desktop_username
   primary_nic_name     = module.credentials_generator.desktop_primary_nic_name
   murmur_config        = module.credentials_generator.murmur_credentials
+  browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
   source               = "./modules/terraform-cloudinit-desktop"

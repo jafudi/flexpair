@@ -35,10 +35,10 @@ output "desktop_config_size" {
 
 output "access_via_browser" {
   description = ""
-  value       = "https://${module.credentials_generator.full_hostname}/?password=${urlencode(module.credentials_generator.murmur_credentials.password)}"
+  value       = module.credentials_generator.browser_url
 }
 
 output "access_via_mumble" {
   description = ""
-  value       = "mumble://:${urlencode(module.credentials_generator.murmur_credentials.password)}@${module.credentials_generator.full_hostname}:${module.credentials_generator.murmur_credentials.port}"
+  value       = module.credentials_generator.mumble_url
 }

@@ -7,6 +7,8 @@ chown -R "${DESKTOP_USERNAME}" "/home/${DESKTOP_USERNAME}"
 
 mkdir -p "/home/${DESKTOP_USERNAME}/Desktop"
 
+qrencode -o "/home/${DESKTOP_USERNAME}/Desktop/ScanToJoin.png" -s 6 -l H "${BROWSER_URL}"
+
 cat << EOF > "/home/${DESKTOP_USERNAME}/Desktop/trash.desktop"
 [Desktop Entry]
 Type=Application

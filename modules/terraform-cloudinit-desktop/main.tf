@@ -62,6 +62,7 @@ data "template_cloudinit_config" "desktop_config" {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/init-scripts/32-lxqt-look-and-feel.sh", {
       DESKTOP_USERNAME = var.desktop_username
+      BROWSER_URL      = var.browser_url
     })
   }
   part {

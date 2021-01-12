@@ -66,6 +66,7 @@ module "credentials_generator" {
 
 | Name | Description |
 |------|-------------|
+| browser\_url | n/a |
 | desktop\_primary\_nic\_name | n/a |
 | desktop\_username | Making sure the first character is a lower case roman letter |
 | email\_config | n/a |
@@ -73,6 +74,7 @@ module "credentials_generator" {
 | gateway\_primary\_nic\_name | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
 | letsencrypt\_certificate | n/a |
+| mumble\_url | n/a |
 | murmur\_credentials | n/a |
 | subdomain\_label | n/a |
 | vm\_mutual\_key | n/a |
