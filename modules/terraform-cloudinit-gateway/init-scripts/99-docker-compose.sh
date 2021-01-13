@@ -39,3 +39,5 @@ WantedBy=default.target
 EOF
 systemctl enable docker-compose.service
 systemctl start docker-compose.service
+
+wget --directory-prefix="/home/${GATEWAY_USERNAME}/uploads/Government Documents (Public)" "http://downloads.digitalcorpora.org/corpora/files/govdocs1/threads/thread7.zip"

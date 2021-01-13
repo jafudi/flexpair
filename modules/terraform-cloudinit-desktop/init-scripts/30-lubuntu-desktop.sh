@@ -7,6 +7,7 @@ apt-get -qq update --fix-missing > /dev/null
 
 apt-get -qq install \
 lubuntu-desktop \
+libreoffice-draw libreoffice-impress libreoffice-base- \
 gdm3- \
 avahi-daemon- \
 firefox- \
@@ -22,13 +23,13 @@ pastebinit- \
 pcmciautils- \
 plasma-discover- \
 skanlite- \
-libreoffice-base- libreoffice-draw- \
 kdeconnect- \
 snapd- \
 acpi-support- \
 screengrab- \
 qps- \
-qlipper-
+qlipper- \
+evince-
 
 apt-get -qq install --no-install-recommends  \
 lightdm \

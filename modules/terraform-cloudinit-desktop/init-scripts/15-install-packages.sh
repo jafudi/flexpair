@@ -18,14 +18,11 @@ sshfs \
 nodejs npm \
 vym \
 frozen-bubble blockout2 biniax2 kdegames \
-gnumeric gnumeric-plugins-extra gnumeric-doc \
 simplescreenrecorder \
 qtqr \
 falkon \
 variety \
-gnome-clocks \
-focuswriter \
-hunspell hunspell-tools hunspell-de-de
+gnome-clocks
 
 apt-get -qq install tuxmath tuxpaint
 # https://wiki.ubuntuusers.de/Tux_Paint/
