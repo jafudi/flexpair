@@ -34,7 +34,7 @@ alllocalefonts=yes
 noprint=yes
 savedir=/home/ubuntu/Desktop/Uploads/
 EOF
-chown -R ubuntu /etc/tuxpaint/
+chown -R "${DESKTOP_USERNAME}" /etc/tuxpaint/
 
 
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \

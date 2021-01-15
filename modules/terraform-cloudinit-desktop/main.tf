@@ -35,7 +35,9 @@ data "template_cloudinit_config" "desktop_config" {
   }
   part {
     content_type = "text/x-shellscript"
-    content      = file("${path.module}/init-scripts/15-install-packages.sh")
+    content      = templatefile("${path.module}/init-scripts/15-install-packages.sh", {
+      DESKTOP_USERNAME = var.desktop_username
+    })
   }
   part {
     content_type = "text/x-shellscript"
