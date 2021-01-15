@@ -7,7 +7,6 @@ apt-get -qq update > /dev/null
 apt-get -qq install software-properties-common
 apt-get -qq update > /dev/null
 
-add-apt-repository 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main'
 add-apt-repository universe
 apt-get -qq update > /dev/null
 
@@ -23,9 +22,7 @@ simplescreenrecorder \
 qtqr \
 falkon \
 variety \
-gnome-clocks \
-qtcreator \
-codium
+gnome-clocks
 
 apt-get -qq install tuxmath tuxpaint
 # https://wiki.ubuntuusers.de/Tux_Paint/
@@ -38,6 +35,17 @@ noprint=yes
 savedir=/home/ubuntu/Desktop/Uploads/
 EOF
 chown -R ubuntu /etc/tuxpaint/
+
+
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg
+
+echo 'deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+
+sudo apt update
+sudo apt install codium
 
 
 rm -rf /var/log/unattended-upgrades
