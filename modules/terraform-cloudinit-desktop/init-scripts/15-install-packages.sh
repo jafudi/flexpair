@@ -7,6 +7,7 @@ apt-get -qq update > /dev/null
 apt-get -qq install software-properties-common
 apt-get -qq update > /dev/null
 
+add-apt-repository 'deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main'
 add-apt-repository universe
 apt-get -qq update > /dev/null
 
@@ -22,7 +23,9 @@ simplescreenrecorder \
 qtqr \
 falkon \
 variety \
-gnome-clocks
+gnome-clocks \
+qtcreator \
+codium
 
 apt-get -qq install tuxmath tuxpaint
 # https://wiki.ubuntuusers.de/Tux_Paint/
