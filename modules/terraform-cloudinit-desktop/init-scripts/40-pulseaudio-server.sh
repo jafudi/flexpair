@@ -2,7 +2,7 @@
 
 export DEBIAN_FRONTEND="noninteractive"
 apt-get -qq install --no-install-recommends \
-paprefs \
+paprefs pulseeffects \
 audacity
 
 mkdir -p "/home/${DESKTOP_USERNAME}/.config/pulse"
@@ -32,7 +32,7 @@ high-priority = yes
 realtime-scheduling = yes
 ; realtime-priority = 5
 
-resample-method = soxr-hq
+resample-method = soxr-vhq
 ; avoid-resampling = false
 ; enable-remixing = yes
 ; remixing-use-all-sink-channels = yes
