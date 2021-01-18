@@ -14,15 +14,7 @@ ChallengeResponseAuthentication no
 # GSSAPI options
 GSSAPIAuthentication no
 
-# Set this to 'yes' to enable PAM authentication, account processing,
-# and session processing. If this is enabled, PAM authentication will
-# be allowed through the ChallengeResponseAuthentication and
-# PasswordAuthentication.  Depending on your PAM configuration,
-# PAM authentication via ChallengeResponseAuthentication may bypass
-# the setting of "PermitRootLogin without-password".
-# If you just want the PAM account and session checks to run without
-# PAM authentication, then enable this but set PasswordAuthentication
-# and ChallengeResponseAuthentication to 'no'.
+# Set this to 'yes' to enable PAM authentication
 UsePAM yes
 
 # Allow client to pass locale environment variables
