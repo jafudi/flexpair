@@ -1,14 +1,5 @@
 #!/bin/bash -eux
 
-# Obtain instance parameters / degrees of freedom ###################
-
-function get_info() {
-  curl --silent \
-       -H "Authorization: Bearer Oracle" \
-       "http://169.254.169.254/opc/v2/instance/$1"
-}
-export -f get_info
-
 # Configure connection between desktop and gateway #################
 
 cat << EOF > /etc/systemd/system/ssh-tunnel.service
