@@ -7,5 +7,13 @@
     <orderEntry type="module" module-name="blast-radius" />
     <orderEntry type="module" module-name="terraform-oci-desktop" />
     <orderEntry type="module" module-name="terraform-aws-desktop" />
+    <orderEntry type="module" module-name="terraform-oci-commons" />
+    <orderEntry type="module" module-name="terraform-aws-commons" />
+    <orderEntry type="module" module-name="terraform-oci-gateway" />
+    <orderEntry type="module" module-name="terraform-aws-gateway" />
+    <orderEntry type="module" module-name="mumble-web" />
+    <orderEntry type="module" module-name="terraform-cloudinit-gateway" />
+    <orderEntry type="module" module-name="terraform-cloudinit-desktop" />
+    <orderEntry type="module" module-name="terraform-cloudinit-gateway" />
   </component>
 </module>

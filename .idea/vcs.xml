@@ -2,7 +2,14 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../mumble-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-aws-commons" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-aws-desktop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-aws-gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-cloudinit-desktop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-cloudinit-gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-oci-commons" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-oci-desktop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-oci-gateway" vcs="Git" />
   </component>
 </project>

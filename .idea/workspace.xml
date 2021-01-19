@@ -23,24 +23,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Introduce some diversity into emoji choice">
+    <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Test that shell scripts execute without error">
       <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/main.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/outputs.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/variables.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-aws-desktop/versions.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/documentation/terraform-graph.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/main.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/outputs.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/variables.tf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/terraform-oci-desktop/versions.tf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +44,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="buytheway" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../terraform-cloudinit-desktop" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GithubDefaultAccount">
@@ -77,21 +66,20 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TF_FMT" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini&#10;yaml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
       <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
       <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-desktop" />
       <recent name="$PROJECT_DIR$/modules/terraform-tls-credentials" />
       <recent name="$PROJECT_DIR$/modules/terraform-oci-gateway" />
-      <recent name="$PROJECT_DIR$/modules/terraform-oci-desktop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/documentation" />
@@ -101,7 +89,20 @@
       <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Shell Script.30-lubuntu-desktop.sh">
+    <configuration name="30-lubuntu-desktop.sh" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts/30-lubuntu-desktop.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/modules/terraform-cloudinit-desktop/init-scripts" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="50-trojita-mail.sh" type="ShConfigurationType" temporary="true">
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="$PROJECT_DIR$/modules/desktop_userdata_cloudinit/init-scripts/50-trojita-mail.sh" />
@@ -118,6 +119,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Shell Script.50-trojita-mail.sh" />
+        <item itemvalue="Shell Script.30-lubuntu-desktop.sh" />
       </list>
     </recent_temporary>
   </component>
@@ -130,350 +132,350 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00112" summary="Found the bug">
-      <created>1607389203852</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
+    <task id="LOCAL-00171" summary="Use OCI for desktop because more RAM">
+      <created>1610063277573</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
       <option name="project" value="LOCAL" />
-      <updated>1607389203854</updated>
+      <updated>1610063277574</updated>
     </task>
-    <task id="LOCAL-00113" summary="## template:jinja">
-      <created>1607391954830</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
+    <task id="LOCAL-00172" summary="Use OCI for desktop because more RAM">
+      <created>1610064045816</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
       <option name="project" value="LOCAL" />
-      <updated>1607391954832</updated>
+      <updated>1610064045817</updated>
     </task>
-    <task id="LOCAL-00114" summary="This really should work now">
-      <created>1607392758347</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
+    <task id="LOCAL-00173" summary="Add mongodb service on gateway and make it available via SSH tunnel on desktop">
+      <created>1610191979531</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
       <option name="project" value="LOCAL" />
-      <updated>1607392758349</updated>
+      <updated>1610191979531</updated>
     </task>
-    <task id="LOCAL-00115" summary="Use correct stop word">
-      <created>1607394164582</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
+    <task id="LOCAL-00174" summary="Reduce gateway config size">
+      <created>1610203516106</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
       <option name="project" value="LOCAL" />
-      <updated>1607394164583</updated>
+      <updated>1610203516106</updated>
     </task>
-    <task id="LOCAL-00116" summary="content_type = &quot;text/cloud-config&quot;">
-      <created>1607395313112</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
+    <task id="LOCAL-00175" summary="Need to interchange amazon_infrastructure and oracle_infrastructure in three places">
+      <created>1610224105140</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
       <option name="project" value="LOCAL" />
-      <updated>1607395313112</updated>
+      <updated>1610224105141</updated>
     </task>
-    <task id="LOCAL-00117" summary="Is it only hostname where jinja does not work??">
-      <created>1607454454982</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
+    <task id="LOCAL-00176" summary="Install nodejs and npm">
+      <created>1610279123976</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
       <option name="project" value="LOCAL" />
-      <updated>1607454454984</updated>
+      <updated>1610279123976</updated>
     </task>
-    <task id="LOCAL-00118" summary="Add empty description stubs in preparation for documenting">
-      <created>1607551820241</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
+    <task id="LOCAL-00177" summary="Reactivate some cool applications">
+      <created>1610411614906</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
       <option name="project" value="LOCAL" />
-      <updated>1607551820241</updated>
+      <updated>1610411614906</updated>
     </task>
-    <task id="LOCAL-00119" summary="Document some parameters">
-      <created>1607555636712</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
+    <task id="LOCAL-00178" summary="Bugfix">
+      <created>1610447987292</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
       <option name="project" value="LOCAL" />
-      <updated>1607555636712</updated>
+      <updated>1610447987293</updated>
     </task>
-    <task id="LOCAL-00120" summary="Document some parameters">
-      <created>1607556308956</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
+    <task id="LOCAL-00179" summary="Automatically create QR code on Desktop">
+      <created>1610495806889</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
       <option name="project" value="LOCAL" />
-      <updated>1607556308956</updated>
+      <updated>1610495806894</updated>
     </task>
-    <task id="LOCAL-00121" summary="Add some precommit hooks">
-      <created>1607873871977</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
+    <task id="LOCAL-00180" summary="Some improvements">
+      <created>1610564707128</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
       <option name="project" value="LOCAL" />
-      <updated>1607873871977</updated>
+      <updated>1610564707129</updated>
     </task>
-    <task id="LOCAL-00122" summary="Auto-generate variable documentation in README.md">
-      <created>1607878142295</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
+    <task id="LOCAL-00181" summary="Install VSCodium and QtCreator">
+      <created>1610672133732</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
       <option name="project" value="LOCAL" />
-      <updated>1607878142295</updated>
+      <updated>1610672133732</updated>
     </task>
-    <task id="LOCAL-00123" summary="Update gitignore">
-      <created>1607878453490</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
+    <task id="LOCAL-00182" summary="Install VSCodium and QtCreator">
+      <created>1610712172594</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
       <option name="project" value="LOCAL" />
-      <updated>1607878453490</updated>
+      <updated>1610712172594</updated>
     </task>
-    <task id="LOCAL-00124" summary="Move some README content to appropriate submodules">
-      <created>1607895212109</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
+    <task id="LOCAL-00183" summary="Install VSCodium and QtCreator">
+      <created>1610714354459</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
       <option name="project" value="LOCAL" />
-      <updated>1607895212110</updated>
+      <updated>1610714354459</updated>
     </task>
-    <task id="LOCAL-00125" summary="Update README">
-      <created>1607900872709</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
+    <task id="LOCAL-00184" summary="Bugfix">
+      <created>1610744200612</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
       <option name="project" value="LOCAL" />
-      <updated>1607900872709</updated>
+      <updated>1610744200612</updated>
     </task>
-    <task id="LOCAL-00126" summary="Add links to sub modules">
-      <created>1607901017955</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
+    <task id="LOCAL-00185" summary="Bugfix">
+      <created>1610795465556</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
       <option name="project" value="LOCAL" />
-      <updated>1607901017957</updated>
+      <updated>1610795465557</updated>
     </task>
-    <task id="LOCAL-00127" summary="Add section about architecture">
-      <created>1607905215342</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
+    <task id="LOCAL-00186" summary="Give focus to iframe containing Guacamole when there is a click or touch within the surrounding div">
+      <created>1610837631444</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
       <option name="project" value="LOCAL" />
-      <updated>1607905215342</updated>
+      <updated>1610837631450</updated>
     </task>
-    <task id="LOCAL-00128" summary="Documentation about components">
-      <created>1607911373019</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
+    <task id="LOCAL-00187" summary="Use mouseover instead of mousedown">
+      <created>1610842365884</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
       <option name="project" value="LOCAL" />
-      <updated>1607911373023</updated>
+      <updated>1610842365885</updated>
     </task>
-    <task id="LOCAL-00129" summary="Add a list with potential beta-testers and multiplicators">
-      <created>1607941198456</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
+    <task id="LOCAL-00188" summary="Add events to iframe not the surrouding div">
+      <created>1610842970282</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
       <option name="project" value="LOCAL" />
-      <updated>1607941198456</updated>
+      <updated>1610842970283</updated>
     </task>
-    <task id="LOCAL-00130" summary="Add a list with potential beta-testers and multiplicators">
-      <created>1607941221697</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
+    <task id="LOCAL-00189" summary="Add events to iframe not the surrouding div">
+      <created>1610842992001</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
       <option name="project" value="LOCAL" />
-      <updated>1607941221697</updated>
+      <updated>1610842992001</updated>
     </task>
-    <task id="LOCAL-00131" summary="Group people w.r.t. their skills">
-      <created>1607943963650</created>
-      <option name="number" value="00131" />
-      <option name="presentableId" value="LOCAL-00131" />
+    <task id="LOCAL-00190" summary="console.warn(&quot;Try tp give focus to guacamole iframe on mouseover.&quot;);">
+      <created>1610880485490</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
       <option name="project" value="LOCAL" />
-      <updated>1607943963650</updated>
+      <updated>1610880485494</updated>
     </task>
-    <task id="LOCAL-00132" summary="Consolidate research about which providers to adopt next">
-      <created>1607950599829</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
+    <task id="LOCAL-00191" summary="Put focus code directly into html document">
+      <created>1610883454300</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
       <option name="project" value="LOCAL" />
-      <updated>1607950599830</updated>
+      <updated>1610883454306</updated>
     </task>
-    <task id="LOCAL-00133" summary="Add links to Terraform API documentation">
-      <created>1607955511160</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
+    <task id="LOCAL-00192" summary="Remove special mobile formatting for input box">
+      <created>1610890941871</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
       <option name="project" value="LOCAL" />
-      <updated>1607955511160</updated>
+      <updated>1610890941873</updated>
     </task>
-    <task id="LOCAL-00134" summary="Check that it is clear what the Public IP address attribute is called for each cloud">
-      <created>1607957261884</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
+    <task id="LOCAL-00193" summary="Touch events do not work">
+      <created>1610894829279</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
       <option name="project" value="LOCAL" />
-      <updated>1607957261884</updated>
+      <updated>1610894829281</updated>
     </task>
-    <task id="LOCAL-00135" summary="Added CV">
-      <created>1608414423284</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
+    <task id="LOCAL-00194" summary="Sample at the default local sample rate, which is mostly 44100 Hz, not 48000 as for Murmur">
+      <created>1610904194216</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
       <option name="project" value="LOCAL" />
-      <updated>1608414423285</updated>
+      <updated>1610904194219</updated>
     </task>
-    <task id="LOCAL-00136" summary="Check that vital services are up and running">
-      <created>1608473866233</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
+    <task id="LOCAL-00195" summary="Set sample rate explicitly to 44100 Hz">
+      <created>1610911948334</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
       <option name="project" value="LOCAL" />
-      <updated>1608473866235</updated>
+      <updated>1610911948334</updated>
     </task>
-    <task id="LOCAL-00137" summary="Check that vital services are up and running">
-      <created>1608473871293</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
+    <task id="LOCAL-00196" summary="We do just do not do resampling for performance reasons. The user has to adjust its input device sample rate.">
+      <created>1610920083847</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
       <option name="project" value="LOCAL" />
-      <updated>1608473871293</updated>
+      <updated>1610920083848</updated>
     </task>
-    <task id="LOCAL-00138" summary="Add a couple of format checks">
-      <created>1608478256671</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
+    <task id="LOCAL-00197" summary="Setting audioContext sample rate does not seem to have any effect, so leave out.">
+      <created>1610926216933</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
       <option name="project" value="LOCAL" />
-      <updated>1608478256671</updated>
+      <updated>1610926216935</updated>
     </task>
-    <task id="LOCAL-00139" summary="Add a couple of format checks">
-      <created>1608478777513</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
+    <task id="LOCAL-00198" summary="Setting audioContext sample rate does not seem to have any effect, so leave out.">
+      <created>1610926565050</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
       <option name="project" value="LOCAL" />
-      <updated>1608478777513</updated>
+      <updated>1610926565050</updated>
     </task>
-    <task id="LOCAL-00140" summary="Add a couple of format checks">
-      <created>1608478893030</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
+    <task id="LOCAL-00199" summary="Set PulseAudio default sample rate to Mumble's 48 kHz and use a high quality resampling method (soxr-hq) if playbacks have different inherent sample rate.">
+      <created>1610972234211</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
       <option name="project" value="LOCAL" />
-      <updated>1608478893030</updated>
+      <updated>1610972234212</updated>
     </task>
-    <task id="LOCAL-00141" summary="Start adding contact information to contacts I want to reach out to">
-      <created>1608500949964</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
+    <task id="LOCAL-00200" summary="Add pulseeffects and further increase resampling quality">
+      <created>1610995022124</created>
+      <option name="number" value="00200" />
+      <option name="presentableId" value="LOCAL-00200" />
       <option name="project" value="LOCAL" />
-      <updated>1608500949965</updated>
+      <updated>1610995022124</updated>
     </task>
-    <task id="LOCAL-00142" summary="mailto:">
-      <created>1608501095600</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
+    <task id="LOCAL-00201" summary="Configure the Falkon browser">
+      <created>1610995068114</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
       <option name="project" value="LOCAL" />
-      <updated>1608501095600</updated>
+      <updated>1610995068114</updated>
     </task>
-    <task id="LOCAL-00143" summary="Add an animated GIF">
-      <created>1608984696510</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
+    <task id="LOCAL-00202" summary="Falkon browser shall have its own config script">
+      <created>1611000511141</created>
+      <option name="number" value="00202" />
+      <option name="presentableId" value="LOCAL-00202" />
       <option name="project" value="LOCAL" />
-      <updated>1608984696518</updated>
+      <updated>1611000511141</updated>
     </task>
-    <task id="LOCAL-00144" summary="Selected use cases">
-      <created>1609025814956</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
+    <task id="LOCAL-00203" summary="Gitpod is interesting and comparable to what I am doing">
+      <created>1611009197382</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
       <option name="project" value="LOCAL" />
-      <updated>1609025814957</updated>
+      <updated>1611009197383</updated>
     </task>
-    <task id="LOCAL-00145" summary="Add emojis">
-      <created>1609026362052</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
+    <task id="LOCAL-00204" summary="Remove unused code">
+      <created>1611009230005</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
       <option name="project" value="LOCAL" />
-      <updated>1609026362054</updated>
+      <updated>1611009230006</updated>
     </task>
-    <task id="LOCAL-00146" summary="Add emojis">
-      <created>1609028904447</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
+    <task id="LOCAL-00205" summary="Populate with code">
+      <created>1611009345216</created>
+      <option name="number" value="00205" />
+      <option name="presentableId" value="LOCAL-00205" />
       <option name="project" value="LOCAL" />
-      <updated>1609028904449</updated>
+      <updated>1611009345216</updated>
     </task>
-    <task id="LOCAL-00147" summary="Add emojis">
-      <created>1609029643894</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
+    <task id="LOCAL-00206" summary="Add .gitignore">
+      <created>1611009836775</created>
+      <option name="number" value="00206" />
+      <option name="presentableId" value="LOCAL-00206" />
       <option name="project" value="LOCAL" />
-      <updated>1609029643894</updated>
+      <updated>1611009836776</updated>
     </task>
-    <task id="LOCAL-00148" summary="Add emojis">
-      <created>1609030420134</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
+    <task id="LOCAL-00207" summary="Add .gitignore">
+      <created>1611010234431</created>
+      <option name="number" value="00207" />
+      <option name="presentableId" value="LOCAL-00207" />
       <option name="project" value="LOCAL" />
-      <updated>1609030420134</updated>
+      <updated>1611010234432</updated>
     </task>
-    <task id="LOCAL-00149" summary="Add emojis">
-      <created>1609030469264</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
+    <task id="LOCAL-00208" summary="Update .gitignore">
+      <created>1611010324724</created>
+      <option name="number" value="00208" />
+      <option name="presentableId" value="LOCAL-00208" />
       <option name="project" value="LOCAL" />
-      <updated>1609030469264</updated>
+      <updated>1611010324724</updated>
     </task>
-    <task id="LOCAL-00150" summary="Add emojis">
-      <created>1609030726124</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
+    <task id="LOCAL-00209" summary="Populate with files from former modules subfolder">
+      <created>1611010684978</created>
+      <option name="number" value="00209" />
+      <option name="presentableId" value="LOCAL-00209" />
       <option name="project" value="LOCAL" />
-      <updated>1609030726125</updated>
+      <updated>1611010684978</updated>
     </task>
-    <task id="LOCAL-00151" summary="Add link to remote pair programming tools">
-      <created>1609031699126</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
+    <task id="LOCAL-00210" summary="Check that the terraform config is valid">
+      <created>1611011624422</created>
+      <option name="number" value="00210" />
+      <option name="presentableId" value="LOCAL-00210" />
       <option name="project" value="LOCAL" />
-      <updated>1609031699126</updated>
+      <updated>1611011624422</updated>
     </task>
-    <task id="LOCAL-00152" summary="Add link to remote pair programming tools">
-      <created>1609031843239</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
+    <task id="LOCAL-00211" summary="terraform validate only when .tf files are changed">
+      <created>1611012188311</created>
+      <option name="number" value="00211" />
+      <option name="presentableId" value="LOCAL-00211" />
       <option name="project" value="LOCAL" />
-      <updated>1609031843239</updated>
+      <updated>1611012188311</updated>
     </task>
-    <task id="LOCAL-00153" summary="Add link to remote pair programming tools">
-      <created>1609032071294</created>
-      <option name="number" value="00153" />
-      <option name="presentableId" value="LOCAL-00153" />
+    <task id="LOCAL-00212" summary="terraform validate only when .tf files are changed">
+      <created>1611012362320</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
       <option name="project" value="LOCAL" />
-      <updated>1609032071294</updated>
+      <updated>1611012362320</updated>
     </task>
-    <task id="LOCAL-00154" summary="Add one more use case">
-      <created>1609085141053</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
+    <task id="LOCAL-00213" summary="Check cloud-init YAML">
+      <created>1611013018635</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
       <option name="project" value="LOCAL" />
-      <updated>1609085141055</updated>
+      <updated>1611013018635</updated>
     </task>
-    <task id="LOCAL-00155" summary="Makes more sense after reordering bullet points">
-      <created>1609085475233</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
+    <task id="LOCAL-00214" summary="Change cloud-init YAMLs">
+      <created>1611013198032</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
       <option name="project" value="LOCAL" />
-      <updated>1609085475233</updated>
+      <updated>1611013198032</updated>
     </task>
-    <task id="LOCAL-00156" summary="Better exchange roles">
-      <created>1609085603561</created>
-      <option name="number" value="00156" />
-      <option name="presentableId" value="LOCAL-00156" />
+    <task id="LOCAL-00215" summary="Need to install cloud-init first">
+      <created>1611013437982</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
       <option name="project" value="LOCAL" />
-      <updated>1609085603562</updated>
+      <updated>1611013437982</updated>
     </task>
-    <task id="LOCAL-00157" summary="Introduce some diversity into emoji choice">
-      <created>1609086336702</created>
-      <option name="number" value="00157" />
-      <option name="presentableId" value="LOCAL-00157" />
+    <task id="LOCAL-00216" summary="Need to install cloud-init first">
+      <created>1611013724419</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
       <option name="project" value="LOCAL" />
-      <updated>1609086336702</updated>
+      <updated>1611013724419</updated>
     </task>
-    <task id="LOCAL-00158" summary="Ignore .idea folder">
-      <created>1609536985669</created>
-      <option name="number" value="00158" />
-      <option name="presentableId" value="LOCAL-00158" />
+    <task id="LOCAL-00217" summary="Check without the ##template: jinja on the first line">
+      <created>1611014340640</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
       <option name="project" value="LOCAL" />
-      <updated>1609536985670</updated>
+      <updated>1611014340641</updated>
     </task>
-    <task id="LOCAL-00159" summary="Populate with files">
-      <created>1609537151414</created>
-      <option name="number" value="00159" />
-      <option name="presentableId" value="LOCAL-00159" />
+    <task id="LOCAL-00218" summary="Moved cloud-init modules to separate Gitlab projects with CI">
+      <created>1611015884377</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
       <option name="project" value="LOCAL" />
-      <updated>1609537151414</updated>
+      <updated>1611015884377</updated>
     </task>
-    <task id="LOCAL-00160" summary="Populate with files">
-      <created>1609537417417</created>
-      <option name="number" value="00160" />
-      <option name="presentableId" value="LOCAL-00160" />
+    <task id="LOCAL-00219" summary="Test that shell scripts execute without error">
+      <created>1611053834134</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
       <option name="project" value="LOCAL" />
-      <updated>1609537417418</updated>
+      <updated>1611053834134</updated>
     </task>
-    <option name="localTasksCounter" value="161" />
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,34 +491,36 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/../blast-radius" />
+      <path value="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
     </ignored-roots>
-    <MESSAGE value="Update README" />
-    <MESSAGE value="Add links to sub modules" />
-    <MESSAGE value="Add section about architecture" />
-    <MESSAGE value="Documentation about components" />
-    <MESSAGE value="Add a list with potential beta-testers and multiplicators" />
-    <MESSAGE value="Group people w.r.t. their skills" />
-    <MESSAGE value="Consolidate research about which providers to adopt next" />
-    <MESSAGE value="Add links to Terraform API documentation" />
-    <MESSAGE value="Check that it is clear what the Public IP address attribute is called for each cloud" />
-    <MESSAGE value="Added CV" />
-    <MESSAGE value="Check that vital services are up and running" />
-    <MESSAGE value="mount does not display as active, leave out this check" />
-    <MESSAGE value="Add a couple of format checks" />
-    <MESSAGE value="Start adding contact information to contacts I want to reach out to" />
-    <MESSAGE value="mailto:" />
-    <MESSAGE value="Add an animated GIF" />
-    <MESSAGE value="Selected use cases" />
-    <MESSAGE value="Add emojis" />
-    <MESSAGE value="Add link to remote pair programming tools" />
-    <MESSAGE value="Add one more use case" />
-    <MESSAGE value="Makes more sense after reordering bullet points" />
-    <MESSAGE value="Better exchange roles" />
-    <MESSAGE value="Introduce some diversity into emoji choice" />
-    <MESSAGE value="Ignore .idea folder" />
-    <MESSAGE value="Populate with files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Populate with files" />
+    <MESSAGE value="console.warn(&quot;Try tp give focus to guacamole iframe on mouseover.&quot;);" />
+    <MESSAGE value="Put focus code directly into html document" />
+    <MESSAGE value="Remove special mobile formatting for input box" />
+    <MESSAGE value="Touch events do not work" />
+    <MESSAGE value="Sample at the default local sample rate, which is mostly 44100 Hz, not 48000 as for Murmur" />
+    <MESSAGE value="Set sample rate explicitly to 44100 Hz" />
+    <MESSAGE value="We do just do not do resampling for performance reasons. The user has to adjust its input device sample rate." />
+    <MESSAGE value="Setting audioContext sample rate does not seem to have any effect, so leave out." />
+    <MESSAGE value="Add pulseeffects and further increase resampling quality" />
+    <MESSAGE value="Configure the Falkon browser" />
+    <MESSAGE value="Falkon browser shall have its own config script" />
+    <MESSAGE value="Gitpod is interesting and comparable to what I am doing" />
+    <MESSAGE value="Remove unused code" />
+    <MESSAGE value="Populate with code" />
+    <MESSAGE value="Add .gitignore" />
+    <MESSAGE value="Update .gitignore" />
+    <MESSAGE value="Populate with files from former modules subfolder" />
+    <MESSAGE value="Check that the terraform config is valid" />
+    <MESSAGE value="terraform validate only when .tf files are changed" />
+    <MESSAGE value="Check cloud-init YAML" />
+    <MESSAGE value="Change cloud-init YAMLs" />
+    <MESSAGE value="Need to install cloud-init first" />
+    <MESSAGE value="Check without the ##template: jinja on the first line" />
+    <MESSAGE value="Moved cloud-init modules to separate Gitlab projects with CI" />
+    <MESSAGE value="Test that shell scripts execute without error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test that shell scripts execute without error" />
   </component>
 </project>
