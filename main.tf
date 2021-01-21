@@ -48,8 +48,8 @@ module "gateway_installer" {
   gateway_dns_hostname   = module.credentials_generator.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
-  source  = "app.terraform.io/jafudi/gateway/cloudinit"
-  version = "1.0.0"
+  source                 = "app.terraform.io/jafudi/station/cloudinit"
+  version                = "1.1.0"
 }
 
 locals {
@@ -102,8 +102,8 @@ module "desktop_installer" {
   browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
-  source  = "app.terraform.io/jafudi/desktop/cloudinit"
-  version = "1.0.0"
+  source               = "app.terraform.io/jafudi/satellite/cloudinit"
+  version              = "1.1.0"
 }
 
 locals {
