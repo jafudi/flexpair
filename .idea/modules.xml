@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/../terraform-aws-gateway/.idea/terraform-aws-gateway.iml" filepath="$PROJECT_DIR$/../terraform-aws-gateway/.idea/terraform-aws-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/../terraform-cloudinit-desktop/.idea/terraform-cloudinit-desktop.iml" filepath="$PROJECT_DIR$/../terraform-cloudinit-desktop/.idea/terraform-cloudinit-desktop.iml" />
       <module fileurl="file://$PROJECT_DIR$/../terraform-cloudinit-gateway/.idea/terraform-cloudinit-gateway.iml" filepath="$PROJECT_DIR$/../terraform-cloudinit-gateway/.idea/terraform-cloudinit-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../terraform-cloudinit-satellite/.idea/terraform-cloudinit-satellite.iml" filepath="$PROJECT_DIR$/../terraform-cloudinit-satellite/.idea/terraform-cloudinit-satellite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../terraform-cloudinit-station/.idea/terraform-cloudinit-station.iml" filepath="$PROJECT_DIR$/../terraform-cloudinit-station/.idea/terraform-cloudinit-station.iml" />
       <module fileurl="file://$PROJECT_DIR$/../terraform-oci-commons/.idea/terraform-oci-commons.iml" filepath="$PROJECT_DIR$/../terraform-oci-commons/.idea/terraform-oci-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/../terraform-oci-desktop/.idea/terraform-oci-desktop.iml" filepath="$PROJECT_DIR$/../terraform-oci-desktop/.idea/terraform-oci-desktop.iml" />
       <module fileurl="file://$PROJECT_DIR$/../terraform-oci-gateway/.idea/terraform-oci-gateway.iml" filepath="$PROJECT_DIR$/../terraform-oci-gateway/.idea/terraform-oci-gateway.iml" />

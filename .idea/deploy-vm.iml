@@ -15,5 +15,7 @@
     <orderEntry type="module" module-name="terraform-cloudinit-gateway" />
     <orderEntry type="module" module-name="terraform-cloudinit-desktop" />
     <orderEntry type="module" module-name="terraform-cloudinit-gateway" />
+    <orderEntry type="module" module-name="terraform-cloudinit-station" />
+    <orderEntry type="module" module-name="terraform-cloudinit-satellite" />
   </component>
 </module>

@@ -8,6 +8,8 @@
     <mapping directory="$PROJECT_DIR$/../terraform-aws-gateway" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-cloudinit-desktop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-cloudinit-gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-cloudinit-satellite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../terraform-cloudinit-station" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-oci-commons" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-oci-desktop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../terraform-oci-gateway" vcs="Git" />
