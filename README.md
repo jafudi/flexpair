@@ -100,6 +100,26 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 | null | ~> 3.0.0 |
 | time | ~> 0.6.0 |
 
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| amazon_infrastructure | app.terraform.io/jafudi/commons/aws | 1.0.0 |
+| credentials_generator | ./modules/terraform-tls-credentials |  |
+| desktop_installer | app.terraform.io/jafudi/satellite/cloudinit | 1.1.7 |
+| desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.0 |
+| gateway_installer | app.terraform.io/jafudi/station/cloudinit | 1.2.0 |
+| gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.0 |
+| oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.0.0 |
+
+## Resources
+
+| Name |
+|------|
+| [dns_a_record_set](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) |
+| [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
+| [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -139,7 +159,6 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 | oci\_base\_image | n/a |
 | private\_key | n/a |
 | ssh\_into\_desktop\_1 | n/a |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 

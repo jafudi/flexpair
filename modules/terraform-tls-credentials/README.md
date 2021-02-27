@@ -49,6 +49,20 @@ module "credentials_generator" {
 | random | ~> 2.3.0 |
 | tls | ~> 2.2.0 |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [acme_certificate](https://registry.terraform.io/providers/terraform-providers/acme/latest/docs/resources/certificate) |
+| [acme_registration](https://registry.terraform.io/providers/terraform-providers/acme/latest/docs/resources/registration) |
+| [random_integer](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/integer) |
+| [random_password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) |
+| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -78,5 +92,4 @@ module "credentials_generator" {
 | murmur\_credentials | n/a |
 | subdomain\_label | n/a |
 | vm\_mutual\_key | n/a |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
