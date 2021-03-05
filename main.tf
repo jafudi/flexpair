@@ -103,7 +103,7 @@ module "desktop_installer" {
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
   source               = "app.terraform.io/jafudi/satellite/cloudinit"
-  version              = "1.1.8"
+  version              = "1.1.9"
 }
 
 locals {
