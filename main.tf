@@ -130,8 +130,8 @@ resource "null_resource" "health_check" {
 
   for_each = toset([
     "/",
-    "/guacamole/" #,
-    #"/desktop-traffic/"
+    "/guacamole/",
+    "/desktop-traffic/"
   ])
 
   triggers = {
