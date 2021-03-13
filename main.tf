@@ -49,7 +49,7 @@ module "gateway_installer" {
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.2.3"
+  version                = "1.2.2"
 }
 
 locals {
