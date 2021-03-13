@@ -24,12 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Use updated and renamed module versions">
-      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploy-vm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pre-commit-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.pre-commit-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sudo-pre-commit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/sudo-pre-commit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,7 @@
         <entry key="$PROJECT_DIR$" value="buytheway" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../terraform-cloudinit-station" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GithubDefaultAccount">
@@ -67,19 +63,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TF_FMT" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini&#10;yaml" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../terraform-cloudinit-station" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini&#10;HTML&#10;yaml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../terraform-oci-gateway" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../terraform-oci-gateway" />
+      <recent name="$PROJECT_DIR$/../terraform-oci-desktop" />
+      <recent name="$PROJECT_DIR$/../terraform-oci-commons" />
       <recent name="$PROJECT_DIR$/../terraform-cloudinit-station" />
-      <recent name="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
-      <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-gateway" />
-      <recent name="$PROJECT_DIR$/modules/terraform-cloudinit-desktop" />
-      <recent name="$PROJECT_DIR$/modules/terraform-tls-credentials" />
+      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/documentation" />
@@ -132,350 +128,350 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00283" summary="Test desktop only when install script changed">
-      <created>1611684821905</created>
-      <option name="number" value="00283" />
-      <option name="presentableId" value="LOCAL-00283" />
+    <task id="LOCAL-00416" summary="Display hint on the desktop background, how to open side menu bar">
+      <created>1615319143913</created>
+      <option name="number" value="00416" />
+      <option name="presentableId" value="LOCAL-00416" />
       <option name="project" value="LOCAL" />
-      <updated>1611684821905</updated>
+      <updated>1615319143913</updated>
     </task>
-    <task id="LOCAL-00284" summary="backend &quot;http&quot;">
-      <created>1611687025967</created>
-      <option name="number" value="00284" />
-      <option name="presentableId" value="LOCAL-00284" />
+    <task id="LOCAL-00417" summary="Display hint on the desktop background, how to open side menu bar">
+      <created>1615319317045</created>
+      <option name="number" value="00417" />
+      <option name="presentableId" value="LOCAL-00417" />
       <option name="project" value="LOCAL" />
-      <updated>1611687025968</updated>
+      <updated>1615319317045</updated>
     </task>
-    <task id="LOCAL-00285" summary="backend &quot;http&quot;">
-      <created>1611688815290</created>
-      <option name="number" value="00285" />
-      <option name="presentableId" value="LOCAL-00285" />
+    <task id="LOCAL-00418" summary="apt-get install -qq imagemagick imagemagick-doc">
+      <created>1615324757564</created>
+      <option name="number" value="00418" />
+      <option name="presentableId" value="LOCAL-00418" />
       <option name="project" value="LOCAL" />
-      <updated>1611688815290</updated>
+      <updated>1615324757565</updated>
     </task>
-    <task id="LOCAL-00286" summary="backend &quot;http&quot;">
-      <created>1611689025018</created>
-      <option name="number" value="00286" />
-      <option name="presentableId" value="LOCAL-00286" />
+    <task id="LOCAL-00419" summary="Display hint on the desktop background, how to open side menu bar">
+      <created>1615330993980</created>
+      <option name="number" value="00419" />
+      <option name="presentableId" value="LOCAL-00419" />
       <option name="project" value="LOCAL" />
-      <updated>1611689025018</updated>
+      <updated>1615330993980</updated>
     </task>
-    <task id="LOCAL-00287" summary="backend &quot;http&quot;">
-      <created>1611689483947</created>
-      <option name="number" value="00287" />
-      <option name="presentableId" value="LOCAL-00287" />
+    <task id="LOCAL-00420" summary="Display hint how to upload/send files">
+      <created>1615373461062</created>
+      <option name="number" value="00420" />
+      <option name="presentableId" value="LOCAL-00420" />
       <option name="project" value="LOCAL" />
-      <updated>1611689483947</updated>
+      <updated>1615373461064</updated>
     </task>
-    <task id="LOCAL-00288" summary="Execute entrypoint of murmur container in order to test validity of config">
-      <created>1611699804116</created>
-      <option name="number" value="00288" />
-      <option name="presentableId" value="LOCAL-00288" />
+    <task id="LOCAL-00421" summary="Add palemoon">
+      <created>1615376139914</created>
+      <option name="number" value="00421" />
+      <option name="presentableId" value="LOCAL-00421" />
       <option name="project" value="LOCAL" />
-      <updated>1611699804117</updated>
+      <updated>1615376139916</updated>
     </task>
-    <task id="LOCAL-00289" summary="Execute entrypoint of murmur container in order to test validity of config">
-      <created>1611699952076</created>
-      <option name="number" value="00289" />
-      <option name="presentableId" value="LOCAL-00289" />
+    <task id="LOCAL-00422" summary="Add palemoon">
+      <created>1615377034309</created>
+      <option name="number" value="00422" />
+      <option name="presentableId" value="LOCAL-00422" />
       <option name="project" value="LOCAL" />
-      <updated>1611699952076</updated>
+      <updated>1615377034309</updated>
     </task>
-    <task id="LOCAL-00290" summary="Execute entrypoint of murmur container in order to test validity of config">
-      <created>1611700141589</created>
-      <option name="number" value="00290" />
-      <option name="presentableId" value="LOCAL-00290" />
+    <task id="LOCAL-00423" summary="Add palemoon browser and double size of pcman-qt window">
+      <created>1615392558644</created>
+      <option name="number" value="00423" />
+      <option name="presentableId" value="LOCAL-00423" />
       <option name="project" value="LOCAL" />
-      <updated>1611700141589</updated>
+      <updated>1615392558645</updated>
     </task>
-    <task id="LOCAL-00291" summary="docker-entrypoint.sh murmur &amp;">
-      <created>1611700469808</created>
-      <option name="number" value="00291" />
-      <option name="presentableId" value="LOCAL-00291" />
+    <task id="LOCAL-00424" summary="Need gnupg">
+      <created>1615393509151</created>
+      <option name="number" value="00424" />
+      <option name="presentableId" value="LOCAL-00424" />
       <option name="project" value="LOCAL" />
-      <updated>1611700469808</updated>
+      <updated>1615393509151</updated>
     </task>
-    <task id="LOCAL-00292" summary="timeout --preserve-status 30s docker-entrypoint.sh murmur">
-      <created>1611700959373</created>
-      <option name="number" value="00292" />
-      <option name="presentableId" value="LOCAL-00292" />
+    <task id="LOCAL-00425" summary="Need gnupg">
+      <created>1615395155816</created>
+      <option name="number" value="00425" />
+      <option name="presentableId" value="LOCAL-00425" />
       <option name="project" value="LOCAL" />
-      <updated>1611700959373</updated>
+      <updated>1615395155816</updated>
     </task>
-    <task id="LOCAL-00293" summary="timeout --preserve-status 30s docker-entrypoint.sh murmur">
-      <created>1611701166027</created>
-      <option name="number" value="00293" />
-      <option name="presentableId" value="LOCAL-00293" />
+    <task id="LOCAL-00426" summary="Generic is mostly better">
+      <created>1615407098086</created>
+      <option name="number" value="00426" />
+      <option name="presentableId" value="LOCAL-00426" />
       <option name="project" value="LOCAL" />
-      <updated>1611701166027</updated>
+      <updated>1615407098087</updated>
     </task>
-    <task id="LOCAL-00294" summary="{ docker-entrypoint.sh murmur &amp;; sleep 30; kill $$; }">
-      <created>1611702251208</created>
-      <option name="number" value="00294" />
-      <option name="presentableId" value="LOCAL-00294" />
+    <task id="LOCAL-00427" summary="Generic is mostly better">
+      <created>1615410218535</created>
+      <option name="number" value="00427" />
+      <option name="presentableId" value="LOCAL-00427" />
       <option name="project" value="LOCAL" />
-      <updated>1611702251208</updated>
+      <updated>1615410218535</updated>
     </task>
-    <task id="LOCAL-00295" summary="{ docker-entrypoint.sh murmur &amp;; sleep 30; kill $$; }">
-      <created>1611702369849</created>
-      <option name="number" value="00295" />
-      <option name="presentableId" value="LOCAL-00295" />
+    <task id="LOCAL-00428" summary="Parameterize password as environment variable">
+      <created>1615411855139</created>
+      <option name="number" value="00428" />
+      <option name="presentableId" value="LOCAL-00428" />
       <option name="project" value="LOCAL" />
-      <updated>1611702369849</updated>
+      <updated>1615411855139</updated>
     </task>
-    <task id="LOCAL-00296" summary="Just sleep 30">
-      <created>1611702745027</created>
-      <option name="number" value="00296" />
-      <option name="presentableId" value="LOCAL-00296" />
+    <task id="LOCAL-00429" summary="Pass murmur password as password for guacamole">
+      <created>1615414000602</created>
+      <option name="number" value="00429" />
+      <option name="presentableId" value="LOCAL-00429" />
       <option name="project" value="LOCAL" />
-      <updated>1611702745028</updated>
+      <updated>1615414000602</updated>
     </task>
-    <task id="LOCAL-00297" summary="allowhtml=42">
-      <created>1611702878865</created>
-      <option name="number" value="00297" />
-      <option name="presentableId" value="LOCAL-00297" />
+    <task id="LOCAL-00430" summary="Bump installer versions">
+      <created>1615415045016</created>
+      <option name="number" value="00430" />
+      <option name="presentableId" value="LOCAL-00430" />
       <option name="project" value="LOCAL" />
-      <updated>1611702878865</updated>
+      <updated>1615415045016</updated>
     </task>
-    <task id="LOCAL-00298" summary="port=3">
-      <created>1611703246225</created>
-      <option name="number" value="00298" />
-      <option name="presentableId" value="LOCAL-00298" />
+    <task id="LOCAL-00431" summary="Print Guacamole manual as PDF">
+      <created>1615460421307</created>
+      <option name="number" value="00431" />
+      <option name="presentableId" value="LOCAL-00431" />
       <option name="project" value="LOCAL" />
-      <updated>1611703246226</updated>
+      <updated>1615460421308</updated>
     </task>
-    <task id="LOCAL-00299" summary="port=3">
-      <created>1611703579732</created>
-      <option name="number" value="00299" />
-      <option name="presentableId" value="LOCAL-00299" />
+    <task id="LOCAL-00432" summary="Skip test for /desktop-traffic/ for now">
+      <created>1615460612649</created>
+      <option name="number" value="00432" />
+      <option name="presentableId" value="LOCAL-00432" />
       <option name="project" value="LOCAL" />
-      <updated>1611703579732</updated>
+      <updated>1615460612649</updated>
     </task>
-    <task id="LOCAL-00300" summary="test with nginx container">
-      <created>1611704102147</created>
-      <option name="number" value="00300" />
-      <option name="presentableId" value="LOCAL-00300" />
+    <task id="LOCAL-00433" summary="Created config files are artifacts">
+      <created>1615465867990</created>
+      <option name="number" value="00433" />
+      <option name="presentableId" value="LOCAL-00433" />
       <option name="project" value="LOCAL" />
-      <updated>1611704102147</updated>
+      <updated>1615465867994</updated>
     </task>
-    <task id="LOCAL-00301" summary="Add mumble-web and guacamole as services">
-      <created>1611704585013</created>
-      <option name="number" value="00301" />
-      <option name="presentableId" value="LOCAL-00301" />
+    <task id="LOCAL-00434" summary="Collect created config files in artifacts folder">
+      <created>1615466778555</created>
+      <option name="number" value="00434" />
+      <option name="presentableId" value="LOCAL-00434" />
       <option name="project" value="LOCAL" />
-      <updated>1611704585013</updated>
+      <updated>1615466778556</updated>
     </task>
-    <task id="LOCAL-00302" summary="Add mumble-web and guacamole as services">
-      <created>1611705026880</created>
-      <option name="number" value="00302" />
-      <option name="presentableId" value="LOCAL-00302" />
+    <task id="LOCAL-00435" summary="Use sshd -t to test config file">
+      <created>1615467102982</created>
+      <option name="number" value="00435" />
+      <option name="presentableId" value="LOCAL-00435" />
       <option name="project" value="LOCAL" />
-      <updated>1611705026880</updated>
+      <updated>1615467102982</updated>
     </task>
-    <task id="LOCAL-00303" summary="Add mumble, guacamole and gateway hosts">
-      <created>1611705377823</created>
-      <option name="number" value="00303" />
-      <option name="presentableId" value="LOCAL-00303" />
+    <task id="LOCAL-00436" summary="Fix &quot;Missing privilege separation directory: /run/sshd&quot;">
+      <created>1615467590662</created>
+      <option name="number" value="00436" />
+      <option name="presentableId" value="LOCAL-00436" />
       <option name="project" value="LOCAL" />
-      <updated>1611705377823</updated>
+      <updated>1615467590662</updated>
     </task>
-    <task id="LOCAL-00304" summary="Add mumble, guacamole and gateway hosts">
-      <created>1611705497650</created>
-      <option name="number" value="00304" />
-      <option name="presentableId" value="LOCAL-00304" />
+    <task id="LOCAL-00437" summary="Name artifact folders">
+      <created>1615468171330</created>
+      <option name="number" value="00437" />
+      <option name="presentableId" value="LOCAL-00437" />
       <option name="project" value="LOCAL" />
-      <updated>1611705497650</updated>
+      <updated>1615468171330</updated>
     </task>
-    <task id="LOCAL-00305" summary="Combine letsencrypt and nginx jobs">
-      <created>1611705778152</created>
-      <option name="number" value="00305" />
-      <option name="presentableId" value="LOCAL-00305" />
+    <task id="LOCAL-00438" summary="Fix copy syntax">
+      <created>1615468576764</created>
+      <option name="number" value="00438" />
+      <option name="presentableId" value="LOCAL-00438" />
       <option name="project" value="LOCAL" />
-      <updated>1611705778152</updated>
+      <updated>1615468576764</updated>
     </task>
-    <task id="LOCAL-00306" summary="  CERT_FOLDER: &quot;/etc/letsencrypt&quot;">
-      <created>1611706101380</created>
-      <option name="number" value="00306" />
-      <option name="presentableId" value="LOCAL-00306" />
+    <task id="LOCAL-00439" summary="Fix copy syntax">
+      <created>1615469703255</created>
+      <option name="number" value="00439" />
+      <option name="presentableId" value="LOCAL-00439" />
       <option name="project" value="LOCAL" />
-      <updated>1611706101380</updated>
+      <updated>1615469703256</updated>
     </task>
-    <task id="LOCAL-00307" summary="Generate self-signed certs for test">
-      <created>1611707014424</created>
-      <option name="number" value="00307" />
-      <option name="presentableId" value="LOCAL-00307" />
+    <task id="LOCAL-00440" summary="Try removing single quotes">
+      <created>1615470560474</created>
+      <option name="number" value="00440" />
+      <option name="presentableId" value="LOCAL-00440" />
       <option name="project" value="LOCAL" />
-      <updated>1611707014424</updated>
+      <updated>1615470560474</updated>
     </task>
-    <task id="LOCAL-00308" summary="Generate self-signed certs for test">
-      <created>1611707404375</created>
-      <option name="number" value="00308" />
-      <option name="presentableId" value="LOCAL-00308" />
+    <task id="LOCAL-00441" summary="Substitute env variable GUAC_PASSWORD">
+      <created>1615472615414</created>
+      <option name="number" value="00441" />
+      <option name="presentableId" value="LOCAL-00441" />
       <option name="project" value="LOCAL" />
-      <updated>1611707404375</updated>
+      <updated>1615472615415</updated>
     </task>
-    <task id="LOCAL-00309" summary="Generate self-signed certs for test">
-      <created>1611707748548</created>
-      <option name="number" value="00309" />
-      <option name="presentableId" value="LOCAL-00309" />
+    <task id="LOCAL-00442" summary="Output test.js">
+      <created>1615473577897</created>
+      <option name="number" value="00442" />
+      <option name="presentableId" value="LOCAL-00442" />
       <option name="project" value="LOCAL" />
-      <updated>1611707748548</updated>
+      <updated>1615473577897</updated>
     </task>
-    <task id="LOCAL-00310" summary="Generate self-signed certs for test">
-      <created>1611707948056</created>
-      <option name="number" value="00310" />
-      <option name="presentableId" value="LOCAL-00310" />
+    <task id="LOCAL-00443" summary="User name &quot;editor&quot; instead of &quot;you&quot;">
+      <created>1615484983131</created>
+      <option name="number" value="00443" />
+      <option name="presentableId" value="LOCAL-00443" />
       <option name="project" value="LOCAL" />
-      <updated>1611707948056</updated>
+      <updated>1615484983132</updated>
     </task>
-    <task id="LOCAL-00311" summary="Generate self-signed certs for test">
-      <created>1611708079593</created>
-      <option name="number" value="00311" />
-      <option name="presentableId" value="LOCAL-00311" />
+    <task id="LOCAL-00444" summary="Bump gateway installer version.">
+      <created>1615494939871</created>
+      <option name="number" value="00444" />
+      <option name="presentableId" value="LOCAL-00444" />
       <option name="project" value="LOCAL" />
-      <updated>1611708079594</updated>
+      <updated>1615494939875</updated>
     </task>
-    <task id="LOCAL-00312" summary="Generate self-signed certs for test">
-      <created>1611708231683</created>
-      <option name="number" value="00312" />
-      <option name="presentableId" value="LOCAL-00312" />
+    <task id="LOCAL-00445" summary="Roll back to gateway version 1.2.2 and see if that still works">
+      <created>1615622788183</created>
+      <option name="number" value="00445" />
+      <option name="presentableId" value="LOCAL-00445" />
       <option name="project" value="LOCAL" />
-      <updated>1611708231683</updated>
+      <updated>1615622788189</updated>
     </task>
-    <task id="LOCAL-00313" summary="Generate self-signed certs for test">
-      <created>1611709012830</created>
-      <option name="number" value="00313" />
-      <option name="presentableId" value="LOCAL-00313" />
+    <task id="LOCAL-00446" summary="Roll back to gateway version 1.2.1 and see if that still work">
+      <created>1615625785569</created>
+      <option name="number" value="00446" />
+      <option name="presentableId" value="LOCAL-00446" />
       <option name="project" value="LOCAL" />
-      <updated>1611709012830</updated>
+      <updated>1615625785570</updated>
     </task>
-    <task id="LOCAL-00314" summary="Generate self-signed certs for test">
-      <created>1611710416708</created>
-      <option name="number" value="00314" />
-      <option name="presentableId" value="LOCAL-00314" />
+    <task id="LOCAL-00447" summary="Test desktop-traffic as before">
+      <created>1615630479421</created>
+      <option name="number" value="00447" />
+      <option name="presentableId" value="LOCAL-00447" />
       <option name="project" value="LOCAL" />
-      <updated>1611710416708</updated>
+      <updated>1615630479423</updated>
     </task>
-    <task id="LOCAL-00315" summary="Generate self-signed certs for test">
-      <created>1611710577105</created>
-      <option name="number" value="00315" />
-      <option name="presentableId" value="LOCAL-00315" />
+    <task id="LOCAL-00448" summary="Test whether ANY container in docker-compose an reach gateway, using ping etc.">
+      <created>1615632335523</created>
+      <option name="number" value="00448" />
+      <option name="presentableId" value="LOCAL-00448" />
       <option name="project" value="LOCAL" />
-      <updated>1611710577105</updated>
+      <updated>1615632335523</updated>
     </task>
-    <task id="LOCAL-00316" summary="Generate self-signed certs for test">
-      <created>1611710703500</created>
-      <option name="number" value="00316" />
-      <option name="presentableId" value="LOCAL-00316" />
+    <task id="LOCAL-00449" summary="Disable chekov for AWS because it is a pain in the a**">
+      <created>1615638725343</created>
+      <option name="number" value="00449" />
+      <option name="presentableId" value="LOCAL-00449" />
       <option name="project" value="LOCAL" />
-      <updated>1611710703500</updated>
+      <updated>1615638725344</updated>
     </task>
-    <task id="LOCAL-00317" summary="Generate error: user  nginxie;">
-      <created>1611710900119</created>
-      <option name="number" value="00317" />
-      <option name="presentableId" value="LOCAL-00317" />
+    <task id="LOCAL-00450" summary="Fix typo">
+      <created>1615639344989</created>
+      <option name="number" value="00450" />
+      <option name="presentableId" value="LOCAL-00450" />
       <option name="project" value="LOCAL" />
-      <updated>1611710900119</updated>
+      <updated>1615639344989</updated>
     </task>
-    <task id="LOCAL-00318" summary="Generate error: user  nginxie;">
-      <created>1611711072926</created>
-      <option name="number" value="00318" />
-      <option name="presentableId" value="LOCAL-00318" />
+    <task id="LOCAL-00451" summary="Install systemd for tests">
+      <created>1615639527170</created>
+      <option name="number" value="00451" />
+      <option name="presentableId" value="LOCAL-00451" />
       <option name="project" value="LOCAL" />
-      <updated>1611711072926</updated>
+      <updated>1615639527170</updated>
     </task>
-    <task id="LOCAL-00319" summary="Generate error: user  nginxie;">
-      <created>1611712985619</created>
-      <option name="number" value="00319" />
-      <option name="presentableId" value="LOCAL-00319" />
+    <task id="LOCAL-00452" summary="Parameterize port for vnc forwarded connection">
+      <created>1615640277752</created>
+      <option name="number" value="00452" />
+      <option name="presentableId" value="LOCAL-00452" />
       <option name="project" value="LOCAL" />
-      <updated>1611712985619</updated>
+      <updated>1615640277752</updated>
     </task>
-    <task id="LOCAL-00320" summary="Use ./wait-for-it.sh">
-      <created>1611713288350</created>
-      <option name="number" value="00320" />
-      <option name="presentableId" value="LOCAL-00320" />
+    <task id="LOCAL-00453" summary="Parameterize port for vnc forwarded connection">
+      <created>1615640298911</created>
+      <option name="number" value="00453" />
+      <option name="presentableId" value="LOCAL-00453" />
       <option name="project" value="LOCAL" />
-      <updated>1611713288351</updated>
+      <updated>1615640298911</updated>
     </task>
-    <task id="LOCAL-00321" summary="Verify that correct config passes">
-      <created>1611713585950</created>
-      <option name="number" value="00321" />
-      <option name="presentableId" value="LOCAL-00321" />
+    <task id="LOCAL-00454" summary="Fix typo">
+      <created>1615641368582</created>
+      <option name="number" value="00454" />
+      <option name="presentableId" value="LOCAL-00454" />
       <option name="project" value="LOCAL" />
-      <updated>1611713585950</updated>
+      <updated>1615641368582</updated>
     </task>
-    <task id="LOCAL-00322" summary="Verify that correct config passes">
-      <created>1611713683670</created>
-      <option name="number" value="00322" />
-      <option name="presentableId" value="LOCAL-00322" />
+    <task id="LOCAL-00455" summary="Parameterize vnc port(s)">
+      <created>1615641409288</created>
+      <option name="number" value="00455" />
+      <option name="presentableId" value="LOCAL-00455" />
       <option name="project" value="LOCAL" />
-      <updated>1611713683670</updated>
+      <updated>1615641409288</updated>
     </task>
-    <task id="LOCAL-00323" summary="./wait-for-it.sh localhost:${MURMUR_PORT} --timeout=30 || exit 1">
-      <created>1611733456784</created>
-      <option name="number" value="00323" />
-      <option name="presentableId" value="LOCAL-00323" />
+    <task id="LOCAL-00456" summary="Add variable">
+      <created>1615641680173</created>
+      <option name="number" value="00456" />
+      <option name="presentableId" value="LOCAL-00456" />
       <option name="project" value="LOCAL" />
-      <updated>1611733456784</updated>
+      <updated>1615641680173</updated>
     </task>
-    <task id="LOCAL-00324" summary="apk --no-cache add curl">
-      <created>1611733709576</created>
-      <option name="number" value="00324" />
-      <option name="presentableId" value="LOCAL-00324" />
+    <task id="LOCAL-00457" summary="echo Done to get 0 exit code">
+      <created>1615642167292</created>
+      <option name="number" value="00457" />
+      <option name="presentableId" value="LOCAL-00457" />
       <option name="project" value="LOCAL" />
-      <updated>1611733709577</updated>
+      <updated>1615642167292</updated>
     </task>
-    <task id="LOCAL-00325" summary="Refactoring">
-      <created>1611736038525</created>
-      <option name="number" value="00325" />
-      <option name="presentableId" value="LOCAL-00325" />
+    <task id="LOCAL-00458" summary="echo Done to get 0 exit code">
+      <created>1615642410662</created>
+      <option name="number" value="00458" />
+      <option name="presentableId" value="LOCAL-00458" />
       <option name="project" value="LOCAL" />
-      <updated>1611736038526</updated>
+      <updated>1615642410662</updated>
     </task>
-    <task id="LOCAL-00326" summary="Refactoring">
-      <created>1611736264391</created>
-      <option name="number" value="00326" />
-      <option name="presentableId" value="LOCAL-00326" />
+    <task id="LOCAL-00459" summary="Provide test values for variables">
+      <created>1615642620530</created>
+      <option name="number" value="00459" />
+      <option name="presentableId" value="LOCAL-00459" />
       <option name="project" value="LOCAL" />
-      <updated>1611736264391</updated>
+      <updated>1615642620530</updated>
     </task>
-    <task id="LOCAL-00327" summary="Refactoring">
-      <created>1611736521576</created>
-      <option name="number" value="00327" />
-      <option name="presentableId" value="LOCAL-00327" />
+    <task id="LOCAL-00460" summary="Gateway VNC port unlike the desktop one needs to be explicitely specified">
+      <created>1615643835644</created>
+      <option name="number" value="00460" />
+      <option name="presentableId" value="LOCAL-00460" />
       <option name="project" value="LOCAL" />
-      <updated>1611736521576</updated>
+      <updated>1615643835644</updated>
     </task>
-    <task id="LOCAL-00328" summary="Refactoring">
-      <created>1611736941299</created>
-      <option name="number" value="00328" />
-      <option name="presentableId" value="LOCAL-00328" />
+    <task id="LOCAL-00461" summary="Randomize VNC port">
+      <created>1615644948203</created>
+      <option name="number" value="00461" />
+      <option name="presentableId" value="LOCAL-00461" />
       <option name="project" value="LOCAL" />
-      <updated>1611736941299</updated>
+      <updated>1615644948203</updated>
     </task>
-    <task id="LOCAL-00329" summary="Refactoring">
-      <created>1611737018830</created>
-      <option name="number" value="00329" />
-      <option name="presentableId" value="LOCAL-00329" />
+    <task id="LOCAL-00462" summary="tonumber">
+      <created>1615645339754</created>
+      <option name="number" value="00462" />
+      <option name="presentableId" value="LOCAL-00462" />
       <option name="project" value="LOCAL" />
-      <updated>1611737018830</updated>
+      <updated>1615645339754</updated>
     </task>
-    <task id="LOCAL-00330" summary="Refactoring">
-      <created>1611737237958</created>
-      <option name="number" value="00330" />
-      <option name="presentableId" value="LOCAL-00330" />
+    <task id="LOCAL-00463" summary="Think easy">
+      <created>1615645444650</created>
+      <option name="number" value="00463" />
+      <option name="presentableId" value="LOCAL-00463" />
       <option name="project" value="LOCAL" />
-      <updated>1611737237958</updated>
+      <updated>1615645444650</updated>
     </task>
-    <task id="LOCAL-00331" summary="Refactoring">
-      <created>1611750027523</created>
-      <option name="number" value="00331" />
-      <option name="presentableId" value="LOCAL-00331" />
+    <task id="LOCAL-00464" summary="Restart iptables and netfilter-persistent wrapper">
+      <created>1615670789888</created>
+      <option name="number" value="00464" />
+      <option name="presentableId" value="LOCAL-00464" />
       <option name="project" value="LOCAL" />
-      <updated>1611750027524</updated>
+      <updated>1615670789890</updated>
     </task>
-    <option name="localTasksCounter" value="332" />
+    <option name="localTasksCounter" value="465" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -496,31 +492,31 @@
       <path value="$PROJECT_DIR$/../blast-radius" />
       <path value="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
     </ignored-roots>
-    <MESSAGE value="Also do plan and apply during tests in order to check whether the MIME file can actually be built, e.g. high UTF characters etc." />
-    <MESSAGE value="Bugfix: Function calls not allowed (object)" />
-    <MESSAGE value="Bugfix: You didn't specify an &quot;-out&quot; parameter to save this plan, so Terraformvc n't guarantee that exactly these actions will be performed if terraform apply&quot; is subsequently run." />
-    <MESSAGE value="Bugfix Trojita config" />
-    <MESSAGE value="Test desktop only when install script changed" />
-    <MESSAGE value="backend &quot;http&quot;" />
-    <MESSAGE value="Execute entrypoint of murmur container in order to test validity of config" />
-    <MESSAGE value="docker-entrypoint.sh murmur &amp;" />
-    <MESSAGE value="timeout --preserve-status 30s docker-entrypoint.sh murmur" />
-    <MESSAGE value="{ docker-entrypoint.sh murmur &amp;; sleep 30; kill $$; }" />
-    <MESSAGE value="Just sleep 30" />
-    <MESSAGE value="allowhtml=42" />
-    <MESSAGE value="port=3" />
-    <MESSAGE value="test with nginx container" />
-    <MESSAGE value="Add mumble-web and guacamole as services" />
-    <MESSAGE value="Add mumble, guacamole and gateway hosts" />
-    <MESSAGE value="Combine letsencrypt and nginx jobs" />
-    <MESSAGE value="  CERT_FOLDER: &quot;/etc/letsencrypt&quot;" />
-    <MESSAGE value="Generate self-signed certs for test" />
-    <MESSAGE value="Generate error: user  nginxie;" />
-    <MESSAGE value="Use ./wait-for-it.sh" />
-    <MESSAGE value="Verify that correct config passes" />
-    <MESSAGE value="./wait-for-it.sh localhost:${MURMUR_PORT} --timeout=30 || exit 1" />
-    <MESSAGE value="apk --no-cache add curl" />
-    <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Name artifact folders" />
+    <MESSAGE value="Fix copy syntax" />
+    <MESSAGE value="Try removing single quotes" />
+    <MESSAGE value="Substitute env variable GUAC_PASSWORD" />
+    <MESSAGE value="Output test.js" />
+    <MESSAGE value="User name &quot;editor&quot; instead of &quot;you&quot;" />
+    <MESSAGE value="Bump gateway installer version." />
+    <MESSAGE value="Roll back to gateway version 1.2.2 and see if that still works" />
+    <MESSAGE value="Roll back to gateway version 1.2.1 and see if that still work" />
+    <MESSAGE value="Test desktop-traffic as before" />
+    <MESSAGE value="Test whether ANY container in docker-compose an reach gateway, using ping etc." />
+    <MESSAGE value="Newest AWS Ubuntu image requires systemctl start --now iptables.service manually" />
+    <MESSAGE value="Disable chekov for AWS because it is a pain in the a**" />
+    <MESSAGE value="Install systemd for tests" />
+    <MESSAGE value="Parameterize port for vnc forwarded connection" />
+    <MESSAGE value="Fix typo" />
+    <MESSAGE value="Parameterize vnc port(s)" />
+    <MESSAGE value="Add variable" />
+    <MESSAGE value="echo Done to get 0 exit code" />
+    <MESSAGE value="Provide test values for variables" />
+    <MESSAGE value="Gateway VNC port unlike the desktop one needs to be explicitely specified" />
+    <MESSAGE value="Randomize VNC port" />
+    <MESSAGE value="tonumber" />
+    <MESSAGE value="Think easy" />
+    <MESSAGE value="Restart iptables and netfilter-persistent wrapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restart iptables and netfilter-persistent wrapper" />
   </component>
 </project>

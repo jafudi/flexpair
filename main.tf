@@ -50,7 +50,7 @@ module "gateway_installer" {
   docker_compose_release = local.docker_compose_release
   first_vnc_port         = module.credentials_generator.vnc_port
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.3.0"
+  version                = "1.3.1"
 }
 
 locals {
