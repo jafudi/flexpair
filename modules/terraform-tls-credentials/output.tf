@@ -3,6 +3,11 @@ output "vm_mutual_key" {
   value       = tls_private_key.vm_mutual_key
 }
 
+output "vnc_port" {
+  description = "Randomly chosen VNC port increases security"
+  value       = random_integer.vnc_port
+}
+
 output "email_config" {
   description = ""
   value       = local.email_config

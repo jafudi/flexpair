@@ -18,6 +18,11 @@ resource "random_integer" "murmur_port" {
   min = 10000
 }
 
+resource "random_integer" "vnc_port" {
+  max = 5999
+  min = 5900
+}
+
 locals {
   murmur_credentials = {
     port     = random_integer.murmur_port.result

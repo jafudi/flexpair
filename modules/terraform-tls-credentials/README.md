@@ -92,4 +92,5 @@ No Modules.
 | murmur\_credentials | n/a |
 | subdomain\_label | n/a |
 | vm\_mutual\_key | n/a |
+| vnc\_port | Randomly chosen VNC port increases security |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

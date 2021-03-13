@@ -48,8 +48,9 @@ module "gateway_installer" {
   gateway_dns_hostname   = module.credentials_generator.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
+  first_vnc_port         = module.credentials_generator.vnc_port
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.2.1"
+  version                = "1.3.0"
 }
 
 locals {
@@ -102,8 +103,9 @@ module "desktop_installer" {
   browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
+  gateway_vnc_port     = module.credentials_generator.vnc_port
   source               = "app.terraform.io/jafudi/satellite/cloudinit"
-  version              = "1.2.1"
+  version              = "1.3.0"
 }
 
 locals {
