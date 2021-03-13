@@ -5,7 +5,7 @@ output "vm_mutual_key" {
 
 output "vnc_port" {
   description = "Randomly chosen VNC port increases security"
-  value       = tonumber(random_integer.vnc_port)
+  value       = random_integer.vnc_port.result
 }
 
 output "email_config" {
