@@ -50,7 +50,7 @@ module "gateway_installer" {
   docker_compose_release = local.docker_compose_release
   first_vnc_port         = module.credentials_generator.vnc_port
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.3.2"
+  version                = "1.3.3"
 }
 
 locals {
@@ -105,7 +105,7 @@ module "desktop_installer" {
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_port
   source               = "app.terraform.io/jafudi/satellite/cloudinit"
-  version              = "1.3.1"
+  version              = "1.3.2"
 }
 
 locals {
@@ -132,8 +132,8 @@ resource "null_resource" "health_check" {
 
   for_each = toset([
     "/",
-    "/guacamole/" #,
-    #"/desktop-traffic/"
+    "/guacamole/",
+    "/desktop-traffic/"
   ])
 
   triggers = {
