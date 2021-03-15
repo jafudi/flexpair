@@ -106,9 +106,9 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 |------|--------|---------|
 | amazon_infrastructure | app.terraform.io/jafudi/commons/aws | 1.0.0 |
 | credentials_generator | ./modules/terraform-tls-credentials |  |
-| desktop_installer | app.terraform.io/jafudi/satellite/cloudinit | 1.3.2 |
+| desktop_installer | app.terraform.io/jafudi/satellite/cloudinit | 1.3.3 |
 | desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.0 |
-| gateway_installer | app.terraform.io/jafudi/station/cloudinit | 1.3.3 |
+| gateway_installer | app.terraform.io/jafudi/station/cloudinit | 1.3.4 |
 | gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.0 |
 | oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.0.0 |
 
