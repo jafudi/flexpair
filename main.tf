@@ -25,7 +25,7 @@ module "amazon_infrastructure" {
 
 module "credentials_generator" {
   registered_domain     = var.registered_domain
-  subdomain_proposition = "${var.TFC_CONFIGURATION_VERSION_GIT_BRANCH}-branch-${var.TFC_WORKSPACE_NAME}"
+  subdomain_proposition = var.TFC_WORKSPACE_NAME // 48hrs.jafudi.de
   gateway_cloud_info    = module.amazon_infrastructure.additional_metadata
   desktop_cloud_info    = module.oracle_infrastructure.additional_metadata
   source                = "./modules/terraform-tls-credentials"
@@ -50,7 +50,7 @@ module "gateway_installer" {
   docker_compose_release = local.docker_compose_release
   first_vnc_port         = module.credentials_generator.vnc_port
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.3.9"
+  version                = "1.4.0"
 }
 
 locals {
