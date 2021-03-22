@@ -105,7 +105,7 @@ module "desktop_installer" {
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_port
   source               = "app.terraform.io/jafudi/satellite/cloudinit"
-  version              = "1.3.6"
+  version              = "1.3.7"
 }
 
 locals {
