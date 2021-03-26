@@ -1,4 +1,11 @@
-# Turnkey Multi-cloud Collaboration Platform
+# PairPac is a Turnkey Multi-cloud Collaboration Platform
+
+The least thing we want is to waste your precious time. Therefore,
+- if you are keen on inviting every work contact into your living room, please consider using Zoom etc. instead
+- if you really need to give someone remote access to your local machine, please consider using TeamViewer etc. instead
+
+In any other case, we would love to have you as our valued customer.
+
 
 ## What is it?
 
