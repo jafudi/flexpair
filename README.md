@@ -9,7 +9,7 @@ In any other case, we would love to have you as our valued customer.
 
 ## What is it?
 
-A collection of Terraform modules and cloud-init scripts for deploying a shared cloud desktop (Ubuntu 20.04 LTS) with high quality audio conferencing and self-hosted email inbox to an arbitrary public cloud account. Free tier resources are sufficient and multicloud is actively supported.
+PairPac stands for Pair Programming Platform as Code. More technically, it is a collection of Terraform modules and cloud-init scripts for deploying a shared cloud desktop (Ubuntu 20.04 LTS) with high quality audio conferencing and self-hosted email inbox to an arbitrary public cloud account. Free tier resources are sufficient and multicloud is actively supported.
 
 ## Selected use cases
 
