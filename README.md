@@ -8,6 +8,9 @@ PairPac stands for "Pair programming Platform as Code". This is the use case we 
 - Modular, not a workaround
 - Scalable, not off-the-shelf
 
+and last but not least:
+- less consumption, more reliability
+
 We quickly realized that you can use PairPac in so many more situations.
 
 ## What is it?
