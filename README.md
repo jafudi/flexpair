@@ -9,7 +9,7 @@ PairPac stands for "Pair programming Platform as Code". This is the use case we 
 - Scalable, not off-the-shelf
 
 and last but not least:
-- less consumption, more reliability
+- less consumption (RAM, bandwidth), more reliability
 
 We quickly realized that you can use PairPac in so many more situations.
 
