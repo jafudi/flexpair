@@ -7,7 +7,7 @@ The least thing we want is to waste your precious time. Therefore, please do not
 In any other case, we would love to have you as our valued customer. PairPac is especially suitable for you and your team, if you are looking for a virtual creative space that is
 - interactive yet content-focussed
 - modular and thereby scalable
-- Resource-friendly yet pleasant
+- Resource-friendly yet comfortable
 - persistent yet flexible
 
 ## What is it?
