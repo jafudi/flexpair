@@ -1,14 +1,14 @@
-# PairPac is a Turnkey Multi-cloud Collaboration Platform
+# PairPac.com
 
-The least thing we want is to waste your precious time. Therefore, please do not read any further
-- if you are keen on inviting every work contact into your living room, please consider using Zoom etc. instead
-- if you really need to give someone remote access to your local machine, please consider using TeamViewer etc. instead
+PairPac stands for "Pair programming Platform as Code". This is the use case we started from with continuous emphasis on the following design principles:
+- Interactive, not Big Brother
+- Flexible usage, not volatile
+- Persistent, not locked-in by contract
+- Open standards, not insecure
+- Modular, not a workaround
+- Scalable, not off-the-shelf
 
-In any other case, we would love to have you as our valued customer. PairPac is especially suitable for you and your team, if you are looking for a virtual creative space that is
-- interactive yet content-focussed
-- modular and thereby scalable
-- Resource-friendly yet comfortable
-- persistent yet flexible
+We quickly realized that you can use PairPac in so many more situations.
 
 ## What is it?
 
