@@ -16,8 +16,8 @@ and last but not least achieves:
 
 The least thing we want is to waste your precious time. Therefore, please do not read any further
 
-- if you are keen on inviting every work contact into your living room, please consider using [Zoom](https://zoom.us), [WebEx](https://www.webex.com/de/index.html), [Jitsi](https://jitsi.org) etc. instead
-- if you really need to give someone remote access to your local machine, please consider using [TeamViewer](https://www.teamviewer.com/en/) or comparable established solutions instead
+- if you are keen on inviting every work contact into your living room, you are probably better off using [Zoom](https://zoom.us), [WebEx](https://www.webex.com/de/index.html), [Jitsi](https://jitsi.org) etc.
+- if you really need to give someone remote access to your local machine, please consider using [TeamViewer](https://www.teamviewer.com/en/) or comparable established solutions
 
 In any other case, we would love to have you as our valued customer.
 
