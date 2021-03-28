@@ -1,18 +1,25 @@
-# PairPac is a Turnkey Multi-cloud Collaboration Platform
+# PairPac.com
+
+
+
+PairPac stands for "Pair programming Platform as Code". This is the use case we started from. Then we quickly realized that you can use PairPac in so many more situations. PairPac is especially suitable for you and your team, if you are looking for a virtual creative space that is developed with continuous emphasis on the following design principles:
+
+- Interactive, not Big Brother
+- Flexible usage, not volatile
+- Persistent, not locked-in by contract
+- Open standards, not insecure
+- Modular, not a workaround
+- Scalable, not off-the-shelf
+
+and last but not least achieves:
+- less consumption (RAM, bandwidth) yet more reliability
 
 The least thing we want is to waste your precious time. Therefore, please do not read any further
-- if you are keen on inviting every work contact into your living room, please consider using Zoom etc. instead
-- if you really need to give someone remote access to your local machine, please consider using TeamViewer etc. instead
 
-In any other case, we would love to have you as our valued customer. PairPac is especially suitable for you and your team, if you are looking for a virtual creative space that is
-- interactive yet content-focussed
-- modular and thereby scalable
-- Resource-friendly yet comfortable
-- persistent yet flexible
+- if you are keen on inviting every work contact into your living room, you are probably better off using [Zoom](https://zoom.us), [WebEx](https://www.webex.com/de/index.html), [Jitsi](https://jitsi.org) etc.
+- if you really need to give someone remote access to your local machine, please consider using [TeamViewer](https://www.teamviewer.com/en/) or comparable established solutions
 
-## What is it?
-
-PairPac stands for Pair Programming Platform as Code. More technically, it is a collection of Terraform modules and cloud-init scripts for deploying a shared cloud desktop (Ubuntu 20.04 LTS) with high quality audio conferencing and self-hosted email inbox to an arbitrary public cloud account. Free tier resources are sufficient and multicloud is actively supported.
+In any other case, we would love to have you as our valued customer.
 
 ## Selected use cases
 
@@ -46,6 +53,10 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 
 1. TODO: Assign contacts as well as competitor products to use cases
 2. TODO: Ask people on SurveyCircle to come up with their own emojis for how they understand the description
+
+## What is PairPac at its core, technically?
+
+PairPac stands for Pair Programming Platform as Code. More technically, it is a collection of Terraform modules and cloud-init scripts for deploying a shared cloud desktop (Ubuntu 20.04 LTS) with high quality audio conferencing and self-hosted email inbox to an arbitrary public cloud account. Free tier resources are sufficient and multicloud is actively supported.
 
 ## Some screenshots
 
@@ -184,8 +195,6 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 - [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
 - [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
 
-### Remote Access and Support
-- [TeamViewer](https://www.teamviewer.com/en/)
 
 ### Collaboration Tools
 - [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
@@ -193,8 +202,3 @@ Annotation of user goal levels similar to [Cockburn style](https://en.wikipedia.
 - [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/) and [others](https://raygun.com/blog/remote-pair-programming/)
 - [Gitpod](https://www.gitpod.io)
 
-### Video Conferencing
-- [Jitsi](https://jitsi.org)
-- [LogMeIn GotoMeeting](https://www.gotomeeting.com/de-de)
-- [WebEx](https://www.webex.com/de/index.html)
-- [Zoom](https://zoom.us)
