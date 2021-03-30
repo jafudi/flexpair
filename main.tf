@@ -25,7 +25,7 @@ module "amazon_infrastructure" {
 
 module "credentials_generator" {
   registered_domain     = var.registered_domain
-  subdomain_proposition = var.TFC_WORKSPACE_NAME // 48hrs.jafudi.de
+  subdomain_proposition = var.TFC_WORKSPACE_NAME
   gateway_cloud_info    = module.amazon_infrastructure.additional_metadata
   desktop_cloud_info    = module.oracle_infrastructure.additional_metadata
   source                = "./modules/terraform-tls-credentials"

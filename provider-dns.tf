@@ -17,7 +17,7 @@ provider "acme" {
 
 variable "registered_domain" {
   type        = string
-  default     = "jafudi.de" // Registered through internetwerk.de
+  default     = "pairpac.com" // Registered through internetwerk.de
   description = "A registered domain pointing to rfc2136_name_server."
 }
 
@@ -34,12 +34,12 @@ variable "rfc2136_name_server" {
 variable "rfc2136_key_name" {
   description = "The name of the TSIG key used to sign the DNS update messages"
   type        = string
-  default     = "tsig-164066.dynv6.com."
+  default     = "tsig-224951.dynv6.com."
 }
 
 variable "rfc2136_key_secret" {
   type        = string
-  default     = "7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL9qnZBX7uy6Vi8r+46/HmOrMq767RRTPA=="
+  default     = "wg46X5+cZJdF7rwInheeqPv/NK56d0Oj+m7LCbuG0186tgxlvgzWR3qoynQAbpG68272pT5HutAzbbqI+IxWgA=="
   description = "A Base64-encoded string containing the shared secret to be used for TSIG"
 }
 

@@ -160,9 +160,9 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | oci\_region | An Oracle Cloud Infrastructure region. Must be equal to the home region of the tenancy. | `string` | `"eu-frankfurt-1"` | no |
 | oci\_tenancy\_ocid | Oracle Cloud ID (OCID) of the tenancy | `string` | `"ocid1.tenancy.oc1..aaaaaaaas3oie74wurpodkrygjpztwfscowu3rx42hadgheqrcmesnefllqa"` | no |
 | oci\_user\_ocid | The user's Oracle Cloud ID (OCID) | `string` | `"ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa"` | no |
-| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"jafudi.de"` | no |
-| rfc2136\_key\_name | The name of the TSIG key used to sign the DNS update messages | `string` | `"tsig-164066.dynv6.com."` | no |
-| rfc2136\_key\_secret | A Base64-encoded string containing the shared secret to be used for TSIG | `string` | `"7I57AtxCp7PHfAfWsV9TviS+B3glddd9PGoBMo1bYBSicoKM3BdaQL9qnZBX7uy6Vi8r+46/HmOrMq767RRTPA=="` | no |
+| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"pairpac.com"` | no |
+| rfc2136\_key\_name | The name of the TSIG key used to sign the DNS update messages | `string` | `"tsig-224951.dynv6.com."` | no |
+| rfc2136\_key\_secret | A Base64-encoded string containing the shared secret to be used for TSIG | `string` | `"wg46X5+cZJdF7rwInheeqPv/NK56d0Oj+m7LCbuG0186tgxlvgzWR3qoynQAbpG68272pT5HutAzbbqI+IxWgA=="` | no |
 | rfc2136\_name\_server | The IPv4 address or URL of the DNS server to send updates to | `string` | `"ns1.dynv6.com"` | no |
 | rfc2136\_tsig\_algorithm | When using TSIG authentication, the algorithm to use for HMAC | `string` | `"hmac-sha512"` | no |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
@@ -201,4 +201,3 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 - [BigBlueButton](https://bigbluebutton.org)
 - [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/) and [others](https://raygun.com/blog/remote-pair-programming/)
 - [Gitpod](https://www.gitpod.io)
-
