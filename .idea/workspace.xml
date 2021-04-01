@@ -24,8 +24,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Use updated and renamed module versions">
+      <change beforePath="$PROJECT_DIR$/../mumble-web/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mumble-web/app/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../terraform-cloudinit-satellite/11-user-scripts/15-install-packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../terraform-cloudinit-satellite/11-user-scripts/15-install-packages.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs.tf" beforeDir="false" afterPath="$PROJECT_DIR$/outputs.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/podcasts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/podcasts.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
         <entry key="$PROJECT_DIR$" value="buytheway" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../terraform-cloudinit-station" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../mumble-web" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GithubDefaultAccount">
@@ -78,11 +80,11 @@
       <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../mumble-web/themes/MetroMumbleLight/img" />
+      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite/11-user-scripts" />
+      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite/userscripts" />
+      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite/cloudconfig" />
       <recent name="$PROJECT_DIR$/documentation" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/modules/credential_generator/documentation" />
-      <recent name="$PROJECT_DIR$/modules/shared_infrastructure_oci" />
-      <recent name="$PROJECT_DIR$/modules/certified_dns_hostname/documentation" />
     </key>
   </component>
   <component name="RunManager" selected="Shell Script.30-lubuntu-desktop.sh">
@@ -128,335 +130,6 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00416" summary="Display hint on the desktop background, how to open side menu bar">
-      <created>1615319143913</created>
-      <option name="number" value="00416" />
-      <option name="presentableId" value="LOCAL-00416" />
-      <option name="project" value="LOCAL" />
-      <updated>1615319143913</updated>
-    </task>
-    <task id="LOCAL-00417" summary="Display hint on the desktop background, how to open side menu bar">
-      <created>1615319317045</created>
-      <option name="number" value="00417" />
-      <option name="presentableId" value="LOCAL-00417" />
-      <option name="project" value="LOCAL" />
-      <updated>1615319317045</updated>
-    </task>
-    <task id="LOCAL-00418" summary="apt-get install -qq imagemagick imagemagick-doc">
-      <created>1615324757564</created>
-      <option name="number" value="00418" />
-      <option name="presentableId" value="LOCAL-00418" />
-      <option name="project" value="LOCAL" />
-      <updated>1615324757565</updated>
-    </task>
-    <task id="LOCAL-00419" summary="Display hint on the desktop background, how to open side menu bar">
-      <created>1615330993980</created>
-      <option name="number" value="00419" />
-      <option name="presentableId" value="LOCAL-00419" />
-      <option name="project" value="LOCAL" />
-      <updated>1615330993980</updated>
-    </task>
-    <task id="LOCAL-00420" summary="Display hint how to upload/send files">
-      <created>1615373461062</created>
-      <option name="number" value="00420" />
-      <option name="presentableId" value="LOCAL-00420" />
-      <option name="project" value="LOCAL" />
-      <updated>1615373461064</updated>
-    </task>
-    <task id="LOCAL-00421" summary="Add palemoon">
-      <created>1615376139914</created>
-      <option name="number" value="00421" />
-      <option name="presentableId" value="LOCAL-00421" />
-      <option name="project" value="LOCAL" />
-      <updated>1615376139916</updated>
-    </task>
-    <task id="LOCAL-00422" summary="Add palemoon">
-      <created>1615377034309</created>
-      <option name="number" value="00422" />
-      <option name="presentableId" value="LOCAL-00422" />
-      <option name="project" value="LOCAL" />
-      <updated>1615377034309</updated>
-    </task>
-    <task id="LOCAL-00423" summary="Add palemoon browser and double size of pcman-qt window">
-      <created>1615392558644</created>
-      <option name="number" value="00423" />
-      <option name="presentableId" value="LOCAL-00423" />
-      <option name="project" value="LOCAL" />
-      <updated>1615392558645</updated>
-    </task>
-    <task id="LOCAL-00424" summary="Need gnupg">
-      <created>1615393509151</created>
-      <option name="number" value="00424" />
-      <option name="presentableId" value="LOCAL-00424" />
-      <option name="project" value="LOCAL" />
-      <updated>1615393509151</updated>
-    </task>
-    <task id="LOCAL-00425" summary="Need gnupg">
-      <created>1615395155816</created>
-      <option name="number" value="00425" />
-      <option name="presentableId" value="LOCAL-00425" />
-      <option name="project" value="LOCAL" />
-      <updated>1615395155816</updated>
-    </task>
-    <task id="LOCAL-00426" summary="Generic is mostly better">
-      <created>1615407098086</created>
-      <option name="number" value="00426" />
-      <option name="presentableId" value="LOCAL-00426" />
-      <option name="project" value="LOCAL" />
-      <updated>1615407098087</updated>
-    </task>
-    <task id="LOCAL-00427" summary="Generic is mostly better">
-      <created>1615410218535</created>
-      <option name="number" value="00427" />
-      <option name="presentableId" value="LOCAL-00427" />
-      <option name="project" value="LOCAL" />
-      <updated>1615410218535</updated>
-    </task>
-    <task id="LOCAL-00428" summary="Parameterize password as environment variable">
-      <created>1615411855139</created>
-      <option name="number" value="00428" />
-      <option name="presentableId" value="LOCAL-00428" />
-      <option name="project" value="LOCAL" />
-      <updated>1615411855139</updated>
-    </task>
-    <task id="LOCAL-00429" summary="Pass murmur password as password for guacamole">
-      <created>1615414000602</created>
-      <option name="number" value="00429" />
-      <option name="presentableId" value="LOCAL-00429" />
-      <option name="project" value="LOCAL" />
-      <updated>1615414000602</updated>
-    </task>
-    <task id="LOCAL-00430" summary="Bump installer versions">
-      <created>1615415045016</created>
-      <option name="number" value="00430" />
-      <option name="presentableId" value="LOCAL-00430" />
-      <option name="project" value="LOCAL" />
-      <updated>1615415045016</updated>
-    </task>
-    <task id="LOCAL-00431" summary="Print Guacamole manual as PDF">
-      <created>1615460421307</created>
-      <option name="number" value="00431" />
-      <option name="presentableId" value="LOCAL-00431" />
-      <option name="project" value="LOCAL" />
-      <updated>1615460421308</updated>
-    </task>
-    <task id="LOCAL-00432" summary="Skip test for /desktop-traffic/ for now">
-      <created>1615460612649</created>
-      <option name="number" value="00432" />
-      <option name="presentableId" value="LOCAL-00432" />
-      <option name="project" value="LOCAL" />
-      <updated>1615460612649</updated>
-    </task>
-    <task id="LOCAL-00433" summary="Created config files are artifacts">
-      <created>1615465867990</created>
-      <option name="number" value="00433" />
-      <option name="presentableId" value="LOCAL-00433" />
-      <option name="project" value="LOCAL" />
-      <updated>1615465867994</updated>
-    </task>
-    <task id="LOCAL-00434" summary="Collect created config files in artifacts folder">
-      <created>1615466778555</created>
-      <option name="number" value="00434" />
-      <option name="presentableId" value="LOCAL-00434" />
-      <option name="project" value="LOCAL" />
-      <updated>1615466778556</updated>
-    </task>
-    <task id="LOCAL-00435" summary="Use sshd -t to test config file">
-      <created>1615467102982</created>
-      <option name="number" value="00435" />
-      <option name="presentableId" value="LOCAL-00435" />
-      <option name="project" value="LOCAL" />
-      <updated>1615467102982</updated>
-    </task>
-    <task id="LOCAL-00436" summary="Fix &quot;Missing privilege separation directory: /run/sshd&quot;">
-      <created>1615467590662</created>
-      <option name="number" value="00436" />
-      <option name="presentableId" value="LOCAL-00436" />
-      <option name="project" value="LOCAL" />
-      <updated>1615467590662</updated>
-    </task>
-    <task id="LOCAL-00437" summary="Name artifact folders">
-      <created>1615468171330</created>
-      <option name="number" value="00437" />
-      <option name="presentableId" value="LOCAL-00437" />
-      <option name="project" value="LOCAL" />
-      <updated>1615468171330</updated>
-    </task>
-    <task id="LOCAL-00438" summary="Fix copy syntax">
-      <created>1615468576764</created>
-      <option name="number" value="00438" />
-      <option name="presentableId" value="LOCAL-00438" />
-      <option name="project" value="LOCAL" />
-      <updated>1615468576764</updated>
-    </task>
-    <task id="LOCAL-00439" summary="Fix copy syntax">
-      <created>1615469703255</created>
-      <option name="number" value="00439" />
-      <option name="presentableId" value="LOCAL-00439" />
-      <option name="project" value="LOCAL" />
-      <updated>1615469703256</updated>
-    </task>
-    <task id="LOCAL-00440" summary="Try removing single quotes">
-      <created>1615470560474</created>
-      <option name="number" value="00440" />
-      <option name="presentableId" value="LOCAL-00440" />
-      <option name="project" value="LOCAL" />
-      <updated>1615470560474</updated>
-    </task>
-    <task id="LOCAL-00441" summary="Substitute env variable GUAC_PASSWORD">
-      <created>1615472615414</created>
-      <option name="number" value="00441" />
-      <option name="presentableId" value="LOCAL-00441" />
-      <option name="project" value="LOCAL" />
-      <updated>1615472615415</updated>
-    </task>
-    <task id="LOCAL-00442" summary="Output test.js">
-      <created>1615473577897</created>
-      <option name="number" value="00442" />
-      <option name="presentableId" value="LOCAL-00442" />
-      <option name="project" value="LOCAL" />
-      <updated>1615473577897</updated>
-    </task>
-    <task id="LOCAL-00443" summary="User name &quot;editor&quot; instead of &quot;you&quot;">
-      <created>1615484983131</created>
-      <option name="number" value="00443" />
-      <option name="presentableId" value="LOCAL-00443" />
-      <option name="project" value="LOCAL" />
-      <updated>1615484983132</updated>
-    </task>
-    <task id="LOCAL-00444" summary="Bump gateway installer version.">
-      <created>1615494939871</created>
-      <option name="number" value="00444" />
-      <option name="presentableId" value="LOCAL-00444" />
-      <option name="project" value="LOCAL" />
-      <updated>1615494939875</updated>
-    </task>
-    <task id="LOCAL-00445" summary="Roll back to gateway version 1.2.2 and see if that still works">
-      <created>1615622788183</created>
-      <option name="number" value="00445" />
-      <option name="presentableId" value="LOCAL-00445" />
-      <option name="project" value="LOCAL" />
-      <updated>1615622788189</updated>
-    </task>
-    <task id="LOCAL-00446" summary="Roll back to gateway version 1.2.1 and see if that still work">
-      <created>1615625785569</created>
-      <option name="number" value="00446" />
-      <option name="presentableId" value="LOCAL-00446" />
-      <option name="project" value="LOCAL" />
-      <updated>1615625785570</updated>
-    </task>
-    <task id="LOCAL-00447" summary="Test desktop-traffic as before">
-      <created>1615630479421</created>
-      <option name="number" value="00447" />
-      <option name="presentableId" value="LOCAL-00447" />
-      <option name="project" value="LOCAL" />
-      <updated>1615630479423</updated>
-    </task>
-    <task id="LOCAL-00448" summary="Test whether ANY container in docker-compose an reach gateway, using ping etc.">
-      <created>1615632335523</created>
-      <option name="number" value="00448" />
-      <option name="presentableId" value="LOCAL-00448" />
-      <option name="project" value="LOCAL" />
-      <updated>1615632335523</updated>
-    </task>
-    <task id="LOCAL-00449" summary="Disable chekov for AWS because it is a pain in the a**">
-      <created>1615638725343</created>
-      <option name="number" value="00449" />
-      <option name="presentableId" value="LOCAL-00449" />
-      <option name="project" value="LOCAL" />
-      <updated>1615638725344</updated>
-    </task>
-    <task id="LOCAL-00450" summary="Fix typo">
-      <created>1615639344989</created>
-      <option name="number" value="00450" />
-      <option name="presentableId" value="LOCAL-00450" />
-      <option name="project" value="LOCAL" />
-      <updated>1615639344989</updated>
-    </task>
-    <task id="LOCAL-00451" summary="Install systemd for tests">
-      <created>1615639527170</created>
-      <option name="number" value="00451" />
-      <option name="presentableId" value="LOCAL-00451" />
-      <option name="project" value="LOCAL" />
-      <updated>1615639527170</updated>
-    </task>
-    <task id="LOCAL-00452" summary="Parameterize port for vnc forwarded connection">
-      <created>1615640277752</created>
-      <option name="number" value="00452" />
-      <option name="presentableId" value="LOCAL-00452" />
-      <option name="project" value="LOCAL" />
-      <updated>1615640277752</updated>
-    </task>
-    <task id="LOCAL-00453" summary="Parameterize port for vnc forwarded connection">
-      <created>1615640298911</created>
-      <option name="number" value="00453" />
-      <option name="presentableId" value="LOCAL-00453" />
-      <option name="project" value="LOCAL" />
-      <updated>1615640298911</updated>
-    </task>
-    <task id="LOCAL-00454" summary="Fix typo">
-      <created>1615641368582</created>
-      <option name="number" value="00454" />
-      <option name="presentableId" value="LOCAL-00454" />
-      <option name="project" value="LOCAL" />
-      <updated>1615641368582</updated>
-    </task>
-    <task id="LOCAL-00455" summary="Parameterize vnc port(s)">
-      <created>1615641409288</created>
-      <option name="number" value="00455" />
-      <option name="presentableId" value="LOCAL-00455" />
-      <option name="project" value="LOCAL" />
-      <updated>1615641409288</updated>
-    </task>
-    <task id="LOCAL-00456" summary="Add variable">
-      <created>1615641680173</created>
-      <option name="number" value="00456" />
-      <option name="presentableId" value="LOCAL-00456" />
-      <option name="project" value="LOCAL" />
-      <updated>1615641680173</updated>
-    </task>
-    <task id="LOCAL-00457" summary="echo Done to get 0 exit code">
-      <created>1615642167292</created>
-      <option name="number" value="00457" />
-      <option name="presentableId" value="LOCAL-00457" />
-      <option name="project" value="LOCAL" />
-      <updated>1615642167292</updated>
-    </task>
-    <task id="LOCAL-00458" summary="echo Done to get 0 exit code">
-      <created>1615642410662</created>
-      <option name="number" value="00458" />
-      <option name="presentableId" value="LOCAL-00458" />
-      <option name="project" value="LOCAL" />
-      <updated>1615642410662</updated>
-    </task>
-    <task id="LOCAL-00459" summary="Provide test values for variables">
-      <created>1615642620530</created>
-      <option name="number" value="00459" />
-      <option name="presentableId" value="LOCAL-00459" />
-      <option name="project" value="LOCAL" />
-      <updated>1615642620530</updated>
-    </task>
-    <task id="LOCAL-00460" summary="Gateway VNC port unlike the desktop one needs to be explicitely specified">
-      <created>1615643835644</created>
-      <option name="number" value="00460" />
-      <option name="presentableId" value="LOCAL-00460" />
-      <option name="project" value="LOCAL" />
-      <updated>1615643835644</updated>
-    </task>
-    <task id="LOCAL-00461" summary="Randomize VNC port">
-      <created>1615644948203</created>
-      <option name="number" value="00461" />
-      <option name="presentableId" value="LOCAL-00461" />
-      <option name="project" value="LOCAL" />
-      <updated>1615644948203</updated>
-    </task>
-    <task id="LOCAL-00462" summary="tonumber">
-      <created>1615645339754</created>
-      <option name="number" value="00462" />
-      <option name="presentableId" value="LOCAL-00462" />
-      <option name="project" value="LOCAL" />
-      <updated>1615645339754</updated>
-    </task>
     <task id="LOCAL-00463" summary="Think easy">
       <created>1615645444650</created>
       <option name="number" value="00463" />
@@ -471,7 +144,336 @@
       <option name="project" value="LOCAL" />
       <updated>1615670789890</updated>
     </task>
-    <option name="localTasksCounter" value="465" />
+    <task id="LOCAL-00465" summary="Bugfix">
+      <created>1616229230902</created>
+      <option name="number" value="00465" />
+      <option name="presentableId" value="LOCAL-00465" />
+      <option name="project" value="LOCAL" />
+      <updated>1616229230903</updated>
+    </task>
+    <task id="LOCAL-00466" summary="Defer initVoice until user hits connect button">
+      <created>1616260160768</created>
+      <option name="number" value="00466" />
+      <option name="presentableId" value="LOCAL-00466" />
+      <option name="project" value="LOCAL" />
+      <updated>1616260160770</updated>
+    </task>
+    <task id="LOCAL-00467" summary="Add drop down menu for microphone selection">
+      <created>1616270099708</created>
+      <option name="number" value="00467" />
+      <option name="presentableId" value="LOCAL-00467" />
+      <option name="project" value="LOCAL" />
+      <updated>1616270099711</updated>
+    </task>
+    <task id="LOCAL-00468" summary="Bump Alpine version">
+      <created>1616273321361</created>
+      <option name="number" value="00468" />
+      <option name="presentableId" value="LOCAL-00468" />
+      <option name="project" value="LOCAL" />
+      <updated>1616273321362</updated>
+    </task>
+    <task id="LOCAL-00469" summary="Specify version of jafudi/mumble-web-lite to use">
+      <created>1616363986696</created>
+      <option name="number" value="00469" />
+      <option name="presentableId" value="LOCAL-00469" />
+      <option name="project" value="LOCAL" />
+      <updated>1616363986698</updated>
+    </task>
+    <task id="LOCAL-00470" summary="Specify version of jafudi/mumble-web-lite to use">
+      <created>1616364027869</created>
+      <option name="number" value="00470" />
+      <option name="presentableId" value="LOCAL-00470" />
+      <option name="project" value="LOCAL" />
+      <updated>1616364027869</updated>
+    </task>
+    <task id="LOCAL-00471" summary="Install atbswp macro recorder">
+      <created>1616369431974</created>
+      <option name="number" value="00471" />
+      <option name="presentableId" value="LOCAL-00471" />
+      <option name="project" value="LOCAL" />
+      <updated>1616369431974</updated>
+    </task>
+    <task id="LOCAL-00472" summary="Remove pulseeffects as if messes up audio config">
+      <created>1616373794387</created>
+      <option name="number" value="00472" />
+      <option name="presentableId" value="LOCAL-00472" />
+      <option name="project" value="LOCAL" />
+      <updated>1616373794387</updated>
+    </task>
+    <task id="LOCAL-00473" summary="Make backups of config files">
+      <created>1616404092437</created>
+      <option name="number" value="00473" />
+      <option name="presentableId" value="LOCAL-00473" />
+      <option name="project" value="LOCAL" />
+      <updated>1616404092437</updated>
+    </task>
+    <task id="LOCAL-00474" summary="Make backups of config files">
+      <created>1616406790287</created>
+      <option name="number" value="00474" />
+      <option name="presentableId" value="LOCAL-00474" />
+      <option name="project" value="LOCAL" />
+      <updated>1616406790288</updated>
+    </task>
+    <task id="LOCAL-00475" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
+      <created>1616414226125</created>
+      <option name="number" value="00475" />
+      <option name="presentableId" value="LOCAL-00475" />
+      <option name="project" value="LOCAL" />
+      <updated>1616414226126</updated>
+    </task>
+    <task id="LOCAL-00476" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
+      <created>1616414978336</created>
+      <option name="number" value="00476" />
+      <option name="presentableId" value="LOCAL-00476" />
+      <option name="project" value="LOCAL" />
+      <updated>1616414978336</updated>
+    </task>
+    <task id="LOCAL-00477" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
+      <created>1616415613326</created>
+      <option name="number" value="00477" />
+      <option name="presentableId" value="LOCAL-00477" />
+      <option name="project" value="LOCAL" />
+      <updated>1616415613326</updated>
+    </task>
+    <task id="LOCAL-00478" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
+      <created>1616416743742</created>
+      <option name="number" value="00478" />
+      <option name="presentableId" value="LOCAL-00478" />
+      <option name="project" value="LOCAL" />
+      <updated>1616416743743</updated>
+    </task>
+    <task id="LOCAL-00479" summary="Cleanup folders">
+      <created>1616423124000</created>
+      <option name="number" value="00479" />
+      <option name="presentableId" value="LOCAL-00479" />
+      <option name="project" value="LOCAL" />
+      <updated>1616423124000</updated>
+    </task>
+    <task id="LOCAL-00480" summary="Cleanup folders">
+      <created>1616431543020</created>
+      <option name="number" value="00480" />
+      <option name="presentableId" value="LOCAL-00480" />
+      <option name="project" value="LOCAL" />
+      <updated>1616431543020</updated>
+    </task>
+    <task id="LOCAL-00481" summary="python3 -m pip install pyautogui pynput --system">
+      <created>1616435418620</created>
+      <option name="number" value="00481" />
+      <option name="presentableId" value="LOCAL-00481" />
+      <option name="project" value="LOCAL" />
+      <updated>1616435418620</updated>
+    </task>
+    <task id="LOCAL-00482" summary="python3 -m pip install pyautogui pynput --system">
+      <created>1616437271907</created>
+      <option name="number" value="00482" />
+      <option name="presentableId" value="LOCAL-00482" />
+      <option name="project" value="LOCAL" />
+      <updated>1616437271907</updated>
+    </task>
+    <task id="LOCAL-00483" summary="Test how templatefile funtion behaves if superfluous arguments are passed">
+      <created>1616438074892</created>
+      <option name="number" value="00483" />
+      <option name="presentableId" value="LOCAL-00483" />
+      <option name="project" value="LOCAL" />
+      <updated>1616438074892</updated>
+    </task>
+    <task id="LOCAL-00484" summary="Add macros to initialize Trojita and VLC">
+      <created>1616443658062</created>
+      <option name="number" value="00484" />
+      <option name="presentableId" value="LOCAL-00484" />
+      <option name="project" value="LOCAL" />
+      <updated>1616443658062</updated>
+    </task>
+    <task id="LOCAL-00485" summary="Add macros to initialize Trojita and VLC">
+      <created>1616444625092</created>
+      <option name="number" value="00485" />
+      <option name="presentableId" value="LOCAL-00485" />
+      <option name="project" value="LOCAL" />
+      <updated>1616444625093</updated>
+    </task>
+    <task id="LOCAL-00486" summary="Split installation and customization of desktop.">
+      <created>1616450677138</created>
+      <option name="number" value="00486" />
+      <option name="presentableId" value="LOCAL-00486" />
+      <option name="project" value="LOCAL" />
+      <updated>1616450677138</updated>
+    </task>
+    <task id="LOCAL-00487" summary="Only Mumble init script works ok">
+      <created>1616450982889</created>
+      <option name="number" value="00487" />
+      <option name="presentableId" value="LOCAL-00487" />
+      <option name="project" value="LOCAL" />
+      <updated>1616450982889</updated>
+    </task>
+    <task id="LOCAL-00488" summary="Bugfix typo">
+      <created>1616451207974</created>
+      <option name="number" value="00488" />
+      <option name="presentableId" value="LOCAL-00488" />
+      <option name="project" value="LOCAL" />
+      <updated>1616451207974</updated>
+    </task>
+    <task id="LOCAL-00489" summary="Add marketing text">
+      <created>1616791145462</created>
+      <option name="number" value="00489" />
+      <option name="presentableId" value="LOCAL-00489" />
+      <option name="project" value="LOCAL" />
+      <updated>1616791145465</updated>
+    </task>
+    <task id="LOCAL-00490" summary="Add marketing text">
+      <created>1616816974202</created>
+      <option name="number" value="00490" />
+      <option name="presentableId" value="LOCAL-00490" />
+      <option name="project" value="LOCAL" />
+      <updated>1616816974202</updated>
+    </task>
+    <task id="LOCAL-00491" summary="Redirect users to PairPac repo via Rebrandly in order to collect browser info">
+      <created>1616963803386</created>
+      <option name="number" value="00491" />
+      <option name="presentableId" value="LOCAL-00491" />
+      <option name="project" value="LOCAL" />
+      <updated>1616963803386</updated>
+    </task>
+    <task id="LOCAL-00492" summary="Add some suitable SVG from Papirus icon theme">
+      <created>1616963918079</created>
+      <option name="number" value="00492" />
+      <option name="presentableId" value="LOCAL-00492" />
+      <option name="project" value="LOCAL" />
+      <updated>1616963918079</updated>
+    </task>
+    <task id="LOCAL-00493" summary="Add two more clickable icons that will open the local mail program in the future">
+      <created>1616964884531</created>
+      <option name="number" value="00493" />
+      <option name="presentableId" value="LOCAL-00493" />
+      <option name="project" value="LOCAL" />
+      <updated>1616964884531</updated>
+    </task>
+    <task id="LOCAL-00494" summary="Add mailto links with subject">
+      <created>1616965799014</created>
+      <option name="number" value="00494" />
+      <option name="presentableId" value="LOCAL-00494" />
+      <option name="project" value="LOCAL" />
+      <updated>1616965799014</updated>
+    </task>
+    <task id="LOCAL-00495" summary="Redeploy">
+      <created>1616966143521</created>
+      <option name="number" value="00495" />
+      <option name="presentableId" value="LOCAL-00495" />
+      <option name="project" value="LOCAL" />
+      <updated>1616966143521</updated>
+    </task>
+    <task id="LOCAL-00496" summary="Just a normal img tag">
+      <created>1616969643368</created>
+      <option name="number" value="00496" />
+      <option name="presentableId" value="LOCAL-00496" />
+      <option name="project" value="LOCAL" />
+      <updated>1616969643369</updated>
+    </task>
+    <task id="LOCAL-00497" summary="iframe allow=&quot;clipboard-read; clipboard-write&quot; as advised here: https://web.dev/async-clipboard/#permissions-policy-integration">
+      <created>1616979997089</created>
+      <option name="number" value="00497" />
+      <option name="presentableId" value="LOCAL-00497" />
+      <option name="project" value="LOCAL" />
+      <updated>1616979997090</updated>
+    </task>
+    <task id="LOCAL-00498" summary="Execute getClipboardContents() once in order to obtain user permission">
+      <created>1617002376355</created>
+      <option name="number" value="00498" />
+      <option name="presentableId" value="LOCAL-00498" />
+      <option name="project" value="LOCAL" />
+      <updated>1617002376358</updated>
+    </task>
+    <task id="LOCAL-00499" summary="add method initClipboard()">
+      <created>1617005851535</created>
+      <option name="number" value="00499" />
+      <option name="presentableId" value="LOCAL-00499" />
+      <option name="project" value="LOCAL" />
+      <updated>1617005851537</updated>
+    </task>
+    <task id="LOCAL-00500" summary="Bugfix">
+      <created>1617040785631</created>
+      <option name="number" value="00500" />
+      <option name="presentableId" value="LOCAL-00500" />
+      <option name="project" value="LOCAL" />
+      <updated>1617040785634</updated>
+    </task>
+    <task id="LOCAL-00501" summary="A call to clipboard.write or clipboard.writeText outside the scope of a user gesture (such as &quot;click&quot; or &quot;touch&quot; event handlers) will result in the immediate rejection of the promise returned by the API call.">
+      <created>1617045140558</created>
+      <option name="number" value="00501" />
+      <option name="presentableId" value="LOCAL-00501" />
+      <option name="project" value="LOCAL" />
+      <updated>1617045140559</updated>
+    </task>
+    <task id="LOCAL-00502" summary="onmouseover=&quot;navigator.clipboard.readText();">
+      <created>1617048265792</created>
+      <option name="number" value="00502" />
+      <option name="presentableId" value="LOCAL-00502" />
+      <option name="project" value="LOCAL" />
+      <updated>1617048265801</updated>
+    </task>
+    <task id="LOCAL-00503" summary="Try using background image">
+      <created>1617051025832</created>
+      <option name="number" value="00503" />
+      <option name="presentableId" value="LOCAL-00503" />
+      <option name="project" value="LOCAL" />
+      <updated>1617051025832</updated>
+    </task>
+    <task id="LOCAL-00504" summary="Try using background image">
+      <created>1617052874138</created>
+      <option name="number" value="00504" />
+      <option name="presentableId" value="LOCAL-00504" />
+      <option name="project" value="LOCAL" />
+      <updated>1617052874139</updated>
+    </task>
+    <task id="LOCAL-00505" summary="Try using background image">
+      <created>1617053151019</created>
+      <option name="number" value="00505" />
+      <option name="presentableId" value="LOCAL-00505" />
+      <option name="project" value="LOCAL" />
+      <updated>1617053151020</updated>
+    </task>
+    <task id="LOCAL-00506" summary="Create proper background based on an image found here: https://securitytrails.com/blog/working-remotely">
+      <created>1617134762222</created>
+      <option name="number" value="00506" />
+      <option name="presentableId" value="LOCAL-00506" />
+      <option name="project" value="LOCAL" />
+      <updated>1617134762224</updated>
+    </task>
+    <task id="LOCAL-00507" summary="Allow HTML in messages">
+      <created>1617136725454</created>
+      <option name="number" value="00507" />
+      <option name="presentableId" value="LOCAL-00507" />
+      <option name="project" value="LOCAL" />
+      <updated>1617136725454</updated>
+    </task>
+    <task id="LOCAL-00508" summary="Switch to pairpac.com from jafudi.de">
+      <created>1617136957660</created>
+      <option name="number" value="00508" />
+      <option name="presentableId" value="LOCAL-00508" />
+      <option name="project" value="LOCAL" />
+      <updated>1617136957660</updated>
+    </task>
+    <task id="LOCAL-00509" summary="Update background image">
+      <created>1617214547406</created>
+      <option name="number" value="00509" />
+      <option name="presentableId" value="LOCAL-00509" />
+      <option name="project" value="LOCAL" />
+      <updated>1617214547408</updated>
+    </task>
+    <task id="LOCAL-00510" summary="Update background image">
+      <created>1617216428974</created>
+      <option name="number" value="00510" />
+      <option name="presentableId" value="LOCAL-00510" />
+      <option name="project" value="LOCAL" />
+      <updated>1617216428975</updated>
+    </task>
+    <task id="LOCAL-00511" summary="Update background image">
+      <created>1617216517000</created>
+      <option name="number" value="00511" />
+      <option name="presentableId" value="LOCAL-00511" />
+      <option name="project" value="LOCAL" />
+      <updated>1617216517001</updated>
+    </task>
+    <option name="localTasksCounter" value="512" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -492,31 +494,31 @@
       <path value="$PROJECT_DIR$/../blast-radius" />
       <path value="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
     </ignored-roots>
-    <MESSAGE value="Name artifact folders" />
-    <MESSAGE value="Fix copy syntax" />
-    <MESSAGE value="Try removing single quotes" />
-    <MESSAGE value="Substitute env variable GUAC_PASSWORD" />
-    <MESSAGE value="Output test.js" />
-    <MESSAGE value="User name &quot;editor&quot; instead of &quot;you&quot;" />
-    <MESSAGE value="Bump gateway installer version." />
-    <MESSAGE value="Roll back to gateway version 1.2.2 and see if that still works" />
-    <MESSAGE value="Roll back to gateway version 1.2.1 and see if that still work" />
-    <MESSAGE value="Test desktop-traffic as before" />
-    <MESSAGE value="Test whether ANY container in docker-compose an reach gateway, using ping etc." />
-    <MESSAGE value="Newest AWS Ubuntu image requires systemctl start --now iptables.service manually" />
-    <MESSAGE value="Disable chekov for AWS because it is a pain in the a**" />
-    <MESSAGE value="Install systemd for tests" />
-    <MESSAGE value="Parameterize port for vnc forwarded connection" />
-    <MESSAGE value="Fix typo" />
-    <MESSAGE value="Parameterize vnc port(s)" />
-    <MESSAGE value="Add variable" />
-    <MESSAGE value="echo Done to get 0 exit code" />
-    <MESSAGE value="Provide test values for variables" />
-    <MESSAGE value="Gateway VNC port unlike the desktop one needs to be explicitely specified" />
-    <MESSAGE value="Randomize VNC port" />
-    <MESSAGE value="tonumber" />
-    <MESSAGE value="Think easy" />
-    <MESSAGE value="Restart iptables and netfilter-persistent wrapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restart iptables and netfilter-persistent wrapper" />
+    <MESSAGE value="Cleanup folders" />
+    <MESSAGE value="python3 -m pip install pyautogui pynput --system" />
+    <MESSAGE value="Test how templatefile funtion behaves if superfluous arguments are passed" />
+    <MESSAGE value="Add macros to initialize Trojita and VLC" />
+    <MESSAGE value="Split installation and customization of desktop." />
+    <MESSAGE value="Only Mumble init script works ok" />
+    <MESSAGE value="Bugfix typo" />
+    <MESSAGE value="Add marketing text" />
+    <MESSAGE value="Redirect users to PairPac repo via Rebrandly in order to collect browser info" />
+    <MESSAGE value="Add some suitable SVG from Papirus icon theme" />
+    <MESSAGE value="Add two more clickable icons that will open the local mail program in the future" />
+    <MESSAGE value="Add mailto links with subject" />
+    <MESSAGE value="Redeploy" />
+    <MESSAGE value="Just a normal img tag" />
+    <MESSAGE value="iframe allow=&quot;clipboard-read; clipboard-write&quot; as advised here: https://web.dev/async-clipboard/#permissions-policy-integration" />
+    <MESSAGE value="Execute getClipboardContents() once in order to obtain user permission" />
+    <MESSAGE value="add method initClipboard()" />
+    <MESSAGE value="Bugfix" />
+    <MESSAGE value="A call to clipboard.write or clipboard.writeText outside the scope of a user gesture (such as &quot;click&quot; or &quot;touch&quot; event handlers) will result in the immediate rejection of the promise returned by the API call." />
+    <MESSAGE value="onmouseover=&quot;navigator.clipboard.readText();" />
+    <MESSAGE value="Try using background image" />
+    <MESSAGE value="Create proper background based on an image found here: https://securitytrails.com/blog/working-remotely" />
+    <MESSAGE value="Allow HTML in messages" />
+    <MESSAGE value="Switch to pairpac.com from jafudi.de" />
+    <MESSAGE value="Update background image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update background image" />
   </component>
 </project>
