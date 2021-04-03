@@ -1,6 +1,8 @@
-# PairPac.com
+# Welcome to PairPac
 
+We enable voice-first hands-on co-creation - everywhere
 
+Connect your ears, eyes and hands with like-minded people around the world and build cool stuff together
 
 PairPac stands for "Pair programming Platform as Code". This is the use case we started from. Then we quickly realized that you can use PairPac in so many more situations. PairPac is especially suitable for you and your team, if you are looking for a virtual creative space that is developed with continuous emphasis on the following design principles:
 
