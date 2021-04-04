@@ -129,7 +129,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | credentials_generator | ./modules/terraform-tls-credentials |  |
 | desktop_installer | app.terraform.io/jafudi/satellite/cloudinit | 1.3.12 |
 | desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.0 |
-| gateway_installer | app.terraform.io/jafudi/station/cloudinit | 1.4.1 |
+| gateway_installer | app.terraform.io/jafudi/station/cloudinit | 1.4.2 |
 | gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.2 |
 | oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.0.0 |
 

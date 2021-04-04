@@ -48,9 +48,10 @@ module "gateway_installer" {
   gateway_dns_hostname   = module.credentials_generator.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
+  mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_port
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.4.1"
+  version                = "1.4.2"
 }
 
 locals {
