@@ -51,7 +51,7 @@ module "gateway_installer" {
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_port
   source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.4.2"
+  version                = "1.4.3"
 }
 
 locals {
