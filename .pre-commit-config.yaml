@@ -17,6 +17,8 @@ repos:
     - id: terraform_fmt
     - id: terraform_docs
     - id: terraform_tflint
+      args:
+        - '--args=--disable-rule=terraform_module_pinned_source'
     - id: checkov
 
 - repo: https://github.com/jumanjihouse/pre-commit-hooks

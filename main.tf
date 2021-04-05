@@ -50,8 +50,7 @@ module "gateway_installer" {
   docker_compose_release = local.docker_compose_release
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_port
-  source                 = "app.terraform.io/jafudi/station/cloudinit"
-  version                = "1.4.3"
+  source                 = "git::ssh://Jafudi@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master"
 }
 
 locals {
