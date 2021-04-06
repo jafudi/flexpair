@@ -8,6 +8,11 @@ resource "random_password" "imap_password" {
   special = false // may lead to quoting issues otherwise
 }
 
+resource "random_password" "guacamole_admin" {
+  length  = 9
+  special = false
+}
+
 resource "random_password" "murmur_password" {
   length  = 16
   special = false // may lead to quoting issues otherwise

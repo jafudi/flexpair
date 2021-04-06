@@ -87,6 +87,7 @@ No Modules.
 | full\_hostname | n/a |
 | gateway\_primary\_nic\_name | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
+| guacamole\_admin | Random name for the guacamole admin |
 | letsencrypt\_certificate | n/a |
 | mumble\_url | n/a |
 | murmur\_credentials | n/a |

@@ -62,3 +62,8 @@ output "mumble_url" {
   description = ""
   value       = "mumble://:${urlencode(local.murmur_credentials.password)}@${local.full_hostname}:${local.murmur_credentials.port}"
 }
+
+output "guacamole_admin" {
+  description = "Random name for the guacamole admin"
+  value       = random_password.guacamole_admin.result
+}

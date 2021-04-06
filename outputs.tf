@@ -47,3 +47,7 @@ output "access_via_mumble" {
   description = ""
   value       = module.credentials_generator.mumble_url
 }
+
+output "guacamole_admin" {
+  value = module.credentials_generator.guacamole_admin
+}
