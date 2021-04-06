@@ -104,8 +104,7 @@ module "desktop_installer" {
   gateway_dns_hostname = module.credentials_generator.full_hostname
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_port
-  source               = "app.terraform.io/jafudi/satellite/cloudinit"
-  version              = "1.3.12"
+  source               = "git::ssh://git@gitlab.com:jafudi-group/terraform-cloudinit-satellite.git?ref=master"
 }
 
 locals {
