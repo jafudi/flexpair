@@ -154,7 +154,7 @@ resource "null_resource" "health_check" {
 }
 
 provider "guacamole" {
-  url                      = "https://${module.credentials_generator.full_hostname}"
+  url                      = "https://${module.credentials_generator.full_hostname}/guacamole"
   username                 = module.credentials_generator.guacamole_admin
   password                 = "guacadmin"
   disable_tls_verification = true
