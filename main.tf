@@ -163,7 +163,6 @@ provider "guacamole" {
 
 resource "guacamole_user" "user" {
   username = "testGuacamoleUser"
-  password = "password"
   attributes {
     full_name = "Test User"
     email     = "testUser@example.com"
