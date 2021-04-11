@@ -157,8 +157,8 @@ provider "guacamole" {
   url                      = "https://${module.credentials_generator.full_hostname}"
   username                 = module.credentials_generator.guacamole_admin
   password                 = "guacadmin"
-  disable_tls_verification = false
-  disable_cookies          = false
+  disable_tls_verification = true
+  disable_cookies          = true
 }
 
 resource "guacamole_user" "user" {
