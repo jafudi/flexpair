@@ -152,3 +152,22 @@ resource "null_resource" "health_check" {
     command     = "wget --tries=30 --spider --recursive --level 1 https://${module.credentials_generator.full_hostname}${each.key};"
   }
 }
+
+provider "guacamole" {
+  url                      = "https://${module.credentials_generator.full_hostname}"
+  username                 = module.credentials_generator.guacamole_admin
+  password                 = "guacadmin"
+  disable_tls_verification = false
+  disable_cookies          = false
+}
+
+resource "guacamole_user" "user" {
+  username = "testGuacamoleUser"
+  password = "password"
+  attributes {
+    full_name = "Test User"
+    email     = "testUser@example.com"
+    timezone  = "America/Chicago"
+  }
+  system_permissions = ["ADMINISTER", "CREATE_USER"]
+}

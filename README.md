@@ -104,6 +104,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | acme | ~> 1.5.0 |
 | aws | ~> 3.18 |
 | dns | ~> 2.2.0 |
+| guacamole | 1.2.1 |
 | null | ~> 3.0.0 |
 | oci | ~> 3.95.0 |
 | random | ~> 2.3.0 |
@@ -116,6 +117,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name | Version |
 |------|---------|
 | dns | ~> 2.2.0 |
+| guacamole | 1.2.1 |
 | null | ~> 3.0.0 |
 | time | ~> 0.6.0 |
 
@@ -136,6 +138,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name |
 |------|
 | [dns_a_record_set](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) |
+| [guacamole_user](https://registry.terraform.io/providers/techBeck03/guacamole/1.2.1/docs/resources/user) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
 
