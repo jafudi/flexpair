@@ -28,11 +28,10 @@ module "amazon_infrastructure" {
 }
 
 module "credentials_generator" {
-  full_hostname         = local.full_hostname
-  subdomain_proposition = var.TFC_WORKSPACE_NAME
-  gateway_cloud_info    = module.amazon_infrastructure.additional_metadata
-  desktop_cloud_info    = module.oracle_infrastructure.additional_metadata
-  source                = "./modules/terraform-tls-credentials"
+  full_hostname      = local.full_hostname
+  gateway_cloud_info = module.amazon_infrastructure.additional_metadata
+  desktop_cloud_info = module.oracle_infrastructure.additional_metadata
+  source             = "./modules/terraform-tls-credentials"
   // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
   rfc2136_key_name       = var.rfc2136_key_name
