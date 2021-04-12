@@ -4,9 +4,12 @@ locals {
     git_commit_hash  = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
   }
 
-  valid_subdomain = lower(replace(var.TFC_WORKSPACE_NAME, "/[_\\W]/", "-"))
-
-  full_hostname = "${local.valid_subdomain}.${var.registered_domain}"
+  org_list        = split("/", var.TFC_WORKSPACE_SLUG)
+  organization    = org_list[0]
+  workspace       = org_list[1]
+  valid_subdomain = lower(replace(local.workspace, "/[_\\W]/", "-"))
+  full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
+  admin_name      = "${local.organization}admin"
 }
 
 module "oracle_infrastructure" {
@@ -18,7 +21,7 @@ module "oracle_infrastructure" {
   user_ocid                  = var.oci_user_ocid
   region                     = var.oci_region
   availibility_domain_number = var.oci_free_tier_avail
-  compartment_name           = var.TFC_WORKSPACE_NAME
+  compartment_name           = local.workspace
 }
 
 module "amazon_infrastructure" {
@@ -31,7 +34,7 @@ module "credentials_generator" {
   full_hostname      = local.full_hostname
   gateway_cloud_info = module.amazon_infrastructure.additional_metadata
   desktop_cloud_info = module.oracle_infrastructure.additional_metadata
-  source             = "./modules/terraform-tls-credentials"
+  source             = "../modules/terraform-tls-credentials"
   // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
   rfc2136_key_name       = var.rfc2136_key_name
@@ -53,7 +56,7 @@ module "gateway_installer" {
   docker_compose_release = local.docker_compose_release
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_port
-  guacamole_admin        = var.guacamole_admin
+  guacamole_admin        = "${local.organization}admin"
   source                 = "git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master"
 }
 
@@ -154,28 +157,4 @@ resource "null_resource" "health_check" {
     interpreter = ["/bin/bash", "-c"]
     command     = "wget --tries=30 --spider --recursive --level 1 https://${local.full_hostname}${each.key};"
   }
-}
-
-provider "guacamole" {
-  url                      = "https://${local.full_hostname}/guacamole"
-  username                 = var.guacamole_admin
-  password                 = "guacadmin"
-  disable_tls_verification = true
-  disable_cookies          = true
-}
-
-resource "guacamole_user" "user" {
-
-  depends_on = [
-    module.gateway_machine,
-    time_sleep.dns_propagation
-  ]
-
-  username = "testGuacamoleUser"
-  attributes {
-    full_name = "Test User"
-    email     = "testUser@example.com"
-    timezone  = "America/Chicago"
-  }
-  system_permissions = ["ADMINISTER", "CREATE_USER"]
 }

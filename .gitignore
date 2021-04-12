@@ -40,3 +40,4 @@ terraform.rc
 
 /.ssh/
 /.oci/
+/loganalysis/log.csv

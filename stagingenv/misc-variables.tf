@@ -31,7 +31,7 @@ variable "TFC_RUN_ID" {
   type        = string
 }
 
-variable "TFC_WORKSPACE_NAME" {
-  description = "This is the name of the workspace used in this run, e.g. prod-load-balancers."
+variable "TFC_WORKSPACE_SLUG" {
+  description = "String indicating organization and workspace name."
   type        = string
 }
