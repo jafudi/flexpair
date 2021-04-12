@@ -1,7 +1,7 @@
 locals {
   org_list        = split("/", var.TFC_WORKSPACE_SLUG)
-  organization    = org_list[0]
-  workspace       = org_list[1]
+  organization    = local.org_list[0]
+  workspace       = local.org_list[1]
   valid_subdomain = lower(replace(local.workspace, "/[_\\W]/", "-"))
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
   admin_name      = "${local.organization}admin"
