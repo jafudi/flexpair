@@ -129,7 +129,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/jafudi/desktop/oci"
-  version = "1.0.3"
+  version = "1.0.0"
   // below variables are provider specific
   cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }
