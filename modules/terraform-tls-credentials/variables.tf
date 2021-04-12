@@ -16,16 +16,7 @@ variable "desktop_cloud_info" {
   })
 }
 
-variable "registered_domain" {
-  description = ""
-  type        = string
-  validation {
-    condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.registered_domain))
-    error_message = "This does not look like a valid registered domain."
-  }
-}
-
-variable "subdomain_proposition" {
+variable "full_hostname" {
   description = ""
   type        = string
 }

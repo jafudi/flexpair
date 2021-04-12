@@ -153,6 +153,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | aws\_access\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
 | aws\_region | Seems to determines the region of all created resources. | `string` | `"eu-central-1"` | no |
 | aws\_secret\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
+| guacamole\_admin | Name of the Guacamole administrator | `string` | n/a | yes |
 | locale | n/a | `string` | `"de_DE.UTF-8"` | no |
 | oci\_fingerprint | Fingerprint of the public key | `string` | `"9c:d0:a4:27:86:77:0e:0c:49:5a:8c:39:4a:a0:c3:ce"` | no |
 | oci\_free\_tier\_avail | n/a | `number` | `2` | no |

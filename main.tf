@@ -3,6 +3,10 @@ locals {
     terraform_run_id = var.TFC_RUN_ID
     git_commit_hash  = var.TFC_CONFIGURATION_VERSION_GIT_COMMIT_SHA
   }
+
+  valid_subdomain = lower(replace(var.TFC_WORKSPACE_NAME, "/[_\\W]/", "-"))
+
+  full_hostname = "${local.valid_subdomain}.${var.registered_domain}"
 }
 
 module "oracle_infrastructure" {
@@ -24,7 +28,7 @@ module "amazon_infrastructure" {
 }
 
 module "credentials_generator" {
-  registered_domain     = var.registered_domain
+  full_hostname         = local.full_hostname
   subdomain_proposition = var.TFC_WORKSPACE_NAME
   gateway_cloud_info    = module.amazon_infrastructure.additional_metadata
   desktop_cloud_info    = module.oracle_infrastructure.additional_metadata
@@ -45,12 +49,12 @@ module "gateway_installer" {
   primary_nic_name       = module.credentials_generator.gateway_primary_nic_name
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
-  gateway_dns_hostname   = module.credentials_generator.full_hostname
+  gateway_dns_hostname   = local.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_port
-  guacamole_admin        = module.credentials_generator.guacamole_admin
+  guacamole_admin        = var.guacamole_admin
   source                 = "git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master"
 }
 
@@ -79,7 +83,7 @@ module "gateway_machine" {
 
 resource "dns_a_record_set" "gateway_hostname" {
   zone      = "${var.registered_domain}."
-  name      = module.credentials_generator.subdomain_label
+  name      = var.valid_subdomain
   addresses = [module.gateway_machine.public_ip]
   ttl       = 60
 }
@@ -88,7 +92,7 @@ resource "time_sleep" "dns_propagation" {
   depends_on      = [dns_a_record_set.gateway_hostname]
   create_duration = "120s"
   triggers = {
-    map_from = module.credentials_generator.full_hostname
+    map_from = local.full_hostname
     map_to   = module.gateway_machine.public_ip
   }
 }
@@ -102,7 +106,7 @@ module "desktop_installer" {
   primary_nic_name     = module.credentials_generator.desktop_primary_nic_name
   murmur_config        = module.credentials_generator.murmur_credentials
   browser_url          = module.credentials_generator.browser_url
-  gateway_dns_hostname = module.credentials_generator.full_hostname
+  gateway_dns_hostname = local.full_hostname
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_port
   source               = "git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master"
@@ -154,8 +158,8 @@ resource "null_resource" "health_check" {
 }
 
 provider "guacamole" {
-  url                      = "https://${module.credentials_generator.full_hostname}/guacamole"
-  username                 = module.credentials_generator.guacamole_admin
+  url                      = "https://${local.full_hostname}/guacamole"
+  username                 = var.guacamole_admin
   password                 = "guacadmin"
   disable_tls_verification = true
   disable_cookies          = true

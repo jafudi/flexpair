@@ -8,11 +8,6 @@ resource "random_password" "imap_password" {
   special = false // may lead to quoting issues otherwise
 }
 
-resource "random_password" "guacamole_admin" {
-  length  = 9
-  special = false
-}
-
 resource "random_password" "murmur_password" {
   length  = 16
   special = false // may lead to quoting issues otherwise
@@ -34,12 +29,8 @@ locals {
     password = random_password.murmur_password.result
   }
 
-  valid_subdomain = lower(replace(var.subdomain_proposition, "/[_\\W]/", "-"))
-
-  full_hostname = "${local.valid_subdomain}.${var.registered_domain}"
-
   email_config = {
-    address   = "mail@${local.full_hostname}"
+    address   = "mail@${var.full_hostname}"
     password  = random_password.imap_password.result
     imap_port = 143
     smtp_port = 25

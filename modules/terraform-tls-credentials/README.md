@@ -68,13 +68,12 @@ No Modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | desktop\_cloud\_info | n/a | <pre>object({<br>    cloud_account_name     = string<br>    source_image_info      = string<br>    network_interface_name = string<br>  })</pre> | n/a | yes |
+| full\_hostname | n/a | `string` | n/a | yes |
 | gateway\_cloud\_info | n/a | <pre>object({<br>    cloud_account_name     = string<br>    source_image_info      = string<br>    network_interface_name = string<br>  })</pre> | n/a | yes |
-| registered\_domain | n/a | `string` | n/a | yes |
 | rfc2136\_key\_name | n/a | `string` | n/a | yes |
 | rfc2136\_key\_secret | n/a | `string` | n/a | yes |
 | rfc2136\_name\_server | n/a | `string` | n/a | yes |
 | rfc2136\_tsig\_algorithm | n/a | `string` | n/a | yes |
-| subdomain\_proposition | n/a | `string` | n/a | yes |
 
 ## Outputs
 
@@ -84,14 +83,11 @@ No Modules.
 | desktop\_primary\_nic\_name | n/a |
 | desktop\_username | Making sure the first character is a lower case roman letter |
 | email\_config | n/a |
-| full\_hostname | n/a |
 | gateway\_primary\_nic\_name | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
-| guacamole\_admin | Random name for the guacamole admin |
 | letsencrypt\_certificate | n/a |
 | mumble\_url | n/a |
 | murmur\_credentials | n/a |
-| subdomain\_label | n/a |
 | vm\_mutual\_key | n/a |
 | vnc\_port | Randomly chosen VNC port increases security |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

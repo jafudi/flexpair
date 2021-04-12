@@ -38,16 +38,6 @@ output "desktop_primary_nic_name" {
   value       = var.desktop_cloud_info.network_interface_name
 }
 
-output "subdomain_label" {
-  description = ""
-  value       = local.valid_subdomain
-}
-
-output "full_hostname" {
-  description = ""
-  value       = local.full_hostname
-}
-
 output "letsencrypt_certificate" {
   description = ""
   value       = acme_certificate.letsencrypt_certificate
@@ -55,15 +45,10 @@ output "letsencrypt_certificate" {
 
 output "browser_url" {
   description = ""
-  value       = "https://${local.full_hostname}/?password=${urlencode(local.murmur_credentials.password)}"
+  value       = "https://${var.full_hostname}/?password=${urlencode(local.murmur_credentials.password)}"
 }
 
 output "mumble_url" {
   description = ""
-  value       = "mumble://:${urlencode(local.murmur_credentials.password)}@${local.full_hostname}:${local.murmur_credentials.port}"
-}
-
-output "guacamole_admin" {
-  description = "Random name for the guacamole admin"
-  value       = random_password.guacamole_admin.result
+  value       = "mumble://:${urlencode(local.murmur_credentials.password)}@${var.full_hostname}:${local.murmur_credentials.port}"
 }

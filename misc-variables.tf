@@ -1,3 +1,8 @@
+variable "guacamole_admin" {
+  description = "Name of the Guacamole administrator"
+  type        = string
+}
+
 variable "timezone" {
   type        = string
   default     = "Europe/Berlin"
