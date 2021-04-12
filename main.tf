@@ -165,6 +165,12 @@ provider "guacamole" {
 }
 
 resource "guacamole_user" "user" {
+
+  depends_on = [
+    module.gateway_machine,
+    time_sleep.dns_propagation
+  ]
+
   username = "testGuacamoleUser"
   attributes {
     full_name = "Test User"
