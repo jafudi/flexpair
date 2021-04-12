@@ -179,7 +179,6 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | desktop\_config\_size | n/a |
 | email\_adress | n/a |
 | gateway\_config\_size | n/a |
-| guacamole\_admin | n/a |
 | oci\_base\_image | n/a |
 | private\_key | n/a |
 | ssh\_into\_desktop\_1 | n/a |

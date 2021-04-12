@@ -82,7 +82,7 @@ module "gateway_machine" {
 
 resource "dns_a_record_set" "gateway_hostname" {
   zone      = "${var.registered_domain}."
-  name      = var.valid_subdomain
+  name      = local.valid_subdomain
   addresses = [module.gateway_machine.public_ip]
   ttl       = 60
 }
