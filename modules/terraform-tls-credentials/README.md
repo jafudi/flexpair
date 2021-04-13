@@ -37,17 +37,17 @@ module "credentials_generator" {
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12.26 |
-| acme | ~> 1.5.0 |
-| random | ~> 2.3.0 |
-| tls | ~> 2.2.0 |
+| acme | ~> 2.4.0 |
+| random | ~> 3.1.0 |
+| tls | ~> 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| acme | ~> 1.5.0 |
-| random | ~> 2.3.0 |
-| tls | ~> 2.2.0 |
+| acme | ~> 2.4.0 |
+| random | ~> 3.1.0 |
+| tls | ~> 3.1.0 |
 
 ## Modules
 
