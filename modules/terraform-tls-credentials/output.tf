@@ -1,6 +1,7 @@
 output "vm_mutual_key" {
   description = ""
   value       = tls_private_key.vm_mutual_key
+  sensitive   = true
 }
 
 output "vnc_port" {
@@ -11,11 +12,13 @@ output "vnc_port" {
 output "email_config" {
   description = ""
   value       = local.email_config
+  sensitive   = true
 }
 
 output "murmur_credentials" {
   description = ""
   value       = local.murmur_credentials
+  sensitive   = true
 }
 
 output "gateway_username" {
@@ -41,6 +44,7 @@ output "desktop_primary_nic_name" {
 output "letsencrypt_certificate" {
   description = ""
   value       = acme_certificate.letsencrypt_certificate
+  sensitive   = true
 }
 
 output "browser_url" {
