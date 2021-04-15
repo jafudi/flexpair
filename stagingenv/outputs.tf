@@ -8,11 +8,6 @@ output "aws_base_image" {
   value       = module.amazon_infrastructure.additional_metadata.source_image_info
 }
 
-output "email_adress" {
-  description = ""
-  value       = module.credentials_generator.email_config.address
-}
-
 output "ssh_into_desktop_1" {
   description = ""
   value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
@@ -26,6 +21,7 @@ output "ssh_into_gateway" {
 output "private_key" {
   description = ""
   value       = module.credentials_generator.vm_mutual_key.private_key_pem
+  sensitive   = true
 }
 
 output "gateway_config_size" {
