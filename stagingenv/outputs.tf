@@ -37,9 +37,11 @@ output "desktop_config_size" {
 output "access_via_browser" {
   description = ""
   value       = module.credentials_generator.browser_url
+  sensitive   = true
 }
 
 output "access_via_mumble" {
   description = ""
   value       = module.credentials_generator.mumble_url
+  sensitive   = true
 }
