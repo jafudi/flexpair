@@ -37,11 +37,11 @@ output "desktop_config_size" {
 output "access_via_browser" {
   description = ""
   value       = nonsensitive(module.credentials_generator.browser_url)
-  # We want this to be displayed on overview pages for logged in users
+  # We want this to be displayed on the overview page for logged in users
 }
 
 output "access_via_mumble" {
   description = ""
   value       = nonsensitive(module.credentials_generator.mumble_url)
-  # We want this to be displayed on overview pages for logged in users
+  # We want this to be displayed on the overview page for logged in users
 }
