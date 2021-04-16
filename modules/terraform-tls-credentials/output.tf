@@ -50,9 +50,11 @@ output "letsencrypt_certificate" {
 output "browser_url" {
   description = ""
   value       = "https://${var.full_hostname}/?password=${urlencode(local.murmur_credentials.password)}"
+  sensitive   = true
 }
 
 output "mumble_url" {
   description = ""
   value       = "mumble://:${urlencode(local.murmur_credentials.password)}@${var.full_hostname}:${local.murmur_credentials.port}"
+  sensitive   = true
 }
