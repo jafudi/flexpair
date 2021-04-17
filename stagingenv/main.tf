@@ -62,7 +62,7 @@ module "gateway_installer" {
 
 locals {
   unzipped_gateway_bytes = length(module.gateway_installer.unzipped_config)
-  encoded_gateway_config = base64gzip(module.gateway_installer.unzipped_config)
+  encoded_gateway_config = module.gateway_installer.encoded_config
 }
 
 module "gateway_machine" {
@@ -116,7 +116,7 @@ module "desktop_installer" {
 
 locals {
   unzipped_desktop_bytes = length(module.desktop_installer.unzipped_config)
-  encoded_desktop_config = base64gzip(module.desktop_installer.unzipped_config)
+  encoded_desktop_config = module.desktop_installer.encoded_config
 }
 
 module "desktop_machine_1" {

@@ -45,3 +45,18 @@ output "access_via_mumble" {
   value       = nonsensitive(module.credentials_generator.mumble_url)
   # We want this to be displayed on the overview page for logged in users
 }
+
+output "guacamole_endpoint" {
+  description = ""
+  value       = "https://${local.full_hostname}/guacamole"
+}
+
+output "guacamole_admin_username" {
+  description = ""
+  value       = local.admin_name
+}
+
+output "guacamole_admin_password" {
+  description = ""
+  value       = "guacadmin"
+}
