@@ -1,4 +1,6 @@
 resource "random_pet" "subdomain" {
+  length    = 2
+  separator = "-"
 }
 
 locals {
@@ -10,7 +12,7 @@ locals {
   org_list        = split("/", var.TFC_WORKSPACE_SLUG)
   organization    = local.org_list[0]
   workspace       = local.org_list[1]
-  valid_subdomain = random_pet.subdomain # in PROD: lower(replace(local.workspace, "/[_\\W]/", "-"))
+  valid_subdomain = random_pet.subdomain.id # in PROD: lower(replace(local.workspace, "/[_\\W]/", "-"))
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
   admin_name      = "${local.organization}admin"
 }
