@@ -20,7 +20,7 @@ locals {
 module "oracle_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/jafudi/commons/oci"
-  version         = "1.0.0"
+  version         = "1.1.0"
   // below variables are provider specific
   tenancy_ocid               = var.oci_tenancy_ocid
   user_ocid                  = var.oci_user_ocid
