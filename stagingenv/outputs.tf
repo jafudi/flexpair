@@ -54,9 +54,11 @@ output "guacamole_endpoint" {
 output "guacamole_admin_username" {
   description = ""
   value       = local.admin_name
+  sensitive   = true
 }
 
 output "guacamole_admin_password" {
   description = ""
   value       = "guacadmin"
+  sensitive   = true
 }
