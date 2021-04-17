@@ -3,7 +3,7 @@ data "terraform_remote_state" "prod" {
   config = {
     organization = "jafudi"
     workspaces = {
-      name = "apr15"
+      name = "STAGING"
     }
   }
 }
