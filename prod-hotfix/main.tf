@@ -16,7 +16,7 @@ provider "guacamole" {
   disable_cookies          = true
 }
 
-resource "guacamole_user" "user" {
+resource "guacamole_user" "test_user" {
 
   username = "testGuacamoleUser"
   attributes {
@@ -27,6 +27,6 @@ resource "guacamole_user" "user" {
   system_permissions = ["ADMINISTER", "CREATE_USER"]
 }
 
-data "guacamole_user" "user" {
+data "guacamole_user" "active_user" {
   username = "active"
 }
