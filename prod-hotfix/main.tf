@@ -26,3 +26,7 @@ resource "guacamole_user" "user" {
   }
   system_permissions = ["ADMINISTER", "CREATE_USER"]
 }
+
+data "guacamole_user" "user" {
+  username = "active"
+}
