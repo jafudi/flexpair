@@ -83,7 +83,7 @@ module "gateway_machine" {
     smtp   = module.credentials_generator.email_config.smtp_port
   }
   source  = "app.terraform.io/jafudi/gateway/aws"
-  version = "1.0.4"
+  version = "1.0.5"
   // below variables are provider specific
   cloud_provider_context = module.amazon_infrastructure.vm_creation_context
 }
@@ -134,7 +134,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/jafudi/desktop/oci"
-  version = "1.0.0"
+  version = "1.0.1"
   // below variables are provider specific
   cloud_provider_context = module.oracle_infrastructure.vm_creation_context
 }

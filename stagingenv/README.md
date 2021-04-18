@@ -101,45 +101,44 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12.26 |
-| acme | ~> 1.5.0 |
+| acme | ~> 2.4.0 |
 | aws | ~> 3.18 |
-| dns | ~> 2.2.0 |
-| guacamole | 1.2.1 |
-| null | ~> 3.0.0 |
+| dns | ~> 3.1.0 |
+| null | ~> 3.1.0 |
 | oci | ~> 3.95.0 |
-| random | ~> 2.3.0 |
+| random | ~> 3.1.0 |
 | template | ~> 2.2.0 |
-| time | ~> 0.6.0 |
-| tls | ~> 2.2.0 |
+| time | ~> 0.7.0 |
+| tls | ~> 3.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| dns | ~> 2.2.0 |
-| guacamole | 1.2.1 |
-| null | ~> 3.0.0 |
-| time | ~> 0.6.0 |
+| dns | ~> 3.1.0 |
+| null | ~> 3.1.0 |
+| random | ~> 3.1.0 |
+| time | ~> 0.7.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | amazon_infrastructure | app.terraform.io/jafudi/commons/aws | 1.0.0 |
-| credentials_generator | ./modules/terraform-tls-credentials |  |
+| credentials_generator | ../modules/terraform-tls-credentials |  |
 | desktop_installer | git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master |  |
-| desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.0 |
+| desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.1 |
 | gateway_installer | git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master |  |
-| gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.2 |
-| oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.0.0 |
+| gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.5 |
+| oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.1.0 |
 
 ## Resources
 
 | Name |
 |------|
 | [dns_a_record_set](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) |
-| [guacamole_user](https://registry.terraform.io/providers/techBeck03/guacamole/1.2.1/docs/resources/user) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
+| [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
 
 ## Inputs
@@ -149,11 +148,10 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | TFC\_CONFIGURATION\_VERSION\_GIT\_BRANCH | This is the name of the branch that the associated Terraform configuration version was ingressed from (e.g. master). | `string` | n/a | yes |
 | TFC\_CONFIGURATION\_VERSION\_GIT\_COMMIT\_SHA | This is the full commit hash of the commit that the associated Terraform configuration version was ingressed from (e.g. abcd1234...). | `string` | n/a | yes |
 | TFC\_RUN\_ID | This is a unique identifier for this run (e.g. run-CKuwsxMGgMd4W7Ui). | `string` | n/a | yes |
-| TFC\_WORKSPACE\_NAME | This is the name of the workspace used in this run, e.g. prod-load-balancers. | `string` | n/a | yes |
+| TFC\_WORKSPACE\_SLUG | String indicating organization and workspace name. | `string` | n/a | yes |
 | aws\_access\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
 | aws\_region | Seems to determines the region of all created resources. | `string` | `"eu-central-1"` | no |
 | aws\_secret\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
-| guacamole\_admin | Name of the Guacamole administrator | `string` | n/a | yes |
 | locale | n/a | `string` | `"de_DE.UTF-8"` | no |
 | oci\_fingerprint | Fingerprint of the public key | `string` | `"9c:d0:a4:27:86:77:0e:0c:49:5a:8c:39:4a:a0:c3:ce"` | no |
 | oci\_free\_tier\_avail | n/a | `number` | `2` | no |
@@ -177,8 +175,10 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | access\_via\_mumble | n/a |
 | aws\_base\_image | n/a |
 | desktop\_config\_size | n/a |
-| email\_adress | n/a |
 | gateway\_config\_size | n/a |
+| guacamole\_admin\_password | n/a |
+| guacamole\_admin\_username | n/a |
+| guacamole\_endpoint | n/a |
 | oci\_base\_image | n/a |
 | private\_key | n/a |
 | ssh\_into\_desktop\_1 | n/a |
