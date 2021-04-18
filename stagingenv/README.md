@@ -129,7 +129,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | desktop_installer | git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master |  |
 | desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.1 |
 | gateway_installer | git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master |  |
-| gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.5 |
+| gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.6 |
 | oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.1.0 |
 
 ## Resources
