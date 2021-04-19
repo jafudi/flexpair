@@ -49,19 +49,19 @@ output "access_via_mumble" {
 # Below outputs are used to configure Guacamole from a separate workspace
 
 output "gateway_username" {
-  description = ""
+  description = "UNIX username used for the gateway"
   value       = module.credentials_generator.gateway_username
   sensitive   = true
 }
 
 output "guacamole_credentials" {
-  description = ""
+  description = "Credentials necessary to gain admin access to Guacamole"
   value       = module.credentials_generator.guacamole_credentials
   sensitive   = true
 }
 
 output "first_vnc_credentials" {
-  description = ""
+  description = "Credentials for the first desktop's VNC connection"
   value       = module.credentials_generator.vnc_credentials
   sensitive   = true
 }

@@ -41,7 +41,8 @@ locals {
   }
 
   first_vnc_crendentials = {
-    title    = "Use shared desktop 1 ( ...some useful hints... )"
+    title    = "Shared Desktop 1 ( ...some useful hints... )"
+    hostname = "gateway"
     vnc_port = random_integer.vnc_port.result
     username = "jafudi"
     password = "jafudi"

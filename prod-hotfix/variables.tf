@@ -1,24 +1,15 @@
-variable "guacamole_credentials" {
-  description = "Credentials necessary to gain admin access to Guacamole"
-  type = object({
-    guacamole_endpoint_url   = string
-    guacamole_admin_username = string
-    guacamole_admin_password = string
-  })
+data "terraform_remote_state" "prod" {
+  backend = "remote"
+  config = {
+    organization = "jafudi"
+    workspaces = {
+      name = "STAGING"
+    }
+  }
 }
 
-variable "first_vnc_connection" {
-  description = "Credentials for the first desktop's VNC connection"
-  type = object({
-    title    = string
-    hostname = string
-    vnc_port = string
-    username = string
-    password = string
-  })
-}
-
-variable "gateway_username" {
-  description = "UNIX username used for the gateway"
-  type        = string
+locals {
+  gateway_username      = data.terraform_remote_state.prod.outputs.gateway_username
+  first_vnc_connection  = data.terraform_remote_state.prod.outputs.first_vnc_connection
+  guacamole_credentials = data.terraform_remote_state.prod.outputs.guacamole_credentials
 }

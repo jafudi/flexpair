@@ -1,13 +1,3 @@
-data "terraform_remote_state" "prod" {
-  backend = "remote"
-  config = {
-    organization = "jafudi"
-    workspaces = {
-      name = "STAGING"
-    }
-  }
-}
-
 provider "guacamole" {
   url                      = data.terraform_remote_state.prod.outputs.guacamole_endpoint
   username                 = data.terraform_remote_state.prod.outputs.guacamole_admin_username
@@ -17,20 +7,20 @@ provider "guacamole" {
 }
 
 resource "guacamole_connection_vnc" "collaborate" {
-  name              = "Collaborate: ${var.first_vnc_connection.title}"
+  name              = "Collaborate: ${local.first_vnc_connection.title}"
   parent_identifier = "ROOT"
   attributes {
     failover_only = false
   }
   parameters {
-    hostname            = var.first_vnc_connection.hostname
-    port                = var.first_vnc_connection.vnc_port
-    username            = var.first_vnc_connection.username
-    password            = var.first_vnc_connection.password
-    sftp_hostname       = var.first_vnc_connection.hostname
-    sftp_username       = var.gateway_username
-    sftp_directory      = "/home/${var.gateway_username}/uploads"
-    sftp_root_directory = "/home/${var.gateway_username}/uploads"
+    hostname            = local.first_vnc_connection.hostname
+    port                = local.first_vnc_connection.vnc_port
+    username            = local.first_vnc_connection.username
+    password            = local.first_vnc_connection.password
+    sftp_hostname       = "gateway"
+    sftp_username       = local.gateway_username
+    sftp_directory      = "/home/${local.gateway_username}/uploads"
+    sftp_root_directory = "/home/${local.gateway_username}/uploads"
     readonly            = false
     enable_audio        = false
     enable_sftp         = true
@@ -40,20 +30,20 @@ resource "guacamole_connection_vnc" "collaborate" {
 }
 
 resource "guacamole_connection_vnc" "view_only" {
-  name              = "View only: ${var.first_vnc_connection.title}"
+  name              = "View only: ${local.first_vnc_connection.title}"
   parent_identifier = "ROOT"
   attributes {
     failover_only = false
   }
   parameters {
-    hostname            = var.first_vnc_connection.hostname
-    port                = var.first_vnc_connection.vnc_port
-    username            = var.first_vnc_connection.username
-    password            = var.first_vnc_connection.password
-    sftp_hostname       = var.first_vnc_connection.hostname
-    sftp_username       = var.gateway_username
-    sftp_directory      = "/home/${var.gateway_username}/uploads"
-    sftp_root_directory = "/home/${var.gateway_username}/uploads"
+    hostname            = local.first_vnc_connection.hostname
+    port                = local.first_vnc_connection.vnc_port
+    username            = local.first_vnc_connection.username
+    password            = local.first_vnc_connection.password
+    sftp_hostname       = "gateway"
+    sftp_username       = local.gateway_username
+    sftp_directory      = "/home/${local.gateway_username}/uploads"
+    sftp_root_directory = "/home/${local.gateway_username}/uploads"
     readonly            = true
     enable_audio        = false
     enable_sftp         = false
@@ -71,8 +61,8 @@ resource "guacamole_connection_ssh" "admin_console" {
   parameters {
     hostname            = "gateway"
     port                = 22
-    username            = var.gateway_username
-    sftp_root_directory = "/home/${var.gateway_username}/uploads"
+    username            = local.gateway_username
+    sftp_root_directory = "/home/${local.gateway_username}/uploads"
     readonly            = false
     enable_sftp         = true
     color_scheme        = "green-black"

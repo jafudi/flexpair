@@ -175,10 +175,10 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | access\_via\_mumble | n/a |
 | aws\_base\_image | n/a |
 | desktop\_config\_size | n/a |
-| first\_vnc\_credentials | n/a |
+| first\_vnc\_credentials | Credentials for the first desktop's VNC connection |
 | gateway\_config\_size | n/a |
-| gateway\_username | n/a |
-| guacamole\_credentials | n/a |
+| gateway\_username | UNIX username used for the gateway |
+| guacamole\_credentials | Credentials necessary to gain admin access to Guacamole |
 | oci\_base\_image | n/a |
 | private\_key | n/a |
 | ssh\_into\_desktop\_1 | n/a |

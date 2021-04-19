@@ -24,10 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af3dae76-5422-4261-a897-8a757be2eeed" name="Default Changelist" comment="Use updated and renamed module versions">
-      <change beforePath="$PROJECT_DIR$/../mumble-web/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mumble-web/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../terraform-cloudinit-satellite/11-user-scripts/15-install-packages.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../terraform-cloudinit-satellite/11-user-scripts/15-install-packages.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploy-vm.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/podcasts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/podcasts.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,14 +43,14 @@
         <entry key="$PROJECT_DIR$" value="buytheway" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../mumble-web" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../terraform-cloudinit-satellite" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="2b652fd0-fad7-4ecb-8ef2-58c87d894158" />
   </component>
   <component name="NamedScopeManager">
-    <scope name="Unnamed" pattern="file[deploy-vm]:*/" />
+    <scope name="Unnamed" pattern="file[PairPac]:*/" />
   </component>
   <component name="ProjectId" id="1kOiy86CerJ4O3IYqo4ndRR5KzM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,26 +63,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TF_FMT" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Ini&#10;HTML&#10;yaml" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../terraform-oci-gateway" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT&#10;Ini&#10;HTML&#10;yaml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/modules/gateway_userdata_cloudinit/init-scripts/03-sshd-config.sh" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prod-hotfix" />
+      <recent name="$PROJECT_DIR$/production" />
       <recent name="$PROJECT_DIR$/../terraform-oci-gateway" />
       <recent name="$PROJECT_DIR$/../terraform-oci-desktop" />
       <recent name="$PROJECT_DIR$/../terraform-oci-commons" />
-      <recent name="$PROJECT_DIR$/../terraform-cloudinit-station" />
-      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../mumble-web/themes/MetroMumbleLight/img" />
       <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite/11-user-scripts" />
-      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite/userscripts" />
-      <recent name="$PROJECT_DIR$/../terraform-cloudinit-satellite/cloudconfig" />
-      <recent name="$PROJECT_DIR$/documentation" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/stagingenv" />
+      <recent name="$PROJECT_DIR$/staging" />
+      <recent name="$PROJECT_DIR$/logs" />
     </key>
   </component>
   <component name="RunManager" selected="Shell Script.30-lubuntu-desktop.sh">
@@ -130,350 +128,350 @@
       <option name="presentableId" value="Default" />
       <updated>1605528923398</updated>
     </task>
-    <task id="LOCAL-00463" summary="Think easy">
-      <created>1615645444650</created>
-      <option name="number" value="00463" />
-      <option name="presentableId" value="LOCAL-00463" />
+    <task id="LOCAL-00559" summary="Make admin name a variable">
+      <created>1617746306355</created>
+      <option name="number" value="00559" />
+      <option name="presentableId" value="LOCAL-00559" />
       <option name="project" value="LOCAL" />
-      <updated>1615645444650</updated>
+      <updated>1617746306355</updated>
     </task>
-    <task id="LOCAL-00464" summary="Restart iptables and netfilter-persistent wrapper">
-      <created>1615670789888</created>
-      <option name="number" value="00464" />
-      <option name="presentableId" value="LOCAL-00464" />
+    <task id="LOCAL-00560" summary="Test if Terraform provider guacamole works">
+      <created>1618174574273</created>
+      <option name="number" value="00560" />
+      <option name="presentableId" value="LOCAL-00560" />
       <option name="project" value="LOCAL" />
-      <updated>1615670789890</updated>
+      <updated>1618174574281</updated>
     </task>
-    <task id="LOCAL-00465" summary="Bugfix">
-      <created>1616229230902</created>
-      <option name="number" value="00465" />
-      <option name="presentableId" value="LOCAL-00465" />
+    <task id="LOCAL-00561" summary="Fix: An argument named &quot;password&quot; is not expected here.">
+      <created>1618176397641</created>
+      <option name="number" value="00561" />
+      <option name="presentableId" value="LOCAL-00561" />
       <option name="project" value="LOCAL" />
-      <updated>1616229230903</updated>
+      <updated>1618176397643</updated>
     </task>
-    <task id="LOCAL-00466" summary="Defer initVoice until user hits connect button">
-      <created>1616260160768</created>
-      <option name="number" value="00466" />
-      <option name="presentableId" value="LOCAL-00466" />
+    <task id="LOCAL-00562" summary="Fix: An argument named &quot;password&quot; is not expected here.">
+      <created>1618178071696</created>
+      <option name="number" value="00562" />
+      <option name="presentableId" value="LOCAL-00562" />
       <option name="project" value="LOCAL" />
-      <updated>1616260160770</updated>
+      <updated>1618178071696</updated>
     </task>
-    <task id="LOCAL-00467" summary="Add drop down menu for microphone selection">
-      <created>1616270099708</created>
-      <option name="number" value="00467" />
-      <option name="presentableId" value="LOCAL-00467" />
+    <task id="LOCAL-00563" summary="Fix: An argument named &quot;password&quot; is not expected here.">
+      <created>1618179410997</created>
+      <option name="number" value="00563" />
+      <option name="presentableId" value="LOCAL-00563" />
       <option name="project" value="LOCAL" />
-      <updated>1616270099711</updated>
+      <updated>1618179410997</updated>
     </task>
-    <task id="LOCAL-00468" summary="Bump Alpine version">
-      <created>1616273321361</created>
-      <option name="number" value="00468" />
-      <option name="presentableId" value="LOCAL-00468" />
+    <task id="LOCAL-00564" summary="Fix: An argument named &quot;password&quot; is not expected here.">
+      <created>1618221690045</created>
+      <option name="number" value="00564" />
+      <option name="presentableId" value="LOCAL-00564" />
       <option name="project" value="LOCAL" />
-      <updated>1616273321362</updated>
+      <updated>1618221690045</updated>
     </task>
-    <task id="LOCAL-00469" summary="Specify version of jafudi/mumble-web-lite to use">
-      <created>1616363986696</created>
-      <option name="number" value="00469" />
-      <option name="presentableId" value="LOCAL-00469" />
+    <task id="LOCAL-00565" summary="Fix: An argument named &quot;subdomain_proposition&quot; is not expected here.">
+      <created>1618221905057</created>
+      <option name="number" value="00565" />
+      <option name="presentableId" value="LOCAL-00565" />
       <option name="project" value="LOCAL" />
-      <updated>1616363986698</updated>
+      <updated>1618221905061</updated>
     </task>
-    <task id="LOCAL-00470" summary="Specify version of jafudi/mumble-web-lite to use">
-      <created>1616364027869</created>
-      <option name="number" value="00470" />
-      <option name="presentableId" value="LOCAL-00470" />
+    <task id="LOCAL-00566" summary="Bugfix">
+      <created>1618222142001</created>
+      <option name="number" value="00566" />
+      <option name="presentableId" value="LOCAL-00566" />
       <option name="project" value="LOCAL" />
-      <updated>1616364027869</updated>
+      <updated>1618222142001</updated>
     </task>
-    <task id="LOCAL-00471" summary="Install atbswp macro recorder">
-      <created>1616369431974</created>
-      <option name="number" value="00471" />
-      <option name="presentableId" value="LOCAL-00471" />
+    <task id="LOCAL-00567" summary="Bugfix">
+      <created>1618222236026</created>
+      <option name="number" value="00567" />
+      <option name="presentableId" value="LOCAL-00567" />
       <option name="project" value="LOCAL" />
-      <updated>1616369431974</updated>
+      <updated>1618222236026</updated>
     </task>
-    <task id="LOCAL-00472" summary="Remove pulseeffects as if messes up audio config">
-      <created>1616373794387</created>
-      <option name="number" value="00472" />
-      <option name="presentableId" value="LOCAL-00472" />
+    <task id="LOCAL-00568" summary="Introduce guacamole_user depends_on">
+      <created>1618226805876</created>
+      <option name="number" value="00568" />
+      <option name="presentableId" value="LOCAL-00568" />
       <option name="project" value="LOCAL" />
-      <updated>1616373794387</updated>
+      <updated>1618226805960</updated>
     </task>
-    <task id="LOCAL-00473" summary="Make backups of config files">
-      <created>1616404092437</created>
-      <option name="number" value="00473" />
-      <option name="presentableId" value="LOCAL-00473" />
+    <task id="LOCAL-00569" summary="Introduce Staging and Prod environments">
+      <created>1618254856980</created>
+      <option name="number" value="00569" />
+      <option name="presentableId" value="LOCAL-00569" />
       <option name="project" value="LOCAL" />
-      <updated>1616404092437</updated>
+      <updated>1618254856989</updated>
     </task>
-    <task id="LOCAL-00474" summary="Make backups of config files">
-      <created>1616406790287</created>
-      <option name="number" value="00474" />
-      <option name="presentableId" value="LOCAL-00474" />
+    <task id="LOCAL-00570" summary="Fix: The root module input variable &quot;guacamole_admin&quot; is not set, and has no&#10;default value.">
+      <created>1618254977751</created>
+      <option name="number" value="00570" />
+      <option name="presentableId" value="LOCAL-00570" />
       <option name="project" value="LOCAL" />
-      <updated>1616406790288</updated>
+      <updated>1618254977751</updated>
     </task>
-    <task id="LOCAL-00475" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
-      <created>1616414226125</created>
-      <option name="number" value="00475" />
-      <option name="presentableId" value="LOCAL-00475" />
+    <task id="LOCAL-00571" summary="Fix: Invalid reference">
+      <created>1618255132524</created>
+      <option name="number" value="00571" />
+      <option name="presentableId" value="LOCAL-00571" />
       <option name="project" value="LOCAL" />
-      <updated>1616414226126</updated>
+      <updated>1618255132524</updated>
     </task>
-    <task id="LOCAL-00476" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
-      <created>1616414978336</created>
-      <option name="number" value="00476" />
-      <option name="presentableId" value="LOCAL-00476" />
+    <task id="LOCAL-00572" summary="Upload a 16:9 version of the wallpaper from Adobe">
+      <created>1618262122120</created>
+      <option name="number" value="00572" />
+      <option name="presentableId" value="LOCAL-00572" />
       <option name="project" value="LOCAL" />
-      <updated>1616414978336</updated>
+      <updated>1618262122121</updated>
     </task>
-    <task id="LOCAL-00477" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
-      <created>1616415613326</created>
-      <option name="number" value="00477" />
-      <option name="presentableId" value="LOCAL-00477" />
+    <task id="LOCAL-00573" summary="Re-enable upload functionality">
+      <created>1618262168234</created>
+      <option name="number" value="00573" />
+      <option name="presentableId" value="LOCAL-00573" />
       <option name="project" value="LOCAL" />
-      <updated>1616415613326</updated>
+      <updated>1618262168234</updated>
     </task>
-    <task id="LOCAL-00478" summary="Use pyautogui macro to click through wizards that pop at first Mumble startup">
-      <created>1616416743742</created>
-      <option name="number" value="00478" />
-      <option name="presentableId" value="LOCAL-00478" />
+    <task id="LOCAL-00574" summary="Re-enable upload functionality">
+      <created>1618262791006</created>
+      <option name="number" value="00574" />
+      <option name="presentableId" value="LOCAL-00574" />
       <option name="project" value="LOCAL" />
-      <updated>1616416743743</updated>
+      <updated>1618262791008</updated>
     </task>
-    <task id="LOCAL-00479" summary="Cleanup folders">
-      <created>1616423124000</created>
-      <option name="number" value="00479" />
-      <option name="presentableId" value="LOCAL-00479" />
+    <task id="LOCAL-00575" summary="Re-enable upload functionality">
+      <created>1618263048980</created>
+      <option name="number" value="00575" />
+      <option name="presentableId" value="LOCAL-00575" />
       <option name="project" value="LOCAL" />
-      <updated>1616423124000</updated>
+      <updated>1618263048980</updated>
     </task>
-    <task id="LOCAL-00480" summary="Cleanup folders">
-      <created>1616431543020</created>
-      <option name="number" value="00480" />
-      <option name="presentableId" value="LOCAL-00480" />
+    <task id="LOCAL-00576" summary="Fix path">
+      <created>1618267855399</created>
+      <option name="number" value="00576" />
+      <option name="presentableId" value="LOCAL-00576" />
       <option name="project" value="LOCAL" />
-      <updated>1616431543020</updated>
+      <updated>1618267855399</updated>
     </task>
-    <task id="LOCAL-00481" summary="python3 -m pip install pyautogui pynput --system">
-      <created>1616435418620</created>
-      <option name="number" value="00481" />
-      <option name="presentableId" value="LOCAL-00481" />
+    <task id="LOCAL-00577" summary="Fix path">
+      <created>1618267994858</created>
+      <option name="number" value="00577" />
+      <option name="presentableId" value="LOCAL-00577" />
       <option name="project" value="LOCAL" />
-      <updated>1616435418620</updated>
+      <updated>1618267994859</updated>
     </task>
-    <task id="LOCAL-00482" summary="python3 -m pip install pyautogui pynput --system">
-      <created>1616437271907</created>
-      <option name="number" value="00482" />
-      <option name="presentableId" value="LOCAL-00482" />
+    <task id="LOCAL-00578" summary="Give gateway user access to his own home folder">
+      <created>1618272632383</created>
+      <option name="number" value="00578" />
+      <option name="presentableId" value="LOCAL-00578" />
       <option name="project" value="LOCAL" />
-      <updated>1616437271907</updated>
+      <updated>1618272632386</updated>
     </task>
-    <task id="LOCAL-00483" summary="Test how templatefile funtion behaves if superfluous arguments are passed">
-      <created>1616438074892</created>
-      <option name="number" value="00483" />
-      <option name="presentableId" value="LOCAL-00483" />
+    <task id="LOCAL-00579" summary="SingleClick=false">
+      <created>1618295241427</created>
+      <option name="number" value="00579" />
+      <option name="presentableId" value="LOCAL-00579" />
       <option name="project" value="LOCAL" />
-      <updated>1616438074892</updated>
+      <updated>1618295241440</updated>
     </task>
-    <task id="LOCAL-00484" summary="Add macros to initialize Trojita and VLC">
-      <created>1616443658062</created>
-      <option name="number" value="00484" />
-      <option name="presentableId" value="LOCAL-00484" />
+    <task id="LOCAL-00580" summary="&quot;Join audio conference&quot; instead of the more technical &quot;Connect to server&quot;">
+      <created>1618296815052</created>
+      <option name="number" value="00580" />
+      <option name="presentableId" value="LOCAL-00580" />
       <option name="project" value="LOCAL" />
-      <updated>1616443658062</updated>
+      <updated>1618296815054</updated>
     </task>
-    <task id="LOCAL-00485" summary="Add macros to initialize Trojita and VLC">
-      <created>1616444625092</created>
-      <option name="number" value="00485" />
-      <option name="presentableId" value="LOCAL-00485" />
+    <task id="LOCAL-00581" summary="Bump providers versions except for oci and aws (later)">
+      <created>1618299432087</created>
+      <option name="number" value="00581" />
+      <option name="presentableId" value="LOCAL-00581" />
       <option name="project" value="LOCAL" />
-      <updated>1616444625093</updated>
+      <updated>1618299432089</updated>
     </task>
-    <task id="LOCAL-00486" summary="Split installation and customization of desktop.">
-      <created>1616450677138</created>
-      <option name="number" value="00486" />
-      <option name="presentableId" value="LOCAL-00486" />
+    <task id="LOCAL-00582" summary="Remove terraform lock file">
+      <created>1618300292330</created>
+      <option name="number" value="00582" />
+      <option name="presentableId" value="LOCAL-00582" />
       <option name="project" value="LOCAL" />
-      <updated>1616450677138</updated>
+      <updated>1618300292330</updated>
     </task>
-    <task id="LOCAL-00487" summary="Only Mumble init script works ok">
-      <created>1616450982889</created>
-      <option name="number" value="00487" />
-      <option name="presentableId" value="LOCAL-00487" />
+    <task id="LOCAL-00583" summary="Use headphone emoji to loosen up a bit the UX">
+      <created>1618302316395</created>
+      <option name="number" value="00583" />
+      <option name="presentableId" value="LOCAL-00583" />
       <option name="project" value="LOCAL" />
-      <updated>1616450982889</updated>
+      <updated>1618302316396</updated>
     </task>
-    <task id="LOCAL-00488" summary="Bugfix typo">
-      <created>1616451207974</created>
-      <option name="number" value="00488" />
-      <option name="presentableId" value="LOCAL-00488" />
+    <task id="LOCAL-00584" summary="Test gpodder installation">
+      <created>1618337449493</created>
+      <option name="number" value="00584" />
+      <option name="presentableId" value="LOCAL-00584" />
       <option name="project" value="LOCAL" />
-      <updated>1616451207974</updated>
+      <updated>1618337449493</updated>
     </task>
-    <task id="LOCAL-00489" summary="Add marketing text">
-      <created>1616791145462</created>
-      <option name="number" value="00489" />
-      <option name="presentableId" value="LOCAL-00489" />
+    <task id="LOCAL-00585" summary="Need git">
+      <created>1618337830183</created>
+      <option name="number" value="00585" />
+      <option name="presentableId" value="LOCAL-00585" />
       <option name="project" value="LOCAL" />
-      <updated>1616791145465</updated>
+      <updated>1618337830184</updated>
     </task>
-    <task id="LOCAL-00490" summary="Add marketing text">
-      <created>1616816974202</created>
-      <option name="number" value="00490" />
-      <option name="presentableId" value="LOCAL-00490" />
+    <task id="LOCAL-00586" summary="Need build-essential">
+      <created>1618338146012</created>
+      <option name="number" value="00586" />
+      <option name="presentableId" value="LOCAL-00586" />
       <option name="project" value="LOCAL" />
-      <updated>1616816974202</updated>
+      <updated>1618338146012</updated>
     </task>
-    <task id="LOCAL-00491" summary="Redirect users to PairPac repo via Rebrandly in order to collect browser info">
-      <created>1616963803386</created>
-      <option name="number" value="00491" />
-      <option name="presentableId" value="LOCAL-00491" />
+    <task id="LOCAL-00587" summary="Need python3">
+      <created>1618338644212</created>
+      <option name="number" value="00587" />
+      <option name="presentableId" value="LOCAL-00587" />
       <option name="project" value="LOCAL" />
-      <updated>1616963803386</updated>
+      <updated>1618338644212</updated>
     </task>
-    <task id="LOCAL-00492" summary="Add some suitable SVG from Papirus icon theme">
-      <created>1616963918079</created>
-      <option name="number" value="00492" />
-      <option name="presentableId" value="LOCAL-00492" />
+    <task id="LOCAL-00588" summary="Need python3-dev">
+      <created>1618339402706</created>
+      <option name="number" value="00588" />
+      <option name="presentableId" value="LOCAL-00588" />
       <option name="project" value="LOCAL" />
-      <updated>1616963918079</updated>
+      <updated>1618339402706</updated>
     </task>
-    <task id="LOCAL-00493" summary="Add two more clickable icons that will open the local mail program in the future">
-      <created>1616964884531</created>
-      <option name="number" value="00493" />
-      <option name="presentableId" value="LOCAL-00493" />
+    <task id="LOCAL-00589" summary="Add optional dependencies">
+      <created>1618340068212</created>
+      <option name="number" value="00589" />
+      <option name="presentableId" value="LOCAL-00589" />
       <option name="project" value="LOCAL" />
-      <updated>1616964884531</updated>
+      <updated>1618340068212</updated>
     </task>
-    <task id="LOCAL-00494" summary="Add mailto links with subject">
-      <created>1616965799014</created>
-      <option name="number" value="00494" />
-      <option name="presentableId" value="LOCAL-00494" />
+    <task id="LOCAL-00590" summary="Add webkit2gtk">
+      <created>1618342393053</created>
+      <option name="number" value="00590" />
+      <option name="presentableId" value="LOCAL-00590" />
       <option name="project" value="LOCAL" />
-      <updated>1616965799014</updated>
+      <updated>1618342393054</updated>
     </task>
-    <task id="LOCAL-00495" summary="Redeploy">
-      <created>1616966143521</created>
-      <option name="number" value="00495" />
-      <option name="presentableId" value="LOCAL-00495" />
+    <task id="LOCAL-00591" summary="Add webkit2gtk">
+      <created>1618342635995</created>
+      <option name="number" value="00591" />
+      <option name="presentableId" value="LOCAL-00591" />
       <option name="project" value="LOCAL" />
-      <updated>1616966143521</updated>
+      <updated>1618342635995</updated>
     </task>
-    <task id="LOCAL-00496" summary="Just a normal img tag">
-      <created>1616969643368</created>
-      <option name="number" value="00496" />
-      <option name="presentableId" value="LOCAL-00496" />
+    <task id="LOCAL-00592" summary="Install gpodder">
+      <created>1618343480341</created>
+      <option name="number" value="00592" />
+      <option name="presentableId" value="LOCAL-00592" />
       <option name="project" value="LOCAL" />
-      <updated>1616969643369</updated>
+      <updated>1618343480341</updated>
     </task>
-    <task id="LOCAL-00497" summary="iframe allow=&quot;clipboard-read; clipboard-write&quot; as advised here: https://web.dev/async-clipboard/#permissions-policy-integration">
-      <created>1616979997089</created>
-      <option name="number" value="00497" />
-      <option name="presentableId" value="LOCAL-00497" />
+    <task id="LOCAL-00593" summary="Add logos">
+      <created>1618345938858</created>
+      <option name="number" value="00593" />
+      <option name="presentableId" value="LOCAL-00593" />
       <option name="project" value="LOCAL" />
-      <updated>1616979997090</updated>
+      <updated>1618345938858</updated>
     </task>
-    <task id="LOCAL-00498" summary="Execute getClipboardContents() once in order to obtain user permission">
-      <created>1617002376355</created>
-      <option name="number" value="00498" />
-      <option name="presentableId" value="LOCAL-00498" />
+    <task id="LOCAL-00594" summary="Remove duplicate version of gPodder and set its home directory">
+      <created>1618351625320</created>
+      <option name="number" value="00594" />
+      <option name="presentableId" value="LOCAL-00594" />
       <option name="project" value="LOCAL" />
-      <updated>1617002376358</updated>
+      <updated>1618351625320</updated>
     </task>
-    <task id="LOCAL-00499" summary="add method initClipboard()">
-      <created>1617005851535</created>
-      <option name="number" value="00499" />
-      <option name="presentableId" value="LOCAL-00499" />
+    <task id="LOCAL-00595" summary="Try to get the dependencies right">
+      <created>1618357602386</created>
+      <option name="number" value="00595" />
+      <option name="presentableId" value="LOCAL-00595" />
       <option name="project" value="LOCAL" />
-      <updated>1617005851537</updated>
+      <updated>1618357602386</updated>
     </task>
-    <task id="LOCAL-00500" summary="Bugfix">
-      <created>1617040785631</created>
-      <option name="number" value="00500" />
-      <option name="presentableId" value="LOCAL-00500" />
+    <task id="LOCAL-00596" summary="Try to get the dependencies right">
+      <created>1618357926995</created>
+      <option name="number" value="00596" />
+      <option name="presentableId" value="LOCAL-00596" />
       <option name="project" value="LOCAL" />
-      <updated>1617040785634</updated>
+      <updated>1618357926995</updated>
     </task>
-    <task id="LOCAL-00501" summary="A call to clipboard.write or clipboard.writeText outside the scope of a user gesture (such as &quot;click&quot; or &quot;touch&quot; event handlers) will result in the immediate rejection of the promise returned by the API call.">
-      <created>1617045140558</created>
-      <option name="number" value="00501" />
-      <option name="presentableId" value="LOCAL-00501" />
+    <task id="LOCAL-00597" summary="Install pip">
+      <created>1618358457751</created>
+      <option name="number" value="00597" />
+      <option name="presentableId" value="LOCAL-00597" />
       <option name="project" value="LOCAL" />
-      <updated>1617045140559</updated>
+      <updated>1618358457751</updated>
     </task>
-    <task id="LOCAL-00502" summary="onmouseover=&quot;navigator.clipboard.readText();">
-      <created>1617048265792</created>
-      <option name="number" value="00502" />
-      <option name="presentableId" value="LOCAL-00502" />
+    <task id="LOCAL-00598" summary="Use make install">
+      <created>1618358830528</created>
+      <option name="number" value="00598" />
+      <option name="presentableId" value="LOCAL-00598" />
       <option name="project" value="LOCAL" />
-      <updated>1617048265801</updated>
+      <updated>1618358830528</updated>
     </task>
-    <task id="LOCAL-00503" summary="Try using background image">
-      <created>1617051025832</created>
-      <option name="number" value="00503" />
-      <option name="presentableId" value="LOCAL-00503" />
+    <task id="LOCAL-00599" summary="Configure gPodder">
+      <created>1618522251860</created>
+      <option name="number" value="00599" />
+      <option name="presentableId" value="LOCAL-00599" />
       <option name="project" value="LOCAL" />
-      <updated>1617051025832</updated>
+      <updated>1618522251860</updated>
     </task>
-    <task id="LOCAL-00504" summary="Try using background image">
-      <created>1617052874138</created>
-      <option name="number" value="00504" />
-      <option name="presentableId" value="LOCAL-00504" />
+    <task id="LOCAL-00600" summary="Configure gPodder">
+      <created>1618522313956</created>
+      <option name="number" value="00600" />
+      <option name="presentableId" value="LOCAL-00600" />
       <option name="project" value="LOCAL" />
-      <updated>1617052874139</updated>
+      <updated>1618522313956</updated>
     </task>
-    <task id="LOCAL-00505" summary="Try using background image">
-      <created>1617053151019</created>
-      <option name="number" value="00505" />
-      <option name="presentableId" value="LOCAL-00505" />
+    <task id="LOCAL-00601" summary="Configure gPodder">
+      <created>1618522469217</created>
+      <option name="number" value="00601" />
+      <option name="presentableId" value="LOCAL-00601" />
       <option name="project" value="LOCAL" />
-      <updated>1617053151020</updated>
+      <updated>1618522469217</updated>
     </task>
-    <task id="LOCAL-00506" summary="Create proper background based on an image found here: https://securitytrails.com/blog/working-remotely">
-      <created>1617134762222</created>
-      <option name="number" value="00506" />
-      <option name="presentableId" value="LOCAL-00506" />
+    <task id="LOCAL-00602" summary="Fix &quot;Expressions used in outputs can only refer to sensitive values if the&#10;│ sensitive attribute is true&quot; due to upgrade to Terraform 0.15">
+      <created>1618523040662</created>
+      <option name="number" value="00602" />
+      <option name="presentableId" value="LOCAL-00602" />
       <option name="project" value="LOCAL" />
-      <updated>1617134762224</updated>
+      <updated>1618523040662</updated>
     </task>
-    <task id="LOCAL-00507" summary="Allow HTML in messages">
-      <created>1617136725454</created>
-      <option name="number" value="00507" />
-      <option name="presentableId" value="LOCAL-00507" />
+    <task id="LOCAL-00603" summary="Fix &quot;Expressions used in outputs can only refer to sensitive values if the&#10;│ sensitive attribute is true&quot; due to upgrade to Terraform 0.15">
+      <created>1618523255491</created>
+      <option name="number" value="00603" />
+      <option name="presentableId" value="LOCAL-00603" />
       <option name="project" value="LOCAL" />
-      <updated>1617136725454</updated>
+      <updated>1618523255491</updated>
     </task>
-    <task id="LOCAL-00508" summary="Switch to pairpac.com from jafudi.de">
-      <created>1617136957660</created>
-      <option name="number" value="00508" />
-      <option name="presentableId" value="LOCAL-00508" />
+    <task id="LOCAL-00604" summary="Fix &quot;Expressions used in outputs can only refer to sensitive values if the&#10;│ sensitive attribute is true&quot; due to upgrade to Terraform 0.15">
+      <created>1618553876036</created>
+      <option name="number" value="00604" />
+      <option name="presentableId" value="LOCAL-00604" />
       <option name="project" value="LOCAL" />
-      <updated>1617136957660</updated>
+      <updated>1618553876037</updated>
     </task>
-    <task id="LOCAL-00509" summary="Update background image">
-      <created>1617214547406</created>
-      <option name="number" value="00509" />
-      <option name="presentableId" value="LOCAL-00509" />
+    <task id="LOCAL-00605" summary="Fix &quot;Expressions used in outputs can only refer to sensitive values if the&#10;│ sensitive attribute is true&quot; due to upgrade to Terraform 0.15">
+      <created>1618555348020</created>
+      <option name="number" value="00605" />
+      <option name="presentableId" value="LOCAL-00605" />
       <option name="project" value="LOCAL" />
-      <updated>1617214547408</updated>
+      <updated>1618555348020</updated>
     </task>
-    <task id="LOCAL-00510" summary="Update background image">
-      <created>1617216428974</created>
-      <option name="number" value="00510" />
-      <option name="presentableId" value="LOCAL-00510" />
+    <task id="LOCAL-00606" summary="Fix &quot;Expressions used in outputs can only refer to sensitive values if the&#10;│ sensitive attribute is true&quot; due to upgrade to Terraform 0.15">
+      <created>1618574462667</created>
+      <option name="number" value="00606" />
+      <option name="presentableId" value="LOCAL-00606" />
       <option name="project" value="LOCAL" />
-      <updated>1617216428975</updated>
+      <updated>1618574462667</updated>
     </task>
-    <task id="LOCAL-00511" summary="Update background image">
-      <created>1617216517000</created>
-      <option name="number" value="00511" />
-      <option name="presentableId" value="LOCAL-00511" />
+    <task id="LOCAL-00607" summary="Test desktop installation only if there are changes in the corresponding script(s)">
+      <created>1618574771636</created>
+      <option name="number" value="00607" />
+      <option name="presentableId" value="LOCAL-00607" />
       <option name="project" value="LOCAL" />
-      <updated>1617216517001</updated>
+      <updated>1618574771636</updated>
     </task>
-    <option name="localTasksCounter" value="512" />
+    <option name="localTasksCounter" value="608" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,31 +492,31 @@
       <path value="$PROJECT_DIR$/../blast-radius" />
       <path value="$PROJECT_DIR$/../terraform-cloudinit-gateway" />
     </ignored-roots>
-    <MESSAGE value="Cleanup folders" />
-    <MESSAGE value="python3 -m pip install pyautogui pynput --system" />
-    <MESSAGE value="Test how templatefile funtion behaves if superfluous arguments are passed" />
-    <MESSAGE value="Add macros to initialize Trojita and VLC" />
-    <MESSAGE value="Split installation and customization of desktop." />
-    <MESSAGE value="Only Mumble init script works ok" />
-    <MESSAGE value="Bugfix typo" />
-    <MESSAGE value="Add marketing text" />
-    <MESSAGE value="Redirect users to PairPac repo via Rebrandly in order to collect browser info" />
-    <MESSAGE value="Add some suitable SVG from Papirus icon theme" />
-    <MESSAGE value="Add two more clickable icons that will open the local mail program in the future" />
-    <MESSAGE value="Add mailto links with subject" />
-    <MESSAGE value="Redeploy" />
-    <MESSAGE value="Just a normal img tag" />
-    <MESSAGE value="iframe allow=&quot;clipboard-read; clipboard-write&quot; as advised here: https://web.dev/async-clipboard/#permissions-policy-integration" />
-    <MESSAGE value="Execute getClipboardContents() once in order to obtain user permission" />
-    <MESSAGE value="add method initClipboard()" />
-    <MESSAGE value="Bugfix" />
-    <MESSAGE value="A call to clipboard.write or clipboard.writeText outside the scope of a user gesture (such as &quot;click&quot; or &quot;touch&quot; event handlers) will result in the immediate rejection of the promise returned by the API call." />
-    <MESSAGE value="onmouseover=&quot;navigator.clipboard.readText();" />
-    <MESSAGE value="Try using background image" />
-    <MESSAGE value="Create proper background based on an image found here: https://securitytrails.com/blog/working-remotely" />
-    <MESSAGE value="Allow HTML in messages" />
-    <MESSAGE value="Switch to pairpac.com from jafudi.de" />
-    <MESSAGE value="Update background image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update background image" />
+    <MESSAGE value="Upload a 16:9 version of the wallpaper from Adobe" />
+    <MESSAGE value="Re-enable upload functionality" />
+    <MESSAGE value="Fix path" />
+    <MESSAGE value="Give gateway user access to his own home folder" />
+    <MESSAGE value="SingleClick=false" />
+    <MESSAGE value="&quot;Join audio conference&quot; instead of the more technical &quot;Connect to server&quot;" />
+    <MESSAGE value="Bump providers versions except for oci and aws (later)" />
+    <MESSAGE value="Remove terraform lock file" />
+    <MESSAGE value="Use headphone emoji to loosen up a bit the UX" />
+    <MESSAGE value="Test gpodder installation" />
+    <MESSAGE value="Need git" />
+    <MESSAGE value="Need build-essential" />
+    <MESSAGE value="Need python3" />
+    <MESSAGE value="Need python3-dev" />
+    <MESSAGE value="Add optional dependencies" />
+    <MESSAGE value="Add webkit2gtk" />
+    <MESSAGE value="Install gpodder" />
+    <MESSAGE value="Add logos" />
+    <MESSAGE value="Remove duplicate version of gPodder and set its home directory" />
+    <MESSAGE value="Try to get the dependencies right" />
+    <MESSAGE value="Install pip" />
+    <MESSAGE value="Use make install" />
+    <MESSAGE value="Configure gPodder" />
+    <MESSAGE value="Fix &quot;Expressions used in outputs can only refer to sensitive values if the&#10;│ sensitive attribute is true&quot; due to upgrade to Terraform 0.15" />
+    <MESSAGE value="Test desktop installation only if there are changes in the corresponding script(s)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test desktop installation only if there are changes in the corresponding script(s)" />
   </component>
 </project>
