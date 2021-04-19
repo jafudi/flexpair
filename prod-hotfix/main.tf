@@ -68,3 +68,13 @@ resource "guacamole_connection_ssh" "admin_console" {
     color_scheme        = "green-black"
   }
 }
+
+resource "guacamole_user" "activeUser" {
+  username = "active"
+
+  attributes {
+    full_name = "Test User"
+    email     = "testUser@example.com"
+    timezone  = "America/Chicago"
+  }
+}
