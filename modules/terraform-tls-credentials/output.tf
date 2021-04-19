@@ -4,9 +4,10 @@ output "vm_mutual_key" {
   sensitive   = true
 }
 
-output "vnc_port" {
+output "vnc_credentials" {
   description = "Randomly chosen VNC port increases security"
-  value       = random_integer.vnc_port.result
+  value       = local.first_vnc_crendentials
+  sensitive   = true
 }
 
 output "email_config" {
@@ -18,6 +19,12 @@ output "email_config" {
 output "murmur_credentials" {
   description = ""
   value       = local.murmur_credentials
+  sensitive   = true
+}
+
+output "guacamole_credentials" {
+  description = ""
+  value       = local.guacamole_credentials
   sensitive   = true
 }
 

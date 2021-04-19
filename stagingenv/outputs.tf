@@ -46,19 +46,22 @@ output "access_via_mumble" {
   # We want this to be displayed on the overview page for logged in users
 }
 
-output "guacamole_endpoint" {
-  description = ""
-  value       = "https://${local.full_hostname}/guacamole"
-}
+# Below outputs are used to configure Guacamole from a separate workspace
 
-output "guacamole_admin_username" {
+output "gateway_username" {
   description = ""
-  value       = local.admin_name
+  value       = module.credentials_generator.gateway_username
   sensitive   = true
 }
 
-output "guacamole_admin_password" {
+output "guacamole_credentials" {
   description = ""
-  value       = "guacadmin"
+  value       = module.credentials_generator.guacamole_credentials
+  sensitive   = true
+}
+
+output "first_vnc_credentials" {
+  description = ""
+  value       = module.credentials_generator.vnc_credentials
   sensitive   = true
 }

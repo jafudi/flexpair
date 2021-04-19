@@ -85,9 +85,10 @@ No Modules.
 | email\_config | n/a |
 | gateway\_primary\_nic\_name | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
+| guacamole\_credentials | n/a |
 | letsencrypt\_certificate | n/a |
 | mumble\_url | n/a |
 | murmur\_credentials | n/a |
 | vm\_mutual\_key | n/a |
-| vnc\_port | Randomly chosen VNC port increases security |
+| vnc\_credentials | Randomly chosen VNC port increases security |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

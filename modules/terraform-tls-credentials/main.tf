@@ -13,6 +13,11 @@ resource "random_password" "murmur_password" {
   special = false // may lead to quoting issues otherwise
 }
 
+resource "random_password" "guacamole_admin_name" {
+  length  = 9
+  special = false
+}
+
 resource "random_integer" "murmur_port" {
   max = 65535
   min = 10000
@@ -27,6 +32,19 @@ locals {
   murmur_credentials = {
     port     = random_integer.murmur_port.result
     password = random_password.murmur_password.result
+  }
+
+  guacamole_credentials = {
+    guacamole_endpoint_url   = "https://${var.full_hostname}/guacamole"
+    guacamole_admin_username = random_password.guacamole_admin_name.result
+    guacamole_admin_password = "guacadmin"
+  }
+
+  first_vnc_crendentials = {
+    title    = "Use shared desktop 1 ( ...some useful hints... )"
+    vnc_port = random_integer.vnc_port.result
+    username = "jafudi"
+    password = "jafudi"
   }
 
   email_config = {

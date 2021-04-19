@@ -14,7 +14,6 @@ locals {
   workspace       = local.org_list[1]
   valid_subdomain = random_pet.subdomain.id # in PROD: lower(replace(local.workspace, "/[_\\W]/", "-"))
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
-  admin_name      = "${local.organization}admin"
 }
 
 module "oracle_infrastructure" {
@@ -47,6 +46,8 @@ module "credentials_generator" {
   rfc2136_tsig_algorithm = var.rfc2136_tsig_algorithm
 }
 
+# TODO: Fully parameterize VNC crendetials
+# TODO: Fully parameterize Guacamole credentials
 module "gateway_installer" {
   timezone_name          = var.timezone
   locale_name            = var.locale
@@ -60,8 +61,8 @@ module "gateway_installer" {
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
   mumbling_mole_version  = local.mumbling_mole_version
-  first_vnc_port         = module.credentials_generator.vnc_port
-  guacamole_admin        = "${local.organization}admin"
+  first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
+  guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master"
 }
 
@@ -104,6 +105,7 @@ resource "time_sleep" "dns_propagation" {
   }
 }
 
+# TODO: Fully parameterize VNC crendetials
 module "desktop_installer" {
   timezone_name        = var.timezone
   locale_name          = var.locale
@@ -115,7 +117,7 @@ module "desktop_installer" {
   browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = local.full_hostname
   email_config         = module.credentials_generator.email_config
-  gateway_vnc_port     = module.credentials_generator.vnc_port
+  gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
   source               = "git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master"
 }
 
