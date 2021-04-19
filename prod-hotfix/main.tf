@@ -1,7 +1,7 @@
 provider "guacamole" {
-  url                      = data.terraform_remote_state.prod.outputs.guacamole_endpoint
-  username                 = data.terraform_remote_state.prod.outputs.guacamole_admin_username
-  password                 = data.terraform_remote_state.prod.outputs.guacamole_admin_password
+  url                      = local.guacamole_credentials.guacamole_endpoint_url
+  username                 = local.guacamole_credentials.guacamole_admin_username
+  password                 = local.guacamole_credentials.guacamole_admin_password
   disable_tls_verification = true
   disable_cookies          = true
 }
