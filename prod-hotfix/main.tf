@@ -78,3 +78,13 @@ resource "guacamole_user" "activeUser" {
     timezone  = "America/Chicago"
   }
 }
+
+resource "guacamole_user" "activeUser2" {
+  username = "active2"
+
+  attributes {
+    full_name = "Test User"
+    email     = "testUser@example.com"
+    timezone  = "America/Chicago"
+  }
+}
