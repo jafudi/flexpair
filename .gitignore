@@ -32,7 +32,7 @@ override.tf.json
 # example: *tfplan*
 
 # Ignore CLI configuration files
-.terraformrc
+# .terraformrc
 terraform.rc
 
 # Local .idea directories
