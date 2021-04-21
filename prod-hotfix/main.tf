@@ -73,7 +73,7 @@ data "guacamole_user" "activeUser" {
   username = "active"
 }
 
-data "guacamole_user_group" "group" {
+resource "guacamole_user_group" "group" {
   identifier   = "testGuacamoleUserGroup"
   member_users = [data.guacamole_user.activeUser.id]
 }
