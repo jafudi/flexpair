@@ -69,11 +69,10 @@ resource "guacamole_connection_ssh" "admin_console" {
   }
 }
 
-data "guacamole_user" "activeUser" {
+data "guacamole_user" "active_user" {
   username = "active"
 }
 
-resource "guacamole_user_group" "group" {
-  identifier   = "testGuacamoleUserGroup"
-  member_users = [data.guacamole_user.activeUser.id]
+resource "guacamole_user_group" "initial_users" {
+  identifier = "initial"
 }
