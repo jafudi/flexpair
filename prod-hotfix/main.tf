@@ -69,22 +69,12 @@ resource "guacamole_connection_ssh" "admin_console" {
   }
 }
 
-resource "guacamole_user" "activeUser" {
+data "guacamole_user" "activeUser" {
   username = "active"
-
-  attributes {
-    full_name = "Test User"
-    email     = "testUser@example.com"
-    timezone  = "America/Chicago"
-  }
 }
 
-resource "guacamole_user" "activeUser2" {
-  username = "active2"
-
-  attributes {
-    full_name = "Test User"
-    email     = "testUser@example.com"
-    timezone  = "America/Chicago"
-  }
-}
+//data "guacamole_user_group" "group" {
+//  identifier = "testGuacamoleUserGroup"
+//  member_users = ["active"]
+//  connections =
+//}
