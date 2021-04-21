@@ -73,8 +73,7 @@ data "guacamole_user" "activeUser" {
   username = "active"
 }
 
-//data "guacamole_user_group" "group" {
-//  identifier = "testGuacamoleUserGroup"
-//  member_users = ["active"]
-//  connections =
-//}
+data "guacamole_user_group" "group" {
+  identifier   = "testGuacamoleUserGroup"
+  member_users = [data.guacamole_user.activeUser.id]
+}
