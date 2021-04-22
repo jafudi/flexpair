@@ -69,10 +69,9 @@ resource "guacamole_connection_ssh" "admin_console" {
   }
 }
 
-data "guacamole_user" "active_user" {
-  username = "active"
-}
-
 resource "guacamole_user_group" "initial_users" {
   identifier = "initial"
+  connections = [
+    guacamole_connection_vnc.collaborate.id
+  ]
 }
