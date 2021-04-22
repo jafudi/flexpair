@@ -16,6 +16,9 @@ resource "random_password" "murmur_password" {
 resource "random_password" "guacamole_admin_name" {
   length  = 9
   special = false
+  keepers = {
+    endpoint = local.guacamole_credentials.guacamole_endpoint_url
+  }
 }
 
 resource "random_integer" "murmur_port" {
