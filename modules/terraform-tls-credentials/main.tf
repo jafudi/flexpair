@@ -17,7 +17,7 @@ resource "random_password" "guacamole_admin_name" {
   length  = 9
   special = false
   keepers = {
-    endpoint = local.guacamole_credentials.guacamole_endpoint_url
+    endpoint = "https://${var.full_hostname}/guacamole"
   }
 }
 
