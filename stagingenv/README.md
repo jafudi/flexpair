@@ -186,21 +186,12 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 
-## Direct and indirect competitors
+## Direct competitors in the desktop-as-a-service market
 
-### Virtual Cloud Desktops
-- [Nutanix](https://www.nutanix.com/de/products/frame) testen!
-- [Itopia](https://itopia.com/) testen!
-- [Mikogo Cloud Desktop](https://www.mikogo.com/cloud-desktop/) testen!
-- [V2 Cloud](https://v2cloud.com) testen!
-- [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
-- [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
-- [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
-- [Shells](https://linuxinsider.com/story/a-new-twist-to-virtual-desktop-cloud-computing-87021.html)
+[Shells.com is most similar](https://www.g2.com/products/shells-com/competitors/alternatives)
 
 
-### Collaboration Tools
-- [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/group-chat-software/)
-- [BigBlueButton](https://bigbluebutton.org)
+## Indirect competitors for software developers
+
 - [Studio Code Live Share](https://visualstudio.microsoft.com/de/services/live-share/) and [others](https://raygun.com/blog/remote-pair-programming/)
 - [Gitpod](https://www.gitpod.io)
