@@ -188,7 +188,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 
 ## Direct competitors in the desktop-as-a-service market
 
-[Shells.com is most similar](https://www.g2.com/products/shells-com/competitors/alternatives)
+[List](https://www.g2.com/products/shells-com/competitors/alternatives)
 
 
 ## Indirect competitors for software developers
