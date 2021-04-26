@@ -196,6 +196,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 - [Windows Desktop on Azure](https://azure.microsoft.com/en-us/services/virtual-desktop/)
 - [Amazon WorkSpaces](https://aws.amazon.com/de/workspaces/?workspaces-blogs.sort-by=item.additionalFields.createdDate&workspaces-blogs.sort-order=desc)
 - [Oracle Secure Global Desktops](https://www.oracle.com/ae/secure-global-desktop/)
+- [Shells](https://linuxinsider.com/story/a-new-twist-to-virtual-desktop-cloud-computing-87021.html)
 
 
 ### Collaboration Tools
