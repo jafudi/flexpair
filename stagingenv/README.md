@@ -27,7 +27,7 @@ We deliberately chose to focus on Linux as our guest operating system for a vari
 
 But also people working in other sectors like education and media as well as finance value the security and stability of Linux. A whopping 16.9% of all Ubuntu users work in finance according to [21,291 survey responses in April 2020](https://ubuntu.com/blog/ubuntu-20-04-survey-results). These verticals on top of IT add up to a little over 50% of the whole market according to [Marketysers Global Reports And Data](https://www.reportsanddata.com/report-detail/desktop-virtualization-market). Considering that there are some Linux users in the other half of verticals as well, we consider a Servicable Adressable Market (SAM) of around 0.500 x 0,643 x TAM not as an overestimate. For the year 2022 this means we expect 815 million USD or 675 million EUR demand for LINUX-based DaaS solutions.
 
-Finally, the Servicable Obtainable Market (SOM) is likely the small and medium size businesses (about 20% of the market), as there are less established [competitors](https://www.g2.com/products/shells-com/competitors/alternatives) in the market.
+Finally, the Servicable Obtainable Market (SOM) is likely the small and medium size businesses (about 20% of the market), as there are less established [competitors](https://www.g2.com/products/shells-com/competitors/alternatives) than for enterprise customers.
 
 ## Selected use cases
 
