@@ -174,6 +174,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | access\_via\_browser | n/a |
 | access\_via\_mumble | n/a |
 | aws\_base\_image | n/a |
+| cloudinit\_userdata\_desktop | n/a |
 | desktop\_config\_size | n/a |
 | first\_vnc\_credentials | Credentials for the first desktop's VNC connection |
 | gateway\_config\_size | n/a |

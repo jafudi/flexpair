@@ -1,3 +1,9 @@
+output "cloudinit_userdata_desktop" {
+  description = ""
+  value       = local.unzipped_desktop_bytes
+}
+
+
 output "oci_base_image" {
   description = ""
   value       = module.oracle_infrastructure.additional_metadata.source_image_info
