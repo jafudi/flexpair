@@ -95,27 +95,21 @@ resource "local_file" "desktop_meta_data" {
 }
 
 resource "local_file" "desktop_user_data" {
-  content  = module.desktop_installer.unzipped_config
-  filename = "${path.root}/../uploads/desktop-config/user-data"
+  sensitive_content = module.desktop_installer.unzipped_config
+  filename          = "${path.root}/../uploads/desktop-config/user-data"
 }
 
-resource "null_resource" "desktop_config_iso" {
-
-  depends_on = [
-    local_file.desktop_meta_data,
-    local_file.desktop_user_data
-  ]
-
-  provisioner "local-exec" {
-    working_dir = "${path.root}/../uploads/desktop-config"
-    interpreter = ["/bin/bash", "-c"]
-    command     = "sudo apt-get update; sudo apt-get -qq install genisoimage; genisoimage  -output config.iso -volid cidata -joliet -rock user-data meta-data"
-  }
+resource "local_file" "gen_iso_script" {
+  content         = "sudo apt-get update\nsudo apt-get -y install genisoimage\ngenisoimage -output config.iso -volid cidata -joliet -rock user-data meta-data"
+  filename        = "${path.root}/../uploads/desktop-config/gen-config-iso.sh"
+  file_permission = "0777"
 }
 
 module "gateway_machine" {
   depends_on = [
-    null_resource.desktop_config_iso
+    local_file.desktop_meta_data,
+    local_file.desktop_user_data,
+    local_file.gen_iso_script
   ]
   deployment_tags   = local.deployment_tags
   gateway_username  = module.credentials_generator.gateway_username
