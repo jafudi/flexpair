@@ -109,7 +109,7 @@ resource "null_resource" "desktop_config_iso" {
   provisioner "local-exec" {
     working_dir = "${path.root}/../uploads/desktop-config"
     interpreter = ["/bin/bash", "-c"]
-    command     = "apt-get update; apt-get -qq install genisoimage; genisoimage  -output config.iso -volid cidata -joliet -rock user-data meta-data"
+    command     = "sudo apt-get update; sudo apt-get -qq install genisoimage; genisoimage  -output config.iso -volid cidata -joliet -rock user-data meta-data"
   }
 }
 
