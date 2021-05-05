@@ -14,10 +14,10 @@ output "aws_base_image" {
   value       = module.amazon_infrastructure.additional_metadata.source_image_info
 }
 
-output "ssh_into_desktop_1" {
-  description = ""
-  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
-}
+//output "ssh_into_desktop_1" {
+//  description = ""
+//  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
+//}
 
 output "ssh_into_gateway" {
   description = ""

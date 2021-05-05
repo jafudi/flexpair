@@ -194,6 +194,5 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | guacamole\_credentials | Credentials necessary to gain admin access to Guacamole |
 | oci\_base\_image | n/a |
 | private\_key | n/a |
-| ssh\_into\_desktop\_1 | n/a |
 | ssh\_into\_gateway | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
