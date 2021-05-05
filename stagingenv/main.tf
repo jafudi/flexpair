@@ -178,7 +178,6 @@ resource "null_resource" "health_check" {
 
   depends_on = [
     module.gateway_machine,
-    module.desktop_machine_1,
     time_sleep.dns_propagation
   ]
 
