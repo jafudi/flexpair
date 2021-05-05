@@ -41,6 +41,10 @@ terraform {
       source  = "hashicorp/null"
       version = "~> 3.1.0"
     }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.1.0"
+    }
   }
   required_version = ">= 0.12.26"
   // experiments      = [variable_validation]

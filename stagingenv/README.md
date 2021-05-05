@@ -114,6 +114,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | acme | ~> 2.4.0 |
 | aws | ~> 3.18 |
 | dns | ~> 3.1.0 |
+| local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | oci | ~> 3.95.0 |
 | random | ~> 3.1.0 |
@@ -126,6 +127,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name | Version |
 |------|---------|
 | dns | ~> 3.1.0 |
+| local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
 | time | ~> 0.7.0 |
@@ -137,7 +139,6 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | amazon_infrastructure | app.terraform.io/jafudi/commons/aws | 1.0.0 |
 | credentials_generator | ../modules/terraform-tls-credentials |  |
 | desktop_installer | git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master |  |
-| desktop_machine_1 | app.terraform.io/jafudi/desktop/oci | 1.0.1 |
 | gateway_installer | git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master |  |
 | gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.0.6 |
 | oracle_infrastructure | app.terraform.io/jafudi/commons/oci | 1.1.0 |
@@ -147,6 +148,7 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name |
 |------|
 | [dns_a_record_set](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) |
+| [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
 | [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
@@ -195,4 +197,3 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | ssh\_into\_desktop\_1 | n/a |
 | ssh\_into\_gateway | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-

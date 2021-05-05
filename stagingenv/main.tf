@@ -66,12 +66,57 @@ module "gateway_installer" {
   source                 = "git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master"
 }
 
+# TODO: Fully parameterize VNC crendetials
+module "desktop_installer" {
+  timezone_name        = var.timezone
+  locale_name          = var.locale
+  vm_mutual_keypair    = module.credentials_generator.vm_mutual_key
+  gateway_username     = module.credentials_generator.gateway_username
+  desktop_username     = module.credentials_generator.desktop_username
+  primary_nic_name     = module.credentials_generator.desktop_primary_nic_name
+  murmur_config        = module.credentials_generator.murmur_credentials
+  browser_url          = module.credentials_generator.browser_url
+  gateway_dns_hostname = local.full_hostname
+  email_config         = module.credentials_generator.email_config
+  gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
+  source               = "git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master"
+}
+
 locals {
+  unzipped_desktop_bytes = length(module.desktop_installer.unzipped_config)
+  encoded_desktop_config = module.desktop_installer.encoded_config
   unzipped_gateway_bytes = length(module.gateway_installer.unzipped_config)
   encoded_gateway_config = module.gateway_installer.encoded_config
 }
 
+resource "local_file" "desktop_meta_data" {
+  content  = "instance-id: iid-local01\nlocal-hostname: cloudimg"
+  filename = "${path.root}/../uploads/desktop-config/meta-data"
+}
+
+resource "local_file" "desktop_user_data" {
+  content  = module.desktop_installer.unzipped_config
+  filename = "${path.root}/../uploads/desktop-config/user-data"
+}
+
+resource "null_resource" "desktop_config_iso" {
+
+  depends_on = [
+    local_file.desktop_meta_data,
+    local_file.desktop_user_data
+  ]
+
+  provisioner "local-exec" {
+    working_dir = "${path.root}/../uploads/desktop-config"
+    interpreter = ["/bin/bash", "-c"]
+    command     = "genisoimage  -output config.iso -volid cidata -joliet -rock user-data meta-data"
+  }
+}
+
 module "gateway_machine" {
+  depends_on = [
+    null_resource.desktop_config_iso
+  ]
   deployment_tags   = local.deployment_tags
   gateway_username  = module.credentials_generator.gateway_username
   encoded_userdata  = local.encoded_gateway_config
@@ -105,48 +150,26 @@ resource "time_sleep" "dns_propagation" {
   }
 }
 
-# TODO: Fully parameterize VNC crendetials
-module "desktop_installer" {
-  timezone_name        = var.timezone
-  locale_name          = var.locale
-  vm_mutual_keypair    = module.credentials_generator.vm_mutual_key
-  gateway_username     = module.credentials_generator.gateway_username
-  desktop_username     = module.credentials_generator.desktop_username
-  primary_nic_name     = module.credentials_generator.desktop_primary_nic_name
-  murmur_config        = module.credentials_generator.murmur_credentials
-  browser_url          = module.credentials_generator.browser_url
-  gateway_dns_hostname = local.full_hostname
-  email_config         = module.credentials_generator.email_config
-  gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
-  source               = "git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master"
-}
-
-locals {
-  unzipped_desktop_bytes = length(module.desktop_installer.unzipped_config)
-  encoded_desktop_config = module.desktop_installer.encoded_config
-}
-
-module "desktop_machine_1" {
-  deployment_tags   = local.deployment_tags
-  desktop_username  = module.credentials_generator.desktop_username
-  encoded_userdata  = local.encoded_desktop_config
-  vm_mutual_keypair = module.credentials_generator.vm_mutual_key
-  depends_on = [
-    # Desktop without gateway would be of little use
-    module.gateway_installer
-  ]
-  source  = "app.terraform.io/jafudi/desktop/oci"
-  version = "1.0.1"
-  // below variables are provider specific
-  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
-}
+//module "desktop_machine_1" {
+//  deployment_tags   = local.deployment_tags
+//  desktop_username  = module.credentials_generator.desktop_username
+//  encoded_userdata  = local.encoded_desktop_config
+//  vm_mutual_keypair = module.credentials_generator.vm_mutual_key
+//  depends_on = [
+//    # Desktop without gateway would be of little use
+//    module.gateway_installer
+//  ]
+//  source  = "app.terraform.io/jafudi/desktop/oci"
+//  version = "1.0.1"
+//  // below variables are provider specific
+//  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
+//}
 
 resource "null_resource" "health_check" {
 
   for_each = toset([
     "/",
-    "/guacamole/" #,
-    #"/desktop-traffic/"
+    "/guacamole/"
   ])
 
   triggers = {
