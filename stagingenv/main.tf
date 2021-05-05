@@ -94,10 +94,10 @@ locals {
 //  filename = "${path.root}/../uploads/desktop-config/meta-data"
 //}
 //
-//resource "local_file" "desktop_user_data" {
-//  sensitive_content = module.desktop_installer.unzipped_config
-//  filename          = "${path.root}/../uploads/desktop-config/user-data"
-//}
+resource "local_file" "desktop_user_data" {
+  sensitive_content = module.desktop_installer.unzipped_config
+  filename          = "${path.root}/../uploads/desktop-config/user-data"
+}
 //
 //resource "local_file" "gen_iso_script" {
 //  content         = "sudo apt-get update\nsudo apt-get -y install genisoimage\ngenisoimage -output config.iso -volid cidata -joliet -rock user-data meta-data"
@@ -106,11 +106,11 @@ locals {
 //}
 
 module "gateway_machine" {
-  //  depends_on = [
-  //    local_file.desktop_meta_data,
-  //    local_file.desktop_user_data,
-  //    local_file.gen_iso_script
-  //  ]
+  depends_on = [
+    #local_file.desktop_meta_data,
+    local_file.desktop_user_data
+    #local_file.gen_iso_script
+  ]
   deployment_tags   = local.deployment_tags
   gateway_username  = module.credentials_generator.gateway_username
   encoded_userdata  = local.encoded_gateway_config
