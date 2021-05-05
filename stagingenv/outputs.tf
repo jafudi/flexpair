@@ -1,6 +1,6 @@
 output "cloudinit_userdata_desktop" {
   description = ""
-  value       = local.encoded_desktop_config
+  value       = module.desktop_installer.unzipped_config
 }
 
 
