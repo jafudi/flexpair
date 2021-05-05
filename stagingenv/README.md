@@ -127,7 +127,6 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name | Version |
 |------|---------|
 | dns | ~> 3.1.0 |
-| local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
 | time | ~> 0.7.0 |
@@ -148,7 +147,6 @@ PairPac stands for Pair Programming Platform as Code. More technically, it is a 
 | Name |
 |------|
 | [dns_a_record_set](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) |
-| [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
 | [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
