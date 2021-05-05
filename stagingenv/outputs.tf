@@ -1,6 +1,6 @@
 output "cloudinit_userdata_desktop" {
   description = ""
-  value       = local.unzipped_desktop_bytes
+  value       = local.encoded_desktop_config
 }
 
 
