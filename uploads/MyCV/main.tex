@@ -1,0 +1,283 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% This fork/modified version has been made by Nicolás Omar González Passerino (nicolas.passerino@gmail.com, 15 Oct 2020)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ----- LIGHT MODE -----
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{PrimaryColor}{HTML}{001F5A}
+\definecolor{SecondaryColor}{HTML}{0039AC}
+\definecolor{ThirdColor}{HTML}{F3890B}
+\definecolor{BackgroundColor}{HTML}{E2E2E2}
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\pagecolor{BackgroundColor}
+% ----- DARK MODE -----
+%\definecolor{BackgroundColor}{HTML}{242424}
+%\definecolor{SlateGrey}{HTML}{6F6F6F}
+%\definecolor{LightGrey}{HTML}{ABABAB}
+%\definecolor{PrimaryColor}{HTML}{3F7FFF}
+%\colorlet{name}{PrimaryColor}
+%\colorlet{tagline}{PrimaryColor}
+%\colorlet{heading}{PrimaryColor}
+%\colorlet{headingrule}{PrimaryColor}
+%\colorlet{subheading}{PrimaryColor}
+%\colorlet{accent}{PrimaryColor}
+%\colorlet{emphasis}{LightGrey}
+%\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+    \name{Jens Fielenbach}
+    \tagline{Lead Data Scientist, DevOps Evangelist, Mathematician}
+    %% You can add multiple photos on the left or right
+    \photoL{4cm}{portrait}
+
+    \personalinfo{
+        \email{mail@jens-fielenbach.de}\smallskip
+        \phone{+49-160-8802852}
+        \location{Heidelberg, Germany}\\
+        \linkedin{fielenbach}
+        \github{jafudi}
+        %\medium{nicolasomar}
+        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+        % \orcid{0000-0000-0000-0000}
+        %% You can add your own arbtrary detail with
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+        %% Or you can declare your own field with
+        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        \gitlab{jafudi}
+    }
+
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+        % ----- STRENGTHS -----
+        \cvsection{Strengths}
+            \cvachievement{\faTrophy}{9.5 FTE years of overall work experience}{85\% thereof with data of 14 external clients from 6 industries}
+            \divider
+
+            \cvachievement{\faTrophy}{Advanced Design Thinking Certificate}{comprising of the modules Insights for Innovation, From Ideas to Action, Storytelling for Influence, Unlocking Creativity and Human-Centered Service Design }
+            \divider
+
+            \cvtag{quick grasp of new matters}
+            \cvtag{thinking out of the box}
+            \cvtag{cross-cultural communication}
+            \cvtag{high level of integrity}
+            \cvtag{self-organized work}
+        % ----- STRENGTHS -----
+
+        % ----- LEARNING -----
+        \cvsection{Tech Skills}
+
+            \cvachievement{\faTrophy}{20+ years of overall coding experience}{Python, R,  Bash, JavaScript, Java, C, C++, Assembler, Pascal, Visual Basic, Delphi, Maple, CSS, Scala, SQL, HiveQL, HCL, XML, you name it}\\
+
+            \cvtag{GitOps}
+            \cvtag{Machine Learning}
+            \cvtag{Statistics}
+            \cvtag{Code review}
+            \medskip
+
+            \cvtag{Operations Research}\\
+            \cvtag{Optimization}
+            \newpage
+
+        % ----- LEARNING -----
+
+        % ----- FREETIME -----
+        \cvsection{My Freetime}
+            \cvevent{PairPac.com }{\cvrepo{| \faGithub}{https://github.com/jafudi/pairpac}}{Mar 2020 -- ongoing}{}
+            \begin{itemize}
+                \item IaC with Terraform
+                \item Deep dive to AWS
+            \end{itemize}
+            \divider\\
+            \cvtag{Gardening}
+            \cvtag{Traveling Asia}
+            \cvtag{Hiking with my wife}\\
+            \cvtag{DSA alumni club}
+        % ----- FREETIME -----
+
+        % ----- LANGUAGES -----
+        \cvsection{Languages}
+            \cvlang{German}{native speaker}\\
+            \smallskip
+            \cvlang{English}{business fluent}\\
+            \smallskip
+            \cvlang{Japanese}{use everyday}\\
+            \smallskip
+        % ----- LANGUAGES -----
+
+
+        % use ONLY \newpage if you want to force a page break for
+        % ONLY the current column
+        \newpage
+
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+
+        % ----- ABOUT ME -----
+        \cvsection{About me}
+            \begin{quote}
+                Jens is holding a diploma degree in mathematics from Heidelberg University. His field of study included discrete optimization, partial differential equations and theoretical physics. After finishing his diploma, he joined PwC Switzerland in their risk advisory practice. Here Jens worked for a global banking client and implemented their group-wide KYC model for predicting the likelihood of money laundering. With the acquired deep knowledge in R, he then became the co-founder of the Swiss PwC Analytics team. He engaged in business development as well as recruiting and was one of the first to apply tools like Microsoft Azure Machine Learning and H20 on projects. He participated in conferences like the Deep learning Summit 2015 in San Francisco. Intending to dive deeper into the technical foundations of data science, Jens decided to join Accenture Digital Analytics in 2016. His projects with banking as well as sportswear manufacturing clients were focused on big data engineering. He participated in a training week in Apache Spark development and in the Deep Learning in Health Care Summit 2017. Jens is convinced that in order to be a good data scientist, you not only have to know your data but be enthusiastic about the insights that can be derived from it. That is why he decided to join the Lufthansa corporate startup zeroG close to 4 years ago.
+            \end{quote}
+        % ----- ABOUT ME -----
+
+        % ----- EXPERIENCE -----
+        \cvsection{Work Experience}
+            \cvevent{Lead Data Scientist }{| zeroG GmbH, part of Lufthansa Group}{Jul 2017 -- now}{Frankfurt Airport, Germany}
+            \begin{itemize}
+                \item Determined the optimization potential within a multi-hub airline network by means of a hybrid mixed-integer approach; considered macroscopic effects like market competition as well as detailed operational constraints like airport time slots
+                \item Demonstrated the effectiveness of test-driven DevOps methodology to the product owner of a popular software suite for flight scheduling while delivering automated KPI dashboards
+                \item Responsibility for an in-depth analysis of how decentral stations impact the efficiency of crew planning; highly complex data wrangling in a very limited time frame
+                \item Conducted a series of change management workshops in line with the transitioning of zeroG to an (almost) no hierarchy structure
+            \end{itemize}
+            \divider
+
+            \cvevent{Analytics Consultant }{| Accenture Digital}{May 2016 -- May 2017}{Zurich City, Switzerland}
+            \begin{itemize}
+                \item Realized an Apache Spark based solution for ingesting online marketing data at the adidas headquarters, driving alignment between business, IT and master data management
+                \item As a SCRUM team lead, quickly learned how to efficiently delegate tasks to off-shore colleagues in India
+            \end{itemize}
+            \divider
+
+            \cvevent{Senior Consultant }{| PwC Switzerland}{Aug 2013 -- Apr 2016}{Zurich Oerlikon, Switzerland}
+            \begin{itemize}
+                \item Received spot bonus and promotion after first project, where we helped a renowned bank client to prevent money laundering; identified relevant risk attributes in order to unify their scoring method globally; implemented a machine learning model using XGBoost
+                \item Took part in the Deep Learning Summit in San Francisco as early as 2015
+                \item The PwC culture of knowledge exchange became deeply ingrained in my professional DNA, something I am most grateful for
+            \end{itemize}
+            \divider
+
+            \cvevent{Internship }{| Miebach Consulting GmbH}{Aug 2011 -- Sep 2011}{Frankfurt City, Germany}
+            \begin{itemize}
+                \item Built a generator for test data to be used in a supply chain simulation of a parcel distribution center
+            \end{itemize}
+            \divider
+
+            \cvevent{Swimming Teacher for Kids}{| Solo Freelancer}{2007 -- 2012}{multiple locations around Heidelberg}
+            \begin{itemize}
+            \item High degree of responsibility for about 45 participants per week, age 4-12
+            \end{itemize}
+            \divider
+
+            \cvevent{Social Gap Year}{| Day Care for Autistic Children}{Jul 2005 -- Jul 2006}{Sapporo, Hokkaido, Japan}
+            \begin{itemize}
+            \item Learned the language in a few months, still fluent and married to a Japanese
+            \end{itemize}
+            \divider
+        % ----- EXPERIENCE -----
+
+        \cvsection{Industry data experience}
+
+        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % \wheelchart{outer radius}{inner radius}{
+        % comma-separated list of value/text width/color/detail}
+        \wheelchart{2.5cm}{1.0cm}{%
+           6144/8em/accent!30/Airline operations research,
+           960/10em/accent!20/(Renewable) energy industry,
+           2221/8em/accent!40/Fashion and online marketing,
+           550/10em/accent/Pharma and healthcare,
+           5600/8em/accent!60/Retail and investment banking,
+           360/6em/accent!20/Supply chain consulting
+         }
+
+
+
+        % ----- EDUCATION -----
+        \cvsection{Academic background}
+            \cvevent{Diploma in Applied Mathematics }{| University of Heidelberg}{Oct 2006 -- Jul 2013}{Heidelberg, Germany}
+            \begin{itemize}
+                \item Scholarship from the German National Academic Foundation
+                \item Research assistant job in the ComOpt goup from Nov 2010 to Mar 2013
+                \item Final grade: $\diameter 1.4$ (very good), minor in Theoretical Physics
+            \end{itemize}
+            \divider
+
+            \cvevent{German Abitur }{| CJD Jugenddorf-Christophorusschule}{Jun 2005 after 12 years, 1 skipped}{Königswinter near Bonn, Germany}
+            \begin{itemize}
+                \item Final grade: $\diameter 1.0$ (achieved by only two students that year)
+            \end{itemize}
+        % ----- EDUCATION -----
+
+    \end{paracol}
+\end{document}
