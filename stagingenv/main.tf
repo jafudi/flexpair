@@ -144,20 +144,20 @@ resource "time_sleep" "dns_propagation" {
   }
 }
 
-//module "desktop_machine_1" {
-//  deployment_tags   = local.deployment_tags
-//  desktop_username  = module.credentials_generator.desktop_username
-//  encoded_userdata  = local.encoded_desktop_config
-//  vm_mutual_keypair = module.credentials_generator.vm_mutual_key
-//  depends_on = [
-//    # Desktop without gateway would be of little use
-//    module.gateway_installer
-//  ]
-//  source  = "app.terraform.io/jafudi/desktop/oci"
-//  version = "1.0.1"
-//  // below variables are provider specific
-//  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
-//}
+module "desktop_machine_1" {
+  deployment_tags   = local.deployment_tags
+  desktop_username  = module.credentials_generator.desktop_username
+  encoded_userdata  = local.encoded_desktop_config
+  vm_mutual_keypair = module.credentials_generator.vm_mutual_key
+  depends_on = [
+    # Desktop without gateway would be of little use
+    module.gateway_installer
+  ]
+  source  = "app.terraform.io/jafudi/desktop/oci"
+  version = "1.0.1"
+  // below variables are provider specific
+  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
+}
 
 resource "null_resource" "health_check" {
 
