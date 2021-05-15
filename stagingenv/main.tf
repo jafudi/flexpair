@@ -34,11 +34,20 @@ module "amazon_infrastructure" {
   version         = "1.0.0"
 }
 
+locals {
+  gateway_creation_context = module.amazon_infrastructure.vm_creation_context
+  gateway_additional_info  = module.amazon_infrastructure.additional_metadata
+  desktop_creation_context = module.oracle_infrastructure.vm_creation_context
+  desktop_additional_info  = module.amazon_infrastructure.additional_metadata
+}
+
 module "credentials_generator" {
-  full_hostname      = local.full_hostname
-  gateway_cloud_info = module.amazon_infrastructure.additional_metadata
-  desktop_cloud_info = module.oracle_infrastructure.additional_metadata
-  source             = "../modules/terraform-tls-credentials"
+  full_hostname         = local.full_hostname
+  gateway_context_hash  = sha512(join("", values(local.gateway_creation_context)))
+  desktop_context_hash  = sha512(join("", values(local.desktop_creation_context)))
+  gateway_cloud_account = local.gateway_additional_info.cloud_account_name
+  desktop_cloud_account = local.desktop_additional_info.cloud_account_name
+  source                = "../modules/terraform-tls-credentials"
   // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
   rfc2136_key_name       = var.rfc2136_key_name
@@ -54,7 +63,7 @@ module "gateway_installer" {
   vm_mutual_keypair      = module.credentials_generator.vm_mutual_key
   gateway_username       = module.credentials_generator.gateway_username
   desktop_username       = module.credentials_generator.desktop_username
-  primary_nic_name       = module.credentials_generator.gateway_primary_nic_name
+  primary_nic_name       = local.gateway_additional_info.network_interface_name
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
   gateway_dns_hostname   = local.full_hostname
@@ -73,7 +82,7 @@ module "desktop_installer" {
   vm_mutual_keypair    = module.credentials_generator.vm_mutual_key
   gateway_username     = module.credentials_generator.gateway_username
   desktop_username     = module.credentials_generator.desktop_username
-  primary_nic_name     = module.credentials_generator.desktop_primary_nic_name
+  primary_nic_name     = local.desktop_additional_info.network_interface_name
   murmur_config        = module.credentials_generator.murmur_credentials
   browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = local.full_hostname
@@ -125,7 +134,7 @@ module "gateway_machine" {
   source  = "app.terraform.io/jafudi/gateway/aws"
   version = "1.0.8"
   // below variables are provider specific
-  cloud_provider_context = module.amazon_infrastructure.vm_creation_context
+  cloud_provider_context = local.gateway_creation_context
 }
 
 resource "dns_a_record_set" "gateway_hostname" {
@@ -156,7 +165,7 @@ module "desktop_machine_1" {
   source  = "app.terraform.io/jafudi/desktop/oci"
   version = "1.0.1"
   // below variables are provider specific
-  cloud_provider_context = module.oracle_infrastructure.vm_creation_context
+  cloud_provider_context = local.desktop_creation_context
 }
 
 resource "null_resource" "health_check" {

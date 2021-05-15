@@ -1,19 +1,21 @@
-variable "gateway_cloud_info" {
+variable "gateway_cloud_account" {
   description = ""
-  type = object({
-    cloud_account_name     = string
-    source_image_info      = string
-    network_interface_name = string
-  })
+  type        = string
 }
 
-variable "desktop_cloud_info" {
+variable "desktop_cloud_account" {
   description = ""
-  type = object({
-    cloud_account_name     = string
-    source_image_info      = string
-    network_interface_name = string
-  })
+  type        = string
+}
+
+variable "gateway_context_hash" {
+  description = ""
+  type        = string
+}
+
+variable "desktop_context_hash" {
+  description = ""
+  type        = string
 }
 
 variable "full_hostname" {

@@ -67,9 +67,11 @@ No Modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| desktop\_cloud\_info | n/a | <pre>object({<br>    cloud_account_name     = string<br>    source_image_info      = string<br>    network_interface_name = string<br>  })</pre> | n/a | yes |
+| desktop\_cloud\_account | n/a | `string` | n/a | yes |
+| desktop\_context\_hash | n/a | `string` | n/a | yes |
 | full\_hostname | n/a | `string` | n/a | yes |
-| gateway\_cloud\_info | n/a | <pre>object({<br>    cloud_account_name     = string<br>    source_image_info      = string<br>    network_interface_name = string<br>  })</pre> | n/a | yes |
+| gateway\_cloud\_account | n/a | `string` | n/a | yes |
+| gateway\_context\_hash | n/a | `string` | n/a | yes |
 | rfc2136\_key\_name | n/a | `string` | n/a | yes |
 | rfc2136\_key\_secret | n/a | `string` | n/a | yes |
 | rfc2136\_name\_server | n/a | `string` | n/a | yes |
@@ -80,10 +82,8 @@ No Modules.
 | Name | Description |
 |------|-------------|
 | browser\_url | n/a |
-| desktop\_primary\_nic\_name | n/a |
 | desktop\_username | Making sure the first character is a lower case roman letter |
 | email\_config | n/a |
-| gateway\_primary\_nic\_name | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
 | guacamole\_credentials | n/a |
 | letsencrypt\_certificate | n/a |

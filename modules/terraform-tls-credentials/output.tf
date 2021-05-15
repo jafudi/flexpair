@@ -30,22 +30,12 @@ output "guacamole_credentials" {
 
 output "gateway_username" {
   description = "Make sure the first character is a lower case roman letter"
-  value       = replace(var.gateway_cloud_info.cloud_account_name, "/^([^a-z])/", "u$1")
+  value       = replace(var.gateway_cloud_account, "/^([^a-z])/", "u$1")
 }
 
 output "desktop_username" {
   description = "Making sure the first character is a lower case roman letter"
-  value       = replace(var.desktop_cloud_info.cloud_account_name, "/^([^a-z])/", "u$1")
-}
-
-output "gateway_primary_nic_name" {
-  description = ""
-  value       = var.gateway_cloud_info.network_interface_name
-}
-
-output "desktop_primary_nic_name" {
-  description = ""
-  value       = var.desktop_cloud_info.network_interface_name
+  value       = replace(var.desktop_cloud_account, "/^([^a-z])/", "u$1")
 }
 
 output "letsencrypt_certificate" {

@@ -11,19 +11,25 @@ resource "random_password" "imap_password" {
 resource "random_password" "murmur_password" {
   length  = 16
   special = false // may lead to quoting issues otherwise
+  keepers = {
+    gateway_replacement_trigger = var.gateway_context_hash
+  }
 }
 
 resource "random_password" "guacamole_admin_name" {
   length  = 9
   special = false
   keepers = {
-    endpoint = "https://${var.full_hostname}/guacamole"
+    gateway_replacement_trigger = var.gateway_context_hash
   }
 }
 
 resource "random_integer" "murmur_port" {
   max = 65535
   min = 10000
+  keepers = {
+    gateway_replacement_trigger = var.gateway_context_hash
+  }
 }
 
 resource "random_integer" "vnc_port" {
