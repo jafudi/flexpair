@@ -1,9 +1,24 @@
+data "terraform_remote_state" "prod" {
+  backend = "remote"
+  config = {
+    organization = "jafudi"
+    workspaces = {
+      name = "STAGING"
+    }
+  }
+}
+
 provider "guacamole" {
-  url                      = local.guacamole_credentials.guacamole_endpoint_url
-  username                 = local.guacamole_credentials.guacamole_admin_username
-  password                 = local.guacamole_credentials.guacamole_admin_password
+  url                      = data.terraform_remote_state.prod.outputs.guacamole_credentials.guacamole_endpoint_url
+  username                 = data.terraform_remote_state.prod.outputs.guacamole_credentials.guacamole_admin_username
+  password                 = data.terraform_remote_state.prod.outputs.guacamole_credentials.guacamole_admin_password
   disable_tls_verification = true
   disable_cookies          = true
+}
+
+locals {
+  gateway_username     = data.terraform_remote_state.prod.outputs.gateway_username
+  first_vnc_connection = data.terraform_remote_state.prod.outputs.first_vnc_credentials
 }
 
 resource "guacamole_connection_vnc" "collaborate" {
