@@ -123,8 +123,8 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source  = "app.terraform.io/jafudi/gateway/aws"
-  version = "1.0.8"
+  source  = "app.terraform.io/jafudi/gateway/oci"
+  version = "1.0.6"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
 }
