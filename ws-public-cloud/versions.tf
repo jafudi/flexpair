@@ -9,10 +9,6 @@ terraform {
       source  = "hashicorp/dns"
       version = "~> 3.1.0"
     }
-    oci = {
-      source  = "hashicorp/oci"
-      version = "~> 3.95.0"
-    }
     aws = {
       source  = "hashicorp/aws"
       version = "~> 3.18"

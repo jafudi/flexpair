@@ -13,10 +13,6 @@ terraform {
       source  = "hashicorp/oci"
       version = "~> 3.95.0"
     }
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.18"
-    }
     random = {
       source  = "hashicorp/random"
       version = "~> 3.1.0"

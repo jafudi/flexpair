@@ -3,15 +3,14 @@ output "cloudinit_userdata_desktop" {
   value       = module.desktop_installer.unzipped_config
 }
 
-
-output "oci_base_image" {
+output "desktop_base_image" {
   description = ""
-  value       = module.oracle_infrastructure.additional_metadata.source_image_info
+  value       = local.desktop_additional_info.source_image_info
 }
 
-output "aws_base_image" {
+output "gateway_base_image" {
   description = ""
-  value       = module.amazon_infrastructure.additional_metadata.source_image_info
+  value       = local.gateway_additional_info.source_image_info
 }
 
 //output "ssh_into_desktop_1" {

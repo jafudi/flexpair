@@ -16,18 +16,6 @@ locals {
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
 }
 
-module "oracle_infrastructure" {
-  deployment_tags = local.deployment_tags
-  source          = "app.terraform.io/jafudi/commons/oci"
-  version         = "1.1.0"
-  // below variables are provider specific
-  tenancy_ocid               = var.oci_tenancy_ocid
-  user_ocid                  = var.oci_user_ocid
-  region                     = var.oci_region
-  availibility_domain_number = var.oci_free_tier_avail
-  compartment_name           = local.workspace
-}
-
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/jafudi/commons/aws"
@@ -37,8 +25,8 @@ module "amazon_infrastructure" {
 locals {
   gateway_creation_context = module.amazon_infrastructure.vm_creation_context
   gateway_additional_info  = module.amazon_infrastructure.additional_metadata
-  desktop_creation_context = module.oracle_infrastructure.vm_creation_context
-  desktop_additional_info  = module.oracle_infrastructure.additional_metadata
+  desktop_creation_context = module.amazon_infrastructure.vm_creation_context
+  desktop_additional_info  = module.amazon_infrastructure.additional_metadata
 }
 
 module "credentials_generator" {

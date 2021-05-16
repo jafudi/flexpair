@@ -3,21 +3,10 @@ output "cloudinit_userdata_desktop" {
   value       = module.desktop_installer.unzipped_config
 }
 
-
-output "oci_base_image" {
+output "gateway_base_image" {
   description = ""
-  value       = module.oracle_infrastructure.additional_metadata.source_image_info
+  value       = local.gateway_additional_info.source_image_info
 }
-
-output "aws_base_image" {
-  description = ""
-  value       = module.amazon_infrastructure.additional_metadata.source_image_info
-}
-
-//output "ssh_into_desktop_1" {
-//  description = ""
-//  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
-//}
 
 output "ssh_into_gateway" {
   description = ""
