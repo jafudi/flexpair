@@ -38,7 +38,7 @@ locals {
   gateway_creation_context = module.amazon_infrastructure.vm_creation_context
   gateway_additional_info  = module.amazon_infrastructure.additional_metadata
   desktop_creation_context = module.oracle_infrastructure.vm_creation_context
-  desktop_additional_info  = module.amazon_infrastructure.additional_metadata
+  desktop_additional_info  = module.oracle_infrastructure.additional_metadata
 }
 
 module "credentials_generator" {
