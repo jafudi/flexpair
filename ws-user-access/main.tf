@@ -3,7 +3,7 @@ data "terraform_remote_state" "prod" {
   config = {
     organization = "jafudi"
     workspaces = {
-      name = "STAGING"
+      name = "aws-public"
     }
   }
 }
