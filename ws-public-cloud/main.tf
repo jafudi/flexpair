@@ -150,8 +150,8 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source  = "app.terraform.io/jafudi/desktop/oci"
-  version = "1.0.1"
+  source  = "app.terraform.io/jafudi/gateway/aws"
+  version = "1.0.8"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
