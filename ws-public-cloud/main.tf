@@ -149,7 +149,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/jafudi/desktop/aws"
-  version = "1.1.0"
+  version = "1.1.1"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
