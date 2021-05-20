@@ -51,7 +51,6 @@ module "gateway_installer" {
   vm_mutual_keypair      = module.credentials_generator.vm_mutual_key
   gateway_username       = module.credentials_generator.gateway_username
   desktop_username       = module.credentials_generator.desktop_username
-  primary_nic_name       = local.gateway_additional_info.network_interface_name
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
   gateway_dns_hostname   = local.full_hostname
@@ -70,7 +69,6 @@ module "desktop_installer" {
   vm_mutual_keypair    = module.credentials_generator.vm_mutual_key
   gateway_username     = module.credentials_generator.gateway_username
   desktop_username     = module.credentials_generator.desktop_username
-  primary_nic_name     = local.desktop_additional_info.network_interface_name
   murmur_config        = module.credentials_generator.murmur_credentials
   browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = local.full_hostname
