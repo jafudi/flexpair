@@ -1,4 +1,4 @@
-## Architecture
+## Public cloud architecture
 
 ### Software systems
 - [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)

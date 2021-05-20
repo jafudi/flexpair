@@ -1,4 +1,4 @@
-## Architecture
+## Hybrid cloud architecture
 
 ### Software systems
 - [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)
