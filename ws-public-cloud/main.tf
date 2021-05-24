@@ -206,5 +206,5 @@ resource "tfe_workspace" "iam" {
 }
 resource "tfe_run_trigger" "test" {
   workspace_id  = tfe_workspace.iam.id
-  sourceable_id = tfe_workspace.main.id
+  sourceable_id = data.tfe_workspace.main.id
 }
