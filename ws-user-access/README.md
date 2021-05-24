@@ -1,4 +1,4 @@
-## Multi-cloud architecture
+## Public cloud architecture
 
 ### Software systems
 - [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)
@@ -33,5 +33,6 @@
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
