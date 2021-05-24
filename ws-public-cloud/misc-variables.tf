@@ -36,6 +36,6 @@ variable "tfc_api_token" {
   type        = string
 }
 
-variable "github_oauth_token" {
+variable "github_personal_access_token" {
   type = string
 }
