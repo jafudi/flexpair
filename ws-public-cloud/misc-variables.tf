@@ -30,3 +30,8 @@ variable "TFC_WORKSPACE_SLUG" {
   description = "String indicating organization and workspace name."
   type        = string
 }
+
+variable "tfc_api_token" {
+  description = "The user token for authenticating with Terraform Cloud"
+  type        = string
+}

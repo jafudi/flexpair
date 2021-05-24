@@ -45,6 +45,7 @@
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
 | template | ~> 2.2.0 |
+| tfe | 0.25.3 |
 | time | ~> 0.7.0 |
 | tls | ~> 3.1.0 |
 
@@ -56,6 +57,7 @@
 | local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
+| tfe | 0.25.3 |
 | time | ~> 0.7.0 |
 
 ## Modules
@@ -77,6 +79,7 @@
 | [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
 | [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
+| [tfe_workspace](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/resources/workspace) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
 
 ## Inputs
@@ -96,6 +99,7 @@
 | rfc2136\_key\_secret | A Base64-encoded string containing the shared secret to be used for TSIG | `string` | `"wg46X5+cZJdF7rwInheeqPv/NK56d0Oj+m7LCbuG0186tgxlvgzWR3qoynQAbpG68272pT5HutAzbbqI+IxWgA=="` | no |
 | rfc2136\_name\_server | The IPv4 address or URL of the DNS server to send updates to | `string` | `"ns1.dynv6.com"` | no |
 | rfc2136\_tsig\_algorithm | When using TSIG authentication, the algorithm to use for HMAC | `string` | `"hmac-sha512"` | no |
+| tfc\_api\_token | The user token for authenticating with Terraform Cloud | `string` | n/a | yes |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
 
 ## Outputs

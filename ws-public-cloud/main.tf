@@ -176,3 +176,13 @@ resource "null_resource" "health_check" {
     command     = "wget --tries=30 --spider --recursive --level 1 https://${local.full_hostname}${each.key};"
   }
 }
+
+provider "tfe" {
+  hostname = "app.terraform.io"
+  token    = var.tfc_api_token
+}
+
+resource "tfe_workspace" "test" {
+  name         = "my-workspace-name"
+  organization = "jafudi"
+}

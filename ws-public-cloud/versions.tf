@@ -5,6 +5,10 @@ locals {
 
 terraform {
   required_providers {
+    tfe = {
+      source  = "hashicorp/tfe"
+      version = "0.25.3"
+    }
     dns = {
       source  = "hashicorp/dns"
       version = "~> 3.1.0"
