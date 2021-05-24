@@ -35,3 +35,7 @@ variable "tfc_api_token" {
   description = "The user token for authenticating with Terraform Cloud"
   type        = string
 }
+
+variable "github_oauth_token" {
+  type = string
+}

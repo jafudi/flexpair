@@ -182,7 +182,21 @@ provider "tfe" {
   token    = var.tfc_api_token
 }
 
-resource "tfe_workspace" "test" {
-  name         = "${local.workspace}-iam"
-  organization = local.organization
+resource "tfe_oauth_client" "github" {
+  organization     = local.organization
+  api_url          = "https://api.github.com"
+  http_url         = "https://github.com"
+  oauth_token      = var.github_oauth_token
+  service_provider = "github"
+}
+
+resource "tfe_workspace" "user_iam" {
+  name              = "${local.workspace}-iam"
+  organization      = local.organization
+  description       = "Identity and access management"
+  working_directory = "ws-user-access"
+  vcs_repo {
+    oauth_token_id = tfe_oauth_client.github.id
+    identifier     = "jafudi/pairpac"
+  }
 }
