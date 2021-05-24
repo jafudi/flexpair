@@ -190,7 +190,11 @@ resource "tfe_oauth_client" "github" {
   service_provider = "github"
 }
 
-resource "tfe_workspace" "user_iam" {
+data "tfe_workspace" "main" {
+  name         = local.workspace
+  organization = local.organization
+}
+resource "tfe_workspace" "iam" {
   name              = "${local.workspace}-iam"
   organization      = local.organization
   description       = "Identity and access management"
@@ -199,4 +203,8 @@ resource "tfe_workspace" "user_iam" {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/pairpac"
   }
+}
+resource "tfe_run_trigger" "test" {
+  workspace_id  = tfe_workspace.iam.id
+  sourceable_id = tfe_workspace.main.id
 }
