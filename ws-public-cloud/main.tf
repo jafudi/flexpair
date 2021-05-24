@@ -196,7 +196,7 @@ resource "tfe_workspace" "user_iam" {
   description       = "Identity and access management"
   working_directory = "ws-user-access"
   vcs_repo {
-    oauth_token_id = tfe_oauth_client.github.id
+    oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/pairpac"
   }
 }
