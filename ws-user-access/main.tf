@@ -88,6 +88,7 @@ resource "guacamole_user_group" "initial_users" {
   identifier = "initial"
   connections = [
     guacamole_connection_vnc.collaborate.id,
+    guacamole_connection_vnc.view_only.id,
     guacamole_connection_ssh.admin_console.id
   ]
 }
