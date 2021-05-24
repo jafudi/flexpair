@@ -1,24 +1,23 @@
-data "terraform_remote_state" "prod" {
+data "terraform_remote_state" "main" {
   backend = "remote"
   config = {
-    organization = "jafudi"
+    organization = var.organization_name
     workspaces = {
-      name = "aws-public"
+      name = var.parent_workspace_name
     }
   }
 }
-
+locals {
+  gateway_username      = data.terraform_remote_state.main.outputs.gateway_username
+  first_vnc_connection  = data.terraform_remote_state.main.outputs.first_vnc_credentials
+  guacamole_credentials = data.terraform_remote_state.main.outputs.guacamole_credentials
+}
 provider "guacamole" {
-  url                      = data.terraform_remote_state.prod.outputs.guacamole_credentials.guacamole_endpoint_url
-  username                 = data.terraform_remote_state.prod.outputs.guacamole_credentials.guacamole_admin_username
-  password                 = data.terraform_remote_state.prod.outputs.guacamole_credentials.guacamole_admin_password
+  url                      = local.guacamole_credentials.guacamole_endpoint_url
+  username                 = local.guacamole_credentials.guacamole_admin_username
+  password                 = local.guacamole_credentials.guacamole_admin_password
   disable_tls_verification = true
   disable_cookies          = true
-}
-
-locals {
-  gateway_username     = data.terraform_remote_state.prod.outputs.gateway_username
-  first_vnc_connection = data.terraform_remote_state.prod.outputs.first_vnc_credentials
 }
 
 resource "guacamole_connection_vnc" "collaborate" {
@@ -80,7 +79,7 @@ resource "guacamole_connection_ssh" "admin_console" {
     sftp_root_directory = "/home/${local.gateway_username}/uploads"
     readonly            = false
     sftp_enable         = true
-    color_scheme        = "green-black"
+    color_scheme        = var.ssh_color_scheme
   }
 }
 

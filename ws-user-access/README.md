@@ -1,4 +1,4 @@
-## Public cloud architecture
+## Identity and access management (IAM)
 
 ### Software systems
 - [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)
@@ -62,7 +62,11 @@ No Modules.
 
 ## Inputs
 
-No input.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| organization\_name | n/a | `string` | n/a | yes |
+| parent\_workspace\_name | n/a | `string` | n/a | yes |
+| ssh\_color\_scheme | n/a | `string` | `"green-black"` | no |
 
 ## Outputs
 

@@ -208,3 +208,17 @@ resource "tfe_run_trigger" "test" {
   workspace_id  = tfe_workspace.iam.id
   sourceable_id = data.tfe_workspace.main.id
 }
+resource "tfe_variable" "organization_name" {
+  key          = "organization_name"
+  value        = local.organization
+  category     = "terraform"
+  workspace_id = ttfe_workspace.iam.id
+  description  = ""
+}
+resource "tfe_variable" "parent_workspace_name" {
+  key          = "parent_workspace_name"
+  value        = local.workspace
+  category     = "terraform"
+  workspace_id = ttfe_workspace.iam.id
+  description  = ""
+}

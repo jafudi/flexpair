@@ -81,6 +81,7 @@
 | [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
 | [tfe_oauth_client](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/resources/oauth_client) |
 | [tfe_run_trigger](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/resources/run_trigger) |
+| [tfe_variable](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/resources/variable) |
 | [tfe_workspace](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/data-sources/workspace) |
 | [tfe_workspace](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/resources/workspace) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
