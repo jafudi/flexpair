@@ -183,6 +183,6 @@ provider "tfe" {
 }
 
 resource "tfe_workspace" "test" {
-  name         = "my-workspace-name"
-  organization = "jafudi"
+  name         = "${local.workspace}-iam"
+  organization = local.organization
 }
