@@ -94,8 +94,12 @@
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
-%% sample.bib contains your publications
-%% \addbibresource{sample.bib}
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+    \Title{Jens Fielenbach's CV}
+    \Author{Jens Fielenbach}
+    \Language{en-US}
+    \Keywords{Senior Data Scientist\sep DevOps\sep Optimization\sep Design Thinking}
+\end{filecontents*}
 
 \begin{document}
     \name{Jens Fielenbach}
