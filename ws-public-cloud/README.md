@@ -119,8 +119,8 @@
 | first\_vnc\_credentials | Credentials for the first desktop's VNC connection |
 | gateway\_base\_image | n/a |
 | gateway\_config\_size | n/a |
+| gateway\_ip | n/a |
 | gateway\_username | UNIX username used for the gateway |
 | guacamole\_credentials | Credentials necessary to gain admin access to Guacamole |
 | private\_key | n/a |
-| ssh\_into\_gateway | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

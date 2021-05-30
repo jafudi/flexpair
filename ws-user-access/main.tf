@@ -13,7 +13,7 @@ locals {
   guacamole_credentials = data.terraform_remote_state.main.outputs.guacamole_credentials
 }
 provider "guacamole" {
-  url                      = local.guacamole_credentials.guacamole_endpoint_url
+  url                      = "https://${data.terraform_remote_state.main.outputs.gateway_ip}/guacamole"
   username                 = local.guacamole_credentials.guacamole_admin_username
   password                 = local.guacamole_credentials.guacamole_admin_password
   disable_tls_verification = true

@@ -18,9 +18,9 @@ output "gateway_base_image" {
 //  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
 //}
 
-output "ssh_into_gateway" {
+output "gateway_ip" {
   description = ""
-  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.gateway_username}@${module.gateway_machine.public_ip}"
+  value       = module.gateway_machine.public_ip
 }
 
 output "private_key" {
