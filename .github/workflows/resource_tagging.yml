@@ -14,8 +14,8 @@ jobs:
   yor:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout repo
+      - name: Checkout repo
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
@@ -23,3 +23,5 @@ jobs:
         uses: bridgecrewio/yor-action@main
         with:
           directory: ws-public-cloud
+      - name: Commit tag changes
+        uses: stefanzweifel/git-auto-commit-action@v4
