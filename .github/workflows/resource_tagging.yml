@@ -21,3 +21,5 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Run yor action and commit
         uses: bridgecrewio/yor-action@main
+        with:
+          directory: ws-public-cloud
