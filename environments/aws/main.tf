@@ -35,7 +35,7 @@ module "credentials_generator" {
   desktop_context_hash  = sha512(join("", values(local.desktop_creation_context)))
   gateway_cloud_account = local.gateway_additional_info.cloud_account_name
   desktop_cloud_account = local.desktop_additional_info.cloud_account_name
-  source                = "../modules/terraform-tls-credentials"
+  source                = "../../modules/terraform-tls-credentials"
   // below variables are provider specific
   rfc2136_name_server    = var.rfc2136_name_server
   rfc2136_key_name       = var.rfc2136_key_name
