@@ -1,6 +1,6 @@
-output "cloudinit_userdata_desktop" {
+output "cloudinit_userdata_gateway" {
   description = ""
-  value       = module.desktop_installer.unzipped_config
+  value       = module.gateway_installer.unzipped_config
 }
 
 output "desktop_base_image" {
