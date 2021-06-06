@@ -2,17 +2,19 @@
 
 supported_clouds="aws oracle azure"
 
+script_abspath=$(realpath "$0")
+environ_folder=$(dirname "${script_abspath}")
 for gateway in ${supported_clouds}
 do
     for desktop in ${supported_clouds} hybrid
     do
         if [ "$desktop" != "$gateway" ]
         then
-            folder_name="$gateway-$desktop"
+            sub_folder="${environ_folder}/$gateway-$desktop"
         else
-            folder_name="$gateway"
+            sub_folder="${environ_folder}/$gateway"
         fi
-        mkdir -p "${folder_name}"
-        cp -a _template/. "${folder_name}/"
+        mkdir -p "${sub_folder}"
+        cp -a "${environ_folder}/_template/." "${sub_folder}/"
     done
 done

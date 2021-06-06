@@ -8,7 +8,7 @@
 ### Deploy mechanism
 - Clone source code from GitHub to Terraform Cloud workspace
 - Input credentials and other variables
-- Plan and execute deploy
+- Plan and execute deployment
 
 ### Deploy environments / nodes
 

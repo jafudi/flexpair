@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+./environments/makedirs.sh
+
 brew install pre-commit gawk terraform-docs tflint coreutils
 
 DIR=~/.git-template
