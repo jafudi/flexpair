@@ -13,5 +13,6 @@ do
             folder_name="$gateway"
         fi
         mkdir -p "${folder_name}"
+        cp -a _template/. "${folder_name}/"
     done
 done
