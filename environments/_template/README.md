@@ -3,7 +3,7 @@
 ### Software systems
 - [terraform-cloudinit-desktop](./modules/terraform-cloudinit-desktop/README.md)
 - [terraform-cloudinit-gateway](./modules/terraform-cloudinit-gateway/README.md)
-- [terraform-tls-credentials](./modules/terraform-tls-credentials/README.md) (refactoring needed)
+- [terraform-tls-credentials](./modules/terraform-tls-credentials/README.md)
 
 ### Deploy mechanism
 - Clone source code from GitHub to Terraform Cloud workspace
