@@ -114,7 +114,6 @@
 |------|-------------|
 | access\_via\_browser | n/a |
 | access\_via\_mumble | n/a |
-| cloudinit\_userdata\_gateway | n/a |
 | desktop\_base\_image | n/a |
 | desktop\_config\_size | n/a |
 | first\_vnc\_credentials | Credentials for the first desktop's VNC connection |

@@ -1,8 +1,3 @@
-output "cloudinit_userdata_gateway" {
-  description = ""
-  value       = module.gateway_installer.unzipped_config
-}
-
 output "desktop_base_image" {
   description = ""
   value       = local.desktop_additional_info.source_image_info
