@@ -70,5 +70,8 @@ No Modules.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| access\_via\_browser | n/a |
+| access\_via\_mumble | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
