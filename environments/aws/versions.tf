@@ -9,9 +9,9 @@ terraform {
       source  = "hashicorp/tfe"
       version = "0.25.3"
     }
-    dns = {
-      source  = "hashicorp/dns"
-      version = "~> 3.1.0"
+    dnsimple = {
+      source  = "dnsimple/dnsimple"
+      version = "0.6.0"
     }
     aws = {
       source  = "hashicorp/aws"

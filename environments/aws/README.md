@@ -40,7 +40,7 @@
 | terraform | >= 0.12.26 |
 | acme | ~> 2.4.0 |
 | aws | ~> 3.18 |
-| dns | ~> 3.1.0 |
+| dnsimple | 0.6.0 |
 | local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
@@ -53,7 +53,7 @@
 
 | Name | Version |
 |------|---------|
-| dnsimple | n/a |
+| dnsimple | 0.6.0 |
 | local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
@@ -75,7 +75,7 @@
 
 | Name |
 |------|
-| [dnsimple_record](https://registry.terraform.io/providers/hashicorp/dnsimple/latest/docs/resources/record) |
+| [dnsimple_record](https://registry.terraform.io/providers/dnsimple/dnsimple/0.6.0/docs/resources/record) |
 | [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
 | [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
