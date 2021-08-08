@@ -37,10 +37,7 @@ module "credentials_generator" {
   desktop_cloud_account = local.desktop_additional_info.cloud_account_name
   source                = "../../modules/terraform-tls-credentials"
   // below variables are provider specific
-  rfc2136_name_server    = var.rfc2136_name_server
-  rfc2136_key_name       = var.rfc2136_key_name
-  rfc2136_key_secret     = var.rfc2136_key_secret
-  rfc2136_tsig_algorithm = var.rfc2136_tsig_algorithm
+  dnsimple_account_token = var.dnsimple_account_token
 }
 
 # TODO: Fully parameterize VNC crendetials
@@ -124,15 +121,16 @@ module "gateway_machine" {
   cloud_provider_context = local.gateway_creation_context
 }
 
-resource "dns_a_record_set" "gateway_hostname" {
-  zone      = "${var.registered_domain}."
-  name      = local.valid_subdomain
-  addresses = [module.gateway_machine.public_ip]
-  ttl       = 60
+resource "dnsimple_record" "gateway_hostname" {
+  domain = var.registered_domain
+  name   = local.valid_subdomain
+  value  = [module.gateway_machine.public_ip]
+  type   = "A"
+  ttl    = 60
 }
 
 resource "time_sleep" "dns_propagation" {
-  depends_on      = [dns_a_record_set.gateway_hostname]
+  depends_on      = [dnsimple_record.gateway_hostname]
   create_duration = "120s"
   triggers = {
     map_from = local.full_hostname

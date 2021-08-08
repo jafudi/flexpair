@@ -23,22 +23,7 @@ variable "full_hostname" {
   type        = string
 }
 
-variable "rfc2136_name_server" {
-  description = ""
-  type        = string
-}
-
-variable "rfc2136_key_name" {
-  description = ""
-  type        = string
-}
-
-variable "rfc2136_key_secret" {
-  description = ""
-  type        = string
-}
-
-variable "rfc2136_tsig_algorithm" {
+variable "dnsimple_account_token" {
   description = ""
   type        = string
 }

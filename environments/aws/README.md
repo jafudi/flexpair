@@ -53,7 +53,7 @@
 
 | Name | Version |
 |------|---------|
-| dns | ~> 3.1.0 |
+| dnsimple | n/a |
 | local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
@@ -75,7 +75,7 @@
 
 | Name |
 |------|
-| [dns_a_record_set](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) |
+| [dnsimple_record](https://registry.terraform.io/providers/hashicorp/dnsimple/latest/docs/resources/record) |
 | [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) |
 | [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
 | [random_pet](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet) |
@@ -97,14 +97,12 @@
 | aws\_access\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
 | aws\_region | Seems to determines the region of all created resources. | `string` | `"eu-central-1"` | no |
 | aws\_secret\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
+| dnsimple\_account\_id | n/a | `number` | n/a | yes |
+| dnsimple\_account\_token | n/a | `string` | n/a | yes |
 | github\_personal\_access\_token | n/a | `string` | n/a | yes |
 | gitlab\_runner\_token | n/a | `string` | n/a | yes |
 | locale | n/a | `string` | `"de_DE.UTF-8"` | no |
 | registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"pairpac.com"` | no |
-| rfc2136\_key\_name | The name of the TSIG key used to sign the DNS update messages | `string` | `"tsig-224951.dynv6.com."` | no |
-| rfc2136\_key\_secret | A Base64-encoded string containing the shared secret to be used for TSIG | `string` | `"wg46X5+cZJdF7rwInheeqPv/NK56d0Oj+m7LCbuG0186tgxlvgzWR3qoynQAbpG68272pT5HutAzbbqI+IxWgA=="` | no |
-| rfc2136\_name\_server | The IPv4 address or URL of the DNS server to send updates to | `string` | `"ns1.dynv6.com"` | no |
-| rfc2136\_tsig\_algorithm | When using TSIG authentication, the algorithm to use for HMAC | `string` | `"hmac-sha512"` | no |
 | tfc\_api\_token | The user token for authenticating with Terraform Cloud | `string` | n/a | yes |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
 

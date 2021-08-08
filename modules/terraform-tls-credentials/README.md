@@ -69,13 +69,10 @@ No Modules.
 |------|-------------|------|---------|:--------:|
 | desktop\_cloud\_account | n/a | `string` | n/a | yes |
 | desktop\_context\_hash | n/a | `string` | n/a | yes |
+| dnsimple\_account\_token | n/a | `string` | n/a | yes |
 | full\_hostname | n/a | `string` | n/a | yes |
 | gateway\_cloud\_account | n/a | `string` | n/a | yes |
 | gateway\_context\_hash | n/a | `string` | n/a | yes |
-| rfc2136\_key\_name | n/a | `string` | n/a | yes |
-| rfc2136\_key\_secret | n/a | `string` | n/a | yes |
-| rfc2136\_name\_server | n/a | `string` | n/a | yes |
-| rfc2136\_tsig\_algorithm | n/a | `string` | n/a | yes |
 
 ## Outputs
 
