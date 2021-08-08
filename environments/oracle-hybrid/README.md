@@ -39,7 +39,7 @@
 |------|---------|
 | terraform | >= 0.12.26 |
 | acme | ~> 2.4.0 |
-| dns | ~> 3.1.0 |
+| dnsimple | 0.6.0 |
 | local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | oci | ~> 3.95.0 |
@@ -52,7 +52,7 @@
 
 | Name | Version |
 |------|---------|
-| dns | ~> 3.1.0 |
+| dns | n/a |
 | local | ~> 2.1.0 |
 | null | ~> 3.1.0 |
 | random | ~> 3.1.0 |
@@ -86,6 +86,8 @@
 | TFC\_CONFIGURATION\_VERSION\_GIT\_COMMIT\_SHA | This is the full commit hash of the commit that the associated Terraform configuration version was ingressed from (e.g. abcd1234...). | `string` | n/a | yes |
 | TFC\_RUN\_ID | This is a unique identifier for this run (e.g. run-CKuwsxMGgMd4W7Ui). | `string` | n/a | yes |
 | TFC\_WORKSPACE\_SLUG | String indicating organization and workspace name. | `string` | n/a | yes |
+| dnsimple\_account\_id | n/a | `number` | n/a | yes |
+| dnsimple\_account\_token | n/a | `string` | n/a | yes |
 | locale | n/a | `string` | `"de_DE.UTF-8"` | no |
 | oci\_fingerprint | Fingerprint of the public key | `string` | `"9c:d0:a4:27:86:77:0e:0c:49:5a:8c:39:4a:a0:c3:ce"` | no |
 | oci\_free\_tier\_avail | n/a | `number` | `2` | no |
@@ -95,10 +97,6 @@
 | oci\_tenancy\_ocid | Oracle Cloud ID (OCID) of the tenancy | `string` | `"ocid1.tenancy.oc1..aaaaaaaas3oie74wurpodkrygjpztwfscowu3rx42hadgheqrcmesnefllqa"` | no |
 | oci\_user\_ocid | The user's Oracle Cloud ID (OCID) | `string` | `"ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa"` | no |
 | registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"pairpac.com"` | no |
-| rfc2136\_key\_name | The name of the TSIG key used to sign the DNS update messages | `string` | `"tsig-224951.dynv6.com."` | no |
-| rfc2136\_key\_secret | A Base64-encoded string containing the shared secret to be used for TSIG | `string` | `"wg46X5+cZJdF7rwInheeqPv/NK56d0Oj+m7LCbuG0186tgxlvgzWR3qoynQAbpG68272pT5HutAzbbqI+IxWgA=="` | no |
-| rfc2136\_name\_server | The IPv4 address or URL of the DNS server to send updates to | `string` | `"ns1.dynv6.com"` | no |
-| rfc2136\_tsig\_algorithm | When using TSIG authentication, the algorithm to use for HMAC | `string` | `"hmac-sha512"` | no |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
 
 ## Outputs

@@ -1,6 +1,3 @@
-// https://registry.terraform.io/providers/hashicorp/dns/latest/docs
-
-# Configure the DNSimple provider
 provider "dnsimple" {
   token   = var.dnsimple_account_token
   account = var.dnsimple_account_id

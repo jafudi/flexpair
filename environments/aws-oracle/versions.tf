@@ -5,9 +5,9 @@ locals {
 
 terraform {
   required_providers {
-    dns = {
-      source  = "hashicorp/dns"
-      version = "~> 3.1.0"
+    dnsimple = {
+      source  = "dnsimple/dnsimple"
+      version = "0.6.0"
     }
     oci = {
       source  = "hashicorp/oci"
