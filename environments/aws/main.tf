@@ -124,7 +124,7 @@ module "gateway_machine" {
 resource "dnsimple_record" "gateway_hostname" {
   domain = var.registered_domain
   name   = local.valid_subdomain
-  value  = [module.gateway_machine.public_ip]
+  value  = module.gateway_machine.public_ip
   type   = "A"
   ttl    = 60
 }
