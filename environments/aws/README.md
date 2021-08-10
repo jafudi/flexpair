@@ -67,7 +67,7 @@
 | amazon_infrastructure | app.terraform.io/jafudi/commons/aws | 1.0.0 |
 | credentials_generator | ../../modules/terraform-tls-credentials |  |
 | desktop_installer | git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master |  |
-| desktop_machine_1 | app.terraform.io/jafudi/desktop/aws | 1.1.1 |
+| desktop_machine_1 | app.terraform.io/jafudi/desktop/aws | 1.2.0 |
 | gateway_installer | git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master |  |
 | gateway_machine | app.terraform.io/jafudi/gateway/aws | 1.1.0 |
 

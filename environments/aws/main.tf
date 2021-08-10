@@ -140,6 +140,7 @@ resource "time_sleep" "dns_propagation" {
 
 module "desktop_machine_1" {
   deployment_tags   = local.deployment_tags
+  instance_shape    = "t2.small"
   desktop_username  = module.credentials_generator.desktop_username
   encoded_userdata  = local.encoded_desktop_config
   vm_mutual_keypair = module.credentials_generator.vm_mutual_key
@@ -148,7 +149,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/jafudi/desktop/aws"
-  version = "1.1.1"
+  version = "1.2.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
