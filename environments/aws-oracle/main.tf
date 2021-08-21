@@ -137,22 +137,6 @@ module "gateway_machine" {
   cloud_provider_context = local.gateway_creation_context
 }
 
-resource "dns_a_record_set" "gateway_hostname" {
-  zone      = "${var.registered_domain}."
-  name      = local.valid_subdomain
-  addresses = [module.gateway_machine.public_ip]
-  ttl       = 60
-}
-
-resource "time_sleep" "dns_propagation" {
-  depends_on      = [dns_a_record_set.gateway_hostname]
-  create_duration = "120s"
-  triggers = {
-    map_from = local.full_hostname
-    map_to   = module.gateway_machine.public_ip
-  }
-}
-
 module "desktop_machine_1" {
   deployment_tags   = local.deployment_tags
   desktop_username  = module.credentials_generator.desktop_username

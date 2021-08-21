@@ -28,3 +28,28 @@ variable "registered_domain" {
     error_message = "This does not look like a valid registered domain."
   }
 }
+
+resource "dnsimple_record" "gateway_hostname" {
+  domain = var.registered_domain
+  name   = local.valid_subdomain
+  value  = module.gateway_machine.public_ip
+  type   = "A"
+  ttl    = 60
+}
+
+resource "dnsimple_record" "redirect_to_demo" {
+  domain = "flexpair.com"
+  name   = "demo"
+  value  = "https://${local.full_hostname}"
+  type   = "URL"
+  ttl    = 60
+}
+
+resource "time_sleep" "dns_propagation" {
+  depends_on      = [dnsimple_record.gateway_hostname]
+  create_duration = "120s"
+  triggers = {
+    map_from = local.full_hostname
+    map_to   = module.gateway_machine.public_ip
+  }
+}

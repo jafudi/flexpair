@@ -39,7 +39,10 @@ No requirements.
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| dnsimple | n/a |
+| time | n/a |
 
 ## Modules
 
@@ -47,7 +50,10 @@ No Modules.
 
 ## Resources
 
-No resources.
+| Name |
+|------|
+| [dnsimple_record](https://registry.terraform.io/providers/hashicorp/dnsimple/latest/docs/resources/record) |
+| [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
 
 ## Inputs
 

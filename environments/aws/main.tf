@@ -121,23 +121,6 @@ module "gateway_machine" {
   cloud_provider_context = local.gateway_creation_context
 }
 
-resource "dnsimple_record" "gateway_hostname" {
-  domain = var.registered_domain
-  name   = local.valid_subdomain
-  value  = module.gateway_machine.public_ip
-  type   = "A"
-  ttl    = 60
-}
-
-resource "time_sleep" "dns_propagation" {
-  depends_on      = [dnsimple_record.gateway_hostname]
-  create_duration = "120s"
-  triggers = {
-    map_from = local.full_hostname
-    map_to   = module.gateway_machine.public_ip
-  }
-}
-
 module "desktop_machine_1" {
   deployment_tags   = local.deployment_tags
   instance_shape    = "t2.small"
