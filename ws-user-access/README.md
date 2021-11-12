@@ -38,13 +38,13 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12.26 |
-| guacamole | 1.3.0 |
+| guacamole | 1.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| guacamole | 1.3.0 |
+| guacamole | 1.2.0 |
 | terraform | n/a |
 
 ## Modules
@@ -55,9 +55,9 @@ No Modules.
 
 | Name |
 |------|
-| [guacamole_connection_ssh](https://registry.terraform.io/providers/techBeck03/guacamole/1.3.0/docs/resources/connection_ssh) |
-| [guacamole_connection_vnc](https://registry.terraform.io/providers/techBeck03/guacamole/1.3.0/docs/resources/connection_vnc) |
-| [guacamole_user_group](https://registry.terraform.io/providers/techBeck03/guacamole/1.3.0/docs/resources/user_group) |
+| [guacamole_connection_ssh](https://registry.terraform.io/providers/techBeck03/guacamole/1.2.0/docs/resources/connection_ssh) |
+| [guacamole_connection_vnc](https://registry.terraform.io/providers/techBeck03/guacamole/1.2.0/docs/resources/connection_vnc) |
+| [guacamole_user_group](https://registry.terraform.io/providers/techBeck03/guacamole/1.2.0/docs/resources/user_group) |
 | [terraform_remote_state](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/data-sources/remote_state) |
 
 ## Inputs
