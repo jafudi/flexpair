@@ -84,12 +84,16 @@ resource "guacamole_connection_ssh" "admin_console" {
 }
 
 resource "guacamole_user_group" "initial_users" {
-  identifier = "initial"
+  identifier = "testGuacamoleUserGroup"
   connections = [
     guacamole_connection_vnc.collaborate.id,
     guacamole_connection_vnc.view_only.id,
     guacamole_connection_ssh.admin_console.id
   ]
+}
+
+data "guacamole_user_group" "group" {
+  identifier = "testGuacamoleUserGroup"
 }
 
 resource "guacamole_user" "user" {
@@ -101,7 +105,7 @@ resource "guacamole_user" "user" {
     timezone  = "America/Chicago"
   }
   system_permissions = ["ADMINISTER", "CREATE_USER"]
-  group_membership   = []
+  group_membership   = [guacamole_user_group.group.identifier]
   connections = [
   ]
   connection_groups = [
