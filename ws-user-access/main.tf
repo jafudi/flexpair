@@ -91,3 +91,19 @@ resource "guacamole_user_group" "initial_users" {
     guacamole_connection_ssh.admin_console.id
   ]
 }
+
+resource "guacamole_user" "user" {
+  username = "testGuacamoleUser"
+  password = "password"
+  attributes {
+    full_name = "Test User"
+    email     = "testUser@example.com"
+    timezone  = "America/Chicago"
+  }
+  system_permissions = ["ADMINISTER", "CREATE_USER"]
+  group_membership   = ["initial"]
+  connections = [
+  ]
+  connection_groups = [
+  ]
+}
