@@ -19,9 +19,9 @@ output "gateway_ip" {
 }
 
 output "private_key" {
-  description = "Set back to sensitive!!!"
+  description = ""
   value       = module.credentials_generator.vm_mutual_key.private_key_pem
-  sensitive   = false
+  sensitive   = true
 }
 
 output "gateway_config_size" {
