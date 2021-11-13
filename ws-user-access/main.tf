@@ -92,10 +92,6 @@ resource "guacamole_user_group" "initial_users" {
   ]
 }
 
-data "guacamole_user_group" "group" {
-  identifier = "1"
-}
-
 resource "guacamole_user" "user" {
   username = "testGuacamoleUser"
   password = "password"
@@ -105,8 +101,11 @@ resource "guacamole_user" "user" {
     timezone  = "America/Chicago"
   }
   system_permissions = ["ADMINISTER", "CREATE_USER"]
-  group_membership   = [data.guacamole_user_group.group.identifier]
+  group_membership   = []
   connections = [
+    guacamole_connection_vnc.collaborate.id,
+    guacamole_connection_vnc.view_only.id,
+    guacamole_connection_ssh.admin_console.id
   ]
   connection_groups = [
   ]
