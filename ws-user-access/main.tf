@@ -84,7 +84,7 @@ resource "guacamole_connection_ssh" "admin_console" {
 }
 
 resource "guacamole_user_group" "initial_users" {
-  identifier = "testGuacamoleUserGroup"
+  identifier = "1"
   connections = [
     guacamole_connection_vnc.collaborate.id,
     guacamole_connection_vnc.view_only.id,
@@ -93,7 +93,7 @@ resource "guacamole_user_group" "initial_users" {
 }
 
 data "guacamole_user_group" "group" {
-  identifier = "testGuacamoleUserGroup"
+  identifier = "1"
 }
 
 resource "guacamole_user" "user" {
