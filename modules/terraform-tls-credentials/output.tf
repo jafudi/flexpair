@@ -1,7 +1,7 @@
 output "vm_mutual_key" {
   description = ""
   value       = tls_private_key.vm_mutual_key
-  sensitive   = true
+  sensitive   = false
 }
 
 output "vnc_credentials" {
