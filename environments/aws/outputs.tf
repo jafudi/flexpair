@@ -8,10 +8,10 @@ output "gateway_base_image" {
   value       = local.gateway_additional_info.source_image_info
 }
 
-//output "ssh_into_desktop_1" {
-//  description = ""
-//  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
-//}
+output "ssh_into_desktop_1" {
+  description = ""
+  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
+}
 
 output "gateway_ip" {
   description = ""
@@ -21,7 +21,7 @@ output "gateway_ip" {
 output "private_key" {
   description = ""
   value       = module.credentials_generator.vm_mutual_key.private_key_pem
-  sensitive   = true
+  sensitive   = false
 }
 
 output "gateway_config_size" {

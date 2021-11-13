@@ -121,4 +121,5 @@
 | gateway\_username | UNIX username used for the gateway |
 | guacamole\_credentials | Credentials necessary to gain admin access to Guacamole |
 | private\_key | n/a |
+| ssh\_into\_desktop\_1 | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
