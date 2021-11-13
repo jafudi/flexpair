@@ -105,7 +105,7 @@ resource "guacamole_user" "user" {
     timezone  = "America/Chicago"
   }
   system_permissions = ["ADMINISTER", "CREATE_USER"]
-  group_membership   = [guacamole_user_group.group.identifier]
+  group_membership   = [data.guacamole_user_group.group.identifier]
   connections = [
   ]
   connection_groups = [
