@@ -7,11 +7,13 @@ data "terraform_remote_state" "main" {
     }
   }
 }
+
 locals {
   gateway_username      = data.terraform_remote_state.main.outputs.gateway_username
   first_vnc_connection  = data.terraform_remote_state.main.outputs.first_vnc_credentials
   guacamole_credentials = data.terraform_remote_state.main.outputs.guacamole_credentials
 }
+
 provider "guacamole" {
   url                      = "https://${data.terraform_remote_state.main.outputs.gateway_ip}/guacamole"
   username                 = local.guacamole_credentials.guacamole_admin_username
@@ -83,24 +85,16 @@ resource "guacamole_connection_ssh" "admin_console" {
   }
 }
 
-resource "guacamole_user_group" "initial_users" {
-  identifier = "1"
-  connections = [
-    guacamole_connection_vnc.collaborate.id,
-    guacamole_connection_vnc.view_only.id,
-    guacamole_connection_ssh.admin_console.id
-  ]
-}
 
-resource "guacamole_user" "user" {
-  username = "testGuacamoleUser"
-  password = "password"
+resource "guacamole_user" "active_user" {
+  username = "active"
+  password = data.terraform_remote_state.main.outputs.murmur_password
   attributes {
-    full_name = "Test User"
-    email     = "testUser@example.com"
+    full_name = "Active User"
+    email     = "active@example.com"
     timezone  = "America/Chicago"
   }
-  system_permissions = ["ADMINISTER", "CREATE_USER"]
+  system_permissions = []
   group_membership   = []
   connections = [
     guacamole_connection_vnc.collaborate.id,

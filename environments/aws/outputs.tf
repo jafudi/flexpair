@@ -46,6 +46,11 @@ output "access_via_mumble" {
   # We want this to be displayed on the overview page for logged in users
 }
 
+output "murmur_password" {
+  description = ""
+  value       = module.credentials_generator.murmur_credentials.password
+}
+
 # Below outputs are used to configure Guacamole from a separate workspace
 
 output "gateway_username" {
