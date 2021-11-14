@@ -49,6 +49,7 @@ output "access_via_mumble" {
 output "murmur_password" {
   description = ""
   value       = module.credentials_generator.murmur_credentials.password
+  sensitive   = true
 }
 
 # Below outputs are used to configure Guacamole from a separate workspace
