@@ -61,7 +61,7 @@ No Modules.
 |------|-------------|------|---------|:--------:|
 | dnsimple\_account\_id | n/a | `number` | n/a | yes |
 | dnsimple\_account\_token | n/a | `string` | n/a | yes |
-| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"pairpac.com"` | no |
+| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"flexpair.com"` | no |
 
 ## Outputs
 

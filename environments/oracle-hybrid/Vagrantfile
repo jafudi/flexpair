@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |v|
     # Name visible inside your Virtualbox UI
-    v.name = "PairPac Desktop"
+    v.name = "flexpair Desktop"
   end
 
   config.vm.disk :dvd, name: "cidata", file: "./config.iso"

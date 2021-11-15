@@ -21,7 +21,7 @@ provider "acme" {
 
 variable "registered_domain" {
   type        = string
-  default     = "pairpac.com" // Registered through internetwerk.de
+  default     = "flexpair.com" // Registered through dnsimple.com
   description = "A registered domain pointing to rfc2136_name_server."
   validation {
     condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.registered_domain))

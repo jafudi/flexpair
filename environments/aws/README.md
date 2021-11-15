@@ -102,7 +102,7 @@
 | github\_personal\_access\_token | n/a | `string` | n/a | yes |
 | gitlab\_runner\_token | n/a | `string` | n/a | yes |
 | locale | n/a | `string` | `"de_DE.UTF-8"` | no |
-| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"pairpac.com"` | no |
+| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"flexpair.com"` | no |
 | tfc\_api\_token | The user token for authenticating with Terraform Cloud | `string` | n/a | yes |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
 

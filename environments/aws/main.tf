@@ -184,7 +184,7 @@ resource "tfe_workspace" "iam" {
   working_directory = "ws-user-access"
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
-    identifier     = "jafudi/pairpac"
+    identifier     = "jafudi/flexpair"
   }
 }
 resource "tfe_run_trigger" "test" {
