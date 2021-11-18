@@ -56,7 +56,8 @@ module "gateway_installer" {
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
-  source                 = "git::ssh://git@gitlab.com/Jafudi/terraform-cloudinit-station.git?ref=master"
+  source                 = "app.terraform.io/Flexpair/station/cloudinit"
+  version                = "1.4.3"
 }
 
 # TODO: Fully parameterize VNC crendetials
@@ -72,7 +73,8 @@ module "desktop_installer" {
   gateway_dns_hostname = local.full_hostname
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
-  source               = "git::ssh://git@gitlab.com/jafudi-group/terraform-cloudinit-satellite.git?ref=master"
+  source               = "app.terraform.io/Flexpair/satellite/cloudinit"
+  version              = "1.4.0"
 }
 
 locals {
@@ -115,7 +117,7 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
   }
-  source  = "app.terraform.io/jafudi/gateway/aws"
+  source  = "app.terraform.io/Flexpair/gateway/aws"
   version = "1.1.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
@@ -131,7 +133,7 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source  = "app.terraform.io/jafudi/desktop/aws"
+  source  = "app.terraform.io/Flexpair/desktop/aws"
   version = "1.2.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
