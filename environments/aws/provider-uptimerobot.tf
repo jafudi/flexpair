@@ -10,7 +10,7 @@ provider "uptimerobot" {
 resource "uptimerobot_monitor" "demo_mumble_web" {
   friendly_name = "Flexpair Demo: Does mumble-web load?"
   type          = "http"
-  url           = local.full_hostname
+  url           = module.credentials_generator.browser_url
 }
 
 resource "uptimerobot_monitor" "demo_murmur_server" {
