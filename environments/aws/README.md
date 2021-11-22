@@ -59,6 +59,7 @@
 | random | ~> 3.1.0 |
 | tfe | 0.25.3 |
 | time | ~> 0.7.0 |
+| uptimerobot | n/a |
 
 ## Modules
 
@@ -85,6 +86,7 @@
 | [tfe_workspace](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/data-sources/workspace) |
 | [tfe_workspace](https://registry.terraform.io/providers/hashicorp/tfe/0.25.3/docs/resources/workspace) |
 | [time_sleep](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) |
+| [uptimerobot_monitor](https://registry.terraform.io/providers/hashicorp/uptimerobot/latest/docs/resources/monitor) |
 
 ## Inputs
 
