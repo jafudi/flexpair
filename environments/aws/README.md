@@ -108,6 +108,7 @@
 | registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"flexpair.com"` | no |
 | tfc\_api\_token | The user token for authenticating with Terraform Cloud | `string` | n/a | yes |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
+| uptimerobot\_api\_key | n/a | `string` | n/a | yes |
 
 ## Outputs
 

@@ -1,3 +1,8 @@
+variable "uptimerobot_api_key" {
+  description = ""
+  type        = string
+}
+
 provider "uptimerobot" {
   api_key = var.uptimerobot_api_key
 }
