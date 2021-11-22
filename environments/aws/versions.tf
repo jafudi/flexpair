@@ -45,6 +45,10 @@ terraform {
       source  = "hashicorp/local"
       version = "~> 2.1.0"
     }
+    uptimerobot = {
+      source  = "louy/uptimerobot"
+      version = "0.5.1"
+    }
   }
   required_version = ">= 0.12.26"
   // experiments      = [variable_validation]
