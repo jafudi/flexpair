@@ -8,15 +8,28 @@ provider "uptimerobot" {
 }
 
 resource "uptimerobot_monitor" "demo_mumble_web" {
-  friendly_name = "Flexpair Demo: Does mumble-web load?"
-  type          = "http"
+  friendly_name = "mumble webapp of Flexpair demo"
+  type          = "https"
   url           = module.credentials_generator.browser_url
 }
 
+resource "uptimerobot_monitor" "demo_guacamole" {
+  friendly_name = "mumble webapp of Flexpair demo"
+  type          = "https"
+  url           = "https://${local.full_hostname}/guacamole/"
+}
+
 resource "uptimerobot_monitor" "demo_murmur_server" {
-  friendly_name = "Flexpair Demo: Is murmur server up?"
+  friendly_name = "mumble server of Flexpair demo"
   type          = "port"
   sub_type      = "custom"
   url           = local.full_hostname
   port          = module.credentials_generator.murmur_credentials.port
+}
+
+resource "uptimerobot_monitor" "demo_imap_server" {
+  friendly_name = "email server of Flexpair demo"
+  type          = "port"
+  sub_type      = "imap"
+  url           = local.full_hostname
 }
