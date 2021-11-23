@@ -9,13 +9,13 @@ provider "uptimerobot" {
 
 resource "uptimerobot_monitor" "demo_mumble_web" {
   friendly_name = "mumble webapp of Flexpair demo"
-  type          = "https"
+  type          = "http"
   url           = module.credentials_generator.browser_url
 }
 
 resource "uptimerobot_monitor" "demo_guacamole" {
   friendly_name = "mumble webapp of Flexpair demo"
-  type          = "https"
+  type          = "http"
   url           = "https://${local.full_hostname}/guacamole/"
 }
 
