@@ -7,6 +7,25 @@ provider "uptimerobot" {
   api_key = var.uptimerobot_api_key
 }
 
+
+resource "uptimerobot_monitor" "demo_dns_a_record" {
+  friendly_name = "DNS record of Flexpair demo"
+  type          = "ping"
+  url           = "https://${local.full_hostname}"
+}
+
+resource "uptimerobot_monitor" "demo_gateway_host" {
+  friendly_name = "gateway VM of Flexpair demo"
+  type          = "ping"
+  url           = module.gateway_machine.public_ip
+}
+
+resource "uptimerobot_monitor" "demo_desktop_host" {
+  friendly_name = "desktop VM of Flexpair demo"
+  type          = "ping"
+  url           = module.desktop_machine.public_ip
+}
+
 resource "uptimerobot_monitor" "demo_mumble_web" {
   friendly_name = "mumble webapp of Flexpair demo"
   type          = "http"
