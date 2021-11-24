@@ -14,7 +14,7 @@ resource "uptimerobot_monitor" "demo_mumble_web" {
 }
 
 resource "uptimerobot_monitor" "demo_guacamole" {
-  friendly_name = "mumble webapp of Flexpair demo"
+  friendly_name = "guacamole app of Flexpair demo"
   type          = "http"
   url           = "https://${local.full_hostname}/guacamole/"
 }
@@ -30,6 +30,6 @@ resource "uptimerobot_monitor" "demo_murmur_server" {
 resource "uptimerobot_monitor" "demo_imap_server" {
   friendly_name = "email server of Flexpair demo"
   type          = "port"
-  sub_type      = "imap"
+  sub_type      = "smtp"
   url           = local.full_hostname
 }
