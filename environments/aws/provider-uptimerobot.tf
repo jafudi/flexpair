@@ -23,7 +23,7 @@ resource "uptimerobot_monitor" "demo_gateway_host" {
 resource "uptimerobot_monitor" "demo_desktop_host" {
   friendly_name = "desktop VM of Flexpair demo"
   type          = "ping"
-  url           = module.desktop_machine.public_ip
+  url           = module.desktop_machine_1.public_ip
 }
 
 resource "uptimerobot_monitor" "demo_mumble_web" {
