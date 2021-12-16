@@ -19,7 +19,7 @@ locals {
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
-  version         = "1.0.0"
+  version         = "1.0.1"
 }
 
 locals {

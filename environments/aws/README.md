@@ -66,7 +66,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| amazon_infrastructure | app.terraform.io/Flexpair/commons/aws | 1.0.0 |
+| amazon_infrastructure | app.terraform.io/Flexpair/commons/aws | 1.0.1 |
 | credentials_generator | ../../modules/terraform-tls-credentials |  |
 | desktop_installer | app.terraform.io/Flexpair/satellite/cloudinit | 1.5.0 |
 | desktop_machine_1 | app.terraform.io/Flexpair/desktop/aws | 1.2.0 |
