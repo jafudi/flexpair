@@ -116,6 +116,7 @@ module "gateway_machine" {
     http   = 80
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
+    sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
   version = "1.1.0"
