@@ -26,7 +26,9 @@ resource "guacamole_connection_vnc" "collaborate" {
   name              = "Collaborate: ${local.first_vnc_connection.title}"
   parent_identifier = "ROOT"
   attributes {
-    failover_only = false
+    max_connections          = "2"
+    max_connections_per_user = "2"
+    failover_only            = false
   }
   parameters {
     hostname              = local.first_vnc_connection.hostname
@@ -49,7 +51,9 @@ resource "guacamole_connection_vnc" "view_only" {
   name              = "View only: ${local.first_vnc_connection.title}"
   parent_identifier = "ROOT"
   attributes {
-    failover_only = false
+    max_connections          = "2"
+    max_connections_per_user = "2"
+    failover_only            = false
   }
   parameters {
     hostname              = local.first_vnc_connection.hostname
@@ -72,7 +76,9 @@ resource "guacamole_connection_ssh" "admin_console" {
   name              = "Administrate: Gateway Terminal"
   parent_identifier = "ROOT"
   attributes {
-    failover_only = false
+    max_connections          = "2"
+    max_connections_per_user = "2"
+    failover_only            = false
   }
   parameters {
     hostname            = "gateway"
