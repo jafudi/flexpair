@@ -92,13 +92,13 @@ resource "guacamole_connection_ssh" "admin_console" {
 }
 
 
-resource "guacamole_user" "active_user" {
-  username = "active"
+resource "guacamole_user" "jens_admin" {
+  username = "jens"
   password = data.terraform_remote_state.main.outputs.murmur_password
   attributes {
-    full_name = "Active User"
-    email     = "active@example.com"
-    timezone  = "America/Chicago"
+    full_name = "Jens F."
+    email     = "flexpair@icloud.com"
+    timezone  = "Europe/Berlin"
   }
   system_permissions = []
   group_membership   = []
@@ -106,6 +106,40 @@ resource "guacamole_user" "active_user" {
     guacamole_connection_vnc.collaborate.id,
     guacamole_connection_vnc.view_only.id,
     guacamole_connection_ssh.admin_console.id
+  ]
+  connection_groups = [
+  ]
+}
+
+resource "guacamole_user" "yayoi_user" {
+  username = "yayochan"
+  password = data.terraform_remote_state.main.outputs.murmur_password
+  attributes {
+    full_name = "Yayoi S."
+    email     = "flexpair@icloud.com"
+    timezone  = "Europe/Berlin"
+  }
+  system_permissions = []
+  group_membership   = []
+  connections = [
+    guacamole_connection_vnc.view_only.id,
+  ]
+  connection_groups = [
+  ]
+}
+
+resource "guacamole_user" "guest_user" {
+  username = "guest69"
+  password = data.terraform_remote_state.main.outputs.murmur_password
+  attributes {
+    full_name = "Gast-Nutzer"
+    email     = "flexpair@icloud.com"
+    timezone  = "Europe/Berlin"
+  }
+  system_permissions = []
+  group_membership   = []
+  connections = [
+    guacamole_connection_vnc.collaborate.id
   ]
   connection_groups = [
   ]
