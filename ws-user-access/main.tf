@@ -91,6 +91,24 @@ resource "guacamole_connection_ssh" "admin_console" {
   }
 }
 
+resource "guacamole_user" "remove_next_version" {
+  username = "active"
+  password = data.terraform_remote_state.main.outputs.murmur_password
+  attributes {
+    full_name = "Test User"
+    email     = "flexpair@icloud.com"
+    timezone  = "Europe/Berlin"
+  }
+  system_permissions = []
+  group_membership   = []
+  connections = [
+    guacamole_connection_vnc.collaborate.id,
+    guacamole_connection_vnc.view_only.id,
+    guacamole_connection_ssh.admin_console.id
+  ]
+  connection_groups = [
+  ]
+}
 
 resource "guacamole_user" "jens_admin" {
   username = "jens"
