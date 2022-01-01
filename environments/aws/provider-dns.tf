@@ -33,7 +33,7 @@ variable "registered_domain" {
 resource "dnsimple_zone_record" "redirect_to_demo" {
   zone_name = var.registered_domain
   name      = "demo"
-  value     = local.valid_subdomain
+  value     = "${local.valid_subdomain}.${var.registered_domain}"
   type      = "CNAME"
   ttl       = 60
 }
