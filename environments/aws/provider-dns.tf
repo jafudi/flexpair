@@ -33,14 +33,14 @@ variable "registered_domain" {
 resource "dnsimple_zone_record" "redirect_to_demo" {
   zone_name = var.registered_domain
   name      = "demo"
-  value     = "${local.valid_subdomain}.${var.registered_domain}"
+  value     = local.valid_subdomain
   type      = "CNAME"
   ttl       = 60
 }
 
 resource "dnsimple_zone_record" "add_credentials" {
   zone_name = var.registered_domain
-  name      = "${local.valid_subdomain}.${var.registered_domain}"
+  name      = local.valid_subdomain
   value     = "${module.credentials_generator.browser_url}&username=guest"
   type      = "URL"
   ttl       = 60
