@@ -29,20 +29,29 @@ variable "registered_domain" {
   }
 }
 
-resource "dnsimple_record" "gateway_hostname" {
-  domain = var.registered_domain
-  name   = local.valid_subdomain
-  value  = module.gateway_machine.public_ip
-  type   = "A"
-  ttl    = 60
+
+resource "dnsimple_zone_record" "redirect_to_demo" {
+  zone_name = var.registered_domain
+  name      = "demo"
+  value     = "${local.valid_subdomain}.${var.registered_domain}"
+  type      = "CNAME"
+  ttl       = 60
 }
 
-resource "dnsimple_record" "redirect_to_demo" {
-  domain = "flexpair.com"
-  name   = "demo"
-  value  = "${module.credentials_generator.browser_url}&username=guest"
-  type   = "URL"
-  ttl    = 60
+resource "dnsimple_zone_record" "add_credentials" {
+  zone_name = var.registered_domain
+  name      = "${local.valid_subdomain}.${var.registered_domain}"
+  value     = "${module.credentials_generator.browser_url}&username=guest"
+  type      = "URL"
+  ttl       = 60
+}
+
+resource "dnsimple_zone_record" "gateway_hostname" {
+  zone_name = var.registered_domain
+  name      = local.valid_subdomain
+  value     = module.gateway_machine.public_ip
+  type      = "A"
+  ttl       = 60
 }
 
 resource "time_sleep" "dns_propagation" {
