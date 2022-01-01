@@ -40,7 +40,7 @@ resource "dnsimple_record" "gateway_hostname" {
 resource "dnsimple_record" "redirect_to_demo" {
   domain = "flexpair.com"
   name   = "demo"
-  value  = "${module.credentials_generator.browser_url}&user=guest"
+  value  = "${module.credentials_generator.browser_url}&username=guest"
   type   = "URL"
   ttl    = 60
 }
