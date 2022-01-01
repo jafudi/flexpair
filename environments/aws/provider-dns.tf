@@ -55,7 +55,7 @@ resource "dnsimple_zone_record" "gateway_hostname" {
 }
 
 resource "time_sleep" "dns_propagation" {
-  depends_on      = [dnsimple_record.gateway_hostname]
+  depends_on      = [dnsimple_zone_record.gateway_hostname]
   create_duration = "120s"
   triggers = {
     map_from = local.full_hostname
