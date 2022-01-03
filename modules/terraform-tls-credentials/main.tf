@@ -77,7 +77,7 @@ resource "acme_registration" "letsencrypt_reg" {
 resource "acme_certificate" "letsencrypt_certificate" {
   account_key_pem           = acme_registration.letsencrypt_reg.account_key_pem
   common_name               = var.full_hostname
-  subject_alternative_names = [var.demo_hostname]
+  subject_alternative_names = try([var.demo_hostname], [])
   key_type                  = 4096
 
   dns_challenge {
