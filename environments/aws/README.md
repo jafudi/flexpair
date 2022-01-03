@@ -100,7 +100,7 @@
 | aws\_access\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
 | aws\_region | Seems to determines the region of all created resources. | `string` | `"eu-central-1"` | no |
 | aws\_secret\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
-| demo\_subdomain | the demo in demo.flexpair.com | `string` | n/a | yes |
+| demo\_subdomain | the demo in demo.flexpair.com | `string` | `""` | no |
 | dnsimple\_account\_id | n/a | `number` | n/a | yes |
 | dnsimple\_account\_token | n/a | `string` | n/a | yes |
 | github\_personal\_access\_token | n/a | `string` | n/a | yes |

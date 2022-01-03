@@ -14,6 +14,8 @@ locals {
   workspace       = local.org_list[1]
   valid_subdomain = random_pet.subdomain.id # in PROD: lower(replace(local.workspace, "/[_\\W]/", "-"))
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
+
+
 }
 
 module "amazon_infrastructure" {
@@ -31,7 +33,7 @@ locals {
 
 module "credentials_generator" {
   full_hostname         = local.full_hostname
-  demo_hostname         = "${var.demo_subdomain}.${var.registered_domain}"
+  demo_hostname         = local.demo_hostname
   gateway_context_hash  = sha512(join("", values(local.gateway_creation_context)))
   desktop_context_hash  = sha512(join("", values(local.desktop_creation_context)))
   gateway_cloud_account = local.gateway_additional_info.cloud_account_name
@@ -52,7 +54,7 @@ module "gateway_installer" {
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
   guest_username         = module.credentials_generator.guest_username
-  demo_hostname          = "${var.demo_subdomain}.${var.registered_domain}"
+  demo_hostname          = local.demo_hostname
   gateway_dns_hostname   = local.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release

@@ -8,11 +8,6 @@ variable "dnsimple_account_id" {
   type        = number
 }
 
-variable "demo_subdomain" {
-  description = "the demo in demo.flexpair.com"
-  type        = string
-}
-
 variable "dnsimple_account_token" {
   description = ""
   type        = string
@@ -32,14 +27,6 @@ variable "registered_domain" {
     condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.registered_domain))
     error_message = "This does not look like a valid registered domain."
   }
-}
-
-resource "dnsimple_zone_record" "demo_hostname" {
-  zone_name = var.registered_domain
-  name      = var.demo_subdomain
-  value     = local.full_hostname
-  type      = "CNAME"
-  ttl       = 60
 }
 
 resource "dnsimple_zone_record" "gateway_hostname" {
