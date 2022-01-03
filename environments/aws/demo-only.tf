@@ -5,7 +5,7 @@ variable "demo_subdomain" {
 }
 
 locals {
-  is_public_demo = var.TFC_CONFIGURATION_VERSION_GIT_BRANCH && length(var.demo_subdomain) > 0 ? true : false
+  is_public_demo = (var.TFC_CONFIGURATION_VERSION_GIT_BRANCH == "master") && (length(var.demo_subdomain) > 0) ? true : false
   demo_hostname  = local.is_public_demo ? "${var.demo_subdomain}.${var.registered_domain}" : null
 }
 
