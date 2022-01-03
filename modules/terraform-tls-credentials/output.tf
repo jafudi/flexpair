@@ -55,3 +55,15 @@ output "mumble_url" {
   value       = "mumble://:${urlencode(local.murmur_credentials.password)}@${var.full_hostname}:${local.murmur_credentials.port}"
   sensitive   = true
 }
+
+output "guest_username" {
+  description = ""
+  value       = local.guest_username
+  sensitive   = true
+}
+
+output "guest_slug" {
+  description = ""
+  value       = local.guest_slug
+  sensitive   = true
+}

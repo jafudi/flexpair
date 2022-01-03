@@ -83,6 +83,8 @@ No Modules.
 | email\_config | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
 | guacamole\_credentials | n/a |
+| guest\_slug | n/a |
+| guest\_username | n/a |
 | letsencrypt\_certificate | n/a |
 | mumble\_url | n/a |
 | murmur\_credentials | n/a |
