@@ -30,34 +30,34 @@ provider "uptimerobot" {
 
 resource "uptimerobot_monitor" "link_to_demo" {
   count         = local.is_public_demo ? 1 : 0
-  friendly_name = "DNS record of Flexpair demo"
+  friendly_name = "Flexpair demo (CNAME record)"
   type          = "ping"
   url           = "https://${local.demo_hostname}"
 }
 
 resource "uptimerobot_monitor" "desktop_vm" {
   count         = local.is_public_demo ? 1 : 0
-  friendly_name = "desktop VM of Flexpair demo"
+  friendly_name = "Flexpair demo (desktop VM)"
   type          = "ping"
   url           = module.desktop_machine_1.public_ip
 }
 
 resource "uptimerobot_monitor" "web_frontend" {
   count         = local.is_public_demo ? 1 : 0
-  friendly_name = "mumble webapp of Flexpair demo"
+  friendly_name = "Flexpair demo (mumble webapp)"
   type          = "http"
   url           = module.credentials_generator.browser_url
 }
 
 resource "uptimerobot_monitor" "guacamole_app" {
   count         = local.is_public_demo ? 1 : 0
-  friendly_name = "guacamole app of Flexpair demo"
+  friendly_name = "Flexpair demo (Guacamole app)"
   type          = "http"
   url           = "https://${local.full_hostname}/guacamole/"
 }
 
 resource "uptimerobot_monitor" "mumble_server" {
-  friendly_name = "mumble server of Flexpair demo"
+  friendly_name = "Flexpair demo (Mumble server)"
   count         = local.is_public_demo ? 1 : 0
   type          = "port"
   sub_type      = "custom"
@@ -67,7 +67,7 @@ resource "uptimerobot_monitor" "mumble_server" {
 
 resource "uptimerobot_monitor" "imap_server" {
   count         = local.is_public_demo ? 1 : 0
-  friendly_name = "email server of Flexpair demo"
+  friendly_name = "Flexpair demo (email server)"
   type          = "port"
   sub_type      = "smtp"
   url           = local.full_hostname
