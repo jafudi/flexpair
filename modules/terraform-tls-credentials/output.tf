@@ -57,13 +57,7 @@ output "mumble_url" {
 }
 
 output "guest_username" {
-  description = ""
-  value       = local.guest_username
-  sensitive   = true
-}
-
-output "guest_slug" {
-  description = ""
-  value       = local.guest_slug
+  description = "Could be randomized in the future."
+  value       = "valued_guest"
   sensitive   = true
 }

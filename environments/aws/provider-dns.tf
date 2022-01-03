@@ -8,6 +8,11 @@ variable "dnsimple_account_id" {
   type        = number
 }
 
+variable "demo_subdomain" {
+  description = "the demo in demo.flexpair.com"
+  type        = string
+}
+
 variable "dnsimple_account_token" {
   description = ""
   type        = string
@@ -29,23 +34,11 @@ variable "registered_domain" {
   }
 }
 
-locals {
-  pw = module.credentials_generator.murmur_credentials.password
-}
-
-resource "dnsimple_zone_record" "redirect_to_demo" {
+resource "dnsimple_zone_record" "demo_hostname" {
   zone_name = var.registered_domain
-  name      = "demo"
-  value     = "${module.credentials_generator.guest_slug}.${local.valid_subdomain}.${var.registered_domain}"
+  name      = var.demo_subdomain
+  value     = local.full_hostname
   type      = "CNAME"
-  ttl       = 60
-}
-
-resource "dnsimple_zone_record" "demo_guest_login" {
-  zone_name = var.registered_domain
-  name      = "${module.credentials_generator.guest_slug}.${local.valid_subdomain}"
-  value     = module.gateway_machine.public_ip
-  type      = "A"
   ttl       = 60
 }
 

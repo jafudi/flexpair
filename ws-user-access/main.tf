@@ -110,7 +110,7 @@ resource "guacamole_user" "jens_admin" {
 }
 
 resource "guacamole_user" "guest_user" {
-  username = "guest"
+  username = data.terraform_remote_state.main.outputs.guest_username
   password = data.terraform_remote_state.main.outputs.murmur_password
   attributes {
     full_name = "Guest"
@@ -120,7 +120,7 @@ resource "guacamole_user" "guest_user" {
   system_permissions = []
   group_membership   = []
   connections = [
-    guacamole_connection_vnc.collaborate.id
+    guacamole_connection_vnc.view_only.id
   ]
   connection_groups = [
   ]

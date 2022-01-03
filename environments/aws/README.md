@@ -70,7 +70,7 @@
 | credentials_generator | ../../modules/terraform-tls-credentials |  |
 | desktop_installer | app.terraform.io/Flexpair/satellite/cloudinit | 1.5.1 |
 | desktop_machine_1 | app.terraform.io/Flexpair/desktop/aws | 1.2.0 |
-| gateway_installer | app.terraform.io/Flexpair/station/cloudinit | 1.5.3 |
+| gateway_installer | app.terraform.io/Flexpair/station/cloudinit | 1.5.4 |
 | gateway_machine | app.terraform.io/Flexpair/gateway/aws | 1.1.0 |
 
 ## Resources
@@ -100,6 +100,7 @@
 | aws\_access\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
 | aws\_region | Seems to determines the region of all created resources. | `string` | `"eu-central-1"` | no |
 | aws\_secret\_key | Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials | `string` | n/a | yes |
+| demo\_subdomain | the demo in demo.flexpair.com | `string` | n/a | yes |
 | dnsimple\_account\_id | n/a | `number` | n/a | yes |
 | dnsimple\_account\_token | n/a | `string` | n/a | yes |
 | github\_personal\_access\_token | n/a | `string` | n/a | yes |
@@ -124,6 +125,7 @@
 | gateway\_ip | n/a |
 | gateway\_username | UNIX username used for the gateway |
 | guacamole\_credentials | Credentials necessary to gain admin access to Guacamole |
+| guest\_username | username used for the guest account |
 | murmur\_password | n/a |
 | private\_key | n/a |
 | ssh\_into\_desktop\_1 | n/a |

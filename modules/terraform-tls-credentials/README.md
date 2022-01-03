@@ -67,6 +67,7 @@ No Modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| demo\_hostname | n/a | `string` | n/a | yes |
 | desktop\_cloud\_account | n/a | `string` | n/a | yes |
 | desktop\_context\_hash | n/a | `string` | n/a | yes |
 | dnsimple\_account\_token | n/a | `string` | n/a | yes |
@@ -83,8 +84,7 @@ No Modules.
 | email\_config | n/a |
 | gateway\_username | Make sure the first character is a lower case roman letter |
 | guacamole\_credentials | n/a |
-| guest\_slug | n/a |
-| guest\_username | n/a |
+| guest\_username | Could be randomized in the future. |
 | letsencrypt\_certificate | n/a |
 | mumble\_url | n/a |
 | murmur\_credentials | n/a |

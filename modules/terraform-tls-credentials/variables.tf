@@ -23,6 +23,11 @@ variable "full_hostname" {
   type        = string
 }
 
+variable "demo_hostname" {
+  description = ""
+  type        = string
+}
+
 variable "dnsimple_account_token" {
   description = ""
   type        = string

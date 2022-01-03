@@ -31,6 +31,7 @@ locals {
 
 module "credentials_generator" {
   full_hostname         = local.full_hostname
+  demo_hostname         = "${var.demo_subdomain}.${var.registered_domain}"
   gateway_context_hash  = sha512(join("", values(local.gateway_creation_context)))
   desktop_context_hash  = sha512(join("", values(local.desktop_creation_context)))
   gateway_cloud_account = local.gateway_additional_info.cloud_account_name
@@ -51,7 +52,7 @@ module "gateway_installer" {
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
   guest_username         = module.credentials_generator.guest_username
-  guest_subdomain        = "${module.credentials_generator.guest_slug}.${local.full_hostname}"
+  demo_hostname          = "${var.demo_subdomain}.${var.registered_domain}"
   gateway_dns_hostname   = local.full_hostname
   email_config           = module.credentials_generator.email_config
   docker_compose_release = local.docker_compose_release
@@ -59,7 +60,7 @@ module "gateway_installer" {
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.5.3"
+  version                = "1.5.4"
 }
 
 # TODO: Fully parameterize VNC crendetials
