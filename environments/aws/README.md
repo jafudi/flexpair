@@ -70,7 +70,7 @@
 | credentials_generator | ../../modules/terraform-tls-credentials |  |
 | desktop_installer | app.terraform.io/Flexpair/satellite/cloudinit | 1.5.1 |
 | desktop_machine_1 | app.terraform.io/Flexpair/desktop/aws | 1.2.0 |
-| gateway_installer | app.terraform.io/Flexpair/station/cloudinit | 1.5.6 |
+| gateway_installer | app.terraform.io/Flexpair/station/cloudinit | 1.6.4 |
 | gateway_machine | app.terraform.io/Flexpair/gateway/aws | 1.1.0 |
 
 ## Resources
