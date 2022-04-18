@@ -91,11 +91,11 @@ resource "guacamole_connection_ssh" "admin_console" {
   }
 }
 
-resource "guacamole_user" "jens_admin" {
-  username = "jensjensen2022"
+resource "guacamole_user" "admin" {
+  username = "admin"
   password = data.terraform_remote_state.main.outputs.murmur_password
   attributes {
-    full_name = "Jens Fielenbach"
+    full_name = "Admin"
     email     = "flexpair@icloud.com"
     timezone  = "Europe/Berlin"
   }
@@ -109,11 +109,28 @@ resource "guacamole_user" "jens_admin" {
   ]
 }
 
-resource "guacamole_user" "guest_user" {
-  username = data.terraform_remote_state.main.outputs.guest_username
+resource "guacamole_user" "editor" {
+  username = "editor"
   password = data.terraform_remote_state.main.outputs.murmur_password
   attributes {
-    full_name = "Guest"
+    full_name = "Editor"
+    email     = "flexpair@icloud.com"
+    timezone  = "Europe/Berlin"
+  }
+  system_permissions = []
+  group_membership   = []
+  connections = [
+    guacamole_connection_vnc.collaborate.id,
+  ]
+  connection_groups = [
+  ]
+}
+
+resource "guacamole_user" "watcher" {
+  username = "watcher"
+  password = data.terraform_remote_state.main.outputs.murmur_password
+  attributes {
+    full_name = "Watcher"
     email     = "flexpair@icloud.com"
     timezone  = "Europe/Berlin"
   }
