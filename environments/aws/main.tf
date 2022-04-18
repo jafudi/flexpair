@@ -193,7 +193,7 @@ resource "tfe_workspace" "iam" {
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/flexpair"
-    branch         = tfe_workspace.main.vcs_repo.branch
+    branch         = data.tfe_workspace.main.vcs_repo.branch
   }
 }
 resource "tfe_run_trigger" "test" {
