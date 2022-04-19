@@ -70,7 +70,7 @@
 | credentials_generator | ../../modules/terraform-tls-credentials |  |
 | desktop_installer | app.terraform.io/Flexpair/satellite/cloudinit | 1.5.1 |
 | desktop_machine_1 | app.terraform.io/Flexpair/desktop/aws | 1.2.0 |
-| gateway_installer | app.terraform.io/Flexpair/station/cloudinit | 1.6.4 |
+| gateway_installer | app.terraform.io/Flexpair/station/cloudinit | 1.6.5 |
 | gateway_machine | app.terraform.io/Flexpair/gateway/aws | 1.1.0 |
 
 ## Resources
@@ -125,7 +125,6 @@
 | gateway\_ip | n/a |
 | gateway\_username | UNIX username used for the gateway |
 | guacamole\_credentials | Credentials necessary to gain admin access to Guacamole |
-| guest\_username | username used for the guest account |
 | murmur\_password | n/a |
 | private\_key | n/a |
 | ssh\_into\_desktop\_1 | n/a |

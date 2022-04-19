@@ -53,7 +53,6 @@ module "gateway_installer" {
   desktop_username       = module.credentials_generator.desktop_username
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
-  guest_username         = module.credentials_generator.guest_username
   demo_hostname          = local.demo_hostname
   gateway_dns_hostname   = local.full_hostname
   email_config           = module.credentials_generator.email_config
@@ -62,7 +61,7 @@ module "gateway_installer" {
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.6.4"
+  version                = "1.6.5"
 }
 
 # TODO: Fully parameterize VNC crendetials

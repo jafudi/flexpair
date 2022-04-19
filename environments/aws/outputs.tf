@@ -71,9 +71,3 @@ output "first_vnc_credentials" {
   value       = module.credentials_generator.vnc_credentials
   sensitive   = true
 }
-
-output "guest_username" {
-  description = "username used for the guest account"
-  value       = module.credentials_generator.guest_username
-  sensitive   = true
-}
