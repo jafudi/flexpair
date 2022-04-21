@@ -61,7 +61,7 @@ module "gateway_installer" {
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.6.5"
+  version                = "1.6.6"
 }
 
 # TODO: Fully parameterize VNC crendetials
@@ -78,7 +78,7 @@ module "desktop_installer" {
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
   source               = "app.terraform.io/Flexpair/satellite/cloudinit"
-  version              = "1.5.4"
+  version              = "1.6.0"
 }
 
 locals {
@@ -123,7 +123,7 @@ module "gateway_machine" {
     sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
-  version = "1.1.0"
+  version = "1.1.1"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
 }
