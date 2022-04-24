@@ -78,7 +78,7 @@ module "desktop_installer" {
   email_config         = module.credentials_generator.email_config
   gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
   source               = "app.terraform.io/Flexpair/satellite/cloudinit"
-  version              = "1.7.3"
+  version              = "1.7.4"
 }
 
 locals {
