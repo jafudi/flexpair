@@ -139,7 +139,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/Flexpair/desktop/aws"
-  version = "1.2.0"
+  version = "1.2.1"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
