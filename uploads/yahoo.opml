@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+    <head>
+        <title>QuiteRSS</title>
+        <dateModified>Do. Apr. 21 21:17:44 2022</dateModified>
+    </head>
+    <body>
+        <outline text="Yahoo">
+            <outline text="国際" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/world?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/world.xml"/>
+            <outline text="国内" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/domestic?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/domestic.xml"/>
+            <outline text="主要" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/top-picks?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/top-picks.xml"/>
+            <outline text="経済" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/business?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/business.xml"/>
+            <outline text="エンタメ" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/entertainment?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/entertainment.xml"/>
+            <outline text="スポーツ" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/sports?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/sports.xml"/>
+            <outline text="科学" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/science?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/science.xml"/>
+            <outline text="地域" type="rss" htmlUrl="https://news.yahoo.co.jp/topics/local?source=rss" xmlUrl="https://news.yahoo.co.jp/rss/topics/local.xml"/>
+        </outline>
+    </body>
+</opml>

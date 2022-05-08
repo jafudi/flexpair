@@ -53,7 +53,6 @@ module "gateway_installer" {
   desktop_username       = module.credentials_generator.desktop_username
   ssl_certificate        = module.credentials_generator.letsencrypt_certificate
   murmur_config          = module.credentials_generator.murmur_credentials
-  guest_username         = module.credentials_generator.guest_username
   demo_hostname          = local.demo_hostname
   gateway_dns_hostname   = local.full_hostname
   email_config           = module.credentials_generator.email_config
@@ -62,7 +61,7 @@ module "gateway_installer" {
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.6.4"
+  version                = "1.6.6"
 }
 
 # TODO: Fully parameterize VNC crendetials
@@ -77,9 +76,9 @@ module "desktop_installer" {
   browser_url          = module.credentials_generator.browser_url
   gateway_dns_hostname = local.full_hostname
   email_config         = module.credentials_generator.email_config
-  gateway_vnc_port     = module.credentials_generator.vnc_credentials.vnc_port
+  vnc_port             = module.credentials_generator.vnc_credentials.vnc_port
   source               = "app.terraform.io/Flexpair/satellite/cloudinit"
-  version              = "1.5.1"
+  version              = "1.8.2"
 }
 
 locals {
@@ -124,7 +123,7 @@ module "gateway_machine" {
     sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
-  version = "1.1.0"
+  version = "1.1.1"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
 }
@@ -140,7 +139,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/Flexpair/desktop/aws"
-  version = "1.2.0"
+  version = "1.2.1"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
@@ -193,6 +192,7 @@ resource "tfe_workspace" "iam" {
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/flexpair"
+    branch         = data.tfe_workspace.main.vcs_repo[0].branch
   }
 }
 resource "tfe_run_trigger" "test" {
