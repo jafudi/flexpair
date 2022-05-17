@@ -1,6 +1,6 @@
 locals {
-  docker_compose_release = "2.4.1"
-  mumbling_mole_version  = "1.8.1"
+  docker_compose_release = "2.5.1"
+  mumbling_mole_version  = "1.9.0"
 }
 
 terraform {
@@ -15,7 +15,7 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.18"
+      version = "~> 4.14.0"
     }
     random = {
       source  = "hashicorp/random"
