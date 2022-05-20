@@ -1,6 +1,6 @@
 locals {
   docker_compose_release = "2.5.1"
-  mumbling_mole_version  = "1.9.0"
+  mumbling_mole_version  = "2.0.0"
 }
 
 terraform {
@@ -11,7 +11,7 @@ terraform {
     }
     dnsimple = {
       source  = "dnsimple/dnsimple"
-      version = "0.11.0"
+      version = "0.11.3"
     }
     aws = {
       source  = "hashicorp/aws"
@@ -43,7 +43,7 @@ terraform {
     }
     local = {
       source  = "hashicorp/local"
-      version = "~> 2.1.0"
+      version = "~> 2.2.0"
     }
     uptimerobot = {
       source  = "louy/uptimerobot"
