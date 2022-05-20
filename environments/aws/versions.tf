@@ -1,6 +1,6 @@
 locals {
-  docker_compose_release = "2.4.1"
-  mumbling_mole_version  = "1.8.1"
+  docker_compose_release = "2.5.1"
+  mumbling_mole_version  = "2.0.0"
 }
 
 terraform {
@@ -15,15 +15,15 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.18"
+      version = "~> 4.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.1.0"
+      version = "~> 3.2.0"
     }
     tls = {
       source  = "hashicorp/tls"
-      version = "~> 3.1.0"
+      version = "~> 3.4.0"
     }
     acme = {
       source  = "terraform-providers/acme"
