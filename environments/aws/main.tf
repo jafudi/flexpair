@@ -21,7 +21,7 @@ locals {
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
-  version         = "1.0.1"
+  version         = "4.0.0"
 }
 
 locals {
@@ -123,7 +123,7 @@ module "gateway_machine" {
     sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
-  version = "1.1.1"
+  version = "4.0.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
 }
@@ -139,7 +139,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/Flexpair/desktop/aws"
-  version = "1.2.1"
+  version = "4.0.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
