@@ -43,7 +43,7 @@ terraform {
     }
     local = {
       source  = "hashicorp/local"
-      version = "~> 2.1.0"
+      version = "~> 2.2.0"
     }
     uptimerobot = {
       source  = "louy/uptimerobot"
