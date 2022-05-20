@@ -11,7 +11,7 @@ terraform {
     }
     oci = {
       source  = "hashicorp/oci"
-      version = "~> 3.95.0"
+      version = "~> 3.97.0"
     }
     random = {
       source  = "hashicorp/random"
@@ -19,7 +19,7 @@ terraform {
     }
     tls = {
       source  = "hashicorp/tls"
-      version = "~> 3.1.0"
+      version = "~> 3.4.0"
     }
     acme = {
       source  = "terraform-providers/acme"
