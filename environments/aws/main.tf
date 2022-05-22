@@ -21,7 +21,7 @@ locals {
 module "amazon_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
-  version         = "1.0.1"
+  version         = "4.0.0"
 }
 
 locals {
@@ -90,17 +90,17 @@ locals {
 
 resource "local_file" "desktop_meta_data" {
   content  = "instance-id: iid-local01\nlocal-hostname: cloudimg"
-  filename = "${path.root}/../uploads/desktop-config/meta-data"
+  filename = "${path.root}/../../uploads/desktop-config/meta-data"
 }
 
 resource "local_file" "desktop_user_data" {
   sensitive_content = module.desktop_installer.unzipped_config
-  filename          = "${path.root}/../uploads/desktop-config/user-data"
+  filename          = "${path.root}/../../uploads/desktop-config/user-data"
 }
 
 resource "local_file" "gen_iso_script" {
   content         = "sudo apt-get update\nsudo apt-get -y install genisoimage\ngenisoimage -output config.iso -volid cidata -joliet -rock user-data meta-data"
-  filename        = "${path.root}/../uploads/desktop-config/gen-config-iso.sh"
+  filename        = "${path.root}/../../uploads/desktop-config/gen-config-iso.sh"
   file_permission = "0777"
 }
 
@@ -123,7 +123,7 @@ module "gateway_machine" {
     sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
-  version = "1.1.1"
+  version = "4.0.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
 }
@@ -139,7 +139,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/Flexpair/desktop/aws"
-  version = "1.2.1"
+  version = "4.0.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
 }
@@ -189,6 +189,7 @@ resource "tfe_workspace" "iam" {
   organization      = local.organization
   description       = "Identity and access management"
   working_directory = "ws-user-access"
+  auto_apply = true
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/flexpair"
