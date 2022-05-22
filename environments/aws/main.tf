@@ -189,6 +189,7 @@ resource "tfe_workspace" "iam" {
   organization      = local.organization
   description       = "Identity and access management"
   working_directory = "ws-user-access"
+  auto_apply = true
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/flexpair"
