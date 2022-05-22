@@ -1,6 +1,6 @@
 locals {
   docker_compose_release = "2.5.1"
-  mumbling_mole_version  = "2.1.1"
+  mumbling_mole_version  = "2.2.0"
 }
 
 terraform {

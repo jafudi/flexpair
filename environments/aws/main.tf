@@ -93,9 +93,9 @@ resource "local_file" "desktop_meta_data" {
   filename = "${path.root}/../../uploads/desktop-config/meta-data"
 }
 
-resource "local_file" "desktop_user_data" {
-  sensitive_content = module.desktop_installer.unzipped_config
-  filename          = "${path.root}/../../uploads/desktop-config/user-data"
+resource "local_sensitive_file" "desktop_user_data" {
+  content  = module.desktop_installer.unzipped_config
+  filename = "${path.root}/../../uploads/desktop-config/user-data"
 }
 
 resource "local_file" "gen_iso_script" {
@@ -189,7 +189,7 @@ resource "tfe_workspace" "iam" {
   organization      = local.organization
   description       = "Identity and access management"
   working_directory = "ws-user-access"
-  auto_apply = true
+  auto_apply        = true
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/flexpair"
