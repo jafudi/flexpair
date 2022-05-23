@@ -109,7 +109,7 @@ resource "local_file" "gen_iso_script" {
 module "gateway_machine" {
   depends_on = [
     local_file.desktop_meta_data,
-    local_file.desktop_user_data,
+    local_sensitive_file.desktop_user_data,
     local_file.gen_iso_script
   ]
   deployment_tags   = local.deployment_tags
