@@ -66,6 +66,7 @@ module "gateway_installer" {
 
 # TODO: Fully parameterize VNC crendetials
 module "desktop_installer" {
+  admin_public_keys    = var.admin_public_keys
   timezone_name        = var.timezone
   gitlab_runner_token  = var.gitlab_runner_token
   locale_name          = var.locale

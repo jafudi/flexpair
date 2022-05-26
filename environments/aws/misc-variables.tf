@@ -44,3 +44,9 @@ variable "tfc_api_token" {
 variable "github_personal_access_token" {
   type = string
 }
+
+variable "admin_public_keys" {
+  type = list(string)
+  default = []
+  description = "SSH public keys of poeple who should be allowed direct access"
+}
