@@ -8,11 +8,6 @@ output "gateway_base_image" {
   value       = local.gateway_additional_info.source_image_info
 }
 
-output "ssh_into_desktop_1" {
-  description = ""
-  value       = "ssh -i $(pwd)/.ssh/privkey -o StrictHostKeyChecking=no ${module.credentials_generator.desktop_username}@${module.desktop_machine_1.public_ip}"
-}
-
 output "gateway_ip" {
   description = ""
   value       = module.gateway_machine.public_ip
@@ -70,4 +65,25 @@ output "first_vnc_credentials" {
   description = "Credentials for the first desktop's VNC connection"
   value       = module.credentials_generator.vnc_credentials
   sensitive   = true
+}
+
+locals {
+  ssh_config_obj = {
+    "Host Gateway" = {
+      HostName              = local.full_hostname
+      StrictHostKeyChecking = "no"
+      User                  = module.credentials_generator.desktop_username
+    }
+    "Host Desktop" = {
+      ProxyJump             = "Gateway"
+      HostName              = module.desktop_machine_1.public_ip
+      StrictHostKeyChecking = "no"
+      User                  = module.credentials_generator.gateway_username
+    }
+  }
+}
+
+output "ssh_config_file" {
+  description = "For appending to your local SSH config file"
+  value       = replace(yamlencode(local.ssh_config_obj), ":", "")
 }
