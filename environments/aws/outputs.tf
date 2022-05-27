@@ -67,23 +67,18 @@ output "first_vnc_credentials" {
   sensitive   = true
 }
 
-locals {
-  ssh_config_obj = {
-    "Host Gateway" = {
-      HostName              = local.full_hostname
-      StrictHostKeyChecking = "no"
-      User                  = module.credentials_generator.desktop_username
-    }
-    "Host Desktop" = {
-      ProxyJump             = "Gateway"
-      HostName              = module.desktop_machine_1.public_ip
-      StrictHostKeyChecking = "no"
-      User                  = module.credentials_generator.gateway_username
-    }
-  }
-}
-
-output "ssh_config_file" {
+output "ssh_config" {
   description = "For appending to your local SSH config file"
-  value       = replace(yamlencode(local.ssh_config_obj), ":", "")
+  value       = <<-EOT
+  Host Gateway
+    HostName ${local.full_hostname}
+    StrictHostKeyChecking no
+    User ${module.credentials_generator.desktop_username}
+
+  Host Desktop
+    ProxyJump Gateway
+    HostName ${module.desktop_machine_1.public_ip}
+    StrictHostKeyChecking no
+    User ${module.credentials_generator.gateway_username}
+  EOT
 }
