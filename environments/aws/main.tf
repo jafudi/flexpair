@@ -46,6 +46,7 @@ module "credentials_generator" {
 # TODO: Fully parameterize VNC crendetials
 # TODO: Fully parameterize Guacamole credentials
 module "gateway_installer" {
+  admin_public_keys      = var.admin_public_keys
   timezone_name          = var.timezone
   locale_name            = var.locale
   vm_mutual_keypair      = module.credentials_generator.vm_mutual_key
@@ -61,7 +62,7 @@ module "gateway_installer" {
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.6.6"
+  version                = "1.7.0"
 }
 
 # TODO: Fully parameterize VNC crendetials
