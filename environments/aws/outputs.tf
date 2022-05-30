@@ -75,7 +75,7 @@ output "ssh_config" {
     StrictHostKeyChecking no
     User ${module.credentials_generator.desktop_username}
 
-  Host Desktop
+  Host Desktop_1
     ProxyJump Gateway
     HostName ${module.desktop_machine_1.public_ip}
     StrictHostKeyChecking no
