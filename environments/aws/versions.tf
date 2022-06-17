@@ -11,7 +11,7 @@ terraform {
     }
     dnsimple = {
       source  = "dnsimple/dnsimple"
-      version = "0.11.3"
+      version = "0.13.0"
     }
     aws = {
       source  = "hashicorp/aws"
