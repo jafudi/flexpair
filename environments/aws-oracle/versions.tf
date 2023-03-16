@@ -27,7 +27,7 @@ terraform {
     }
     acme = {
       source  = "terraform-providers/acme"
-      version = "~> 2.4.0"
+      version = "~> 2.12.0"
     }
     template = {
       source  = "hashicorp/template"
