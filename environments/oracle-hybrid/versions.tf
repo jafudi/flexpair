@@ -7,7 +7,7 @@ terraform {
   required_providers {
     dnsimple = {
       source  = "dnsimple/dnsimple"
-      version = "0.13.0"
+      version = "0.17.0"
     }
     oci = {
       source  = "hashicorp/oci"
