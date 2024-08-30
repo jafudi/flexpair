@@ -63,6 +63,7 @@ module "gateway_installer" {
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/station/cloudinit"
   version                = "1.8.4"
+  guacamole_version      = "1.4.0"
 }
 
 # TODO: Fully parameterize VNC crendetials
