@@ -14,21 +14,31 @@ locals {
   workspace       = local.org_list[1]
   valid_subdomain = random_pet.subdomain.id # in PROD: lower(replace(local.workspace, "/[_\\W]/", "-"))
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
-
-
 }
 
-module "amazon_infrastructure" {
+module "amazon_hub_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
   version         = "4.0.0"
+  providers = {
+    aws = aws.hub
+  }
+}
+
+module "amazon_sat1_infrastructure" {
+  deployment_tags = local.deployment_tags
+  source          = "app.terraform.io/Flexpair/commons/aws"
+  version         = "4.0.0"
+  providers = {
+    aws = aws.sat1
+  }
 }
 
 locals {
-  gateway_creation_context = module.amazon_infrastructure.vm_creation_context
-  gateway_additional_info  = module.amazon_infrastructure.additional_metadata
-  desktop_creation_context = module.amazon_infrastructure.vm_creation_context
-  desktop_additional_info  = module.amazon_infrastructure.additional_metadata
+  gateway_creation_context = module.amazon_hub_infrastructure.vm_creation_context
+  gateway_additional_info  = module.amazon_hub_infrastructure.additional_metadata
+  desktop_creation_context = module.amazon_sat1_infrastructure.vm_creation_context
+  desktop_additional_info  = module.amazon_sat1_infrastructure.additional_metadata
 }
 
 module "credentials_generator" {
@@ -129,6 +139,9 @@ module "gateway_machine" {
   version = "4.0.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
+  providers = {
+    aws = aws.hub
+  }
 }
 
 module "desktop_machine_1" {
@@ -145,6 +158,9 @@ module "desktop_machine_1" {
   version = "4.0.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
+  providers = {
+    aws = aws.sat1
+  }
 }
 
 resource "null_resource" "health_check" {
