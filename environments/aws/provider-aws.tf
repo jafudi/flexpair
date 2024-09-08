@@ -53,7 +53,7 @@ variable "hub_aws_region" {
 
 variable "sat1_aws_region" {
   type        = string
-  default     = "ca-west-1"
+  default     = "ap-northeast-1"
   description = "Seems to determines the region of all created resources."
   validation {
     condition = contains([
