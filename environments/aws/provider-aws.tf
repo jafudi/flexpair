@@ -46,7 +46,7 @@ variable "hub_aws_region" {
       "ap-northeast-1", // Tokyo
       // "ap-southeast-4", // Melbourne
       // "ap-southeast-2", // Sydney
-    ], var.aws_region)
+    ], var.hub_aws_region)
     error_message = "aws_region is not in the list of valid EC2 regions."
   }
 }
@@ -83,7 +83,7 @@ variable "sat1_aws_region" {
       "ap-northeast-1", // Tokyo
       // "ap-southeast-4", // Melbourne
       // "ap-southeast-2", // Sydney
-    ], var.aws_region)
+    ], var.sat1_aws_region)
     error_message = "aws_region is not in the list of valid EC2 regions."
   }
 }
