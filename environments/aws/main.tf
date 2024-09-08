@@ -39,8 +39,8 @@ locals {
   cross_region = var.hub_aws_region != var.sat1_aws_region
   gateway_creation_context = module.amazon_hub_infrastructure.vm_creation_context
   gateway_additional_info  = module.amazon_hub_infrastructure.additional_metadata
-  desktop_creation_context = local.cross_region ? module.amazon_sat1_infrastructure.vm_creation_context : module.amazon_hub_infrastructure.vm_creation_context
-  desktop_additional_info  = local.cross_region ? module.amazon_sat1_infrastructure.additional_metadata : module.amazon_hub_infrastructure.additional_metadata
+  desktop_creation_context = local.cross_region ? module.amazon_sat1_infrastructure[0].vm_creation_context : module.amazon_hub_infrastructure.vm_creation_context
+  desktop_additional_info  = local.cross_region ? module.amazon_sat1_infrastructure[0].additional_metadata : module.amazon_hub_infrastructure.additional_metadata
 }
 
 module "credentials_generator" {
