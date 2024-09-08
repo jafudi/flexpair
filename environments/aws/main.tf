@@ -61,9 +61,9 @@ module "gateway_installer" {
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
-  source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.8.4"
-  guacamole_version      = "1.4.0"
+  source                 = "app.terraform.io/Flexpair/hubconfig/cloudinit"
+  version                = "1.0.0"
+  guacamole_version      = "1.3.0"
 }
 
 # TODO: Fully parameterize VNC crendetials
