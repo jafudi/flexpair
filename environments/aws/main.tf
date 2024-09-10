@@ -170,15 +170,17 @@ check "health_check" {
     url = "https://${local.full_hostname}/"
   }
 
-  data "http" "guacamole_page" {
-    url = "https://${local.full_hostname}/guacamole/"
-  }
-
   assert {
     condition = data.http.terraform_io.status_code == 200
     error_message = "${data.http.home_page.url} returned an unhealthy status code"
   }
+}
 
+check "health_check" {
+  data "http" "guacamole_page" {
+    url = "https://${local.full_hostname}/guacamole/"
+  }
+  
   assert {
     condition = data.http.terraform_io.status_code == 200
     error_message = "${data.http.guacamole_page.url} returned an unhealthy status code"
