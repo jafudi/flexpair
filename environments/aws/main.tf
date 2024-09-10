@@ -171,7 +171,7 @@ check "health_check_1" {
   }
 
   assert {
-    condition = data.http.terraform_io.status_code == 200
+    condition = data.http.home_page.status_code == 200
     error_message = "${data.http.home_page.url} returned an unhealthy status code"
   }
 }
@@ -182,7 +182,7 @@ check "health_check_2" {
   }
 
   assert {
-    condition = data.http.terraform_io.status_code == 200
+    condition = data.http.guacamole_page.status_code == 200
     error_message = "${data.http.guacamole_page.url} returned an unhealthy status code"
   }
 }
