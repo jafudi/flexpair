@@ -5,6 +5,5 @@ terraform {
       version = "1.2.10" // parameterize together with Guacamole version
     }
   }
-  required_version = ">= 0.12.26"
-  // experiments      = [variable_validation]
+  required_version = ">= 0.12.26, < 1.6.0"
 }

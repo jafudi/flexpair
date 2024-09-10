@@ -165,26 +165,23 @@ module "desktop_machine_1" {
   }
 }
 
-resource "null_resource" "health_check" {
-
-  for_each = toset([
-    "/",
-    "/guacamole/"
-  ])
-
-  triggers = {
-    on_every_apply = timestamp()
+check "health_check" {
+  data "http" "home_page" {
+    url = "https://${local.full_hostname}/"
   }
 
-  depends_on = [
-    module.gateway_machine,
-    time_sleep.dns_propagation
-  ]
+  data "http" "guacamole_page" {
+    url = "https://${local.full_hostname}/guacamole/"
+  }
 
-  # Check HTTPS endpoint and first-level links availability
-  provisioner "local-exec" {
-    interpreter = ["/bin/bash", "-c"]
-    command     = "wget --tries=30 --spider --recursive --level 1 https://${local.full_hostname}${each.key};"
+  assert {
+    condition = data.http.terraform_io.status_code == 200
+    error_message = "${data.http.home_page.url} returned an unhealthy status code"
+  }
+
+  assert {
+    condition = data.http.terraform_io.status_code == 200
+    error_message = "${data.http.guacamole_page.url} returned an unhealthy status code"
   }
 }
 
