@@ -165,7 +165,7 @@ module "desktop_machine_1" {
   }
 }
 
-check "health_check" {
+check "health_check_1" {
   data "http" "home_page" {
     url = "https://${local.full_hostname}/"
   }
@@ -176,11 +176,11 @@ check "health_check" {
   }
 }
 
-check "health_check" {
+check "health_check_2" {
   data "http" "guacamole_page" {
     url = "https://${local.full_hostname}/guacamole/"
   }
-  
+
   assert {
     condition = data.http.terraform_io.status_code == 200
     error_message = "${data.http.guacamole_page.url} returned an unhealthy status code"
