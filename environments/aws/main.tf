@@ -19,7 +19,7 @@ locals {
 module "amazon_hub_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
-  version         = "4.0.0"
+  version         = "5.0.0"
   providers = {
     aws = aws.hub
   }
@@ -29,7 +29,7 @@ module "amazon_sat1_infrastructure" {
   count = local.cross_region ? 1 : 0
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
-  version         = "4.0.0"
+  version         = "5.0.0"
   providers = {
     aws = aws.sat1
   }
@@ -138,7 +138,7 @@ module "gateway_machine" {
     sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
-  version = "4.0.0"
+  version = "5.0.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
   providers = {
@@ -157,7 +157,7 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/Flexpair/desktop/aws"
-  version = "4.0.0"
+  version = "5.0.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
   providers = {
