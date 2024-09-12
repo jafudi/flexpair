@@ -13,6 +13,5 @@ terraform {
       version = "~> 2.4.0"
     }
   }
-  required_version = ">= 0.12.26"
-  // experiments      = [variable_validation]
+  required_version = "~> 1.5.0"
 }
