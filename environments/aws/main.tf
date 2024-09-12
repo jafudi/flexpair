@@ -206,7 +206,7 @@ data "tfe_workspace" "main" {
 }
 resource "tfe_workspace" "iam" {
   name              = "${local.workspace}-iam"
-  terraform_version = "~> 1.5.0"
+  terraform_version = "~> 1.9.0"
   organization      = local.organization
   description       = "Identity and access management"
   working_directory = "ws-user-access"
