@@ -7,7 +7,7 @@ terraform {
   required_providers {
     dnsimple = {
       source  = "dnsimple/dnsimple"
-      version = "0.11.3"
+      version = "1.7.0"
     }
     oci = {
       source  = "hashicorp/oci"
@@ -15,7 +15,7 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.2.0"
+      version = "~> 3.3.0"
     }
     tls = {
       source  = "hashicorp/tls"
@@ -39,7 +39,7 @@ terraform {
     }
     local = {
       source  = "hashicorp/local"
-      version = "~> 2.2.0"
+      version = "~> 2.5.0"
     }
   }
   required_version = ">= 0.12.26"

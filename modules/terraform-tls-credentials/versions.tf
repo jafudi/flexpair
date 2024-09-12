@@ -2,7 +2,7 @@ terraform {
   required_providers {
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.2.0"
+      version = "~> 3.3.0"
     }
     tls = {
       source  = "hashicorp/tls"
@@ -13,6 +13,5 @@ terraform {
       version = "~> 2.4.0"
     }
   }
-  required_version = ">= 0.12.26"
-  // experiments      = [variable_validation]
+  required_version = "~> 1.5.0"
 }

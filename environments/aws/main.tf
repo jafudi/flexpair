@@ -14,21 +14,33 @@ locals {
   workspace       = local.org_list[1]
   valid_subdomain = random_pet.subdomain.id # in PROD: lower(replace(local.workspace, "/[_\\W]/", "-"))
   full_hostname   = "${local.valid_subdomain}.${var.registered_domain}"
-
-
 }
 
-module "amazon_infrastructure" {
+module "amazon_hub_infrastructure" {
   deployment_tags = local.deployment_tags
   source          = "app.terraform.io/Flexpair/commons/aws"
-  version         = "4.0.0"
+  version         = "5.0.0"
+  providers = {
+    aws = aws.hub
+  }
+}
+
+module "amazon_sat1_infrastructure" {
+  count = local.cross_region ? 1 : 0
+  deployment_tags = local.deployment_tags
+  source          = "app.terraform.io/Flexpair/commons/aws"
+  version         = "5.0.0"
+  providers = {
+    aws = aws.sat1
+  }
 }
 
 locals {
-  gateway_creation_context = module.amazon_infrastructure.vm_creation_context
-  gateway_additional_info  = module.amazon_infrastructure.additional_metadata
-  desktop_creation_context = module.amazon_infrastructure.vm_creation_context
-  desktop_additional_info  = module.amazon_infrastructure.additional_metadata
+  cross_region = var.hub_aws_region != var.sat1_aws_region
+  gateway_creation_context = module.amazon_hub_infrastructure.vm_creation_context
+  gateway_additional_info  = module.amazon_hub_infrastructure.additional_metadata
+  desktop_creation_context = local.cross_region ? module.amazon_sat1_infrastructure[0].vm_creation_context : module.amazon_hub_infrastructure.vm_creation_context
+  desktop_additional_info  = local.cross_region ? module.amazon_sat1_infrastructure[0].additional_metadata : module.amazon_hub_infrastructure.additional_metadata
 }
 
 module "credentials_generator" {
@@ -46,6 +58,7 @@ module "credentials_generator" {
 # TODO: Fully parameterize VNC crendetials
 # TODO: Fully parameterize Guacamole credentials
 module "gateway_installer" {
+  admin_public_keys      = var.admin_public_keys
   timezone_name          = var.timezone
   locale_name            = var.locale
   vm_mutual_keypair      = module.credentials_generator.vm_mutual_key
@@ -60,12 +73,14 @@ module "gateway_installer" {
   mumbling_mole_version  = local.mumbling_mole_version
   first_vnc_port         = module.credentials_generator.vnc_credentials.vnc_port
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
-  source                 = "app.terraform.io/Flexpair/station/cloudinit"
-  version                = "1.6.6"
+  source                 = "app.terraform.io/Flexpair/hubconfig/cloudinit"
+  version                = "1.1.0"
+  guacamole_version      = "1.4.0"
 }
 
 # TODO: Fully parameterize VNC crendetials
 module "desktop_installer" {
+  admin_public_keys    = var.admin_public_keys
   timezone_name        = var.timezone
   gitlab_runner_token  = var.gitlab_runner_token
   locale_name          = var.locale
@@ -78,7 +93,7 @@ module "desktop_installer" {
   email_config         = module.credentials_generator.email_config
   vnc_port             = module.credentials_generator.vnc_credentials.vnc_port
   source               = "app.terraform.io/Flexpair/satellite/cloudinit"
-  version              = "1.8.2"
+  version              = "1.9.0"
 }
 
 locals {
@@ -93,9 +108,9 @@ resource "local_file" "desktop_meta_data" {
   filename = "${path.root}/../../uploads/desktop-config/meta-data"
 }
 
-resource "local_file" "desktop_user_data" {
-  sensitive_content = module.desktop_installer.unzipped_config
-  filename          = "${path.root}/../../uploads/desktop-config/user-data"
+resource "local_sensitive_file" "desktop_user_data" {
+  content  = module.desktop_installer.unzipped_config
+  filename = "${path.root}/../../uploads/desktop-config/user-data"
 }
 
 resource "local_file" "gen_iso_script" {
@@ -107,7 +122,7 @@ resource "local_file" "gen_iso_script" {
 module "gateway_machine" {
   depends_on = [
     local_file.desktop_meta_data,
-    local_file.desktop_user_data,
+    local_sensitive_file.desktop_user_data,
     local_file.gen_iso_script
   ]
   deployment_tags   = local.deployment_tags
@@ -123,9 +138,12 @@ module "gateway_machine" {
     sip    = 5060
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
-  version = "4.0.0"
+  version = "5.0.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
+  providers = {
+    aws = aws.hub
+  }
 }
 
 module "desktop_machine_1" {
@@ -139,31 +157,33 @@ module "desktop_machine_1" {
     module.gateway_installer
   ]
   source  = "app.terraform.io/Flexpair/desktop/aws"
-  version = "4.0.0"
+  version = "5.0.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context
+  providers = {
+    aws = aws.sat1
+  }
 }
 
-resource "null_resource" "health_check" {
-
-  for_each = toset([
-    "/",
-    "/guacamole/"
-  ])
-
-  triggers = {
-    on_every_apply = timestamp()
+check "health_check_1" {
+  data "http" "home_page" {
+    url = "https://${local.full_hostname}/"
   }
 
-  depends_on = [
-    module.gateway_machine,
-    time_sleep.dns_propagation
-  ]
+  assert {
+    condition = data.http.home_page.status_code == 200
+    error_message = "${data.http.home_page.url} returned an unhealthy status code"
+  }
+}
 
-  # Check HTTPS endpoint and first-level links availability
-  provisioner "local-exec" {
-    interpreter = ["/bin/bash", "-c"]
-    command     = "wget --tries=30 --spider --recursive --level 1 https://${local.full_hostname}${each.key};"
+check "health_check_2" {
+  data "http" "guacamole_page" {
+    url = "https://${local.full_hostname}/guacamole/"
+  }
+
+  assert {
+    condition = data.http.guacamole_page.status_code == 200
+    error_message = "${data.http.guacamole_page.url} returned an unhealthy status code"
   }
 }
 
@@ -186,10 +206,11 @@ data "tfe_workspace" "main" {
 }
 resource "tfe_workspace" "iam" {
   name              = "${local.workspace}-iam"
+  terraform_version = "~> 1.5.0"
   organization      = local.organization
   description       = "Identity and access management"
   working_directory = "ws-user-access"
-  auto_apply = true
+  auto_apply        = true
   vcs_repo {
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
     identifier     = "jafudi/flexpair"
