@@ -18,7 +18,7 @@ locals {
 
 module "amazon_hub_infrastructure" {
   deployment_tags = local.deployment_tags
-  source          = "app.terraform.io/Flexpair/commons/${var.cloud_provider}"
+  source          = "app.terraform.io/Flexpair/commons/aws"
   version         = "5.0.0"
   providers = {
     aws = aws.hub
@@ -28,7 +28,7 @@ module "amazon_hub_infrastructure" {
 module "amazon_sat1_infrastructure" {
   count = local.cross_region ? 1 : 0
   deployment_tags = local.deployment_tags
-  source          = "app.terraform.io/Flexpair/commons/${var.cloud_provider}"
+  source          = "app.terraform.io/Flexpair/commons/aws"
   version         = "5.0.0"
   providers = {
     aws = aws.sat1
@@ -75,7 +75,7 @@ module "gateway_installer" {
   guacamole_admin        = module.credentials_generator.guacamole_credentials.guacamole_admin_username
   source                 = "app.terraform.io/Flexpair/hubconfig/cloudinit"
   version                = "1.1.0"
-  guacamole_version      = "1.3.0"
+  guacamole_version      = "1.4.0"
 }
 
 # TODO: Fully parameterize VNC crendetials
@@ -137,7 +137,7 @@ module "gateway_machine" {
     smtp   = module.credentials_generator.email_config.smtp_port
     sip    = 5060
   }
-  source  = "app.terraform.io/Flexpair/gateway/${var.cloud_provider}"
+  source  = "app.terraform.io/Flexpair/gateway/aws"
   version = "5.0.0"
   // below variables are provider specific
   cloud_provider_context = local.gateway_creation_context
@@ -156,7 +156,7 @@ module "desktop_machine_1" {
     # Desktop without gateway would be of little use
     module.gateway_installer
   ]
-  source  = "app.terraform.io/Flexpair/desktop/${var.cloud_provider}"
+  source  = "app.terraform.io/Flexpair/desktop/aws"
   version = "5.0.0"
   // below variables are provider specific
   cloud_provider_context = local.desktop_creation_context

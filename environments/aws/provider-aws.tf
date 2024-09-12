@@ -98,7 +98,3 @@ variable "aws_secret_key" {
   description = "Generate here: https://console.aws.amazon.com/iam/home?#/security_credentials"
 }
 
-variable "cloud_provider" {
-  type = string
-  default = "aws"
-}
