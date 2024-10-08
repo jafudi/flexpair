@@ -96,7 +96,7 @@
 | oci\_region | An Oracle Cloud Infrastructure region. Must be equal to the home region of the tenancy. | `string` | `"eu-frankfurt-1"` | no |
 | oci\_tenancy\_ocid | Oracle Cloud ID (OCID) of the tenancy | `string` | `"ocid1.tenancy.oc1..aaaaaaaas3oie74wurpodkrygjpztwfscowu3rx42hadgheqrcmesnefllqa"` | no |
 | oci\_user\_ocid | The user's Oracle Cloud ID (OCID) | `string` | `"ocid1.user.oc1..aaaaaaaaqfmvke4guehv3ejzc6p2nm4p7gki3o6csth2cqznv62zco76h6aa"` | no |
-| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"flexpair.com"` | no |
+| registered\_domain | A registered domain pointing to rfc2136\_name\_server. | `string` | `"flexpair.app"` | no |
 | timezone | The name of the common system time zone applied to both VMs | `string` | `"Europe/Berlin"` | no |
 
 ## Outputs

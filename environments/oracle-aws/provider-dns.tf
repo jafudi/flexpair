@@ -21,7 +21,7 @@ provider "acme" {
 
 variable "registered_domain" {
   type        = string
-  default     = "flexpair.com" // Registered through dnsimple.com
+  default     = "flexpair.app" // Registered through dnsimple.com
   description = "A registered domain pointing to rfc2136_name_server."
   validation {
     condition     = can(regex("^([a-z0-9]+(-[a-z0-9]+)*\\.)+[a-z]{2,}$", var.registered_domain))
@@ -38,7 +38,7 @@ resource "dnsimple_record" "gateway_hostname" {
 }
 
 resource "dnsimple_record" "redirect_to_demo" {
-  domain = "flexpair.com"
+  domain = "flexpair.app"
   name   = "demo"
   value  = module.credentials_generator.browser_url
   type   = "URL"

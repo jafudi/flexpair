@@ -1,5 +1,5 @@
 variable "demo_subdomain" {
-  description = "the demo in demo.flexpair.com"
+  description = "the demo in demo.flexpair.app"
   type        = string
   default     = ""
 }
