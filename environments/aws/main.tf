@@ -136,6 +136,7 @@ module "gateway_machine" {
     mumble = module.credentials_generator.murmur_credentials.port
     smtp   = module.credentials_generator.email_config.smtp_port
     sip    = 5060
+    vnc    = module.credentials_generator.vnc_credentials.vnc_port // UNSAFE !!!!!!!!!!!!!
   }
   source  = "app.terraform.io/Flexpair/gateway/aws"
   version = "5.0.0"
