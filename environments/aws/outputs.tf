@@ -68,19 +68,19 @@ output "first_vnc_credentials" {
 }
 
 output "first_vnc_hostname" {
-  value       = module.credentials_generator.vnc_credentials.hostname
+  value       = nonsensitive(module.credentials_generator.vnc_credentials.hostname)
 }
 
 output "first_vnc_port" {
-  value       = module.credentials_generator.vnc_credentials.vnc_port
+  value       = nonsensitive(module.credentials_generator.vnc_credentials.vnc_port)
 }
 
 output "first_vnc_username" {
-  value       = module.credentials_generator.vnc_credentials.username
+  value       = nonsensitive(module.credentials_generator.vnc_credentials.username)
 }
 
 output "first_vnc_password" {
-  value       = module.credentials_generator.vnc_credentials.password
+  value       = nonsensitive(module.credentials_generator.vnc_credentials.password)
 }
 
 output "ssh_config" {
