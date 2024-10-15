@@ -67,6 +67,7 @@ output "first_vnc_credentials" {
   sensitive   = true
 }
 
+// REMOVE LATER BECAUSE UNSAFE, ONLY FOR DEBUGGING
 output "first_vnc_hostname" {
   value       = nonsensitive(module.credentials_generator.vnc_credentials.hostname)
 }
